@@ -1,0 +1,10 @@
+<p>We can select many items, and do something to all of them</p>
+<pre class="runnable">
+Ext.select('p').on('click', 
+    function(event, target){
+        Ext.fly(target).fadeOut({duration: 3000})
+    }
+);
+</pre>
+<p><small>Copy this code, open 
+<a href="http://docs.sencha.com/extjs/#" target="lab">the API documentation home page</a>, and paste it into the debugger console.</small></p>

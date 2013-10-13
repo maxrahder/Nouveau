@@ -1,0 +1,17 @@
+<h3>Ext.Number.randomInt(from, to):Number</h3>
+<p>Returns a random integer, in the specified range.</p><pre class="runnable">
+var s;
+
+s = '';
+for (var i = 0 ; i < 50 ; i++){
+    s += Ext.Number.randomInt(0, 100) + ' '; 
+}
+alert(s);
+
+s = '';
+for (var i = 0 ; i < 10 ; i++){
+    // To illustrate that it's inclusive  
+    s += Ext.Number.randomInt(0, 1) + ' '; 
+}
+alert(s);
+</pre>

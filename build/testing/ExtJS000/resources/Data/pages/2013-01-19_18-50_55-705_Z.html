@@ -1,0 +1,20 @@
+<p>
+In place of referencing a model, you can describe a model using the <code>fields</code>
+array. This is handy for examples, but rarely used in production code.
+</p>
+<pre class="runnable">
+var store = Ext.create('Ext.data.Store', {
+    fields : [ 'first', 'last' ],
+    proxy : { type : 'ajax', url : '../Data/json/theBeatles.json'},
+    autoLoad: true
+});
+
+Ext.create('Ext.grid.Panel', {
+    store : store,
+    columns : [ 
+       { text : 'First', dataIndex : 'first' },
+       { text : 'Last', dataIndex : 'last' }
+    ],
+    width : 200,
+    renderTo : Ext.getBody()
+});</pre>

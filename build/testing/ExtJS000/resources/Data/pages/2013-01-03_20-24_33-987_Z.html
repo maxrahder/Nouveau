@@ -1,0 +1,30 @@
+<p>
+The controller knows that a search was requested, but not the specific user action that
+initiated the search. This decouples the <b>what</b> from the <b>how</b>. The code is 
+simpler, and won't break because of some designer's change in how the action is initiated.
+</p>
+<div class="readonly">
+<pre class="runnable">
+Ext.define('MyApp.controller.TwitterController', {
+    extend : 'Ext.app.Controller',
+    
+    views : [ 'TwitterGrid' ],
+    stores : [ 'Tweets' ],
+    models : [ 'Tweet' ],
+
+    init : function() {
+        this.control({
+            'twittergrid' : {
+                search : this.searchHandler
+            }
+        });
+    },
+    searchHandler : function(grid, searchString) {
+        this.getTweetsStore().load({
+            params : {
+                q : searchString
+            }
+        });
+    }
+});</pre>
+</div>

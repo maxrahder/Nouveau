@@ -1,0 +1,20 @@
+<pre class="runnable">
+Ext.define('Value', {
+  extend: 'Ext.util.Observable',
+  config: {
+    value: null
+  },
+  updateValue: function(newValue, oldValue){
+    this.fireEvent('changevalue', this, newValue);
+  }
+});
+
+var myValue = Ext.create('Value',{
+  value : 12
+});
+
+myValue.on('changevalue', function(v){
+  alert('The value changed to ' + v.getValue());
+});
+myValue.setValue(123);
+</pre>

@@ -1,0 +1,7 @@
+Sends the changes to just this model.
+<ul>
+<li>To use this, you must have a proxy declared on the Model
+<li>All fields are always sent to the server even if only one field has changed
+</ul>
+
+We recommend that you declare a proxy on the Model instead of the Store, so that you have the option of using <code>Model.save()</code> to save one record at a time.

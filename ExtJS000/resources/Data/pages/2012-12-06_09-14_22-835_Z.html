@@ -1,0 +1,16 @@
+<pre class="runnable">
+Ext.define('MusicLibrary.view.GridView', {
+    extend: 'Ext.grid.Panel',
+    alias: 'widget.gridviewer',
+    
+    title: 'Artist',
+    store: 'Artists',
+    columns: [
+        {
+            dataIndex: 'name',
+            flex: 1,
+            text: 'Artist',
+            sortable: true
+        }
+    ]
+});</pre>

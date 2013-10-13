@@ -1,0 +1,7 @@
+<p>Template expressions can reference <a href="http://docs.sencha.com/extjs/4.2.1/#!/api/Ext.util.Format" target="api"><code>Ext.util.Format</code></a> methods.</p>
+<pre class="runnable">var data = {population: 6973738433};
+var component = Ext.create('Ext.Component', {
+    tpl: 'There are about {population:number("0,0")} people on Earth.',
+    renderTo: Ext.getBody()
+});
+component.update(data);</pre>

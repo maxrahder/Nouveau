@@ -1,0 +1,32 @@
+<p>
+Ext JS theming is done via scores of global and component-specific SASS variables. There
+are also mixins you can include to create named styles that you can use on specific
+components.
+</p>
+
+<div type="expander" caption="Global variables">
+<ul class="plain">
+<li>There are about 25 global variables whose values are used throughout a theme.</li>
+<li>For example, <code>$base-color</code> and <code>$font-family</code> are
+reflected everywhere in an application.</li>
+<li>See <a href="http://docs.sencha.com/extjs/4.2.1/#!/api/Global_CSS" target="api">the API documentation</a> for a list of global variables.</li>
+</ul>
+</div>
+
+<div type="expander" caption="Component variables">
+<ul class="plain">
+<li>Key component styling properties are also specified as variables.</li>
+<li>Changes to a component variable are reflected in all instances of the component.</li>
+<li>For a given class, the API documentation lists the variables used to 
+describe the component.</li>
+<li>For example, Ext.panel.Panel has a <code>$panel-border-color</code> property used for all panels in an application.</li>
+</ul>
+</div>
+
+<div type="expander" caption="Named styles">
+<ul class="plain">
+<li>Components have a <code>ui</code> property that ties the component to the its styling.</li>
+<li>There are some component ui mixins you can include to create your own ui name.</li>
+<li>You can then use the new ui in your application.</li>
+</ul>
+</div>

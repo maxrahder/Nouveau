@@ -1,0 +1,20 @@
+<p>
+If you have a constructor, you're free to have it do whatever you want, but two statements are important.
+</p>
+
+<div type="expander" caption="<code>this.initConfig(config)</code>">
+<p>
+This applies the calling routine's passed config properties. In theory, you only need
+to do this once, in your base class.
+</p>
+</div>
+
+<div type="expander" caption="<code>this.callParent(arguments)</code>">
+<p>
+This calls the ancestor method for whatever method you're in. If you're in the constructor,
+it will call the parent's constructor. 
+</p>
+<p><code>arguments</code> is a reserved word in JavaScript. It's an array of all the parameters
+passed in by the calling routine. By stating <code>this.callParent(arguments);</code> we're 
+just saying "call the ancestor method, passing whatever was passed to me."
+</div>

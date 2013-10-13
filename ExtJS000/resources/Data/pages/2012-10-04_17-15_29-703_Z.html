@@ -1,0 +1,46 @@
+<p>
+There are over twenty input field types. Explore them on 
+<a href="http://docs.sencha.com/extjs/#!/example/form/dynamic.html" target="api">the examples page</a>.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    title: 'Simple Form',
+    bodyPadding: 6,
+    width: 450,
+    height: 324,
+    defaults: {
+        xtype: 'textfield'
+    },
+    items: [{
+        fieldLabel: 'First Name',
+        name: 'first'
+    }, {
+        fieldLabel: 'Last Name',
+        name: 'last',
+        allowBlank: false
+    }, {
+        xtype: 'datefield',
+        fieldLabel: 'Date of Birth',
+        name: 'dob'
+    }, {
+        xtype: 'checkboxfield',
+        boxLabel: 'Married',
+        name: 'married'
+    }, {
+        xtype: 'radiogroup',
+        fieldLabel: 'Sex',
+        columns: 1,
+        items: [{
+            boxLabel: 'Male',
+            name: 'sex'
+        }, {
+            boxLabel: 'Female',
+            name: 'sex'
+        }]
+    }, {
+        xtype: 'htmleditor',
+        fieldLabel: 'Brief Biography',
+        name: 'bio'
+    }],
+    renderTo: Ext.getBody()
+})</pre>

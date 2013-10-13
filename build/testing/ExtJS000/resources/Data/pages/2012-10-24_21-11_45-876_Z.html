@@ -1,0 +1,28 @@
+<p>
+Each element in the <em>fields</em> array is an 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.data.Field" target="api"><code>Ext.data.Field</code></a> instance. Fields can be typed and given a default value.
+</p>
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    fields : [ {
+        name : 'first',
+        type : 'string',
+        defaultValue : 'John'
+    }, {
+        name : 'last',
+        type : 'string',
+        defaultValue : 'Doe'
+    }, {
+        name : 'dob',
+        type : 'date',
+        dateFormat : 'Y/m/d'
+    } ]
+});
+var record = Ext.create('MyApp.model.Person');
+alert(record.get('first')); // Alerts "John"
+record.set('dob', '1955/05/23'); // Set one value
+
+record.set({first : 'Jane', dob : '1955/05/23'}); //Set multiple values
+alert(record.get('first')); // Alerts "Jane"</pre>
+

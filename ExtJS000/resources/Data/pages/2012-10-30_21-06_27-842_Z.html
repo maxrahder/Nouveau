@@ -1,0 +1,60 @@
+<pre class="runnable preview">
+var members = Ext.create('Ext.data.Store', {
+  autoLoad : true,
+  fields: ['first', 'last', 
+          {name: 'dob', type: 'date', dateFormat: 'Y/m/d'},
+          {name: 'currentmember', type: 'boolean'},
+          {name: 'age', type: 'int', 
+            convert: function(v, rec) {
+              var today = new Date();
+              var birthDate = new Date(rec.get('dob'));
+              var age = today.getFullYear() - birthDate.getFullYear();
+              var m = today.getMonth() - birthDate.getMonth();
+              if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
+              return age;
+            }
+          },
+          'networth'],
+  proxy: {
+    type: 'ajax',
+    url: '../Data/json/aerosmith.json'
+  }
+});
+
+Ext.create('Ext.grid.Panel',{
+  store: members,
+  title: 'Aerosmith',
+  columns: [{
+    text: 'First Name', 
+    dataIndex: 'first'
+  }, {
+    text: 'Last Name',
+    dataIndex: 'last'
+  }, {
+    text: 'Date Of Birth',
+    dataIndex: 'dob',
+    xtype: 'datecolumn',
+    dateFormat: 'm/d/Y'
+  }, {
+    text: 'Age',
+    dataIndex: 'age',
+    align: 'center'
+  }, {
+    text: 'Current Member',
+    dataIndex: 'currentmember',
+    xtype: 'booleancolumn',
+    align: 'center',
+    trueText: 'Yes',
+    falseText: 'No'
+  }, {
+    text: 'Net Worth',
+    dataIndex: 'networth',
+    renderer: function(value) {
+      if (value == 0) return 'Unknown'
+      else return Ext.util.Format.usMoney(value)
+    },
+    flex: 1
+  }],
+  renderTo: Ext.getBody()
+});
+</pre>

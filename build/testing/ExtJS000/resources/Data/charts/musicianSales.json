@@ -1,0 +1,22 @@
+[{
+    'name': 'The Beatles',
+    'sales': 1000
+  }, {
+    'name': 'Elvis',
+    'sales': 1000
+  }, {
+    'name': 'M. Jackson',
+    'sales': 750
+  }, {
+    'name': 'Madonna',
+    'sales': 300
+  }, {
+    'name': 'Elton John',
+    'sales': 300
+  }, {
+    'name': 'Led Zeppelin',
+    'sales': 300
+  }, {
+    'name': 'Queen',
+    'sales': 300
+  }]

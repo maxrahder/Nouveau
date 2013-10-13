@@ -1,0 +1,16 @@
+<p>
+The server must return a structured
+response. <b>total</b> is the total number of records for all pages. <b>data</b> are
+those records corresponding to the page/start and count parameters.
+</p>
+<pre>
+{
+    success : true,
+    total : 10932,
+    data : [ {}, ..., {} ]
+}
+</pre>
+<p><small>
+<strong>Note:</strong> <em>This means you need to specify a proxy reader since the record array
+is nested in the response.</em></small>
+</p>

@@ -1,0 +1,22 @@
+The base class for models is <code>Ext.data.Model</code>. To define your own models, use the following code:
+<br><br>
+
+<div class="readonly">
+<pre class="runnable">
+Ext.define('MyApp.model.MyModel', {
+    extend : 'Ext.data.Model',
+
+    fields : [ ... ],
+
+    validations: [ ... ], // optional
+
+    customFunc: function() {
+		... custom function body ...
+    },
+
+    proxy: {
+        type: 'ajax',
+        url: 'http://localhost'
+    }
+});
+</pre></div>

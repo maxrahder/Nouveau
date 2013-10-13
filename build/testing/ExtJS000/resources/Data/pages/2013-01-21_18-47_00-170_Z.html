@@ -1,0 +1,23 @@
+<p>
+Text is the property that supplies the column header while dataIndex refers to the location of the data location in the model.</p>
+
+<pre class="runnable">
+var members = Ext.create('Ext.data.Store', {
+    autoLoad : true,
+    fields : [ 'first', 'last', { name : 'dob', type : 'date', dateFormat : 'Y/m/d' } ],
+    proxy : { type : 'ajax', url : '../Data/json/aerosmith.json' }
+});
+
+Ext.create('Ext.grid.Panel', {
+
+    store : members,
+    columns : [ {
+        text : 'First Name',
+        dataIndex : 'first'
+    }],
+
+    title : 'Aerosmith',
+    height : 200,
+    width : 450,
+    renderTo : Ext.getBody()
+});</pre>

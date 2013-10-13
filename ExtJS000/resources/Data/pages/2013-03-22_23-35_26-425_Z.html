@@ -1,0 +1,115 @@
+<h1>Introduction</h1>
+
+<p> Our iTunes data has properties such as title, category, and price. We will define each of those properties as a field in a model. Each model represents a record. A store contains a collection of records. In this lab we will link the store of records to the table, so that it appears on the web page.
+</p>
+
+<ol>
+<li>Define the model
+
+<p>In the upper right corner of the Project Inspector, press the <code>[+]</code> button and choose Model.</p>
+<p>In the Project Inspector, select <code>MyModel</code>, and in the <b>Config</b> panel set its <code>userClassName</code> to "Tune".</p>
+
+<p>In the <b>Config</b> panel go to the <b>Fields</b> property and press the (+) to its right. A input field
+will appear. Type the field names: <code>title,artist,category,price,image,preview,<!-- id,currency,-->link</code><br/><br/>
+<img src="resources/images/_neptunes/NewModeFieldNamesInConfigPanel.png">
+<br/>
+Then press the <b>Enter</b> key or the <b>[Finish]</b> button.</p>
+
+<p>In the Project Inspector, a list of fields appears under Tune. Select <code>price</code>. In the <code>Config</code> panel, change the price field's <code>type</code> to <code>float</code>.</p>
+
+<p>Finally, with the Tune model still selected in the Project Inspector, 
+press the [Code] button near the upper right corner of the central pane 
+to take a quick glance at the code Architect generated. We will be explaining
+this in detail later in the week.
+</li>
+
+<li>Create the store
+<p>In the upper right corner of the Project Inspector, press the <code>[+]</code> 
+button and select <b>Store > Json Store</b> (NOT JsonP Store)</p>
+<p>In the Project Inspector, select the <code>MyJsonStore</code> store.</p>
+<p>In the Config panel, set the store's <code>userClassName</code> to <code>Tunes</code>.</p>
+<p>Set the store's <code>model</code> to Tune.</p>
+<p>Set the store's <code>autoLoad</code> checkbox to <code>checked</code>.</p>
+</li>
+
+<li>Set the url to the store's proxy
+<p>A proxy defines how the app makes a connection to the data. 
+In this case, we are using an AJAX proxy, but we need to tell 
+Ext JS where to find the data for the store.</p>
+
+<p>In the Project Inspector, select <code>MyAjaxProxy</code>, 
+and in the <b>Config</b> panel set its <code>url</code> to <code>data/feed.json</code> .</p>
+
+<p>Finally, with the Tunes store still selected in the Project Inspector, 
+press the [Code] button near the upper right corner of the central pane to
+take a quick look at the code Architect generated. We will be explaining
+this in detail later in the week.</p>
+
+<li>Load the store
+<p>In the Project Inspector, right click on the <b>Tunes store</b> 
+and select <b>Load Data</b>. If you hover the cursor over the eye 
+icon to the right, it should tell you that 100 records were loaded.</p>
+</li>
+
+<li>Connect the store to the grid
+<p>Press the [Design] button near the upper right of the central pane. 
+Then click the flyout gear to the right of the NepTunes Grid 
+and check from <code>Select a store:</code> choose <code>Tunes</code>.</p>
+</p>
+
+<p>In the Project Inspector, right-click on <code>neptunesGrid</code> 
+and choose <code>Auto columns</code>. This will
+create grid columns based on the fields in the model declaration.</p>
+
+<p>In the central canvas select the NepTunes Grid, 
+and you will see the fields from the Tunes store and its
+Tune model in the grid.</p>
+
+<li>Remove 2 columns from the grid
+<p>In the Project Inspector, right-click and delete the <code>Image</code>, 
+and <code>Preview</code> columns from the grid. We will use these fields
+elsewhere.</p>
+
+<li>Save and preview the application
+<p>On the Architect main toolbar press [Save] and then refresh your browser. 
+You should see the running application, with data in the grid.
+</p>
+</li>
+
+<li>Set the column widths
+<p>In the Project Inspector choose the Title column, 
+and in the Config panel set <code>flex</code> to 1. 
+As you will learn later, Flex is a size relative to other 
+columns that have a flex setting.</p>
+
+<p>Choose the Artist column and set <code>flex</code> to 1.
+It will have the same width as the Title column.</p>
+
+<p>Set the Price <code>width</code> to 60.</p>
+<p>Finally, set the Link <code>width</code> to 60.</p>
+
+</li>
+
+<li>Transform the Link column to a template column showing an iTunes button
+<p>In the Project Inspector, right-click on the the Link column, 
+then select Transform | Ext.grid.column.Template. 
+Then select the <code>tpl</code> (template) item just below the Link column.
+Press the [Code] button in the upper right corner of the central pane.
+A code editor appears.
+<!-- Then in the Config panel find the <code>tpl</code> (template) property, 
+click the <code>(+)</code> to the right of <code>tpl</code>, 
+then the right arrow by <code>tpl</code>. -->
+Paste this template in the code editor:</p>
+<pre>
+&lt;a href="{link}" target="itunes_store"&gt;
+    &lt;img src="resources/images/badge_itunes-sm.gif"/&gt;
+&lt;/a&gt;
+</pre>
+</li>
+
+<li>Save and preview the application
+<p>On the Architect main toolbar press [Save] and then refresh your browser. You should
+see the running application, with data in the grid and a button to iTunes in the Link column.
+</p>
+</li>
+</ol>

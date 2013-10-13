@@ -1,0 +1,28 @@
+<p>
+The <code>defaults</code> config lets you set default values for direct child items.
+</p>
+<pre class="runnable">
+Ext.create('Ext.container.Container', {
+
+    defaults: {
+        xtype: 'button',
+        style: 'background: red',
+        margin: 8
+    },
+    layout : 'vbox',	
+    items : [ {
+        text : 'Button One'
+    }, {
+        text : 'Button Two'
+    }, {
+        xtype: 'container',
+        items: [
+           { xtype: 'button' , text: 'Button A' }, 
+           { xtype: 'button' , text: 'Button B' }
+        ]
+    }],
+
+    renderTo : Ext.getBody()
+});
+</pre>
+

@@ -1,0 +1,16 @@
+<pre class="runnable">
+Ext.define('MyApp.view.HappyPanel', {
+    extend: 'Ext.panel.Panel',
+    title: ':-)',
+    height: 80,
+    width: 200
+});
+Ext.create('MyApp.view.HappyPanel', {
+    renderTo : Ext.getBody()
+});
+Ext.create('MyApp.view.HappyPanel', {
+    title : 'Yo',
+    width : 400,
+    renderTo : Ext.getBody()
+});
+</pre>

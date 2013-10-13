@@ -1,0 +1,91 @@
+{
+  "topicId": "deployment",
+  "text": "Going Into Production",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Localization",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-17_19-19_15-582_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Server-side Process",
+          "fileId": "2013-01-17_19-57_03-304_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext JS Library Example",
+          "fileId": "2013-09-10_18-54_51-938_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Your Code",
+          "fileId": "2013-09-10_19-05_41-975_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Dynamically Changing Locale",
+          "fileId": "2013-01-18_13-02_42-765_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Build",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "sencha app build [testing]",
+          "fileId": "2012-09-24_13-43_32-010_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Folder Structure",
+          "fileId": "2013-09-11_18-27_03-229_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Dynamic Loading Should No Longer Occur",
+          "fileId": "2013-09-11_18-27_10-580_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Cmd Version Mismatch",
+          "fileId": "2013-05-02_08-50_44-262_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Converting an Manually Created Application",
+          "fileId": "2013-09-13_13-47_39-180_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Lab: YelpExtplorer 12",
+          "fileId": "2013-03-04_18-14_44-882_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    }
+  ]
+}

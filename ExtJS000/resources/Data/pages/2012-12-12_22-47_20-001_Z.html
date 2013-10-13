@@ -1,0 +1,30 @@
+<p>Open the debugger and watch network traffic as <code>Training.lecture.Moose</code>, and its ancestor class, are loaded.</p>
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+
+    items : [ {
+        text : 'Is Training.lecture.Moose in Memory?',
+        handler : function(b) {
+            try {
+                // Training.lecture.Moose.SCIENTIFICNAME bombs if not in memory.
+                alert('The moose, or Eurasian elk: ' + Training.lecture.Moose.SCIENTIFICNAME); 
+            } catch (error){
+                alert('What\'s a Training.lecture.Moose?!');
+            }
+        }
+    }, {
+        text : "Ext.require('Training.lecture.Moose');",
+        handler : function(b) {
+            // Reference it using the class system. The class will be 
+            // loaded dynamically, if needed.
+            Ext.require('Training.lecture.Moose');
+        }
+    } ],
+
+    defaults : {
+        xtype : 'button',
+        margin : 16
+    },
+    renderTo : Ext.getBody(),
+    layout : 'vbox'
+});</pre>

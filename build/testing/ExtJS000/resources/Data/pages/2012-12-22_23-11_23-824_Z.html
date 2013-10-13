@@ -1,0 +1,21 @@
+
+<ul>
+<li>Inside an Ext JS static method, <code>this</code> contains the class that owns the method.
+</ul>
+<pre>
+> Ext.define( 'Example', {
+    statics: { xyz: function() { return this; } }
+               // xyz returns the function-class-object in 'this'
+    }
+  ) // defining a class returns the constructor function
+  function constructor() {
+    // ...
+    return this.constructor.apply(this, arguments) || null;
+  }
+> Example.xyz(); // xyz() returns the value of 'this', 
+                 // the function-class-object
+  function constructor() {
+    // ...
+    return this.constructor.apply(this, arguments) || null;
+  }
+</pre>

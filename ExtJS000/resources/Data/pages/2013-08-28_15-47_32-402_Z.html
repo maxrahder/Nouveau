@@ -1,0 +1,29 @@
+<p>The default column type is <code>xtype:'gridcolumn'</code>. It
+simply runs <code>toString()</code> on the record's value.</p>
+
+<pre class="runnable preview">
+var store = Ext.create('Ext.data.Store', {
+    fields:[ { name: 'born',  type: 'date' , dateFormat : 'Y/m/d'}, 'name' ],
+    proxy : { type : 'ajax', url : '../Data/json/marxBrothers.json' },
+    autoLoad : true
+});
+
+Ext.create('Ext.grid.Panel', {
+
+    store: store,
+    columns: [ { 
+        //xtype : 'gridcolumn', // This is the default
+        text: 'Name', 
+        dataIndex: 'name' 
+    }, { 
+        text: 'Born', 
+        dataIndex: 'born',
+        flex: 1 
+    } ],
+
+    title: 'The Marx Brothers',
+    height: 200,
+    width: 400,
+    renderTo: Ext.getBody()
+});
+</pre>

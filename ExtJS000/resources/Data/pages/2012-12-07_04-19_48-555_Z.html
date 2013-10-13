@@ -1,0 +1,23 @@
+<pre class="runnable">
+Ext.create('Ext.window.Window', {
+    title: 'Window',
+    autoShow: 'true',
+    tbar: [{
+        text: 'Create', 
+        handler: function(button){
+            var w = Ext.create('Ext.window.Window', {
+                title: 'Another Window',
+                constrain: true,
+                height: 200,
+                width: 200
+            });
+            button.up('window').add(w);
+            w.show();
+        }
+    }],
+    height: 300,
+    width: 300,
+    x: 10,
+    y: 10
+});
+</pre>

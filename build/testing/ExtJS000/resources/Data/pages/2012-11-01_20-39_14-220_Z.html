@@ -1,0 +1,14 @@
+<h3>each(iterable, fn, [scope], [reverse])</h3>
+<p>Iterates an array or an iterable value and invoke the given callback function for each item.</p>
+<p>It can break a loop with <code>return false</code></p>
+<pre class="runnable">
+var a = [{value: 1}, {value: -1}, {value: 3}, {value : 99}, {value: 3}];
+var s = '';
+Ext.Array.each(a, function(item){
+    if (item.value === 99) return false;
+    if (item.value > 0){
+        s += "-" + item.value;
+    } 
+});
+alert(s);  // alerts -1-3
+</pre>

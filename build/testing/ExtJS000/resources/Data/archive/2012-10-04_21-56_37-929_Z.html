@@ -1,0 +1,66 @@
+<table>
+<tr>
+<td style="vertical-align: top">
+<pre class="runnable">
+Ext.define('Mammal', {
+	config : {
+		name : 'Anonymous',
+		dob : new Date()
+	},
+	constructor : function(config) {
+		this.initConfig(config);
+		this.callParent(config);
+	},
+	speak : function() {
+		alert(this.getName() 
+			+ ' is grunting.');
+	}
+});
+</pre>
+</td>
+<td>&nbsp;&nbsp;</td>
+<td style="vertical-align: top">
+<pre class="runnable">
+Ext.define('Human', {
+	extend : 'Mammal',
+	config : {
+		married : false
+	},
+	constructor : function(config) {
+		this.initConfig(config);
+		this.callParent(config);
+	},
+	speak : function() {
+		alert('Hello there, my name is ' 
+			+ this.getName() 
+			+ '. I am ' 
+			+ (this.getMarried() ? 'not ' : '')
+			+ 'married.');
+	}
+});
+</pre>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top">
+<pre class="runnable">
+var m = Ext.create('Mammal', {
+	name : 'Big Foot'
+});
+// Alerts "Big Foot is grunting."
+m.speak(); 
+</pre>
+</td>
+<td>&nbsp;</td>
+<td style="vertical-align: top">
+<pre class="runnable">
+var h = Ext.create('Human', {
+	name : 'Hubert',
+	married : true
+});
+// Alerts "Hello there, my name is Hubert. I am married."
+h.speak(); 
+</pre>
+</td>
+</tr>
+</table>

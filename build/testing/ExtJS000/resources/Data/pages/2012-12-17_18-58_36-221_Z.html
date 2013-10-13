@@ -1,0 +1,25 @@
+<p>
+Models are simply <code>Ext.data.Model</code> sub-classes, so like any class you're free to add
+whatever methods you need. In those methods, "this" refers to the record, so any <code>Ext.data.Model</code> method may be run.
+</p>
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    fields : [ 'first', 'last', 'gender', {
+      name : 'full', 
+      convert : function(value, record){
+         return record.data.first + ' ' + record.data.last;
+      }
+    }],
+    isMale : function() {
+        return ( this.get('gender') === 'male' );
+    }
+});
+var r = Ext.create('MyApp.model.Person', { 
+   first: 'James', 
+   last: 'Kirk', 
+   gender : 'male' 
+});
+
+Ext.Msg.alert('Star Trek', r.get('full') 
++ ' is ' + (r.isMale()?'':'not') + ' a man.');</pre>

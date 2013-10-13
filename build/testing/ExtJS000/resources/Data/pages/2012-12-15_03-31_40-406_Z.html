@@ -1,0 +1,39 @@
+<p>Trees show hierarchies of objects with collapsible branches.</p>
+
+<pre class="runnable preview">
+Ext.create('Ext.tree.Panel', {
+    root: {
+        text: 'Root Node',
+        expanded: true,
+        children: [{
+            text: 'Child1',
+            leaf: true
+        }, {
+            text: 'Child2',
+            expanded: true,
+            children: [{
+                text: 'Child2.1',
+                leaf: true
+            }, {
+                text: 'Child2.2',
+                leaf: true
+            }, ]
+        }, {
+            text: 'Child3',
+            expanded: true,
+            children: [{
+                text: 'Child3.1',
+                leaf: true
+            }, {
+                text: 'Child3.2',
+                leaf: true
+            }]
+        }, {
+            text: 'Child4',
+            leaf: true
+        }]
+    },
+    title: 'My Tree',
+    renderTo: Ext.getBody()
+});
+</pre>

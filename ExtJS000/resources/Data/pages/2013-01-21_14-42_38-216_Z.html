@@ -1,0 +1,28 @@
+<p>This dataset has about 1.5 million records!</p>
+<pre class="runnable preview">
+var store = Ext.create('Ext.data.Store', {
+
+    buffered: true,
+    pageSize: 200,
+
+    fields : [ 'name', 'full_address', 'city' ],
+    proxy : { type : 'ajax', url : 'http://yelp.senchabits.com/go?fn=getbigrowrange', root : 'data', reader : { type : 'json', root : 'data' } },
+    autoLoad: true
+});
+
+Ext.create('Ext.grid.Panel', {
+    title: 'Businesses',
+    store: store,
+
+    plugins: 'bufferedrenderer', // This is automatic with a buffered store
+
+    columns: [
+        { xtype: 'rownumberer', width: 55},
+        { text: 'Name',  dataIndex: 'name', flex : 2},
+        { text: 'Address', dataIndex: 'full_address', flex : 3  },
+        { text: 'City', dataIndex: 'city', flex: 1 }
+    ],
+    height: 200,
+    width: 640,
+    renderTo: Ext.getBody()
+});</pre>

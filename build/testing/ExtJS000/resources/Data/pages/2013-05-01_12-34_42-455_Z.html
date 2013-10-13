@@ -1,0 +1,40 @@
+<p>You need to configure a reader if the data doesn't match the defaults &mdash; it is not JSON or the records are nested.</p>
+
+<div type="expander" caption="Data">
+<pre>{
+    success: true,
+    data: [
+        { "first" : "John",   "last" : "Lennon" }, 
+        { "first" : "Paul",   "last" : "McCartney" }, 
+        { "first" : "George", "last" : "Harrison" }, 
+        { "first" : "Ringo",  "last" : "Starr" }
+    ]
+}</pre>
+</div>
+
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    fields : [ 'first' , 'last' ],
+
+    proxy : {
+        type : 'ajax',
+        url : '../Data/json/theBeatlesRoot.json',
+        reader: {
+            type: 'json', // This is the default
+            root: 'data'
+        }
+    }
+
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.model.Person'
+});
+store.load(function(records){
+    var s = '';
+    Ext.Array.forEach(records, function(record){
+        s += record.get('first') + ' ';
+    });
+    alert(s);
+});
+</pre>

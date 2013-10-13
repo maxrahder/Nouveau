@@ -1,0 +1,25 @@
+<p>
+Let's say we want to allow the calling routine to specify the height
+and width, but not the title. To do that, initialize the title in 
+<code>initComponent</code>, which will therefore replace any value specified
+by the calling routine.
+</p>
+<pre class="runnable">
+Ext.define('MyApp.view.HappyPanel', {
+    extend: 'Ext.panel.Panel',
+    initComponent : function() {
+        this.title = ':-)';
+        this.callParent(); // required!
+    },
+    height: 80,
+    width: 200
+});
+Ext.create('MyApp.view.HappyPanel', {
+    renderTo : Ext.getBody()
+});
+Ext.create('MyApp.view.HappyPanel', {
+    title : 'Yo', // Ignored
+    width : 400,
+    renderTo : Ext.getBody()
+});
+</pre>

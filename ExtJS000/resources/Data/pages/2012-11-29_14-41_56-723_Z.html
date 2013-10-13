@@ -1,0 +1,31 @@
+<p>
+<code>Ext.toolbar.Toolbar</code>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&#124;
+&nbsp;&nbsp;&nbsp;&nbsp;
+<code>xtype : 'toolbar'</code>
+</p>
+
+<p>
+A toolbar is a container that typically contains buttons. The buttons are styled. 
+Toolbars are almost always used with panels. 
+</p>
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+    title : 'My Panel',
+    renderTo : Ext.getBody(),
+    bodyPadding : 8,
+    layout : 'vbox',
+    items : [ {
+        xtype : 'button',
+        text : 'Button One'
+    }],
+    dockedItems : [ {
+        xtype : 'toolbar',
+        dock : 'top',
+        items : [ {
+            xtype : 'button',
+            text : 'Button Alpha'
+        }]
+    }]
+});</pre>

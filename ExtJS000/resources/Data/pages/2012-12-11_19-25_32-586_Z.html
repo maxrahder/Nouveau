@@ -1,0 +1,18 @@
+<p>
+Like any OO language, if you need to do further initializations upon creation, you code a
+constructor. You may not need one at all.
+</p><b>Important</b>: If you create your own class hierarchy,
+your base class needs a constructor, like the following:
+</p>
+<pre class="runnable">
+<pre class="non-runnable">
+Ext.define('Mammal', {
+    config : {
+        name : 'Anonymous',
+    },
+    constructor : function(config){
+        this.initConfig(config);
+        this.callParent(config);
+        // Do whatever you need here.
+    }
+});</pre>

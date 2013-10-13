@@ -1,0 +1,15 @@
+<pre>
+&lt;script&gt;
+    <b>Ext.Msg.alert('Alert', ':-)');</b>
+&lt;/script&gt;</pre>
+
+<div type="expander" caption="Why doesn't it work?">
+<p>Because the <code>Ext.Msg.alert()</code> tries to render before the browser has finished reading and processing the page.
+</p>
+</div>
+
+<div type="expander" caption="Therefore &hellip;">
+<p>
+We need some way of saying "Hey Ext JS, please don't run this code until everything is ready to go."
+</p>
+</div>

@@ -1,0 +1,51 @@
+<pre class="runnable preview">
+Ext.define('MyApp.model.Usage', {
+    extend : 'Ext.data.Model',
+    fields : [ 'month', 'ie', 'ff', 'chrome', 'safari', 'opera' ]
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.model.Usage',
+    proxy : {
+        type : 'ajax',
+        url : '../Data/charts/browserUsage2011.json'
+    },
+    autoLoad : true
+});
+var chart = Ext.create('Ext.chart.Chart', {
+    store : store,
+    legend : {
+        position : 'right'
+    }, 
+    axes : [ {
+        type : 'Numeric',
+        position : 'left',
+        fields : [ 'ie', 'ff', 'chrome', 'safari', 'opera' ],
+        title : '2011 Browser Usage (%)'
+    }, {
+        type : 'Category',
+        position : 'bottom',
+        fields : [ 'month' ],
+        title : 'Month',
+        label: {
+            rotate: {degrees: 90}
+        } 
+    } ],
+    series : [ {
+        type : 'area',
+        axis : [ 'left', 'bottom' ],
+        xField : [ 'month' ],
+        yField : [ 'ie', 'ff', 'chrome', 'safari', 'opera' ]
+    } ]
+});
+
+Ext.create('Ext.container.Container', {
+    renderTo : Ext.getBody(),
+    layout : 'fit',
+    height : 350,
+    width : 500,
+    items : [ {
+        xtype : 'panel',
+        layout : 'fit',
+        items : [ chart ]
+    } ]
+});</pre>

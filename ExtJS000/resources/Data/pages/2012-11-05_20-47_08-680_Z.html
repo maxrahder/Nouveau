@@ -1,0 +1,13 @@
+<p>
+Any <code>Ext.util.Format</code> method can be referenced from within a template
+expression. The specified value is passed as the first argument of the function,
+and the returned function is used in the template.
+</p>
+<pre class="runnable">
+var o = { first : '  Groucho  ', last: 'Marx', born : new Date('1890/10/02')};
+var c = Ext.create('Ext.Component', {
+    renderTo: Ext.getBody(),
+    tpl: '{first:trim} was born {born:date("F j, Y")}'
+});
+c.update(o);
+</pre>

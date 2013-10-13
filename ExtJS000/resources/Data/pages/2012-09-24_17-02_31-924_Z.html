@@ -1,0 +1,11 @@
+<p>
+Call <code>Ext.define()</code> to define a class. Use <code>Ext.create()</code>
+to create an instance of a class.</p>
+<p>The <code>define()</code> function takes two 
+required parameters: the name of the class, and a config object that describes the new class.
+</p>
+<pre class="runnable">
+Ext.define('Mammal', {});
+var m = Ext.create('Mammal');
+alert('Instance of ' + m.$className + ' which extends ' + m.superclass.$className);</pre>
+<p>The <code>$className</code> property contains the class name. Knowing this can be handy when debugging.</p>

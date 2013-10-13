@@ -1,0 +1,23 @@
+<pre class="sample">
+&lt;head&gt;
+&lt;link rel="stylesheet" type="text/css" href="/extjs4/resources/css/ext-all.css"&gt;
+&lt;script src="/extjs4/ext-all.js">&lt;/script&gt;
+&lt;script&gt;<b>
+    var message = ':-)';
+    Ext.onReady(function() {
+        Ext.Msg.alert('Alert', message);
+    });
+</b>&lt;/script&gt;
+&lt;/head&gt;
+</pre>
+
+<div type="expander" caption="See the <kbd>Ext.onReady()</kbd>?" class="x-hidden">
+<p>
+"Hey Ext JS, once everything is ready, here's some code I want you to run." 
+</p>
+<p>
+Note that the <var>message</var> variable is outside of the <code>onReady</code>. It would work either
+way, but the point is that Ext JS code that tries to render components needs to be in the <code>onReady</code> function.
+</p>
+
+</div>

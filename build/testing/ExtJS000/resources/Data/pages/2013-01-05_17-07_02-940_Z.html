@@ -1,0 +1,16 @@
+<p>
+Normally, ".js" files are cached by your browser. 
+</p>
+<p>
+But the loader intentionally disables caching by by appending
+a "_dc" (don't cache) parameter to each HTTP call it uses to load files.
+This defeats whatever caching policy your server might have, and therefore 
+guarantees that you get a fresh copy of all components.
+</p>
+<p>This can be disabled using the <code>Ext.Loader</code>:</p>
+<pre>
+Ext.Loader.setConfig({
+    enabled: true,
+    disableCaching : false // Do not disable caching
+});
+</pre>

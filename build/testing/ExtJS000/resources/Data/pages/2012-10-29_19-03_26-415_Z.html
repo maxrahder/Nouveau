@@ -1,0 +1,16 @@
+<h3>Ext.Array.every(array, fn, [scope]):boolean</h3>
+<p>Returns boolean whether <em>every</em> element passes some rule. </p>
+<pre class="runnable">
+var allOk;
+var a = [{value: 1}, {value: 333}, {value: 3}];
+
+alert(Ext.Array.every(a, function(item){
+    return (item.value < 99); // Some business rule
+}));
+
+a = [{value: 1}, {value: 98}, {value: 3}];
+
+alert(Ext.Array.every(a, function(item){
+    return (item.value < 99); // Some business rule
+}));
+</pre>

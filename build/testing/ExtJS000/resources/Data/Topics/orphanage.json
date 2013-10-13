@@ -1,0 +1,259 @@
+{
+  "topicId": "orphanage",
+  "text": "Orphanage",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Debugging (Lee)",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-12-28_00-32_43-855_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "JS Lint",
+          "fileId": "2012-12-28_00-33_09-940_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "WebKit debugger",
+          "fileId": "2012-12-28_00-33_25-834_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Firebug",
+          "fileId": "2012-12-28_00-33_54-565_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Illuminations",
+          "fileId": "2012-12-28_00-34_20-874_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Data package",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Key Classes",
+          "fileId": "2012-12-17_17-31_01-941_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Reading the sample data",
+          "fileId": "2012-12-17_17-32_01-499_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "convert()",
+          "fileId": "2012-12-17_18-47_56-687_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Custom Validators",
+          "fileId": "2012-12-17_21-39_57-619_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Pie chart",
+      "fileId": "2012-12-07_01-40_57-511_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "MVC",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Example",
+          "fileId": "2013-01-03_13-39_06-063_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.application()",
+          "fileId": "2013-01-03_12-23_08-325_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Objectives",
+          "fileId": "2012-12-04_14-41_55-723_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Why Design Patterns?",
+          "fileId": "2012-12-04_14-44_05-807_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Code Fail",
+          "fileId": "2012-12-06_09-43_26-079_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "About MVC",
+          "fileId": "2012-09-26_13-47_52-516_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Benefits Sencha MVC",
+          "fileId": "2012-12-06_09-34_20-184_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Folder structure",
+          "fileId": "2012-12-05_16-12_27-929_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "app",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Model",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Models",
+                  "fileId": "2012-12-04_14-42_38-642_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Code Snippet",
+                  "fileId": "2012-12-05_10-41_15-699_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Proxies",
+                  "fileId": "2012-12-04_14-43_28-120_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Types of Proxies",
+                  "fileId": "2012-12-06_12-23_48-155_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Store",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Stores",
+                  "fileId": "2012-12-04_14-42_53-942_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Code snippet",
+                  "fileId": "2012-12-05_10-48_46-678_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "View",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Views",
+                  "fileId": "2012-12-04_14-43_03-651_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Code snippet",
+                  "fileId": "2012-12-06_09-14_22-835_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Controller",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Controllers",
+                  "fileId": "2012-12-04_14-43_16-734_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Code snippet",
+                  "fileId": "2012-12-06_09-11_39-158_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "app.js",
+              "fileId": "2012-12-06_09-45_27-737_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "index.html",
+              "fileId": "2012-12-06_09-46_06-077_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Lab",
+          "fileId": "2012-12-04_14-45_39-587_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    }
+  ]
+}

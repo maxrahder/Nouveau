@@ -1,0 +1,49 @@
+Global_CSS-css_mixin-background-gradient
+Background Gradient
+<p>Background gradients are also used throughout an application. This mixin allows for global changes across an application.</p>
+
+<p><strong>Creates a background gradient.</strong></p>
+<p>Example usage:<br />
+  &nbsp;&nbsp;&nbsp;&nbsp; .foo {<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @include background-gradient(#808080, matte, left);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p><strong>@param {Color} $bg-color</strong></br> 
+<em>The background color of the gradient</em></p>
+<p><strong>@param {String/List} [$type=$base-gradient]</strong></br> 
+<em>The type of gradient to be used. Can either be a String which is a predefined gradient name, or it can can be a list of color stops. If null is passed, this mixin will still set the `background-color` to $bg-color.</em></p>
+<p>The available predefined gradient names are:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bevel<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glossy<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recessed<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matte<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matte-reverse<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;panel-header<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tabbar<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tab<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tab-active<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tab-over<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tab-disabled<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-header<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-header-over<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-row-over<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-cell-special<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glossy-button<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glossy-button-over<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glossy-button-pressed</p>
+<p>Each of these gradient names corresponds to a function named <em>linear-gradient[name].</em></p>
+<p>Themes can override these functions to customize the color stops that they return.</p>
+<p>For example, to override the <em>glossy-button</em> gradient function add a function named &quot;<em>linear-gradient-glossy-button<em>&quot; to a file named &quot;<code>sass/etc/mixins/background-gradient.scss</code>&quot;<br />
+  in your theme.&nbsp; The function should return the result of calling the Compass linear-gradient function with the desired direction and color-stop information for the gradient.&nbsp; <br />
+  <br />
+  For example:<br />
+  @function linear-gradient-glossy-button($direction, $bg-color) {<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @return linear-gradient($direction, color_stops(<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mix(#fff, $bg-color, 10%),<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $bg-color 50%,<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mix(#000, $bg-color, 5%) 51%,<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $bg-color<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ));<br />
+  &nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p><strong>@param {String} [$direction=top]</strong></br> 
+<em>The direction of the gradient. Can either be `top` or `left`.</em></p>
+<p><strong>@member Global_CSS</strong></p>

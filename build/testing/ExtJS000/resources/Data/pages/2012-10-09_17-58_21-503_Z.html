@@ -1,0 +1,33 @@
+<p>
+Panels also have a <code>tools</code> array. Each element is a config passed for 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.panel.Tool" target="api"><code>Ext.panel.Tool</code></a>.
+</p>
+<p>
+Key configs are: 
+</p>
+<p>
+Running <code>setType()</code> passing a type string changes the icon.
+</p>
+<ul>
+<li><a href="http://docs.sencha.com/extjs/#!/api/Ext.panel.Tool-cfg-type" target="api"><code>type</code></a>, such as "gear" or "help" which determines the icon.</li>
+<li><code>handler</code></li>
+<li><code><a href="http://docs.sencha.com/extjs/4.2.1/#!/api/Ext.tip.QuickTipManager" target="api">tooltip</a></code></li>
+</ul>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+    title : 'My Panel',
+    renderTo : Ext.getBody(),
+    height : 200,
+    width : 200,
+    tools : [{
+        type : 'print'
+    }, {
+        type : 'gear',
+        tooltip : 'Click me',
+        handler : function(b){
+            alert('Thanks for clicking me.');
+        }
+    }]
+});
+</pre>
+

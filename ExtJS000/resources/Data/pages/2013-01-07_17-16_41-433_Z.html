@@ -1,0 +1,12 @@
+<p>The ability to render a template is built-in to the component base class. Here we add the template to a component.</p>
+<pre class="runnable">
+var data = { 
+    name: 'Homer Simpson',  
+    age: 38 
+};
+var c = Ext.create('Ext.Component', {
+    tpl : '&lt;h1&gt;{name} ({age})&lt;/h1&gt;',
+    renderTo : Ext.getBody(),
+});
+c.update(data);</pre>
+

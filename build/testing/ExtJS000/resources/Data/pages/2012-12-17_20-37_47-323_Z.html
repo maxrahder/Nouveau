@@ -1,0 +1,28 @@
+<p>The value be must in the array of values.</p>
+
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    fields : [ 'first', 'last', 'jobtitle' ],
+    validations: [ {
+        type: 'inclusion',
+        field: 'jobtitle',
+        list: ['CEO', 'Manager', 'Associate'],
+        message: 'Invalid job title'
+    } ]
+});
+
+var record = Ext.create('MyApp.model.Person', {
+	first: 'John',
+	last: 'Lennon',
+	jobtitle: 'Songwriter'
+});
+
+var errors = record.validate();
+if ( !errors.isValid() ) {
+    var message = '';
+    errors.each( function (error) {
+        message += error.field + ': ' + error.message + ''; 
+    });
+    Ext.Msg.alert('Errors', message);
+}</pre>

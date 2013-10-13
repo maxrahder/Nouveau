@@ -1,0 +1,11 @@
+<p>You may place JavaScript statements within square brackets.</p>
+<pre class="runnable">
+var data = { 
+    name: 'Homer Simpson',  
+    age: 38
+};
+var c = Ext.create('Ext.Component', {
+    tpl : '&lt;h1&gt;{[values.name.toUpperCase()]}&lt;/h1&gt;',
+    renderTo : Ext.getBody()
+});
+c.update(data);</pre>

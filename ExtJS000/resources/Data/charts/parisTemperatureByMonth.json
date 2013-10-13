@@ -1,0 +1,61 @@
+[ {
+    month : 'Jan',
+    high : 6,
+    low : 1,
+    precipitation: 17.8
+}, {
+    month : 'Feb',
+    high : 7,
+    low : 1,
+    precipitation: 21.7
+}, {
+    month : 'March',
+    high : 11,
+    low : 3,
+    precipitation: 24.2
+}, {
+    month : 'Apr',
+    high : 14,
+    low : 6,
+    precipitation: 24.6
+}, {
+    month : 'May',
+    high : 18,
+    low : 9,
+    precipitation: 26.2
+}, {
+    month : 'June',
+    high : 21,
+    low : 12,
+    precipitation: 25.1
+}, {
+    month : 'July',
+    high : 24,
+    low : 14,
+    precipitation: 21.7
+}, {
+    month : 'Aug',
+    high : 24,
+    low : 14,
+    precipitation: 21.4
+}, {
+    month : 'Sept',
+    high : 21,
+    low : 11,
+    precipitation: 15.6
+}, {
+    month : 'Oct',
+    high : 15,
+    low : 8,
+    precipitation: 25.3
+}, {
+    month : 'Nov',
+    high : 9,
+    low : 4,
+    precipitation: 22.4
+}, {
+    month : 'Dec',
+    high : 7,
+    low : 2,
+    precipitation: 26.6
+}]

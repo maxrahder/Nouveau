@@ -1,0 +1,32 @@
+<p>For dates, use <code>xtype:'datecolumn'</code> and a format string.</p>
+
+<pre class="runnable preview">
+var store = Ext.create('Ext.data.Store', {
+    fields:[ { name: 'born',  type: 'date' , dateFormat : 'Y/m/d'}, 'name' ],
+    proxy : { type : 'ajax', url : '../Data/json/marxBrothers.json' },
+    autoLoad : true
+});
+
+Ext.create('Ext.grid.Panel', {
+
+    store: store,
+    columns: [ { 
+        text: 'Name', 
+        dataIndex: 'name' 
+    }, { 
+            xtype : 'datecolumn', 
+            format : 'F j, Y',
+
+            text: 'Born', 
+            dataIndex: 'born',
+            width: 120 
+
+        } 
+    ],
+
+    title: 'The Marx Brothers',
+    height: 200,
+    width: 400,
+    renderTo: Ext.getBody()
+});
+</pre>

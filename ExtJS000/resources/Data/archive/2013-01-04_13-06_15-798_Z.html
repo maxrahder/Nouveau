@@ -1,0 +1,11 @@
+<p>
+Templates are designed to be used with objects or arrays. If your data is
+in a store use <code>Ext.Array.pluck()</code> to extract the values from
+each record. An array of records is passed to "load" handlers. Or use
+<code>getRange()</code> to get a range of records.
+</p>
+<pre class="runnable">
+myStore.load(function(records) {
+    var array = Ext.Array.pluck(records, 'data');
+    // Now use the array with the template.
+});</pre>

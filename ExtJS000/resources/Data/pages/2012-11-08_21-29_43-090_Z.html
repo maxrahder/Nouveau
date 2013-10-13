@@ -1,0 +1,35 @@
+<pre class="sample">
+series : [ {
+    type : 'line',
+    xField : 'month',
+    yField : 'high',
+    axis : ['left', 'bottom']
+} ]
+</pre>
+<p>Each item in the chart's <em>series</em> array specifies:</p>
+
+<div type="expander" caption="The series type" class="x-hidden">
+<p>
+The <em>type</em> config specifies a chart alias:
+<em>area</em>, 
+<em>bar</em>, 
+<em>column</em>, 
+<em>gauge</em>, 
+<em>line</em>, 
+<em>pie</em>, 
+<em>radar</em> or
+<em>scatter</em>.
+</p>
+</div>
+
+<div type="expander" caption="The field being plotted" class="x-hidden">
+<p>Cartesian and radar charts use <em>xField</em> and <em>yField</em>. Other charts use <em>field</em>.
+</div>
+
+<div type="expander" caption="The axis (for Cartesian series)" class="x-hidden">
+<p>
+Cartesian charts also specify which axes are being used: <em>bottom</em> or <em>top</em> and <em>left</em> or <em>right</em>.
+(Other chart types have a single axis, so there's no need to specify the axis.)
+</p>
+</div>
+

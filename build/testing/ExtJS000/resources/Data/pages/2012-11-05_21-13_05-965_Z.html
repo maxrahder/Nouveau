@@ -1,0 +1,17 @@
+<p>There are a few methods designed to be used as renderers.</p>
+<p><code>Ext.util.Format.dateRenderer()</code> and <code>Ext.util.Format.numberRenderer()</code> return a renderer function. Furthermore, since a renderer returns a value based on the first argument, many methods that take a single argument may also be used as a renderer.
+</p>
+<pre class="runnable">
+columns: [{
+    dataIndex: 'date',
+    renderer: Ext.util.Format.dateRenderer('Y-m-d')
+}, {
+    dataIndex: 'time',
+    renderer: Ext.util.Format.numberRenderer('0.000')
+}, {
+    dataIndex: 'cost',
+    renderer: Ext.util.Format.usMoney
+}, {
+    dataIndex: 'productCode',
+    renderer: Ext.util.Format.uppercase
+}]</pre>

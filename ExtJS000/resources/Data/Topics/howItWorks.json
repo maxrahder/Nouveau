@@ -1,0 +1,177 @@
+{
+  "topicId": "howItWorks",
+  "text": "How it Works",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "The Browser",
+      "fileId": "2012-09-19_00-49_21-480_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "DOM & CSS",
+      "fileId": "2012-11-26_16-31_16-605_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "For Example...",
+      "fileId": "2012-09-27_13-42_04-876_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "That's it...",
+      "fileId": "2012-09-27_14-21_40-380_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Low-level DOM",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-09-19_01-11_55-915_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Inserting Elements",
+          "fileId": "2012-09-19_00-51_37-051_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Manipulating Elements",
+          "fileId": "2012-09-19_00-52_12-520_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Low-level Commands are Problematic",
+          "fileId": "2012-09-19_00-52_57-448_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Review",
+          "fileId": "2012-11-26_19-53_27-527_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Low-level Ext JS",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-09-19_00-54_11-310_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Inserting Elements",
+          "fileId": "2012-09-19_00-54_45-550_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Manipulating Elements",
+          "fileId": "2012-09-19_00-55_21-651_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Visual Effects",
+          "fileId": "2012-09-19_00-55_12-283_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Events",
+          "fileId": "2012-09-19_00-55_40-103_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.select()",
+          "fileId": "2012-09-19_00-57_54-221_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Key Classes",
+          "fileId": "2012-09-19_00-57_28-215_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Moral of the Story",
+          "fileId": "2012-09-19_00-58_12-172_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Review",
+          "fileId": "2012-11-26_19-49_21-061_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Ext JS is a Component Library",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-11-26_19-59_05-576_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Example",
+          "fileId": "2012-11-26_20-02_54-528_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Look at that DOM!",
+          "fileId": "2012-11-26_20-28_22-353_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Review",
+          "fileId": "2012-11-26_22-26_53-128_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "The \"VM\"",
+      "fileId": "2012-09-19_00-49_39-512_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Summary",
+      "fileId": "2012-09-19_00-58_19-662_Z",
+      "html": "",
+      "leaf": true
+    }
+  ]
+}

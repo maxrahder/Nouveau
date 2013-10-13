@@ -1,0 +1,16 @@
+<p>When using <code>Ext.create()</code>, pass a single string or multiple strings. With the <code>tpl</code> property pass an object, a single string or an array of strings. 
+<p>
+<pre class="runnable">var c = Ext.create('Ext.Component', {
+    tpl: [
+        '&lt;h1&gt;', 
+        '{name}', 
+        '&lt;/h1&gt;', 
+        '&lt;h2&gt;', 
+        '{age}', 
+        '&lt;/h2&gt;' 
+    ],
+    //tpl : Ext.create('Ext.XTemplate','&lt;h1&gt;{name}&lt;/h1&gt;&lt;h2&gt;{age}&lt;/h2&gt;'),
+    //tpl: '&lt;h1&gt;{name}&lt;/h1&gt;&lt;h2&gt;{age}&lt;/h2&gt;',
+    renderTo : Ext.getBody()
+});
+c.update({ name: 'Homer Simpson', age: 38 });</pre>

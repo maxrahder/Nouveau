@@ -1,0 +1,25 @@
+<p>
+The items are arranged according to the rules of the container's layout. The
+layout is specified with the <code>layout</code> property. All containers have
+an associated layout.
+</p>
+<pre class="runnable">
+Ext.create('Ext.container.Container', {
+	layout : 'hbox',
+	items : [ {
+		xtype : 'button',
+		text : 'Alpha'
+	} , {
+		xtype : 'panel',
+		text : 'Button',
+		bodyPadding: 24,
+		items : [ {
+			xtype : 'button',
+			text : 'Beta'
+		} ]
+	}],
+	renderTo : Ext.getBody(),
+	height: 200,
+	width: 300
+});
+</pre>

@@ -1,0 +1,19 @@
+<p>As we discussed previously, default validation occurs whenever a change event is detected. You may, however, wish to defer your validation checking until a form submission is requested or some other event takes place.</b>
+To allow this to occur, the first step in this process is to disable immediate validation check by setting the <b>validateOnChange field property to false</b>. Once this has been accomplished you can manually invoke validation checks by invoking the following methods:
+</p>
+
+<h1>The following methods allow you to manually invoke data validation:</h1>
+
+<div type="expander" caption="Validating a single field">
+<p><code>Ext.form.Field.validate()</code></p>
+</div>
+
+<div type="expander" caption="Validating all fields on a form">
+<p><code>Ext.form.Basic.isValid()</code></p>
+</div>
+
+<div type="expander" caption="Validating without visually marking fields as invalid" >
+<p><code>Ext.form.Basic.hasInvalidField()</code></p>
+</div>
+
+<p><small><b>Note: </b><i> By default, field validation occurs whenever the form's submit() method is invoked. Disabled fields are not validated.</i></small></p>

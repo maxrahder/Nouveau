@@ -1,0 +1,285 @@
+<h1>Introduction</h1>
+<p>
+	You will do a <b>lot</b> in this lab.
+</p>
+<p>You will define two stores, two models, the combo box for
+	selecting the school, and you will wire-up the map.</p>
+<ol>
+
+	<li>Code the model for the school list
+		<p>First, we will retrieve the data used in the School combo
+			box. The feed for schools returns data that looks like this:</p> <pre>
+{
+	"data" : [ {
+		"id" : 15,
+		"name" : "Brown",
+		"fullname" : "Brown University",
+		"latitude" : 41.82703,
+		"longitude" : -71.40304
+	}, {
+		"id" : 13,
+		"name" : "Cal Poly",
+		"fullname" : "California Polytechnic State University",
+		"latitude" : 35.288299,
+		"longitude" : -120.65958
+	}, {
+		...
+	}]</pre>
+		<p>Therefore, we need a model named "School" with the fields id,
+			name, fullname, latitude and longitude. Sencha Cmd can create this
+			via:</p> <pre>sencha generate model -n School -f id,name,fullname,latitude,longitude</pre>
+		<p>Once you've generated this, use your editor and open
+			"model/School.js". Our model definition needs a proxy, coded like this:</p><pre>proxy: {
+    type: 'ajax',
+    url: 'http://yelp.senchabits.com/go?fn=schoollist',
+    reader: {
+        type: 'json',
+        root: 'data'
+    }
+}</pre>
+
+<p><small><b>Note:</b> The reader's <code>root</code> property is needed because the data feed nests the array within that property. The reader specifies that property via the <code>root</code> property.</small></p>
+
+	<li>Now code the Schools store
+		<p>Create a new file named "store/Schools.js". In it, define a new class that extends "Ext.data.Store". Besides the "extend" the class has two other descriptors, <code>model</code>, which is simply the name of the model "YelpExtplorer.model.School", and <code>autoLoad:true</code>.</p>
+	</li>
+
+<p><small><b>Note:</b> Stores can not be created by Sencha Cmd, so this will need to be done manually.</small></p>
+
+	<li>Add a controller to manage the school selection
+		<p>Use Sencha Cmd to generate a controller named Filter.</p> <pre>sencha generate controller -n Filter</pre>
+		<p>After you create it, use your text editor to open
+			"controller/Filter.js". There is not a lot there!</p>
+		<p>To have your Schools store loaded and created by the
+			controller, add a <code>stores</code> array with one entry, "Schools".</p>
+
+		<p>If you had created the Controller manually, you would also have to specify it in the controllers array specified in "app.js". If you open app.js now, you will see that this code has been added by Sencha Cmd automatically</p>
+
+	</li>
+
+	<li>Verify network traffic
+		<p>Once you've made the changes above you can refresh your
+			browser. There is no change in the user interface, but if you look in
+			the debugger at network traffic you should see the URL being fired
+			and the server's response.</p>
+		<p>You can also inspect the store by going to the debugger console
+			and typing "Ext.getStore('Schools');" If you drill down into the
+			store's data.items array you should see the 29 records in the store.</p>
+	</li>
+
+	<li>Add the Schools combo box to the filter panel
+		<p>The list of schools will be shown in a combo box at the top of the
+			Filter panel.</p>
+		<p>To code this, open "view/Filter.js" in your editor. Change its
+			<code>extend</code> descriptor to "Ext.panel.Panel". (If you were to save and refresh your
+			browser, you would see the "Filter" panel title.)</p>
+
+		<p>Add a <code>tbar</code> containing a single item, a combo box. We haven't
+			talked about form fields yet, so just use this code:</p> <pre>{
+    xtype : 'combobox',
+    itemId : 'schoolCombo',
+    fieldLabel : 'University',
+    labelWidth : 60,
+    width : 180,
+    emptyText : 'Select',
+    store : 'Schools',
+    displayField : 'name',
+    valueField : 'id'    
+} </pre>
+		<p>
+			<b>Note a few things.</b> The combo box will show the data from the Schools
+			store. By specifying the name of the store, the combo box
+			automatically fetches a reference using
+			<code>Ext.getStore()</code>
+			. The values shown in the dropdown are specified by the
+			"displayField" property. The associated value is specified via
+			"valueField". We are using an "itemId" so we can select the combo box
+			in the controller.
+		</p>
+		<p>After making those changes, save and refresh your browser. You
+			should see the Schools combo box in the west panel. Select the
+			dropdown and you will see the list of the schools in the Schools store.</p>
+
+		<p>Note that since you're using the xtype for combobox you're
+			getting the warning about needing a requires array. Add that to the
+			<code>YelpExtplorer.view.Filter</code> class descriptor.</p>
+<pre>requires: ['Ext.form.field.ComboBox']</pre>
+
+	</li>
+
+	<li>Define the Business model
+		<p>Now that the user can select the school, you need code to fetch
+			corresponding businesses.</p>
+		<p>That means you need a new model and store, and controller logic
+			that detects the school selection.</p>
+		<p>Here is what a business looks like in the feed:</p> <pre>{
+    "business_id" : "4L8sk1KU1tsHEVImKgGv8Q",
+    "full_address" : "602 W University Ave\nUrbana, IL 61801",
+    "categories" : [ "Doctors", "Health and Medical", "Internal Medicine" ],
+    "photo_url" : "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/...gif",
+    "review_count" : 3,
+    "name" : "Kyrouac Jeffrey MD",
+    "url" : "http://www.yelp.com/biz/kyrouac-jeffrey-md-urbana",
+    "longitude" : -88.214384,
+    "stars" : 5,
+    "latitude" : 40.116792
+}
+</pre>
+<p>Use Sencha Cmd to define a new model named "Business".</p>
+<pre>sencha generate model -n Business -f business_id,full_address,categories,photo_url,review_count,name,url,longitude,stars,latitude
+</pre>
+<p>This is a long <b>single</b> statement, so you may see a line wrap in your browser. Note that there are <b>no</b> spaces in the list of fields, and in this case we aren't
+bothering to specify the data type of any field.</p>
+
+		<p>Once you define the model, open "model/Business.js". Note that
+			in the feed, the business id is in a property named "business_id".
+			</br>
+			</br>
+                        Add an "idProperty" attribute with that name.</p>
+		<p>You also need to add the proxy. The feed is nested in a "data"
+			property, just like the school feed. Therefore, the proxy is
+			identical to the one for the School, except that the URL is a little
+			different. Here is the proxy:</p> <pre>proxy : {
+    type : 'ajax',
+    url : 'http://yelp.senchabits.com/go?fn=schoolbiz',
+    reader : {
+        type : 'json',
+        root : 'data'
+    }
+}</pre>
+	</li>
+
+	<li>Add the Businesses store
+		<p>Create "store/Businesses.js" and define the store. This is
+			similar to the Schools store, except we want the data to be sorted.
+			Therefore, code a "sorters" array property with one value, "name".
+			See if you can figure this code out for yourself. Remember to also set the
+			model to "YelpExtplorer.model.Business".</p>
+	</li>
+
+	<li>Add the controller logic to detect the combo box change and
+		fetch the corresponding businesses
+		<p>Recall that controllers add component selection and event handling in their
+<code>init()</code> method. Open "controller/Filter.js" and add this code.
+		<pre>init: function() {
+    this.control({
+        'yepfilter #schoolCombo': {
+            change: this.onSchoolChange
+        }
+    });
+}</pre>
+<p>Note that the selector is specifying the xtype for the filter panel, and the
+<code>itemId</code> for the combobox.</p>
+
+<p>Now you need to code the <code>onSchoolChange</code> method.
+
+		</p> 
+<pre>onSchoolChange: function(combo, newValue, oldValue) {
+    console.log('onSchoolChange');
+}</pre>
+
+		<p>Save and refresh your browser. You should see the console log
+			being run as you select schools in the dropdown. If you don't, have
+			your instructor take a look at your code.</p>
+
+		<p>
+			Once you verify
+			<code>onSchoolChange</code>
+			is being run, modify it to reflect this logic. This code loads the businesses store, using the selected
+			school ID.
+		<pre>onSchoolChange: function(combo, newValue, oldValue) {
+    var school = this.getSchoolsStore().getById(newValue);
+    this.getBusinessesStore().load({
+        params: {
+            schoolid: school.getId()
+        }
+    });
+}</pre>
+
+		<p><b>Important</b>: Since the controller is referencing the businesses store via <code>this.getBusinessesStore()</code>,
+			you need to add "Businesses" to the controller's stores array. 
+		</p>
+
+	</li>
+
+
+
+	<li>We are almost finished!
+		<p>Now we want to have the map show the school's businesses.</p>
+		<p>To do that, we first need to add a Google libraries to the
+			application. Edit "index.html" and add this line to the &lt;head&gt; 
+section:</p> <pre>&lt;script src="http://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=false"&gt;&lt;/script&gt;</pre>
+		<p>
+			Then add two things to the <code>Filter</code> controller. First, add a reference to the map panel. </p>
+<pre>
+refs: [{
+    ref: 'map',
+    selector: 'yepmap'
+}]
+</pre>
+
+                <p>Save and refresh, to make sure there are no syntax errors.</p>
+		<p>
+			Then, add this code to the end of the
+			<code>onSchoolChange</code> method:
+<pre>
+this.getMap().centerMap( school.get('latitude'), school.get('longitude') );</pre>
+		<p>This code gets a reference to the map, using the "ref" you just
+			created, and runs a method that centers the map at the specified
+			location.</p>
+		<p>Save, refresh and select a school. You should see the map
+			centered at the school's location.</p>
+	</li>
+	<li>Modify Main view to pass Businesses store to Map
+		<p>The map class is pre-coded to reflect the store's records. To
+			make this work, edit "view/Main.js" and add <code>store:'Businesses'</code> to
+			the config for the map. That way the map knows about the store,
+			and should plot a marker for each business.</p><pre>{
+    xtype: 'yepmap',
+    title: 'Map',
+    store : 'Businesses'
+}</pre>
+			
+		<p>Make the change, save and refresh. Then select a school. You
+			should see all its nearby businesses marked in a Google map!</p>
+	</li>
+	<li>Add a ref for the school combo box so you can set the initial selection
+		<p>Edit "controller/Filter" and add to <code>refs</code>.
+</p>
+<pre>
+{
+    ref: 'schoolCombo',
+    selector: 'yepfilter #schoolCombo'
+}
+</pre>
+
+	<li>Automatically select a school when store is loaded
+		<p>Edit "controller/Filter" and add to the <code>init</code> function listening for the <code>load</code> event.
+<pre>
+this.getSchoolsStore().on('load', this.onSchoolsLoad, this);
+</pre>
+
+        <p>Write the event handler 
+ <code>onSchoolsLoad</code> to set the initial selection in the combo box.</p>
+<pre>onSchoolsLoad: function(store, records) {
+    var combo = this.getSchoolCombo();
+    var school = store.findRecord('name', 'Illinois');
+    combo.setValue(school); // Triggers the combobox change event
+}</pre>
+
+<p>You're free to choose any initial school: UC Berkeley, Stanford, Cal Tech, Cornell, Michigan, Maryland or any of the schools listed in the combobox.</p>
+			
+		<p>Make the change, save and refresh. The first school should now load automatically and populate the combo box and the map!</p>
+	</li>
+
+</ol>
+
+
+
+
+<h1>Conclusion</h1>
+<p>You did a lot in this lab! You used Sencha Cmd extensively to
+	generate models and controllers, added event handling to the control
+	and added "refs" to the controller. You defined a store, and added
+	static properties and calculated field to a model.</p>
+<p>The YelpExtplorer application is really starting to do things!</p>

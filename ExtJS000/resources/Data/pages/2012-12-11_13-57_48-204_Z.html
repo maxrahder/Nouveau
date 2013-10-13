@@ -1,0 +1,78 @@
+<h1>Introduction</h1>
+<p>
+In this walkthrough, you will work with Sencha Architect 2 for Ext JS projects.</p>
+Together with your instructor, you will perform the following tasks:
+</p>
+<ul>
+<li>Working with column templates</li>
+</ul>
+
+<p><small>This lab requires the Sencha Architect project files created in the previous Walkthrough <b>4. Lab: Custom Component</b> of this topic.</small></p>
+
+<h1>Steps</h1>
+
+<h2>Create a controller</h2>
+<ol>
+<li><p>In the Project Inspector, click <b>[+]</b> and choose <b>Controller</b></p></li>
+<li><p>On the new controller, set the following property:
+<ul>
+<li><p>userClassName: <b>Business</b></p></li>
+</ul>
+</p></li>
+</ol>
+<h2>Add a selectionchange event listener to the Grid</h2>
+<ol>
+<li><p>Click on the <b>Business grid</b></p></li>
+<li><p>Click <b>[+]</b> next to <b>Event Bindings</b></p></li>
+<li><p>Listen for a <b>selectionchange</b> event
+<p>In the text field, type <b>sel</b>. <br/>
+<p><small><b>
+Note:</b><i> You will see the list of events filtered down to 2 events.</i></small></p>
+
+<li><p>Choose <b>selectionchange</b> from the drop down list.
+</p></li>
+</ol>
+<h2>Move the new event to the Controller</h2>
+
+<ol>
+<li><p>Right-click on the <b>selectionchange</b> event under the grid.</p></li>
+<li><p>Hover your mouse over <b>Convert to Action</b>, and select the <b>Business controller</b> from the drop down.
+<p><small>You will see the event listener listed under the Business controller, with a red alert icon.</small></p></p></li>
+<li><p>Click on the alert icon.
+<p><small><b>Note: </b> <i>The text of the alert is "A valid controller action must have a fn, name, and controlQuery set." In this case, the controlQuery is missing.</i></small></p>
+</p></li>
+</ol>
+<h2>Writing the code for the function</h2>
+<ol>
+<li><p>Click on the <b>selectionchange</b> event in the Controller</p></li>
+<li><p>Set the following property:
+<ul>
+<li><p>controlQuery: <b>bizgrid</b></p></li>
+</ul>
+</p></li>
+<li><p>
+Click on the <b>Business</b> Controller, and click the code view
+<p><small>Review the code</small></p>
+</p></li>
+<li><p>Click <b>[+]</b> next to <b>References</b></p></li>
+<li><p>Enter the following properties:
+<ul>
+<li><p>ref: <b>bizDetail</b></p></li>
+<li><p>selector: <b>bizdetail</b></p></li>
+<p><small><b>Note: </b> <i>Because the right side is narrow, it is difficult to see that the first field is looking for the reference and the second the selector. You may wish to expand the right section of the Architect interface. Just move your mouse over the dividing area and drag to the left.</i></small></p>
+</ul>
+</p></li>
+<li><p>Click on the <b>onselectionchange</b> controller function, in code view and add the following code into the <b>onGridpanelSelectionChange</b> function
+<pre>if (selected.length > 0) {
+   this.getBizDetail().update(selected[0].data);
+}</pre>
+</p></li>
+</ol>
+
+<h2>Save, Publish and Preview the Application</h2>
+You should be able to click rows within the grid, and see the Name, Address and Photograph of the selected business in the custom component on the right side.
+
+<h1>Conclusion</h1>
+<p>We started with an empty page and used Sencha Architect to create a functioning grid that pulls in data from a JSON file. You formatted the grid and the data and set up several templates. (These were about the only pieces of code that you had to write and they were rather trivial.) You created a controller that listened for an event on the grid and then populated a template with the detail on that row of data. All in all, you have accomplished much, and again, have had to write very little code. Architect has generated perfectly formatted code written to best practices for you. Can you see the benefits of this tool already?</p>
+<br />
+<br />

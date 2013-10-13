@@ -1,0 +1,69 @@
+<p>
+Cartesian series are plotted against two axes &mdash; typically the left and bottom. But right and top axes may also be used.
+This chart has three series. The column series is plotted against the bottom and right axes.
+</p>
+<pre class="runnable preview">
+Ext.define('MyApp.model.Sales', {
+    extend : 'Ext.data.Model',
+    fields : [ 'month', 'high', 'low' , 'precipitation']
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.model.Sales',
+    proxy : {
+        type : 'ajax',
+        url : '../Data/charts/parisTemperatureByMonth.json'
+    },
+    autoLoad : true
+});
+
+var chart = Ext.create('Ext.chart.Chart', {
+    store : store,
+    axes : [ {
+        type : 'Numeric',
+        position : 'left',
+        title : 'Temperature (centigrade)',
+        minimum : 0,
+        maximum : 25
+    },{
+        type : 'Category',
+        position : 'bottom',
+        fields : [ 'month' ],
+        title : 'Month'
+    }, {
+        type : 'Numeric',
+        position : 'right',
+        title : 'Precipitation (mm)',
+        minimum : 10,
+        maximum : 30
+    } ],
+    series : [ {
+        type : 'line',
+        axis : 'left',
+        xField : 'month',
+        yField : 'high'
+    }, {
+        type : 'line',
+        axis : 'left',
+        xField : 'month',
+        yField : 'low'
+    }, {
+        type : 'column',
+        axis : 'right',
+        xField : 'month',
+        yField : 'precipitation'
+    }  ]
+});
+
+Ext.create('Ext.container.Container', {
+    renderTo : Ext.getBody(),
+    layout : 'fit',
+    height : 350,
+    width: 775,
+    items : [ {
+        xtype : 'panel',
+        layout : 'fit',
+        items : [ chart ]
+    } ]
+});
+
+</pre>

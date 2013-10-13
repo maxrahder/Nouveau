@@ -1,0 +1,49 @@
+<pre class="runnable preview">
+Ext.define('MyApp.model.Sales', {
+    extend : 'Ext.data.Model',
+    fields : [ 'month', 'high', 'low' , 'precipitation']
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.model.Sales',
+    proxy : {
+        type : 'ajax',
+        url : '../Data/charts/parisTemperatureByMonth.json'
+    },
+    autoLoad : true
+});
+
+var chart = Ext.create('Ext.chart.Chart', {
+    store : store,
+    axes : [ {
+        type : 'Numeric',
+        position : 'left',
+        title : 'Precipitation (mm)',
+        minimum : 10,
+        maximum : 30
+    } ,{
+        type : 'Category',
+        position : 'bottom',
+        fields : [ 'month' ],
+        title : 'Month'
+    } ],
+    series : [ {
+        type : 'column',
+        axis : [ 'left', 'bottom' ],
+        xField : 'month',
+        yField : 'precipitation',
+        yPadding : 20
+    }  ]
+});
+
+Ext.create('Ext.container.Container', {
+    renderTo : Ext.getBody(),
+    layout : 'fit',
+    height : 350,
+    items : [ {
+        xtype : 'panel',
+        layout : 'fit',
+        items : [ chart ]
+    } ]
+});
+
+</pre>

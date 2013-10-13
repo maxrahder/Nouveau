@@ -1,0 +1,19 @@
+<h3>Internally, the 5 types are simply calling <code>Ext.Msg.show()</code> with user-supplied and hard-coded configs.</h3>
+
+<div class="readonly">
+	<pre class="runnable">
+	confirm: function(cfg, msg, fn, scope) {
+	       if (Ext.isString(cfg)) {
+	           cfg = {
+	               title: cfg,
+	               icon: this.QUESTION,
+	               msg: msg,
+	               buttons: this.YESNO,
+	               callback: fn,
+	               scope: scope
+	           };
+	       }
+	       return this.show(cfg);
+	   }
+	</pre>
+</div>

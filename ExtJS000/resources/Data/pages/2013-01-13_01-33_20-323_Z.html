@@ -1,0 +1,26 @@
+<p>A <code>Ext.grid.column.RowNumberer</code> numbers each row.</p>
+
+<pre class="runnable preview">
+Ext.tip.QuickTipManager.init();
+var members = Ext.create('Ext.data.Store', {
+    autoLoad : true,
+    fields : [ 'first', 'last', 'currentmember', 'networth' ],
+    proxy : { type : 'ajax', url : '../Data/json/aerosmith.json' }
+});
+
+Ext.create('Ext.grid.Panel', {
+    store : members,
+    columns : [ {
+        xtype : 'rownumberer' 
+    }, {
+        text : 'Name',
+        xtype : 'templatecolumn',
+        tpl : '{first} {last}',
+        dataIndex: 'last',
+        flex : 1
+    }
+],
+    title : 'Aerosmith',
+    width : 400,
+    renderTo : Ext.getBody()
+});</pre>

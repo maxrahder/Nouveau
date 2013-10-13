@@ -1,0 +1,29 @@
+<p>
+With so many examples in the API documentation, it's not unusual to copy and paste code. But that can some times
+lead to unnecessary nesting.
+</p>
+<p>
+Here's a window containing a single panel with some buttons. But a window <em>is</em> a panel, so there's 
+no need to have the nested panel.
+</p>
+<pre class="runnable">
+Ext.create('Ext.window.Window', {
+
+    layout : 'fit',       // Remove
+    items : [ {           // Remove
+        xtype: 'panel',   // Remove
+        buttons : [ {
+            text : 'Save'
+        }, {
+            text : 'Cancel'
+        } ]
+    } ]                   // Remove
+    
+    , 
+    title : 'My Dialog',
+    height : 200, width : 200,
+    x : 1, y : 1,
+    autoShow : true
+});
+</pre>
+

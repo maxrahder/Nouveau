@@ -1,0 +1,28 @@
+<p>
+The range of values for an axis is the minimum and maximum shown on its scale. 
+</p>
+
+<div type="expander" caption="fields[]" class="x-hidden">
+The <em>fields</em> array names fields in the data 
+store. When used, the axis simply looks in the store at all the values for the 
+specified fields, and sets the maximum and minimum values based on what it finds. 
+</div>
+
+<div type="expander" caption="Explicitly specifying the range" class="x-hidden">
+
+<p>Each axis type also provides a way to explicitly set the range of values:</p>
+<ul>
+<li><em>minimum</em> and <em>maximum</em> for numeric and gauge axes</li>
+<li><em>dateFrom</em> and <em>dateTo</em> for a time axis</li>
+<li><em>categoryNames</em> for a category axis</li>
+<li><em>maximum</em> for a radial axis</li>
+</ul>
+<p>
+These can be used in combination with <em>fields</em>, with the explicit value taking precedent. 
+</p>
+
+</div>
+
+
+
+

@@ -1,0 +1,15 @@
+<pre class="runnable">
+Ext.create('Ext.Component', {
+    html: 'Hello world!',
+    style : {border: 'thin solid red'},
+    width: 300,
+    height: 100,
+    renderTo: Ext.getBody()
+});</pre>
+
+<p>
+The <code>height</code> and <code>width</code>
+configs are not used as often as you might think, because components either have a natural size or 
+their size is determined by their parent's layout manager.
+</p>
+

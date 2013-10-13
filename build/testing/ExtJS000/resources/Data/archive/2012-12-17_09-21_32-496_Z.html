@@ -1,0 +1,68 @@
+<ul>
+<li>Easily change color contrasts.</li>
+</ul>
+<table>
+<tr>
+<td>
+<strong>SCSS</strong><br/>
+<pre>
+$red: #FF0000;
+$blue: #0000FF;
+.dark {
+   background: darken($red, 20%);
+}
+</pre>
+<pre>
+.light {
+   background: lighten($red, 20%);
+}
+</pre>
+<pre>
+.color-mix {
+   background: $red + $blue;
+}
+</pre>
+<pre>
+.alpha {
+  background: transparentize($red, 0.25);
+}
+</pre>
+</td>
+<td>&nbsp;&nbsp;</td>
+<td>
+<strong>Generated CSS</strong><br/>
+<pre>
+.dark{
+   background: #990000
+}
+</pre>
+<pre>
+.light{
+   background: #FF6666
+}
+</pre>
+<pre>
+.color-mix{
+   background:fuchsia
+}
+</pre>
+<pre>
+.alpha{
+   background: rgba(255, 0, 0, 0.75)
+}
+</pre>
+</td>
+<td>
+<strong>Preview</strong><br/>
+
+<div class="block red">red</div>
+<div class="block blue">blue</div>
+<br/>
+<div class="block dark">.dark</div>
+<div class="block light">.light</div>
+<div class="block color-mix">.color-mix</div>
+<div class="block alpha">.alpha</div>
+
+</td>
+</tr>
+<table>

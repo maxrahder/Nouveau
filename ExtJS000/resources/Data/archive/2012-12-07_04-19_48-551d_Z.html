@@ -1,0 +1,17 @@
+<h3>Internally, the 5 types are simply calling <code>Ext.Msg.show()</code> with user-supplied and hard-coded configs.</h3>
+
+<div class="readonly">
+	<pre class="runnable">
+	progress : function(cfg, msg, progressText){
+	       if (Ext.isString(cfg)) {
+	           cfg = {
+	               title: cfg,
+	               msg: msg,
+	               progress: true,
+	               progressText: progressText
+	           };
+	       }
+	       return this.show(cfg);
+	   }
+	</pre>
+</div>

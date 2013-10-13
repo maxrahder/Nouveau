@@ -1,0 +1,21 @@
+<p>As you know, event handling is done via the <code>Ext.util.Observable</code>
+mixin.
+</p>
+<p>
+In a MVC application, you typically add the event handler using a component selector
+in the controller's <code>init()</code> method. But if you have a reference to an
+observable object, there is other syntax for adding an event handler.
+</p>
+<p>You add listeners via:
+</p>
+<ul>
+<li>The <code>listeners</code> config</li>
+<li>The <code>on()</code> or <code>addListener()</code> method</li>
+</ul>
+<p>You remove listeners via:</p>
+<ul>
+<li>The <code>un()</code> or <code>removeListeners()</code> method</li>
+<li>The <code>clearListeners()</code> method</li>
+</ul>
+
+ 

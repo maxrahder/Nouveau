@@ -1,0 +1,34 @@
+<pre class="runnable">
+var store = Ext.create('Ext.data.Store', { 
+   fields: ['name'], 
+   proxy : { 
+      type : 'ajax', 
+      url : '../Data/json/marxBrothers.json' 
+   }
+});
+
+var combo = Ext.create('Ext.form.field.ComboBox', {
+   fieldLabel : 'Brother', 
+   displayField : 'name', 
+   valueField : 'name', 
+   queryMode : 'local', 
+   store : store
+});
+
+// System event
+store.on('load', function(store) { 
+   alert(store.getCount() + ' records have been loaded.'); 
+});
+
+// Lifecycle event
+combo.on('afterrender', function(c) { 
+   alert('The combobox has rendered.'); 
+});
+
+// User event
+combo.on('change', function(c) { 
+   alert('The value is ' + c.getValue()); 
+});
+
+store.load();
+combo.render(Ext.getBody());</pre>    

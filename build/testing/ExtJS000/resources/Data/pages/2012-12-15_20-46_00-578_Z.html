@@ -1,0 +1,38 @@
+<ul>
+<li><p>A tree panel has several properties that can determine its look and feel.</li>
+<li><p><code>lines</code> turns the appearance of lines between the nodes on and off. Default is true.</li>
+<li><p><code>useArrows</code> adds triangles to the left of the tree. Default is false.</li>
+<li><p><code>animate </code> animates node expansion/collapsing. Default is the value of <code>Ext.enableFx</code>, which by default is true.</li>
+</ul>
+
+<pre class="runnable preview">
+Ext.create('Ext.tree.Panel', {
+    lines: false,
+    useArrows: true,
+    animate: false,
+    root: {
+        text: 'Root Node',
+        expanded: true,
+        children: [{
+            text: 'Child 1',
+            expanded: true,
+            children: [{
+                text: 'Child 1.1',
+                leaf: true
+            }, {
+                text: 'Child 1.2',
+                leaf: true
+            }]
+        }, {
+            text: 'Child 2',
+            expanded: true,
+            children: [{
+                text: 'Child 2.1',
+                leaf: true
+            }]
+        }]
+    },
+    title: 'Tree With Triangles and No Lines',
+    renderTo: Ext.getBody()
+});
+</pre>

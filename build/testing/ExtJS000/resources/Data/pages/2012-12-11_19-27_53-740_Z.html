@@ -1,0 +1,20 @@
+<p>
+But in OO programming, properties aren't used very much, because it's better to use 
+accessor methods; we'd rather have programmers run <code>getName()</code> or 
+<code>setName()</code> instead of using the property directly. One benefit is that if we have
+a setter we can add a business rule or fire an event as the setter is run.
+</p>
+<p>
+To automatically generate accessor methods, use the <code>config</code> property. 
+</p>
+<pre class="runnable">
+Ext.define('Mammal', {
+    config : {
+        name : 'Anonymous',
+    }
+});
+var a = Ext.create('Mammal');
+
+alert(a.getName()); // Alerts 'Anonymous'
+a.setName('Roger');
+alert(a.getName()); // Alerts 'Roger'</pre>

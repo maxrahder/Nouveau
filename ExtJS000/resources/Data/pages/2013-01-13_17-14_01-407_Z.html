@@ -1,0 +1,17 @@
+<pre>
+Ext.define('Associations.model.Customer', {
+    extend : 'Ext.data.Model',
+    fields : [ 'id', 'name', 'phone' ],
+
+<div style="background-color: yellow">    associations : [ {
+        type : 'hasMany',
+        model : 'Associations.model.Order',
+        name : 'orders',
+        foreignKey : 'customer_id'
+    } ],</div>
+    proxy : {
+        type : 'ajax',
+        url : 'customer.php'
+    }
+});
+</pre>

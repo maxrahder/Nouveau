@@ -1,0 +1,66 @@
+<p>
+An 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.grid.column.Action" target="api">Ext.grid.column.Action</a> column has a set of sub-columns. Each may have an icon and event handler.</p><p>Look at the code and note the three ways of specifying the icon, and
+note the handler signature.
+</p>
+
+<pre class="runnable preview">
+Ext.tip.QuickTipManager.init();
+var members = Ext.create('Ext.data.Store', {
+    autoLoad : true,
+    fields : [ 'first', 'last', 'currentmember', 'networth' ],
+    //sorters: [{property: 'networth', direction: 'DESC'}],
+    proxy : { type : 'ajax', url : '../Data/json/aerosmith.json' }
+});
+
+Ext.create('Ext.grid.Panel', {
+    store : members,
+    columns : [ {
+        text : 'Name',
+        xtype : 'templatecolumn',
+        tpl : '{first} {last}'
+    }, {
+        text : 'Net Worth',
+        dataIndex : 'networth',
+        xtype : 'numbercolumn',
+        align : 'right',
+        format : '$0,0'
+    }, {
+        text : 'Current Member',
+        dataIndex : 'currentmember',
+        xtype : 'booleancolumn',
+        trueText : 'Yes',
+        falseText : 'No'
+    }, {
+        xtype : 'actioncolumn',
+        flex : 1,
+        items : [ {
+            icon : 'resources/images/arrow_up.png',
+            handler : function(grid, rowIndex, colIndex, item, event, record) {
+                record.set('networth', record.data.networth*1.1);
+            }
+        }, {
+            iconCls : 'info',
+            handler : function(grid, rowIndex, colIndex, item, event, record) {
+                Ext.Msg.alert('Aerosmith', 'You selected ' + record.get('first'));
+            }
+        },{
+            getClass : function(value, meta, record){
+                return record.get('currentmember')?'remove':'add';
+            },
+            handler : function(grid, rowIndex, colIndex, item, event, record) {
+                var member = record.get('currentmember');
+                var name = record.get('first');
+                var s = member?'Kick ' + name + ' out of the band?':'Let ' + name + ' rejoin the band?';
+                Ext.Msg.confirm('Aerosmith', s, function(button){
+                    if (button === 'yes'){
+                        record.set('currentmember', !member);
+                    }
+                });
+            }
+        } ]
+    } ],
+    title : 'Aerosmith',
+    width : 400,
+    renderTo : Ext.getBody()
+});</pre>

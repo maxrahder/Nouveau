@@ -1,0 +1,43 @@
+<h1>Introduction</h1>
+
+<p>In this short lab, you'll dynamically add tabs to a tab panel.</p>
+
+<ol>
+
+<li>Review the solution
+<p>
+Run 
+<a href="http://localhost/SenchaTraining/ExtJS251/LabSolutions/TabPanel/" target="lab">the solution</a>. The application contains a split button, and
+an empty tab panel. As you choose from the split button, a new tab is added.
+</p>
+</li>
+
+<li>Take a look at the code
+<p>
+Edit <kbd>Labs/TabPanel/app/view/Viewport.js</kbd>. Note how the toolbar 
+is coded: when the user selects an item from the split button, the 
+<code>addPerson()</code> method is run. 
+</p>
+</li>
+
+<li>Finish the implementation of <code>addPerson()</code>
+<p>
+The <code>addPerson()</code> method has comments telling you what to do.</p>
+<p>You may want to review 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.panel.Panel-method-add" target="api">the API documentation for the <code>add()</code> method</a>. The <code>add()</code> method is straightforward. You can add an item config exactly like you would add it in the container's
+<code>items</code> array. 
+</p>
+<p>
+The add method returns a reference to the newly added component. To make it the 
+current tab, run <code>setActiveTab()</code>, passing the new component.
+</p>
+</li>
+
+</ol>
+<h1>Conclusion</h1>
+<p>
+You can easily add components to any container by passing the config object for the 
+new component.
+</p>
+<p>The "voice" of Scooby Doo was Don Messick, who also did the voice of Droopy the dog in the
+Tex Avery series of cartoons of the same name, Astro the dog in the Jetsons, Papa Smurf, Dr. Quest in Johnny Quest and others.</p>

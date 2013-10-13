@@ -1,0 +1,12 @@
+Low-level DOM
+<pre class="runnable">
+var el = document.createElement('p');
+el.innerHTML = 'Hi there';
+el.setAttribute('id', 'myParagraph');
+document.body.appendChild(el);
+</pre>
+<hr/>
+Low-level Ext JS
+<pre class="runnable">
+Ext.getBody().update('&lt;p id="myParagraph"&gt;Hi there&lt;/p&gt;');
+</pre>

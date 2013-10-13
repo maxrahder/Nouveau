@@ -1,0 +1,28 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.Checkbox" target="api"><code>Ext.form.CheckboxGroup</code></a></p>
+
+A field container which has a specialized layout for arranging Ext.form.field.Checkbox controls into columns, and provides convenience Ext.form.field.Field methods for getting, setting, and validating the group of checkboxes as a whole.
+
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    title: 'Checkbox Group',
+    width: 300,
+    height: 125,
+    bodyPadding: 10,
+    renderTo: Ext.getBody(),
+    items:[{
+        xtype: 'checkboxgroup',
+        fieldLabel: 'Two Columns',
+        // Arrange checkboxes into two columns, distributed vertically
+        columns: 2,
+        vertical: true,
+        items: [
+            { boxLabel: 'Item 1', name: 'rb', inputValue: '1' },
+            { boxLabel: 'Item 2', name: 'rb', inputValue: '2', checked: true },
+            { boxLabel: 'Item 3', name: 'rb', inputValue: '3' },
+            { boxLabel: 'Item 4', name: 'rb', inputValue: '4' },
+            { boxLabel: 'Item 5', name: 'rb', inputValue: '5' },
+            { boxLabel: 'Item 6', name: 'rb', inputValue: '6' }
+        ]
+    }]
+});
+</pre>

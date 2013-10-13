@@ -1,0 +1,139 @@
+<h1>Introduction</h1>
+<p>In this lab, you will code the dataview, and sync its row
+    selection to the rest of the user interface.</p>
+
+<ol>
+
+    <li>Plan what you will be doing
+        <p>Under the "View" tab you need a dataview, wired up to the
+            Businesses store. You will be adding a few properties that
+            specify CSS classes to use as the user mouses over or
+            selects items.</p>
+        <p>Then you will update the Business controller to detect a
+            select on the view. The event handler will sync the user
+            interface with the selected record.</p>
+    </li>
+
+    <li>Modify <tt>view/View.js to show businesses</tt>
+    
+        <p>Have the yepview extend <code>Ext.view.View</code> and add a few
+            properties:</p> <pre>autoScroll : true,
+emptyText : 'There are no matching businesses.',
+padding : 8,
+tpl : '&lt;div class="businesses"&gt;&lt;tpl for="."&gt;&lt;div class="business"&gt;&lt;figure&gt;&lt;img src="{photo_url}" /&gt;&lt;figcaption>{name}&lt;/figcaption>&lt;/figure&gt;&lt;/div&gt;&lt;/tpl>&lt;/div&gt;',
+itemSelector : 'div.business',
+overItemCls : 'over',
+selectedItemCls : 'selected'</pre>
+
+        <p>Notice that the itemSelector matches the div within the
+            template for-loop.</p>
+            
+        <p>Since we have just created our content, remove the <code>html</code>
+            property.</p>
+
+    </li>
+
+    <li>Add a style sheet
+        <p>
+            The dataview specifies <code>overItemCls</code> and <code>selectedItemCls</code>.
+            These are applied as the user mouses over an item, or
+            selects an item. Therefore, we need styles for these CSS
+            class names. Create a new file, <b>stylesheet.css</b> and
+            place it at the root of the YelpExtplorer folder (at the
+            same level as the "index.html". Here is the content of the
+            CSS file:
+        </p> <pre>.businesses figure {
+	margin: 0
+}
+.businesses figcaption {
+	text-align: center;
+	font-size: 7pt
+}
+.businesses .business {
+	height: 134px;
+	width: 108px;
+	margin: 4px;
+	float: left;
+	border: 4px solid #aaaaaa
+}
+.businesses .business img {
+	height: 100px;
+	width: 100px
+}
+.businesses .over {
+	border: 4px solid #555555
+}
+.businesses .selected {
+	border: 4px solid black
+}</pre>
+        <p>Save the CSS file, then open <tt>index.html</tt> and add a link
+            to the new style sheet. Later, when we theme the
+            application, we will move the styles to a SASS file, and
+            generate a comprehensive CSS that includes both our styles
+            and Ext JS styles.</p>
+    </li>
+
+    <li>Associate the store with the view
+        <p>
+            Edit <tt>view/View.js</tt> and add
+            <code>store:'Businesses'</code>
+            to the dataview config.
+        </p>
+        
+        <p>Save and refresh and you should see the dataview
+            populated with the same records shown on the map. Yay!
+    </li>
+
+    <li>Keep record selections in sync
+        <p>
+            Edit
+            <tt>controller/Business.js</tt>
+            and listen to the select method on the dataview. This will
+            be virtually identical to the code that listens to the map.
+        </p>
+        
+        <p>
+            Add two new items to the <code>refs</code> array: one for the dataview, and one for the map.
+            Name them "dataView" and "map". This will allow us to access
+            these components in our controller methods with
+            <code>this.getDataView()</code>
+            and
+            <code>this.getMap()</code>
+            .
+        </p>
+        <p>
+            In the
+            <code>onBusinessSelect</code>
+            method, add two new lines to select the record on the
+            dataview and in the map. The idea is that when someone
+            clicks on either the map or the dataview item, all parts of
+            the user interface will reflect the selection. The two new
+            lines look like this:
+        </p> <pre>this.getDataView().getSelectionModel().select(record);
+this.getMap().highlight(record);</pre>
+    </li>
+    
+    <li>Wait! There's something wrong!<p>You may have noticed that if you select a school, 
+    then select the dataview, then select a map item. Then things are in sync properly.
+    You can then select another item on the map, and the dataview stays in sync.</p>
+
+    <p>But if you initially select an item on the map, then go to the dataview, you don't
+    see the item selected. This only happens the first time! What's going on?</p>
+    
+    <p>Recall from lecture that components don't render until they need to. In this case,
+    the dataview doesn't render the template until the user clicks on the View tab. But the way
+    items are shown to be selected in a dataview is via a class being added to a DOM element
+    defined in the dataview's template. Before the dataview is rendered there <i>is no</i> DOM 
+    element. If you were to inspect the DOM you'd see this in action: the dataview elements don't 
+    exist in the DOM until you click on the View tab.</p>
+    <p>
+    To fix this, open <tt>view/Main.js</tt> and add one more property to the tab panel: <code>deferredRender:false</code></p>
+    <p>Save your change, and refresh the browser. Immediately select a map item, then go to the View tab. The item 
+    should be selected!</p></li>
+
+    <li>Admire your work
+        <p>Do a Tweet. Post to FaceBook. Call your spouse.</p>
+    </li>
+
+</ol>
+

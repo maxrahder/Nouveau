@@ -1,0 +1,57 @@
+TO MAINTAIN A COURSE
+
+Use your browser and enter the course root folder and enter edit mode, or simply 
+edit source html files and re-visit the page in your browser.
+
+
+TO ADD A NEW COURSE
+
+To add a new course you need to do five things:
+
+(1) Use sencha Cmd to generate an application named for the course. 
+Example:
+sencha generate app ExtJS999 ../ExtJS999
+
+
+(2) Delete the entire app folder
+
+
+(3) Modify app.js following this example:
+
+Ext.Loader.setPath('Engine', '../Engine/app');
+Ext.require('Engine.Application');
+Ext.application({
+    name: 'Ext999',
+    extend: 'Engine.Application'
+});
+
+
+(4) Modify .sencha/app/sencha.cfg to include Engine in its classpath.
+Use this:
+
+# The path(s) to application javascript sources (comma separated)
+app.classpath=${app.dir}/app,${app.dir}/app.js,${workspace.dir}/Engine/app
+
+
+(5) Modify build.xml to include a new target -- this copies the new course's Data and Engine's Shared folders to the "sencha app build" version of the course. 
+    <target name="-after-build">
+        <copy todir="${build.dir}/../Shared" overwrite="false">
+          <fileset dir="${workspace.dir}/Shared">
+            <include name="**/*" />
+          </fileset>
+        </copy>
+        <copy todir="${build.dir}/Data" overwrite="false">
+          <fileset dir="${app.dir}/Data">
+            <include name="**/*" />
+          </fileset>
+        </copy>
+    </target>
+</project>
+
+
+(6) Note on JsDuck
+The build process cannot resolve certain code. So some things need to be edited manually, and repeatedly as we get new copies of JsDuck:
+Docs.model.Setting
+        type: window['localStorage'] ? 'localstorage' : 'memory',
+        type: 'localstorage',
+

@@ -1,0 +1,26 @@
+<ul>
+<li>Axes used with Cartesian charts (that plot x and y values)
+have a <em>position</em> config, specifying whether the axis is at the top, 
+bottom or sides of the chart</li>
+<li>Each type of axis also has syntax for specifying its range of values</ul>
+</ul>
+<pre class="non-runnable">
+{
+    xtype : 'chart',
+    store : store,
+
+    axes : [ {
+        type : 'Numeric',
+        position : 'left', // 'top' 'bottom' 'right' or 'left'
+        title : 'Sales ($millions)',
+        fields : [ 'sales' ] // The high and low sales amounts are used
+    }, {
+        type : 'Category',
+        position : 'bottom',
+        title : 'Artist or Band',
+        fields : [ 'name' ] // Each name is used
+    } ],
+
+    series : [ {
+    ...
+</pre>

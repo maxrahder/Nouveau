@@ -1,0 +1,26 @@
+<pre class="runnable preview">
+var store = Ext.create('Ext.data.Store', {
+	autoLoad : true,
+	fields : [ 'name', 'sales' ],
+	proxy : {
+		type : 'ajax',
+		url : '../Data/charts/musicianSales.json'
+	}
+});
+
+var chart = Ext.create('Ext.chart.Chart', {
+	store : store,
+	series : [ {
+		type : 'pie',
+		field : 'sales'
+	} ]
+});
+
+Ext.create('Ext.container.Container', {
+  renderTo: Ext.getBody(),
+  height: 350,
+  width: 350,
+	layout : 'fit',
+	items : [ chart ]
+});
+</pre>

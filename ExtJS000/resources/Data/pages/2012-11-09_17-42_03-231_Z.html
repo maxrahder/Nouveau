@@ -1,0 +1,14 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.HtmlEditor" target="api"><code>Ext.form.field.htmlEditor</code></a></p>
+
+Lightweight HTML Editor. Some features are not supported by Safari and will be automatically hidden when needed. Noted in the config options where appropriate.
+
+The editor's toolbar buttons have tooltips defined in the buttonTips property, but they are not enabled by default unless the global Ext.tip.QuickTipManager singleton is initialized.
+
+<pre class="runnable preview">
+Ext.tip.QuickTipManager.init();  // enable tooltips
+Ext.create('Ext.form.HtmlEditor', {
+    width: 580,
+    height: 250,
+    renderTo: Ext.getBody()
+});
+</pre>

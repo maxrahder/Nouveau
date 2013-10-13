@@ -1,0 +1,23 @@
+
+<p>Any component can be made to float. Floating components are positioned using absolute coordinates, and do not
+	participate in their parent container layout flow.</p>
+<p>
+	Except for
+	<code>Ext.window.Window</code>
+	, which is a floating panel, the float feature isn't needed very often.
+</p>
+
+<pre class="runnable preview">
+Ext.create('Ext.button.Button', {
+	text: 'Button',
+	renderTo: Ext.getBody(),
+	handler: function(b){ alert('I\'m a regular button.'); }
+});
+Ext.create('Ext.button.Button', {
+	text: 'Button',
+	floating: true,
+	x: 12,
+	y: 24,
+	renderTo: Ext.getBody(),
+	handler: function(b){ alert('I\'m floating!'); }
+});</pre>

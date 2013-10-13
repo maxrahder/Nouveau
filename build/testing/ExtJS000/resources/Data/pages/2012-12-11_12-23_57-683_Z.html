@@ -1,0 +1,56 @@
+<h1>Introduction</h1>
+<p>
+In this walkthrough, you will work with Sencha Architect 2 for Ext JS projects.</p>
+Together with your instructor you will perform the following tasks:
+</p>
+<ul>
+<li>Working with column templates</li>
+</ul>
+
+<h1>Steps</h1>
+
+
+<h2>Add new fields to the model</h2>
+<ol>
+<li><p>In the <b>Business</b> model, click [+] next to <b>Fields</b></p></li>
+<li><p>Type the following fields, separated by commas:
+ <ul>
+  <li><p>rating_img_url_small</p></li>
+  <li><p>photo_url</p></li>
+ </ul>
+</p></li>
+<li><p>Drag both columns above <b>MyAjaxProxy</b>.</p></li>
+</ol>
+
+<h2>Convert the Rating column to a template column</h2>
+<ol>
+<li><p>In Project Inspector, select the <b>GridPanel</b> and right-click the <b>Rating</b> column.</p></li>
+<li><p>Hover over <b>Transform</b></p></li>
+<li><p>In the sub-menu, choose <b>Ext.grid.column.Template</b></p></li>
+</ol>
+
+<h2>Define the template</h2>
+<ol>
+<li><p>Click on <b>Rating</b> column</p></li>
+<li><p>Click the <b>[+]</b> next to <b>tpl</b> property, then click the <b>&rarr; (arrow icon)</b>.
+<p>This will place you in the editor where you can edit the template.
+In the editor, type:</p>
+
+<div class="readonly"> <pre class="runnable">&lt;img src="{rating_img_url_small}"></pre>
+</p></li></div>
+<li><p>Return to Design view, and verify that the ratings graphics appear.
+<p><small><b>
+Note:</b> Should the content not display in Design view, Preview the application in your browser. If the grid is blank, you may need to right-click on the Businesses store and choose <b>Load Data</b>.
+</i></b></small></p></li>
+</ol>
+
+<h2>Save and Preview the Application</h2>
+
+You should see rating stars in the Rating column and a
+formatted phone number in the Phone column.
+</p>
+
+<h1>Conclusion</h1>
+<p>Templates are a very powerful feature. A small amount of html code will parse all data supplied to it and render all items.</p>
+<br />
+<br />

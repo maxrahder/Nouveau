@@ -1,0 +1,80 @@
+<ul>
+<li>If you ask for the value of the <code>hideMode</code> property of our button, b.hideMode, it's neither in button object itself, nor in the <code>__proto__</code> object of the button object. What happens next?</li>
+<li>The general rule is that if JavaScript cannot find a property in an object, it looks in the <code>__proto__</code> object of that object for the property, if there is any. JavaScript stops looking up the chain of prototypes when it finds an object that has the desired property.</li>
+<li>Each Sencha class has a <code>prototype</code> property with an object as its value. That object goes into the __proto__ property of each instance created from that particular class. They share the same object.</li>
+<li>Sencha leverages that, by setting the __proto__ property of the prototype object for each class, to the prototype object of the superclass, as declared by <code>extend</code>.</li>
+<li>In the case of <code>hideMode</code>, that property is really in the __proto__ of the __proto__ of the button object.</li>
+<li>This is the same thing as saying that the value of <code>hideMode</code> is in the superclass, <code>Component</code>, of the class, <code>Button</code>, of our object.</li>
+<pre>
+> b.hidemode
+  "display"
+> b.hasOwnProperty('hideMode')
+  false
+> b.__proto__.hideMode
+  "display"
+> b.__proto__.hasOwnProperty('hideMode')
+  false
+> Ext.Button.prototype.hideMode
+  "display"
+> Ext.Button.prototype.hasOwnProperty('hideMode')
+  false
+> b.__proto__ === Ext.Button.prototype
+  true // they are the same object
+> b.__proto__.__proto__.hideMode
+  "display"
+> b.__proto__.__proto__.hasOwnProperty('hideMode')
+  true
+> Ext.Component.prototype.hideMode
+  "display"
+> Ext.Component.prototype.hasOwnProperty('hideMode')
+  true
+> b.__proto__.__proto__ === Ext.Component.prototype
+  true // they are the same object
+</pre>
+
+<li>Shown another way, the structure looks like this ...
+<ul compact style="{list-style-type:circle; line-height:1em}">
+<li>b
+<li>constructor // the name of the function that created the object
+<ul>
+<li>componentCls: "x=btn"
+<!-- <li>... -->
+<li>id: "button-1097"
+<!-- <li>... -->
+<li>text: "A Button"
+<!-- <li>... -->
+<li>__proto__: TemplateClass
+<ul>
+<li>$className: "Ext.button.Button"
+<!-- <li>... -->
+<li>baseCls: "x-btn"
+<!-- <li>...
+<li>type: "button"
+<li>xtype: "button"
+<li>... -->
+<li>__proto__: TemplateClass
+<ul>
+<li>$className: "Ext.Component"
+<!-- <li>... -->
+<li>hideMode: "display"
+<!-- <li>...
+<li>xtype: "component"
+<li>... -->
+<li>__proto__: TemplateClass
+<ul>
+<li>$className: "Ext.AbstractComponent"
+<li>__proto__: Object
+<ul>
+<li>$className: "Ext.Base"
+<li>__proto__: Object
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+
+<li>This process of returning the value of the first property found is called prototypal chaining or prototypal inheritance. The exact name of the __proto__ property may differ among browsers, but Sencha sets the class system up so that it works the same across browsers.</li>
+<li>Since methods are just object properties with functions as values, the same system works for method calls.</li>
+
+</ul>

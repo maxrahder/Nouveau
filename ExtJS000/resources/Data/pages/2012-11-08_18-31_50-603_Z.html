@@ -1,0 +1,56 @@
+<p>
+You can plot multiple values for each independent variable. Here, there are two dependent values for each x-value.
+</p>
+<pre class="runnable preview">
+var data = [ 
+    {x : 0, y1:  0, y2:  0}, 
+    {x : 1, y1:  1, y2:  1}, 
+    {x : 2, y1:  4, y2:  3}, 
+    {x : 3, y1:  9, y2:  6}, 
+    {x : 4, y1: 16, y2: 10} 
+];
+
+Ext.define('MyApp.model.Data', {
+    extend : 'Ext.data.Model',
+    fields : [ 'x', 'y1', 'y2']
+});
+store = Ext.create('Ext.data.Store', {
+    model: 'MyApp.model.Data',
+    data: data,
+    autoLoad : true
+});
+
+chart = Ext.create('Ext.chart.Chart', {
+    store : store,
+    axes : [ {
+        type : 'Numeric',
+        position : 'left',
+        fields : ['y1', 'y2'],
+        title : 'Dependent'
+    }, {
+        type : 'Numeric',
+        position : 'bottom',
+        fields : ['x'],
+        majorTickSteps : 3,
+        title : 'Independent'
+    } ],
+    series : [ {
+        type : 'line',
+        axis : 'left',
+        xField : 'x',
+        yField : 'y1'
+    } ,  {
+        type : 'line',
+        axis : 'left',
+        xField : 'x',
+        yField : 'y2'
+    } ]
+});
+
+Ext.create('Ext.container.Container', {
+    renderTo: Ext.getBody(),
+    layout : 'fit',
+    height: 350,
+    items : [ chart ]
+});
+</pre>

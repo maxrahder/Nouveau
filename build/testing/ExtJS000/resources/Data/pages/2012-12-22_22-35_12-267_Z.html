@@ -1,0 +1,13 @@
+<h4>   In JavaScript, we often pass functions in as parameters/values to other function calls.</h4>
+
+<pre>
+> var square = function(value) { return value * value };
+  undefined
+> function compute(aFn, value) {
+    return aFn(value) // () here is an operator
+                      // calling the function passed into aFn
+  }
+  undefined
+> compute( square, 2 ) // returns 4
+  4
+</pre>

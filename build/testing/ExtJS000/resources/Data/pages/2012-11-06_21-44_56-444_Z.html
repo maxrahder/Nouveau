@@ -1,0 +1,17 @@
+<p>
+Use caution when using a reference &mdash; if you aren't
+careful, changes to one object may unintentionally be reflected in another.
+</p>
+<pre class="runnable">
+var config = {a: 14, c: [4, 5, 6]};
+var object = {a: 12, b: 'hi', c: [1, 2, 3]};
+
+Ext.apply(object, config);
+
+// Update the array referenced by "config"
+config.c[1] = 999;
+
+// "object" sees the change
+console.log(object.c); // [4, 999, 6]
+console.log(object.c === config.c); // True
+</pre>

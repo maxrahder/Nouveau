@@ -1,0 +1,10 @@
+<h3>Ext.Array.filter(array, fn, scope)</h3>
+<p>Creates a new array with all of the elements of this array for which the provided filtering function returns true.</p>
+<pre class="runnable">
+var a = [ -345, 11, 0, -3, 1242, 231, -2 ];
+// Create a new array of items where true is returned.
+var b = Ext.Array.filter(a, function(item) {
+    return (item >= 0);
+});
+console.log(b); // logs [11, 0, 1242, 231]
+</pre>

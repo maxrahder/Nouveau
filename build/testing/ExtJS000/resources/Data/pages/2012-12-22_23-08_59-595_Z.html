@@ -1,0 +1,15 @@
+
+<ul>
+<li>Inside a constructor function, <code>this</code> contains the newly constructed object.
+</ul>
+<pre>
+> function Thing() { return this }
+  undefined
+> var obj = new Thing()
+  undefined
+> obj // returns an instance of Thing
+  Thing
+</pre>
+<ul>
+<li>Note that 'Thing' is the name of the constructor function.</li>
+</ul>

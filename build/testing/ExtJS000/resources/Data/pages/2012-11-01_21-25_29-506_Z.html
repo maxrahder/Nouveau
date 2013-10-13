@@ -1,0 +1,26 @@
+<p>The final property to review when utilizing renderTpl is childEls.  This allows us to define elements within the generated HTML that we'll need references to later on.  The framework expects these elements to have a specific id property that is the component id followed by '-' then the property name we wish to use for reference</p>
+<p>for example {id}-first</p>
+<p>We can then reference component.first and will have an Ext.Element object we can use to manipulate that html</p>
+
+<pre class="runnable">
+var comp = Ext.create('Ext.Component',{
+    renderTpl: '&lt;ul&gt;&lt;li id="{id}-first"&gt;{firstItem}&lt;/li&gt;&lt;li&gt;{secondItem}&lt;/li&gt;&lt;/ul&gt;',
+    renderData: {
+        firstItem: 'This one goes first',
+        secondItem: 'and this one second'
+    },
+    childEls: ['first'],
+    renderTo: Ext.getBody()
+});
+
+var i = 0;
+Ext.create('Ext.Button',{
+    text: 'Update first list item',
+    handler: function() {
+        comp.first.update('Updated first ' + (++i));
+    },
+    renderTo: Ext.getBody()
+});
+</pre>
+
+<a href="http://docs.sencha.com/extjs/4.2.1/#!/api/Ext.AbstractComponent-cfg-childEls" target="api">See API Docs</a>

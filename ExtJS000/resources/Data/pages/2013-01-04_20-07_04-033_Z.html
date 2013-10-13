@@ -1,0 +1,12 @@
+<p>This is a goofy example, but the point is that any object can be used for scope.</p>
+<pre class="runnable">
+var b = Ext.create('Ext.button.Button', {
+    text : 'Button',
+    renderTo : Ext.getBody()
+});
+b.on('click', 
+    function(button){
+        alert(this.a);
+    }, 
+    {a : 13}
+);</pre>

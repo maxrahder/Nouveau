@@ -1,0 +1,41 @@
+<p>
+A button can be made "toggleable" by setting <code>enableToggle</code> to true or by setting a <code>toggleGroup</code>. Configuring <code>pressed</code> 
+to true makes a button initially toggled down. Several toggle buttons can be made to be mutually exclusive
+by setting <code>toggleGroup</code> to the same string. (This example also uses tool tips.)
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+    title : 'Conditions',
+    renderTo : Ext.getBody(),
+    height : 140,
+    bodyPadding : 16,
+    defaults : {
+        margin: 8,
+        toggleGroup : 'weather',
+        allowDepress: false // One will always be pressed
+    }, 
+    layout : 'hbox',
+    items : [{
+        xtype : 'button',
+        icon : 'resources/images/weather_sun.png',
+        tooltip : 'Sunny',
+        pressed : true
+    }, {
+        xtype : 'button',
+        icon : 'resources/images/weather_cloudy.png',
+        tooltip : 'Partly sunny'
+    }, {
+        xtype : 'button',
+        icon : 'resources/images/weather_clouds.png',
+        tooltip : 'Cloudy'
+    }, {
+        xtype : 'button',
+        icon : 'resources/images/weather_rain.png',
+        tooltip : 'Rainy'
+    }, {
+        xtype : 'button',
+        icon : 'resources/images/weather_lightning.png',
+        tooltip : 'Thunderstorms'
+    }]
+});
+</pre>

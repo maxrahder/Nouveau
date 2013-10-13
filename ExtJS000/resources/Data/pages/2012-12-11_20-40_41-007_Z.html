@@ -1,0 +1,15 @@
+<p>
+Use the <code>extend</code> property in the class descriptor to extend a class.
+</p>
+<pre class="runnable">
+Ext.define('MyApp.taxonomy.Mammal', {});
+
+Ext.define('MyApp.taxonomy.Human', {
+    extend : 'MyApp.taxonomy.Mammal'
+});
+
+var a = Ext.create('MyApp.taxonomy.Mammal');
+var b = Ext.create('MyApp.taxonomy.Human');
+
+alert(a.$className); // Alerts 'MyApp.taxonomy.Mammal'
+alert(b.$className); // Alerts 'MyApp.taxonomy.Human'</pre>

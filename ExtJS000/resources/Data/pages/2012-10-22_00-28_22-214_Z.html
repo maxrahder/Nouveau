@@ -1,0 +1,131 @@
+<pre class="runnable docked">
+    Ext.create('Ext.Component', {
+    html : 'This is my component',
+    renderTo : Ext.getBody() 
+});
+</pre>
+
+<h1>Introduction</h1>
+
+<p>Let's try out some styling properties.</p>
+
+<h1>Steps</h1>
+
+<ol>
+    <li>Look at the code at the top of the page.
+        <p>
+            The code creates an instance of
+            <code>Ext.Component</code>, with HTML content, rendered to the document body. We haven't talked about the <code>html</code> property yet, but in a nutshell, it specifies an HTML text string to be used as the content of a component.
+        </p>
+        <p>
+            Remember that the <code>renderTo</code> property is useful for Live Preview, and coding little tests and examples, but isn't used in most production applications.
+        </p>
+        <p>Press <strong>Live Preview</strong> and you should see the words from the <code>html</code> property.
+    </li>
+
+    <li>Add styling so we can see the component
+        <p>
+            Add a <code>style</code> config, setting the style to
+<pre class="sample">
+style: { border: '1px dashed red'}
+</pre>
+            <p>In a JavaScript object, each name-value pair is comma separated, so after adding the style property your code should look like the following, with commas between the properties in the config object. The order of the config properties does not matter.
+        </p> 
+<pre class="sample">
+Ext.create('Ext.Component', {
+    html : 'This is my component',
+    style : { border : '1px dashed red'},
+    renderTo : Ext.getBody()
+});
+</pre>
+    </li>
+
+    <li>Try it
+        <p>Press <strong>Live Preview</strong> and you should see a red dashed border around the text. The border takes up all the width and only as much height as needed by the text. Most components render via a  <code>&lt;div&gt;</code>, because div's are block elements, it's taking up the window width by default. So right now the component takes up all the available width.
+        </p>
+    </li>
+
+    <li>Note: We're just experimenting
+        <p>
+            It's unusual to create an
+            <code>Ext.Component</code>. Normally you create instances of sub-classes of <code>Ext.Component</code>, like panels and buttons. Furthermore, the <code>style</code> property is <u>very</u> rarely used since the styling should be in Sass. (Syntactically Awesome Style Sheets, or Sass, is the language used to generate the CSS files used in Ext JS.)
+        </p>
+        <p>
+            We're just doing all this here because we haven't talked about other components yet, and because we're choosing to look at the style properties discussed in lecture.
+        </p>
+    </li>
+
+     <li>Set the component <code>width</code> and <code>height</code>
+        <p>
+            Go to the Code Editor, and add properties for width and height. Set them to something like 100 and 100. Then press <strong>Live Preview</strong>. You should see a 100 x 100 pixels red dashed rectangle around the text.
+        </p>
+    </li>
+
+    <li>Now set the margin
+        <p>
+            Go to the <strong>Code Editor</strong>, and add a property specifying the margin as 32. We're making it a big margin to make it obvious. Try it out.
+        </p>
+        <p>
+            At this point your code should look something like this:
+        </p> 
+<pre class="sample">
+Ext.create('Ext.Component', {
+    html : 'This is my component',
+    style : {border : '1px dashed red'},
+    height: 100, 
+    width: 100,
+    margin: 32,
+    renderTo : Ext.getBody()
+});
+</pre>
+    </li>
+
+    <li>Now add padding
+        <p>
+            The <code>padding</code> property puts padding around a component's contents. 
+            Set the padding to 4. (That way it will be distinct from the margin.) Press <strong>Live Preview</strong> and you'll see the text moved away from the edge of the border.
+        </p>
+    </li>
+
+    <li>Assign a CSS class
+        <p>
+            Set the <code>cls</code> property to assign a class <em>"coolborder"</em>. That style has already been defined for you as <code>1px solid blue</code>. 
+        </p>
+        <p>
+            If you try it, you'll still see the dashed red border. Why? Because they both set the same property, but since the <code>style</code> sets an in-line style, it takes precedence over the named style.
+        </p>
+        <p>
+            Delete the <code>style</code>, press Live Preview and you should see the <em>"coolborder"</em> solid blue line.
+        </p>
+    </li>
+
+    <li>Try another cls-related properties
+        <p>
+            Re-type the <code>cls</code> property with <code>overCls</code>. 
+            This specifies a class that is in effect as the user mouses over the component.
+        </p>
+        <p>
+            Your code should now look something like this:
+        </p>
+<pre class="sample">
+Ext.create('Ext.Component', {
+    html : 'This is my component',
+    height: 100, 
+    width: 100,
+    margin: 32,
+    padding: 4,
+    overCls: 'coolborder',
+    renderTo : Ext.getBody()
+ });
+</pre>
+        <p>
+            Press <strong>Live Preview</strong>. You'll see no borders, since the old blue border isn't in effect now. But if you move your mouse over the component you'll see the blue border appear.
+        </p>
+    </li>
+</ol>
+
+<h1>Conclusion</h1>
+<p>
+    You just saw some of the styling properties built into <em>every</em> component. All components
+    have the ability to set height, width, padding, margins and do basic styling.
+</p>

@@ -1,0 +1,12 @@
+The <code>dateFormat</code> property describes the feed's date strings.
+<br><br>
+<div class="readonly">
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+    extend: 'Ext.data.Model',   
+    fields: [ {
+        name: 'dob', 
+        type: 'date', 
+        dateFormat: 'd-m-Y H:i' // day-month-year hour: minute
+    } ]
+});</pre></div>

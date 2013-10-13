@@ -1,0 +1,110 @@
+<h1>Introduction</h1>
+<p>In this lab, you will start coding the YelpExtplorer application.</p>
+<p>To see where you will end up at the end of the week you can <a href="http://localhost/SenchaTraining/ExtJS251/LabSolutions/YelpExtplorer08/
+" target="_blank">visit it now</a> in your browser.
+</p> 
+This week we will build on the application until the complete application is coded, themed and deployed.</p>
+
+<p>
+This lab assumes you've done the 
+<a href="?page=Overview%20%3E%20Course%20Introduction%20%3E%20Lab%3A%20Create%20a%20Workspace" target="new">Create a Workspace lab</a>.
+</p>
+
+<h1>Objectives</h1>
+<ul class="plain">
+<li>Inspect files of an Ext JS workspace</li>
+<li>Generate initial application files</li>
+<li>Verify initial application runs</li>
+<li>Inspect files of an initial application</li>
+</ul>
+
+<h1>Steps</h1>
+
+<ol>
+
+	<li>Generate the YelpExtplorer application
+
+		<p>In the terminal window, navigate to
+			<kbd>SenchaTraining/ExtJS251/Labs/ext</kbd> and generate the YelpExtplorer
+			application by typing</p> <pre>sencha generate app YelpExtplorer ../YelpExtplorer</pre>
+	</li>
+
+	<li>Run the application
+		<p>
+			In your browser, open <a
+				href="http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer" target="lab">the
+				initial application</a>.
+		</p>
+		<p>You should see a single tab titled "Center Tab 1" in the center
+			and a panel titled "west" on the left. The application doesn't do
+			anything yet.</p>
+	</li>
+
+	<li>Inspect the application
+		<p>In your IDE look at the
+			<kbd>SenchaTraining/ExtJS251/Labs/YelpExtplorer/</kbd> folder. You should see
+			several files, organized according to Sencha's MVC file structure:</p> <img src="resources/images/_yelpExtplorer/initialFolder.png" />
+
+	</li>
+
+	<li>Inspect index.html
+		<p>In your IDE open <kbd>.../YelpExtplorer/index.html</kbd>. Note that it
+			references two JavaScript files: <kbd>bootstrap.js</kbd> and <kbd>app.js</kbd>.</p>
+		<p>The bootstrap file contains classpath and alias mappings. Don't worry about the details of bootstrap.</p>
+
+	<li>Inspect app.js
+		<p>
+			In your IDE open <kbd>.../YelpExtplorer/<b>app.js</b></kbd>.
+		</p>
+		<p>
+			<kbd>app.js</kbd> is the starting point of an Ext JS application. 
+			To keep your logic separate and completely contained within the
+			<kbd>app</kbd> folder, the code in <kbd>app.js</kbd> simply subclasses
+			the <kbd>Ext.app.Application</kbd> defined in <kbd>app/application.js</kbd>.
+		</p>
+	</li>
+
+	<li>Inspect application.js
+		<p>
+			In your IDE open <kbd>.../YelpExtplorer/app/<b>application.js</b></kbd>.
+		</p>
+		<p>
+			<kbd>application.js</kbd> is the starting point of <em>your</em> application. 
+			It's a normal class definition that extends <code>Ext.app.Application</code>.
+			This is where you will specify the controllers used in the application.</p>
+	</li>
+
+	<li>Inspect Main.js
+		<p>
+			In your IDE open <kbd>.../YelpExtplorer/app/controller/<b>Main.js</b></kbd>.
+		</p>
+		<p>
+			This file contains the definition for a controller. Note that it
+			extends
+			<code>Ext.app.Controller</code>
+			. Controllers coordinate events between data stores and components,
+			but our controller doesn't do anything yet.
+		</p>
+	</li>
+
+	<li>Inspect Viewport.js
+		<p>
+			In your IDE open <kbd>.../YelpExtplorer/app/view/<b>Viewport.js</b></kbd>.
+		</p>
+		<p>This defines a viewport, using the <code>fit</code> layout. It creates an instance of <code>app-main</code>, which is defined in <code>Main.js</code></p>
+	</li>
+
+	<li>Inspect Main.js
+		<p>
+			In your IDE open <kbd>.../YelpExtplorer/app/view/<b>Main.js</b></kbd>.
+		</p>
+		<p>
+			This view contains a <code>layout:border</code> container with two items: a panel
+			on the west, and a tab panel in the center.		</p>
+	</li>
+
+</ol>
+
+<h1>Conclusion</h1>
+<p>In this lab, you used Sencha Cmd to generate a new MVC application. 
+This generated application contains demo code. As we write the <b>YelpExtplorer</b> app, we will be refactoring this starting point, adding new views models, stores and controllers.</p>

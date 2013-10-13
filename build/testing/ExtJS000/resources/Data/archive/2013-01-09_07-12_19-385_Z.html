@@ -1,0 +1,64 @@
+<p>Now we want to be able to look at the fields of the model record in the detail pane on the right (east).
+<ol>
+<li><p>From the <b>Toolbox</b>, drag <b>5 Display Fields</b> onto the <b>Detail Form</b> in the Project Inspector.
+<li><p>Select each of the fields, one after the other, in the <b>Config panel</b>, give them the following property values:
+<ul>
+<li><p>name: <b>name</b>, fieldLabel: <b>Name</b></p></li>
+<li><p>name: <b>artist</b>, fieldLabel: <b>Artist</b></p></li>
+<li><p>name: <b>link</b>, fieldLabel: <b>Link</b></p></li>
+<li><p>name: <b>category</b>, fieldLabel: <b>Category</b></p></li>
+<li><p>name: <b>price</b>, fieldLabel: <b>Price</b></p></li>
+</ul>
+<p><small><b>Note:</b> If you click on the lock to the right of the Config filter area, it will keep the property configuration selected and you will be able to select each display field and change that property below.</i></b></small></p>
+
+<li><p>Each of these fields should have an <b>anchor</b> value of <b>100%</b>.
+
+<p><small><b>Note:</b> Your code should look like this:</i></b></small></p>
+<pre>
+{
+    xtype: 'form',
+    flex: 1,
+    region: 'east',
+    bodyPadding: 10,
+    title: 'Detail Form',
+    items: [
+        {
+            xtype: 'displayfield',
+            anchor: '100%',
+            name: 'name',
+            value: 'Display Field',
+            fieldLabel: 'Name'
+        },
+        {
+            xtype: 'displayfield',
+            anchor: '100%',
+            name: 'artist',
+            value: 'Display Field',
+            fieldLabel: 'Artist'
+        },
+        {
+            xtype: 'displayfield',
+            anchor: '100%',
+            name: 'link',
+            value: 'Display Field',
+            fieldLabel: 'Link'
+        },
+        {
+            xtype: 'displayfield',
+            anchor: '100%',
+            name: 'category',
+            value: 'Display Field',
+            fieldLabel: 'Category'
+        },
+        {
+            xtype: 'displayfield',
+            anchor: '100%',
+            name: 'price',
+            value: 'Display Field',
+            fieldLabel: 'Price'
+        }
+    ]
+}
+</pre>
+</ol>
+<h2>Save the Application</h2>

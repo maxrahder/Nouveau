@@ -1,0 +1,22 @@
+<div type="expander" caption="<kbd><b>:-/</kbd></b>">
+<div class="readonly">
+<pre class="runnable">
+Ext.ns('MyApp');
+Ext.Loader.setConfig({
+    paths : {
+        MyApp : 'app'
+    }
+});
+Ext.onReady(function() {
+    Ext.create('MyApp.Viewport');
+});</pre></div>
+</div>
+
+<div type="expander" caption="<kbd><b>:-)</kbd></b>">
+<div class="readonly">
+<pre class="runnable">
+Ext.application({
+    name: 'MyApp',
+    autoCreateViewport: true
+    }
+});</pre></div>

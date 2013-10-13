@@ -1,0 +1,12 @@
+<ul>
+<li>When working with the console or debugger, we need to understand what the objects are, and how they get their values from their classes. So we need to look under the hood...</li>
+<li>As an example, create a new button in the console.</li>
+</ul>
+<pre>
+> var b = Ext.create( 'Ext.Button', {text: 'A Button'} );
+  undefined
+</pre>
+<ul>
+<li>If you enter <code>b</code> in the console, and expand the returned object, you should see something like this:</li>
+<img src="resources/images/_javascript/ButtonObject.png">
+<li>You can see the <code>text</code> property we created, and several others, including the <code>id</code> property. But every button also has access to hundreds of other properties. Where are they?</li>

@@ -1,0 +1,17 @@
+<p>
+In addition to passing strings to the template being created, you can also
+pass an object containing functions. These can then be referenced from within
+the template.
+</p>
+<pre>
+var tpl = Ext.create('Ext.XTemplate', (
+    '...',
+    {
+        isFemale: function(gender){
+            return (gender === 'female');
+        },
+        isKid: function(age){
+            return (age &lt; 18);
+        }
+    }
+);</pre>

@@ -1,0 +1,58 @@
+<p>
+Buttons can have sub-item buttons specified via the <code>menu</code> array config. This property
+is backed by a <code>Ext.menu.Menu</code> component, so you can set it to a full menu config object,
+or just pass an array of the buttons in the menu.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+    title : 'Panel',
+    renderTo : Ext.getBody(),
+    height : 200,
+    bodyPadding : 16,
+    items : [{
+        xtype : 'button',
+        text : 'Beatles',
+        menu : [{
+            text : 'John',
+            menu : [{
+                text : 'Guitar'
+            }, {
+                text : 'Piano'
+            }, {
+                text : 'Harmonica'
+            }, {
+                text : 'Bass'
+            }]
+        }, {
+            text : 'Paul',
+            menu : [{
+                text : 'Bass'
+            }, {
+                text : 'Guitar'
+            }, {
+                text : 'Piano'
+            }, {
+                text : 'Drums'
+            }]
+        }, {
+            text : 'George',
+            menu : [{
+                text : 'Guitar'
+            }, {
+                text : 'Sitar'
+            }]
+
+        }, {
+            text : 'Ringo',
+            menu : [{
+                text : 'Drums'
+            }, {
+                text : 'Tambourine'
+            }, {
+                text : 'Maracas'
+            }]
+
+        }]
+    }]
+});
+</pre>

@@ -1,0 +1,20 @@
+<h3>Internally, the 5 types are simply calling <code>Ext.Msg.show()</code> with user-supplied and hard-coded configs.</h3>
+
+<div class="readonly">
+	<pre class="runnable">
+	wait : function(cfg, title, config){
+	       if (Ext.isString(cfg)) {
+	           cfg = {
+	               title : title,
+	               msg : cfg,
+	               closable: false,
+	               wait: true,
+	               modal: true,
+	               minWidth: this.minProgressWidth,
+	               waitConfig: config
+	           };
+	       }
+	       return this.show(cfg);
+	   }
+	</pre>
+</div>

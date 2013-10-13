@@ -1,0 +1,20 @@
+<p>
+To do this, have the view provide event handler for the user actions, then have the
+parent throw the logical event. The <code>fireEvent()</code> method is part of the
+<code>Ext.util.Observable</code> mixin &mdash; all components are observable.
+</p>
+<pre>
+...
+{
+    text : 'Search',
+    icon : 'app/resources/icons/find.png',
+    itemId : 'twitterSearch',
+    handler : function(b){
+        b.up('twittergrid').fireSearch();
+    }
+}
+...
+fireSearch : function(){
+    var s = this.down('#searchText').getValue();
+    <span style="background-color: yellow">this.fireEvent('search', this, s);</span>
+}</pre>

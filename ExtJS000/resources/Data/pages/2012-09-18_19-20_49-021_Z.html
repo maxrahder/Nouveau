@@ -1,0 +1,17 @@
+<ul>
+<li>You can subclass components to reuse them.
+<pre class="runnable preview">
+Ext.define('BigButton', {
+	extend: 'Ext.button.Button',
+	xtype: 'anotherbutton',
+	text: 'BIG',
+	width: 100,
+	height: 50
+  }
+);
+
+Ext.create('BigButton', {
+    renderTo: Ext.getBody()
+});
+</pre>
+</ul>

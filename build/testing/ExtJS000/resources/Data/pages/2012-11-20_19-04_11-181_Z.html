@@ -1,0 +1,198 @@
+<pre class="runnable preview docked">
+Ext.define('MyApp.model.HourScore', {
+    extend : 'Ext.data.Model',
+    fields : [ 'month', 'precipitation' ]
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.model.HourScore',
+    autoLoad : true,
+    proxy : {
+        type : 'ajax',
+        url : '../Data/charts/parisTemperatureByMonth.json'
+    }
+});
+
+Ext.create('Ext.chart.Chart', {
+    renderTo : Ext.getBody(),
+    width : 500,
+    height : 200,
+    store : store,
+    axes : [ {
+        type : 'Numeric',
+        position : 'left'
+    }, {
+        type : 'Category',
+        position : 'bottom'
+    } ],
+    series : []
+});
+
+</pre>
+
+<h1>Introduction</h1>
+
+<p>In this lab you will create a line chart.</p>
+
+<h1>Steps</h1>
+
+<ol>
+
+<li>Look at the chart
+<p>
+Initially the chart is empty. The left axis goes from 0 to 1 and the bottom axis has 12 undefined points.
+</p>
+</li>
+
+<li>Look at the data
+<p>
+<a href="../Data/charts/parisTemperatureByMonth.json" target="_lab">The data</a> has hours as the independent variable, and score as the dependent value.
+</p>
+</li>
+
+<li>Here's the plan...
+<p>We'll code a line chart, with rainfall amounts on the left axis and months of the year on the bottom.</p>
+</li>
+
+<li>Add the series
+<p>Edit the chart and add an item to the <em>series</em> array. The item
+is a config object for one of the classes in the "Ext.chart.series" package.
+We're using a line chart, so set the type to "line". Line series are Cartesian, 
+which require <em>xField</em> and <em>yField</em>. The series should look like this:
+</p>
+<pre>
+series : [{
+    type : 'line',
+    xField : 'month',
+    yField : 'precipitation'
+}]
+</pre>
+<p>
+Run it and you'll see that the left axis has been able to figure out what range
+of values to use, based on the data being plotted.
+</p>
+</li>
+
+<li>Specify the range for each axis
+<p>You can explicitly set the range of an axis in a couple of ways. All axes have a <em><a href="http://docs.sencha.com/extjs/#!/api/Ext.chart.axis.Axis" target="api">fields</a></em> array, where you can specify fields from the store. When you use <em>fields</em>, the axis loops through the store's records and set its range based on the range of values it discovers in the store. 
+</p>
+<p>
+Set the bottom axis <code>fields</code> array to a single value: 'month'. Then run it. 
+Now that the axis knows the field, it can loop through the store and display each
+unique value it finds. You should see "Jan" through "Dec". 
+</p>
+<p>Most axes types also have syntax letting you set a specific value. For numeric
+axes you can use <code>minimum</code> and <code>maximum</code>. Set the left axis maximum to 30
+and run it. You should see 30 as the maximum value on the axis.
+</p>
+</li>
+
+<li>Put a title on each axis
+<p>Edit the chart and add a <code>title</code> property to each axis. </p>
+</li>
+
+<li>Review your code
+<p>At this point your chart code should look like this:</p>
+<pre>
+Ext.create('Ext.chart.Chart', {
+    renderTo : Ext.getBody(),
+    width : 500,
+    height : 300,
+    store : store,
+    axes : [ {
+        type : 'Numeric',
+        title : 'Precipitation (cm)',
+        position : 'left',
+        maximum : 30
+    }, {
+        type : 'Category',
+        title : 'Month',
+        position : 'bottom',
+        fields : ['month']
+    } ],
+    series : [{
+        type : 'line',
+        xField : 'month',
+        yField : 'precipitation'
+    }]
+});
+</pre>
+</li>
+
+<li>Make it prettier
+<p>
+Charts often look better with smoothed lines and a fill. To do that, add <code>smooth</code> and
+<code>fill</code> properties to the chart <code>series</code>, and set both to <code>true</code>.
+</p>
+</li>
+
+<li>Change the look of the markers
+<p>
+Use the <code>markerConfig</code> config to change the line's markers. Markers are rendered
+with a sprite object, so set <em>markerConfig</em> to a sprite config object. Read the 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.draw.Sprite" target="api">"Ext.draw.Sprite" API documentation</a> to see what you can do.
+</p>
+</li>
+
+<h1>Optional</h1>
+
+<li>Have markers highlight as the user mouses over them
+<p>
+Chart series have a <code>highlight</code> property. Set it to true and you should see
+the line and marker subtly change its look as you move your mouse over a marker.
+</p>
+<p>
+This property is also backed by a sprite, so rather than using <em>true</em>, set it
+to a sprite config. Use something distinct from the marker config you used above to
+make it clear when the highlight config is being used.
+</p>
+</li>
+
+</ol>
+
+<h1>Conclusion</h1>
+<p>
+Chart <code>axes</code> set their range according to the values specified in the <code>fields</code>
+array. There are also properties for explicitly setting the range. For line series it's
+<code>minimum</code> and <code>maximum</code>.
+</p>
+<p>
+Chart <code>series</code> allow you to configure regular and highlighted (mouseover) markers. Line
+series can be smoothed or filled.
+</p>
+<p>Here's how your chart might have ended up being coded:</p>
+<pre>
+Ext.create('Ext.chart.Chart', {
+    renderTo : Ext.getBody(),
+    width : 500,
+    height : 220,
+    store : store,
+    axes : [ {
+        type : 'Numeric',
+        title : 'Precipitation (cm)',
+        position : 'left',
+        maximum : 30
+    }, {
+        type : 'Category',
+        title : 'Month',
+        position : 'bottom',
+        fields : [ 'month' ]
+    } ],
+    series : [ {
+        type : 'line',
+        fill : true,
+        smooth : true,
+        highlight : {
+            type : 'circle',
+            radius : 8,
+            'fill' : '#00ff00'
+        },
+        markerConfig : {
+            type : 'circle',
+            radius : 4,
+            'fill' : '#ff0000'
+        },
+        xField : 'month',
+        yField : 'precipitation'
+    } ]
+});
+</pre>

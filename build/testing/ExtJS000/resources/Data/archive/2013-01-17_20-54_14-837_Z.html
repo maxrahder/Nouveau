@@ -1,0 +1,17 @@
+<p>With your application text now stored as component properties, you can create a script that sets the prompts for a specific language, as illustrated by the following example:</p>
+
+<pre>
+if (MyApp.view.FeedbackForm) {
+    Ext.apply(MyApp.view.FeedbackForm.prototype, {
+	   lblFirstName: 'prénom',
+	   lblLastName: 'nom de famille'
+    });
+} 
+</pre>
+
+<p><b>Note the following:</b></p>
+<ul>
+<li>Always save files containing non-latin characters as UTF-8</li>
+<li>You may need to allocate additional space for field labels as some translations may require more characters.</li>
+<li>Right to Left languages (Hebrew, Arabic) may require you to make changes to your stylesheet. In particular, you will likely need to set the css direction property to 'rtl' for the Body tag.</li>
+</ul>

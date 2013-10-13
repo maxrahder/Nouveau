@@ -1,0 +1,12 @@
+<p>
+Classes can have properties.
+</p>
+<pre class="runnable">
+Ext.define('Mammal', {
+    name : 'Anonymous'
+});
+var a = Ext.create('Mammal');
+
+alert(a.name); // Alerts 'Anonymous'
+a.name = 'Roger';
+alert(a.name); // Alerts 'Roger'</pre>

@@ -1,0 +1,28 @@
+<p>For boolean values use <code>xtype:'booleancolumn'</code>, along with <code>trueText</code> and <code>falseText</code>.</p>
+
+<pre class="runnable preview">var members = Ext.create('Ext.data.Store', {
+    autoLoad : true,
+    fields : [ 'first', 'last', 'currentmember', 'networth', {name: 'dob', type: 'date', dateFormat: 'Y/m/d'}, ],
+    proxy : { type : 'ajax', url : '../Data/json/aerosmith.json' }
+});
+Ext.create('Ext.grid.Panel', {
+    store: members,
+    columns: [
+        { text: 'First',  dataIndex: 'first'},
+        { text: 'Last',  dataIndex: 'last'},
+
+        {
+
+            xtype: 'booleancolumn', 
+            trueText: 'Yes',
+            falseText: 'No', 
+
+            text: 'Member',
+            dataIndex: 'currentmember',
+            flex: 1 
+        }
+    ],
+    title: 'Frameworks',
+    width: 280,
+    renderTo: Ext.getBody()
+});</pre>

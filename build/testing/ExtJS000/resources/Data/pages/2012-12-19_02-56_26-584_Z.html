@@ -1,0 +1,12 @@
+<p>
+The call to <code>sort()</code> replaces the currently-defined sorter.
+</p>
+Use <code>sorters.add()</code> to add an additional sorter to the ones already there.
+</p>
+<div class="readonly">
+<pre class="runnable">var sorter = Ext.create('Ext.util.Sorter', {
+    property: 'lastName',
+    direction: 'ASC'
+});
+store.sorters.add( sorter );
+store.sort();</pre>

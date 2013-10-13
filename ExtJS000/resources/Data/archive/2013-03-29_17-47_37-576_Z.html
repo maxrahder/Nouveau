@@ -1,0 +1,65 @@
+<p>The first thing you will want to do is to open a file or a group of files in the editor. The easiest way to do that is to drag the file/files on top of the IDE. Multiple files or folders can be opened at one time. So that they will be available for easy access later, Go to <strong>Project &gt; Save Project As</strong> and supply a name. When you later open up Sublime Text, go to the same location and choose the name of the file you had previously created.</p>
+<h4><strong>Projects</strong><strong></strong></h4>
+<p>Dragging the folder to the icon or into the program adds the folder structure t to sublime. Going to Project and Save Project As allows you to save as a sublime Project. If you have multiple projects, you can use <strong>Cmd + Ctrl + P</strong> (<strong>Ctrl + Alt + P</strong>) to switch to another. Hitting enter will take you there. It will reopen to your last file and also to the last edit point.</p>
+<h3>Formatting Content in the Editor</h3>
+<p><strong>Curly Quotes<br />
+</strong>Curly Quotes can be added on a Mac with <strong>Option + [</strong> for a left curly quote and <strong>Shift Option + [</strong> for a right curly quote.</p>
+<p>Double Curly Quotes can be added on a Mac with <strong>Option + ] </strong>for a left curly quote and <strong>Shift Option + ]</strong> for double curly quotes.</p>
+<p>On a PC, you can see special characters in the <strong>CharMap</strong> Utility.</p>
+<p><strong>Indenting and Outdenting</strong><br />
+Select a portion of the line you want to move<br />
+<br />
+To Indent, <strong>Cmd + ]</strong></p>
+<p>To Outdent, <strong>Cmd  + [</strong></p>
+<p>Another option is to go to the <strong>Edit Menu</strong> and choose <strong>Line ReIndent</strong>. It will format based on the type of content.</p>
+<p><strong>Spell Check</strong><br />
+  Under <strong>View</strong> (<strong>F6</strong>) you can turn on Spell Check and then words will be highlighted. <strong>Rt</strong>-(<strong>Ctrl</strong>)
+  <strong>Click</strong> to select from spelling options over the word or term.<br />
+</p>
+<p><strong>Code Assist<br />
+</strong>If you add a<strong> (</strong> or <strong>[</strong> or <strong>&quot;</strong> the right side will be added automatically. In many programs if you typed on &quot;auto-pilot&quot; the matching item at the end, you would create an issue with the code farther down the page. In sublime, you can type &quot;); and only the ending ; will be added.</p>
+<p>Another handy feature is when you may forget to add front and back items. To do that, just select the word or words that should be enclosed and type one of the items (e.g. <strong>(, '. &quot; <br />
+[, or {)</strong> and it will add to the front and back end automatically.</p>
+<h3>Navigating through Code</h3>
+<p><strong>Cmd + R</strong> allows you to search for method names with fuzzy searching. In CSS, it would allow you to type <strong>Cmd + R + button</strong> and go directly to your button code.</p>
+<p><strong>Cmd + P then @</strong> will get you to the same place.</p>
+<p><strong>Helpful Options under the Edit Menu</strong><br />
+<strong>Ctrl + M</strong> allows you to jump between opening and closing Curly Braces  and Parentheses.</p>
+<p><strong>Helpful Options under the </strong><strong>View Menu</strong><br />
+You can work in Columns Rows or Grids and there are also keyboard shortcuts for all of these available under the View Menu.</p>
+<p><strong>Search and Replace</strong></p>
+<p><strong>Find</strong><br />
+  <strong>Cmd + F (Ctrl + F)</strong> There are a number of options avaiable such as regular expressions, case-sensitive, whole word and such. Once you have done more than one search you can also use the up and down arrow keys to retrieve a previously used search. </p>
+<p><strong>Replace</strong><br />
+<strong>Cmd + Option + F</strong> (<strong>Ctrl + H</strong>) will give you a search/replace window. You can also preserve case when using Searches.</p>
+<p><strong>Incremental Find<br />
+</strong>You can also use a search as a navigational tool in your code. An example would be if you wanted to go to a certain term say Copyright. You use <strong>Cmd + i</strong>  and type in the term. Change your mind? Hit <strong>escape</strong> and it takes you back to where you were.</p>
+<p><strong>Searching Multiple Files and Folders</strong><br /> 
+<strong>Cmd + Shift + F</strong> (<strong>Ctrl + Shift + F</strong>) will allow you to choose which other files to search in. (By default it will search through all the files in your project.) <strong>F4</strong> allows you to move through the previous search results and sublime will take you to the files as needed.</p>
+<p><strong>Navigating through Code<br />
+Option + Left</strong> or <strong>Right Arrow</strong> (<strong>Alt</strong>) Moves you one word at a time. Adding a <strong>Shift</strong> key continues to add to the selection. Look under <strong>Selection</strong> menu for power tools. Within a word <strong>Cmd + D</strong>  for the word. <strong>Cmd + L</strong>  selects a whole line. <strong>Extend Selection to Paragraph</strong> is handy and does not have a Keyboard Shortcut, but could. </p>
+<p><strong>Editing Multiple Lines at Once<br />
+</strong>Imagine inconsistent spacing. Click an insert cursor, Use <strong>Cmd</strong>  and drag to the next location. Once the selection is made, what you do will apply to all. More powerful is <strong>Add Previous</strong> or <strong>Add Next Line</strong>. <em>On the Mac, Mission Control uses these shortcuts so if you want to use the shortcuts you will need to turn off those shortcuts in Preferences</em>. <strong>Ctrl + Shift + Up</strong> or <strong>Down</strong> (<strong>Ctrl + Alt + Up or Down</strong>) Much faster. Even better but harder to memorize. Select all the lines. Then split the selections. <strong>Cmd + Shift + L</strong> Then you can move the cursor to the beginning by using left or right arrow to get to the beginning or ending of the lines. Then you can use <strong>Opt + Left</strong> or <strong>Right Arrow</strong> (<strong>Alt</strong>) to move the cursor to where you want to use it.</p>
+<p>When using Multiple Cursors. <strong>Cmd + D</strong> will select the next item that matches. You can then update all at once.</p>
+<p><strong>Ctrl + Cmd + G</strong> will select every occurrence of the word. </p>
+<p><strong>Ctrl + Cmd + L</strong> will select every line at one time.</p>
+<p>Column Selection is done by using <strong>Option</strong>.</p>
+<p><strong>Auto Completion</strong><br />
+html and css are built into the editor. It also knows possibilities based on code in the file. <strong>Ctrl + Spacebar</strong> shows all available code completions. You may not want the default behavior which is hitting Enter since that will keep you from a line break. Instead go to User Settings and add the line <strong>&quot;auto_complete_commit_on_tab&quot;: true</strong>. Now enter will give you the line break and tab will auto complete. Can also just hit <strong>tab</strong> and it will choose the first option, <strong>tab</strong> again will cycle through. <strong>Ctrl + Spacebar</strong> can still be used afterwards. </p>
+<p><strong>In HTML</strong><br />
+  You can select a whole tag by <strong>Cmd + Shift + A</strong>  First time gets you the content, then the whole tag, then the contents of parent, then the parent tag and so on. Eventually you could select everything.</p>
+<p><strong> In Javascript<br />
+</strong>You have the <strong>select brackets command</strong>. <strong>Ctrl + Shift + M</strong> on both platforms. Selects brackets, parentheses and curly braces. By indentation, <strong>Cmd + Shift + J</strong>. Scope selections, (Items in different color) <strong>Cmd + Shift + Space</strong>.</p>
+<p><strong>Editing Code<br />
+Ctrl + T</strong> works to transpose letters or if you select between words, it transposes words. Another very handy feature is the ability to move a line of code which they term <em>swap line up</em> or <em>swap line down</em>. <strong>Cmd + Ctrl + Up</strong> or <strong>Down Arrow</strong> (<strong>Ctrl + Shift + Up</strong> or <strong>Down Arrow</strong>). </p>
+<p><strong>Bookmarking Code<br />
+  Cmd + F2</strong> to bookmark. <strong>F2</strong> takes you back to the bookmark. Handy for the code you plan to review again.</p>
+<p><strong>GoTo Anything</strong><br />
+<strong>Cmd + P</strong>,  Allows you to see other files and using your <strong>arrow keys</strong> can get you to numerous other files quickly. Adding a <strong>#</strong> sign in the front allows you to use fuzzy searches. By typing a couple letters that are close. You can also get to a file then add <strong>#</strong> to do a fuzzy search within a file. You can also go to a line number. <strong>:50</strong> would take you to an exact line in the code. This can also be used as we saw with the <strong>#</strong> sign. The <strong>@</strong> sign will allow you search by id. (Very helpful for locating individual CSS tags. css@title for example. </p>
+<p><strong>Cmd Palette</strong><br />
+<strong>Cmd + Shift + P</strong>  Allows you to access the Command Palette. Lists every command available in the editor. You can use fuzzy searches to locate the command and the keyboard shortcuts are also available in the right side. Great to access without having to memorize everything. (Close will get you there)</p>
+<h3>Power Editing</h3>
+<p><strong>Snippets</strong><br />
+Snippets are more powerful completions (e.g., html gives you snippets) Bringing up the Command Palette with <strong>Cmd + Shift + P</strong>  will allow you to type Snip to see all the available snippets. For example, there is a <strong>Lorem Ispum Snippet</strong>. (Lorem tab) You can tab to the next element position with snippets as an example for link tags.</p>
+<p><strong>Macros</strong><br />
+Macros allow you to eliminate a lot of repetive steps. They are available under the <strong>Tools Menu</strong>. <strong>Ctrl + Q</strong> is the method to start recording a macro. <strong>Cmd + Right Arrow</strong> (<strong>End</strong>) would take you to the end of the line. If you wanted to play back the macro you could use <strong>Ctrl + Shift + Q</strong>. These are temporary. There is the possibility of saving it and then by adding a keybinding you can use whenever you would like. super is the Cmd key on mac. The shortcuts will also show in the menu.

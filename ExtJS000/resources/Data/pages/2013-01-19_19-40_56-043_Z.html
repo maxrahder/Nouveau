@@ -1,0 +1,18 @@
+<p>Causes the store to load its data via its associated proxy.</p>
+
+<div class="readonly">
+<pre class="runnable">
+store.load();</code></pre>
+</div>
+
+<div class="readonly">
+<pre class="runnable">
+store.load(function(records, operation, success) {
+    // The operation object contains all details of the Ext.data.Operation
+    console.log('The store has been loaded.');
+});</pre></div>
+
+<p>
+The <code>load()</code> method can also be passed in 
+<code>Ext.data.Operation</code> config object.
+</p>

@@ -1,0 +1,52 @@
+<h3>A proxy tells the app how to get the data.</h3>
+<p>We will now attach the proxy to the model:</p>
+<ol>
+<li><p>Click on the <b>ITunesRecord</b> model. In the <b>Config panel</b>, find the <b>Proxy</b> property.
+<li><p>Click on the <b>(+)</b> to the right of <b>Proxy</b>.
+<li><p>Select <b>Ajax Proxy.</b></p></li>
+<li><p>Select <b>MyAjaxProxy</b> in the Project Inspector.</b></p></li>
+<li><p>In the <b>Config panel</b> give this new <b>proxy</b> the following property values:
+<ul>
+<li><p>url: <b>data/ITunesSampleData.json</b></p></li>
+<li><p>reader: <b>Json Reader</b></p></li>
+</ul>
+<p><small><b>Note:</b> Your code should look like this:</i></b></small></p>
+<pre>
+Ext.define('ITunesExtplorer.model.ITunesRecord', {
+    extend: 'Ext.data.Model',
+
+    fields: [
+        {
+            name: 'name'
+        },
+        {
+            name: 'artist'
+        },
+        {
+            name: 'link'
+        },
+        {
+            name: 'category'
+        },
+        {
+            name: 'price'
+        },
+        {
+            name: 'image'
+        },
+        {
+            name: 'id'
+        }
+    ],
+
+    proxy: {
+        type: 'ajax',
+        url: 'data/ITunesSampleData.json',
+        reader: {
+            type: 'json'
+        }
+    }
+});
+</pre>
+</ol>
+<h2>Save the Application</h2>

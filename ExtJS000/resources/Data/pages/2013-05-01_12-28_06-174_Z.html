@@ -1,0 +1,48 @@
+<div type="expander" caption="Data">
+<pre>&lt;beatles&gt;
+    &lt;beatle&gt;
+        &lt;first&gt;John&lt;/first&gt;
+        &lt;last&gt;Lennon&lt;/last&gt;
+    &lt;/beatle&gt;
+    &lt;beatle&gt;
+        &lt;first&gt;Paul&lt;/first&gt;
+        &lt;last&gt;McCartney&lt;/last&gt;
+    &lt;/beatle&gt;
+    &lt;beatle&gt;
+        &lt;first&gt;George&lt;/first&gt;
+        &lt;last&gt;Harrison&lt;/last&gt;
+    &lt;/beatle&gt;
+    &lt;beatle&gt;
+        &lt;first&gt;Ringo&lt;/first&gt;
+        &lt;last&gt;Starr&lt;/last&gt;
+    &lt;/beatle&gt;
+&lt;/beatles&gt;
+</pre>
+</div>
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    fields : [ 'first' , 'last' ],
+
+    proxy : {
+        type : 'ajax',
+        url : '../Data/xml/theBeatles.xml',
+        reader: {
+            type: 'xml',
+            root: 'beatles',
+            record: 'beatle'
+        }
+    }
+
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.model.Person'
+});
+store.load(function(records){
+    var s = '';
+    Ext.Array.forEach(records, function(record){
+        s += record.get('first') + ' ';
+    });
+    alert(s);
+});
+</pre>

@@ -1,0 +1,52 @@
+<p>
+Click on Code Editor and look at the data. There is one set of dependent values.
+</p>
+<pre class="runnable preview">
+var data = [ 
+    {x : 0, y : 0}, 
+    {x : 1, y : 1}, 
+    {x : 2, y : 4}, 
+    {x : 3, y : 9}, 
+    {x : 4, y : 16} 
+];
+
+Ext.define('MyApp.model.Data', {
+    extend : 'Ext.data.Model',
+    fields : [ 'x', 'y']
+});
+store = Ext.create('Ext.data.Store', {
+    model: 'MyApp.model.Data',
+    data: data,
+    autoLoad : true
+});
+
+chart = Ext.create('Ext.chart.Chart', {
+    store : store,
+    axes : [ {
+        type : 'Numeric',
+        position : 'left',
+        fields : ['y'],
+        title : 'Dependent'
+    }, {
+        type : 'Numeric',
+        position : 'bottom',
+        fields : ['x'],
+        majorTickSteps : 3,
+        title : 'Independent'
+    } ],
+    series : [ {
+        type : 'line',
+        axis : 'left',
+        highlight : true,
+        xField : 'x',
+        yField : 'y'
+    } ]
+});
+
+Ext.create('Ext.container.Container', {
+    renderTo: Ext.getBody(),
+    layout : 'fit',
+    height: 350,
+    items : [ chart ]
+});
+</pre>

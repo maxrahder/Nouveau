@@ -1,0 +1,29 @@
+<p>
+Open the debugger and inspect the panel.</p>
+<ul class="plain">
+<li><b>Create the button</b>: The component now exists, but there's no DOM. </li>
+<li><b>Add the button to the panel</b>: The button renders and you see it in the DOM.</li>
+<li><b>Remove the button</b>: This removes it from the DOM (but the component still exists).</li>
+</ul>
+<pre class="runnable preview">var panel = Ext.create('Ext.panel.Panel', {
+    tbar : [{
+        text : 'Create Button',
+        handler : function(){
+            panel.button = panel.button || Ext.create('Ext.button.Button', {text : 'BUTTON', itemId : 'mybutton'});
+        }
+    }, {
+        text : 'Add Button to Panel',
+        handler : function(){
+            panel.add(panel.button);
+        }
+    }, {
+        text : 'Remove Button from Panel',
+        handler : function(){
+            panel.remove(panel.button, false); // false: Don't delete the component
+        }
+    }],
+    height : 100,
+    width : 400,
+    bodyPadding : 8,
+    renderTo : Ext.getBody()
+});</pre>

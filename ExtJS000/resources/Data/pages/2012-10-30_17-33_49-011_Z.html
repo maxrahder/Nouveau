@@ -1,0 +1,10 @@
+<h3>Ext.Date.getElapsed(dateA, [dateB]):Number</h3>
+<p>Returns the number of milliseconds between two dates.</p>
+<pre class="runnable">
+var released = Ext.Date.parse('1967/06/01', 'Y/m/d');
+var taughtTheBandToPlay = Ext.Date.add(released, Ext.Date.YEAR, -40);
+
+var daysAgo = Ext.Date.getElapsed(new Date(), taughtTheBandToPlay);
+daysAgo = daysAgo / 1000 / 60 / 60 / 24; // Milliseconds > days
+alert('That was ' + Math.round(daysAgo) + ' days ago.');
+</pre>

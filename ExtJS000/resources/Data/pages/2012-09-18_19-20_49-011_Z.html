@@ -1,0 +1,21 @@
+<p><code>xtype:panel</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>Ext.panel.Panel</code></p>
+
+<p>
+A panel is a container, and like any container, has <em>items</em> and a <em>layout</em>.
+</p>
+
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+	title : 'My Panel',
+	renderTo : Ext.getBody(),
+	layout : 'vbox',
+	items : [ {
+		xtype : 'button',
+		text : 'Button One'
+	}, {
+		xtype : 'button',
+		text : 'Button One'
+	} ]
+});
+</pre>
+

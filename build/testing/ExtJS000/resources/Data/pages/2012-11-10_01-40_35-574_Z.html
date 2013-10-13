@@ -1,0 +1,62 @@
+<p>
+Click on a series title in the legend to hide and show its values.
+</p>
+<pre class="runnable preview">
+var restaurants = { A : 'Dane Pub', B : 'Grace Restaurant', C : 'Deluxe Grill' };
+var ratings = [ 
+{ x : 'cleanliness', A : 7, B : 9, C : 3 }, 
+{ x : 'service'    , A : 6, B : 8, C : 8 }, 
+{ x : 'food'       , A : 6, B : 7, C : 6 }, 
+{ x : 'value'      , A : 4, B : 7, C : 6 }, 
+{ x : 'swank'      , A : 6, B : 8, C : 8 }, 
+{ x : 'charm'      , A : 4, B : 8, C : 8 } 
+];
+
+Ext.define('MyApp.data.Rating', {
+    extend : 'Ext.data.Model',
+    fields : [ 'x', 'A', 'B', 'C' ]
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.data.Rating',
+    data : ratings
+});
+var series = [ { yField : 'A' }, { yField : 'B'} , { yField : 'C' } ];
+Ext.Array.forEach(series, function(item) {
+    Ext.apply(item, {
+        type : 'radar',
+        xField : 'x',
+        showInLegend : true,
+        title : restaurants[item.yField],
+        style : {
+            'stroke-width' : 2,
+            opacity : 0.2
+        }
+    });
+});
+var chart = Ext.create('Ext.chart.Chart', {
+    store : store,
+    animate : true,
+    legend : {
+        position : 'left'
+    },
+    axes : [ {
+        type : 'Radial',
+        position : 'radial',
+        label : {
+            display : true
+        }
+    } ],
+    series : series
+});
+
+Ext.create('Ext.container.Container', {
+    renderTo : Ext.getBody(),
+    layout : 'fit',
+    height : 350,
+    items : [ {
+        xtype : 'panel',
+        layout : 'fit',
+        items : [ chart ]
+    } ]
+});
+</pre>

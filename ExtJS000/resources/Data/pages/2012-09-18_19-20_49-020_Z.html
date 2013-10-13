@@ -1,0 +1,13 @@
+<p>You can override any property or method on an existing class with the <code>override</code> property. Override really over<b>writes</b>
+a property or a method in the specified class.</p>
+<pre class="runnable">
+Ext.define('ThisNameDoesNotMatter', {
+  override : 'Ext.panel.Panel',
+  height : 100,
+  width : 200,
+  title : ':-)'
+});
+Ext.create('Ext.panel.Panel', {
+    renderTo : Ext.getBody()
+});
+</pre>

@@ -1,0 +1,24 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.slider.Single" target="api"><code>Ext.slider.Single</code></a></p>
+
+Slider which supports vertical or horizontal orientation, keyboard adjustments, configurable snapping, axis clicking and animation. Can be added as an item to any container.
+
+<pre class="runnable preview">
+Ext.define('Ext.ux.CustomTrigger', {
+    extend: 'Ext.form.field.Trigger',
+    alias: 'widget.customtrigger',
+
+    // override onTriggerClick
+    onTriggerClick: function() {
+        Ext.Msg.alert('Status', 'You clicked my trigger!');
+    }
+});
+
+Ext.create('Ext.slider.Single', {
+    width: 200,
+    value: 50,
+    increment: 10,
+    minValue: 0,
+    maxValue: 100,
+    renderTo: Ext.getBody()
+});
+</pre>

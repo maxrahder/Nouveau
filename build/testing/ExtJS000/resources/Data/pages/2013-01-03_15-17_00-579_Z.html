@@ -1,0 +1,10 @@
+<p>
+The requires array is optional for any class declaration. It simply loads a source
+file. Presumably, the file contains a class declaration. 
+</p>
+<p>
+The way to think of the requires array is "During the execution of this class
+the following classes will be used &mdash; please get them in memory."
+</p>
+<p>For view classes, the rule of thumb is: If you are creating objects within the class, either via 
+an alias or via <code>Ext.create()</code>, put those class names in the requires array.</p>

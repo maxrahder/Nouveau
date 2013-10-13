@@ -1,0 +1,14 @@
+
+<pre class="runnable">
+var store = Ext.create('Ext.data.Store', {
+    fields: [ 'first', 'last' ],
+    data: [ { first: 'John',     last: 'Lennon'     },
+            { first: 'Paul',     last: 'McCartney'  },
+            { first: 'George',   last: 'Harrison'   },
+            { first: 'Ringo',    last: 'Starr'      } ]
+});
+var index = store.findBy( function(record) {
+    return ( record.get('first') === 'John' );
+});
+alert(index); // 0 -- John
+</pre>

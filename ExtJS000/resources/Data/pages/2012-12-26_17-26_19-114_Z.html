@@ -1,0 +1,39 @@
+<ul>
+<li>
+The north and south panels take up all the available width
+</li>
+<li>
+The west and east panels take up all the available height
+</li>
+<li>
+If you'd like, you can also use flex rather than height or width
+</li>
+</ul>
+<pre class="runnable preview">
+Ext.create('Ext.window.Window', {
+
+    layout : 'border',
+
+    items : [ {
+        title : 'West (.5 flex)',
+        region : 'west',
+        flex : .5
+    }, {
+        title : 'East',
+        region : 'east', 
+        width : 60
+    }, {
+        title : 'Center',
+        region : 'center'
+    }, {
+        title : 'North',
+        region : 'north', 
+        height : 60
+    } ],
+
+    title : 'Border Layout Window &mdash; Resize Me',
+    defaults : {margin : 4},
+    bodyPadding : 8,
+    height : 300, width : 600, x : 0, y : 0,
+    autoShow : true
+});

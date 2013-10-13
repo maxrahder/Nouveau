@@ -1,0 +1,237 @@
+<h1>Introduction</h1>
+<p>This lab introduces you to the basics of creating a form, and submitting field data to the server.</p>
+<p>
+We'll be using <code>Ext.form.Panel</code>, <code>Ext.Viewport</code>, <code>Ext.form.field.TextField</code>
+and <code>Ext.button.button</code>, so have the <a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.Base" target="api">API documentation</a> handy.
+</p>
+
+<h1>Steps</h1>
+
+<ol>
+
+<li>Inspect the application
+<p>Open <kbd>Labs/Forms/Introduction</kbd>.</p>
+<p>
+The application is partially set up. There are the folders required by MVC, and a stubbed-out viewport
+in <kbd>Forms/Introduction/app/view/Viewport.js</kbd>.
+</p>
+<p>
+In this lab you will create a new form class, and use it as the single child item in the viewport.
+</p>
+
+<li>Define the new view class <code>PersonForm</code>
+<p>
+Create the file <kbd>Forms/Introduction/app/view/PersonForm.js</kbd>. In the file define a new 
+class <code>MyApp.view.PersonForm</code> which extends <code>Ext.form.Panel</code>. Add two configs
+to the panel &mdash; <code>html:'My form'</code> and <code>xtype:'personform'</code>.
+</p>
+</li>
+
+<li>Reference your new form panel from the viewport
+<p>
+Edit <kbd>Forms/Introduction/view/Viewport.js</kbd> and specify an instance of your new form as the single
+item in the <code>items</code> array. Important: Remember, that when using xtype, you <b>must</b> add the
+new class to the <code>requires</code> array. 
+</p>
+<p>
+Your viewport should look like this:
+</p>
+<pre class="sample">
+Ext.define('MyApp.view.Viewport', {
+    extend : 'Ext.Viewport',
+    requires : [ 'MyApp.view.PersonForm' ],
+    items : [ {
+        xtype : 'personform'
+    } ]
+});</pre>
+</li>
+
+<li>Run it
+<p>
+Use your web browser to visit <kbd>Labs/Forms/Introduction/</kbd> and you should see your new form. We didn't specify
+a layout for the viewport, so by default your form panel will take up the window width.
+</p>
+</li>
+
+<li>Change the panel's width
+<p>
+To make it look better, have the viewport specify a width of 300 pixels for your form panel, then
+save and refresh the page in your browser to make sure everything is ok.
+</p>
+<p>The reason this is specified in the viewport is that you always design your components to be reusable, so <code>PersonPanel</code> 
+shouldn't know anything about where it might be placed. It should work whether it's in a <code>layout:'fit'</code> container, 
+or whether it's being created with a specific width. So always consider what
+should be set by the component, versus what properties should be set by the calling routine.
+</p>
+</li>
+
+<li>Add "Name" and "Date of Birth" fields to the form
+<p>
+Edit <kbd>Forms/Introduction/view/PersonForm.js</kbd> and configure it to have two input fields: a text field 
+and a date field.  
+</p>
+<p>
+For the text field use configs:
+</p>
+<ul class="plain">
+<li><code>xtype:'textfield'</code></li>
+<li><code>fieldLabel:'Name'</code></li>
+<li><code>name:'name'</code></li>
+</ul>
+<p>
+For the date of birth field use configs:
+</p>
+<ul class="plain">
+<li><code>xtype:'datefield'</code></li>
+<li><code>fieldLabel:'Date of Birth'</code></li>
+<li><code>name:'dob'</code></li>
+</ul>
+</li>
+
+<li>Add "Submit" and "Cancel" buttons to the form
+<p><code>MyApp.view.PersonForm</code> subclasses <code>Ext.form.Panel</code>, which in turn subclasses
+<code>Ext.panel.Panel</code>. Panels have a <em>buttons</em> array that specifies a set of bottom-docked
+buttons.</p>
+<p>
+Configure the <em>buttons</em> array to create two buttons: one with the text "Save" and
+the other "Cancel". What button config is used to specify the text? 
+Read <a href="http://docs.sencha.com/extjs/#!/api/Ext.button.Button" target="api">the API documentation</a> and find out. <kbd>;-)</kbd>
+</p>
+</li>
+
+<li>Have the Cancel button reset the form
+
+<p>
+A form's associated "form submission object" has a <code>reset()</code> method. To reset the form, you need to get a reference to the form, run <code>getForm()</code> to get the form submission object, and run <code>reset()</code> on it.
+<p>
+You need a handler on the Cancel button that does that.
+</p>
+<p>
+How? Implement this using the button <em>handler</em> config. The associated call-back function should have a single parameter, which is the button that invoked the event.
+</p>
+<p>The code in the event handler will have one statement. Use the component query features built into every component to go up the containment hierarchy to get a reference to the 
+form panel, and run <code>getForm().reset()</code> on it. To select your form panel you
+can use the <em>xtype</em> for your form class.
+</p>
+<p>
+Code it, and test it by typing something into each input field. Then press Reset.
+The fields should reset themselves.
+</p>
+</li>
+
+<li>Have the Submit button submit the form
+<p>Put a handler on the Submit button. The handler should select the parent form panel,
+and run <code>submit()</code>, passing an object with three properties: <em>url</em>,
+<em>success</em> and <em>failure</em>. Read 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.form.Panel-method-submit" target="api">the API documentation</a> for details of the submit method.
+</p>
+<p>For now, the URL can be anything. We don't really a have back-end, so just set it to something
+like "mybackendurl.php". In your application you're free to map any URL to any backend
+code &mdash; that code will receive and process the request.</p>
+<p>
+The <em>failure</em> properties are run when the server responds with
+a 4xx or 5xx HTTP status. Since our URL is fictional, you'll get a "not found" (404) response, and your failure method will be run.
+</p>
+<p>Code both of these handlers to simply do a <code>console.log('success');</code>
+or <code>console.log('failure');</code> so you can verify which was
+run.
+</p>
+</li>
+
+<li>Code it, test it and verify what's being sent to the server
+<p>
+If you press Submit, you should see in the console that the failure function is run. That's because the submit URL is fictional and the server is responding with a 404. However, we're still sending the form.
+</p>
+<p>
+In the debugger, view network traffic. Clear it out, then press Submit. You should see a request being sent. Inspect the form data being sent to the server and you should see "name" and "dob", set to whatever you entered in those fields.
+</p>
+</li>
+
+<li>Review: Your button handler code should look like this
+<p>If you'd like to compare your code, here's one way the submit could have been coded.</p>
+<pre class="sample">
+buttons : [ {
+    text : 'Submit',
+    handler : function(button) {
+        button.up('form').submit({
+        url : 'myresponse.html',
+            success : function(form, action) {
+                console.log('success');
+            },
+            failure : function(form, action) {
+                console.log('failure');
+            }
+        });
+    }
+}, {
+    text : 'Cancel',
+    handler : function(button) {
+        button.up('form').getForm().reset();
+    }
+} ]
+</pre>
+</li>
+
+<h1>Optional</h1>
+
+<li>Code a server response
+<p>
+We're not really using a back-end, but we can simulate it. One of the great things
+about Ext JS and this type of programming is that it's easy to simulate a broader 
+architecture.
+</p>
+<p>
+To simulate the back-end, create <kbd>Labs/Forms/Introduction/app/data/save.html</kbd> and put the following text in it:
+</p>
+<pre class="sample">
+{
+    success : true,
+    msg : 'Name and birth date have been saved'
+}
+</pre>
+<p>
+This simulates a server back-end. The front-end doesn't know whether the response is 
+statically- or dynamically-created. So during development just code your "back-end responses" using static files, as you're doing here.
+</p>
+</li>
+
+<li>Change the submit URL to "app/data/save.html"
+<p>
+Change your Submit handler to use the new URL. Save and run &mdash; since you 
+have a <code>console.log('success');</code> statement in the success function,
+you should see your "success" in the console.
+</p>
+</li>
+
+<li>Change <kbd>save.html</kbd> to return <code>success : false</code>
+<p>
+Change "save.html" to return false, and press Submit again. The "failure" function
+should be run.
+</p>
+<p>
+So the failure function is run under two circumstances: when the server responds
+with a 4xx or 5xx HTTP status, or if you set the response JSON <em>success</em>
+property to false. The point is, that  sometimes you have a <em>logical</em> error. 
+In that case, you return <em>false</em> in the response, and probably also include
+a user-readable message explaining what went wrong.
+</p>
+</li>
+
+<li>Show the server message to the user
+<p>
+Have <kbd>save.html</kbd> return <code>success : true</code> and set the message to something.
+Then add code in your success function to display the message. Use <code>Ext.Msg.alert()</code>. The server's JSON response is passed to you in the success method's second parameter. If you named that "action", then <code>action.result</code> is the entire
+response JSON. Therefore, our message is in <code>action.result.msg</code>.
+</p>
+<p>
+Put similar code in the failure function. Then change <kbd>save.html</kbd> to return 
+<code>success : false</code>. Is your message being shown? Note that our "server" returns whatever hard-coded
+message you choose, so depending on what you used, it may not match whatever you're returning in "success".
+</p>
+</li>
+</ol>
+
+<h1>Conclusion</h1>
+<p>Now you know how to send form data to the server, and how to process the server response! <kbd>:-)</kbd></p>
+<br />
+<br />

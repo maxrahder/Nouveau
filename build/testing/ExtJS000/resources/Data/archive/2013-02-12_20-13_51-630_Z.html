@@ -1,0 +1,99 @@
+<h1>Introduction</h1>
+<p>In this lab, you will enhance the detail panel by adding an Edit
+	button which displays the edit window.
+<ol>
+
+	<li>Review the requirements for the detail panel with your
+		instructor
+		<p>The detail panel needs a toolbar with an Edit button. When the
+			user clicks on the button, an edit window appears. Eventually, the
+			edit window will have some form fields, but for now, we will just add
+			the code to show and close the window.</p>
+	</li>
+
+	<li>Think about the detail component
+		<p>The detail panel is just a component with an "html" property.
+			We need to change it to be a panel, with a top toolbar (containing
+			the edit button), a bottom toolbar (containing the "Powered by Yelp"
+			image). The panel will have a single item within it &mdash; for now
+			it will be a placeholder component with an "html" property, but later it
+			will hold the template that shows details about a business.</p>
+	</li>
+
+	<li>Make the detail component a panel
+		<p>
+			Open "YelpExtplorer/view/detail/Detail.js" and
+			change the code so yepdetail extends "Ext.panel.Panel".</br> 
+                        Edit "Viewport.js" and add <code>title:'Detail'</code>
+			to the east component's specification. Save and refresh your browser.
+			Now that the east component is a panel, the title property is shown
+			as the panel's header. 
+		</p>
+	</li>
+
+	<li>Add the Edit button to the top of the detail panel
+		<p>In "YelpExtplorer/view/detail/Detail.js" add a "tbar" array,
+			with one item whose xtype is button and whose text is "Edit". In a minute,
+			we will add code to display the edit window when the button is clicked.
+		</p>
+		<p>As always, as you work, you should frequently save and refresh
+			your browser to make sure there isn't a typo or misplaced syntax in
+			your code.</p>
+	</li>
+	<li>Add the Powered by Yelp image to the bottom of the detail
+		panel
+		<p>
+			To do this, add a "bbar" array, with one item whose xtype is
+			"component". Set the height to 25 and the width 155. Set the
+			component "html" property to the string
+			<code>'&lt;a href="http://www.yelp.com"
+				target="_blank"&gt;&lt;img
+				src="resources/images/Powered_By_Yelp_Red.png"/&gt;&lt;/a&gt;'</code>
+			. This is a hyperlink on top of a Yelp image, linked to the Yelp web
+			site.
+		</p>
+		<p>Save and refresh your browser. You should still see the
+			non-functional Edit button, and a Powered by Yelp image at the
+			bottom. If you click on the image you should see a new browser window
+			open on the Yelp site.</p>
+	</li>
+<p><small><b>Note:</b> Yelp will open up a window to Yelp content based on your location.</small></p>
+	<li>Define the window component
+		<p>Using Sencha Cmd, generate a new view named
+			"detail.EditWindow".</p>
+		<p>Once you've created it, open "detail/EditWindow.js" in your
+			editor and change it so it extends "Ext.window.Window". Assign it the
+			xtype "yepeditwindow". Set "title" to "Edit
+			Business". Set "autoShow" true Set "modal" to true and set
+			its "html" property to "yepeditwindow". </p>
+		<p>When you are finished, EditWindow will have six properties:
+			extend, xtype, title, autoShow, modal and html.</p>
+	</li>
+
+	<li>Show the window when Edit is clicked
+		<p>
+			Edit "detail/Detail.js" and put a handler on the edit button. The
+			handler is a function whose first parameter is a reference to the
+			button. The function should run
+			<code>Ext.create("YelpExtplorer.view.detail.EditWindow");</code>
+		</p>
+		<p>Save your changes and refresh your browser. If you click on
+			Edit you should see a cramped little window with the string
+			"Yep Edit Window" in it. Later this week, we will add form fields here.</p>
+		<p>When you ran your application, you may have noticed a
+			console message stating that "YelpExtplorer.view.detail.EditWindow" was              
+                        synchronously loaded. Recall from our earlier discussion, that the "requires"
+			array is a way of saying "During the execution of this class, the
+			following classes will be used&mdash;please get them in memory." The
+			window is needed when the user clicks on Edit, so you need to add a
+			"requires" array to the detail panel, specifying
+			"YelpExtplorer.view.detail.EditWindow".</p>
+		<p>Save, refresh, click Edit, and you should no longer see the
+			warning about synchronously loading the class.</p>
+	</li>
+
+</ol>
+<h1>Conclusion</h1>
+<p>You used Sencha Cmd to create an additional view class that you will be 
+	using from within the detail panel. Later, we will add fields, and
+	and a template to the panel to show the selected business.</p>

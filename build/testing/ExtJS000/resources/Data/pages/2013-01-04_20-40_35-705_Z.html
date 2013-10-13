@@ -1,0 +1,15 @@
+
+<pre class="runnable">
+Ext.create('Ext.button.Button', {
+    text : 'Button',
+    listeners : {
+        click : {
+            fn: function(button){
+                alert(this.a);
+            },
+            scope : {a : 13},
+            delay : 1000
+        }
+    },
+    renderTo : Ext.getBody()
+});</pre>

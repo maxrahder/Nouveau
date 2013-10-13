@@ -1,0 +1,39 @@
+<img src="resources/images/SupermanLogo.png" style="float: left; height: 32px"/>
+<p>
+The ability to dock items is a panel's super power. 
+</p>
+<div style="clear: both;"/>
+<p>
+<code>dockedItems</code> is an array. Each element in the array must be a component tagged with a <code>dock</code> config,
+which specifies whether the component is docked to the top, right, bottom or left.
+</p>
+<p>
+Typically, toolbars are docked but in theory any component can be docked. In this case, there are two items in the <code>dockedItems</code> array: the toolbar at the top, and a button at the bottom.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+
+    title : 'My Panel',
+
+    dockedItems : [ {
+        xtype : 'toolbar',
+        dock : 'top',
+        items : [ {
+            text : 'Toolbar Button'
+        }]
+    }, {
+        xtype : 'button',
+        dock : 'bottom',
+        text : 'Bottom Button'
+    } ],
+    
+    width : 300,
+    bodyPadding : 16,
+    layout : 'vbox',
+    items : [ {
+        text : 'Center Button',
+        xtype : 'button'
+    }],
+
+    renderTo : Ext.getBody()
+});</pre>

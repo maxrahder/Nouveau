@@ -1,0 +1,33 @@
+<ul>
+<li>Using Sass you can declare variables that can be used throughout your stylesheet, thereby enabling you to make global changes to your styles by tweaking a single value. </li>
+<li>Variables begin with a dollar sign ($) and are declared just like properties. </li>
+<li>They can have any value that is allowed for a CSS property, such as colors, numbers (with units), or text.</li> 
+</ul>
+<table>
+<tr>
+<td>
+</br>
+
+<strong>SCSS</strong><br/>
+<pre>
+$blue: #3BBFCE;
+$marginleft: 5px;
+#myObj {
+	background-color: $blue;
+	margin-left: $marginleft;
+}
+</pre>
+</td>
+<td>&nbsp;&nbsp;</td>
+<td>
+</br>
+<strong>Generated CSS</strong><br/>
+<pre>
+#myObj {
+	background-color: #3BBFCE;
+	margin-left: 5px;
+}
+</pre>
+</td>
+</tr>
+<table>

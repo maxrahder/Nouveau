@@ -1,0 +1,28 @@
+
+<p>The value must match the regular expression.</p>
+
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    fields : [ 'first', 'last', 'employeeId' ],
+    validations: [ {
+        type: 'format',
+        field: 'employeeId',
+        matcher: /^\d+$/,
+        message: 'Employee ID must contain all numbers'
+    } ]
+});
+var record = Ext.create('MyApp.model.Person', {
+    first: 'John',
+    last: 'Lennon',
+    employeeId: 'number 9'
+});
+
+var errors = record.validate();
+if ( !errors.isValid() ) {
+    var message = '';
+    errors.each( function (error) {
+        message += error.field + ': ' + error.message + '. '; 
+    });
+    alert(message);
+}</pre>

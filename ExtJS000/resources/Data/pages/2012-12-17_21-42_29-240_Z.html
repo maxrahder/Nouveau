@@ -1,0 +1,19 @@
+<p>
+You may also specify a "belongsTo" association. This 
+creates a getter for the parent record.
+</p>
+<pre>
+belongsTo : 'Associations.model.Customer'
+</pre>
+<p>or</p>
+<pre>
+associations : [{
+    type : 'belongsTo',
+    model : 'Associations.model.Customer'
+}]
+</pre>
+<p>
+Then in your code, you may write <code>order.getCustomer()</code>
+to get a reference to the parent customer record.
+</p>
+<p>There is also a <a href="http://docs.sencha.com/extjs/4.2.1/#!/api/Ext.data.association.HasOne" target="api"><code>hasOne</code></a> association.</p>

@@ -1,0 +1,16 @@
+<pre class="runnable preview phone portrait">
+Ext.create('Ext.panel.Panel', {
+    title : 'Panel',
+    renderTo : Ext.getBody(),
+    height : 200,
+    bodyPadding : 16,
+    items : [{
+        xtype : 'button',
+        text : 'Home',
+        glyph: '72@Pictos',
+        handler : function(b){
+            alert('You clicked the "' + b.getText() + '" button.');
+        }
+    }]
+});
+</pre>

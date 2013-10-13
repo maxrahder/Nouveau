@@ -1,0 +1,12 @@
+<pre class="runnable">
+var b = Ext.create('Ext.button.Button', {
+    text : 'Button',
+    renderTo : Ext.getBody()
+});
+b.on('click', 
+    function(button){
+        alert(this.a);
+    }, 
+    {a : 13},
+    {delay: 2000, single: true} // See Ext.util.Observable for full syntax.
+);</pre>

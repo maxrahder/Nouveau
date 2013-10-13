@@ -1,0 +1,33 @@
+<ul>
+<li>If you set the tree panel's <code>rootVisible</code> property to <code>false</code>, you just see the root's children.</li>
+</ul>
+
+<pre class="runnable preview">
+Ext.create('Ext.tree.Panel', {
+    rootVisible: false,
+    root: {
+        text: 'Root Node',
+        expanded: true,
+        children: [{
+            text: 'Child 1',
+            expanded: true,
+            children: [{
+                text: 'Child 1.1',
+                leaf: true
+            }, {
+                text: 'Child 1.2',
+                leaf: true
+            }]
+        }, {
+            text: 'Child 2',
+            expanded: true,
+            children: [{
+                text: 'Child 2.1',
+                leaf: true
+            }]
+        }]
+    },
+    title: 'Tree With Children, (rootVisible: false)',
+    renderTo: Ext.getBody()
+});
+</pre>

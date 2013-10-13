@@ -1,0 +1,97 @@
+<h1>Introduction</h1>
+<p>In this lab, you will start coding the YelpExtplorer application.
+	This week we will build on the application until the complete application
+	is coded, themed and deployed.
+<ol>
+
+	<li>Generate a workspace
+		<p>Open a terminal window and change directories to your Ext JS
+			directory.</p>
+		<p>Generate a new workspace by typing</p> <pre>sencha generate workspace ../SenchaTraining/ExtJS251/Labs</pre>
+
+		<p>Inspect the SenchaTraining/ExtJS251/Labs folder and note that
+			Sencha Cmd has created a new folder named <b>ext</b>. This is a copy of
+			the essential libraries and resources needed to develop and run Ext
+			JS applications.</p>
+
+		<p>Furthermore, all applications coded under the Labs
+			folder will share the <b>ext</b> install.
+	</li>
+
+	<li>Generate the YelpExtplorer application
+
+		<p>In the terminal window, navigate to
+			<tt>SenchaTraining/ExtJS251/Labs/ext</tt> and generate the YelpExtplorer
+			application by typing</p> <pre>sencha generate app YelpExtplorer ../YelpExtplorer</pre>
+	</li>
+
+	<li>Run the application
+		<p>
+			In your browser, open <a
+				href="/SenchaTraining/ExtJS251/Labs/YelpExtplorer" target="lab">the
+				initial application</a>.
+		</p>
+		<p>You should see a single tab titled "Center Tab 1" in the center
+			and a panel titled "west" on the left. The application doesn't do
+			anything yet.</p>
+	</li>
+
+	<li>Inspect the application
+		<p>In your IDE look at the
+			<tt>SenchaTraining/ExtJS251/Labs/YelpExtplorer/</tt> folder. You should see
+			several files, organized according to Sencha's MVC file structure:</p> <img src="resources/images/_yelpExtplorer/initialFolder.png" />
+
+	</li>
+
+	<li>Inspect index.html
+		<p>In your IDE open <tt>.../YelpExtplorer/index.html</tt>. Note that it
+			references two JavaScript files: <tt>bootstrap.js</tt> and <tt>app.js</tt>.</p>
+		<p>The bootstrap file contains classpath and alias mappings. Don't worry about the details of bootstrap.</p>
+		<p><b>app.js</b> is the starting point of any Ext JS application.</p>
+	</li>
+
+	<li>Inspect app.js
+		<p>
+			In your IDE open <tt>.../YelpExtplorer/app/<b>app.js</b></tt>.
+		</p>
+		<p>
+			<tt>app.js</tt> is the starting point of an Ext JS application. It is an
+			instance of
+			<code>Ext.app.Application</code>
+			. This code specifies the appliation's controllers, and creates the
+			<code>viewport</code>, which is the top-level container for the the user
+			interface.
+		</p>
+	</li>
+
+	<li>Inspect Main.js
+		<p>
+			In your IDE open <tt>.../YelpExtplorer/app/controller/<b>Main.js</b></tt>.
+		</p>
+		<p>
+			This file contains the definition for a controller. Note that it
+			extends
+			<code>Ext.app.Controller</code>
+			. Controllers coordinate events between data stores and components,
+			but our controller doesn't do anything yet.
+		</p>
+	</li>
+
+	<li>Inspect Viewport.js
+		<p>
+			In your IDE open <tt>.../YelpExtplorer/app/<b>Viewport.js</b></tt>.
+		</p>
+		<p>This defines a viewport, using the <code>border</code> layout. It contains
+			two components: a west panel and a center tab panel. The tab panel
+			contains a single panel whose title is "Center Tab 1"</p>
+	</li>
+
+</ol>
+
+<h1>Conclusion</h1>
+<p>In this lab, you used Sencha Cmd to generate a new workspace. A
+	workspace lets multiple applications share resources. You also
+	generated an application, and reviewed the initial MVC file strucure.</p>
+<p>As we write YelpExtplorer we will be refactoring this starting
+	point, adding new views models, stores and controllers.</p>
+

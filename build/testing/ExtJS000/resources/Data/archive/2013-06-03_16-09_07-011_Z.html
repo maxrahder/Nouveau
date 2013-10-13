@@ -1,0 +1,151 @@
+Theming Content
+<p>The ui code that you would need to manipulate for custom ui theming is located in the source code for that particular class. As a convenience, we have provided them all (with comments on usage) below</p>
+
+<div type="expander" caption="Variables used to create a visual theme for a Panel">
+<p><strong>@param {string} $ui-label</strong><br />
+  <em>The name of the UI being created. Can not included spaces or special punctuation<br />
+  (used in CSS class names).</em></p>
+<p><strong>@param {color} [$ui-border-color=$panel-border-color]</strong><br />
+<em>The border-color of the Panel</em></p>
+<p><strong>@param {number} [$ui-border-radius=$panel-border-radius]</strong><br />
+    </strong><em>The border-radius of the Panel</em></p>
+<p><strong>@param {number} [$ui-border-width=$panel-border-width]<br />
+    </strong><em>The border-width of the Panel</em></p>
+<p><strong>@param {number} [$ui-padding=$panel-padding]<br />
+    </strong><em>The padding of the Panel</em></p>
+<p><strong>@param {color} [$ui-header-color=$panel-header-color]<br />
+    </strong><em>The text color of the Header</em></p>
+<p><strong>@param {string} [$ui-header-font-family=$panel-header-font-family]<br />
+    </strong><em>The font-family of the Header</em></p>
+<p><strong>@param {number} [$ui-header-font-size=$panel-header-font-size]<br />
+    </strong><em>The font-size of the Header</em></p>
+<p><strong>@param {string} [$ui-header-font-weight=$panel-header-font-weight]<br />
+    </strong><em>The font-weight of the Header</em></p>
+<p><strong>@param {number} [$ui-header-line-height=$panel-header-line-height]<br />
+    </strong><em>The line-height of the Header</em></p>
+<p><strong>@param {color} [$ui-header-border-color=$panel-header-border-color]<br />
+    </strong><em>The border-color of the Header</em></p>
+<p><strong>@param {number} [$ui-header-border-width=$panel-header-border-width]<br />
+    </strong><em>The border-width of the Header</em></p>
+<p><strong>@param {string} [$ui-header-border-style=$panel-header-border-style]<br />
+    </strong><em>The border-style of the Header</em></p>
+<p><strong>@param {color} [$ui-header-background-color=$panel-header-background-color]<br />
+    </strong><em>The background-color of the Header</em></p>
+<p><strong>@param {string/list} [$ui-header-background-gradient=$panel-header-background-gradient]<br />
+    </strong><em>The background-gradient of the Header. Can be either the name of a predefined gradient<br />
+or a list of color stops. Used as the `$type` parameter for {@link Global_CSS#background-gradient}.</em></p>
+<p><strong>@param {color} [$ui-header-inner-border-color=$panel-header-inner-border-color]<br />
+    </strong><em>The inner border-color of the Header</em></p>
+<p><strong>@param {number} [$ui-header-inner-border-width=$panel-header-inner-border-width]<br />
+    </strong><em>The inner border-width of the Header</em></p>
+<p><strong>@param {number/list} [$ui-header-text-padding=$panel-header-text-padding]<br />
+    </strong><em>The padding of the Header's text element</em></p>
+<p><strong>@param {string} [$ui-header-text-transform=$panel-header-text-transform]<br />
+    </strong><em>The text-transform of the Header</em></p>
+<p><strong>@param {number/list} [$ui-header-padding=$panel-header-padding]<br />
+    </strong><em>The padding of the Header</em></p>
+<p><strong>@param {number} [$ui-header-icon-width=$panel-header-icon-width]<br />
+    </strong><em>The width of the Header icon</em></p>
+<p><strong>@param {number} [$ui-header-icon-height=$panel-header-icon-height]<br />
+    </strong><em>The height of the Header icon</em></p>
+<p><strong>@param {number} [$ui-header-icon-spacing=$panel-header-icon-spacing]<br />
+    </strong><em>The space between the Header icon and text</em></p>
+<p><strong>@param {list} [$ui-header-icon-background-position=$panel-header-icon-background-position]<br />
+    </strong><em>The background-position of the Header icon</em></p>
+<p><strong>@param {color} [$ui-header-glyph-color=$panel-header-glyph-color]<br />
+    </strong><em>The color of the Header glyph icon</em></p>
+<p><strong>@param {number} [$ui-header-glyph-opacity=$panel-header-glyph-opacity]<br />
+    </strong><em>The opacity of the Header glyph icon</em></p>
+<p><strong>@param {number} [$ui-tool-spacing=$panel-tool-spacing]<br />
+    </strong><em>The space between the Panel {@link Ext.panel.Tool Tools}</em></p>
+<p><strong>@param {string} [$ui-tool-background-image=$panel-tool-background-image]<br />
+    </strong><em>The background sprite to use for Panel {@link Ext.panel.Tool Tools}</em></p>
+<p><strong>@param {color} [$ui-body-color=$panel-body-color]<br />
+    </strong><em>The color of text inside the Panel body</em></p>
+<p><strong>@param {color} [$ui-body-border-color=$panel-body-border-color]<br />
+    </strong><em>The border-color of the Panel body</em></p>
+<p><strong>@param {number} [$ui-body-border-width=$panel-body-border-width]<br />
+    </strong><em>The border-width of the Panel body</em></p>
+<p><strong>@param {string} [$ui-body-border-style=$panel-body-border-style]<br />
+    </strong><em>The border-style of the Panel body</em></p>
+<p><strong>@param {color} [$ui-body-background-color=$panel-body-background-color]<br />
+    </strong><em>The background-color of the Panel body</em></p>
+<p><strong>@param {number} [$ui-body-font-size=$panel-body-font-size]<br />
+    </strong><em>The font-size of the Panel body</em></p>
+<p><strong>@param {string} [$ui-body-font-weight=$panel-body-font-weight]<br />
+    </strong><em>The font-weight of the Panel body</em></p>
+<p><strong>@param {string} [$ui-background-stretch-top=$panel-background-stretch-top]<br />
+    </strong><em>The direction to strech the background-gradient of top docked Headers when slicing images<br />
+for IE using Sencha Cmd</em></p>
+<p><strong>@param {string} [$ui-background-stretch-bottom=$panel-background-stretch-bottom]<br />
+    </strong><em>The direction to strech the background-gradient of bottom docked Headers when slicing images<br />
+for IE using Sencha Cmd</em></p>
+<p><strong>@param {string} [$ui-background-stretch-right=$panel-background-stretch-right]<br />
+    </strong><em>The direction to strech the background-gradient of right docked Headers when slicing images<br />
+for IE using Sencha Cmd</em></p>
+<p><strong>@param {string} [$ui-background-stretch-left=$panel-background-stretch-left]<br />
+    </strong><em>The direction to strech the background-gradient of left docked Headers when slicing images<br />
+for IE using Sencha Cmd</em></p>
+<p><strong>@param {boolean} [$ui-include-border-management-rules=$panel-include-border-management-rules]<br />
+    </strong><em>True to include neptune style border management rules.</em></p>
+<p><strong>@param {color} [$ui-wrap-border-color=$panel-wrap-border-color]<br />
+    </strong><em>The color to apply to the border that wraps the body and docked items in a framed<br />
+  panel. The presence of the wrap border in a framed panel is controlled by the<br />
+  {@link #border} config. Only applicable when `$ui-include-border-management-rules` is<br />
+`true`.</em></p>
+<p><strong>@param {color} [$ui-wrap-border-width=$panel-wrap-border-width]<br />
+    </strong><em>The width to apply to the border that wraps the body and docked items in a framed<br />
+  panel. The presence of the wrap border in a framed panel is controlled by the<br />
+  {@link #border} config. Only applicable when `$ui-include-border-management-rules` is<br />
+`true`.</em></p>
+<p><em><strong>@member Ext.panel.Panel</strong></em></p>
+</div>
+
+<div type="expander" caption="Actual ui code for the Panel">
+
+<pre>
+<p>@mixin extjs-panel-ui(
+   $ui-label,
+   $ui-border-color: $panel-border-color,
+      $ui-border-radius: $panel-border-radius,
+      $ui-border-width: $panel-border-width,
+   $ui-padding: 0,
+   $ui-header-color: $panel-header-color,
+      $ui-header-font-family: $panel-header-font-family,
+      $ui-header-font-size: $panel-header-font-size,
+      $ui-header-font-weight: $panel-header-font-weight,
+      $ui-header-line-height: $panel-header-line-height,
+      $ui-header-border-color: $panel-header-border-color,
+      $ui-header-border-width: $panel-header-border-width,
+      $ui-header-border-style: $panel-header-border-style,
+      $ui-header-background-color: $panel-header-background-color,
+      $ui-header-background-gradient: $panel-header-background-gradient,
+      $ui-header-inner-border-color: $panel-header-inner-border-color,
+      $ui-header-inner-border-width: $panel-header-inner-border-width,
+      $ui-header-text-padding: $panel-header-text-padding,
+      $ui-header-text-transform: $panel-header-text-transform,
+      $ui-header-padding: $panel-header-padding,
+      $ui-header-icon-width: $panel-header-icon-width,
+      $ui-header-icon-height: $panel-header-icon-height,
+      $ui-header-icon-spacing: $panel-header-icon-spacing,
+      $ui-header-icon-background-position: $panel-header-icon-background-position,
+      $ui-header-glyph-color: $panel-header-glyph-color,
+      $ui-header-glyph-opacity: $panel-header-glyph-opacity,
+   $ui-tool-spacing: $panel-tool-spacing,
+     $ui-tool-background-image: $panel-tool-background-image,
+   $ui-body-color: $panel-body-color,
+     $ui-body-border-color: $panel-body-border-color,
+     $ui-body-border-width: $panel-body-border-width,
+     $ui-body-border-style: $panel-body-border-style,
+      $ui-body-background-color: $panel-body-background-color,
+      $ui-body-font-size: $panel-body-font-size,
+      $ui-body-font-weight: $panel-body-font-weight,
+   $ui-background-stretch-top: $panel-background-stretch-top,
+      $ui-background-stretch-bottom: $panel-background-stretch-bottom,
+      $ui-background-stretch-right: $panel-background-stretch-right,
+      $ui-background-stretch-left: $panel-background-stretch-left,
+   $ui-include-border-management-rules: $panel-include-border-management-rules,
+   $ui-wrap-border-color: $panel-wrap-border-color,
+   $ui-wrap-border-width: $panel-wrap-border-width
+)</p></pre>
+</div>

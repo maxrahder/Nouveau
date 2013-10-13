@@ -1,0 +1,56 @@
+<p>
+Since the tabs are a docked item, using additional docked items doesn't look so good. If you need a toolbar to be shared across all tabs,
+nest the tab panel in a parent panel.
+</p>
+<table>
+<tr>
+<td style="vertical-align: top; width : 50%">
+<pre class="runnable">
+Ext.create('Ext.tab.Panel', {
+    renderTo : Ext.getBody(),
+    height : 200,
+    width : 200,
+    plain : true,
+    tbar : [ {
+        icon : 'resources/images/accept.png'
+    }, {
+        icon : 'resources/images/cancel.png'
+    } ],
+    items : [ {
+        title : 'One',
+        html : 'Panel One'
+    }, {
+        title : 'Two',
+        html : 'Panel Two'
+    } ]
+});
+</pre>
+</td><td>&nbsp;&nbsp;</td>
+<td style="vertical-align: top; width : 50%">
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+    renderTo : Ext.getBody(),
+    height : 200,
+    width : 200,
+    tbar : [ {
+        icon : 'resources/images/accept.png'
+    }, {
+        icon : 'resources/images/cancel.png'
+    } ],
+    layout : 'fit',
+    items : [ {
+        xtype : 'tabpanel',
+        plain : false,        
+        items : [ {
+            title : 'One',
+            html : 'Panel One'
+        }, {
+            title : 'Two',
+            html : 'Panel Two'
+        } ]
+    } ]
+});
+</pre>
+</td>
+</tr>
+</table>

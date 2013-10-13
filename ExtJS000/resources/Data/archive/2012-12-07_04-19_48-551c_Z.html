@@ -1,0 +1,22 @@
+<h3>Internally, the 5 types are simply calling <code>Ext.Msg.show()</code> with user-supplied and hard-coded configs.</h3>
+
+<div class="readonly">
+	<pre class="runnable">
+	prompt : function(cfg, msg, fn, scope, multiline, value){
+	       if (Ext.isString(cfg)) {
+	           cfg = {
+	               prompt: true,
+	               title: cfg,
+	               minWidth: this.minPromptWidth,
+	               msg: msg,
+	               buttons: this.OKCANCEL,
+	               callback: fn,
+	               scope: scope,
+	               multiline: multiline,
+	               value: value
+	           };
+	       }
+	       return this.show(cfg);
+	   }
+	</pre>
+</div>

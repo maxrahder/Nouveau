@@ -1,0 +1,19 @@
+<p>
+Now the designer is free to change <b>how</b> the search is initiated, without breaking the controller.
+</p>
+<div class="readonly">
+<pre class="runnable">
+{
+    xtype : 'textfield',
+    itemId : 'searchText',
+    fieldLabel : 'Search',
+    enableKeyEvents : true,
+    listeners : {
+        keypress : function(field, event) {
+            if (event.getKey() === event.ENTER) {
+                field.up('twittergrid').fireSearch();
+            }
+        }
+    }
+}</pre>
+</div>

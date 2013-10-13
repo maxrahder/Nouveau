@@ -1,0 +1,25 @@
+<p>
+Panels and buttons are <em>components</em>, so we can apply component-styling to them, such 
+as specifying margins and padding. 
+</p>
+<p>
+This code also uses the <code>defaults</code> config, which panels have because they're a container.
+</p>
+
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+	title : 'My Panel',
+	renderTo : Ext.getBody(),
+	bodyPadding: 8,
+	defaults: {
+		xtype: 'button',
+		margin: 8
+	},
+	layout : 'vbox',	
+	items : [ {
+		text : 'Button One'
+	}, {
+		text : 'Button One'
+	} ]
+});
+</pre>

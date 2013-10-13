@@ -1,0 +1,16 @@
+<p>We can also do visual effects</p>
+
+<pre class="runnable">
+Ext.getBody().update('&lt;p id="myParagraph"&gt;Hi there&lt;/p&gt;');
+Ext.fly('myParagraph').highlight("#ff0000", { 
+	attr: 'backgroundColor', 
+	duration: 2000 
+});
+</pre>
+<pre class="runnable">
+Ext.getBody().update('&lt;p id="myParagraph"&gt;Hi there&lt;/p&gt;');
+Ext.fly('myParagraph').fadeOut({duration: 2000});
+Ext.fly('myParagraph').fadeIn({duration: 2000});
+</pre>
+
+

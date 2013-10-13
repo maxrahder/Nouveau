@@ -1,0 +1,27 @@
+<p>For numeric data use <code>xtype:'numbercolumn'</code> and a format string.</p>
+
+<pre class="runnable preview">var store = Ext.create('Ext.data.Store', {
+    fields:[ { name: 'population',  type: 'number' }, 'city' ],
+    data:[{ city : 'Oslo', population : 580000 },  { city : 'Bergen', population : 213285  }, { city : 'Trondheim', population : 147139  }, { city : 'Stavanger', population : 121610 }, { city : 'Drammen', population : 90722  }, { city : 'Fredrikstad', population : 72760 }, { city : 'Kristiansand', population : 63814  }, { city : 'Sandnes', population : 63032 } ]
+});
+
+Ext.create('Ext.grid.Panel', {
+
+    store: store,
+    columns: [ { 
+        text: 'City', 
+        dataIndex: 'city'
+    }, { 
+        xtype : 'numbercolumn', 
+        format : '0,0',
+
+        align : 'right',
+        text: 'Population', 
+        dataIndex: 'population',
+        flex: 1
+    } ],
+
+    title: 'Large Cities in Norway',
+    width: 200,
+    renderTo: Ext.getBody()
+});</pre>

@@ -1,0 +1,30 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.layout.container.Column" target="api"><code>Ext.layout.container.Column</code></a></p>
+
+<p> Another common layout type used when creating forms is the Column layout. Column layouts enable you to place fields into two or more columns.</p>
+
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    title: 'Column Layout',
+    bodyPadding: 8,
+    labelWidth: 80,
+    width: 550,
+    layout:'column',
+    defaults:{
+        xtype: 'textfield',
+        padding: 3,
+        columnWidth: 0.4,   //change this to 0.33      
+    },
+    items: [{
+        fieldLabel: 'First Name',     
+    },{
+        fieldLabel: 'Middle Name',
+    },{
+        fieldLabel: 'Last Name',
+
+    },{
+        fieldLabel: 'Nick Name',
+    }],
+    renderTo: Ext.getBody()
+});
+
+</pre>

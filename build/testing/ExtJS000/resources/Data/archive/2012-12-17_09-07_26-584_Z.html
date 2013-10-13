@@ -1,0 +1,36 @@
+<ul>
+<li>Make calculations</li>
+<li>Convert between units</li>
+</ul>
+<table>
+<tr>
+<td>
+<strong>SCSS</strong><br/>
+<pre>
+p { width: 1in + 8pt}
+</pre>
+<pre>
+$app-width: 1000px;
+.column {
+	width: $app-width/2; 
+	height: (500px/2);
+	margin-left: 5px + 8px/2px; 
+}
+</pre>
+</td>
+<td>&nbsp;&nbsp;</td>
+<td>
+<strong>Generated CSS</strong><br/>
+<pre>
+p { width: 1.111 in}
+</pre>
+<pre>
+.column {
+	width: 500px;
+	height: 250px;
+	margin-left: 9px; 
+}
+</pre>
+</td>
+</tr>
+<table>

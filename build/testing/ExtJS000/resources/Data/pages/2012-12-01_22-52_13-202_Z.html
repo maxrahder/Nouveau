@@ -1,0 +1,52 @@
+<p>
+This is a subtle point, but any component's DOM doesn't get rendered until it needs to be rendered. 
+This cuts down on overhead and makes things more efficient.
+</p>
+<p>Here, there is a button on the second tab, but it's not until the user actually
+<em>selects</em> the second tab that it needs to be seen, and therefore, it gets rendered.
+</p>
+<p>
+You may rarely write code that needs to do something to rendered content on a tab
+that hasn't been shown. And that's what <code>deferredRender</code> controls. Setting it to 
+false makes the DOM render immediately.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.tab.Panel', {
+    renderTo : Ext.getBody(),
+    height : 200,
+    width : 200,    
+    plain : true,
+    
+    deferredRender : true, // true is the default
+
+    defaults : {
+        layout : 'vbox',
+        bodyPadding : 8
+    },
+    items : [{
+        title : 'One',
+        items : [{
+            xtype : 'button',
+            text : 'Find Other Button',
+            handler : function(b){ 
+
+                var component = Ext.getCmp('buttontwo');
+                alert('The other button ' + (component?'exists.':'does not exist.'));
+                // It exists, so we can run any method we want on it...
+                component.setText('This is the new button text');
+
+                var element = Ext.fly('buttontwo');
+                alert('The other button\'s DOM ' + (element?'DOES exist.':'does NOT exist.'));
+
+            }
+        }]
+    }, {
+        title : 'Two',
+        items : [{
+            xtype : 'button',
+            text : 'This is the other button',
+            id : 'buttontwo'
+        }]
+    }]
+});
+</pre>

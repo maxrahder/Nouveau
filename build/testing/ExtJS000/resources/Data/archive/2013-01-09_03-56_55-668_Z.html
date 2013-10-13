@@ -1,0 +1,25 @@
+<ol>
+<li><p>From the <b>Toolbox</b>, place a simple <b>View</b> <u>inside</u> the <b>MainPanel</b>.
+<p>It should look like this:</p>
+<img src="resources/images/_itunes_extplorer/ListView158.png"/>
+<li><p>In the <b>Config panel</b> give this new view the following property value:
+<ol>
+<li><p>autoScroll: <b>true</b> (checked)</p></li>
+</ol>
+<li><p>Select the <b>[Code]</b> button.</p></li> 
+<p><small><b>Note:</b> Architect has automatically created the following properties for this view, in addition to the autoScroll value you have just selected.</i></b></small></p>
+<pre>
+   items: [             
+       {
+            xtype: 'dataview',
+            region: 'center',
+            autoScroll: true,
+            itemSelector: 'div',
+            itemTpl: [
+               'Data View Item {string}'
+            ]
+       } 
+   ]
+</pre>
+<p><small><b>Note:</b> We will come back to the itemSelector and itemTpl a little later.</i></b></small></p>
+<h2>Save the Application</h2>

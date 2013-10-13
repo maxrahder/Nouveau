@@ -1,0 +1,19 @@
+<pre class="runnable">
+Ext.define('MyApp.taxonomy.Human', {
+    config : {
+        name : 'J. Doe'
+    },
+    applyName : function(name){
+        if (name !== 'Hubert') {
+            return name;
+        }
+    },
+    updateName: function(newName, oldName){
+        alert('The name was changed from ' + oldName + ' to ' + newName);
+    }
+});
+var b = Ext.create('MyApp.taxonomy.Human');
+b.setName('Fred');
+alert(b.getName());
+b.setName('Hubert'); // Violates the business rule...
+alert(b.getName()); // so the name didn't change

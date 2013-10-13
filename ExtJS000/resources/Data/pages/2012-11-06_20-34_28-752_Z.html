@@ -1,0 +1,20 @@
+<h3>Ext.apply(object, config, [defaults]):Object</h3>
+<p>
+With the adoption of JSON, and the fact that there is no function 
+overloading in JavaScript, a common way to pass configuration information
+is via a single object of properties and values.
+</p>
+<p>Copies all the properties of config to the specified object.</p>
+<p>
+</p>
+<pre class="runnable">
+// Ext.apply() overlays one set of properties onto another
+var object = {a: 12, b: 'hi', c: [1, 2, 3]};
+Ext.apply(object, {a: 15, d: 99});
+console.log(object); // a and d are over-written
+
+// Ext.applyIf() overlays existing properties
+var o = {a: 12, b: 'hi', c: [1, 2, 3]};
+Ext.applyIf(o, {a: 15, d: 99});
+console.log(o); // Only d is over-written
+</pre>

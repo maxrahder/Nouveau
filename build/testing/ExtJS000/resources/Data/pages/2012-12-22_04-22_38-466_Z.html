@@ -1,0 +1,26 @@
+<ul>
+<li>An Ext JS class is a function.</li>
+</ul>
+<pre>
+> var c = Ext.define( 'Thing', {} ) // define the class
+  undefined
+> c // returns a function named 'constructor'
+  function constructor() {
+      //....
+     return this.constructor.apply(this. arguments) || null;
+  }
+</pre>
+<ul>
+<li>The Ext JS class-function is therefore an object. It has a <code>name</code> property.</li>
+</ul>
+<pre>
+> c.name // returns the name of the function in c
+  "constructor"
+</pre>
+<ul>
+<li>The c class-function also has a <code>$className</code> property.</li>
+</ul>
+<pre>
+> c.$className
+  "Thing"
+</pre>

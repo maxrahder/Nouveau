@@ -1,0 +1,48 @@
+
+<pre class="runnable preview">
+var store = Ext.create('Ext.data.Store', {
+    fields: ['value'],
+    data: [ { value : 80 } ],
+    random : function (){
+        this.each(function(record){
+            record.set('value', Ext.Number.randomInt(0, 100));
+        });
+    },
+    autoLoad : true
+});
+Ext.create('Ext.panel.Panel', {
+    title: 'Gauge',
+    renderTo : Ext.getBody(),
+    width: 400,
+    height: 250,
+    bodyPadding : 8,
+    tbar: [{
+        text: 'Change Speed',
+        handler: function() {
+            store.random();
+        }
+    }],
+    layout: 'fit',
+    items: [{
+        xtype: 'chart',
+        insetPadding: 32,
+        animate: {
+            easing: 'elasticIn',
+            duration: 1000
+        },
+        store: store,
+        axes: [ {
+            type: 'gauge',
+            position: 'gauge',
+            minimum: 0,
+            maximum: 100,
+            steps: 10
+        } ],
+        series: [ {
+            type: 'gauge',
+            field: 'value'
+        } ]
+    }]
+ });
+ </pre>
+

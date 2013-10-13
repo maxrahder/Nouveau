@@ -1,0 +1,57 @@
+{
+    "topicId": "appendix",
+      "text": "Setup and Organization",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Required software",
+          "fileId": "2012-12-03_14-05_24-934_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Course Files",
+          "fileId": "2013-02-12_08-48_03-149_Z",
+          "html": "",
+          "leaf": true
+        },
+       {
+          "text": "Sencha Cmd",
+          "fileId": "2012-12-04_12-40_51-013_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ruby & Sass Compass",
+          "fileId": "2012-12-04_11-38_39-274_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Add Ruby to your path",
+          "fileId": "2012-12-17_08-04_26-303_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Setup Eclipse",
+          "fileId": "2012-12-03_15-57_24-695_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Sencha Plugin",
+          "fileId": "2012-12-04_09-00_31-061_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Starting a VJET project",
+          "fileId": "2013-02-07_19-52_58-476_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    }

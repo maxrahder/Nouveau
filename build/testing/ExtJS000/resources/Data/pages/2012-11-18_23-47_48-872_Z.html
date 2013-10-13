@@ -1,0 +1,166 @@
+<pre class="runnable docked preview">
+var today = new Date();
+var members = Ext.create('Ext.data.Store', {
+    autoLoad : true,
+    fields : [ 'first', 'last', 'networth', {
+        name : 'dob',
+        type : 'date',
+        dateFormat : 'Y/m/d'
+    }, {
+        name : 'currentmember',
+        type : 'boolean'
+    }, {
+        name : 'age',
+        type : 'int',
+        convert : function(v, rec) {
+            var dob = rec.get('dob');
+            var age = (today.getFullYear() - dob.getFullYear());
+            var hadBday = (Ext.Date.getDayOfYear(today) >= Ext.Date.getDayOfYear(dob));
+            age = hadBday ? age : (age - 1);
+            return age;
+        }
+    } ],
+    proxy : {
+        type : 'ajax',
+        url : '../Data/json/aerosmith.json'
+    }
+});
+
+Ext.create('Ext.grid.Panel', {
+    store : members,
+    title : 'Aerosmith',
+    columns : [ {
+        text : 'Name',
+        dataIndex : 'first'
+    }, {
+        text : 'Last Name',
+        dataIndex : 'last'
+    }, {
+        text : 'Date Of Birth',
+        dataIndex : 'dob'
+    }, {
+        text : 'Age',
+        dataIndex : 'age'
+    }, {
+        text : 'Current Member',
+        dataIndex : 'currentmember'
+    }],
+    renderTo : Ext.getBody()
+});
+</pre>
+
+<h1>Introduction</h1>
+
+<p>In this lab you will let you define grid columns by xtype, and define a column renderer.</p>
+<p>Make sure your code runs after each step by pressing Live Preview.
+<h1>Steps</h1>
+
+<ol>
+
+<li>Review the grid, above
+<p>
+The grid has five columns, none of which specifies the type of any column. 
+</p>
+<p>
+Click on the column titles. Each column sorts properly. Grids do a column sort by running <code>sort()</code> on the
+store, passing the column's <em>dataIndex</em>. Since the data store knows the data type of each column, sorting works fine.
+</p>
+</li>
+
+<li>Make the "Date of Birth" column display the dates like "March 26, 1948"
+<p>
+To do this, you'll need to specify an xtype for the column, along with a format string. See
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.grid.column.Date" target="api">the date column API documentation</a> for syntax details. 
+For date formats, refer to 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.Date" target="api">the API documentation for Ext.Date</a>. 
+</p>
+</li>
+
+<li>Make the "Current Member" column display "Yes" for current members
+<p>
+Find the xtype and syntax in the <a href="http://docs.sencha.com/extjs/#!/api/Ext.grid.column.Boolean" target="api">API documentation</a>.
+</p>
+</li>
+
+<li>Add a "Net Worth" column
+<p>
+If you look at the model declaration, you'll find a field for net worth (See <a href="http://docs.sencha.com/extjs/#!/api/Ext.grid.column.Number" target="api">API documentation</a>). Add a grid column that matches its data type,
+and have it formatted to look like <kbd>$130,000,000.00</kbd>.
+</p>
+<p>
+In addition, make the column right aligned using the <em>align</em> column config.
+</p>
+</li>
+
+<li>Replace the first and last name columns with a single "Full Name" column
+<p>
+The easiest way to do this is to use a template column, with the template showing the first name, a space, and the last name. Make the last name bold, using the HTML <kbd>&lt;b&gt;</kbd> tag.
+</p>
+<p>
+As usual, you'll have to figure out the column syntax in the <a href="http://docs.sencha.com/extjs/#!/api/Ext.grid.column.Template" target="api">API documentation</a>.
+</p>
+</li>
+
+<li>Your grid should look something like this
+<p>
+Don't peek ahead, but at this point your grid should end up looking something like this. 
+</p>
+<pre>
+Ext.create('Ext.grid.Panel', {
+    store : members,
+    title : 'Aerosmith',
+    columns : [ {
+        text : 'Name',
+        dataIndex : 'first',
+        xtype : 'templatecolumn',
+        tpl : '{first} &lt;b&gt;{last}&lt;/b&gt;'
+    }, {
+        text : 'Date Of Birth',
+        dataIndex : 'dob',
+        xtype : 'datecolumn',
+        format : 'M j, Y'
+    }, {
+        text : 'Age',
+        dataIndex : 'age'
+    }, {
+        text : 'Current Member',
+        dataIndex : 'currentmember',
+        xtype : 'booleancolumn',
+        trueText : 'Yes',
+        falseText : ''
+    }, {
+        text : 'Net Worth',
+        dataIndex : 'networth',
+        xtype : 'numbercolumn',
+        align : 'right',
+        format : '$0,000.00'
+    } ],
+    renderTo : Ext.getBody()
+});
+</pre>
+</li>
+
+<h1>Optional</h1>
+
+<li>Have the "Full Name" sort on last name
+<p>
+Recall from the start of the lab that grids sort by passing a column's <em>dataIndex</em> to the data store. So sorting
+is as easy as setting that property to the name of the last name field.
+</p>
+</li>
+
+<li>Add a new "Dollars / Year" column
+<p>
+Add a new column, with a renderer that returns the result of dividing net worth by age. See <a href="http://docs.sencha.com/extjs/#!/api/Ext.grid.column.Column-cfg-renderer" target="api">API documentation</a>. Format the result as a whole dollar amount (with no decimal portion). (<a href="http://docs.sencha.com/extjs/#!/api/Ext.util.Format" target="api">API documentation</a> The renderer is specified as a config for the column. Note that a column renderer has two arguments:
+the column value and the record. Since the <em>dataIndex</em> is not needed when using a renderer, the first parameter will be 
+null. Therefore, use the <code>record</code> to <em>get</em> the net worth and age.
+</p>
+</li>
+
+</ol>
+
+<h1>Conclusion</h1>
+<p>These guys are old! And they have a ton of money.</p>
+<p>Oh, and grids have various ways of showing data: using a typed grid column, a template column or a renderer.
+<br />
+<br />

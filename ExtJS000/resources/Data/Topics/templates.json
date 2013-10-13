@@ -1,0 +1,179 @@
+{
+  "topicId": "templates",
+  "text": "Templates and Dataviews",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Ext.XTemplate",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-09-27_13-12_07-844_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Template and XTemplate",
+          "fileId": "2013-01-07_16-44_57-614_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Basics",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "A Simple Example",
+              "fileId": "2013-01-07_16-30_16-939_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.Component",
+              "fileId": "2013-01-07_17-16_41-433_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Creating Templates",
+              "fileId": "2013-01-07_17-28_21-410_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The Variable",
+              "fileId": "2013-01-07_17-50_39-520_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Lab: YelpExtplorer 5",
+          "fileId": "2013-03-04_18-04_44-777_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Advanced",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Loops",
+              "fileId": "2013-01-07_18-12_30-897_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Nested Arrays and Nested Loops",
+              "fileId": "2013-01-07_18-15_40-132_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Conditionals",
+              "fileId": "2013-01-07_19-10_54-557_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Inline Code",
+              "fileId": "2013-01-07_18-01_10-825_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.util.Format",
+              "fileId": "2013-05-03_17-27_41-545_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Variables in expressions",
+              "fileId": "2013-01-04_15-39_18-769_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Arithmetic",
+              "fileId": "2013-01-04_15-38_44-928_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "foreach",
+              "fileId": "2013-01-08_13-51_11-273_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Member Functions",
+              "fileId": "2013-01-08_14-00_58-124_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example Member Functions",
+              "fileId": "2013-01-04_15-38_19-327_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Ext.view.View",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-03_19-21_18-900_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Dataview Features",
+          "fileId": "2013-01-07_20-48_45-019_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "A Non-interactive Template",
+          "fileId": "2013-05-03_21-14_15-489_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Template with Hacked Behavior",
+          "fileId": "2013-05-03_21-14_26-556_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The Right Way Using a Dataview",
+          "fileId": "2013-01-03_19-38_44-285_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Lab: YelpExtplorer 6",
+          "fileId": "2013-03-04_18-07_37-904_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    }
+  ]
+}

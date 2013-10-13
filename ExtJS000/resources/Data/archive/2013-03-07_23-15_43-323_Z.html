@@ -1,0 +1,241 @@
+<h1>Introduction</h1>
+
+<p>
+In this lab, you will use Sencha Architect to build an application that shows iTunes music
+video titles in a grid, thumbnails in a data view, and lets the user play the preview video
+in a popup window.
+</p>
+<p>
+The lab lets you use some of the Ext JS features mentioned in the Overview topic.
+Since we haven't really covered coding in Ext JS very much, we will use Sencha Architect,
+which will let us quickly create the application without having to get into a lot of
+programming details.
+</p>
+<p>
+This is an <b>instructor-led</b> lab. In each step the instructor will explain the goal
+of the step, then work the step in front 
+of the class. After answering any questions, the class will then work the step.
+</p>
+<p>Please do not work ahead. Save your work frequently.
+</p>
+<p>
+</p>
+
+<ol>
+<li>Application overview
+<!--
+<p>
+The instructor will use the whiteboard to sketch out the application's view, model and store,
+and the role of the controller.
+</p>
+-->
+<p>
+The data looks like <a href="http://localhost/SenchaTraining/ExtJS251/Labs/Architect/Tunes/data/feed.json" target="_blank">this</a>. The feed is an array of objects, each of which represents a music
+video. The model will define a field for each music video value &mdash; the model describes
+a record. The store is a collection of the records in the feed. The data view and grid are
+bound to the store.
+</p>
+</li>
+<li>Initial setup
+<p>Open Sencha Architect.</p>
+<p>On the initial welcome page, under Create New Project, select the latest version of Ext JS.</p>
+<p>After Sencha Architect opens, click Save on the Architect main toolbar.</p>
+<p>Set the Save Path to <tt>[webserver]/SenchaTraining/ExtJS251/Labs/Architect</tt></p>
+<p>Set the Project Name to <code>Tunes</code>.</p>
+<p>Click Save.</p>
+<p>Click Settings on the Architect main toolbar, and select the Project tab.</p>
+<p>Enter the following URL prefix:<tt> http://localhost/SenchaTraining/ExtJS251/Labs/Architect/Tunes</tt></p>
+</li>
+
+<li>Set the application name
+<p>In the Project Inspector, select the Application.</p>
+<p>In the Config panel filter set the <code>name</code> property to <code>Tunes</code>. You can filter the property list by typing in the filter text field. You can also Quick Value Set by typing <code>name:'Tunes'</code> in the filter field.</p>
+</li>
+
+<li>Add a viewport
+<p>In the Toolbox, select a Container | Viewport and drag it to the Canvas.</p>
+<p>In the Design View, click the flyout gear to the right of MyViewport and set <code>layout</code> to <code>vbox</code>.</p>
+</li>
+
+<li>Add a grid
+<p>In the Toolbox, select a Views | Grid Panel and drag it to the design view.  You'll see a grid with placeholder columns and fake data for prototyping.</p>
+<p>In the Design Canvas, double click on the title My Grid Panel and change it to iTunes Grid.</p>
+<p>In the Design View, click the flyout gear to the right of the Grid and set <code>flex</code> to <code>1</code>.</p>
+<p>In the Project Inspector, choose My Grid Panel and in the 
+Config panel set the grid's <code>itemId</code> to <code>tunesGrid</code>.</p>
+</li>
+
+<li>Save and preview the application
+<p>On the Architect main toolbar press Save then Preview. You should see your application. It
+has a panel titled iTunes Grid with placeholder columns.</p>
+</li>
+
+<li>Add a panel and title it iTunes Music Videos
+<p>On the Project Inspector, select MyViewport</p>
+<p>In the Toolbox, select a Views | Panel and drag it to the viewport. Alternately, you can drag it in the Project Inspector under MyViewport.</p>
+<p>In the Design Canvas, double click on the title My Panel and change it to iTunes Music Videos.</p>
+<p>In the Design View, click the flyout gear to the right of the panel and check <code>autoscroll</code> and set <code>flex</code>set to <code>1</code>.</p>
+
+<li>Add a data view in the iTunes Music Videos panel
+<p>On the Project Inspector, select MyViewport</p>
+<p>
+In the Toolbox, select a Views | View and drag it to the body of the iTunes Music Videos panel. Alternately, you can drag onto iTunes Music Videos (under MyViewport) in the Project Inspector. Note that a Ext.view.View component is commonly called a data view.
+
+<p>In the Project Inspector, select the data view, and in the Config panel
+set its <code>itemId</code> to <code>tunesView</code>.</p>
+<p>Also set <code>autoScroll</code> checkbox to checked.</p>
+<p>In the Project Inspector, choose iTunes Music Videos and in the 
+Config panel set <code>layout</code> to <code>fit</code>.</p>
+</li>
+
+<li>Save and preview the application
+<p>On the Architect main toolbar press Save then Preview. You should see your application. It
+has two panels labeled iTunes Grid and iTunes Music Videos.</p>
+</li>
+
+<li>Define the model
+<p>In the Project Inspector, select the [+] button and choose Model.</p>
+<p>In the Project Inspector, select the new Model, and in the Config panel set its <code>userClassName</code> to "Tune".</p>
+<p>In the Config panel go to the Fields property and press the (+) to its right. A input field
+will appear. Type the fields in the data feed: <code>title,artist,category,price,image,preview,id,currency,link</code> 
+<br>then press Enter.</p>
+<p>From the list of fields choose <code>price</code> and press the right arrow next to the field. Change the field <code>type</code> to <code>float</code>.</p>
+
+</li>
+
+<li>Add a proxy to the model</li>
+<p>In the Project Inspector, choose the Tune model, and in the Config panel choose the (+) button by the Proxy property and choose Ajax Proxy.<p>
+<p>In the Project Inspector, choose the proxy, and in the Config panel set its <code>url</code> to <code>data/feed.json</code>.</p>
+<p>In the Config Filter, type reader. Choose the (+) button by the <code>Reader</code> property and choose <code>Json Reader</code>.<p>
+
+<li>Create a store</li>
+<p>In the Project Inspector, choose the [+] button and choose Store. (Choose the base Store, not a specialized store.)</p>
+<p>In the Project Inspector, choose the store.</p>
+<p>In the Config panel, set the store's <code>userClassName</code> to <code>Tunes</code>.</p>
+<p>Set the store's <code>model</code> to Tune.</p>
+<p>Set the store's <code>autoLoad</code> checkbox to checked.</p>
+</li>
+
+<li>Load the store</li>
+<p>In the Project Inspector, right click on the Tunes store and select Load Data.</p>
+</li>
+
+<li>Associate the store with the grid</li>
+<p>In the Project Inspector, choose the grid, and in the Config panel set <code>store</code>
+to <code>Tunes</code>.
+</p>
+<p>In the Project Inspector, right-click on the grid and choose Auto columns. This will
+create grid columns based on the fields in the model declaration. </p>
+<p>In the canvas select the iTunes Grid, and you will see the data in the grid.</p>
+<p>In the Project Inspector, choose and delete the <code>Image</code>, <code>Preview</code>, 
+<code>Currency</code> and <code>Id</code> columns.</p>
+
+<li>Save and preview the application
+<p>On the Architect main toolbar press Save then refresh your browser. You should 
+see the running application, with data in the grid.
+</p>
+</li>
+
+<li>Enhance the grid
+<p>In the Project Inspector choose the Title column, and in the Config panel set <code>flex</code> to 2.</p>
+<p>Choose the Artist column and set <code>flex</code> to 1.</p>
+<p>Choose the Link column, right-click, choose Transform |
+Ext.grid.column.Template. Then in the Config panel click the right arrow by 
+<code>tpl</code> and paste this template in the code editor:</p>
+<pre>
+&lt;a href="{link}" target="itunes_store"&gt;
+    &lt;img src="resources/images/badge_itunes-sm.gif" style="border: 0;"/&gt;
+&lt;/a&gt;
+</pre>
+<p>Set the Link <code>width</code> to 60.</p>
+<p>Finally, set the Price <code>width</code> to 60.</p>
+</li>
+
+<li>Save and preview the application
+<p>On the Architect main toolbar press Save then refresh your browser. You should 
+see the running application, with data in the grid.
+</p>
+</li>
+
+<li>Have the data view show data</li>
+<p>In the Project Inspector, choose the data view, and in the Config panel set <code>store</code>
+to <code>Tunes</code>.
+</p>
+<p>Data views render data using a <i>template</i>, which is a tokenized HTML snippet. 
+In the Config panel select the <code>itemTpl</code> property and click on the right arrow. 
+This opens the code window on the Canvas. Copy and paste the following snippet onto the code window. Replace the default <code>Data View Item {string}</code> that's there. Note that the snippet below contains a token for <code>{title}</code> and <code>{artist}</code>. Those values from the store's records will be shown.
+</p>
+<pre>
+&lt;figure style="float:left; text-align: center; height: 114px; width: 100px;"&gt;
+    &lt;img src="{image}" /&gt;
+    &lt;figcaption style="font-size: 8pt;"&gt;{title}
+        &lt;br/&gt;{artist}
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+</pre>
+</li>
+
+<li>Save and preview the application
+<p>On the Architect main toolbar, press Save then refresh your browser. You should 
+see the iTunes Grid populated and video thumbnails on the iTunes Music Videos.  Try sorting by Artist in the grid and watch the view update.
+</p>
+</li>
+
+<li>Create the preview window
+<p>On the Toolbox select a Views | Window and drag it onto Views in the Project Inspector.</p>
+
+<p>In the Project Inspector, select the new Window, and in the Config panel set its <code>userClassName</code> to PreviewWindow.</p>
+<p>In the Config panel filter type <code>resizable: false</code> to prevent window resizing.</p>
+<p>In the Config panel, set the <code>height</code> to 352 and the <code>width</code> to 640.</b>
+<p>In the Config panel, set the <code>modal</code> checkbox to checked.</b>
+<p>In the Config panel select (+) by <code>tpl</code>, then press the right arrow to open
+the Code editor in the Canvas.</p>
+<p>Copy and paste the following as the template. Note that the template has a <code>{preview}</code> token, which corresponds to a value in the model.</p>
+<pre>&lt;video autoplay preload="auto"&gt;&lt;source src="{preview}" type="video/mp4"&gt;&lt;/video&gt;</pre>
+</li>
+
+<li>Create the controller
+<p>Press the [+] at the top right of the Project Inspector and choose Controller.</p>
+<p>In Project Inspector select the new controller and in the Config panel 
+set <code>userClassName</code> to <code>Tunes</code>.</p>
+</li>
+
+
+<li>Add control logic
+<p>In Project Inspector select the <code>Tunes</code> controller and in the Config 
+panel click the + by the <code>init</code> property. This creates the <code>init</code> 
+method into which you will place control logic.</p>
+
+<p>In the Project Inspector, double-click the new <code>init</code> method. This opens
+the Code editor in the Canvas.</p>
+
+<p>Use this code for the body of <code>init</code></p><pre>this.control({
+    "#tunesGrid": {
+        itemdblclick: this.onItemDblClick
+    }, 
+    "#tunesView": {
+        itemdblclick: this.onItemDblClick
+    }
+});</pre>
+<p>
+In the Toolbox choose Behaviors | Basic Function, and drag it onto the <code>Tunes</code> 
+controller in the Project Inspector.</p>
+<p>In the Config panel, set the new function's <code>fn</code> to <code>onItemDblClick</code>
+and set <code>params</code> to <code>component,record</code>. Then select Code above
+the Canvas.</p>
+<p>Use this code for the body of <code>onItemDblClick</code></p>
+<pre>var w = Ext.create('Tunes.view.PreviewWindow', {title: record.get('title')});
+w.update(record.data);
+w.show();</pre>
+</p>
+</li>
+
+<li>Preview the application
+<p>Click Preview on the Architect main toolbar. You should see your <b>completed</b>
+application. It has a two panels labeled iTunes Music Videos and iTunes Grid. The
+iTunes Music Videos view shows video thumbnails. The iTunes Grid shows a grid. Double-clicking
+on an item in either place brings up a window showing a video preview.
+</p>
+</li>
+
+</ol>

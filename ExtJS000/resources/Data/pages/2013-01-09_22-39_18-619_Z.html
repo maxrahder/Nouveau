@@ -1,0 +1,120 @@
+<div class="slide">
+	<h1>Ext Markup</h1>
+	<div data-xtype="tabpanel">
+		<div data-xtype="panel" data-title="Layouts">
+			<div data-xtype="tabpanel" data-plain="false" data-config="{tabPosition:'bottom'}">
+				<div data-xtype="panel" data-title="Tab 1">
+					1st Panel's Content
+				</div>
+				<div data-xtype="panel" data-title="Tab 2">
+					2nd Panel's Content
+				</div>
+			</div>
+			<pre>
+&lt;div data-xtype="tabpanel"&gt;
+	&lt;div data-xtype="panel" data-title="Tab 1"&gt;
+		1st Panel's Content
+	&lt;/div&gt;
+	&lt;div data-xtype="panel" data-title="Tab 2"&gt;
+		2nd Panel's Content
+	&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</div>
+		<div data-xtype="panel" data-title="Tabs">
+			<div data-xtype="tabpanel">
+				<div data-xtype="panel" data-title="Tab 1">
+					1st Panel's Content
+				</div>
+				<div data-xtype="panel" data-title="Tab 2">
+					2nd Panel's Content
+				</div>
+			</div>
+			<pre>
+&lt;div data-xtype="tabpanel"&gt;
+	&lt;div data-xtype="panel" data-title="Tab 1"&gt;
+		1st Panel's Content
+	&lt;/div&gt;
+	&lt;div data-xtype="panel" data-title="Tab 2"&gt;
+		2nd Panel's Content
+	&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</div>
+	</div>
+</div>
+
+<div class="slide">
+	<h1>Effects</h1>
+	<div data-xtype="tabpanel">
+		<div data-xtype="panel" data-title="Appear &amp; Disappear">
+
+			<div class="slide">
+				<pre>data-effect= "appear"</pre>
+				<ul data-effect="appear">
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+				</ul>
+			</div>
+
+			<div class="slide">
+				<pre>data-effect= "appear, disappear"</pre>
+				<ul data-effect="appear, disappear">
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div data-xtype="panel" data-title="Fade In &amp; Out">
+
+			<div class="slide">
+				<pre>data-effect= "fadeIn, fadeOut"</pre>
+				<ul data-effect="fadeIn, fadeOut">
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+				</ul>
+			</div>
+
+			<div class="slide">
+				<pre>data-effect= "fadeIn individually 5s, fadeOut 1500ms"</pre>
+				<ul data-effect="fadeIn individually 5s, fadeOut 1500ms">
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+				</ul>
+			</div>
+
+			<div class="slide">
+				<pre>data-effect="fadeIn individually, fadeOut 1500"</pre>
+				<ul data-effect="fadeIn individually, fadeOut 1500">
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!--
+<pre>
+{
+   success: false,
+   errors: [
+    {
+       id: 'firstName',
+       msg: 'This field must be corrected.'
+    },{
+       id: 'lastName',
+       msg: 'Your name must comply with the instructions.'
+    }
+   ]
+}
+</pre>
+-->

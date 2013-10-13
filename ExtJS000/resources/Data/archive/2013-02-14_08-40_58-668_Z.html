@@ -1,0 +1,40 @@
+<p>There are a couple of factors that affect performance</p>
+<div type="expander" caption="Network latency" >
+<p>This affects initial startup time heavily, but also data store load time.</p>
+<p>
+The solution is to use the Sencha Cmd: 
+</p>
+<ul>
+<li>Build a single, concatenated JavaScript file containing all the required JavaScript used by the application</li>
+<li>Build a minified CSS stylesheet that uses only mixins for the used components.</li>
+</ul>
+</div>
+<div type="expander" caption="CSS Processing" >
+<p>
+A CSS selector like <code>.HeaderContainer .nav span</code>
+will be processed, and an attempt made to match it on every span in the document. 
+It’s much more efficient to use a single, identifying class name on elements to be styled.
+</p>
+</div>
+<div type="expander" caption="JavaScript execution" >
+<p>
+There are several points to bear in mind when optimizing performance of JavaScript code:
+</p>
+<ul>
+<li>Avoid older or badly written JavaScript engines.</li>
+<li>Optimize code which is repeated frequently.</li>
+<li>Optimize code which is executed at render or layout time.</li>
+<li>Better still, try not to execute any extra code at initial render or layout time.</li>
+<li>Move invariant expressions outside of loops</li>
+<li>Use <code>for</code> rather than <code>Ext.Array.each</code></li>
+<li>If a function performs its task conditionally and is frequently called, check the condition outside the call, and only call it if necessary. (See calls to fireEvent in Ext JS codebase)</li>
+<li>Setup and teardown of a call frame (apparatus needed to make a function call) is slow on bad JavaScript engines</li>
+</ul>
+</div>
+<div type="expander" caption="DOM manipulation" >
+It’s important to reduce container/component nesting to avoid unwanted layout runs and DOM reflows.<br/>
+For example; when you have a <code>TabPanel</code> and you want to add a <code>Grid</code>, don't wrap it with an extra <code>Panel</code>. A grid already extends <code>Ext.panel.Panel</code>. 
+</div>
+<p>
+<a href="http://www.sencha.com/blog/ext-js-4-1-performance" target="api">Read more about performance.</a>
+</p>

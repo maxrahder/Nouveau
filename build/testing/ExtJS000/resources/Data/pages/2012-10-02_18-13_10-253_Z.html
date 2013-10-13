@@ -1,0 +1,23 @@
+<p>
+	The
+	<code>xtype</code>
+	configuration property is used for components.
+For example, The xtype for  
+	<a href="http://docs.sencha.com/extjs/#!/api/Ext.button.Button" target="api"><code>Ext.button.Button</code></a> is <code>'button'</code>.
+</p>
+<p>Using xtype is the most common way to define component instances, especially in a container.</p>
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+
+	items : [ {
+		xtype: 'button', 
+		text: 'Button'
+	}],
+
+	layout: 'vbox',
+	title: 'My Panel',
+	height: 300,
+	width: 300,
+	bodyPadding: 8,
+	renderTo : Ext.getBody()
+});</pre>

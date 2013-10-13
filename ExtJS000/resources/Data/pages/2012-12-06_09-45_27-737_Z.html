@@ -1,0 +1,21 @@
+<ul>
+   <li>The entry point of your app, execution of your app starts</li>
+   <li>Use <code>Ext.app.Application</code> instead of <code>Ext.onReady</code> in an MVC-based application</li>
+   <li>Provides dependencies to Controllers, Models, Stores and Views</li>
+   <li>Use autoCreateViewport to automatically load and instantiate <code>AppName.view.Viewport</code> before firing the launch method</li>
+</ul>
+
+<pre class="runnable">
+Ext.Loader.setPath({
+    'MusicLibrary': 'app',
+});
+
+Ext.application({
+    controllers: ["Main"],
+    name: 'MusicLibrary', //this name will be your namespace
+    autoCreateViewport: true,
+    launch: function(){
+      console.log("Everything is ready, let's execute the code.");
+    };
+});
+</pre>

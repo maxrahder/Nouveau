@@ -1,0 +1,16 @@
+<p><code>Ext.Array.forEach()</code> visit every element in an array. It calls the
+browser's native <code>forEach()</code> method, if there is one.</p>
+<pre class="runnable">
+var a = [{value: 1}, {value: 2}, {value: 3}];
+var s = '';
+Ext.Array.forEach(a, function(item, index, array){
+    s += item.value + ' ';
+});
+/*
+for (var i = 0; i < a.length; i++){
+    var item = a[i];
+    s += item.value + ' ';
+}
+*/
+alert(s);  // Alerts 1 2 3
+</pre>

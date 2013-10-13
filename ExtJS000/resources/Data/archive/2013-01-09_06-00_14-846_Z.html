@@ -1,0 +1,33 @@
+<h3>A store is a client-side cache of model objects. The store holds the records that the app will use.</h3>
+
+<ol>
+<li><p>To create a store, <b>click</b> on the <b>[+] button</b> just to the right of the Project Inspector title.
+<li><p><b>Select</b> a simple <b>Store</b> from the menu. (not a subitem)
+<li><p>Select <b>MyStore</b> in the Project Inspector.
+<li><p>In the <b>Config panel</b> give this new panel the following property values:
+<ul>
+<li><p>userClassName: <b>ITunesStore</b></p></li>
+<li><p>model: <b>ITunesRecord</b></p></li>
+<li><p>autoLoad: <b>true (checked)</b></p></li>
+</ul>
+<p><small><b>Note:</b> Your code should look like this:</i></b></small></p>
+<pre>
+Ext.define('ITunesExtplorer.store.ITunesStore', {
+    extend: 'Ext.data.Store',
+
+    requires: [
+        'ITunesExtplorer.model.ITunesRecord'
+    ],
+
+    constructor: function(cfg) {
+        var me = this;
+        cfg = cfg || {};
+        me.callParent([Ext.apply({
+            autoLoad: true,
+            storeId: 'MyStore',
+            model: 'ITunesExtplorer.model.ITunesRecord'
+        }, cfg)]);
+    }
+});
+</pre>
+</ol>

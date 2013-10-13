@@ -1,0 +1,12 @@
+<h3>add(date, interval, value):Date</h3>
+<p>Provides a convenient method for performing basic date arithmetic. </p>
+<pre class="runnable">
+var released = Ext.Date.parse('1967/06/01', 'Y/m/d');
+var taughtTheBandToPlay = Ext.Date.add(released, Ext.Date.YEAR, -20);
+var s = Ext.Date.format(taughtTheBandToPlay, 'F j, Y');
+alert('Sgt. Pepper taught the band to play on ' + s);
+
+var theNightBefore = Ext.Date.add(released, Ext.Date.DAY, -1);
+// Dates increment or decrement appropriately
+alert('The night before that was  ' + Ext.Date.format(theNightBefore, 'F j, Y'));
+</pre>

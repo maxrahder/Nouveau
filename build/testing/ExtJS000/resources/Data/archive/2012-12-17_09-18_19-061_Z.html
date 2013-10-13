@@ -1,0 +1,43 @@
+<ul>
+<li>You can extend / inherit from other CSS classes</li>
+<li>Improves readability & maintainability</li>
+</ul>
+<table>
+<tr>
+<td>
+<strong>SCSS</strong><br/>
+<pre>
+.alert {
+    font-size: 0.9em;
+    background-color: yellow;
+}
+
+.alert .warning {
+    font-weight: bold;
+}
+
+.redalert {
+    @extend .alert;
+    background-color: red;
+}
+</pre>
+</td>
+<td>&nbsp;&nbsp;</td>
+<td>
+<strong>Generated CSS</strong><br/>
+<pre>
+.alert, .redalert {
+    font-size: 0.9em;
+    background-color: yellow; 
+}
+
+.alert .warning, .redalert .warning {
+    font-weight: bold;
+}
+
+.redalert {
+    background-color: red;
+}</pre>
+</td>
+</tr>
+<table>

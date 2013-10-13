@@ -1,0 +1,32 @@
+<p>
+Anything between <code>{[ ... ]}</code> is considered code to be executed in the scope of the template. There are some special variables available in that code:</p>
+
+<table class="table">
+<tr>
+<td><code>values</code></td>
+<td>The values in the current scope. If you are using scope changing sub-templates, you can change what values is.
+</td></tr>
+<tr>
+<td><code>parent</code></td>
+<td>The scope (values) of the ancestor template.</td>
+</tr>
+<tr>
+<td><code>xindex</code></td>
+<td>If you are in a looping template, this variable represents the
+index of the loop that you are in (1-based).</td>
+</tr>
+<tr>
+<td><code>xcount</code></td>
+<td>If you are in a looping template, this variable represents the total length of the array that you are iterating through.</td>
+</tr>
+<tr>
+<td><code>xkey</code></td><td>If you are in a "foreach" looping template, the key of the current property being examined.</td>
+</tr>
+</table>
+<p>For example:</p>
+<pre>
+'&lt;tpl for="family">',
+    '&lt;tr class="{[xindex % 2 === 0 ? "even" : "odd"]}">',
+...
+'&lt;/tpl>'
+</pre>

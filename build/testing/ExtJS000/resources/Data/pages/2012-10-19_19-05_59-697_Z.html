@@ -1,0 +1,24 @@
+<p> 
+Components use an alias type of 'widget'. Other class types will use different alias types: <code>selection, store, proxy, writer, reader, plugin, layout, feature</code></p>
+
+<p>
+
+	For example,  
+	<code>layout:'vbox'</code> creates an <a href="http://docs.sencha.com/extjs/#!/api/Ext.layout.container.VBox" target="api"><code>Ext.layout.container.VBox</code></a>.
+
+</p>
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+
+	layout: 'vbox',
+
+	items : [ {
+		xtype: 'button',
+		text: 'Button'
+	}],
+	title: 'My Panel',
+	height: 300,
+	width: 300,
+	bodyPadding: 8,
+	renderTo : Ext.getBody(),
+});</pre>

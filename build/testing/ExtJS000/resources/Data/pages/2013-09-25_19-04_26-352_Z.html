@@ -1,0 +1,53 @@
+<p>
+You can define your own <code>convert(value, record)</code> function for any column. You can use this to define additional fields, not in the data feed.</p>
+
+<pre class="runnable">addNewType(); // See below
+Ext.define('MyApp.model.Aphorism', {
+    extend: 'Ext.data.Model',
+    fields: [{
+        name: 'aphorism',
+        type: 'string' // Try 'piglatin'
+    }]
+});
+var record = Ext.create('MyApp.model.Aphorism', {
+    aphorism: 'A fool and his money are soon parted'
+});
+alert( record.get('aphorism') );
+
+function addNewType() {
+    // Note that we're defining the type, how it's sorted and its 
+    // convert function as a new property on Ext.data.Types
+    Ext.data.Types.PIGLATIN = {
+        type: 'piglatin',
+        sortType: Ext.data.SortTypes.asUCString,
+        convert: function(s) {
+            // This code is silly and should NOT be scrutinized...
+            var words = Ext.String.splitWords(s);
+            var s = '';
+            var vowels = 'aeiou';
+            for (var i = 0; i < words.length; i++) {
+                var word = words[i];
+                if (word.length > 3) {
+                    var isProper = word.match(/^[A-Z]/);
+                    var index = vowelIndex(word);
+                    word = word.substr(index) + '-' + word.substr(0, index) + 'ay';
+                    word = word.toLowerCase();
+                    if (isProper) {
+                        word = Ext.String.capitalize(newWord);
+                    }
+                }
+                s += word + ' ';
+            }
+            return s;
+
+            function vowelIndex(word) {
+                for (var i = 0; i < word.length; i++) {
+                    if (vowels.indexOf(word.charAt(i)) > -1) {
+                        return i;
+                    }
+                }
+                return -1;
+            }
+        }
+    }
+}</pre>

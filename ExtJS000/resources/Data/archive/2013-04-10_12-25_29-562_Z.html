@@ -1,0 +1,33 @@
+<p>Now that you have the basics, lets revisit the YelpExtplorer labs you did to see how it could have been stubbed out more efficiently.</p>
+
+<h1>Steps</h1>
+
+<ol>
+
+	<li>Navigate to the location of your workspace
+		<p>From your terminal/console navigate to the <kbd>ext</kbd> folder.</p> 
+
+        <li>Create your application
+                <p>Enter the following code.</p> 
+
+<pre>
+sencha g a -name QuickYelp -path ../QuickYelp
+</pre>
+
+<li>Navigate to the location of QuickYelp
+		<p>From your terminal/console navigate to the <kbd>QuickYelp</kbd> folder.</p>
+
+<p><small><b>Note: </b><i>It should be cd ../QuickYelp.</i></b></small></p> 
+
+        <li>Stub out your entire application in one command line
+
+<pre>sencha generate model Business business_id:int,full_address,categories,photo_url,review_count,name,url,longitude:float,stars,latitude:float and model Category alias,text and model School id:int,name,full_name,latitude:float,longitude:float and view Filter and view Grid and view Map and view Title and view detail.Detail and view detail.EditWindow and controller Filter and controller Business and theme QuickYelpTheme then theme build QuickYelpTheme
+</pre>
+
+<p><small><b>Note: </b><i>To give you a bit of an idea how powerful this can be, we have added some datatypes to the model fields as well.</i></b></small></p> 
+<p><small><i>Do not use spaces after the commas in your field names. In the example code above, the wrapping is because of the lack of spacing. On the command line, this would be one long string of code</i></b></small></p> 
+
+<h1>Conclusion</h1>
+<p>
+These are just two of the more advanced features of Sencha Cmd. In the documentation there are multiple locations with information on Sencha Cmd. Just type Sencha Cmd in the search window. See the <a href="http://docs.sencha.com/extjs/#!/guide/command_reference" target="api">documentation</a> for documentation on Sencha Cmd. You can also go here for <a href="http://docs.sencha.com/extjs/#!/guide/command_advanced" target="api">Advanced Command</a> information.
+<br/>

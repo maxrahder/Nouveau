@@ -1,0 +1,14 @@
+<p>
+As long as we're talking about dynamic loading, let's talk in more detail about the
+requires array. Here's part of the code from the Viewport.
+</p>
+<pre>
+Ext.define('MyApp.view.Viewport', {
+    extend : 'Ext.container.Viewport',    
+    requires : [ 'MyApp.view.BeatlesGrid' ],
+    layout : 'fit',
+    items : [ {
+        xtype : 'myapp_beatlesgrid',
+        store : 'People'
+    } ]
+});</pre>

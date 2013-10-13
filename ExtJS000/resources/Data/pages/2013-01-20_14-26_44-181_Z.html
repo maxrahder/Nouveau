@@ -1,0 +1,32 @@
+<pre class="runnable">
+var store = Ext.create('Ext.data.Store', {
+
+    pageSize : 4, // Unrealistically small, but good for demonstration purposes
+
+    fields : [ 'place', 'mag' ],
+    proxy : { 
+        type : 'ajax', 
+        url : '../Data/json/pagingExample/pagingexample.php', 
+        root : 'data',
+        reader : {
+            type : 'json',
+            root : 'data'
+        }
+    },
+    autoLoad: true
+});
+Ext.create('Ext.grid.Panel', {
+    store : store,
+    dockedItems: [{
+        xtype: 'pagingtoolbar',
+        store: store,
+        dock: 'bottom'
+    }],
+
+    columns : [ 
+       { text : 'Place'     , dataIndex : 'place', width : 240 },
+       { text : 'Magnitude' , dataIndex : 'mag' }
+    ],
+    width : 360,
+    renderTo : Ext.getBody()
+});</pre>

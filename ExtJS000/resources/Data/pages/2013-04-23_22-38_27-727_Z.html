@@ -1,0 +1,45 @@
+<pre class="runnable">
+// Put me in app/controller/MyController.js
+Ext.define('MyApp.controller.MyController', {
+    extend: 'Ext.app.Controller',
+    init: function(){
+        this.control({
+            '#demopanel button': {
+                click: this.handleClick
+            }
+        });
+    },
+    handleClick: function(button){
+        alert('You clicked the button!');
+    }
+});
+
+// Put me in app/view/MyPanel.js
+Ext.define('MyApp.view.MyPanel', {
+    extend: 'Ext.panel.Panel',
+    itemId: 'demopanel',
+    layout: 'vbox',
+    items: [{
+        xtype: 'button',
+        text: 'Button',
+        handler: function(){debugger;}
+    }],
+
+    title : 'My Panel',
+    height: 200,
+    width: 300,
+    bodyPadding: 8,
+    renderTo : Ext.getBody()
+});
+
+
+// Put me in app/application.js
+Ext.application({
+    controllers: ['MyController'],
+    name: 'MyApp',
+    launch: function() {
+        Ext.create('MyApp.view.MyPanel');
+    }
+});
+
+</pre>

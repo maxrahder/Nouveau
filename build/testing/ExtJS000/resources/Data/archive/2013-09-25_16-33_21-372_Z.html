@@ -1,0 +1,31 @@
+<pre class="runnable">// This assignment to Ext.data.Types is the important part.
+Ext.data.Types.PIGLATIN = {
+    type: 'piglatin',
+    sortType: Ext.data.SortTypes.asUCString,
+    convert: function(s) {
+        // This code is silly and should not be scrutinized...
+        var words = Ext.String.splitWords(s);
+        var s = '';
+        var vowels = 'aeiou';
+        for (var i = 0; i < words.length; i++) {
+            var word = words[i];
+            var isProper = word.match(/^[A-Z]/);
+            var index = vowelIndex(word);
+            var newWord = word.substr(index) + word.substr(0, index) + 'ay';
+            newWord = newWord.toLowerCase();
+            if (isProper) {
+                newWord = Ext.String.capitalize(newWord);
+            }
+            s += newWord + ' ';
+        }
+        return s;
+        function vowelIndex(word) {
+            for (var i = 0; i < word.length; i++) {
+                if (vowels.indexOf(word.charAt(i)) > -1) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+    }
+}</pre>

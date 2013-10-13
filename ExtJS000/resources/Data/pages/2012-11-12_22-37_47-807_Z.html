@@ -1,0 +1,59 @@
+<pre class="runnable preview">
+Ext.define('MyApp.model.Sales', {
+    extend : 'Ext.data.Model',
+    fields : [ 'month', 'high', 'low' , 'precipitation']
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.model.Sales',
+    proxy : {
+        type : 'ajax',
+        url : '../Data/charts/parisTemperatureByMonth.json'
+    },
+    autoLoad : true
+});
+
+var chart = Ext.create('Ext.chart.Chart', {
+    store : store,
+    //legend : true,
+    legend : {position : 'left'},
+    axes : [ {
+        type : 'Numeric',
+        position : 'left',
+        title : 'Temperature (centigrade)',
+        minimum : 0,
+        maximum : 25
+    },{
+        type : 'Category',
+        position : 'bottom',
+        fields : [ 'month' ],
+        title : 'Month'
+    } ],
+    series : [ {
+        type : 'line',
+        axis : 'left',
+        xField : 'month',
+        yField : 'high',
+        tips: {
+            width : 140,
+            renderer: function(record) {
+                var f = ( (9 / 5) * record.get('high') ) + 32;
+                var m = record.get('month');
+                this.setTitle(m + ': ' + Math.round(f)  + '&deg; Fahrenheit');
+            }
+        }
+    } ]
+});
+
+Ext.create('Ext.container.Container', {
+    renderTo : Ext.getBody(),
+    layout : 'fit',
+    height : 350,
+    width: 775,
+    items : [ {
+        xtype : 'panel',
+        layout : 'fit',
+        items : [ chart ]
+    } ]
+});
+
+</pre>

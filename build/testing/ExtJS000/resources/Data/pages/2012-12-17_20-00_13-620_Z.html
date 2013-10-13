@@ -1,0 +1,29 @@
+</p>The field length must be from "min" to "max" in length. You may use min
+alone, or max alone or both.</p>
+
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    fields : [ 'first', 'last', 'state' ],
+    validations: [ {
+        field: 'state',
+        type: 'length',
+        min: 2,
+        max: 2,
+        message: 'The state must be 2 characters'
+    } ]
+});
+var record = Ext.create('MyApp.model.Person', { 
+    first: 'John', 
+    last: 'Smith', 
+    state : 'M' 
+});
+
+var errors = record.validate();
+if ( !errors.isValid() ) {
+    var message = '';
+    errors.each( function (error) {
+        message += error.field + ': ' + error.message + '&lt;br&gt;'; 
+    });
+    Ext.Msg.alert('Errors', message);
+}</pre>

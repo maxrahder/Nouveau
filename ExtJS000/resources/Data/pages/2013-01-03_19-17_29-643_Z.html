@@ -1,0 +1,22 @@
+<p>
+Controller instances automatically have getters corresponding to every item in the
+stores, models and views arrays.
+</p>
+<div class="readonly">
+<pre class="runnable">
+Ext.define('MyApp.controller.BeatlesController', {
+    extend : 'Ext.app.Controller',
+    views : [ '<b style="background-color: yellow">BeatlesGrid</b>' ],
+    stores : [ '<b style="background-color: yellow">People</b>' ],
+    models : [ '<b style="background-color: yellow">Person</b>' ],
+    myMethod : function(){
+
+        // This is handy --  same as Ext.getStore('People')
+        <b style="background-color: yellow">this.getPeopleStore()</b>;
+
+        // These aren't so useful
+        <b style="background-color: yellow">this.getBeatlesGridView()</b>; // The grid class constructor
+        <b style="background-color: yellow">this.getPersonModel()</b>;     // The model class constructor
+    }
+});</pre>
+</div>

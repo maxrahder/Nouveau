@@ -1,0 +1,27 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.ComboBox" target="api"><code>Ext.form.field.Combobox</code></a></p>
+
+A combobox control with support for autocomplete, remote loading, and many other features.
+<p>
+
+<pre class="runnable preview">
+// The data store containing the list of states
+var states = Ext.create('Ext.data.Store', {
+    fields: ['abbr', 'name'],
+    data : [
+        {"abbr":"AL", "name":"Alabama"},
+        {"abbr":"AK", "name":"Alaska"},
+        {"abbr":"AZ", "name":"Arizona"}
+        //...
+    ]
+});
+
+// Create the combo box, attached to the states data store
+Ext.create('Ext.form.ComboBox', {
+    fieldLabel: 'Choose State',
+    store: states,
+    queryMode: 'local',
+    displayField: 'name',
+    valueField: 'abbr',
+    renderTo: Ext.getBody()
+});
+</pre>

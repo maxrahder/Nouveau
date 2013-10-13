@@ -1,0 +1,587 @@
+{
+  "topicId": "usefulClasses",
+  "text": "Useful Classes",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Ext.Array",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-09-24_18-01_33-231_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Functions that create a new array",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "clean()",
+              "fileId": "2012-09-24_18-08_32-564_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "erase()",
+              "fileId": "2012-10-29_20-43_23-554_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "filter()",
+              "fileId": "2012-10-29_20-48_03-114_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "flatten()",
+              "fileId": "2012-10-29_21-11_08-440_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "map()",
+              "fileId": "2012-10-30_00-18_39-313_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "pluck()",
+              "fileId": "2012-10-30_00-31_50-982_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "slice()",
+              "fileId": "2012-10-30_01-29_01-596_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "splice()",
+              "fileId": "2012-10-30_02-19_09-551_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "toArray()",
+              "fileId": "2012-10-30_02-25_26-919_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "toMap()",
+              "fileId": "2012-10-30_02-31_03-757_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "unique()",
+              "fileId": "2012-10-30_02-37_30-646_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Set operations",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "merge() or union()",
+              "fileId": "2012-10-30_00-28_21-881_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "intersect()",
+              "fileId": "2012-10-30_00-12_36-745_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "difference()",
+              "fileId": "2012-10-29_20-39_52-113_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Functions that update an array",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "include()",
+              "fileId": "2012-10-29_23-51_00-614_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "insert()",
+              "fileId": "2012-10-30_00-06_26-445_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "push()",
+              "fileId": "2012-10-30_00-59_18-477_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "remove()",
+              "fileId": "2012-10-30_01-05_06-657_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "replace()",
+              "fileId": "2012-10-30_01-15_59-212_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "sort()",
+              "fileId": "2012-10-30_01-45_35-651_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Functions that get information",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "indexOf()",
+              "fileId": "2012-10-29_19-03_08-289_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "max()",
+              "fileId": "2012-10-30_00-25_48-460_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "mean()",
+              "fileId": "2012-10-30_00-27_28-598_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "min()",
+              "fileId": "2012-10-30_00-30_55-383_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "sum()",
+              "fileId": "2012-10-30_02-22_58-855_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Array traversal",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "each()",
+              "fileId": "2012-11-01_20-39_14-220_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "forEach()",
+              "fileId": "2012-10-29_23-46_50-243_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "every()",
+              "fileId": "2012-10-29_19-03_26-415_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "some()",
+              "fileId": "2012-10-30_01-37_49-350_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Lab",
+          "fileId": "2012-10-30_18-59_45-289_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Ext.Date",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-09-24_18-02_11-338_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "parse()",
+          "fileId": "2012-10-30_16-06_17-310_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "format()",
+          "fileId": "2013-01-09_13-46_11-725_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "add()",
+          "fileId": "2012-10-30_16-06_35-122_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "getElapsed()",
+          "fileId": "2012-10-30_17-33_49-011_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "between()",
+          "fileId": "2012-10-30_17-33_57-193_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Information about a date",
+          "fileId": "2012-10-30_15-46_18-845_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Ext.String",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-10-30_17-45_50-027_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "trim()",
+          "fileId": "2012-10-30_17-48_59-002_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "format()",
+          "fileId": "2012-10-30_17-49_04-902_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "leftPad()",
+          "fileId": "2012-10-30_17-49_10-524_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "capitalize()",
+          "fileId": "2012-10-30_17-56_59-857_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "ellipsis()",
+          "fileId": "2012-10-30_18-30_54-480_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Other Ext.String functions",
+          "fileId": "2012-10-30_18-48_19-778_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Ext.Number",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-09-24_18-02_20-122_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "constrain()",
+          "fileId": "2012-11-01_21-39_18-401_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "from()",
+          "fileId": "2012-11-01_21-41_56-320_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "randomInt()",
+          "fileId": "2012-11-01_21-47_38-026_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Ext.Function",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-09-24_18-02_26-097_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "bind()",
+          "fileId": "2012-11-02_21-38_33-385_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "createBuffered()",
+          "fileId": "2012-11-02_21-38_38-510_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "createThrottled()",
+          "fileId": "2012-11-02_21-38_46-690_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "createSequence()",
+          "fileId": "2012-11-02_21-39_18-152_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "interceptBefore() & interceptAfter()",
+          "fileId": "2012-11-02_21-39_35-341_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Other Ext.Function functions",
+          "fileId": "2012-11-05_19-10_47-045_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Ext.Object",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-11-05_19-11_37-353_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "each(), getKeys(), getValues() etc.",
+          "fileId": "2012-11-05_19-26_14-264_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Other Ext.Object functions",
+          "fileId": "2012-11-05_19-40_31-104_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Ext.util.Format",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-11-05_19-48_00-097_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Uses with templates",
+          "fileId": "2012-11-05_20-47_08-680_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Use with grids",
+          "fileId": "2012-11-05_21-13_05-965_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Ext",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-11-06_20-18_42-507_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "apply()",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "apply() & applyIf()",
+              "fileId": "2012-11-06_20-34_28-752_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Caution: apply() and reference types",
+              "fileId": "2012-11-06_21-44_56-444_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Caution: apply() and reference types",
+              "fileId": "2012-11-06_22-31_18-776_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Determing data type",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "isDefined()",
+              "fileId": "2012-11-07_20-28_13-465_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "isElement()",
+              "fileId": "2012-11-07_20-30_04-850_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "isEmpty()",
+              "fileId": "2012-11-07_20-32_22-625_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Primitives",
+              "fileId": "2012-11-07_20-35_58-881_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "DOM functions",
+          "fileId": "2012-11-07_21-07_22-846_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Browser and run-time information",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Browser and OS information",
+              "fileId": "2012-11-07_23-45_59-348_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Platform information",
+              "fileId": "2012-11-08_00-20_08-007_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Ext.JSON",
+      "fileId": "2012-12-04_23-20_30-138_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Summary",
+      "fileId": "2012-09-24_18-08_57-947_Z",
+      "html": "",
+      "leaf": true
+    }
+  ]
+}

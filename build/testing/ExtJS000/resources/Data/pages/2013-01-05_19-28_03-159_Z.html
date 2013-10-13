@@ -1,0 +1,29 @@
+<p>
+Here the Beatles grid has been encapsulated into its own reusable class.
+</p>
+<div class="readonly">
+<pre class="runnable">
+Ext.define('MyApp.view.BeatlesGrid', {
+    extend : 'Ext.grid.Panel',
+    xtype : 'beatlesgrid',
+    requires : [ 'Ext.grid.column.Date' ],
+    title : 'Beatles',
+    columns : [ {
+        text : 'Name',
+        dataIndex : 'first'
+    }, {
+        text : 'Last Name',
+        dataIndex : 'last'
+    }, {
+        text : 'Date Of Birth',
+        dataIndex : 'dob',
+        xtype : 'datecolumn',
+        format : 'F j, Y',
+        flex : 1
+    } ],
+    tbar : [ {
+        text : 'She loves me...',
+        itemId : 'sheLovesMe'
+    } ]
+});
+</pre></div>

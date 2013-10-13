@@ -1,0 +1,52 @@
+<ul>
+    <li>You can load the data in from a file using a proxy.</li>
+    <li>In this case, the json file contains an object with a <code>children</code> property,
+        and an array of child objects as a value.</li>
+</ul>
+<pre>
+{  "children": [{
+        "text": "Topic 1",
+        "expanded": true,
+        "children": [{
+            "text": "Sub 1.1",
+            "leaf": true
+        }, {
+            "text": "Sub 1.2",
+            "leaf": true
+        }]
+    },
+    {
+        "text": "Topic 2",
+        "expanded": true,
+        "children": [{
+            "text": "Sub 2.1",
+            "leaf": true
+        }, {
+            "text": "Sub 2.2",
+            "leaf": true
+        }]
+    }]
+}
+</pre>
+
+<ul>
+    <li>The store still uses a <code>root</code> object unless the tree panel's <code>rootVisible</code> is <code>false</code>.</li>
+</ul>
+<pre class="runnable">
+var aTreeStore = Ext.create('Ext.data.TreeStore', {
+    root: {
+        text: 'Root Node',
+        expanded: true
+        },
+    proxy: {
+        type: 'ajax',
+        url: '../Data/json/treeExample.json'
+    }
+});
+
+Ext.create('Ext.tree.Panel', {
+    store: aTreeStore,
+    title: 'Tree With Proxy',
+    renderTo: Ext.getBody(),
+});
+</pre>

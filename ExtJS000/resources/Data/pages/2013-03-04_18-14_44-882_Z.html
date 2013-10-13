@@ -1,0 +1,51 @@
+<h1>Introduction</h1>
+<p>
+You will build a single minimized JavaScript file containing all the components needed to run YelpExtplorer.
+</p>
+
+<h1>Objectives</h1>
+<ul>
+<li>Build a production version of an application</li>
+<li>Inspect files generated for a production application</li>
+<li>Verify a production application loads less source files than a non-optimized application</li>
+</ul>
+
+<h1>Steps</h1>
+
+<ol>
+
+<li>Build the application<p>
+Recall that in the Theming unit you used Sencha Cmd to build your application. We will now explore the files that were generated from that build. Build also launched a process that inspects your code to determine what components are used. 
+</p>
+</li>
+
+<li>Manually move "data/categories.json"<p>
+The category data would normally be supplied from the server. We placed the categories JSON fle in the "data/" folder for development-time 
+convenience. The build process builds <i>client-side</i> code. Therefore, you need to manually copy and paste the "data" folder to
+"SenchaTraining/ExtJS251/Labs/build/YelpExtplorer/production".</p></li>
+
+<li>Inspect the generated folder<p>
+The build process creates a new "SenchaTraining/ExtJS251/Labs/build/YelpExtplorer/production" folder. When running build
+you have the option of specifying whether to make a production or testing build. Production is the default.</p>
+
+<p>Inside the folder you will find "all-classes.js" and "index.html". The index file references "all-classes.js".</p>
+
+<p>Note that the size of "all-classes.js" is about 1 megabyte. Compare that to the size of "ext-all.js" found in 
+your original install of Ext JS &mdash; it's about 1.3 megabytes. The build process determined the components being used in YelpExtplorer, and only includes those in all-classes.js. Unused components aren't included, thus reducing the overall size of the library by about 25%.
+</p></li>
+
+<li>Compare versions
+
+<p>Visit your "un-built, non-optimized" application at <a href="http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer" target="lab">SenchaTraining/ExtJS251/Labs/YelpExtplorer</a>  and look at the number of source files loaded. There are a couple of hundred files being loaded as your <code>requires</code>,<code>extend</code> and other dependencies are being evaluated. </p></p>
+</br>
+<img src="resources/images/_yelpExtplorer/NonBuildNetworkTraffic.png" align="right" height="50%"/>
+
+<div style="clear: both"/>
+<p>Now visit your production application at 
+<a href="http://localhost/SenchaTraining/ExtJS251/Labs/build/YelpExtplorer/production/" target="lab">SenchaTraining/ExtJS251/Labs/build/YelpExtplorer/production/</a> and
+look at the number of source files loaded. There is now a <b>single</b> JavaScript file being loaded!</p>
+</li>
+
+<li>That's it!<p>That's all there is to the build process. It's easy to do, but it has a profound impact on your application. It reduces network traffic to a single JavaScript file and also reduces the overall size of the code being loaded.</p></li>
+
+</ol>

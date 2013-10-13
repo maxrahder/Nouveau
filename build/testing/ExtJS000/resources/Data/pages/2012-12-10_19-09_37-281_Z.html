@@ -1,0 +1,33 @@
+<p>This is a <b>lot</b> more code, but now that the data is in a store, the data can more easily
+be processed, and it can be used in a grid or chart.
+</p>
+<pre class="runnable">
+var t = Ext.create('Ext.XTemplate', '&lt;tpl for="."&gt;&lt;p&gt;{text}&lt;/p&gt;&lt;/tpl&gt;');
+
+// Describe the data
+Ext.define('MyApp.data.Tweet', {
+    extend : 'Ext.data.Model',
+    fields : [ 'profile_image_url', 'text' ],
+    proxy : {
+        type : 'jsonp',
+        url : 'http://yelp.senchabits.com/go?fn=twitter',
+        reader : {
+            type : 'json',
+            root : 'data.statuses'
+        }
+    }
+});
+
+// Get the data into memory, and do something after it's loaded
+Ext.create('Ext.data.Store', {
+    model : 'MyApp.data.Tweet',
+    autoLoad : true,
+    listeners : {
+        load : function(store) {
+            var a = Ext.Array.pluck(store.data.items, 'data');
+            var r = Ext.Array.slice(a, 0, 5);
+            t.overwrite(Ext.getBody(), r);
+        }
+    }
+});
+</pre>

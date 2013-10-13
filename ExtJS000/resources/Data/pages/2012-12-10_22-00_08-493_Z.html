@@ -1,0 +1,114 @@
+<h1>Introduction</h1>
+<p>
+In this walkthrough, you will work with Sencha Architect. You will use Architect to create an Ext JS project, but this same tool could also be used to create a Touch application. </p>
+Together with your instructor, you will perform the following tasks:
+</p>
+<ul>
+<li>Set up the YelpExtplorer project</li>
+<li>Define Models</li>
+<li>Define a Proxy</li>
+<li>Define a Store</li>
+<li>Parse the incoming dataset</li>
+</ul>
+
+
+<h1>Steps</h1>
+
+</p>
+
+<h2>Start Architect</h2>
+
+<ol>
+	<li><p>Open <b>Sencha Architect</b>.</p></li>
+	<li><p>Under the heading <b>Create New Project</b>, Select <b>Ext JS 4.2.x.</b> (the latest supported version)</p></li>
+
+	<li><p>After Sencha Architect opens, Click the <b>Save</b> button on the toolbar.
+		<p><small><b>Note: </b><i>It might be helpful to understand what is going on behind the scenes to open your file system to the YelpExtplorer folder and then check it as you go through the next few steps.</i></small></p>
+	</li>
+	<li><p>Save the project to <b>{path to web server}/SenchaTraining/ExtJS251/Labs/Architect/</b></p></li> 
+        <li><p>Save the project with the name <b>YelpExtplorer</b>.
+<p><small><b>Note: </b><i>Overwrite if prompted.</i></b></small></p>  
+<p>      
+	<li><p>Click <b>Save</b>.</p></li>
+	<li><p>Click <b>Settings</b> button on the main toolbar, and ensure that the <b>Project</b> tab is selected.</p></li>
+	<li><p>Enter the following <b>URL prefix</b>: <code>http://localhost/SenchaTraining/ExtJS251/Labs/Architect/YelpExtplorer</code></p></li>
+	<li><p>Click <b>Save</b>.</p></li>
+	<li><p>Select <b>Application</b> in the <b>Project Inspector</b>.</p></li>
+        <li><p>In the Config panel, start to type <b>name</b> into the filter field. This will filter to the <b>name</b> property.</p></li>
+	<li><p>Set the <b>name</b> property value to <b>YelpExtplorer</b>.</p></li>
+</ol>
+
+<h2>Define the Business Data Model</h2>
+<ol>
+	<li><p>Click <b>[+]</b> in Project Inspector, select <b>Model</b></p></li>
+	<li><p>In Project Inspector, under Model click <b>MyModel</b></p></li>
+	<li><p>In the Config panel, start to type <b>user</b> into the filter field. This will filter the user named properties. 
+        <li><p>Select <b>userClassName</b> below and set the value to <b>Business</b>.</p></li>
+        <li><p>In the Config Panel, type <b>fi</b> into the filter field, and click the <b>[+]</b> next to <b>Fields</b>.</p></p></li>
+        <li><p>In the <b>Fields</b> text field, type the following fields, separated by commas:
+		<ul>
+			<li><p>name</p></li>
+			<li><p>full_address</p></li>
+			<li><p>avg_rating</p></li>
+			<li><p>review_count</p></li>
+			<li><p>url</p></li>
+		</ul>
+<p><small><b>Note: </b><i>The field names match up to the name identifiers in the Yelp JSON file.</i></small></p>
+        </p></li>
+<p>You could copy and paste the code below to save yourself some time.</p>
+<pre>
+  name,full_address,avg_rating,review_count,url
+</pre>
+	<li><p>Select field: <b>review_count</b>, select the <b>type</b> property. Set the value to <b>int</b>.</p>
+</ol>
+
+<h2>Add a Proxy and Reader</h2>
+<ol>
+	<li><p>Select the model <b>Business</b>. In the Config Panel, type <b>prox</b> into the filter field, choose <b>proxy</b> below and click on the <b>[+]</b> to the right.</p></li>
+        <li><p>Choose <b>AjaxProxy</b></p></li>
+	<li><p>In the Config panel select <b>MyAjaxProxy</b> and click on the <b>&rarr; (arrow icon)</b> to the right</p></li>
+        <li><p>In the filter field, start to type <b>url</b> then select the <b>url</b> property and enter the following value for property: <b>http://yelp.senchabits.com/go?fn=schoolbiz</b></p></li>
+	<li><p>In the Config Panel, click <b>[+]</b> next to Reader, choose <b>JsonReader</b></p></p></li>
+	<li><p>Click on the <b>&rarr; (arrow icon)</b> to the right of <i>what will now be named</i><b> MyJsonReader</b>.</p></li>
+	<li><p>Enter the following value for the <b>root</b> property: <b>data</b></p></li>
+	<li><p>Click the <b>Save</b> button on the main toolbar.</p></li>
+</ol>
+
+<h2>Define the Store</h2>
+<ol>
+	<li><p>Drag a <b>Store</b> from the toolbox to <b>Stores</b> in the Project Inspector</p></li>
+	<li><p>Configure the following Ext.data.Store properties:
+		<ul>
+			<li><p>userClassName: <b>Businesses</b></p></li>
+			<li><p>autoLoad: <b>checked</b></p></li>
+			<li><p>model: <b>Business</b></p></li>
+			<li><p>storeId: <b>Businesses</b></p></li>
+		</ul>
+	</p></li>
+</ol>
+
+<h2>Test the Data Retrieval</h2>
+<ol>
+        <li><p>In the Project Inspector, right-click on the Businesses Store and select <b>Load Data</b>.</p></li>
+	<li><p>Hover your mouse over the <b>eye button</b>
+<p>You should see a tooltip indicating that 20 rows were loaded.</p></li>
+
+</ol>
+<p><small><b>Note: </b><i>If this fails, it is most likely that permissions have not been set on your architect folder. If that is the case, set the correct architect permissions (allow read/write) and then shut down Architect and your web server and restart them.</i></b></small></p>
+
+<h2>Save and Preview the Application</h2>
+<ol>
+        <li><p>Your browser should launch and you should see a white screen.</p></li>
+        <li><p>On Chrome, right-click on the page, and choose <b>Inspect Element</b>, and choose the <b>Console</b> tab.</p></li>
+        <li><p>Type <b>Ext.getStore('Businesses')</b>, and make sure that the data is loaded.</p></li>
+        <li><p>Click the arrow next to <b>i</b>.</p></li>
+        <li><p>Click <b>data</b>.</p></li>
+        <li><p>Click the <b>items</b> array.</p></li>
+        <li><p>Click on any <b>index</b> position.</p></li>
+        <li><p>Select <b>data</b> and make sure you see data in that row.</p></li>
+</ol>
+
+<h1>Conclusion</h1>
+<p>In this lab you started to create YelpExtplorer, an application that provides restaurant reviews and information from <b>Yelp, Inc.</b> You've created a Model, a Proxy with a Reader and a Store, you've created perfect code and haven't had to write a single line of it. This is a glimpse of the power of Sencha Architect.</p>
+<br />
+<br />

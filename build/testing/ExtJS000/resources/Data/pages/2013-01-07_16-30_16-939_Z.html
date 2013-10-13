@@ -1,0 +1,8 @@
+<pre class="runnable">
+var data = { 
+    name: 'Homer Simpson',  
+    age: 38 
+};
+
+var tpl = Ext.create('Ext.XTemplate', '&lt;h1&gt;{name} ({age}) &lt;/h1&gt;');
+tpl.overwrite(Ext.getBody(), data);</pre>

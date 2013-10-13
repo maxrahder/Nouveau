@@ -1,0 +1,30 @@
+<ul>
+  <li><code>icon</code> &mdash; the path to an image</li>
+  <li><code>iconCls</code> &mdash; a CSS class specifying a background image</li>
+  <li><code>iconAlign</code> &mdash; 'top' | 'right' | 'bottom' | 'left'</li>
+</ul>
+<p>
+See <a href="http://docs.sencha.com/extjs/#!/example/button/button.html" target="api">the documentation</a> to see various size and icon combinations.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+    title : 'Panel',
+    renderTo : Ext.getBody(),
+    height : 200,
+    bodyPadding : 16,
+    defaults : {
+        margin: 8
+    }, 
+    layout : 'vbox',
+    items : [{
+        xtype : 'button',
+        text : 'Sunny',
+        icon : 'resources/images/weather_sun.png'
+    }, {
+        xtype : 'button',
+        text : 'Rainy',
+        icon : 'resources/images/weather_rain.png',
+        iconAlign : 'right'
+    }]
+});
+</pre>

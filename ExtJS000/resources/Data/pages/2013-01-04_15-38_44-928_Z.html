@@ -1,0 +1,13 @@
+<p>Arithmetic operators may be used with numeric values:
+<code>+ - * /</code></p>
+
+<pre class="runnable">
+var data = { 
+    name: 'Homer Simpson',  
+    age: 38 
+};
+
+var tpl = new Ext.XTemplate(
+    '&lt;p&gt;{name} will be {age + 3} in three years.&lt;/p&gt;'
+);
+tpl.overwrite(Ext.getBody(), data);</pre>

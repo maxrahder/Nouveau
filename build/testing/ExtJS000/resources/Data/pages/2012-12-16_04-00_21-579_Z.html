@@ -1,0 +1,36 @@
+<ul>
+<li><p>A tree store creates it's own behind-the-scenes model if you do not define one.</li>
+<li><p>A model in this case defines the fields for the each of the nodes (rows) in the tree.</li>
+<li><p>Ext JS adds properties from the <code>Ext.data.NodeInterface</code> class to the node model. These properties include <code>text</code>, <code>children</code>, <code>expanded</code>, and <code>leaf</code>.</li>
+</ul>
+
+<pre class="runnable preview">
+var aTreeStore = Ext.create('Ext.data.TreeStore', {
+    root: {
+        expanded: true,
+        children: [{
+            text: 'Node 1',
+            expanded: true,
+            children: [{
+                text: 'Node 1.1',
+                leaf: true
+            }, {
+                text: 'Node 1.2',
+                leaf: true
+            }]
+        }, {
+            text: 'Node 2',
+            expanded: true,
+            children: [{
+                text: 'Node 2.1',
+                leaf: true
+            }]
+        }]
+    }
+});
+
+Ext.create('Ext.tree.Panel', {
+    store: aTreeStore,
+    title: 'Tree With TreeStore',
+    renderTo: Ext.getBody()
+});</pre>

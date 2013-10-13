@@ -1,0 +1,28 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.FieldContainer" target="api"><code>Ext.form.FieldContainer</code></a></p>
+
+<p> A field container is a simple container that includes the <code>Ext.form.Labelable</code> mixin. </p>
+<pre class="runnable preview">Ext.create('Ext.form.Panel', {
+    title: 'Ext.form.FieldContainer',
+    items: [ {
+        xtype: 'textfield',
+        fieldLabel: 'Number'
+    }, {
+        xtype: 'textfield',
+        fieldLabel: 'Street'
+    }, {
+        xtype: 'fieldcontainer',
+        fieldLabel: 'City, State ZIP',
+        layout: 'hbox',
+        items: [
+            {xtype: 'textfield'}, 
+            {xtype: 'tbtext', text: ',&nbsp;'}, 
+            {xtype: 'textfield', width: 30}, 
+            {xtype: 'tbtext', text: '&nbsp;'}, 
+            {xtype: 'textfield', flex: 1}
+        ]
+    }],
+    defaults: {anchor: '100%'},
+    bodyPadding: 8,
+    width: 400,
+    renderTo: Ext.getBody()
+});</pre>

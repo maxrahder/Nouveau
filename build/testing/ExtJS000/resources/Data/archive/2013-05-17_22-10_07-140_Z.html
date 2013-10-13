@@ -1,0 +1,475 @@
+<h1>Introduction</h1>
+
+<p>This is a Sencha Architect tutorial, where you'll create an application that reads
+iTunes data, and shows music video thumbnails and video previews.
+</p>
+<p>
+Take your time and read the instructions carefully. Save your work at the end of each step.
+The tutorial should take about an hour to complete.
+</p>
+
+
+<h1>Required Software</h1>
+
+<p>
+To complete this tutorial you will need a copy of Sencha Architect (version 2.2 or newer), available from 
+<a href="http://www.sencha.com/products/architect/" target="_blank">the Sencha web site.</a>
+Install it, then read the "Explore the User Interface of Sencha Architect" section of 
+<a href="http://www.sencha.com/products/architect/" target="_blank">the Sencha Architect product page</a>.
+Familiarize yourself with the location of the parts of the Architect user interface:</p>
+<ul class="plain">
+<li>The Toolbox on the left, </li>
+<li>the Canvas (and its Design view and Code view) in the middle, </li>
+<li>the Project Inspector at the upper right and </li>
+<li>the Config panel at the lower right.</li>
+</ul>
+</p>
+<p>
+You also need a locally-running web server, such as XAMPP, which can be downloaded 
+<a href="http://www.apachefriends.org/en/xampp.html" target="_blank">here</a>. Following
+the instructions on the XAMPP site, download XAMPP and start Apache. The application you're
+about to create will be saved within the server's document root, which for XAMPP is in its installation directory,
+under <kbd>xamppfiles/htdocs/</kbd>. You must have read/write permissions to all files and folders under the
+document root.
+</p>
+
+<p>
+Finally, you need to download a folder that contains a couple of resources needed by the application. 
+Download 
+<a href="https://dl.dropbox.com/u/25399147/TunesMini.zip" target="_blank">TunesMini.zip</a> and extract it under the document root for your web server. If you're 
+using XAMPP, put it under the <kbd>htdocs</kbd> folder, mentioned in the previous paragraph.
+</p>
+
+<h1>The Application</h1>
+
+<p>
+<img align="left" src="resources/images/_tunes-mini/ShortYelpPreview.png" height="400px" style="margin: 8px 12px 0 0"/>
+In this tutorial, you will use Sencha Architect to build an application that shows iTunes music
+video thumbnails for the top 100 music videos and lets the user play the preview video in a popup window.</p>
+</p>
+
+<p>
+All the information relating to the videos is dynamically fetched using the iTunes data feed, which
+looks like <a href="https://itunes.apple.com/us/rss/topmusicvideos/limit=10/json" target="_blank">this</a>. 
+As you can see, the data is complicated. Buried within it is an array of items, each of which represents one music video. 
+(The feed URL was created using the <a href="http://itunes.apple.com/rss" target="_blank">the iTunes Store RSS Feed Generator</a>.)
+</p>
+
+<div  style="clear: both"/>
+<br/>
+<p>
+The key pieces of the application are:
+</p>
+<ul class="plain">
+<li style="margin: 8px 0 4px 0; line-height: normal">
+An <code>Ext.data.Model</code> which is a record definition describing the fields we want from the feed.</li>
+<li style="margin: 8px 0 4px 0; line-height: normal">
+An <code>Ext.data.Store</code> which holds all the records created from the feed.</li>
+<li style="margin: 8px 0 4px 0; line-height: normal">
+An <code>Ext.container.Viewport</code> which is the base container for the application &mdash; it sizes the 
+application to take up all available space in the browser window
+</li>
+<li style="margin: 8px 0 4px 0; line-height: normal">
+An <code>Ext.panel.Panel</code> which is used for the panel titled "iTunes Music Video".</li>
+<li style="margin: 8px 0 4px 0; line-height: normal">
+An <code>Ext.view.View</code> which can render HTML content injected with values from a store. This is used for the 
+list of video thumbnails.</li>
+<li style="margin: 8px 0 4px 0; line-height: normal">
+An <code>Ext.window.Window</code> which is used for the popup window containing the video preview.</li>
+</ul>
+
+<br/>
+
+
+<ol>
+
+
+
+
+
+<li>Initial setup &mdash; save path and project settings
+<img src="resources/images/_tunes-mini/SavePath.png" align="right" width="40%" style="margin-top: 16px" />
+<p>Open Sencha Architect.</p>
+<p>On the initial welcome page, under Create New Project, select the latest version of Ext JS.</p>
+<p>After Sencha Architect opens, click Save on the Architect main toolbar. This brings up a Save Project dialog.</p>
+<p>Set the Save Path to:
+<br/><kbd>[path to server root]/</kbd></p>
+<p>Set the Project Name to <code>TunesMini</code>.</p>
+<p>Click Save.</p>
+
+<div style="clear: both"/>
+<img src="resources/images/_tunes-mini/UrlPrefix.png" align="right" width="40%" style="margin-top: 8px" />
+<p>Click Settings on the Architect main toolbar, and select the Project tab.</p>
+<p>Set the URL prefix to:<br/><kbd>http://localhost/TunesMini</kbd></p>
+
+<div style="clear: both"/>
+
+
+
+</li>
+
+<li>Set the application name
+<p>In the Project Inspector, select the Application.</p>
+<p>In the Config panel filter set the <code>name</code> property to <code>TunesMini</code>.</p>
+
+<p>In general, when setting property values press Enter after entering the property name to ensure the name is
+set. Another tip is that in the property list you can filter the list of config properties by typing in 
+the filter text field. This makes it easier to find a property in the list. </p>
+<img src="resources/images/_tunes-mini/SetApplicationName.png" width="50%" style="margin-top: 16px" />
+<br/>
+</li>
+
+
+
+
+
+<li>Add a viewport
+<p>In the Toolbox, select a Containers > Viewport and drag it to the Design View.</p>
+<p>In the Design View, click the flyout gear to the right of the viewport and set <code>layout</code> to <code>fit</code>.
+The "fit" layout results in the viewport's child panel taking up all the available space within the viewport.</p>
+<img src="resources/images/_tunes-mini/AddViewport.png" width="60%" style="" />
+<br/>
+</li>
+
+
+
+
+
+<li>Add the iTunes Music Videos panel
+
+<p>In the Toolbox, select a Containers > Panel and drag it on top of the viewport in the Design View.</p>
+
+<p>
+In the Design View, double click the panel's "My Panel" title and replace it with the title "iTunes Music Videos". This set's the panel's
+<code>title</code> property.
+</p>
+<p>In the Design View, click the flyout gear to the right of the panel and set <code>layout</code> to <code>fit</code>.
+This panel also uses fit, because it will have one child &mdash; the thumbnails data view &mdash; which needs to take
+up all the available space within the panel.</p>
+</p>
+<img src="resources/images/_tunes-mini/AddPanel.png" width="60%" style="" />
+<br/>
+
+</li>
+
+
+
+
+
+<li>Save and preview the application
+<p>On the Architect main toolbar, press Save and then press Preview. This opens a browser window with your running
+application. There's not much there yet &mdash; you should see the "iTunes Music Videos" title bar. The rest of the 
+window is empty. We'll add the thumbnails in the following steps.</p>
+</li>
+
+
+<li>Add a data view to show video thumbnails
+<p>
+In the Toolbox, select a Views > View and drag it on top of the panel in the Design View. It's at the bottom of the
+list of components. (The "View" component is sometimes referred to as a "data view.")
+</p>
+<p>In the Design View, click the flyout gear to the right of the data view and set <code>autoScroll</code> to be checked.</p>
+<p>In the Project Inspector, select the MyView data view, and in the Config panel set <code>itemId</code> to <code>tunesView</code>.
+As a result, the Project Inspector will use "tunesView" for the name of the data view.</p>
+<img src="resources/images/_tunes-mini/AddDataView.png" width="60%" style="" />
+<br/>
+</li>
+
+
+
+
+
+
+<li>Describe the iTunes data using a model declaration
+<p>In the Project Inspector, select the [+] button and choose Model.</p>
+<p>In the Project Inspector, select the new model, and in the Config panel set <code>userClassName</code> to <code>Tune</code></p>
+<p>In the Config panel go to the Fields property and press the (+) to its right. An input field
+will appear. Type the fields in the data feed: <code>artist,id,image,link,preview,title</code> 
+<br>then press Enter.</p>
+<img src="resources/images/_tunes-mini/CreateModel.png" width="60%" style="" />
+<br/>
+</li>
+
+
+<li>Specify where each data value is found within the feed
+<p>The iTunes feed is complex, with each property buried within other properties. To handle this situation
+Ext JS allows you to define a mapping for each field.</p>
+<p>For each field, first select the field in the Project Inspector (under the Tune model declaration) and
+in the Config panel set its <code>mapping</code> property to value specified here. Note that in the Config panel
+filter you can type "mapping" and click the lock icon to the right. That will keep you on that property as you
+select each field from the Project Inspector.</p>
+<table>
+<tr><th>Field</th><th>Mapping</th></tr>
+<tr><td>
+<p style="margin-top: 0">
+<code>artist</code><br/>
+<code>id</code><br/> 
+<code>image</code><br/> 
+<code>link</code><br/> 
+<code>preview</code><br/> 
+<code>title</code>
+</p>
+</td>
+<td>
+<p style="margin-top: 0">
+<code>['im:artist'].label</code>       <br/>
+<code>id.attributes['im:id']</code>       <br/>
+<code>['im:image'][2].label</code>    </br>
+<code>link[0].attributes.href</code> <br/>
+<code>link[1].attributes.href</code> <br/>
+<code>['im:name'].label</code>
+</p></td>
+</tr>
+</table>
+
+
+</li>
+
+
+
+
+
+
+
+<li>Create a store to hold the records</li>
+<p>In the Project Inspector, choose the [+] button and choose Store > Json<b>P</b> Store.</p>
+<p>In the Project Inspector, choose the MyJsonPStore store.</p>
+<p>In the Config panel set <code>userClassName</code> to <code>Tunes</code></p>
+<p>In the Config panel set <code>model</code> to <code>Tune</code></p>
+<img src="resources/images/_tunes-mini/CreateModel.png" width="60%" style="" />
+<br/>
+</li>
+
+
+
+
+
+<li>Specify the source URL in the store's proxy</li>
+
+<p>In the Project Inspector, choose MyJsonPProxy under the Tunes store.</p>
+<p>In the Config panel set <code>url</code> to<br/> <code>https://itunes.apple.com/us/rss/topmusicvideos/limit=100/json</code></p>
+
+<p>In the Project Inspector choose MyJsonReader under the proxy.</p>
+<p>In the Config panel set <code>root</code> to <code>feed.entry</code>. The root specifies the location
+within the feed where the array of items is found.
+</p>
+
+<li>Have the store automatically load the data</li>
+<p>In the Project Inspector, select the store.</p>
+<p>In the Config panel set the <code>autoLoad</code> checkbox to checked. This specifies that at run-time the store will automatically load the iTunes data. 
+In Architect it will also cause the store to load the data &mdash; you should see an
+"eye" icon in the Project Inspector, next to the store. If you get an error, 
+or don't see the eye, review the steps for coding the model and store.
+</p>
+<p>Click on the eye icon and you'll see the raw data. </p>
+</li>
+
+
+
+
+
+
+<li>Have the data view show the records</li>
+
+<p>In the Project Inspector find the data view itemTpl property by looking under<br/>
+Views > MyViewport > iTunes Music Videos > MyView > itemTpl
+<br/>Double-click on <code>itemTpl</code>. This opens the Code view.
+</p>
+<p>
+Copy and paste the following HTML snippet and replace the default <code>Data View Item {string}</code> that's there. 
+Ext JS can render programmer-defined HTML content and dynamically replace "variables" within the HTML with data. These
+are called <i>templates</i>.</p>
+<pre>&lt;a href="{link}" target="itunes_store"&gt;
+    &lt;img src="resources/images/iTunesBadge.gif"/&gt;
+&lt;/a&gt;
+&lt;figure&gt;
+    &lt;img src="{image}" /&gt;
+    &lt;figcaption>{title}&lt;br/>{artist}&lt;/figcaption&gt;&lt;br/&gt;
+&lt;/figure&gt;</pre>
+<p>In the Canvas choose the Design button and select the data view. (This is the same
+as selecting "tunesView" in the Project Inspector.) In the Canvas click on the flyout gear
+by the data view.
+Set <code>store</code> to <code>Tunes</code>. The data view
+will use the template to show each record in the store. You should see iTunes thumbnails, rendered using the template.</p>
+<img src="resources/images/_tunes-mini/DataViewShowsRecords.jpeg" style="" />
+<br/>
+
+</li>
+
+
+
+
+
+
+
+<li>Save and preview the application
+<p>
+On the Architect main toolbar, press Save, then refresh your browser. You should 
+see your thumbnails just like you did in Architect. Right now the thumbnails are shown 
+in a single column. Since you set the data view to <code>autoScroll</code> you can scroll 
+the list. In the next couple of steps we'll improve the layout of the data view.
+</p>
+</li>
+
+
+
+
+
+<li>Add a CSS resource
+
+<p>The video thumbnails in the view are shown as a single column. These would look better with a little styling.</p>
+<p>In the Project Inspector, choose the [+] button and choose Resource > CSS Resource</p>
+<p>In the Project Inspector, select the new CSS resource (under Application > Resources) &mdash; you may need to scroll
+down to see it.</p>
+<p>In the Config panel set <code>url</code> to <code>resources/style.css</code></p>
+<p>Choose the Code View to see the new style sheet. It defines a <i>video</i> class
+which is floating, with a specific height and width. This will be used for each video thumbnail. It
+also defined a <i>overvideo</i> class, which will be used to highlight items.</p>
+<img src="resources/images/_tunes-mini/ClsResource.png" width="60%" style="" />
+<br/>
+</li>
+
+
+
+
+
+<li>Have the data view use the new CSS styles
+<p>In the Project Inspector select the data view. We'll add a few properties via the 
+Config panel Quick Value Set feature. Using Quick Set is equivalent to selecting the
+property and setting its value. 
+</p>
+<p>
+Note that there is an Add button to the right of the 
+Filter or Quick Value Set field &mdash; that button is only used for adding a custom property, and is <i>never</i>
+needed for TunesMini.
+</p>
+<p>
+Copy and paste each of these property-value pairs
+into the Quick Value Set field, and press Enter. 
+<p>
+<code>itemCls:'video'</code><br/>
+<code>overItemCls:'overvideo'</code><br/>
+<code>trackOver:true</code>
+</p>
+<p>After adding the first style you will see it in effect in the Design view.</p>
+<img src="resources/images/_tunes-mini/DataViewWithCls.jpeg" style="" />
+<br/>
+</li>
+
+
+
+
+
+<li>Save and preview the application
+<p>
+On the Architect main toolbar, press Save, then refresh your browser. You should 
+see your thumbnails flowing from left to right in rows. Each item reflects the 
+styling in the CSS, and each item is highlighted as you mouse over.</p>
+<p>Now you need to create the preview window.</p>
+</li>
+
+<li>Create the preview window
+<p>On the Toolbox select a Views > Window and drag it onto Views in the Project Inspector.</p>
+
+<p>In the Project Inspector, select the new window, and in the Config panel use Quick Value Set to set:</p>
+<p>
+<code>userClassName:'PreviewWindow'</code><br/>
+<code>height:352</code><br/>
+<code>width:640</code><br/>
+<code>modal:true</code><br/>
+<code>resizable:false</code><br/>
+</p>
+<p>In the Config panel click the + by the <code>tpl</code> property to create an empty template, then
+click the right arrow by the <code>tpl</code> property to open the new template in the Code view.</p>
+<p>Copy and paste this template. The template contains a variable, which will be filled with 
+the preview URL from the selected record when the window is shown.</p>
+<pre>&lt;video autoplay preload="auto"&gt;&lt;source src="{preview}" type="video/mp4"&gt;&lt;/video&gt;</pre>
+
+<img src="resources/images/_tunes-mini/WindowWithTpl.png" width="60%" style="" />
+<br/>
+
+</li>
+
+<li>Create the controller
+<p>Press the [+] at the top right of the Project Inspector and choose Controller.</p>
+<p>In Project Inspector select the new controller and in the Config panel 
+set <code>userClassName</code> to <code>TunesController</code>.</p>
+</li>
+
+<li>Add control logic
+
+<p>
+We need to detect when the user wants to view a video. To do this you need to create and show
+the preview window when the user double-clicks on an item in the data view.
+</p>
+
+<p>In the Project Controller, select tunesView.</p>
+
+<p>In the Config panel, find the <code>EventBindings</code> item, 
+and click on the <code>(+)</code> to the right.</p>
+
+<p>Select the <code>itemdblclick</code> event.</p>
+<p>To move the event listener to the controller, 
+right-click on <code>itemdblclick onTunesViewItemDblClick</code>,
+select <code>Convert To Action > TunesController</code>.</p>
+
+<p>In the Project Inspector, double-click on TunesController to see the code generated.</p>
+
+<p>In the Project Inspector, double-click on <code>itemdblclick onTunesViewItemDblClick</code> method
+now under the TunesController, and copy and paste in the following code:</p>
+
+<pre>// Create an instance of the preview window 
+// Have it update its template with the record the user selected 
+// Show it
+
+var w = Ext.create('TunesMini.view.PreviewWindow', {title: record.get('title')  + ', provided courtesy of iTunes'});
+w.update(record.data);
+w.show();</pre>
+
+<p>
+If you select the controller in the Project Inspector, then switch to Code View, you'll see the full
+declaration of the controller, including the <code>init</code> and <code>onItemDblClick</code> functions.
+</p>
+</p>
+</li>
+
+<li>Look at your completed Tunes application!
+<p>Press Save and refresh your browser. You should see your <b>completed</b>
+application. It shows iTunes Music Videos thumbnails. If you double-click on 
+an item you see the preview video! 
+</p>
+</li>
+
+<li>Try out the Neptune theme
+<p>Sencha comes with a few pre-defined themes.</p>
+<p>
+In the Project Inspector choose Resources > Library, and in the Config panel
+set <code>theme</code> to <code>Neptune</code>. If you choose the viewport in 
+the Project Inspector you'll see the theme in effect in the Canvas.
+</p>
+<p>
+Press Save and refresh your browser. You should see your completed
+application with the Neptune theme.
+</p>
+</li>
+
+<h1>Conclusion</h1>
+<p>
+Using Sencha Architect you've created an iTunes music video application in just a few minutes. 
+</p>
+<p>
+The application dynamically fetches data from the Apple iTunes feed and populates a data store.
+It uses a data view, with a template to show each record in the store. The user can click on the
+iTunes icon for an item to visit the Apple store, or double-click on an item to see a preview
+of the video in a popup window.
+</p>
+<p>
+You could further enhance the application by adding a grid that shows other information from the 
+feed, such as the price of each video.
+</p>
+<p>
+For more information on Sencha Architect, and other Sencha products, please visit 
+<a href="http://www.sencha.com" target="_blank">the Sencha web site</a>.
+</p>
+
+</ol>

@@ -1,0 +1,64 @@
+<img src="resources/images/ChartIcon.png" style="float: left; margin-right: 8px" />
+<p>There are eight types of chart: 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.chart.series.Area" target="api">Area</a>,  
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.chart.series.Bar" target="api">Bar</a>, 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.chart.series.Column" target="api">Column</a>, 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.chart.series.Gauge" target="api">Gauge</a>, 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.chart.series.Line" target="api">Line</a>, 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.chart.series.Pie" target="api">Pie</a>, 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.chart.series.Radar" target="api">Radar</a> and 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.chart.series.Scatter" target="api">Scatter</a>.
+</p>
+<p>
+	To explore these, see <a href="http://docs.sencha.com/extjs/#!/example" target="api">the Examples page</a> in
+	the Sencha documentation.
+</p>
+<div style="clear: both;"/>
+<pre class="runnable preview">
+var store = Ext.create('Ext.data.ArrayStore', {
+    fields: ['name', 'data'],
+    data: [['v1', 10], ['v2', 7], ['v3', 5], ['v4', 2], ['v5', 27]]
+});
+Ext.create('Ext.chart.Chart', {
+    renderTo: Ext.getBody(),
+    width: 500,
+    height: 360,
+    animate: true,
+    store: store,
+    series: [{
+        type: 'pie',
+        angleField: 'data'
+    }]
+});</pre>
+<br/>
+<pre class="runnable">
+var store = Ext.create('Ext.data.ArrayStore', {
+    fields: ['data', 'name'],
+    data: [
+        [20, 'Does not resemble'],
+        [80, 'Resembles']
+    ]
+});
+Ext.create('Ext.chart.Chart', {
+    store: store,
+    series: [{
+        type: 'pie',
+        angleField: 'data',
+        colorSet: ['#333', 'yellow'],
+        tips: {
+            trackMouse: true,
+            width: 180,
+            height: 28,
+            renderer: function(record, item) {
+                this.update(record.get('name') + ' Pac-Man.');
+            }
+        }
+    }],
+    renderTo: Ext.getBody(),
+    width: 380,
+    height: 380,
+    style: {
+        'background-color': '#000',
+        padding: 12
+    }
+});</pre>

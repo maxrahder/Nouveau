@@ -1,0 +1,20 @@
+<ul>
+<li>You can pass fewer number of arguments to a function than it expects. The parameters with no arguments are undefined.</li>
+</ul>
+<pre>
+> function demoArguments( first, second ) {
+    return [ first, second ]; // returns an array
+  }
+  undefined
+> demoArguments( 1, 2 ) // returns the array
+  [1, 2]
+> demoArguments( 1 )
+  [1, undefined]
+</pre>
+<ul>
+<li>If you attempt to pass in too many parameters, JavaScript just ignores them.</li>
+</ul>
+<pre>
+> demoArguments( 1, 2, 3, 4 )
+  [1, 2]
+</pre>

@@ -1,0 +1,14 @@
+<p>
+<code>tpl</code> allows you to specify a "tokenized" HTML snippet as the content of
+the element. Under program control you can replace the tokens with values. </p>
+<p>We'll talk in depth about templates later in the week.</p>
+
+<pre class="runnable code">var c = Ext.create('Ext.Component', {
+
+    //data: {name: 'Joe'}, 
+    tpl: 'Hi &lt;b&gt;{name}&lt;/b&gt;',
+
+    renderTo : Ext.getBody()
+
+});
+c.update({name: 'Fred'});</pre>

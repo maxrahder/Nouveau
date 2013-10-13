@@ -1,0 +1,345 @@
+{
+  "topicId": "grids",
+  "text": "Grids",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Introduction",
+      "fileId": "2012-10-30_15-46_12-866_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Ext.grid.Panel",
+      "fileId": "2012-09-24_23-07_37-624_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Column Types",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 30,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-21_18-11_20-559_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "text and dataIndex",
+          "fileId": "2013-01-21_18-47_00-170_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Built-in renderers",
+          "fileId": "2013-01-21_19-00_41-776_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.grid.column.Column",
+          "fileId": "2013-08-28_15-47_32-402_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.grid.column.Number",
+          "fileId": "2013-01-13_01-17_43-671_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.grid.column.Date",
+          "fileId": "2013-01-13_01-17_50-830_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.grid.column.Boolean",
+          "fileId": "2013-01-13_01-18_13-448_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.grid.column.Template",
+          "fileId": "2013-01-13_01-18_43-031_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Using a custom renderer",
+          "fileId": "2013-01-22_17-22_41-344_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The renderer signature",
+          "fileId": "2013-01-22_18-23_40-821_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Renderer example",
+          "fileId": "2013-01-22_18-15_07-234_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.grid.column.Action",
+          "fileId": "2013-01-13_01-18_57-420_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.grid.column.RowNumberer",
+          "fileId": "2013-01-13_01-33_20-323_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "More column configs",
+          "fileId": "2013-01-22_18-39_21-705_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Quiz",
+          "fileId": "2012-10-30_17-03_48-223_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Selection Model",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction to Selection Model",
+          "fileId": "2013-01-13_01-00_50-103_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Configuration",
+          "fileId": "2013-01-23_15-46_18-871_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Row Model Selection Example",
+          "fileId": "2013-01-13_01-01_44-480_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Cell Model Selection Example",
+          "fileId": "2013-01-13_01-02_53-953_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Checkbox Model Selection Example",
+          "fileId": "2013-06-03_14-05_40-387_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Multi select",
+          "fileId": "2013-01-23_15-58_44-814_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Events",
+          "fileId": "2013-01-23_16-03_54-455_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Features",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-23_18-49_30-483_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Summary",
+          "fileId": "2013-01-13_01-38_47-049_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Grouping",
+          "fileId": "2013-01-13_01-38_28-181_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "GroupingSummary",
+          "fileId": "2013-01-13_01-38_48-105_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Plugins",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-23_19-35_09-320_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Grid plugins",
+          "fileId": "2013-01-23_19-47_56-868_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.grid.plugin.DragDrop",
+          "fileId": "2013-01-13_01-52_38-815_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.grid.plugin.CellEditing",
+          "fileId": "2013-01-13_01-55_00-693_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.grid.plugin.RowEditing",
+          "fileId": "2013-01-13_01-58_48-692_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Grids and Tree Panels Detect Context Click ",
+      "fileId": "2013-10-09_13-47_30-646_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Lab: YelpExtplorer 7",
+      "fileId": "2013-03-04_18-10_10-273_Z",
+      "html": "",
+      "leaf": true,
+      "duration": 30
+    },
+    {
+      "text": "Lab (Optional): Grids",
+      "fileId": "2012-11-18_23-47_48-872_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Paging",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Large datasets",
+          "fileId": "2013-01-20_00-39_12-517_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Paging information in requests",
+          "fileId": "2013-01-20_00-39_43-408_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The back-end",
+          "fileId": "2013-01-20_16-57_43-616_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Grids and paging",
+          "fileId": "2013-01-20_01-14_51-739_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Setup",
+          "fileId": "2013-01-20_14-17_06-900_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The back-end response",
+          "fileId": "2013-01-20_16-32_17-535_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Paging toolbar example",
+          "fileId": "2013-01-20_14-26_44-181_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Paging scroller",
+          "fileId": "2012-12-19_02-14_19-577_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Store paging, grid scrolling",
+          "fileId": "2013-01-23_01-48_14-386_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Paging scrollbar example",
+          "fileId": "2013-01-20_17-21_43-274_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Paging scrollbar with a huge dataset",
+          "fileId": "2013-01-21_14-42_38-216_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Column Sorting",
+          "fileId": "2013-10-03_18-41_15-986_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Using bufferedrenderer with Unbuffered Store",
+          "fileId": "2013-05-02_21-12_11-408_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.Number" target="api"><code>Ext.form.field.Number</code></a>.
+</p>
+
+<p> A numeric text field that provides automatic keystroke filtering to disallow non-numeric characters, and numeric validation to limit the value to a range of valid numbers. </p>
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    title: 'On The Wall',
+    width: 300,
+    bodyPadding: 10,
+    renderTo: Ext.getBody(),
+    items: [{
+        xtype: 'numberfield',
+        anchor: '100%',
+        name: 'bottles',
+        fieldLabel: 'Bottles of Beer',
+        value: 99,
+        maxValue: 99,
+        minValue: 0
+    }],
+    buttons: [{
+        text: 'Take one down, pass it around',
+        handler: function() {
+            this.up('form').down('[name=bottles]').spinDown();
+        }
+    }]
+});
+</pre>

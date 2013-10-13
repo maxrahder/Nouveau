@@ -1,0 +1,133 @@
+<h1>Introduction</h1>
+<p>
+During this lab you will start creating your own custom UI's, by using the Ext JS CSS Mixins
+</p>
+<ul>
+<li>Use Custom UIs</li>
+</ul>
+<p><small><b>Note:</b> This lab requires code from the Student files folder: <b>Labs/Theming/LabCustomUI/MyThemeApp/</b></small></p>
+
+<h1>Steps</h1>
+<ol>
+<li>
+First things first. Let's preview the current application in your browser.
+<p>
+Browse to <a href="http://localhost/SenchaTraining/ExtJS251/Labs/Theming/LabCustomUI/MyThemeApp" target="_new">/Labs/Theming/LabCustomUI/MyThemeApp/</a>.
+If everything is correct your application should look like the picture below:
+</p>
+<img src="resources/images/_theming/Lab-UI2.png" alt="CSS Mixins" />
+</li>
+<li>
+Start compass
+<p>Open a command prompt and navigate to <b>LabTheme/Sass/</b> folder.
+<pre>
+compass watch .
+</pre>
+</li>
+<li>Open in your editor app.scss from the LabTheme folder.</li>
+<li>
+Create a new mixin to define a custom toolbar called: <b>'custom-tb'</b>
+<pre>
+@include extjs-toolbar-ui(
+    'custom-tb',
+    $background-color: #CEE7F7,
+    $background-gradient: null,
+    $border-color: null
+);
+</pre>
+</li>
+<li>
+Open <b>app/view/Viewport.js.</b> Where indicated by the comment, add the following configuration attribute to the toolbar:
+<pre>
+ui: 'custom-tb',
+</pre>
+</li>
+<li>
+Return to the Sass file and create a new custom mixin to define a new custom panel called: 'custom-bg'
+<pre>
+@include extjs-panel-ui(
+    'custom-bg',
+    $ui-body-background-color: #F8F8F8,
+    $ui-body-color: #043250,
+    $ui-body-font-size: 22px,
+    
+    $ui-header-background-color: #043250,
+    $ui-header-color: #CEE7F7
+);
+</pre>
+</li>
+<li>
+Open <b>app/view/Viewport.js.</b> Where indicated by the comment, add the following configuration attribute to the panel:
+<pre>
+ui: 'custom-bg',
+</pre>
+</li>
+<li>
+Return to the Sass file and create a new custom mixin to define a new custom button called: <b>'custom-btn'</b>
+<pre>
+@include extjs-button-ui(
+    'custom-btn',
+
+    $border-color: #132A03 #324B22 #324B22 #132A03,
+    $border-color-over: #132A03 #324B22 #324B22 #132A03,
+    $border-color-focus: #132A03 #324B22 #324B22 #132A03,
+    $border-color-pressed: #132A03 #324B22 #324B22 #132A03,
+    $border-color-disabled: #132A03 #324B22 #324B22 #132A03,
+
+    $padding: 3px 0,
+    $text-padding: null,
+
+    $background-color: #056A2B,
+    $background-color-over: #70B840,
+    $background-color-focus: #70B840,
+    $background-color-pressed: #70B840,
+    $background-color-disabled: #70B840,
+
+    $color: #C4D82C,
+    $color-over: #000,
+    $color-focus: #000,
+    $color-pressed: #100,
+    $color-disabled: #500,
+
+    $font-size: 18px,
+    $font-size-over: 18px,
+    $font-size-focus: 18px,
+    $font-size-pressed: 18px,
+    $font-size-disabled: 18px,
+
+    $font-weight: bold,
+    $font-weight-over: bold,
+    $font-weight-focus: bold,
+    $font-weight-pressed: bold,
+    $font-weight-disabled: bold,
+
+    $font-family: sans-serif,
+    $font-family-over: sans-serif,
+    $font-family-focus: sans-serif,
+    $font-family-pressed: sans-serif,
+    $font-family-disabled: sans-serif,
+
+    $icon-size: null
+);
+
+.x-btn {
+    border-width: 5px !important;
+}
+</pre>
+</li>
+<li>
+Open app/view/Viewport.js. Where indicated by the comment, add the following configuration attribute to the button:
+<pre>
+ui: 'custom-btn',
+</pre>
+</li>
+<li>Save both files.</li>
+<li>
+Preview your application.
+<p>
+Browse to <strong>Labs/Theming/LabCustomUI/MyThemeApp/</strong>.
+If everything is correct your application should look like the picture below:
+</p>
+<img src="resources/images/_theming/Lab-UI1.png" alt="CSS Mixins" />
+</li>
+</ol>

@@ -1,0 +1,48 @@
+<p>
+As you saw earlier, you can specify event handlers via the <code>listeners</code> config property. 
+Since the "click" event is the most likely thing you need to listen to, buttons have a convenience 
+property, <code>handler</code> for specifying the click event.
+</p>
+<table class="width: 100%">
+<tr>
+<td style="vertical-align: top; width: 50%">
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {          
+	bodyPadding: 16,
+	renderTo : Ext.getBody(),
+	layout : 'vbox',
+	items : [ {
+		xtype : 'button',
+		text : 'Button One',
+		handler: function(b){
+			alert('You clicked the ' 
+			+ b.getText() 
+			+ ' button.');
+		}
+	}]
+});</pre>
+</td>
+<td>
+&nbsp;&nbsp
+</td>
+<td style="vertical-align: top; width: 50%">
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {          
+	bodyPadding: 16,
+	renderTo : Ext.getBody(),
+	layout : 'vbox',
+	items : [ {
+		xtype : 'button',
+		text : 'Button Two',
+		listeners : {
+			click: function(b){
+			    alert('You clicked the ' 
+			    + b.getText() 
+			    + ' button.');
+		    }
+		}
+	}]
+});</pre>
+</td>
+</tr>
+</table>

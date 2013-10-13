@@ -1,0 +1,39 @@
+<h2>Alert <span class="muted">Read-only message</span></h2>
+<pre class="runnable">
+Ext.Msg.alert('Widget Updated', 'The widget was updated successfully.');
+</pre>
+
+<h2>Confirm <span class="muted">Verifies an action</span></h2>
+<pre class="runnable">
+Ext.Msg.confirm('Are you sure?', 'Are you sure you want to delete this widget?', function(btn, text){
+	if(btn === 'yes'){
+    	Ext.Msg.alert('Deleted', 'The widget you selected has been deleted');
+	}
+	else{
+		Ext.Msg.alert('Not Deleted', 'The widget you selected was not deleted');
+	}
+});
+</pre>
+
+<h2>Prompt <span class="muted">Asks user for text input</span></h2>
+<pre class="runnable">
+Ext.Msg.prompt('Name', 'Please enter your name:', function(btn, text){
+	var name = (btn === 'ok' && text.length) ? text : 'anonymous user';
+    Ext.Msg.alert('Hello', 'Hello, ' + name + '!');
+});
+</pre>
+
+<h2>Progress <span class="muted">Progress bar indicator</span></h2>
+<pre class="runnable">
+Ext.Msg.progress('Processing', 'Please wait while we process your application...');
+
+setTimeout(function(){ Ext.Msg.updateProgress(0.2, '20% complete') }, 1000);
+setTimeout(function(){ Ext.Msg.updateProgress(0.42, '42% complete') }, 3000);
+setTimeout(function(){ Ext.Msg.updateProgress(0.73, '73% complete') }, 3500);
+setTimeout(function(){ Ext.Msg.updateProgress(1, 'Complete') }, 4000);
+</pre>
+
+<h2>Wait <span class="muted">Indefinite progress bar indicator</span></h2>
+<pre class="runnable">
+Ext.Msg.wait('Please wait while we process your application...', 'Processing');
+</pre>

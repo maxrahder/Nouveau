@@ -1,0 +1,35 @@
+This example searches for first names starting with A through K, using a regular expression.
+<pre class="runnable">
+Ext.define('MyApp.store.Persons', {
+	extend: 'Ext.data.Store',  
+	// model: 'MyApp.model.Person',
+	fields: [ {name: 'id', type: 'int'}, 'first', 'last' ],
+	idProperty: 'id',
+	data: [
+		{ id: 1, first: 'John', last: 'Lennon' },
+		{ id: 2, first: 'Paul', last: 'McCartney' },
+		{ id: 3, first: 'George', last: 'Harrison' },
+		{ id: 4, first: 'Ringo', last: 'Starr' }
+	]
+});
+
+var outputModel = function(model) {
+	return 'id='+model.get('id')+
+			', first='+model.get('first')+
+			', last='+model.get('last')
+}
+var outputStore = function(store) {
+	var ar = st.data.items;
+	var i, output='', len=ar.length;
+	for (i=0; i&lt;len; i++) {
+		output += outputModel(ar[i]) + '&lt;br&gt;';
+	}
+	return output;
+}
+
+var st = Ext.create('MyApp.store.Persons');
+st.filter( {
+	property: 'first',
+	value: /^[A-K]/
+});
+Ext.Msg.alert('first names starting between A-K', outputStore( st ));

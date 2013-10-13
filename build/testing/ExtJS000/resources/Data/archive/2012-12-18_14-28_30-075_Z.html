@@ -1,0 +1,20 @@
+<pre class="runnable">
+Ext.define('MyApp.store.Persons', {
+	extend: 'Ext.data.Store',  
+	fields: [ 'first', 'last' ],
+	data: [
+		{ first: 'John',    last: 'Lennon' },
+		{ first: 'Paul',    last: 'McCartney' },
+		{ first: 'George',  last: 'Harrison' },
+		{ first: 'Ringo',   last: 'Starr' }
+	]
+});
+
+var outputModel = function(model) {
+	return 'id='+model.get('id')+
+			', first='+model.get('first')+', last='+model.get('last')
+}
+
+var st = Ext.create('MyApp.store.Persons');
+Ext.Msg.alert('getById(1)', outputModel(st.getById(1)));
+</pre>

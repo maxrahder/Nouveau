@@ -1,0 +1,20 @@
+<pre class="runnable">Ext.create('Ext.panel.Panel', {
+
+    items: [{
+        xtype: 'button',
+        text: 'Button',
+        handler: function(button){
+            // Find the first container matching the specified xtype
+            var container = button.up('panel');
+            alert('This button is in an ' + container.$className);
+        }
+    }],
+
+    title : 'My Panel',
+
+    height: 200,
+    width: 300,
+    bodyPadding: 8,
+    renderTo : Ext.getBody()
+});
+</pre>

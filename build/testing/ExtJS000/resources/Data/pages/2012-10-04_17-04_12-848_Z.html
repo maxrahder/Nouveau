@@ -1,0 +1,24 @@
+<p>Send and receive asynchronous data.</p>
+
+<ul>
+<li>Same domain via AJAX</li>
+<li>Cross domain via JSONP</li>
+</ul>
+
+<pre class="runnable preview">
+Ext.Ajax.request({
+    url: 'php/twitter/twitterProxy.php?query=extjs',
+    success: function(response) {
+        var resp = Ext.JSON.decode(response.responseText);
+        t.overwrite(Ext.getBody(), resp.statuses);
+    }
+});
+var t = Ext.create('Ext.XTemplate', 
+    '&lt;table&gt;&lt;tpl for="."&gt;',
+        '&lt;tr&gt;',
+            '&lt;td&gt;&lt;img src="{user.profile_image_url}"/&gt;&lt;/td&gt;',
+            '&lt;td&gt;{text}&lt;/td&gt;',
+        '&lt;/tr&gt;',
+    '&lt;/tpl&gt;&lt;/table&gt;'
+);</pre>
+

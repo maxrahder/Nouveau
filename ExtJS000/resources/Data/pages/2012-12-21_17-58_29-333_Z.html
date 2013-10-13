@@ -1,0 +1,23 @@
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+
+    //layout : 'vbox',
+    layout : {
+        type: 'vbox',
+        align: 'center'
+    },
+
+    items : [ {
+        xtype : 'button',
+        text : 'Button One'
+    }, {
+        xtype : 'button',
+        text : 'Button One'
+    } ],
+
+    title : 'My Panel',
+    defaults : {margin : 4},
+    bodyPadding : 8,
+    renderTo : Ext.getBody()
+});
+<pre>

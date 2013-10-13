@@ -1,0 +1,16 @@
+<h3>Ext.Array.pluck(array, propertyName)</h3>
+<p>Plucks the value of a property from each item in the Array.</p>
+<pre class="runnable">
+var array = [ 
+    { data: {a: 1, b: 2}, foo: 'bar' }, 
+    { data: {a: 3, b: 4}, foo: 'toaster' }, 
+    { data: {a: 5, b: 6}, foo: 'moose' }
+];
+alert(Ext.Array.pluck(array, 'foo')); // alerts 'bar', 'toaster', 'moose'
+
+// Handy for plucking data from arrays of records
+console.log(Ext.Array.pluck(array, 'data')); 
+
+// Alerts the CSS references
+alert(Ext.Array.pluck(Ext.query('link'), 'href')); 
+</pre>

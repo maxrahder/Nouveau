@@ -1,0 +1,22 @@
+<pre class="runnable">
+Ext.create('Ext.window.Window', {
+
+    layout: 'vbox',
+    items: [{
+        xtype: 'button',
+        margin: 8,
+        text: 'Button'
+    },{
+        xtype: 'button',
+        margin: 8,
+        text: 'Button'
+    }],
+
+    title : 'My Window',
+    autoShow: true,
+    height: 200,
+    width: 300,
+    bodyPadding: 8,
+    renderTo : Ext.getBody()
+});
+</pre>

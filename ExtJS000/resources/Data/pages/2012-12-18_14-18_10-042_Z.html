@@ -1,0 +1,11 @@
+<pre class="runnable">
+var store = Ext.create('Ext.data.Store', {
+    fields: [ 'first', 'last' ],
+    data: [ { first: 'John',    last: 'Lennon'    },
+            { first: 'Paul',    last: 'McCartney' },
+            { first: 'George',  last: 'Harrison'  },
+            { first: 'Ringo',   last: 'Starr'     } ]
+});
+
+var model = store.getAt(1); // Zero-based
+alert( model.get('first') + ' ' + model.get('last') );</pre>

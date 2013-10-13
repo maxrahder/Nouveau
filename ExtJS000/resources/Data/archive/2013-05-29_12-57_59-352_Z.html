@@ -1,0 +1,25 @@
+<p>
+Ext JS also uses Sass mixins. You can use these to create new <code>ui</code>'s.
+UI's can be handy when you want to create a different set of styles within your theme.
+</p>
+<p>
+For example, you have a <em>blue</em> Neptune theme, but you may want your <kbd>Ext.toolbar.Toolbar</kbd> <em>green</em> instead of blue.
+(<a href="http://docs.sencha.com/extjs/4.2.1/extjs-build/examples/build/KitchenSink/ext-theme-neptune/#basic-panels" target="api">See the KitchenSink example</a>)
+</p>
+<p>
+In your Sass stylesheet you can write the <code>extjs-toolbar-ui</code> mixin as specified in:
+<a href="http://docs.sencha.com/extjs/4.2.1/#!/api/Ext.toolbar.Toolbar-css_mixin-extjs-toolbar-ui" target="api">the API docs</a>.
+The first argument is the new <b>ui</b> name, for example: <code>green</code>.</p>
+
+<p>
+This name you can set in your <code>Ext.tool.Toolbar</code> Ext code to point to the new ui:
+</p>
+
+<pre class="runnable">
+Ext.create('Ext.toolbar.Toolbar', {
+    renderTo: document.body,
+    width   : 400,
+    ui: 'green',
+    items: [ { text : 'test' }]
+});
+</pre>

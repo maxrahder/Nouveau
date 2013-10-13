@@ -1,0 +1,46 @@
+<p>
+Open the debugger's network traffic tab, then press the toolbar buttons to create, update and delete
+records in the store. Then run <code>sync()</code> to see what gets sent.
+</p>
+<pre class="runnable preview">
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    proxy : {
+        type : 'ajax',
+        api : {
+            read :    '../Data/json/marxBrothers.json?mybackendparameter=retrieve',
+            create :  '../Data/json/marxBrothers.json?mybackendparameter=create',
+            update :  '../Data/json/marxBrothers.json?mybackendparameter=update',
+            destroy : '../Data/json/marxBrothers.json?mybackendparameter=delete'
+        },
+        //url : '/training/working/NouveauTraining/Data/json/marxBrothers.json'
+    },
+    fields : [ 'name' ]
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.model.Person',
+    autoLoad : true
+});
+Ext.create('Ext.grid.Panel',{
+    store: store,
+    tbar: [
+        {text: 'Create Hubert', handler: function(){store.add({name: 'Hubert', born: '1892/10/21', died: '1977/04/21'});}},
+        {text: 'Update Chico', handler: function(){var r = store.findRecord('name', 'Chico');r.set('name', 'Chico Leonard Marx');}},
+        {text: 'Remove Groucho', handler: function(){var r = store.findRecord('name', 'Groucho');store.remove(r);}},
+        {text: 'store.sync()', handler: function(){store.sync();}}
+    ],
+    plugins : [ {
+        ptype : 'cellediting',
+        clicksToEdit : 1
+    } ],
+    columns: [{
+        text: 'Name',
+        dataIndex: 'name',
+        editor : { xtype : 'textfield' },
+        flex: 1  
+    }],
+    title: 'Marx Brothers',
+    width: 550,
+    renderTo: Ext.getBody()
+});
+</pre>

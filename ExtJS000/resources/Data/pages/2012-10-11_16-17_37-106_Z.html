@@ -1,0 +1,189 @@
+<h1>Introduction</h1>
+
+<p>In this lab, you will finish coding a view, and then code a controller.</p>
+
+<h1>Steps</h1>
+
+<ol>
+
+	<li>Preview the application you'll be writing
+		<p>
+			In your browser, visit <a href="http://localhost/SenchaTraining/ExtJS251/LabSolutions/MVC/Twitter" target="_blank">the application you will be
+				writing.</a>
+		</p>
+		<p>The application retrieves Twitter searches. Type a string into the search field and press the Search button.</p>
+	</li>
+
+	<li>Here's the flow
+		<p>
+			<img src="resources/diagrams/BigPictureLab.jpg">
+		</p>
+		<p>
+			This is a model-view-controller application. The <em>model</em> is the store and its associated record declaration.
+			The <em>view</em> is a top-level viewport and the grid panel. The <em>controller</em> "listens" to user clicks on the
+			search button, and loads the store with the tweets that match the search string. Since the grid also observes the
+			store, it automatically updates as the data changes.
+	</li>
+
+	<li>Inspect <kbd>Labs/MVC/Twitter/index.html</kbd>
+		<p>In your IDE, open <kbd>Labs/MVC/index.html</kbd>. It contains a reference to the Ext JS style sheet,
+			and an Ext JS library and "app.js".</p>
+	</li>
+
+	<li>Inspect <kbd>Labs/MVC/Twitter/app.js</kbd>
+		<p>
+			<kbd>app.js</kbd> usually doesn't have much code. In our case, it is configured to automatically create our viewport. It also
+			has a
+			<code>launch()</code>
+			function, where you can do on-startup initialization.
+		</p>
+	</li>
+
+	<li>Inspect the view
+		<p>
+			In your editor open <kbd>Labs/MVC/Twitter/app/view/Viewport.js</kbd>. The view is stubbed out, with its
+			<code>html</code>
+			config property set to "The grid will go here". In this lab you will replace that code with code that creates an
+			instance of
+			<code>TwitterGrid</code>
+			.
+		</p>
+		<p>The other file in the <kbd>view</kbd> folder is <kbd>Labs/MVC/Twitter/app/view/TwitterGrid.js</kbd>. Open it and note that
+			it defines a grid subclass. The columns are already defined. It has an xtype. The toolbar definition is missing.
+	</li>
+
+	<li>Run it
+		<p>
+			In your web browser, go to the Labs folder, and select <a href="http://localhost/SenchaTraining/ExtJS251/Labs/MVC/Twitter/" target="lab">
+				Labs/MVC/Twitter/</a>. You will see a page that says "The grid will go here."
+		</p>
+	</li>
+
+	<li>Look at the Twitter data
+
+		<p>
+			We will be getting JSON data from Twitter via its "search" API. Take a look <a
+				href="http://yelp.senchabits.com/go?fn=twitter&q=extjs" target="_blank">at the data</a>. It's a JSON string, and buried
+			in the response is a "results" property, which is an array of objects. Each of these is a tweet. Our code will
+			convert each tweet into a record, and the records will be added to a data store.
+		</p>
+	</li>
+
+	<li>Inspect the model
+
+		<p>
+			Recall from the diagram that the model has two parts: the record declaration and the store. In Ext JS records are
+			defined using the
+			<code>Ext.data.Model</code>
+			class. Stores are defined in
+			<code>Ext.data.Store</code>
+			.
+		</p>
+		<p>
+			In your editor, open <kbd>Labs/MVC/Twitter/app/model/Tweet.js</kbd>. We have provided the complete model declaration. A
+			<code>Ext.data.Model</code>
+			describes a record. In this case, it describes some of the data Twitter provides in a tweet. The model declaration
+			also describes the URL for the data, and the location of the tweets array in the data feed.
+		</p>
+		<p>In the "store" folder open <kbd>Labs/MVC/Twitter/app/store/Tweets.js</kbd>. It specifies the model used to
+			populate it.</p>
+	</li>
+
+	<li>Inspect the controller
+
+		<p>
+			In your editor, open "Labs/MVC/Twitter/app/controller/TwitterController.js" Note that the
+			<code>searchHandler</code>
+			method has already been coded. It re-loads the store by passing the user-entered search string to Twitter.
+		</p>
+		<p>In a minute, you will add code here that detects "click" events on the Search button, and loads data using the
+			string entered in the search field.</p>
+	</li>
+	<li>Add the grid to the viewport
+
+		<p>
+			The viewport is stubbed out to show "The grid will go here." Replace the
+			<code>html</code>
+			property with the grid using this code:
+		</p> <pre>
+items : [{
+    xtype : 'twittergrid'
+}]</pre>
+		<p>
+			This creates an instance of the grid defined in <kbd>view/TwitterGrid.js</kbd> &mdash; the
+			<code>xtype</code>
+			specified in the items array matches the value we defined in the grid.
+		</p>
+		<p>Save your changes and refresh your browser. You should see an empty grid. You should no longer see "The grid
+			will go here."</p>
+	</li>
+
+
+	<li>Add the search toolbar to the grid
+		<p>Add a top-toolbar to the grid. The toolbar has two items: a text field and a button. We haven't covered text
+			fields yet, so for that item just copy and paste this code:</p> <pre>{
+    xtype : 'textfield',
+    itemId : 'searchText',
+    fieldLabel : 'Search'
+}</pre>
+		<p>
+			For the search button, recall what you learned in the "Foundation | Panels and Buttons" topic. Or <a
+				href="http://docs.sencha.com/extjs/#!/api/Ext.panel.Panel-cfg-tbar" target="api">look in the API
+				documentation</a>. The button should be labeled "Search" and have an icon referencing "find.png". We've used a larger image for the Search icon. See if you can figure out how to make it display properly.
+			Give the button an
+			<code>itemId</code>
+			of "twitterSearch". We will use the itemId in the controller to select the button.
+		<p>Save your changes and refresh. You should see the toolbar on the grid.</p>
+	</li>
+
+	<li>Have the controller process the search
+		<p>
+			In your IDE open <kbd>controller/TwitterController.js</kbd> and add code to the
+			<code>init</code>
+			function. Recall that in
+			<code>init</code>
+			you call
+			<code>this.control()</code>
+			passing an object that specifies a component selector and the associated events you want to listen to.
+		</p>
+		<p>
+			Write a selector that selects the twitter grid (using its xtype) and the button within it (using its
+			<code>itemId</code>
+			). The code would work with an
+			<code>itemId</code>
+			reference alone, since our simple application only has one component with that
+			<code>itemId</code>
+			. But in general, selecting on
+			<code>itemId</code>
+			alone would be too general, and would match any component within the application with the
+			<code>itemId</code>
+			.
+		</p>
+		<p>
+			For help on writing the
+			<code>init()</code>
+			method, review lecture slides or see The documentation for <a
+                href="http://docs.sencha.com/extjs/#!/api/Ext.app.Controller-cfg-stores" target="api">Ext.app.Controller</a>.
+                
+                Another helpful reference is <a href="http://docs.sencha.com/extjs/#!/guide/application_architecture-section-3" target="api">the
+				section on "Writing a Controller" in the application architecture guide</a>.
+		</p>
+		<p>Save your changes and refresh. There grid and toolbar should still be there, but now they're functional!</p>
+	</li>
+
+	<li>That's it!
+		<p>Try it out. Type a search term and press Find.</p>
+	</li>
+
+</ol>
+
+<h1>Conclusion</h1>
+<p>
+	You have "wired up" the pieces of a model-view-controller application. If you type a search string, and press Find, the
+	controller's
+	<code>searchHandler</code>
+	method is run. It has the store re-load, by calling Twitter, passing the search string. Since the grid shows the store,
+	it automatically changes as the store changes.
+</p>
+<br />
+<br />

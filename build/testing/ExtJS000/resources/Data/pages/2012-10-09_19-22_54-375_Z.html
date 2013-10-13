@@ -1,0 +1,37 @@
+<p>
+There are also shortcut string values for each. Try 'em!
+</p>
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.toolbar.Toolbar" target="api">See API docs</a><br/>
+<ul class="compact">
+<li>Use a literal string for tbtext</li>
+<li>Use an empty string literal for tbspacer</li>
+<li>Use a literal dash for tbseparator</li>
+<li>Use a literal dash greater-than for tbfill</li>
+</ul>
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+    title : 'My Panel',
+        
+    tbar : [ 'The Beatles', 
+        '', {
+        xtype: 'button',
+        text : 'John'
+    }, {
+        xtype : 'tbspacer',
+        width: 32
+    }, {
+        xtype: 'button',
+        text : 'Paul'
+    }, '-', {
+        xtype: 'button', 
+        text : 'George'
+    } , '->', {
+        xtype: 'button',
+        text : 'Ringo'	
+    }],
+
+    height: 200,
+    width: 400,
+    renderTo : Ext.getBody()
+
+});</pre>

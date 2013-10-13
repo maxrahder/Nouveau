@@ -1,0 +1,38 @@
+<p>
+<i>Like any container</i>, you can add items via the <code>add()</code> or <code>insert()</code> methods.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.tab.Panel', {
+    renderTo : Ext.getBody(),
+    height : 200,
+    width : 500,
+    plain : true,
+    defaults : {
+        padding : 8
+    },
+    items : [ {
+        title : 'One',
+        html : 'Panel One'
+    }, {
+        title : 'Two',
+        html : 'Panel Two'
+    }, {
+        title : '+',
+        addTab : true
+    } ],
+    listeners : {
+        beforetabchange : function(panel, newCard, oldCard) {
+            if (newCard.addTab) {
+                var count = panel.items.getCount();
+                var cardinal = [ 'Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine' ];
+                var title = cardinal[count%10];
+                panel.insert((count-1), {
+                    title : title,
+                    html : 'Panel ' + title 
+                });
+                return false;
+            }
+        }
+    }
+});
+</pre>

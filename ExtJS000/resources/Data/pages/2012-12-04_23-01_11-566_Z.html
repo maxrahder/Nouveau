@@ -1,0 +1,30 @@
+<p>
+The <var>response</var> passed to the <code>success</code> or <code>failure</code>
+callback is of type <code>XMLHttpRequest</code>. This is a native DOM type,
+<a href="http://www.w3schools.com/dom/dom_http.asp" target="_blank">documented at W3 Schools</a>, and other places.
+</p>
+<p>
+<code>XMLHttpRequest</code> has a few key properties:
+</p>
+
+<div type="expander" caption="status">
+<p>
+The response HTTP status, such as 200 (OK) or 404 (not found).
+</p>
+</div>
+
+<div type="expander" caption="responseText">
+<p>
+The string response. You'll typically code your server
+to return a JSON string <em>which then needs to be parsed</em>.
+</p>
+</div>
+
+<div type="expander" caption="responseXml">
+<p>
+A DOM object, which is the parsed XML response. This property is only filled if the server sets the response 
+MIME type appropriately.
+</p>
+</ul>
+<p>
+</p>

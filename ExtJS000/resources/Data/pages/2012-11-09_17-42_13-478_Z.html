@@ -1,0 +1,23 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.Text" target="api"><code>Ext.form.field.Text</code></a></p>
+
+<p> Supports empty-field placeholder values (see emptyText). Normally this value will be submitted to the server if this field is enabled; to prevent this you can set the submitEmptyText option of Ext.form.Basic.submit to false.</p>
+
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    title: 'Contact Info',
+    width: 300,
+    bodyPadding: 10,
+    renderTo: Ext.getBody(),
+    items: [{
+        xtype: 'textfield',
+        name: 'name',
+        fieldLabel: 'Name',
+        emptyText: 'Full Name'
+    }, {
+        xtype: 'textfield',
+        name: 'email',
+        fieldLabel: 'Email Address',
+        emptyText: 'e.g. name@domain.com'
+    }]
+});
+</pre>

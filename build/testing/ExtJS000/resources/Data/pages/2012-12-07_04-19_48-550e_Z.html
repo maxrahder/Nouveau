@@ -1,0 +1,13 @@
+<h2>An indefinite progress bar indicator</h2>
+<p><code>Ext.Msg.wait()</code> can only be closed programmatically.</p>
+<pre class="runnable">
+var m = Ext.Msg.wait("Please wait while we process your application...", "Processing", {
+   interval: 300, //bar will move fast!
+   duration: 3000,
+   increment: 10,
+   text: 'Updating...',
+ 
+   fn: function(){
+      m.hide();
+   }
+});</pre>

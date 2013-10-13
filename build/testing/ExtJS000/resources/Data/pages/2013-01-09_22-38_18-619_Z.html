@@ -1,0 +1,23 @@
+<p>Most people can deal with success and dealing with failure will be a life long endurance trial, but we will try to help you address this as it relates to Post operations</p>
+
+<p>In order for the form submit action to be considered a success, it must receive JSON data that resembles the following:</p>
+
+<code>{success: true, msg: 'Thank you for submitting'}</code>	
+
+<p>Alternatively, you can pass back JSON that indicates a series of errors took place. Ext will automatically invalidate the related form fields and display the corresponding error messages.</p>
+
+<pre>
+//server-side response
+{
+   success: false,
+   errors: [
+    {
+       id: 'firstName',
+       msg: 'This field must be corrected.'
+    },{
+       id: 'lastName',
+       msg: 'Your name must comply with the instructions.'
+    }
+   ]
+}
+</pre>

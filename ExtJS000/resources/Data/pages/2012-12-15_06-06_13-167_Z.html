@@ -1,0 +1,21 @@
+<ul>
+<li><p>Each node may have an array of <code>children</code>.</li>
+</ul>
+
+<pre class="runnable">
+Ext.create('Ext.tree.Panel', {
+    root: {
+        text: 'Root Node',
+        expanded: true,
+        children: [{
+            text: 'Child1',
+            leaf: true
+        }, {
+            text: 'Child2',
+            leaf: true
+        }]
+    },
+    title: 'Tree With Root and 2 Child Nodes',
+    renderTo: Ext.getBody()
+});
+</pre>

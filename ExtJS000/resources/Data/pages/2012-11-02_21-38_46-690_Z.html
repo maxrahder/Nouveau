@@ -1,0 +1,16 @@
+<h3>Ext.Function.createThrottled(fn, interval, [scope]):Function</h3>
+<p>Creates a throttled version of the passed function. When called, the original function is run immediately, but upon subsequent calls, only runs after the interval has passed.</p>
+<pre class="runnable">
+var handler = function(button){
+    Ext.DomHelper.append(Ext.getBody(), "&lt;b&gt;&lt;large&gt;&amp;nbsp;Hi&lt;/large&gt;&lt;/b&gt;");
+};
+var throttledHander = Ext.Function.createThrottled(handler, 1000);
+
+Ext.create('Ext.button.Button', {
+    text: 'Hi',
+    renderTo: Ext.getBody(),
+    clicks : 0,
+    handler: function(button){
+        throttledHander(button);
+    }
+});</pre>

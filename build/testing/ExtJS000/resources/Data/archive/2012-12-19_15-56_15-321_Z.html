@@ -1,0 +1,17 @@
+<pre class="runnable">
+Ext.define('MyApp.taxonomy.Human', {
+    config : {
+        name : 'J. Doe'
+    },
+    applyName : function(name){
+        alert('The name is being changed to ' + name);
+        return name;
+    }, 
+    updateName : function(newName, oldName){
+        alert('The name changed from ' + oldName + ' to ' + newName);
+    }
+});
+var b = Ext.create('MyApp.taxonomy.Human');
+b.getName(); // Gets the initial value
+b.setName('Fred');
+b.setName('Joe');</pre>

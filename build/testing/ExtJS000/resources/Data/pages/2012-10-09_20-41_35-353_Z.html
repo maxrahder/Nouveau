@@ -1,0 +1,43 @@
+<p>
+Panels also have a <code>buttons</code> array, used to show buttons at the bottom right of the panel.
+Note that <code>Ext.window.Window</code> is a panel subclass, so this feature might be useful in a 
+dialog box containing a form.
+</p>
+<p>
+This panel has two items, and in addition, two buttons in the <code>buttons</code> array.
+</p>
+<p>
+Under the covers, the <code>buttons</code> array is implemented as a bottom docked toolbar with special styling.
+</p>
+<pre class="runnable preview">
+var w = Ext.create('Ext.window.Window', {
+    title : 'Person',
+    layout : 'fit',
+    items : {
+        xtype : 'form',
+        bodyPadding : 8,
+        items : [ {
+            xtype : 'textfield',
+            fieldLabel : 'First'
+        }, {
+            xtype : 'textfield',
+            fieldLabel : 'Last'
+        }, {
+            xtype : 'datefield',
+            fieldLabel : 'Birth Date'
+        } ]
+    },
+    buttons : [ {
+        text : 'Save',
+        handler : function(b) {
+            b.up('window').close();
+        }
+    }, {
+        text : 'Cancel',
+        handler : function(b) {
+            b.up('window').close();
+        }
+    } ]
+});
+w.showAt(20, 20);
+</pre>

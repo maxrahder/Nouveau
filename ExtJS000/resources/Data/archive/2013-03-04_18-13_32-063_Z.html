@@ -1,0 +1,66 @@
+<h1>Introduction</h1>
+<p>
+In this lab, you will optimize the css to reduce the size of the YelpExtplorer application.
+</br>
+
+<h1>Objectives</h1>
+<ul>
+<li>Optimize an application's theme to reduce the css file size</li>
+</ul>
+
+
+<h1>Optimize CSS</h1>
+
+<ol>
+<li>Open packages/Yelp/sass/config.rb in an editor.</li>
+<li>Change the <code>output_style</code> variable on line 11 to: <code>:nested</code></li>
+<li>Watch the YelpTheme theme folder to compile the Sass file to a CSS file. 
+<p>Navigate in the console to <b>packages/YelpTheme/sass/</b> and type the following command: </p>
+<pre>compass watch .</pre>
+</li>
+<li>
+Write down the file size of <b>resources/YelpExtplorer/app.css</b>
+</li>
+<li>Change the <code>output_style</code> variable on line 11 to: <code>:compressed</code></li>
+<li>Quit compass, by pressing CTRL+C</li>
+<li>Watch the YelpTheme theme folder to compile the Sass file to a CSS file. 
+<p>Navigate in the console to <b>packages/YelpTheme/sass/</b> and type the following command: </p>
+<pre>compass watch .</pre>
+</li>
+<li>
+Write down the file size of <b>resources/YelpExtplorer/app.css</b> and note the difference.
+</li>
+<li>
+Replace
+</br> 
+<code>@import 'compass';</code><br/>
+<code>@import 'ext4/default/all';</code>
+<p><b>With:</b></p>
+<pre>
+$include-default: false;
+@import 'ext4/default/all';
+@include extjs-boundlist;
+@include extjs-button;
+@include extjs-btn-group;
+@include extjs-menu;
+@include extjs-grid;
+@include extjs-form;
+@include extjs-form-field;
+@include extjs-form-fieldset;
+@include extjs-form-triggerfield;
+@include extjs-panel;
+@include extjs-qtip;
+@include extjs-toolbar;
+@include extjs-window;
+@include extjs-messagebox;
+@include extjs-slider;
+@include extjs-tabbar;
+@include extjs-tab;
+@include extjs-tree;
+@include extjs-viewport;
+</pre>
+</li>
+<li>
+Write down the file size of <b>resources/YelpExtplorer/app.css</b> and note the difference.</li>
+<p>
+This lab showed you different techniques to reduce the file size of the app.css stylesheet. You won’t note big differences, because the Yelp Extplorer uses almost every component that exist in the framework:)</p>

@@ -1,0 +1,19 @@
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+
+    layout: 'vbox',
+    items: [{
+        xtype: 'button',
+        text: 'Button',
+        handler: function(button){
+            alert('You clicked the button!');
+        }
+    }],
+
+    title : 'My Panel',
+    height: 200,
+    width: 300,
+    bodyPadding: 8,
+    renderTo : Ext.getBody()
+});
+</pre>

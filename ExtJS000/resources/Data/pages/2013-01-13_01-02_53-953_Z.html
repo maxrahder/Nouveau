@@ -1,0 +1,34 @@
+<p>Clicking on a cell select the individual cell. Tab
+goes from cell to cell.</p>
+
+<pre class="runnable preview">
+
+var members = Ext.create('Ext.data.Store', {
+    autoLoad : true,
+    fields: ['first', 'last', {name: 'dob', type: 'date', dateFormat: 'Y/m/d'}],
+    proxy: { type: 'ajax', url: '../Data/json/aerosmith.json' }
+});
+
+Ext.create('Ext.grid.Panel',{
+    selType : 'cellmodel',
+    store: members,
+    columns: [{
+        text: 'First', 
+        dataIndex: 'first'
+    }, {
+        text: 'Last',
+        dataIndex: 'last'
+    }, {
+        xtype : 'datecolumn',
+        text: 'Born',
+        format : 'F j, Y',
+        dataIndex: 'dob',
+        flex : 1
+    }],
+    title: 'Aerosmith',
+    height: 200,
+    width: 450,
+    renderTo: Ext.getBody()
+});
+
+</pre>

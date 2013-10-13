@@ -1,0 +1,19 @@
+<img src="resources/diagrams/ChartLegendUML.png" align="left" />
+<p>
+The legend describes each series. Set <em>legend</em> to <em>true</em> to use the default legend settings, or 
+pass properties described in 
+<a href="" target="api">API documentation</a>. 
+</p>
+<p>
+To include a series in the legend, use <em>showInLegend</em> within the series' config. The field's name is used in the legend.
+Use the series <em>title</em> to specify a different value (or use a legend renderer).
+</p>
+<pre style="clear : both" class="sample">
+Ext.create('Ext.chart.Chart', {
+    store : store,
+    legend : {
+        position : 'left'
+    },
+    axes : [ {
+    ...
+</pre>

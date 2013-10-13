@@ -1,0 +1,31 @@
+<p>
+To override a method simply use the same name in the subclass. There is no
+concept of method overloading JavaScript, so <em>the name alone</em> is used, and 
+not the method signature.
+</p>
+<pre class="runnable">
+Ext.define('MyApp.taxonomy.Mammal', {
+    config : {
+        name : 'Anonymous'
+    },
+    constructor : function(config) {
+        this.initConfig(config);
+        this.callParent(config);
+    },
+    speak : function(){
+        alert('Ugh!');
+    }
+});
+Ext.define('MyApp.taxonomy.Human', {
+    extend : 'MyApp.taxonomy.Mammal',
+    speak : function(){
+        alert('Hi there, my name is ' + this.getName());
+    }
+});
+
+var a = Ext.create('MyApp.taxonomy.Mammal', {name : 'Creature'});
+a.speak();
+
+var b = Ext.create('MyApp.taxonomy.Human', {name : 'Hubert'});
+b.speak();
+</pre>

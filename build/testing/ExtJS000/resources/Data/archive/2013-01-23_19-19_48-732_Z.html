@@ -1,0 +1,54 @@
+<p>
+A grouping with a summary row for each group.
+</p>
+
+<pre class="runnable preview">
+Ext.tip.QuickTipManager.init();
+var members = Ext.create('Ext.data.Store', {
+    autoLoad : true,
+    groupField : 'currentmember',
+    fields : [ 'first', 'last', { name : 'dob', type : 'date', dateFormat : 'Y/m/d' }, 'currentmember', 'networth' ],
+    proxy : { type : 'ajax', url : '../Data/json/aerosmith.json' }
+});
+
+Ext.create('Ext.grid.Panel', {
+
+    features: [ {
+        ftype:'groupingsummary',
+        groupHeaderTpl : '{[values.groupValue?"Not in":"In"]} Group'
+    } , {
+        ftype:'rowbody',
+        getAdditionalData: function(data, rowIndex, record, orig) {
+            return {
+                rowBody: '<div style="padding: 1em">' + record + '</div>',
+                rowBodyCls: "coolborder",
+                rowBodyColspan: this.view.headerCt.getColumnCount()
+            };
+        }    } ],
+    store : members,
+    columns : [ {
+        text : 'Name',
+        xtype : 'templatecolumn',
+        tpl : '{first} {last}',
+        summaryType : 'count',
+        summaryRenderer : function(value, records){
+            return ( value + ' people' );
+        }
+    }, {
+        text : 'Net Worth',
+        dataIndex : 'networth',
+        xtype : 'numbercolumn',
+        align : 'right',
+        format : '$0,0'
+    }, {
+        text : 'Born',
+        dataIndex : 'dob',
+        xtype : 'datecolumn',
+        format : 'F, Y',
+        flex : 1
+    } ],
+    title : 'Aerosmith',
+    width : 400,
+    renderTo : Ext.getBody()
+});
+</pre>

@@ -1,0 +1,20 @@
+<p>
+MVC allows you to separate control logic. Here's the syntax
+for selecting the button from within the controller.
+</p>
+<pre>
+Ext.define('MyApp.controller.BeatlesController', {
+    extend : 'Ext.app.Controller',
+    ...
+    init : function() {
+        this.control({
+            'beatlesgrid #sheLovesMe' : {
+                click : this.yeahYeahYeah
+            }
+        });
+    },
+    yeahYeahYeah : function(button) {
+        Ext.Msg.alert(button.getText(), 'Yeah yeah yeah!');
+    }
+
+});</pre>

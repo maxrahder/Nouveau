@@ -1,0 +1,73 @@
+<h1>Introduction</h1>
+<p>
+In this walkthrough, you will continue to work with Sencha Architect to create a working data grid with the data that you connected to previously.</p>
+Together with your instructor, you will perform the following tasks:
+</p>
+<ul>
+     <li>Define a Viewport</p></li>
+     <li>Define a Grid</p></li>
+     <li>Bind a Store to a Grid</p></li>
+     <li>Setup Grid columns</p></li>
+</ul>
+<p><small>This lab requires the Sencha Architect project files created in the previous Walkthrough <b>1. Lab: Data Connection</b> of this topic.</small></p>
+
+<h1>Steps</h1>
+
+<h2>Define a Viewport</h2>
+<ol>
+     <li><p>From the toolbox, drag a <b>Viewport</b> into the Project Inspector, <i>(Views section)</i>.
+     </p></p></li>
+     <li><p>In the Project Inspector, click on <b>MyViewport</b> you just added</p></li>
+</ol>
+
+<h2>Define a Grid</h2>
+<ol>
+     <li><p>In the Toolbox, type <b>gr</b> into the filter field.</p></li>
+     <li><p>Double click on <b>Grid Panel</b> to add it as a child under the Viewport.</p></li>
+     <li><p>Go to <b>Design</b> view.</p></li>
+     <li><p><p>Double-click on the <b>Grid Panel</b> header and give it the title: <b>Businesses</b></p></li>
+     <li><p>Configure the following properties:
+<ul>
+     <li><p>store: <b>Businesses</b> (select from the drop down)</p></li>
+     <li><p>margin: <b>20</b></p></li>
+     <li><p>height: <b>300</b></p></li>
+     <li><p>autoShow: <b>true</b> (Check the box)</p></li>
+</ul>
+</p></li>
+</ol>
+  <h2>Load Data into the Grid</h2>
+
+<ol>
+     <li><p><p>Right-click on the <b>Businesses grid</b>, and choose the <b>Auto-columns</b> option on the menu.
+     <p>You should see the grid populated with the columns from the model.</p>
+
+<p><small><b>Note:</b> If the data is not visible, right-click on the Businesses store and choose <b>Load Data</b>.</i></b></small></p>
+
+ <li><p>Remove the <b>url column</b> by right-clicking on <b>url</b> in the Project Inspector and selecting <b>delete</b>.
+     <p><small><b>Note:</b> To <b>rename</b> a column, click on the column in the Project Inspector and change the column’s text property. You can also double-click on the column's header.</small></p>
+     <li><p>Double-click on the <b>Full_address</b> header in Design view and change the header to <b>Address</b>. You can tab to the remaining fields that need to be changed
+<ul>
+     <li><p>Change <b>Avg_rating</b> to <b>Rating</b></p></li>
+     <li><p>Change <b>Review_count</b> to <b>Reviews</b></p></li>
+</ul> 
+</p></li> 
+ <li><p>Select <b>Name</b> and <b>Address</b> columns and set the flex property in the Config panel to <b>flex: 1</b></p></p></li>
+     <li><p>Set the align property for the <i>Rating</i> column to <b>center</b>
+     <p><small><b>Note:</b> To make the next step easier, type <b>ali</b> in the filter field for the Config panel, and click on the <b>lock</b> icon. This will apply the filter automatically as you change between columns.</small></p></p></li>
+     <li><p>Set the <b>align</b> property for the <b>Reviews</b> column to <b>right</b>.
+     <p><small><b>Note:</b> As a shortcut, you can apply focus to the drop down and type <b>l</b>, <b>c</b> or <b>r</b> (for left, center and right alignment)</small></p></p></li>
+     <li><p>Set the <b>format</b> property for the <b>Reviews</b> column to <b>0</b>.</p></li>
+     <li><p>In the Project Inspector, drag the <b>Reviews</b> column and drop
+between the <b>Address</b> and <b>Rating</b> columns.</p></li>
+</ol>
+     <h2>Save and Preview the Application</h2>
+   <p><small><b>Note: </b><i>You can sort the data by clicking on the column headers. You can hide columns. Click on the arrow in the column header. Hover over <b>Columns</b> in the drop down menu. Uncheck the column you want to hide.</i></b></small></p>
+</p></li>
+</ol>
+
+<h1>Conclusion</h1>
+<p>
+You have just created a working grid! It's not cheating to work smarter than harder. Congratulations!
+</p>
+</br>
+</br>

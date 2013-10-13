@@ -1,0 +1,23 @@
+<p>
+Another way of sending requests and receiving responses is <dfn>JSON with Padding</dfn> (JSON-P).
+</p>
+<p>
+JSON-P is a way of processing data retrieved from a different domain than the one serving the page. 
+In other words, it's a work-around for the "same origin policy" built into browsers.
+</p>
+<pre class="runnable">
+Ext.Ajax.request({
+    url: 'https://itunes.apple.com/us/rss/topmusicvideos/limit=100/json',
+    failure: function(response) {
+        // Note network traffic -- the browser sends an OPTIONS request, and the response is a 501 (not implemented)
+        alert('No can do.');  
+    }
+});</pre>
+<pre class="runnable">
+Ext.data.JsonP.request({
+    url: 'https://itunes.apple.com/us/rss/topmusicvideos/limit=100/json',
+    success: function(response) {
+        alert('We got data!');
+        console.log(response.results);
+    }
+});</pre>

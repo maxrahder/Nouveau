@@ -1,0 +1,317 @@
+<h1>Introduction</h1>
+<p>
+You've been hired by the your country's oceanographic institute to develop an application that tracks 
+the world's consumption of seafood. 
+</p>
+
+<p>
+Write an application that shows a table of country names and consumption, along with a graph of the same information. You'll be using 
+<a href="http://localhost/SenchaTraining/ExtJS251/Labs/Charts/data/fishConsumption.json" target="_blank">this test dataset</a> of countries and per capita consumption (kg).
+</p>
+
+<p>
+As you work, please save your changes and refresh your browser frequently. Take your time, read each step carefully, and ask questions if things aren't working out.</p>
+
+<br/>
+
+<h1>Steps</h1>
+
+<ol>
+
+<li>With the whole class, discuss what you need</code>
+<p>
+The instructor will lead a discussion of the application, and the chart in particular. What does
+the data look like? What axes and series will be needed?
+</p>
+</li>
+
+<li>Run the stubbed out application<p>Visit the starting application. The grid works, but the chart in the center is stubbed out.</p></li>
+
+<li>Inspect the code</code>
+<p>Using an editor, go to the student folder and inspect the <kbd>Charts/</kbd> directory. You'll find
+a MVC application that's partially complete. The store, model and grid are complete. The chart
+is stubbed out.</p>
+
+<p>Briefly review all source files in the application. If called upon, could you explain the order of execution and what each class does?</p>
+<p>In particular, look at the <kbd>app.js</kbd>: it uses <code>launch</code> to create the viewport, passing in the name of the store to both
+the grid and the chart.</p>
+
+</li>
+
+<li>Have the <a href="http://docs.sencha.com/extjs/#!/api/Ext.chart.Chart" target="api">API documentation</a> ready
+<p>Charts have a lot of properties, so fire up the API documentation. When in doubt, look it up.</p>
+</li>
+
+<li>Plan how to code the chart
+
+<p>
+As discussed at the beginning of the lab, we're plotting a line chart with the countries names
+as the independent variable on the x-axis and consumption as the dependent variable on the y-axis.
+</p>
+<p>
+Therefore, you need to define two axes in the chart's series <code>axes</code> array, and one line series in the 
+chart's <code>series</code> array.
+</p>
+</li>
+
+<li>Start editing the chart<p></p></li>
+<p>Open <kbd>view/Chart.js</kbd> and remove the <code>html</code> property in the chart. That was just 
+there so we could see that the component was rendering.
+</p>
+</li>  
+
+<li>Code the axes
+<p>
+The chart needs a <b>numeric</b> axis on the left, and a <b>categorical</b> axis on the bottom. Use the fields 
+from the store to establish the range of values on each axis. Set the title for each axis. 
+</p>
+<p>
+Note that the code will run even without a <code>series</code> array. So just code the axes and verify that
+it runs before moving on. You should see a numeric range from 0 to 100 on the left, and country names on 
+the bottom. Both axes should have a title.
+</p>
+</li>
+
+<li>Rotate the country names
+<p>
+By default, the country names don't show up very well. Therefore, rotate the labels 45&deg;. 
+</p>
+<pre>
+label : {
+    rotate : {
+        degrees : 45
+    }
+}
+</pre>
+
+</li>
+
+<li>Code the series
+<p>
+We could use a line, column or scatter series to show the data. We'll use a line.
+</p>
+<p>
+Add a single series to the chart, of type line, plotting country and consumption.</p>
+<p>
+You need to specify the series type, and x- and y-axis fields. In theory you also specify
+the axis the series is plotted against, but since that defaults to left and bottom, you can omit
+that config. Also set <code>highlight:true</code> &mdash; that will make the marker highlight as you
+mouse over it.
+</p>
+</li>
+
+<li>How does it look?
+<p>
+You should be seeing the grid and the chart! Try sorting the grid columns. The chart reflects
+the sort. 
+</p>
+<p>
+Do you see any trends in the data? It looks like Icelanders eat a lot more fish than Tajiks!</p>
+</li>
+
+<li>New requirement: Sync the grid with the chart
+<p>
+Your users want to see the corresponding data point highlighted as they mouse over the grid.
+</p>
+<p>
+That means we'll need an event handler on the grid, and a way of having the chart highlight
+the corresponding data point. This will be a little tricky.
+</p>
+</li>
+
+<li>Add a "highlight record" method to the chart
+<p>
+Charts don't have a direct way of highlighting a record's data point, so we need a new function
+for that. We asked a colleague down the hall to code that up, and here's what she gave us:
+</p>
+<pre>
+highlightItem : function(record) {
+    // Highlight the item referencing the record
+    var series = this.series.get(0); // The line is the first item
+    series.unHighlightItem(); // Un-highlight everything
+    if (!record){
+        return;
+    }
+    var items = series.items;
+    for ( var i = 0; i < items.length; i++) {
+        if (items[i].storeItem === record) {
+            series.highlightItem(items[i]);
+            break;
+        }
+    }
+}
+</pre>
+<p>
+Copy and paste this new method into the chart class. Save your change, then refresh your browser (to make sure 
+nothing is broken).
+</p>
+
+<li>Listen and react to the user mousing over grid items
+<p>
+Since we're coordinating events, stores and components, this logic goes in our controller, which is
+in <kbd>controller/Grid.js</kbd>.
+</p>
+
+<p>In the controller's <code>init()</code> method, add a call to <code>this.control()</code>, specifying the component we're 
+selecting, an event, and a function handling the event. If you'd like, look at
+ <a href="http://docs.sencha.com/extjs/#!/api/Ext.app.Controller" target="api">the API documentation</a> to see 
+how the <code>init()</code> and <code>control()</code> functions work together.
+</p>
+
+<p>
+In the call to <code>this.control()</code> you'll select the grid using its <code>xtype</code> &mdash; <em>consumptiongrid</em>. 
+Listen to the <code>itemmouseenter</code> event. Have it run <code>this.itemSelectHandler</code>.
+</p>
+
+<p>
+Here's the code for <b>itemSelectHandler</b>. Copy and paste it into the controller. For now, it's just logging 
+that the method is being run. In a minute we'll add code to highlight the item on the chart.
+</p>
+<pre>
+itemSelectHandler : function(component, record) {
+    console.log(this.$className + '#itemSelectHandler');
+}</pre>
+</li>
+
+<p>Save your work, and refresh your browser. At this point, when you mouse over the grid, you should see the <code>itemSelectHandler</code> 
+log statements being run. 
+</p>
+
+</li>
+
+<li>Add logic to highlight the item on the chart
+
+<p>Modify <b>itemSelectHandler</b> to run the <code>highlightItem</code> method we added previously.</p>
+
+<p>Because of the <code>refs</code> array, the controller provides a handy way to get a reference to the chart. 
+So in <code>itemSelectHandler</code> all you need to do is run <code>highlightItem</code> on the chart, passing the record:
+</p>
+<pre>
+itemSelectHandler : function(component, record) {
+    this.getChart().highlightItem(record);
+}
+</pre>
+</li>
+
+<li>Make the grid selection prominent
+<p>
+Your code should work, but the default marker highlighting is pretty subtle. Let's make it
+more noticeable.
+</p>
+<p>
+Currently, our chart logic in <kbd>view/Chart.js</kbd> just sets <code>highlight: true</code> in the series.
+</p>
+
+<p>Change that to be a config object, specifying that the highlighted item be a blue-filled circle, 
+radius 10. As you recall from lecture, highlighting is done via a sprite, so please read the sprite
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.draw.Sprite" target="api">API documentation</a>
+for details. 
+</p>
+
+</li>
+
+<li>How does it look?
+<p>You should see your new larger circle as you mouse over the series, and as you mouse over the
+chart! Pretty cool. 
+</li>
+
+<li>One last change
+<p>
+Your pesky users have one more request. As the mouse leaves the grid, they want there to be no
+highlighted item on the chart. 
+</p>
+<p>
+In <kbd>controller/Grid.js</kbd>, detect the grid's <code>itemmouseleave</code> event. Name the listener 
+<kbd>itemNoSelectHandler</kbd>. It has the same function signature as the item select handler. The new
+listener will have one line, which is a call to the chart's <code>highlightItem</code> function, passing
+no parameters. (The <code>highlightItem</code> method is coded to first un-highlight everything, then 
+return if there was no record.)
+</p>
+<p>
+Code it, then try it. As you mouse over the grid, the highlight should appear. As you mouse out
+of the grid the previously highlighted item should be un-highlighted.
+</p>
+
+<h1>Optional</h1>
+
+<li>New requirement: Mousing over chart items should be reflected in the grid
+</li>
+<p>
+Since mousing over the grid highlights the chart, your users have reasoned that mousing
+over the chart should highlight the grid. 
+</p>
+<p>
+Series do throw events, but since a series isn't a component, it can't be directly
+selected in a controller. 
+</p>
+<p>
+One way to handle this is to have the chart detect and re-fire the event. In this way, the 
+controller can listen to the chart component without needing to know about the internal details
+of how the event was originally fired.
+</p>
+
+<li>Have the chart fire a <code>itemmouseover</code> event
+<p>
+A series fires <code>itemmouseover</code> when the user mouses over an item. So what we'll do is
+to use the series config to add a listener to that event, and in the handler, have the
+parent chart throw an event of the same name.
+</p>
+<p>
+Edit <kbd>view/Chart.js</kbd>. In the series config, add a <code>listeners</code> config. There are a 
+few ways of configuring a listener. In this case, we'll specify the event and associated anonymous 
+function. The event is passed the series item, which has a reference to the parent series, which in 
+turn has a reference to the chart. Once we have that reference, we can have the chart component fire 
+the new event.
+</p>
+<p>Here's the entire series array after making that change:</p>
+<pre>
+    series : [ {
+        type : 'line',
+        xField : 'country',
+        yField : 'consumption',
+        axis : [ 'left', 'bottom' ],
+        highlight : {
+            type : 'circle',
+            radius : 10,
+            fill : 'blue',
+        },
+        listeners : {
+            itemmouseover : function(item) {
+                var chart = item.series.chart;
+                chart.fireEvent('itemmouseover', chart, item.storeItem);
+            }
+        }
+    } ],
+</pre>
+<p>
+Take a careful look at the call to <code>fireEvent</code>. The first argument is the name of the event.
+You can use any string you want, as long as we use the same name in our controller. The other
+parameters are passed to the event handler. By convention, events usually pass the component
+that fired the event, plus any other pertinent data. Therefore, we're passing the chart, since
+it's firing the event, along with the record.
+</p>
+</li>
+
+<li>Have the controller listen to the new event
+<p>
+Use your editor and open <kbd>controller/Grid.js</kbd> and add in the <code>init</code> method select the chart
+and listen to the new event. Notice that the event signature is the same as <code>itemSelectHandler</code>,
+so simply use that event handler.
+</p>
+
+<p>
+Modify the <code>itemSelectHandler</code> function to do one additional thing: select the item on the grid. 
+This is done via a grid's "selection model." Look in 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.grid.Panel" target="api">the API documentation</a> for the getter method 
+used to get a grid's selection model. Then figure out the select model method used to select a record. It's one line 
+of code.
+</p>
+
+</li>
+
+</ol>
+
+<p><b>That's it!</b><br/>
+Mouse over the grid, and see the markers change. Mouse over the markers, and see the grid selection change. Your users will be very happy. <kbd>:-)</kbd> 
+</p>
+

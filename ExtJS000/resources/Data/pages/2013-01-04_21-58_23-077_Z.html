@@ -1,0 +1,19 @@
+<p>
+With the adoption of JSON, and the fact that there is no function 
+overloading in JavaScript, a common way to pass configuration information
+is via a single object of properties and values. <code>Ext.apply()</code>
+allow you to apply &mdash; or <em>overlay</em> &mdash; one set of values with another.
+</p>
+<p>
+</p>
+<pre class="runnable">
+
+// Ext.apply() overlays one set of properties onto another
+var object = {a: 12, b: 'hi', c: [1, 2, 3]};
+Ext.apply(object, {a: 15, d: 99});
+console.log(object); // The a and d properties are over-written
+
+// Ext.applyIf() overlays properties if they don't exist
+var o = {a: 12, b: 'hi', c: [1, 2, 3]};
+Ext.applyIf(o, {a: 15, d: 99});
+console.log(o); // Only the d property is over-written</pre>

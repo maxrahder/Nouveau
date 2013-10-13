@@ -1,0 +1,27 @@
+<p>
+Aspect-oriented programming is trivial in Ext JS and JavaScript.
+</p>
+<pre class="runnable">
+var lyrics = {
+    all: '',
+    add: function(words) {
+        this.all += words;
+    }
+};
+
+// Run it, then comment this in and run again.
+//Ext.Function.interceptAfter(lyrics, "add", function(words){
+//    this.all += ", yeah yeah yeah. ";
+//});
+
+lyrics.add("She loves you");
+
+alert(lyrics.all);</pre>
+
+<p> 
+The programmer calling the <code>add</code> function has no way of
+knowing it was intercepted. Introducing a bug in the intercepting function would
+be very difficult to debug. <kbd>o_O</kbd>
+</p> 
+
+

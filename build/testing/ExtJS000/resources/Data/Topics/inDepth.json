@@ -1,0 +1,293 @@
+{
+  "topicId": "inDepth",
+  "text": "In-depth",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "The Class System",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-04_17-13_19-048_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Static",
+          "fileId": "2012-09-18_19-20_49-017_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Static",
+          "fileId": "2013-01-11_14-48_55-875_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "singleton",
+          "fileId": "2012-09-18_19-20_49-019_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Mixins",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Mixins",
+              "fileId": "2012-09-18_19-20_49-018_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "It's like multiple inheritance",
+              "fileId": "2013-01-04_17-41_12-701_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The base class",
+              "fileId": "2013-01-04_17-53_22-705_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The mixins",
+              "fileId": "2013-01-04_17-53_27-642_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Referencing the mixins",
+              "fileId": "2013-01-04_17-53_31-505_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Using the new classes",
+              "fileId": "2013-01-04_17-54_41-212_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Full example",
+              "fileId": "2013-01-04_17-43_14-349_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Alternate syntax",
+              "fileId": "2013-01-04_18-43_15-979_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Mixins with constructors",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Introduction",
+                  "fileId": "2013-01-04_18-23_39-232_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "An observable",
+                  "fileId": "2013-01-04_18-29_47-989_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "An observable subclass",
+                  "fileId": "2013-01-04_18-29_54-524_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Observable as a mixin",
+                  "fileId": "2013-01-04_18-30_02-434_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "override",
+          "fileId": "2012-09-18_19-20_49-020_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "override use cases",
+          "fileId": "2013-01-04_19-01_14-807_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "alternateClassName",
+          "fileId": "2013-01-04_19-35_02-228_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Review",
+          "fileId": "2013-01-04_19-39_24-880_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Dynamic Loading",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Ext.Loader",
+          "fileId": "2013-01-05_16-17_05-179_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "You'll build your own component library",
+          "fileId": "2013-01-05_16-26_01-043_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Development scenarios",
+          "fileId": "2013-01-05_17-00_42-915_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Why use dynamic loading?",
+          "fileId": "2013-01-05_17-04_55-357_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Dynamically loaded components aren't cached",
+          "fileId": "2013-01-05_17-07_02-940_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Dynamic loading is a development-time concept",
+          "fileId": "2013-01-05_17-15_01-323_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Events",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Ext.Observable",
+          "fileId": "2012-09-24_18-04_31-304_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Button examples",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "listeners",
+              "fileId": "2013-01-04_19-52_24-188_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Buttons have a convenience config",
+              "fileId": "2013-01-04_19-54_11-994_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "on() and addListener()",
+              "fileId": "2013-01-04_19-44_26-133_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The third parameter",
+              "fileId": "2013-01-04_19-59_56-312_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Any object can be used",
+              "fileId": "2013-01-04_20-07_04-033_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The fourth parameter",
+              "fileId": "2013-01-04_20-08_30-002_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "listeners can specify these too",
+              "fileId": "2013-01-04_20-40_35-705_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "un() and removeListener()",
+              "fileId": "2013-01-04_20-25_33-793_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "State",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Components are stateful",
+          "fileId": "2012-10-25_17-20_58-113_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.state.Stateful example",
+          "fileId": "2012-10-09_14-51_50-669_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.state.Provider",
+          "fileId": "2012-10-25_17-39_07-573_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<p>
+Let's take a closer look at the <code>requires</code> array. The requires array isn't part of MVC <i>per se</i>,
+but understanding it helps understand how the pieces of an application are in memory when you need them.</p><pre>
+Ext.define('MyApp.view.Viewport', {
+    extend : 'Ext.container.Viewport',    
+    <span style="background-color: yellow">requires : [ 'MyApp.view.BeatlesGrid' ]</span>,
+    layout : 'fit',
+    items : [ {
+        xtype : 'beatlesgrid',
+        store : 'People'
+    } ]
+});</pre>

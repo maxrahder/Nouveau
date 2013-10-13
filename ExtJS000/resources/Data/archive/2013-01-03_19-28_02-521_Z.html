@@ -1,0 +1,27 @@
+<p>The <code>&lt;tpl></code> tag and the <code>if</code> operator are used to provide conditional checks for deciding whether or not to render specific parts of the template.</p>
+
+<pre class="runnable">
+//Note: The Batman movie does not contain an image.
+var data = [
+    { movie: 'Resident Evil',  image: 'http://a94.phobos.apple.com/us/r1000/070/Video/v4/e9/d5/d3/e9d5d370-4a2f-a5ce-67d2-54a821f70f8e/ResidentEvilRetribut_AC81D8.170x170-75.jpg'},
+    { movie: 'Batman',  image: '' },
+    { movie: 'TED',    image: 'http://a1164.phobos.apple.com/us/r1000/063/Video/v4/60/42/f9/6042f9ce-172c-765d-d203-aa69bad35858/mza_2542112856398450127.170x170-75.jpg' }
+    ];
+
+//if no image is present don't print the movie
+var movieTpl = new Ext.XTemplate(
+    '&lt;tpl for=".">',
+       '&lt;tpl if="image.length != 0">',
+            '&lt;div class="holder">',
+                '&lt;img src="{image}" />&lt;br/>&lt;h2>{movie}&lt;/h2>',
+            '&lt;/div>',
+        '&lt;/tpl>',
+    '&lt;/tpl>'
+);
+
+Ext.create('Ext.Panel', {
+    tpl: movieTpl
+});
+
+movieTpl.overwrite(Ext.getBody(), data);
+</pre>

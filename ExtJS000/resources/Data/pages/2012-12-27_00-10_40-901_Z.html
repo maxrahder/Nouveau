@@ -1,0 +1,41 @@
+<p>
+Recall from the topic on panels, that a tab panel is a pretty wrapper around card layout. Clicking on the
+tabs &mdash; which are actually specially styled buttons &mdash; sets the active item to the corresponding
+card.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.tab.Panel', {
+
+    items : [ {
+        title : 'Ready',
+        html : 'Ready...'
+    }, {
+        title : 'Steady',
+        html : 'Steady...'
+    }, {
+        title : 'GO!',
+        html : 'GO!'
+    } ],
+    buttons : [ {
+        text : '<',
+        handler : function(b) {
+            b.up('panel').getLayout().prev();
+        }
+    }, {
+        text : '>',
+        handler : function(b) {
+            b.up('panel').getLayout().next();
+        }
+    } ],
+
+    bodyPadding : 6,
+    defaults : {
+        bodyPadding : 16
+    },
+    plain : true,
+    height : 200,
+    width : 200,
+    renderTo : Ext.getBody()
+
+});
+</pre>

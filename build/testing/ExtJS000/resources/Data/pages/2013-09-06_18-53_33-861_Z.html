@@ -1,0 +1,50 @@
+<h1>Introduction</h1>
+<p>
+In this lab you will have your application use the Neptune theme.
+</br>
+
+<h1>Objectives</h1>
+<ul class="plain">
+<li>Change the application theme</li>
+</ul>
+
+<h1>Steps</h1>
+<ol>
+
+<li>
+  <p>
+    Review how the application references its style sheet
+  <p>
+    Open <kbd>YelpExtplorer/index.html</kbd> and note that it references <kbd>bootstrap.css</kbd>.
+  </p>
+  <p>
+    Open <kbd>YelpExtplorer/bootstrap.css</kbd> and note that by default, it references the classic theme
+    package in your workspace's <kbd>ext/packages</kbd> folder.
+  </p>
+</li>
+
+<li>
+  <p>
+    Change your application's theme to Neptune
+  <p>
+    Open <kbd>app.json</code> and add this property:</p>
+<pre>"theme": "ext-theme-neptune"</pre>
+</p>
+<p>
+In your terminal window, navigate to your application root folder and build your application via:
+</p>
+<pre>sencha app build testing</pre>
+<p>
+This will create a new, non-minimized CSS file based on the specified theme, along with any application-specific theming. We don't have any application-specific theming yet &mdash; we'll add that in the next lab.
+
+</p>
+<p>
+Open <kbd>YelpExtplorer/bootstrap.css</kbd> again and note that it now points to the newly generated theme.
+</p>
+
+<li>Refresh your application
+<p>
+In your web browser visit or refresh YelpExtplorer. You should see the Neptune theme.
+</p>
+
+</ol>

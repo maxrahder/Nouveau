@@ -1,0 +1,47 @@
+<p><code>xtype : 'splitbutton'</code><span style="margin-right: 50px"> </span><code>Ext.button.Split</code></p>
+
+<p>
+<code>Ext.button.Split</code> subclasses <code>Ext.button.Button</code>. 
+</p>
+<p>
+Split buttons are split, so that the 
+drop-down icon is separate from the rest of the button. This lets you have the main button have an action without 
+having to show the sub-items.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+    title: '&nbsp;',
+    renderTo: Ext.getBody(),
+    height: 200,
+    bodyPadding: 16,
+    items: [{
+        xtype: 'splitbutton',
+        text: 'Choose an Action',
+        width: 120,
+        handler: function(b) {
+            if (b.sound) {
+                var h = b.up('panel').down('header');
+                h.setTitle(h.title + ' ' + b.sound);
+            }
+        },
+        menu: {
+            defaults: {
+                handler: function(b) {
+                    var parent = b.up('splitbutton');
+                    parent.setText(b.text);
+                    parent.sound = b.sound;
+                }
+            },
+            items: [{
+                text: 'Sing',
+                sound: 'la la la'
+            }, {
+                text: 'Play Guitar',
+                sound: '&lt;i&gt;strum&lt;/i&gt;'
+            }, {
+                text: 'Compose',
+                sound: '&lt;i&gt;scribble&lt;/i&gt;'
+            }]
+        }
+    }]
+});</pre>

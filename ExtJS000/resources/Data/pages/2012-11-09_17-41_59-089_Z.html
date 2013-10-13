@@ -1,0 +1,41 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.File" target="api"><code>Ext.form.field.File</code></a></p>
+<p>
+Uses a hidden file input element behind the scenes to allow user selection of a file and to perform the actual upload during form submit.
+</p>
+<p><strong>IMPORTANT: File uploads are not performed using normal 'Ajax' techniques; see the description for <a href="http://docs.sencha.com/extjs/#!/api/Ext.form.Basic-method-hasUpload" target="api">Ext.form.Basic.hasUpload</a> for details.</strong></p>
+
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    title: 'Upload a Photo',
+    width: 400,
+    bodyPadding: 10,
+    frame: true,
+    renderTo: Ext.getBody(),
+    items: [{
+        xtype: 'filefield',
+        name: 'photo',
+        fieldLabel: 'Photo',
+        labelWidth: 50,
+        msgTarget: 'side',
+        allowBlank: false,
+        anchor: '100%',
+        buttonText: 'Select Photo...'
+    }],
+
+    buttons: [{
+        text: 'Upload',
+        handler: function() {
+            var form = this.up('form').getForm();
+            if(form.isValid()){
+                form.submit({
+                    url: 'photo-upload.php',
+                    waitMsg: 'Uploading your photo...',
+                    success: function(fp, o) {
+                        Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
+                    }
+                });
+            }
+        }
+    }]
+});
+</pre>

@@ -1,0 +1,24 @@
+<pre class="runnable">
+Ext.define('MusicLibrary.controller.GridView', {
+    extend: 'Ext.app.Controller',
+
+    models: ['Artist'],
+    stores: ['Artists'],
+
+    init: function(application) {
+	   this.control({
+		   'gridviewer' : {
+			   selectionchange: this.onSelectionChange,
+			   celldblclick: this.onItemDblClick
+		   }
+	   });
+    },
+    
+    onSelectionChange: function(e, t){
+    	console.log("selectionchange");
+    },
+    onItemDblClick: function(grid, td, cellIndex, record, tr, rowIndex, e){
+    	console.log(record.data.name);
+    }
+});
+</pre>

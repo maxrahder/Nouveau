@@ -1,0 +1,8 @@
+<p>Since it's so common to send and receive character data via HTTP, 
+programs need to be able to parse a string into a date, and format a date
+as a string.</p>
+<pre class="runnable">
+var released = Ext.Date.parse('1967/06/01', 'Y/m/d');
+var s = Ext.Date.format(released, 'F d, Y');
+alert('Sgt. Pepper\'s Lonely Hearts Club Band was released ' + s);</pre>
+<p>See <a href="http://docs.sencha.com/extjs/#!/api/Ext.Date" target="api">the API documentation</a> for formatting values.</p>

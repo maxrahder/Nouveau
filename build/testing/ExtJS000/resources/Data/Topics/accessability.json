@@ -1,0 +1,53 @@
+{
+  "topicId": "accessability",
+  "text": "Accessibility",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Introduction",
+      "fileId": "2013-01-11_18-19_27-064_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "High-contrast color theme",
+      "fileId": "2013-01-11_18-19_40-959_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "ARIA",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "What is WAI-ARIA?",
+          "fileId": "2013-01-13_14-29_01-901_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Features of Accessibility",
+          "fileId": "2013-01-13_14-33_15-931_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Supported Test Platforms",
+          "fileId": "2013-01-13_15-18_48-075_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext JS 4 Accessibility",
+          "fileId": "2013-01-13_15-21_35-538_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    }
+  ]
+}

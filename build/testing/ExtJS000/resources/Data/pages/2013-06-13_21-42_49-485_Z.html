@@ -1,0 +1,40 @@
+<p>Non-leaf nodes marked <code>loaded:false</code> are shown as un-expanded folders. 
+When the user clicks on the folder, the tree panel uses its proxy to ask the back-end for 
+the children of the node, passing the node's <code>id</code>.
+</p>
+<p>Use the debugger to see the network traffic when you click on either the Marx Brothers or Astairs folder.
+</p>
+<pre class="runnable preview">
+Ext.define('RowModel', {
+    extend: 'Ext.data.Model',
+    fields: ['name'],
+    proxy: {
+        type: 'ajax',
+        url: '../Data/json/treeStore/groups.php'
+    }
+});
+
+var store = Ext.create('Ext.data.TreeStore', {
+    model: 'RowModel',
+    root: {
+        name: 'Root Node',
+        expanded: true,
+        children: [{
+            name: 'Marx Brothers',
+            id: 'marxBrothers',
+            loaded: false
+        }, {
+            name: 'Astairs',
+            id: 'astairs',
+            loaded: false
+        }]
+    }
+});
+
+Ext.create('Ext.tree.Panel', {
+    displayField: 'name',
+    store: store,
+    title: 'Tree With TreeStore',
+    height: 260,
+    renderTo: Ext.getBody()
+});</pre>

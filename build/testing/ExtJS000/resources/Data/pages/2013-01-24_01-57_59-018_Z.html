@@ -1,0 +1,45 @@
+<p>
+Another common way of sending data to the server is via forms.
+Form fields are submitted to the server, as name/value pairs, via AJAX.
+</p>
+<p>
+To see this in action, press Save and look at network traffic in the debugger. 
+<p>
+We'll talk about forms later in class.
+</p>
+<p>
+
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    items: [ {
+        fieldLabel: 'First Name',
+        xtype: 'textfield',
+        name: 'first'
+    }, {
+        fieldLabel: 'Last Name',
+        xtype: 'textfield',
+        name: 'last'
+    }, {
+        xtype: 'datefield',
+        fieldLabel: 'Date of Birth',
+        name: 'dob'
+    }],
+    buttons : [ {
+        text : 'Save',
+        handler : function(button){
+            button.up('form').submit({
+                url : 'thisDoesNotExistButThatIsOk.php'
+            });
+        }
+    }, {
+        text : 'Reset',
+        handler : function(button){
+            button.up('form').getForm().reset();
+        }
+    } ],
+    title: 'Simple Form',
+    bodyPadding: 6,
+    width : 280,
+    renderTo: Ext.getBody()
+})</pre>

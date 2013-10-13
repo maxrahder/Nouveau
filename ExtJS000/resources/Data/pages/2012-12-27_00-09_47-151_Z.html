@@ -1,0 +1,33 @@
+<p>
+The accordion layout also shows a single child, the one that is selected.
+Instead of <code>layout: 'accordion'</code> you could also set some configs;
+for example to animate the accordion. See the code below.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+    title: 'Accordion Layout',
+    width: 300,
+    height: 300,
+    defaults: {
+        // applied to each contained panel
+        bodyStyle: 'padding:15px'
+    },
+    layout: {
+        // layout-specific configs go here
+        type: 'accordion',
+        //animate: false,
+        //activeOnTop: true
+    },
+    items: [{
+        title: 'Panel 1',
+        html: 'Panel content!'
+    },{
+        title: 'Panel 2',
+        html: 'Panel content!'
+    },{
+        title: 'Panel 3',
+        html: 'Panel content!'
+    }],
+    renderTo: Ext.getBody()
+});
+</pre>

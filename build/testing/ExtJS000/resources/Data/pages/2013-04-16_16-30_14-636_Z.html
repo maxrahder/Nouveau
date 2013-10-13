@@ -1,0 +1,33 @@
+<p>
+The <code>menu</code> config can also be a full <code>Ext.menu.Menu</code> config.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+    title : 'Panel',
+    renderTo : Ext.getBody(),
+    height : 200,
+    bodyPadding : 16,
+    items : [{
+        xtype : 'button',
+        text : 'Beatles',
+        menu : {
+            defaults : {
+                handler: function(b){
+                    var adjectives = ['fab', 'gear', 'groovy', 'hip', 'dreamy'];
+                    var i = Ext.Number.randomInt(0, (adjectives.length - 1));
+                    alert(b.text + ' is ' + adjectives[i] + '!');
+                }
+            },
+            items : [{
+                text : 'John'
+            }, {
+                text : 'Paul'
+            }, {
+                text : 'George'
+            }, {
+                text : 'Ringo'
+            }]
+        }
+    }]
+});
+</pre>

@@ -1,0 +1,101 @@
+{
+  "topicId": "architect",
+  "text": "Architect",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Introduction",
+      "fileId": "2012-12-11_16-03_02-997_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Yelp Extplorer",
+      "fileId": "2012-09-26_13-45_14-146_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "ITunes Extplorer Walkthrough",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-08_06-14_21-743_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "First steps",
+          "fileId": "2013-01-09_03-40_06-700_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Main view",
+          "fileId": "2013-01-08_06-53_38-127_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "List view",
+          "fileId": "2013-01-09_03-56_55-668_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Detail form",
+          "fileId": "2013-01-09_04-18_36-457_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Data",
+          "fileId": "2013-01-09_04-47_20-063_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Model",
+          "fileId": "2013-01-09_05-12_58-656_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Proxy",
+          "fileId": "2013-01-09_05-40_40-352_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Store",
+          "fileId": "2013-01-09_06-00_14-846_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Template",
+          "fileId": "2013-01-09_06-26_30-298_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Form fields",
+          "fileId": "2013-01-09_07-12_19-385_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Controller",
+          "fileId": "2013-01-10_03-26_42-102_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    }
+  ]
+}

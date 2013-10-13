@@ -1,0 +1,21 @@
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+	extend : 'Ext.data.Model',
+	proxy : {
+		type : 'ajax',
+		url : '../Data/json/theBeatles.json'
+	},
+	fields : [ 'first' , 'last' ]
+});
+var store = Ext.create('Ext.data.Store', {
+	model : 'MyApp.model.Person'
+});
+
+store.load(function(records){
+  var s = '';
+  Ext.Array.forEach(records, function(record){
+    s += record.get('first') + ' ';
+  });
+  alert(s);
+});
+</pre>

@@ -1,0 +1,36 @@
+<p>Here's a <b>container</b> (a form panel),
+containing several <b>components</b> (input fields and buttons). The Save button fires a click <b>event</b>.
+
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+	title : 'Simple Form',
+	bodyPadding : 6,
+	width : 300,
+	height: 200,
+	defaultType : 'textfield',
+	layout : 'anchor',
+	items : [ {
+		fieldLabel : 'First Name',
+		name : 'first'
+	}, {
+		fieldLabel : 'Last Name',
+		name : 'last',
+		allowBlank : false
+	}, {
+		xtype : 'datefield',
+		fieldLabel : 'Date of Birth',
+		name : 'dob'
+	}, {
+		xtype : 'checkboxfield',
+		boxLabel : 'Married',
+		name : 'married'
+	}],
+	buttons : [
+		{ text : 'Save', handler : function(){
+                alert('Saving');
+             }
+        }, 
+        { text : 'Cancel'}
+	],
+	renderTo : Ext.getBody()
+});</pre>

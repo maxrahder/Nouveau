@@ -1,0 +1,17 @@
+<ul>
+<li>Sencha Cmd removes references in your SCSS file to mixins that are not used within your application. </li>
+<li>
+For example, if your application contain a data grid, but not a grid row editor, the row editor styles will
+be disabled for you in your build:
+</li>
+</ul>
+
+<kbd>[workspace/root]/build/MyApp/production/mytheme.scss</kbd>
+<pre>
+$include-ext-grid-panel: true;
+$include-ext-grid-roweditor: false;
+$include-ext-grid-roweditorbuttons: false;
+$include-ext-grid-rownumberer: false;
+</pre>
+
+<p><small><b>Note:</b> If you had used theming in a previous version, you would have had to manually choose the mixins to exclude from the final build.</i></b></small></p>

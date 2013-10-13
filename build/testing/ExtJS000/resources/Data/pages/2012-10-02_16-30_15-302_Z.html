@@ -1,0 +1,19 @@
+<p>
+If you call any function via <code>new</code>, the function is called in the context of a new object.
+</p>
+<pre class="runnable">
+var Person = function(name){
+	this.name = name;
+	this.speak = function(){
+		alert('Hello, my name is ' + this.name);
+	}
+	return this;
+}
+
+// The following two statements do the same thing.
+var p = new Person('Hubert');
+// var p = Person.call({}, 'Hubert');  
+
+alert(p.name); // alerts 'Hubert'
+p.speak(); // alerts 'Hello, my name is Hubert'</pre>
+

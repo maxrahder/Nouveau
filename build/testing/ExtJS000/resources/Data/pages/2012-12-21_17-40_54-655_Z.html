@@ -1,0 +1,25 @@
+<p>
+Containers arrange their components using a layout manager. 
+</p> 
+<p>
+The various layout classes are found in the <code>Ext.layout.container</code> package.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+
+    layout : 'vbox',
+    //layout : 'hbox',
+    items : [ {
+        text : 'Button One'
+    }, {
+        text : 'Button One'
+    } ],
+
+    title : 'My Panel',
+    defaults : {
+        margin : 4, xtype: 'button'
+    },
+    bodyPadding : 8,
+    renderTo : Ext.getBody()
+});
+</pre>

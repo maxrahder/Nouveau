@@ -1,0 +1,19 @@
+<ul>
+<li>JavaScript has a <code>new</code> operator</li>
+<li><code>new</code> used to be used routinely to create JavaScript primitives</li>
+<li>JSON has made that unnecessary</li>
+</ul>
+
+<pre class="sample runnable">
+// The old way
+var o = new Object();
+o.property = 'my property';
+o.items = new Array();
+o.items.push(1);
+o.items.push(2);
+o.items.push(3);
+
+// Using JSON
+var o = {property: 'my property', items: [1, 2, 3]};
+var d = new Date(); // There is no JSON syntax for date values
+</pre>

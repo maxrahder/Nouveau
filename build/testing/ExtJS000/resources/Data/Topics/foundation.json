@@ -1,0 +1,1169 @@
+{
+  "topicId": "foundation",
+  "text": "Foundation",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Object Instantiation",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 30,
+      "children": [
+        {
+          "text": "Procedural vs declarative",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-10-02_14-16_02-723_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-10-02_15-27_50-036_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext JS is declarative",
+              "fileId": "2012-10-02_16-14_51-460_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Creating objects in Ext JS",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Ext.create()",
+              "fileId": "2012-10-01_17-28_17-974_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Config",
+              "fileId": "2012-10-01_18-35_49-575_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Aliases",
+              "fileId": "2012-10-01_18-35_58-148_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "xtype",
+              "fileId": "2012-10-02_18-13_10-253_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Other Aliases",
+              "fileId": "2012-10-19_19-05_59-697_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "JavaScript New is Rarely Used",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "What About the \"new\" Operator?",
+              "fileId": "2012-10-02_16-22_00-376_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Constructor Functions",
+              "fileId": "2012-10-02_16-30_15-302_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext JS has Constructor Functions",
+              "fileId": "2012-10-02_16-16_52-891_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "You won't use \"new\" very often",
+              "fileId": "2012-10-02_16-35_35-533_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Review",
+          "fileId": "2012-10-03_19-36_43-763_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "The Class System",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 60,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-12-11_18-16_00-108_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Defining a Class",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Ext.define()",
+              "fileId": "2012-09-24_17-02_31-924_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Use Namespaces and Packages",
+              "fileId": "2012-12-11_18-54_57-951_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Naming Conventions",
+              "fileId": "2012-12-11_19-08_45-414_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Properties",
+              "fileId": "2012-12-11_19-10_29-429_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "config Generates Accessor Methods",
+              "fileId": "2012-12-11_19-27_53-740_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Constructor",
+              "fileId": "2012-12-11_19-25_32-586_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "initConfig(); callParent();",
+              "fileId": "2012-12-11_19-48_23-829_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Constructors Aren't Used With Components",
+              "fileId": "2012-12-15_19-32_13-293_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Methods",
+              "fileId": "2012-12-11_20-21_33-407_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Review: Class",
+              "fileId": "2012-12-11_20-25_02-594_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Reserved Words",
+              "fileId": "2012-12-11_22-36_33-719_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Extending a Class",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "extend Property",
+              "fileId": "2012-12-11_20-40_41-007_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Overriding Methods",
+              "fileId": "2012-12-11_20-48_21-444_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Adding Properties",
+              "fileId": "2012-12-11_20-55_35-047_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Be Careful Not to Accidentally Override a Method",
+              "fileId": "2013-09-13_14-36_09-974_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Dynamic Loading",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-12-12_20-58_42-522_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-12-12_22-47_20-001_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Lab: Part One",
+          "fileId": "2012-09-24_17-18_17-529_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "More on Config",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-12-19_15-51_25-902_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "apply and update",
+              "fileId": "2012-12-19_16-10_09-605_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "You May Override apply and update",
+              "fileId": "2012-12-19_16-28_54-385_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The Default Lifecycle",
+              "fileId": "2012-12-19_16-12_29-659_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Calling Routines Only Use Accessor Methods",
+              "fileId": "2012-12-19_16-39_23-172_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-12-19_16-49_05-269_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Lab: Part Two",
+          "fileId": "2012-12-11_22-47_50-478_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "How it Works",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 10,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-02-27_21-45_04-699_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "DOM + CSS = what you see",
+          "fileId": "2013-02-27_23-26_18-071_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext JS dynamically manipulates the DOM",
+          "fileId": "2013-02-27_21-52_54-977_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Example",
+          "fileId": "2013-02-27_21-55_38-751_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Component DOM lifecycle",
+          "fileId": "2013-02-27_23-27_36-968_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Review",
+          "fileId": "2013-02-28_02-27_25-354_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Building Blocks",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 90,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-09-18_19-20_49-008_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Example",
+          "fileId": "2012-10-21_01-19_56-680_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Base Classes",
+          "fileId": "2012-10-01_14-36_05-156_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Components",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Ext.Component",
+              "fileId": "2012-10-10_14-18_04-647_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Styling",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Height and Width",
+                  "fileId": "2012-10-10_14-46_04-157_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Margins and Padding",
+                  "fileId": "2012-10-10_14-46_31-755_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "cls",
+                  "fileId": "2012-09-24_17-43_10-271_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Lab: Component Styling",
+                  "fileId": "2012-10-22_00-28_22-214_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Content",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "html",
+                  "fileId": "2012-09-24_17-43_31-628_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "tpl",
+                  "fileId": "2012-10-19_00-08_13-806_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "contentEl",
+                  "fileId": "2012-10-10_15-39_30-471_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "renderTo",
+                  "fileId": "2012-10-20_21-51_26-464_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "All Components Have the up() Method",
+          "fileId": "2013-09-24_16-18_34-280_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Containers & Layouts",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Ext.container.Container",
+              "fileId": "2012-10-10_18-28_03-666_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Different types of Containers",
+              "fileId": "2012-10-10_18-47_39-700_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "items",
+              "fileId": "2012-09-18_19-20_49-009_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "defaults",
+              "fileId": "2012-09-24_17-44_55-373_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Layouts",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "layout",
+                  "fileId": "2012-09-24_22-05_43-870_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Layouts",
+                  "fileId": "2012-10-10_19-52_47-041_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "All Containers Have the down() Method",
+              "fileId": "2013-09-24_16-28_48-849_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Components Can Be Nested",
+              "fileId": "2012-10-20_22-19_47-751_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Events",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-10-01_15-43_10-643_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Listening to Events",
+              "fileId": "2012-10-20_23-04_24-153_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "A Simple Example",
+              "fileId": "2012-10-20_23-08_44-288_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "There Are Several Ways of Adding Handlers",
+              "fileId": "2012-10-20_22-57_50-255_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Different types of events",
+              "fileId": "2012-10-10_20-06_34-200_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Different types of events in action",
+              "fileId": "2013-01-11_00-45_11-539_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "What's Going On",
+              "fileId": "2013-01-12_19-04_00-404_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "You Can Fire Logical Events from Your Own Components",
+              "fileId": "2012-10-20_22-45_26-877_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Elements Fire Events Too",
+              "fileId": "2012-10-10_20-27_56-769_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Summary",
+          "fileId": "2012-10-09_17-24_53-751_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Panels and Buttons",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 75,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-09-18_19-20_49-010_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Panels are Containers",
+          "fileId": "2012-09-18_19-20_49-011_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Panels and Buttons are Components",
+          "fileId": "2012-10-09_18-35_51-749_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Toolbars",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-11-29_14-41_56-723_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Docked items",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Docked Items",
+                  "fileId": "2012-09-18_19-20_49-012_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "The Panel Header Is a Docked Item Too",
+                  "fileId": "2012-11-29_14-49_03-699_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Review",
+                  "fileId": "2012-11-29_14-58_34-703_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "tbar, bbar, lbar, rbar",
+              "fileId": "2012-10-09_17-29_31-069_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Toolbars are Containers",
+              "fileId": "2012-09-18_19-20_49-013_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The Ext.toolbar package",
+              "fileId": "2012-10-09_19-03_04-547_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The Ext.toolbar package",
+              "fileId": "2012-10-09_19-22_54-375_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Review",
+              "fileId": "2012-11-29_16-23_22-244_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Lab: Toolbars",
+              "fileId": "2012-12-06_18-54_13-319_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Buttons",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-09-18_19-20_49-014_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-11-29_19-24_47-302_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "scale",
+              "fileId": "2012-10-09_20-28_38-900_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "icons",
+              "fileId": "2012-11-29_19-56_30-531_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "glyph",
+              "fileId": "2013-04-23_19-02_10-733_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "handler",
+              "fileId": "2012-10-09_21-24_17-298_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "menu",
+              "fileId": "2012-10-09_20-15_33-566_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "menu config",
+              "fileId": "2013-04-16_16-30_14-636_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Split Button",
+              "fileId": "2012-11-30_15-34_16-707_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.menu.Menu and Button Group",
+              "fileId": "2012-11-29_23-29_47-252_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Toggle Buttons",
+              "fileId": "2012-10-09_20-40_01-478_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.panel.Panel buttons[]",
+              "fileId": "2012-10-09_20-41_35-353_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Lab: Buttons",
+              "fileId": "2013-03-07_02-41_10-891_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Collapsible",
+          "fileId": "2012-10-09_17-50_34-646_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Tools",
+          "fileId": "2012-10-09_17-58_21-503_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Panels also Use Glyph",
+          "fileId": "2013-04-24_18-41_49-335_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Other Panels",
+          "fileId": "2012-09-18_19-20_49-015_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Tab Panels",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-09-18_19-20_49-100_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "deferredRender",
+              "fileId": "2012-12-01_22-52_13-202_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Anatomy",
+              "fileId": "2012-12-01_22-06_02-380_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "You Won't Use Other Docked Items",
+              "fileId": "2012-12-01_22-09_22-594_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Adding Tabs Under Program Control",
+              "fileId": "2012-12-01_22-30_34-070_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "glyph",
+              "fileId": "2013-09-16_15-07_11-773_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Lab (Optional): Tab Panels",
+              "fileId": "2013-03-07_02-04_35-405_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Beware of Unnecessary Nesting",
+          "fileId": "2012-10-09_20-25_14-592_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Lab: YelpExtplorer 2",
+      "fileId": "2013-03-04_17-59_31-107_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Layouts",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 75,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-12-21_17-40_54-655_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Layouts are Created via their Alias",
+          "fileId": "2012-12-21_18-03_47-131_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Example",
+          "fileId": "2012-12-21_17-58_29-333_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Layout and Items Go Hand-in-Hand",
+          "fileId": "2012-12-21_18-03_01-354_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Some Layouts Need a Hint on Each Item",
+          "fileId": "2012-12-22_18-28_33-682_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Border",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-12-26_16-55_22-471_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "height/width and flex",
+              "fileId": "2012-12-26_17-26_19-114_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Resizing Children",
+              "fileId": "2012-12-26_17-05_32-557_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Collapsible Children",
+              "fileId": "2012-12-26_18-32_58-788_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Region weights",
+              "fileId": "2012-12-26_17-14_23-974_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Lab: Border Layout",
+              "fileId": "2012-12-26_17-44_59-084_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "vbox and hbox",
+          "fileId": "2012-12-26_19-30_11-282_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "fit",
+          "fileId": "2012-12-26_19-30_49-033_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "card",
+          "fileId": "2012-12-26_22-48_01-580_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Tab Panels Use card Layout",
+          "fileId": "2012-12-27_00-10_40-901_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "accordion",
+          "fileId": "2012-12-27_00-09_47-151_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "anchor",
+          "fileId": "2012-12-27_14-35_58-235_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "anchor is Used in Forms",
+          "fileId": "2012-12-27_00-09_08-358_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Other layouts",
+          "fileId": "2012-12-27_00-09_19-000_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Review",
+          "fileId": "2012-12-27_15-00_40-721_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Windows",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 30,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-12-07_04-19_48-554_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "UML",
+          "fileId": "2013-04-21_20-36_06-825_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Example",
+          "fileId": "2012-12-07_04-19_48-555_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "ZIndexManager",
+          "fileId": "2012-12-07_04-19_48-556_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "ZIndexManager Uses",
+          "fileId": "2012-12-07_04-19_48-557_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Message Boxes",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "There are 5 message boxes",
+              "fileId": "2012-12-07_04-19_48-548_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "API",
+              "fileId": "2012-12-07_04-19_48-549_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.Msg.alert()",
+              "fileId": "2012-12-07_04-19_48-550a_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.Msg.confirm()",
+              "fileId": "2012-12-07_04-19_48-550b_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.Msg.prompt()",
+              "fileId": "2012-12-07_04-19_48-550c_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.Msg.progress()",
+              "fileId": "2012-12-07_04-19_48-550d_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.Msg.wait()",
+              "fileId": "2012-12-07_04-19_48-550e_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.Msg.show",
+              "fileId": "2012-12-07_04-19_48-552_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-12-07_04-19_48-553_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "show() and others are convenience methods",
+              "fileId": "2012-12-07_04-19_48-551a_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Lab: YelpExtplorer 3",
+      "fileId": "2013-03-04_18-00_41-250_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Useful Classes",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 15,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-04_21-43_27-639_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.Array.forEach()",
+          "fileId": "2013-01-04_21-48_10-865_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.Date.parse() and format()",
+          "fileId": "2013-01-04_21-52_07-198_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.String.trim()",
+          "fileId": "2013-01-04_21-52_19-673_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.apply() and applyIf()",
+          "fileId": "2013-01-04_21-58_23-077_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    }
+  ]
+}

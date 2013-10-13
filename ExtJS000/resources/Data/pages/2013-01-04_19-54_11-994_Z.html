@@ -1,0 +1,10 @@
+<p>Buttons have a convenience config, <code>handler</code>, that specifically listens
+to the click event.</p>
+<pre class="runnable">
+Ext.create('Ext.button.Button', {
+    text : 'Button',
+    handler : function(button){
+        alert(button.getText() + ' click');
+    },
+    renderTo : Ext.getBody()
+});</pre>

@@ -1,0 +1,14 @@
+<p>
+Here the viewport is using the new component.
+</p>
+<div class="readonly">
+<pre class="runnable">
+Ext.define('MyApp.view.Viewport', {
+    extend : 'Ext.container.Viewport',    
+    requires : [ 'MyApp.view.BeatlesGrid' ],
+    layout : 'fit',
+    items : [ {
+        xtype : 'beatlesgrid',
+        store : 'People'
+    } ]
+});</pre></div>

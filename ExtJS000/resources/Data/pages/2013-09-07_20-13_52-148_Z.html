@@ -1,0 +1,128 @@
+<h1>Introduction</h1>
+<p>
+Our usability expert has told us that Save buttons should look distinct from 
+other buttons. In this lab you will theme the Save button in the <code>EditWindow</code>.
+Furthermore, it seems like a good idea to include the viewport styling in the application's 
+built CSS rather than having it in a separate file, so we'll move that into the application
+styling too.
+</br>
+
+<h1>Objectives</h1>
+<ul class="plain">
+<li>Include CSS into an application theme</li>
+<li>Style an application component class</li>
+</ul>
+
+<h1>Steps</h1>
+<ol>
+
+<li>Create the Sass file to style your viewport
+  <p>Create file <kbd>sass/src/view/View.scss</kbd>.</p>
+</li>
+
+<li>Move the style information into <kbd>sass/src/view/View.scss</kbd>
+  <p>
+    Open <kbd>stylesheet.css</kbd> and copy and paste its contents to <kbd>sass/src/view/View.scss</kbd> and save your changes.
+</p>
+<p>
+Delete <kbd>stylesheet.css</kbd> and remove the corresponding reference from <kbd>index.html</kdb>.
+<p>
+Refresh your application to verify that the old stylesheet styling is no
+longer in effect &mdash; the View tab should be unstyled.
+</p>
+
+<li>Build the application
+<p>
+In your terminal window, navigate to the <kbd>YelpExtplorer</kbd> directory and
+use Sencha Cmd to build the application:
+</p>
+<pre>sencha app build testing</pre>
+<p>Wait for the build to complete, then refresh the application. You should see
+the style back in effect! </p>
+
+<li>Review the mixin syntax for buttons
+<p>
+Open the API documentation and look at the mixin definition 
+for <a href="http://docs.sencha.com/extjs/4.2.1/#!/api/Ext.button.Button-css_mixin-extjs-button-ui" target="api">Ext.button.Button</a>. 
+</p>
+<p>Mixin variables can be complicated, and it's not always obvious what's required. 
+Sometimes it's easier to choose a mixin include from one of the theme packages as a starting
+point. 
+</li>
+
+<li>Create the Sass file to style the Save button
+
+<p>Yelp Extplorer only has a one save button, in the
+  edit window. 
+</p>
+<p>
+  To create a new button ui, we need to include the button mixin. But where should we put the code?
+</p>
+<p>Wherever we include the mixin, the ui style will be available throughout
+  YelpExtplorer. We could put the code in <kbd>sass/src/view/detail/EditWindow.scss</kbd>.
+  But putting the code in there implies that the code only only relates to the edit window. It may be more appropriate to put the code in a location that implies it's 
+  used throughout the application. Two possibilities are <kbd>sass/src/view/Viewport.scss</kbd>, 
+  or <kbd>sass/src/Application.scss</kbd>.
+</p>
+<p>
+We'll use the latter, so create file <kbd>sass/src/Application.scss</kbd>.
+</p>
+</li>
+
+<li>Include the button mixin
+<p>Our usability expert says our Save buttons should be orange. The RGB for orange
+is <code>#FF7F00</code>. We'll use that as the base color used in the button.</p>
+<p>Use this <code>@include</code> in <kbd>Application.scss</kbd>:</p>
+<pre>$base: #FF7F00;
+@include extjs-button-ui(
+    $ui: 'save-small',
+    $background-color: lighten($base, 20%),
+    $background-color-over: darken($base, 0%),
+    $background-color-focus: darken($base, 0%),
+    $background-color-pressed: darken($base, 0%),
+    $background-color-disabled: lighten($base, 40%),
+    $background-gradient: null,
+    $border-radius: 4px,
+    $border-color: darken($base, 50%),
+    $glyph-color: #fff,
+    $color: black,
+    $font-family: $button-small-font-family,
+    $font-weight: $button-small-font-weight,
+    $padding: 4px
+);
+</pre>
+<p>
+The reason the ui name is "save-small" is that buttons automatically have
+the "small" ui style applied to them to reflect the default button scale.
+Buttons used in toolbars also have a "toolbar" style applied. By naming the
+button "save-small", buttons with <code>ui:'save'</code> will use the style
+only if the button is small, and not used in a toolbar.
+</p>
+<p>
+(Note that the save and cancel buttons are coded in a <code>buttons:[]</code>
+config. Under the covers, the buttons array is implemented as a bottom docked
+toolbar, with special styling that excludes the "toolbar" style.)
+</p>
+</li>
+
+<li>Rebuild the application
+<p>In the terminal window use Sencha Cmd to build the application again.</p>
+<p>When the application has been built, the new <code>ui</code> style will
+be available to use for the Save button.
+</li>
+
+<li>Use the new ui
+<p>
+Edit <kdb>app/view/detail/EditWindow.js</kbd> and add <code>ui:'save'</code>
+to the save button config.
+</p>
+<p>
+Save your work and refresh the browser window. Open the edit window and you should 
+see the new style in effect!
+</p>
+</li>
+
+
+
+
+</ol>

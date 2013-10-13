@@ -1,0 +1,38 @@
+<ul>
+    <li>It is common to create an <code>Ext.data.TreeStore</code> to contain the
+        data for the tree.</li>
+    <li>The properties for the <code>root</code> object remain the same.</li>
+    <li>Note that as changes happen in the tree store, the tree will update automatically.</li>
+</ul>
+<pre class="runnable">
+var aTreeStore = Ext.create('Ext.data.TreeStore', {
+    root: {
+        text: 'Root Node',
+        expanded: true,
+        children: [{
+            text: 'Child 1',
+            expanded: true,
+            children: [{
+                text: 'Child 1.1',
+                leaf: true
+            }, {
+                text: 'Child 1.2',
+                leaf: true
+            }]
+        }, {
+            text: 'Child 2',
+            expanded: true,
+            children: [{
+                text: 'Child 2.1',
+                leaf: true
+            }]
+        }]
+    }
+});
+
+Ext.create('Ext.tree.Panel', {
+    store: aTreeStore,
+    title: 'Tree With TreeStore',
+    renderTo: Ext.getBody()
+});
+</pre>

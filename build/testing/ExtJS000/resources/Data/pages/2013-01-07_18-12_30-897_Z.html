@@ -1,0 +1,16 @@
+<p>
+<code>&lt;tpl for="."&gt;...&lt;/tpl&gt;</code> loops over the elements of an array.</p>
+<pre class="runnable">
+var data = [
+    { movie: 'Resident Evil', image: 'http://a94.phobos.apple.com/us/r1000/070/Video/v4/e9/d5/d3/e9d5d370-4a2f-a5ce-67d2-54a821f70f8e/ResidentEvilRetribut_AC81D8.170x170-75.jpg'},
+    { movie: 'Batman', image: 'http://a1685.phobos.apple.com/us/r1000/119/Video/v4/ed/10/35/ed103597-90c1-3d1c-197c-a68532b47a06/poster.170x170-75.jpg' },
+    { movie: 'TED', image: 'http://a1164.phobos.apple.com/us/r1000/063/Video/v4/60/42/f9/6042f9ce-172c-765d-d203-aa69bad35858/mza_2542112856398450127.170x170-75.jpg' }
+];
+
+var movieTpl = Ext.create('Ext.XTemplate', 
+    '&lt;tpl for=".">',
+        '&lt;div class="holder">&lt;img src="{image}" width = 150/>&lt;br/>&lt;h2>{movie}&lt;/h2>&lt;/div>',
+    '&lt;/tpl>'
+);
+
+movieTpl.overwrite(Ext.getBody(), data);</pre>

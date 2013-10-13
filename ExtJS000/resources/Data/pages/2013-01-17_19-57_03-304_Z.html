@@ -1,0 +1,18 @@
+<p>
+To use a locale file, have your server inspect the <code>Accept-Language</code>
+header in the request<sup>*</sup> and include a script tag to load the corresponding local file
+<i>after</i> the Ext JS library has been loaded.
+</p>
+<pre>
+&lt;!DOCTYPE HTML>
+&lt;html>
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;link rel="stylesheet" href="resources/MyApp-all.css"/>
+    &lt;script src="all-classes.js">&lt;/script>
+    <span style="background-color: yellow;">&lt;script src="ext-lang-de.js">&lt;/script></span>
+&lt;/head>
+&lt;body>&lt;/body>
+&lt;/html></pre>
+
+<small><p><sup>*</sup> You could also specify the locale in a query field.</p></small>

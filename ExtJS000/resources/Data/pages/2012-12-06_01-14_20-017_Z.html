@@ -1,0 +1,9 @@
+<pre class="runnable">
+var t = Ext.create('Ext.XTemplate', '&lt;tpl for="."&gt;&lt;p&gt;{text}&lt;/p&gt;&lt;/tpl&gt;');
+Ext.data.JsonP.request({
+    url: 'http://yelp.senchabits.com/go?fn=twitter',
+    success: function(response) {
+        var r = Ext.Array.slice(response.data.statuses, 0, 5);
+        t.overwrite(Ext.getBody(), r);
+    }
+});</pre>

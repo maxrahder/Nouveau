@@ -1,0 +1,14 @@
+<ul>
+<li>The base class for a tree is Ext.tree.Panel.</li>
+<li>You may place an object in the root property.</li>
+<li>The value of the text property appears in the tree.</li>
+</ul>
+
+<pre class="runnable">
+
+Ext.create('Ext.tree.Panel', {
+	<b>root</b>: { text: 'Root'},
+	title: 'My Tree',
+	renderTo: Ext.getBody()
+});
+</pre>

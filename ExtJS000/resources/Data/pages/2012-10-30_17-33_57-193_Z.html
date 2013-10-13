@@ -1,0 +1,14 @@
+<h3>between(date, start, end):Boolean</h3>
+<p>Checks if a date falls on or between the given start and end dates.</p>
+<pre class="runnable">
+var john = Ext.Date.parse('1940/10/09', 'Y/m/d');
+var paul = Ext.Date.parse('1942/06/18', 'Y/m/d');
+var george = Ext.Date.parse('1943/02/25', 'Y/m/d');
+var ringo = Ext.Date.parse('1940/07/07', 'Y/m/d');
+
+var isBetween = Ext.Date.between(paul, john, george);
+alert('In age, Paul is' + (isBetween?'':' not') + ' between John and George');
+
+isBetween = Ext.Date.between(ringo, john, george);
+alert('In age, Ringo is' + (isBetween?'':' not') + ' between John and George');
+</pre>

@@ -1,0 +1,255 @@
+<h2>Introduction</h2>
+<p>
+You will start by creating your own Yelp Extplorer theme. 
+</br>
+During this lab you will:
+</p>
+<ul>
+<li>Generate a theme with Sencha Cmd</li>
+<li>Change the base-color of your theme with SASS</li>
+<li>Generate a CSS file</li>
+</ul>
+
+<p class="small">
+<b>Note: </b>This lab requires that Sencha Cmd, SASS & Compass are correctly installed. (<i>See Setup Instructions in the Appendix</i>)
+</p>
+
+<h1>Generate a theme</h1>
+<p>
+We will begin by checking the version of Sencha Cmd that you have installed.
+</p>
+<pre>
+sencha which
+</pre>
+<p>
+Did the console respond with a version 3.0.2.288 or above? Great! If so, you may proceed! (otherwise you will have to reinstall Sencha Cmd, follow the Setup Instructions in the Appendix)
+</p>
+
+<ol>
+<li>Navigate in the console to the <strong>YelpExtplorer</strong> folder.</li>
+<li>Generate the theme with Sencha Cmd: 
+<pre>
+sencha generate theme YelpTheme
+</pre>
+</li>
+<li>Preview your theme in your browser: 
+<p>
+
+
+<a href="http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer/packages/YelpTheme/theme.html" target="_new">http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer/packages/YelpTheme/theme.html
+</a>
+</br>
+(You should see the Ext JS components in their default blue styles.)
+</p>
+</li>
+<li>Open the <b>config.rb</b> file in your <b>packages/YelpTheme/sass/</b> folder.</li>
+<li>Review the code with your instructor. 
+<p>Note the paths to your css and image folders.</li>
+</li>
+<li>Watch the YelpTheme theme folder so that a CSS file will be compiled from the Sass file.
+<p>Navigate in the console to <b>packages/YelpTheme/sass/</b> and type the following command: </p>
+<pre>compass watch .</pre>
+</li>
+<li>Open packages/YelpTheme/sass/app.scss with an IDE or editor.</li>
+<li>At the very top of your file, add the following line to change the base color of your theme: 
+<pre>$base-color: #DEDEDE;</pre>
+<li>
+Preview your theme in your browser: 
+<p><a href="http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer/packages/YelpTheme/theme.html" target="new">http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer/packages/YelpTheme/theme.html</a> (You should see all different components in a new light gray color. - Except for all the used images... those are still blue...)</p>
+</li>
+<li>Copy over images
+<p>We will copy all the gray images over from <b>extjs4/resources/themes/images/gray</b> and copy those over to a new images folder in <b>YelpExtplorer/resources/YelpTheme/images</b></p></li>
+<li>Preview your theme in your browser: <p>
+<a href="http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer/packages/YelpTheme/theme.html" target="_new">http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer/packages/YelpTheme/theme.html</a> (Now you will see a grey icons.)</li>
+<li>Link to the stylesheet.
+<p>Now when we open <a href="http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer" target="_new">http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer</a> we still won’t see our new theme. Therefore we will open YelpExtplorer/index.html in an editor and change the path to the stylesheet:</p>
+<pre>link rel="stylesheet" href="resources/YelpTheme/app.css"</pre></p>
+</li>
+</ol>
+<p>
+By the end of this lab you should see a new generated YelpTheme theme. The default color is set to gray. We changed the look of the entire application by changing the base-color in your Sass file.
+</p>
+
+<h1>Working with Sass</h1>
+
+<h2>Introduction</h2>
+
+<p>During this lab you will:
+<ul>
+<li>write some custom Sass styles</li>
+<li>Use Sass nesting</li>
+<li>Create custom mixins</li>
+<li>Create a variable and a color transformation</li>
+</ul>
+
+<p>
+When you open <b>stylesheet.css</b> you will find some custom css styles:
+</p>
+<pre>
+.businesses figure {
+	margin: 0
+}
+
+.businesses figcaption {
+	text-align: center;
+	font-size: 7pt
+}
+
+.businesses .business {
+	height: 134px;
+	width: 108px;
+	margin: 4px;
+	float: left;
+	border: 4px solid #aaaaaa
+}
+
+.businesses .business img {
+	height: 100px;
+	width: 100px
+}
+
+.businesses .over {
+	border: 4px solid #555555
+}
+
+.businesses .selected {
+	border: 4px solid black
+        margin: 0
+}
+
+}
+</pre>
+
+<ol>
+<li>Watch the YelpTheme theme folder to compile the Sass file to a CSS file.
+<p>Navigate in the console to <b>packages/YelpTheme/sass/</b> and type the following command:</p>
+<pre>compass watch .</pre>
+</li>
+<li>Take over the css styles
+<p>
+Copy the styles from <b>stylesheet.css</b> over to the bottom of you Sass file: <b>packages/YelpTheme/sass/app.scss</b>
+</p>
+</li>
+<li>Nest all styles that start with <code>.businesses</code> (use the & syntax for the over and selected classes).
+<div type="expander" caption="Peek here for the solution">
+<pre>
+.businesses {
+    .business{
+        height: 134px;
+        width: 108px; 
+        margin: 4px;
+        float: left;
+        border: 4px solid #aaaaaa;
+
+        &.over{
+            border:4px solid #555555;
+        }
+
+        &.selected{
+            border:4px solid black;
+        }
+
+        img{
+            height:100px;
+            width:100px;
+        }
+    }
+}
+</pre>
+</div>
+</li>
+<li>Next step, you will create a "<code>cool-block</code>" mixin. 
+<p>This mixin takes over the <code>border-style</code>, <code>width</code> and <code>color</code> and it will add a <code>box shadow</code></p>
+<pre>box-shadow: 3px 3px 5px #888888;</pre>
+<li>Nest all styles that start with <code>.businesses</code> (use the & syntax for the over and selected classes).
+>>>>>>> Changes that should incorporate both Lee's and my edits for Yelp
+<div type="expander" caption="Peek here for the solution">
+<pre>
+@mixin cool-block {
+    border: {
+        style: solid;
+        color: #aaa;
+        width: 4px;
+    }
+    box-shadow: 3px 3px 5px #888888;
+}
+</pre>
+</div>
+</li>
+<li>Include this mixin in <code>.business: @include cool-block;</code></li>
+<li>Create a variable: <code>$red</code> and assign the <code>color: #FF0000</code> to it.</li>
+<li>Replace the black color in the <code>.selected</code> class for the new variable.</li>
+<li>Replace the grey color in <code>.over</code> class and make it a 30% lighter color red. 
+<p>(tip use color transformations).</p>
+<div type="expander" caption="Peek here for the solution">
+<pre>lighten($red, 30%);</pre>
+</div>
+</li>
+<li>
+Preview the YelpExtplorer in your browser
+<p>Select University: <b>Illinois</b> and click on the view tab. 
+You should see business blocks with a little box shadow, and red hover and select borders.
+<a href="http://localhost/YelpExtplorer" target="new">http://localhost/YelpExtplorer</a>.
+In case you don’t see anything, check your compass watch in your console. Does it give you any errors?</p>
+</li>
+</ol>
+
+<h1>Optimize CSS</h2>
+
+<h2>Introduction</h2>
+
+<p>During this lab, you will start optimizing your theme. Take a piece of paper and write down the file sizes of every step.
+Steps</p>
+
+<ol>
+<li>Open packages/Yelp/sass/config.rb in an editor.</li>
+<li>Change the <code>output_style</code> variable on line 11 to: <code>:nested</code></li>
+<li>Watch the YelpTheme theme folder to compile the Sass file to a CSS file. 
+<p>Navigate in the console to <b>packages/YelpTheme/sass/</b> and type the following command: </p>
+<pre>compass watch .</pre>
+</li>
+<li>
+Write down the file size of <b>resources/YelpExtplorer/app.css</b>
+</li>
+<li>Change the <code>output_style</code> variable on line 11 to: <code>:compressed</code></li>
+<li>Quit compass, by pressing CTRL+C</li>
+<li>Watch the YelpTheme theme folder to compile the Sass file to a CSS file. 
+<p>Navigate in the console to <b>packages/YelpTheme/sass/</b> and type the following command: </p>
+<pre>compass watch .</pre>
+</li>
+<li>
+Write down the file size of <b>resources/YelpExtplorer/app.css</b> and note the difference.
+</li>
+<li>
+Replace
+</br> 
+<code>@import 'compass';</code><br/>
+<code>@import 'ext4/default/all';</code>
+<p><b>With:</b></p>
+<pre>
+$include-default: false;
+@import 'ext4/default/all';
+@include extjs-boundlist;
+@include extjs-button;
+@include extjs-btn-group;
+@include extjs-menu;
+@include extjs-grid;
+@include extjs-form;
+@include extjs-form-field;
+@include extjs-form-fieldset;
+@include extjs-form-triggerfield;
+@include extjs-panel;
+@include extjs-qtip;
+@include extjs-toolbar;
+@include extjs-window;
+@include extjs-messagebox;
+@include extjs-tabbar;
+@include extjs-tab;
+@include extjs-tree;
+@include extjs-viewport;
+</pre>
+</li>
+<li>
+Write down the file size of <b>resources/YelpExtplorer/app.css</b> and note the difference.</li>
+<p>
+This lab showed you different techniques to reduce the file size of the app.css stylesheet. You won’t note big differences, because the Yelp Extplorer uses almost every component that exist in the framework:)</p>

@@ -1,0 +1,82 @@
+[ {
+    country : 'Iceland',
+    consumption : 91.1
+}, {
+    country : 'Faeroe Island',
+    consumption : 86.1
+}, {
+    country : 'Portugal',
+    consumption : 59.8
+}, {
+    country : 'Spain',
+    consumption : 40.5
+}, {
+    country : 'France',
+    consumption : 28.4
+}, {
+    country : 'Malta',
+    consumption : 27.4
+}, {
+    country : 'Sweden',
+    consumption : 26.1
+}, {
+    country : 'Greece',
+    consumption : 25.4
+}, {
+    country : 'Italy',
+    consumption : 22.0
+}, {
+    country : 'Latvia',
+    consumption : 21.8
+}, {
+    country : 'Estonia',
+    consumption : 20.4
+}, {
+    country : 'United Kingdom',
+    consumption : 20.1
+}, {
+    country : 'Russia',
+    consumption : 19.5
+}, {
+    country : 'Lithuania',
+    consumption : 16.9
+}, {
+    country : 'Ireland',
+    consumption : 16.8
+}, {
+    country : 'Germany',
+    consumption : 12.4
+}, {
+    country : 'Poland',
+    consumption : 10.5
+}, {
+    country : 'Czech Republic',
+    consumption : 8.6
+}, {
+    country : 'Slovenia',
+    consumption : 6.9
+}, {
+    country : 'Hungary',
+    consumption : 4.0
+}, {
+    country : 'Croatia',
+    consumption : 3.6
+}, {
+    country : 'Kazakhstan',
+    consumption : 2.6
+}, {
+    country : 'Romania',
+    consumption : 2.3
+}, {
+    country : 'Georgia',
+    consumption : 1.6
+}, {
+    country : 'Moldova',
+    consumption : 1.3
+}, {
+    country : 'Bosnia-Hercegovina',
+    consumption : 1.2
+}, {
+    country : 'Tajikistan',
+    consumption : 0.1
+} ]

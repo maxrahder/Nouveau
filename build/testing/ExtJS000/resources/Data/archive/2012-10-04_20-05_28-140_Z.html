@@ -1,0 +1,44 @@
+<pre class="runnable preview">
+var store = Ext.create('Ext.data.Store', {
+    fields: [
+        'profile_image_url',
+        'text',
+        {
+            name: 'created_at',
+            type: 'date',
+            dateFormat: 'D, d M Y H:i:s O'
+        }
+    ],
+    autoLoad: true,
+    proxy: {
+        url: 'http://search.twitter.com/search.json?q=world cup soccer',
+        type: 'jsonp',
+        reader: {
+            type: 'json',
+            root: 'results'
+        }
+    }
+});
+
+Ext.create('Ext.grid.Panel', {
+    renderTo: Ext.getBody(),
+    height: 300,
+    columns: [{
+        text: 'Avatar',
+        dataIndex: 'profile_image_url',
+        xtype: 'templatecolumn',
+        tpl: '&lt;img src="{profile_image_url}"/&gt;',
+        width: 80
+    }, {
+        text: 'Tweet',
+        dataIndex: 'text',
+        flex: 1
+    }, {
+        text: 'Posted',
+        xtype: 'datecolumn',
+        dataIndex: 'created_at',
+        format: 'g:i a,  F j',
+        width: 170
+    }],
+    store: store
+});</pre>

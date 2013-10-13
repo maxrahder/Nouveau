@@ -1,0 +1,46 @@
+<ul>
+<li><p>Should your tree data contain fields beyond those node properties, you may define a custom model for the store. Ext JS still adds the NodeInterface fields to the model.</li>
+<li><p>For example, if your data has an <code>id</code> property, you can create a model with a <code>name</code> field, and name that field in the <code>displayField</code> property of the tree panel. The value of the <code>name</code> field will then appear in the tree instead of the value of the <code>text</code> field.</li>
+</ul>
+
+<pre class="runnable preview">
+Ext.define('RowModel', {
+    extend: 'Ext.data.Model',
+    fields: [{
+        name: 'name',
+        type: 'string'
+    }]
+});
+
+var aTreeStore = Ext.create('Ext.data.TreeStore', {
+    model: 'RowModel',
+    root: {
+        name: 'Root Node',
+        expanded: true,
+        children: [{
+            name: 'Node 1',
+            expanded: true,
+            children: [{
+                name: 'Node 1.1',
+                leaf: true
+            }, {
+                name: 'Node 1.2',
+                leaf: true
+            }]
+        }, {
+            name: 'Node 2',
+            expanded: true,
+            children: [{
+                name: 'Node 2.1',
+                leaf: true
+            }]
+        }]
+    }
+});
+
+Ext.create('Ext.tree.Panel', {
+    displayField: 'name',
+    store: aTreeStore,
+    title: 'Tree With TreeStore',
+    renderTo: Ext.getBody()
+});</pre>

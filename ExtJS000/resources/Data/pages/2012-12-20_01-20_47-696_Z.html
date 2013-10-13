@@ -1,0 +1,29 @@
+<pre class="runnable">
+var store = Ext.create('Ext.data.Store',  {
+    storeId: 'beatlesStore',
+    fields: [ 'first', 'last' ],
+    data: [ { first: 'John'   , last: 'Lennon'    },
+            { first: 'Paul'   , last: 'McCartney' },
+            { first: 'George' , last: 'Harrison'  },
+            { first: 'Ringo'  , last: 'Starr'     } ]
+});
+
+Ext.create('Ext.grid.Panel', {
+    title: 'Beatles',
+    store: Ext.data.StoreManager.lookup('beatlesStore'),
+    columns: [
+        { text: 'First Name',  dataIndex: 'first' },
+        { text: 'Last Name', dataIndex: 'last', flex: 1 }
+    ],
+    height: 200,
+    width: 400,
+    renderTo: Ext.getBody()
+});
+
+//Add an extra record to the store
+//This uses the store's model to create the record
+store.add({
+    first: 'Guest',
+    last: 'Performer'
+});
+</pre>

@@ -1,0 +1,172 @@
+<h1>Introduction</h1>
+
+<p>
+	This lab will let you define a class. You'll use
+	<code>config</code>
+	to automatically generate accessor methods. You'll also override a method.
+</p>
+
+<h1>Steps</h1>
+
+<ol>
+
+	<li>Run the application
+		<p>
+			Use your browser to browse <a href="http://localhost/SenchaTraining/ExtJS251/Labs/ClassSystemIntro/PartOne/" target="lab">Labs/ClassSystemIntro/PartOne/</a>.
+		</p>
+		<p>
+			The application is a panel, with two buttons in its toolbar: Human and Speak. If you click the first button, a new
+			instance of
+			<code>MyApp.taxonomy.Human</code>
+			is created, and a panel is added that shows the person's name, along with a button that has has the person speak.
+		</p>
+		<p>Try it: Click Human, and on the new panel click Speak. You should see alert that says "Hi there, my name is J.
+			Doe. I am not married." In the panel, change the person's name and marital status, click Speak, and you should see
+			those changes reflected in the message.</p>
+
+		<p>The toolbar also has a Speak button. It gets updated with new sub-items as new humans or felines are added.
+			Clicking on a Speak sub-item will have the corresponding person or cat speak. We'll talk more about these buttons
+			later.</p>
+	</li>
+
+	<li>Try creating a cat
+		<p>Note that the Human button is actually a split button. If you click on the drop-down you'll see there are two
+			sub-items: Human and Feline. Choosing one or the other sets the type of mammal you create.</p>
+		<p>Switch to Feline, and create one. You'll see a new panel, but the name of the cat is "Creature" and clicking
+			Speak shows an alert that says "Ugh!"</p>
+		<p>
+			Something's wrong! We <em>should</em> be seeing something appropriate for cats, not some creature. You'll be adding
+			code to get the feline class working correctly.
+		</p>
+
+	</li>
+
+	<li>Look at the project
+		<p>In your code editor, look at <kbd>Labs/ClassSystemIntro/PartOne/</kbd>.</p>
+		<p>The project is structured like a MVC application, with source classes organized into packages.</p>
+		<p>The mammal classes are in the "taxonomy" package. The main panel, and other panels, are in the "view" package.</p>
+	</li>
+
+	<li>Look at the code that adds people and cats
+		<p>
+			For the purposes of this lab, the details of the UI don't matter too much, but in your editor look at
+			<kbd>Labs/ClassSystemIntro/PartOne/app/view/MainPanel.js</kbd>. The method that creates humans or felines is
+			<code>addMammal</code>
+			.
+		</p>
+		<p>
+			Look at
+			<code>addMammal</code>
+			. The code sees whether Human or Feline is shown on the split button, determines the data types associated with that
+			value, creates the human or feline, and adds the associated panel to the main panel. It also adds a sub-item to the
+			Speak button on the toolbar.
+		</p>
+		<p>
+			This code is complete. It <em>is</em> creating humans and felines, but the feline class itself is incomplete.
+		</p>
+	<li>Look at the feline class
+		<p>
+			Open <kbd>Labs/ClassSystemIntro/PartOne/app/taxonomy/Feline.js</kbd> The code is syntactically correct, and the class extends <code>MyApp.taxonomy.Mammal</code>, as it should, but it doesn't add any new properties or methods for cats. That's why the new cat acts just like a mammal.
+		</p>
+	</li>
+	<li>Look at the mammal class
+		<p>
+			Open <kbd>Labs/ClassSystemIntro/PartOne/app/taxonomy/Mammal.js</kbd>. Mammals have a
+			<code>config</code>
+			for name, and a
+			<code>speak()</code>
+			method. Note two things:
+		<ul>
+			<li style="font-weight: normal;"><code>speak()</code> references the mammal's name, via <code>this.getName()</code>.
+				That's an example of an accessor method being automatically generated because of the corresponding property in <code>config</code>.</li>
+			<li style="font-weight: normal;"><code>Mammal</code> has a constructor, with the two boilerplate statements
+				discussed in lecture &mdash; when coding your own class hierarchy, your base class needs the call to <code>this.initConfig(config);</code>
+				and any constructor needs a call to the ancestor constructor via <code>this.callParent(arguments);</code></li>
+		</ul>
+		</p>
+	</li>
+
+	<li>Give your cats a more appropriate default name
+		<p>
+			Modify the feline class to use a more appropriate cat name. "Fluffy" is the obvious choice. How does one set the
+			initial value of a property? Look at the code for mammal, and use the same
+			<code>config</code>
+			property in
+			<code>Feline</code>
+			, but specify an initial value of "Fluffy", rather then "Creature".
+		</p>
+		<p>Save your changes and refresh your browser. Then choose Feline from the dropdown, and create a cat. The title
+			of the panel should reflect the new default name. </p>
+	</li>
+
+	<li>Give your cats a more appropriate way of speaking
+		<p>
+			Add a
+			<code>speak</code>
+			in
+			<code>MyApp.taxonomy.Feline</code>
+			. This should be similar to what's in
+			<code>MyApp.taxonomy.Mammal</code>
+			, but rather than saying "Ugh!", cats should show an alert that shows something like 'Fluffy says "Meow"'
+		</p>
+		<p>
+			Save your changes and refresh your browser. Choose Feline from the dropdown, create a cat and press Speak. Your new
+			<code>speak</code>
+			method should be run.
+		</p>
+		<p class="small">Remember: if your code isn't working the way you think it should, ask your instructor to take a look.</p>
+	</li>
+
+	<h1>Optional</h1>
+
+	<li>Inspect how <code>HumanPanel</code> is structured
+		<p>
+			In your editor, open <kbd>Labs/ClassSystemIntro/PartOne/app/view/MammalPanel.js</kbd> and look at the
+			<code>getButtonsArray</code>
+			method. This is called in
+			<code>initComponent</code>
+			to specify the panel buttons. There's also a
+			<code>getItems</code>
+			method used to specify the items in the panel &mdash; in
+			<code>MyApp.view.MammalPanel</code>
+			there's a text field that shows the mammal's name.
+		</p>
+		<p>
+			In your editor, open <kbd>Labs/ClassSystemIntro/PartOne/app/view/HumanPanel.js</kbd> and look at the
+			<code>getItems</code>
+			method. This code results in human panels having more items than the ancestor. The method calls the parent class
+			<code>getItems</code> (<code>var result = this.callParent();</code>)
+			method to get the array defined in the ancestor, then pushes a new value onto the array, and returns the result.
+			That's why human panels have the additional "Married" check box.
+		</p>
+	</li>
+
+	<li>Add a Yodel button to human panels
+		<p>
+			When you looked at
+			<code>MyApp.taxonomy.Human</code>
+			you may have noticed that humans can yodel. We need a button that runs that!
+		</p>
+		<p>
+			In your editor, open <kbd>view/HumanPanel.js</kbd>. Code an
+			<code>getButtonsArray</code>
+			method. This overrides the method of the same name in
+			<code>MammalPanel</code>
+			. The new method should get the parent button array and add an additional button config for yodeling.
+		</p>
+		<p>As a guideline, the solution this method has three statements of code. With pretty whitespace and indentation
+			it has eight lines.</p>
+		<p>Look at the human panel <code>getItems</code> method for ideas. The Yodel button needs a handler,
+		with one line of code: <code>button.up('humanpanel').getMammal().yodel();</code></p>
+		<p>If you get stuck, call your instructor or peek at the solution.</p>
+	</li>
+
+</ol>
+<h1>Conclusion</h1>
+<p>
+	You coded a sub-class, with a
+	<code>config</code>
+	specifying a default value. You also coded a method override.
+</p>
+
+

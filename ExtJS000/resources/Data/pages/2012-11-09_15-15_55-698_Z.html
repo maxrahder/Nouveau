@@ -1,0 +1,39 @@
+<p>Click on a series title in the legend to hide and show its values.</p>
+<pre class="runnable preview">
+var store = Ext.create('Ext.data.Store', {
+	autoLoad : true,
+	fields : [ 'name', 'sales' ],
+	proxy : {
+		type : 'ajax',
+		url : '../Data/charts/musicianSales.json'
+	}
+});
+
+var chart = Ext.create('Ext.chart.Chart', {
+    height: 350,
+    width: 350,
+    store : store,
+    animate : true,
+    legend : true, // Required for showInLegend to have effect
+    series : [ {
+        type : 'pie',
+        field : 'sales',
+        
+        highlight : true,
+        colorSet : [ '#1ee500', '#0070bf', '#d2004b', '#b600cb', '#c2de00', '#266D9F', '#1d00c5' ],
+        donut : 20,
+        showInLegend : true
+
+    } ]
+});
+
+Ext.create('Ext.container.Container', {
+    renderTo: Ext.getBody(),
+    layout : 'fit',
+    items : [ chart ]
+});
+
+
+
+
+</pre>

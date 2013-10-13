@@ -1,0 +1,14 @@
+<p>
+	One way to create an object is to use
+	<code>Ext.create()</code>.
+</p>
+<ul>
+	<li>The first parameter is the name of the class to be instantiated</li>
+	<li>The second parameter describes or <em>configures</em>, the object
+	</li>
+</ul>
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+	renderTo: Ext.getBody(),
+	items: [Ext.create('Ext.button.Button', {text: 'Button'})]
+});</pre>

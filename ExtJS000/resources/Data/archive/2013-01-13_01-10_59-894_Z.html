@@ -1,0 +1,27 @@
+<p>The Ext.grid.column.Column class specifies the definition for a column inside a Ext.grid.Panel. It encompasses both the grid header configuration as well as displaying data within the grid itself.</p>
+
+<p>There are several column subclasses that provide default rendering for various data types:
+<li>Ext.grid.column.Action <span style="font-weight: normal;"> - Renders icons that can respond to click events inline</span></li>
+<li>Ext.grid.column.Boolean <span style="font-weight: normal;">- Renders for boolean values</span></li>
+<li>Ext.grid.column.Date <span style="font-weight: normal;">- Renders for date values</span></li>
+<li>Ext.grid.column.Number <span style="font-weight: normal;">- Renders for numeric values</span></li>
+<li>Ext.grid.column.Template <span style="font-weight: normal;">- Renders a value using an Ext.XTemplate using the record data</span></li>
+</p>
+
+<p>
+Rendering of individual columns can be altered using renderers. A renderer is tied to a particular column and is passed the value that would be rendered into each cell in that column. For example, we could define a renderer function for the email column to turn each email address into a mailto link
+</p>
+
+<pre>
+columns: [
+    {
+        text: 'Email',
+        dataIndex: 'email',
+        renderer: function(value) {
+            return Ext.String.format('<a href="mailto:{0}">{1}</a>', value, value);
+        }
+    }
+]
+</pre>
+
+<p>A renderer can overwrite any formatting specified by the column type.</p>

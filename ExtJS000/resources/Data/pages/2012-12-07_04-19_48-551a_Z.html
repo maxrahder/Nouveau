@@ -1,0 +1,15 @@
+<h3>Internally, the 5 types are simply calling <code>Ext.Msg.show()</code> with a predetermined set of configs.</h3>
+
+<pre>alert: function(cfg, msg, fn, scope) {
+  if (Ext.isString(cfg)) {
+     cfg = {
+         title : cfg,
+         msg : msg,
+         buttons: this.OK,
+         fn: fn,
+         scope : scope,
+         minWidth: this.minWidth
+     };
+  }
+  return this.show(cfg);
+}</pre>

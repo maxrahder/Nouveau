@@ -1,0 +1,74 @@
+<h1>Introduction</h1>
+
+<p>This lab will let you create and modify toolbars and docked items.</p>
+
+<h1>Steps</h1>
+
+<ol>
+
+    <li>Inspect <kbd>Labs/Toolbars</kbd>
+        <p>
+            Use your IDE to inspect
+            <kbd>Labs/Toolbars</kbd>.
+            The code creates a simple panel.
+        </p>
+    </li>
+
+    <li>See how it looks
+        <p>
+            Visit <kbd>Labs/Toolbars</kbd> in your browser. You should see the panel.
+        </p>
+    </li>
+
+    <li>Add a toolbar with one button
+        <p>
+            Use the <code>tbar</code> property.
+        </p>
+        <p>
+            Recall that <code>tbar</code> stands for "<b>t</b>op tool<b>bar</b>". It is an array of the items to be in the toolbar. The default <code>xtype</code> for toolbars is <code>button</code>, so for the JSON object in the array simply specify its <code>text</code>
+            property. Set the text to "One".
+        </p>
+        <p>Save and refresh your browser window, and you should see the toolbar and button at the top of the panel.</p>
+    </li>
+
+    <li>Add a second toolbar
+        <p>
+            Copy and paste the toolbar, so there are two identical toolbars. Don't even change the array name. In other words, you should have two identical lines, both specifying
+            <code>tbar</code>.
+        </p>
+        <p>
+            Preview in your browser and you'll just see a <em>single</em> toolbar. That reflects the nature of JSON. Since the configis a JSON object, with name-value pairs, there can only be a single value for a given name. So the second value
+            overwrites the first.
+        </p>
+        <p>
+        <p>
+            Change the second toolbar to use
+            <code>bbar</code>, save and refresh. You should see two toolbars. Try using
+            <code>rbar</code> and <code>lbar</code> too.
+        </p>
+    </li>
+
+    <li>Show two top toolbars
+        <p>
+            As we saw, using a property twice doesn't work. So to have two items docked in the same place, you need to change the syntax to use the <code>dockedItems</code> array.
+        </p>
+        <p>
+            Recall from lecture that <code>dockedItems</code>
+            is an array of component configs, that specifies the <code>xtype</code> of the component, and its <code>dock</code> position: "top", "bottom", "left" or "right".
+        </p>
+        <p>
+            Try it! In this case, you'll have two items in the array, each with <code>xtype:"toolbar"</code>, and each with <code>dock</code> set to "top". Since they are toolbars, which are containers, they each have an <code>items</code> array, specifying their content. Put a button in each.
+        </p>
+        <p>
+            In theory you can mix using <code>dockedItems</code>
+            with the convenience properties <code>tbar</code>. Try it: use both
+            <code>dockedItems</code>, with your two new top-docked toolbars, as well as
+            <code>tbar</code>. Give each button a unique name so it's easy to tell one toolbar from another.
+        </p>
+        <p>
+            Save and refresh, and you'll see that the
+            <code>tbar</code> is added last. That's mostly just a curiosity: in practice you'll use one or the other. Either <code>dockedItems</code>, or the corresponding convenience property, like <code>tbar</code>. If you need to dock two things in the same location, then use
+            <code>dockedItems</code>.
+        </p>
+    </li>
+</ol>

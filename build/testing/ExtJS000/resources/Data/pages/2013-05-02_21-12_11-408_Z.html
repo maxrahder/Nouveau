@@ -1,0 +1,32 @@
+<p>
+Perhaps the most common use of a buffered renderer is with a buffered store. 
+But the performance of grids with non-buffered stores can also be fine-tuned with
+a buffered renderer.
+</p>
+<pre class="runnable preview">
+var store = Ext.create('Ext.data.Store', {
+    fields : [ 'place', 'mag' ],
+    proxy : { type : 'ajax', url : '../Data/json/pagingExample/earthquakes.json' },
+    autoLoad: true
+});
+
+Ext.create('Ext.grid.Panel', {
+    title: 'Earthquakes',
+    store: store,
+
+    // With buffered renderer NOT in effect, all rows are rendered in the DOM.
+    // With buffered renderer IN effect, only a minimal set of rows is rendered.
+    // Run the example and inspect the DOM. All rows are rendered. Then add the
+    // bufferedrenderer plugin and run again. A few rows are rendered, and more
+    // are added as the user scrolls.
+
+    //plugins: 'bufferedrenderer',
+
+    columns: [
+        { text: 'Place',  dataIndex: 'place', flex: 1 },
+        { text: 'Mag', dataIndex: 'mag' }
+    ],
+    height: 200,
+    width: 400,
+    renderTo: Ext.getBody()
+});</pre>

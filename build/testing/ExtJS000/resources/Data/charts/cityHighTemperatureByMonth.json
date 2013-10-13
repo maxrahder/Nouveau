@@ -1,0 +1,49 @@
+[ {
+    month : 'Jan',
+    Paris : 6,
+    London : 9
+}, {
+    month : 'Feb',
+    Paris : 7,
+    London : 10
+}, {
+    month : 'March',
+    Paris : 11,
+    London : 12
+}, {
+    month : 'Apr',
+    Paris : 14,
+    London : 15
+}, {
+    month : 'May',
+    Paris : 18,
+    London : 18
+}, {
+    month : 'June',
+    Paris : 21,
+    London : 21
+}, {
+    month : 'July',
+    Paris : 24,
+    London : 23
+}, {
+    month : 'Aug',
+    Paris : 24,
+    London : 23
+}, {
+    month : 'Sept',
+    Paris : 21,
+    London : 20
+    }, {
+    month : 'Oct',
+    Paris : 15,
+    London : 16
+}, {
+    month : 'Nov',
+    Paris : 9,
+    London : 12
+}, {
+    month : 'Dec',
+    Paris : 7,
+    London : 9
+}]

@@ -1,0 +1,17 @@
+<p>The following Ext components have a <b>ui-mixin</b> to create a new <code>ui</code>:
+<ul>
+<li><tt>Ext.panel.Panel</tt></li>
+<li><tt>Ext.toolbar.Toolbar</tt></li>
+<li><tt>Ext.window.Window</tt></li>
+<li><tt>Ext.button.Button</tt></li>
+</ul>
+<br/>
+<p>
+Each of these mixins is named as: <b><tt>extjs-componentname-ui</tt></b>.<br/>
+You can find it in the API docs, which CSS Mixins are applied.<br/>
+For example: <a href="http://docs.sencha.com/extjs/#!/api/Ext.toolbar.Toolbar" target="api">Toolbar</a><br/>
+<img src="resources/images/_theming/apidocs.png" />
+</p>
+<p class="small"><b>Note:</b>
+While UI mixins are a handy way to configure multiple appearances for a component, they should not be overused. Because each call to a UI mixin generates additional CSS rules, <em>gratuitous calls to UI mixins can produce an overly large CSS file.</em>
+</p>

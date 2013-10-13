@@ -1,0 +1,637 @@
+{
+  "topicId": "overview",
+  "text": "Overview",
+  "fileId": "overview",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Course Introduction",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 45,
+      "children": [
+        {
+          "text": "Objectives",
+          "fileId": "2012-12-03_12-54_08-539_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Pre-requisites",
+          "fileId": "2012-12-03_12-58_57-653_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Who are You and Why are You Here?",
+          "fileId": "2012-09-24_13-04_08-285_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Daily Schedule",
+          "fileId": "2012-10-16_14-54_40-664_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Lectures",
+          "fileId": "2012-09-24_14-27_03-488_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Labs",
+          "fileId": "2012-12-07_18-50_32-530_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Different Styles of Labs",
+          "fileId": "2013-01-08_16-33_38-497_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Lab: Create a Workspace",
+          "fileId": "2013-02-12_10-50_09-667_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "The Big Picture",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 15,
+      "children": [
+        {
+          "text": "Ext JS",
+          "fileId": "2012-10-04_16-59_21-348_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "UI widgets",
+          "fileId": "2012-10-04_17-00_30-388_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Forms",
+          "fileId": "2012-10-04_17-15_29-703_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Asynchronous Communication",
+          "fileId": "2012-10-04_17-04_12-848_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "In-memory Data Stores",
+          "fileId": "2012-10-04_17-04_27-449_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Charting",
+          "fileId": "2012-10-04_17-04_54-026_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Class-based Programming",
+          "fileId": "2012-10-04_17-04_58-144_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Class-based Programming Example",
+          "fileId": "2012-10-05_19-51_27-616_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "MVC",
+          "fileId": "2012-10-05_11-39_18-201_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Deployment Tools",
+          "fileId": "2012-10-04_17-05_06-603_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Review: Big Picture",
+          "fileId": "2012-10-07_14-39_22-902_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Quick Start",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "A Panel",
+          "fileId": "2013-04-23_21-51_31-655_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Panels Contain Things",
+          "fileId": "2013-04-23_21-53_08-199_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "There Are Other Kinds of Containers",
+          "fileId": "2013-04-23_21-55_00-363_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Fetch Data via Ajax",
+          "fileId": "2013-04-23_21-56_07-156_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Populate a Store of Structured Data",
+          "fileId": "2013-04-23_22-00_31-690_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "There Are Many Store-aware Components ",
+          "fileId": "2013-04-23_22-26_40-390_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Detect User Events",
+          "fileId": "2013-04-23_22-13_05-210_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Detect System Events",
+          "fileId": "2013-04-23_22-19_08-230_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Modularize Your Code",
+          "fileId": "2013-04-23_22-38_27-727_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Documentation",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 20,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-01_20-48_30-426_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "API",
+          "fileId": "2013-01-02_19-44_41-616_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Guides",
+          "fileId": "2013-01-02_19-46_48-698_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Videos",
+          "fileId": "2013-01-02_19-46_54-274_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Examples",
+          "fileId": "2013-01-02_19-46_57-995_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Viewing on sencha.com or Local",
+          "fileId": "2013-01-02_20-11_51-501_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Writing Code",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 50,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-01_19-58_19-849_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Text Editors",
+          "fileId": "2013-01-03_14-59_04-971_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Sencha Cmd",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2013-01-28_17-01_24-313_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "sencha generate workspace",
+              "fileId": "2013-05-14_20-47_15-871_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "sencha generate app",
+              "fileId": "2013-05-14_20-47_27-456_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "sencha generate model, view, controller",
+              "fileId": "2013-05-14_20-47_34-536_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Shortest Unique Prefix ",
+              "fileId": "2013-04-10_14-36_52-559_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Command Chaining",
+              "fileId": "2013-04-10_14-37_57-441_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Command Chaining Complex Example",
+              "fileId": "2013-05-14_21-40_37-151_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "See the Guides for More Information",
+              "fileId": "2013-05-14_21-44_13-681_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Architect",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "duration": 40,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-12-11_16-03_02-997_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The Architect Interface",
+              "fileId": "2013-02-12_08-02_08-527_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Lab: Tunes Demonstration",
+              "fileId": "2013-03-11_00-51_17-909_Z",
+              "html": "",
+              "leaf": true,
+              "duration": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Running Code",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 75,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-11-22_20-27_14-343_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Prototyping and Experimenting",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "duration": 65,
+          "children": [
+            {
+              "text": "The Debugger Console",
+              "fileId": "2012-09-24_15-26_36-264_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Live Preview",
+              "fileId": "2012-11-22_20-47_55-899_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Live Preview in the Courseware",
+              "fileId": "2013-01-10_20-26_06-320_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Sencha Try",
+              "fileId": "2012-11-22_20-47_45-071_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Lab: Intro to Live Preview",
+              "fileId": "2013-02-12_15-24_50-595_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Ext.application()",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "duration": 10,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-11-27_17-00_43-873_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "This Won't Work",
+              "fileId": "2012-11-27_17-17_20-450_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Why Doesn't it Work?",
+              "fileId": "2012-11-27_17-31_25-322_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "This Will Work",
+              "fileId": "2012-11-27_17-36_35-586_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "This Works Too",
+              "fileId": "2012-11-27_20-46_38-711_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "And So Does This",
+              "fileId": "2013-09-13_14-54_04-974_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.application() Has Additional Features",
+              "fileId": "2012-09-24_15-30_20-603_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "An Alternative is Ext.onReady()",
+              "fileId": "2013-09-13_14-55_01-358_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.onReady() is Sometimes Seen in the Wild",
+              "fileId": "2013-09-13_14-55_26-068_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Comparison",
+              "fileId": "2012-11-23_17-46_57-005_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Conclusion",
+              "fileId": "2013-09-13_14-56_11-800_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Summary",
+          "fileId": "2012-09-24_15-31_06-932_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Debugging",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 25,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-03-26_19-32_06-779_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Key tasks",
+          "fileId": "2013-03-26_19-48_56-870_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "See the Appendix for More",
+          "fileId": "2013-03-26_20-00_08-514_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Application Structure",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 45,
+      "children": [
+        {
+          "text": "Folders and Files",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Files Contain Class Definitions",
+              "fileId": "2013-01-02_22-59_53-062_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Special Folders",
+              "fileId": "2013-10-09_20-45_50-361_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Other Folders and Packages Are Allowed",
+              "fileId": "2013-10-09_20-45_50-733_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Flow of Execution",
+          "fileId": "2013-10-09_19-10_02-736_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "index.html",
+          "fileId": "2013-01-03_12-07_47-670_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "app.js",
+          "fileId": "2013-01-03_12-13_45-780_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Application.js",
+          "fileId": "2013-06-26_11-21_09-324_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "MVC",
+          "fileId": "2013-01-02_22-54_23-516_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.app.Controller",
+          "fileId": "2013-01-03_13-38_59-417_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Example",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "A Simple MVC Application",
+              "fileId": "2013-01-03_14-51_30-027_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "app.js",
+              "fileId": "2013-01-03_15-10_54-372_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The Controller",
+              "fileId": "2013-01-03_15-11_06-766_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Controllers, Views, Models and Stores",
+              "fileId": "2013-01-03_16-19_43-538_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "requires",
+              "fileId": "2013-03-04_13-46_44-960_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "What's Loaded and Created",
+              "fileId": "2013-07-11_14-06_03-011_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Lab: YelpExtplorer 1",
+          "fileId": "2013-01-28_16-49_25-444_Z",
+          "html": "",
+          "leaf": true,
+          "duration": 20
+        }
+      ]
+    }
+  ]
+}

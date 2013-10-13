@@ -1,0 +1,17 @@
+<pre class="runnable">
+howdeedo = function(data){
+    var s = '';
+    for (var i = 0 ; i < data.feed.entry.length ; i++){
+        s += '\n' + data.feed.entry[i]['title'].label;
+    }
+    alert('I got ' + data.feed.entry.length + ' movies: \n' + s);
+}
+// Dynamically create a script out of the iTunes response.
+var script = document.createElement('script');
+script.type= 'text/javascript';
+script.src = 'https://itunes.apple.com/us/rss/topmovies/limit=5/json?callback=howdeedo';
+document.getElementsByTagName('head')[0].appendChild(script);</pre>
+<p>
+Using <code>Ext.data.JsonP</code>, this is all done automatically, and the built-in
+callback function calls your <code>success</code> function.
+</p>

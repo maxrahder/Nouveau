@@ -1,0 +1,42 @@
+<p>
+Anchor is the default layout for forms. In this case, a field normally specifies an anchor width.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    title: 'Simple Form',
+    bodyPadding: 6,
+    width: 450,
+    defaults: {
+        xtype: 'textfield'
+    },
+    items: [{
+        fieldLabel: 'First Name',
+        name: 'first',
+        anchor : '100%'
+    }, {
+        fieldLabel: 'Last Name',
+        name: 'last',
+        allowBlank: false,
+        anchor : '100%'
+    }, {
+        xtype: 'datefield',
+        fieldLabel: 'Date of Birth',
+        name: 'dob'
+    }, {
+        xtype: 'checkboxfield',
+        boxLabel: 'Married',
+        name: 'married'
+    }, {
+        xtype: 'radiogroup',
+        fieldLabel: 'Sex',
+        columns: 1,
+        items: [{
+            boxLabel: 'Male',
+            name: 'sex'
+        }, {
+            boxLabel: 'Female',
+            name: 'sex'
+        }]
+    }],
+    renderTo: Ext.getBody()
+})</pre>

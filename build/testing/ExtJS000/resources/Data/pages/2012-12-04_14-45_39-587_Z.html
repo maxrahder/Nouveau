@@ -1,0 +1,268 @@
+<h1>Introduction</h1>
+<p>
+After seeing all these examples about the MusicLibrary app, we will start coding it, according the Sencha MVC pattern.
+</p>
+
+<h1>Steps</h1>
+<ul>
+<li>Import the folder: Lab > MVC > MusicLibrary in your Eclipse with the Sencha Eclipse Plugin settings.
+<p>Forgot how to do this? Ask your instructor.</p></li>
+<li>We will generate a music feed from the itunes app store. Open in your browser the following URL: <a href="http://itunes.apple.com/rss/generator/">http://itunes.apple.com/rss/generator/</a></li>
+<li>Press the button <strong>Generate</strong> and copy the generated url in your browser.
+Instead of xml, change the end of the url to JSON:
+<pre>
+https://itunes.apple.com/us/rss/topalbums/limit=10/json
+</pre>
+<p>Inspect the JSON output together with your instructor.
+</li>
+</ul>
+
+<h2>The Model</h2>
+<ol>
+<li>
+Open app/model/Record.js with Eclipse, define a model 'Record' and extend from <code>Ext.data.Model</code>.
+<p>It should contain the following fields: <code>position:int, artist:string, album:string, image:string</code>. Set the <code>idProperty</code> to the 'artist' field.<br/>
+Verify your code looks like this:</p>
+<pre>
+Ext.define('MusicLibrary.model.Record', {
+   extend: 'Ext.data.Model',
+   idProperty: 'idfield',
+   fields: [{
+       name: 'idfield',
+       type: 'auto'
+   },{
+      name: 'position',
+      type: 'int'
+   },{
+      name: 'artist',
+      type: 'string'
+   },
+   {
+      name: 'album',
+      type: 'string'
+   },
+   {	
+      name: 'image',
+      type: 'string'
+   }]         
+});
+</pre>
+</li>
+<li>
+Map your fields to the JSON output
+<p>As you might have seen in the JSON response, the field names returned by Apple are different then the names in your model. We can fix this by adding mappings to our fields:
+<pre>
+fields: [{
+       name: 'idfield',
+       type: 'auto'
+   },{
+      name: 'position',
+      type: 'int'
+   }{
+   name: 'artist',
+   type: 'string',
+   mapping: "['im:artist'].label"
+ },
+ {
+   name: 'album',
+   type: 'string',
+   mapping: "['im:name'].label"
+ },
+ {	
+   name: 'image',
+   type: 'string',
+   mapping: "['im:image'][0].label"
+ }]   
+</pre>
+</li>
+<li>
+Add a proxy to your model to retrieve data.
+<p>
+Right after your <code>fields</code> array, you can add a <code>proxy</code> object.
+This proxy object has a <code>type: 'jsonp'</code> and an url which is pointing to the iTunes RSS feed:
+<code>url: 'https://itunes.apple.com/us/rss/topalbums/limit=10/json'</code>
+<pre>
+proxy: {
+   type: 'jsonp',
+   url: 'https://itunes.apple.com/us/rss/topalbums/limit=10/json',
+}
+</pre>
+</li>
+<li>
+Add a <code>reader</code> object to the proxy.
+<p>The proxy should have a Reader, so it knows how to read the JSON feed.
+It needs to know its <code>type: 'json'</code> and the root node: <code>root: 'feed.entry'</code>
+to start indexing.</p>
+</li>
+<li>
+Verify the code of your model:
+<pre class="runnable">
+Ext.define('MusicLibrary.model.Record', {
+   extend: 'Ext.data.Model',
+   idProperty: 'idfield',
+   fields: [{
+       name: 'idfield',
+       type: 'auto'
+   },{
+      name: 'position',
+      type: 'int'
+   },{
+      name: 'artist',
+      type: 'string',
+      mapping: "['im:artist'].label"
+   },
+   {
+     name: 'album',
+     type: 'string',
+     mapping: "['im:name'].label"
+   },
+   {	
+     name: 'image',
+     type: 'string',
+     mapping: "['im:image'][0].label"
+   }],
+   proxy: {
+      type: 'jsonp',
+      url: 'https://itunes.apple.com/us/rss/topalbums/limit=10/json',
+      reader: {
+         type: 'json',
+         root: 'feed.entry',
+      }
+   }
+});
+</pre>
+</li>
+</ol>
+
+<h2>The Store</h2>
+<ol>
+<li>
+Open app/store/Records.js with Eclipse, define a store 'Records' and extend from <code>Ext.data.Store</code>.
+<p>This store should be linked to the Record model.</p>
+<pre class="runnable">
+Ext.define('MusicLibrary.store.Records', {
+    extend: 'Ext.data.Store',
+    autoLoad: true,
+    model: 'MusicLibrary.model.Record'
+});
+</pre>
+</li>
+<li>
+Save your code, and open MusicLibrary in your browser.
+<p>
+Although you can't see any data on your screen, you can test if your Store is prefilled with data.
+</p>
+</li>
+<li>
+Open the Network tab in Chrome and check if a valid request is made to itunes.apple.com.
+<p>When you click on the JSON request you should see a tab with the JSON response.</p>
+</li>
+<li>
+<Click on the Console tab in Chrome and enter the following command:
+<code>Ext.getStore('Records')</code><br/>
+<p>It should prompt you the store object. When you drill down, you should see the store is prefilled with 10 items.</p>
+</li>
+</ol>
+
+<p>When the last steps were successful you can start coding your controller.</p>
+
+<h2>The Controller</h2>
+<ol>
+<li>Open app/controller/GridController.js with Eclipse, define 'GridController' and extend from: <code>Ext.app.Controller</code>
+</li>
+<li>
+Now you can link the model, store and view. Create the <code>models</code>, <code>stores</code> and <code>views</code>
+array and add the correct references.
+<pre class="runnable">
+Ext.define('MusicLibrary.controller.GridController', {
+    extend: 'Ext.app.Controller',
+	models: ['Record'],
+	stores: ['Records'],
+	views: ['GridViewer']
+});</pre>
+</li>
+</ol>
+
+<h2>The View</h2>
+<ol>
+<li>Open app/view/GridViewer.js with Eclipse, define 'GridViewer' and extend from: <code>Ext.grid.Panel</code>
+<pre>
+Ext.define('MusicLibrary.view.GridViewer', {
+    extend: 'Ext.grid.Panel',
+    alias: 'widget.gridviewer',
+});
+</pre>
+</li>
+<li>Link the 'Records' store to the grid and give it the title: 'My Music Collection'</li>
+<li>Add a <code>columns</code> array to the grid. You can copy over the following code:
+<pre>
+    columns: [
+       {
+            dataIndex: 'image',
+            width: '75',
+            text: 'Cover',
+            renderer: function(value) {
+               return Ext.String.format('&lt;img src="{0}" />', value);
+       	    }
+       },     
+       {
+            dataIndex: 'artist',
+            flex: 1,
+            text: 'Artist',
+            sortable: true
+        },
+        {
+            dataIndex: 'album',
+            text: 'Album',
+            flex: 1,
+            sortable: true
+        }
+    ]
+</pre>
+</li>
+<li>Verify your code:
+<pre class="runnable">
+Ext.define('MusicLibrary.view.GridViewer', {
+    extend: 'Ext.grid.Panel',
+    alias: 'widget.gridviewer',
+    
+    title: 'Music Collection',
+    store: 'Records',
+    columns: [
+       {
+            dataIndex: 'image',
+            width: '75',
+            text: 'Cover',
+            renderer: function(value) {
+           		return Ext.String.format('&lt;img src="{0}" />', value);
+       		}
+       },     
+       {
+            dataIndex: 'artist',
+            flex: 1,
+            text: 'Artist',
+            sortable: true
+        },
+        {
+            dataIndex: 'album',
+            text: 'Album',
+            flex: 1,
+            sortable: true
+        }
+    ]
+});</pre>
+</li>
+</ol>
+
+App.js
+<ol>
+<li>Open app/app.js in Eclipse where it's indicated by the comment add a reference to 'GridController' to the <code>controllers</code> array.
+<pre>controllers: ["GridController"],</pre>
+</li>
+<li>You can test your application in a browser. You should see a grid overview,
+with 3 columns: Covers, Artist name and Album name.</li>
+</ol>
+
+<div class="holder" style="height: 250px">
+  <img src="resources/images/_mvc/MusicLibrary.jpg" alt="MusicLibrary App" />
+</div>

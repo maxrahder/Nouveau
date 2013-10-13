@@ -1,0 +1,393 @@
+{
+  "topicId": "charts",
+  "text": "Charts",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Introduction",
+      "fileId": "2012-11-14_11-36_14-180_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "A Pie Chart",
+      "fileId": "2012-10-25_21-01_10-295_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "A Column Chart",
+      "fileId": "2012-10-25_21-27_14-008_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Other Series",
+      "fileId": "2013-01-10_14-32_35-376_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Review: Charts",
+      "fileId": "2012-11-12_17-09_17-008_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Ext.chart.axis",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-11-12_17-11_08-668_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Introduction continued",
+          "fileId": "2012-11-15_01-52_09-650_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Series and Axes Work Together",
+          "fileId": "2012-11-14_22-26_11-758_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Establishing The Range of The Axis",
+          "fileId": "2012-11-12_20-25_16-489_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Example Using Minimum",
+          "fileId": "2012-11-12_20-41_35-323_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Category",
+          "fileId": "2012-11-13_15-43_27-537_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Category Data is Often Rotated",
+          "fileId": "2012-11-14_22-02_49-309_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Numeric & Time Axes",
+          "fileId": "2012-11-13_15-43_19-566_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Category & Numeric Example",
+          "fileId": "2012-11-14_22-15_55-965_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The grid Config",
+          "fileId": "2012-11-12_21-15_34-994_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The label Config",
+          "fileId": "2012-11-12_21-33_17-645_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Lab: Line Chart",
+          "fileId": "2012-11-20_19-04_11-181_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Ext.chart.series",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Chart Series Class Hierarchy",
+          "fileId": "2012-11-08_20-57_46-057_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Configuration",
+          "fileId": "2012-11-08_21-29_43-090_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The Axis Property",
+          "fileId": "2012-11-08_22-05_41-978_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Series and Marker Highlighting",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "The highlight Config",
+              "fileId": "2012-11-08_22-54_50-346_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Marker Renderer",
+              "fileId": "2012-11-09_00-10_34-609_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The style Config",
+              "fileId": "2012-11-09_15-09_10-640_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Line series",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-11-14_14-00_07-004_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Configs",
+              "fileId": "2012-11-09_14-49_18-436_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-11-08_23-18_19-824_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Area series",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Configs",
+              "fileId": "2012-11-22_17-39_35-198_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-11-22_17-41_16-876_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Bar & Column series",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Configs",
+              "fileId": "2012-11-10_01-18_33-498_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-11-16_15-39_57-290_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Column example",
+              "fileId": "2012-11-10_01-31_40-409_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Pie series",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Configs",
+              "fileId": "2012-11-09_15-15_31-967_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-11-09_15-15_55-698_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Radar Series",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Configs",
+              "fileId": "2012-11-10_01-40_23-853_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Radar Chart Data",
+              "fileId": "2012-11-10_18-05_08-715_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-11-10_01-40_35-574_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Gauge series",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Configs",
+              "fileId": "2012-11-15_01-28_59-088_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-11-13_15-43_37-546_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Scatter Series",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Configs",
+              "fileId": "2012-11-16_15-26_50-262_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Example",
+              "fileId": "2012-11-15_21-38_23-155_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Legend",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-10-25_23-01_09-744_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Example",
+          "fileId": "2012-11-12_21-30_35-601_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Tips",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-11-12_22-53_54-638_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Example: Tips",
+          "fileId": "2012-11-12_22-37_47-807_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Example: Track Mouse Tip",
+          "fileId": "2012-11-12_22-56_37-329_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "save()",
+      "fileId": "2012-10-29_17-39_24-112_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Lab: Seafood Consumption",
+      "fileId": "2012-11-20_14-58_50-749_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "A Little Off-topic",
+      "fileId": "2012-11-15_16-28_03-216_Z",
+      "html": "",
+      "leaf": true
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<pre>
+&lt;script&gt;
+    <b>
+    // Anything can go out here, such as class declarations, 
+    // AJAX calls etc. -- the only thing that won't work is 
+    // code that shows something to the user (via rendering 
+    // in the DOM)</b>
+    var message = ':-)';
+
+    Ext.application({
+        name: 'MyApp',
+        launch: function(){
+            <b>// Anything the user sees goes here.</b>
+            Ext.Msg.alert('Alert', message);
+        }
+    });
+
+</b>&lt;/script&gt;</pre>

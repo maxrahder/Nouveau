@@ -1,0 +1,35 @@
+<ul>
+<li><p>The child nodes may also have their own <code>children</code>.</li>
+<li><p>The <code>expanded</code> property determines if the the branch will be opened initially. The default is <code>false</code>.</li>
+<li><p>If a node has no children, if must have a <code>leaf</code> property with a value of <code>true</code>.
+Failing to set the <code>leaf</code> property to <code>true</code> can lead to unintended children.</li>
+</ul>
+
+<pre class="runnable">
+Ext.create('Ext.tree.Panel', {
+    root: {
+        text: 'Root Node',
+        expanded: true,
+        children: [{
+            text: 'Child 1 (expanded: true)',
+            expanded: true,
+            children: [{
+                text: 'Child 1.1 (leaf: true)',
+                leaf: true
+            }, {
+                text: 'Child 1.2 (leaf: false)',
+                leaf: false
+            }]
+        }, {
+            text: 'Child 2 (expanded: false)',
+            expanded: false,
+            children: [{
+                text: 'Child 2.1 (leaf: true)',
+                leaf: true
+            }]
+        }]
+    },
+    title: 'Tree With Root and Children',
+    renderTo: Ext.getBody()
+});
+</pre>

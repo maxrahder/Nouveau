@@ -1,0 +1,15 @@
+<p>
+Note the <code>requires</code> array. A <code>requires</code> array is needed for
+all objects created via their alias. We'll talk about <code>requires</code> in more detail 
+later.
+</p>
+<pre>Ext.define('MyApp.view.Viewport', {
+    extend : 'Ext.container.Viewport',    
+    <span style="background-color: yellow">requires : [ 'MyApp.view.BeatlesGrid' ]</span>,
+    layout : 'fit',
+    items : [ {
+        xtype : 'beatlesgrid',
+        store : 'People'
+    } ]
+});
+</pre>

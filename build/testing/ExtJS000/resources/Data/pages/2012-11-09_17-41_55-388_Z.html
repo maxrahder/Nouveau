@@ -1,0 +1,27 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.Display" target="api"><code>Ext.form.field.Display</code></a></p>
+
+A display-only text field which is not validated and not submitted. Useful for when you want to display a value from a form's loaded data but do not want to allow the user to edit or submit that value.
+
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    renderTo: Ext.getBody(),
+    width: 175,
+    height: 120,
+    bodyPadding: 10,
+    title: 'Final Score',
+    items: [{
+        xtype: 'displayfield',
+        fieldLabel: 'Home',
+        name: 'home_score',
+        value: '10'
+    }, {
+        xtype: 'displayfield',
+        fieldLabel: 'Visitor',
+        name: 'visitor_score',
+        value: '11'
+    }],
+    buttons: [{
+        text: 'Update'
+    }]
+});
+</pre>

@@ -1,0 +1,11 @@
+<h3>Ext.Array.replace(array, index, removecount, [itemsToAdd])</h3>
+<p>
+Replaces items in an array. This is functionally equivalent to the splice method of Array, but works around bugs in IE8's splice method and is often more convenient to call because it accepts an array of items to insert rather than use a variadic argument list.
+</p>
+<pre class="runnable">
+var a = [ 1, 2, 3, 4 ];
+// replace(array, offset, numberToRemove, itemsToAdd);
+// I.e., replace 3 with 88, 99
+Ext.Array.replace(a, 2, 1, [88, 99]);
+alert(a); // alerts [1, 2, 88, 99, 4];
+</pre>

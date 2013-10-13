@@ -1,0 +1,26 @@
+<p>
+A toolbar is a container, so like any container, it has an 
+items array and default item type (button). You don't need to specify the layout
+because toolbars default to either <em>hbox</em> or <em>vbox</em>, depending 
+on whether the toolbar is on the top or bottom or sides.
+</p>
+<p>
+And, since it's a container, you can, in theory, add any component to it. For example, you
+might have a search feature with a label and an input field.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+    title : 'My Panel',
+    height: 200,
+    width : 400,
+
+    tbar: [ {
+        text : 'Button'
+    } , '->', {
+        xtype: 'textfield',
+        fieldLabel : 'Search:',
+        labelWidth : 40               
+    } , ''],
+
+    renderTo : Ext.getBody()
+});</pre>

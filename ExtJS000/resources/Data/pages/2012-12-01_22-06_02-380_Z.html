@@ -1,0 +1,18 @@
+<p>
+Behind the scenes, the set of tabs is in a specially styled, north-docked container, <code>Ext.tab.Bar</code>.
+</p>
+<p>Each tab is a specially styled button, <code>Ext.tab.Tab</code>.</p>
+<pre class="runnable preview">
+Ext.create('Ext.tab.Panel', {
+    renderTo : Ext.getBody(),
+    height : 200,
+    width : 200,    
+    plain : true,
+    items : [{
+        title : 'One',
+        html : 'Panel One'
+    }, {
+        title : 'Two'
+    }]
+});
+</pre>

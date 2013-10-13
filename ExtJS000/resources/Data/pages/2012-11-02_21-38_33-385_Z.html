@@ -1,0 +1,13 @@
+<h3>Ext.Function.bind(fn, [scope], [args], [appendArgs]):Function</h3>
+<p>Create a new function from the provided fn, change this to the provided scope, optionally overrides arguments for the call. (Defaults to the arguments passed by the caller).</p>
+<pre class="runnable">
+var add = function(a, b){
+  return (a + b);
+};
+
+var increment = Ext.Function.bind(add, null, [1], true);
+var decrement = Ext.Function.bind(add, null, [-1], true);
+
+alert(increment(2)); //alerts 3
+alert(decrement(8)); //alerts 7
+</pre>

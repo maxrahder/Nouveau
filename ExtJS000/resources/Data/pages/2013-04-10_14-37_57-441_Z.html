@@ -1,0 +1,19 @@
+
+<div type="expander" caption="Use <code>and</code> to chain multiple commands within a category">
+<pre style="margin-bottom: 0; margin-top: 16px">
+sencha generate controller Central
+sencha generate model Ticket id,name,email</pre>
+<p>can be chained as</p>
+<pre>sencha generate controller Central and model Ticket id,name,email</pre>
+</div>
+
+<div type="expander" caption="Use <code>then</code> to chain commands in different categories">
+<pre style="margin-bottom: 0; margin-top: 16px">
+sencha generate model User id:int,name
+sencha app build
+</pre>
+<p>can be chained as</p>
+<pre>
+sencha generate model User id:int,name then app build
+</pre>
+</div>

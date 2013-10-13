@@ -1,0 +1,27 @@
+<p>
+There are two use-cases for <code>override</code>
+</p>
+<div type="expander" caption="To patch bugs in source code you don't maintain" >
+<p>
+For example, if there's a bug in an Ext JS component method, and on the forums
+you find a new method implementation, you'd use <code>override</code> to apply
+the new method to your copy of Ext jS. Then in a later release, when the bug is 
+officially fixed, you'd remove the override.
+</p>
+</div>
+
+<div type="expander" caption="For internationalization" >
+<p>
+If you code your classes to use properties rather than literals, you can use
+override to create internationalized values for those properties.
+</p>
+<p>
+For example, in the French locale file, the "invalid text" value is coded as: 
+</p>
+<pre>
+Ext.define("Ext.locale.fr.form.field.Base", {
+    override: "Ext.form.field.Base",
+    invalidText: "La valeur de ce champ est invalide"
+});</pre>
+
+</div>

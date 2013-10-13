@@ -1,0 +1,116 @@
+<pre class="runnable docked" >
+Ext.create('Ext.button.Button', {
+    text: 'Button',
+    renderTo : Ext.getBody() 
+});</pre>
+		
+<h1>Introduction</h1>
+
+<p>
+This lab will help you discover how we will do some of the labs that use the 
+Live Preview feature. Obviously, we haven't covered any concepts or
+syntax yet, so don't worry about the details for now. 
+</p>
+<p>
+Live Preview labs are intended to be small, stand-alone labs that let you try out syntax or a few features.
+</p>
+<p>
+<b>Important: </b> For any Live Preview lab, just like Live Preview examples in the API documentation, 
+<b>if you leave the page you lose your work!</b> You can open new windows or tabs, but <b>be careful not to leave 
+the lab instructions page until you've finished.</b> 
+</p>
+
+<h1>Steps</h1>
+
+<ol>
+
+	<li>See the code at the top?
+	<p>Some labs launch with a panel at the top of the page containing a code snippet. When that happens, 
+	lab steps will have you preview, modify and run the code. Other labs have you use a text editor or your
+	IDE to modify code. </p>
+
+	<li>Try it out
+		<p>Click "Live Preview" button and the code is run. Clicking back on "Code Editor" goes back to showing you the code.</p>
+  </li>
+
+	<li>Examine the code
+		<p>
+		The code runs a function, <code>Ext.create()</code>, passing two arguments. </p>
+		<p>The first argument is the name of the class being created &mdash; either a class in the Ext JS library, or a 
+		class you've defined. In this case, it's the name of the button component.</p>
+		<p>The second argument is a JSON object, describing the thing being created. The button is
+being created with two properties: <code>text</code> and <code>renderTo</code>, described below.
+	</li>
+
+  <li>What is <code>renderTo:Ext.getBody()</code>?
+<p>Right now, we don't really care. <code>;-)</code></p>
+<p>
+The <code>renderTo</code> property specifies where in the DOM the component creates itself. You'll rarely use <code>renderTo</code>, unless you are coding a little example or test, like we are here.</p>
+<p>We will discuss <code>renderTo</code> in more detail later in the class.</p>
+</li>
+
+	<li>Change the button's text
+		<p>
+		Click on <em>Code Editor</em> and change the <code>text</code> property to some other string. Then press <b>Live Preview</b>. 
+		You should see your changes. The API documentation, lecture slides and labs have numerous Live Preview
+		examples.</p><p>Seeing examples and trying things out is one of the best ways to learn Ext JS. 
+		</p>
+	</li>
+
+	<li>Add a <code>click</code> event handler
+		<p>
+		As long as we're trying things we haven't covered in lecture, let's try to add some code to be run when you click on the button.
+		</p>
+		<p>For buttons, the <code>handler</code> option specifies a callback function to be run when the user clicks on it. </p>
+		<p>Here's an example.</p>
+		<pre class="sample">
+handler: function(button){
+	alert('You clicked the ' + button.getText() + ' button!');
+}</pre>
+		<p>Add a handler, like the one above, and try it out. If you have trouble getting it to work, ask your instructor
+		to help.</p>
+	</li>
+
+	<li>Give the button sub-items
+		<p>
+		Buttons have a lot of properties. For example, they can be made "toggleable", they can have an icon and they
+		can have a set of sub-items. Let's add sub-items under the button. 
+		</p>
+		<p>To do that, buttons have a <code>menu</code> config property that can take an array of 
+<a href="http://docs.sencha.com/extjs/4.2.0/#!/api/Ext.menu.Item" target="api"><code>Ext.menu.Item</code> config</a>
+ configs</a>. Here's
+		an example:</p>
+		<pre class="sample">menu : [{text: 'Option One'},{text: 'Option Two'}]</pre>
+		<p>Add that config property to your code.</p>
+		<p>Notice that these sub-items are just JSON objects with a <code>text</code> property.</p>
+	        <b>Try it out</b>
+		<p>
+		Press <b>Live Preview</b> and see how it looks. Note that as you click on your button, your event handler is still 
+		run, and the dropdown of sub-items is shown.</p>
+	</li>
+
+
+	<li>Use a <em>split button</em> instead
+
+		<p>
+		Rather than have the handler run when all you want to do is show the sub-items, there's another type of button
+		called a <em>split button</em>.</p><p><code>Ext.button.Split</code> subclasses <code>Ext.button.Button</code>. It's just a specialized kind of button.
+		</p><p>To use
+		a split button, change the first parameter being passed to <code>Ext.create()</code> to reference the split button class
+		instead. Run it. Now, the drop down icon only shows the sub-items. Clicking elsewhere on the parent button
+		runs its handler.</p>
+	</li>
+<h1>Optional</h1>
+	<li>Add more handlers, and more sub-items
+		<p>
+		Each sub-item in the <code>menu</code> array is the config of a menu item. You can add a <code>handler</code> and <code>menu</code>
+		arrays to those too. Add a few menu items under one of the sub-items. Put a handler on one of those.</p>
+		<p><b><i>A word of caution</i></b> As JSON objects get more complex it's easy to forget a comma, or get confused about the 
+		bounds of a nested object or array. So it's best to make very small changes, then run the code to make sure everything
+		still works. Then add another small change, and test that. And so on.</p>
+	</li>
+
+</ol> 
+<h1>Conclusion</h1>
+<p>The purpose of the lab was for you to discover the benefits of <em>Live Preview</em> and get a feel for how we will be doing many of our labs.
+You also saw how to create buttons, add a handler, add sub-items and use a split button.</p>

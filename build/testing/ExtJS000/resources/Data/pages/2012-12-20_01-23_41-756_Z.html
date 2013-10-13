@@ -1,0 +1,7 @@
+<code>Store.sync()</code> must be called manually from your code. You can send the changes down to the server all at once.
+<ul>
+<li>All inserts, all updates, and all deletes are sent as 3 separate requests
+<li>All changes of a particular type are batched together
+<li>You can declare the order in which the 3 operations will occur
+<li>Cannot be used with JSONP proxies
+</ul>

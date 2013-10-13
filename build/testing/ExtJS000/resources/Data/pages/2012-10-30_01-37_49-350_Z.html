@@ -1,0 +1,18 @@
+<h3>Ext.Array.some(array, fn, [scope]):boolean</h3>
+<p>Returns boolean whether <em>some</em> element matches some rule."</p>
+<pre class="runnable">
+// Return from begin index through end index-1
+var somethingMatches; 
+var a = ['john', 'paul', 'ringo'];
+
+somethingMatches = Ext.Array.some(a, function(item){
+    return (item === 'paul');
+});
+alert(somethingMatches); // Alerts true
+
+somethingMatches = Ext.Array.some(a, function(item){
+    return (item === 'george');
+});
+alert(somethingMatches); // Alerts false
+</pre>
+

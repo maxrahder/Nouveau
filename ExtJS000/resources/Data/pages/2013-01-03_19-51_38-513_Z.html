@@ -1,0 +1,17 @@
+<p>
+Selectors should be specific enough to 
+select the items you want, but not so specific that the code breaks because of 
+a simple change in the user interface.
+</p>
+<pre>this.control({
+        //warning, it fires the event on every button that's in a panel.
+        'panel button' : {
+            click : this.yeahYeahYeah
+        }
+    });</pre>
+<pre>this.control({
+         //warning, this will break, when I remove the toolbar.
+        'beatlesgrid > toolbar > #sheLovesMe' : {
+            click : this.yeahYeahYeah
+        }
+    });</pre>

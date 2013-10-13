@@ -1,0 +1,14 @@
+<h3>Ext.Array.forEach(array, fn, [scope])</h3>
+<p>Iterates an array and invoke the given callback function for each item.</p>
+<p>It doesn't support stopping the iteration by returning <code>false</code> in the callback function like <code>Ext.Array.each()</code>.</p>
+<pre class="runnable">
+var a = [{value: 1}, {value: -1}, {value: 3}, {value : 99}, {value: 3}];
+var s = '';
+Ext.Array.forEach(a, function(item){
+    if (item.value === 99) return false;
+    if (item.value > 0){
+        s += "-" + item.value;
+    } 
+});
+alert(s);  // alerts -1-3-3
+</pre>

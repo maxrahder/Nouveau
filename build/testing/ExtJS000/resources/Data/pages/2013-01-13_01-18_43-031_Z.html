@@ -1,0 +1,29 @@
+<p>You can use a template via <code>xtype:'templatecolumn'</code>. Specify the template in the <code>tpl</code> config.</p>
+
+
+<pre class="runnable preview">var store = Ext.create('Ext.data.Store', {
+    fields:[ { name: 'born',  type: 'date' , dateFormat : 'Y/m/d'}, 'name' ],
+    proxy : { type : 'ajax', url : '../Data/json/marxBrothers.json' },
+    autoLoad : true
+});
+
+Ext.create('Ext.grid.Panel', {
+
+    store: store,
+    columns: [ { 
+        text: 'Name', 
+        dataIndex: 'name' 
+    }, { 
+        xtype : 'templatecolumn', 
+        tpl : '&lt;b&gt;{name}&lt;/b&gt; was born on {born:date("F j, Y")}',
+
+        text: 'Born',
+        flex : 1
+    } ],
+
+    title: 'The Marx Brothers',
+    height: 200,
+    width: 400,
+    renderTo: Ext.getBody()
+});
+</pre>

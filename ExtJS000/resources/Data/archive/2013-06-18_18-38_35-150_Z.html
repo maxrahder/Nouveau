@@ -1,0 +1,24 @@
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+    items: [{
+    xtype: 'button',
+    text: 'Delete',
+    handler: function(button){
+        Ext.Msg.confirm('Confirm', 'Are you sure?', function(buttonId){
+            if (buttonId === 'yes'){
+                var msg = Ext.create('Ext.window.MessageBox');
+                //var msg = Ext.Msg;
+                msg.confirm('Confirm', 'Are you really really sure?', function(buttonId){
+                    if (buttonId === 'yes'){
+                        button.up('panel').remove(button);
+                    }
+                });
+            }
+        });
+    }
+    }],
+    height: 200,
+    width: 200,
+    bodyPadding: 24,
+    renderTo: Ext.getBody()
+});</pre>

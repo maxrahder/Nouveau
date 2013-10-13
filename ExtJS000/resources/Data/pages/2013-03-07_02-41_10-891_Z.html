@@ -1,0 +1,108 @@
+<h1>Introduction</h1>
+
+<p>In this lab, you will dynamically add passages from various Jane Austen
+novels to a panel.</p>
+
+<ol>
+
+<li>Review the solution
+<p>
+Run 
+<a href="http://localhost/SenchaTraining/ExtJS251/LabSolutions/Buttons/" target="lab">the solution</a>. The application contains a split button that lists a few Jane Austen
+novels, and three toggle buttons for setting the text alignment. As you choose from the split button, a passage from the novel is added to the body of the panel, aligned as specified by the selected alignment button.
+</p>
+</li>
+
+<li>Take a look at the code
+<p>
+Edit <kbd>Labs/Buttons/app/view/AlignmentPanel.js</kbd>. The toolbar 
+is incomplete.</p>
+<p>
+There is a single alignment button, for left-aligning the
+text. The button's handler runs <code>updateQuote()</code>, which is a custom
+method on <code>Buttons.view.AlignmentPanel</code>. You will be adding the 
+center- and right-align buttons.
+</p>
+<p>The code is also missing the split button. You will be coding it, with a <code>menu</code>
+array specifying buttons corresponding to various Jane Austen titles. Each button will
+have an identical handler which runs the panel's custom <code>updateChoice()</code>
+method. 
+</p>
+<p>The <code>updateQuote()</code> method has a <code>console.log()</code> so you 
+can detect when it's run. It's missing the one line of code that updates the 
+panel's template with the passage. We will discuss templates in detail, later this week.
+</p>
+<p>
+If you look at the bottom of the panel you will see the <code>tpl</code> used to 
+render the passage text. It's just an HTML snippet that contains tokens. The 
+token values will be replaced with the button alignment and passage.
+</p>
+</li>
+
+<li>There's also a utility class that stores the quotes
+<p>Open <kbd>Labs/Buttons/app/util/Quotes.js</kbd>. The quotes for Jane Austen are stored
+as a <code>Ext.util.MixedCollection</code>. We'll use <code>MixedCollection</code> methods
+and properties to get Jane Austen titles and quotes.
+</li>
+
+<li>Add the split button</code>
+<p>Add the split button to the <code>tbar</code>. The split button should have
+<code>text:'Choose a Quote'</code>. It also needs a <code>menu</code> array.
+Initially, put one item in it: a config for a button with <code>text:Buttons.util.Quotes.janeAusten.keys[0]</code> and this handler:</p>
+<pre>handler: function(button) {
+    button.up('alignmentpanel').updateChoice(button);
+}</pre> 
+<p>Code this initial menu item, save and refresh your browser. You should see the 
+<code>console.log()</code> in <code>updateQuote()</code> being run as you select
+the menu item.
+</p>
+
+<li>Finish <code>updateQuote</code>
+<p>This almost doesn't deserve a lab step! The <code>updateQuote</code> method is
+missing one line of code.</p>
+<pre>this.update(data);</pre>
+<p>
+<p>
+You no longer need the <code>console.log()</code>
+in <code>updateQuote()</code>.
+</p>
+<p>Add the missing line of code, then save and refresh. You should see the quote in the panel, left aligned.
+</p>
+</li>
+
+<li>Add the other menu items to the split button
+<p>
+Add the other menu items to the split button. Each is identical to the item for 
+<i>Sense and Sensibility</i>, except for the <code>text</code> property, which 
+is set to each of the other novels listed in the <code>janeAusten</code> property 
+defined in <kbd>Buttons.util.Quotes.js</kbd>.
+</p>
+<p>
+Once you've added the other menu items, the application should show other passages.
+</p>
+</li>
+
+<li>Add the other two alignment buttons
+<p>
+Add two additional buttons, identical to the button for left-align. Both buttons
+with have the same <code>handler</code>, <code>toggleGroup</code> as the left-align
+button. They should <b>not</b> have a <code>pressed</code> property. 
+<p>
+For the new buttons, set the <code>icon</code> properties to "resources/images/text_align_center.png" and "resources/images/text_align_right.png".
+Set the <code>itemId</code> properties to "center" and "right".
+</p>
+<p>
+Save and refresh. Your application should be fully functional!
+</p>
+</li>
+
+</ol>
+<h1>Conclusion</h1>
+<p>
+Split buttons, like any other button, can specify a <code>menu</code> array of sub-items.
+</p>
+<p>Buttons can also be "toggleable" by specifying a <code>toggleGroup</code>.
+
+<p><small><b>
+Random fact:</b> Jane Austen celebrated her 18th birthday at the Dolphin Hotel, in Southampton, England, on December 16, 1793. The Dolphin dates from 1550, and the original building that houses the Dolphin was
+erected in 1250.</small></p>

@@ -1,0 +1,30 @@
+
+<pre class="runnable preview">
+Ext.define('Movie', {
+   extend: 'Ext.data.Model',
+   proxy: { type: 'jsonp', url: 'https://itunes.apple.com/us/rss/topmovies/limit=5/json', reader: { type: 'json', root: 'feed.entry' } },
+   fields: [ {name: 'id',    type: 'string', mapping: "id.attributes['im:id']"},
+             {name: 'movie', type: 'string', mapping: "['im:name'].label"},
+             {name: 'image', type: 'string', mapping: "['im:image'][2].label" }]
+});
+
+var store = Ext.create('Ext.data.Store', { 
+   storeId:'Movies', 
+   autoLoad: true, 
+   model: 'Movie' 
+});
+store.on('load', function(store, records){
+   console.log(records);
+   component.update(Ext.Array.pluck(records, 'data'));
+});
+
+var component = Ext.create('Ext.Component', {
+    tpl: [
+        '&lt;div class="movies"&gt;&lt;tpl for=".">',
+            '&lt;div class="movie">&lt;img src="{image}" />&lt;/div>',
+        '&lt;/tpl>&lt;/div&gt;'
+    ],
+    renderTo: Ext.getBody()
+});
+
+</pre>

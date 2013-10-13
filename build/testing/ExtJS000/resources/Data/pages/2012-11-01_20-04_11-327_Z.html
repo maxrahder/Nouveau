@@ -1,0 +1,14 @@
+<p>Here's an example UX that demonstrates creating a custom theme-able component.</p>
+<pre class="runnable preview">
+var calc = Ext.create('Ext.ux.Calculator',{
+    renderTo: Ext.getBody()
+});
+
+Ext.create('Ext.Button',{
+    margin: '20 0 0 0',
+    text: 'Toggle UI',
+    handler: function() {
+        calc.setUI(calc.ui == 'default' ? 'apple' : 'default');
+    },
+    renderTo: Ext.getBody()
+});</pre>
