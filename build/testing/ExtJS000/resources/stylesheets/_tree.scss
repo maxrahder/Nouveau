@@ -1,0 +1,293 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+$tree-cell-bg-even: #fefefe;
+$tree-cell-bg-odd: #f8f8f8;
+$tree-cell-color: #808080;
+$green: #8EC447;
+//$tree-cell-bg-selected: -webkit-linear-gradient(top, $green, darken($green, 10%));
+//$tree-cell-bg-open: -webkit-linear-gradient(top, #309AC8, #0977B4);
+$tree-cell-color-selected: #fff;
+$grey: #EBEBEB;
+$icon-selected: #fff;
+
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+@mixin tree-open {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(darken(#fff, 1%)));
+    background-image: -moz-linear-gradient(linear, left top, left bottom, from(#fff), to(darken(#fff, 1%)));
+    //background-image: linear-gradient(linear, left top, left bottom, from(#fff), to(darken(#fff, 2%)));
+    background-color: white;
+}
+
+
+@mixin cell {
+  border-bottom: 1px solid darken($tree-cell-bg-odd, 5%);
+  color: $tree-cell-color;
+  font: bold 9pt 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-left: 0;
+  position: relative;
+  left: 0px;
+  padding: 6px 0px 6px 10px;
+}
+@mixin icon-course {
+  width: 14px; 
+  height: 0; 
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent; 
+  border-left: 7px solid darken($grey, 40%);
+  background: none;
+  margin-top: 5px;
+  margin-right: 8px;
+  margin-left: 4px;
+}
+@mixin icon-course-selected {
+  width: 14px; 
+  height: 0; 
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent; 
+  border-left:7px solid $icon-selected;
+  background: none;
+  margin-top: 5px;
+  margin-right: 8px;
+  margin-left: 4px;
+}
+@mixin icon-course-open {
+  background: none;
+  width: 0;
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid $icon-selected;
+  margin-top: 5px;
+  margin-right: 14px;
+  margin-left: 2px;
+}
+@mixin icon-course-open-notselected {
+  background: none;
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid darken($grey, 40%);
+  margin-top: 7px;
+  margin-right: 14px;
+  margin-left: 2px;
+}
+@mixin icon-slide {
+  background: transparent url('../../images/icon-slide.png') no-repeat !important;
+  background-size: 16px 16px !important;
+  margin-right: 10px;
+}
+@mixin icon-slide-selected {
+  background: transparent url('../../images/icon-slide-selected.png') no-repeat !important;
+  background-size: 16px 16px !important;
+}
+
+@mixin lab {
+display: inline-block;
+margin: 2px 10px 0 -25px;
+background: grey;
+height: 15px;
+width: 15px;
+vertical-align: top;
+}
+
+@mixin lab-hover {
+  background: #fff;
+}
+
+/* ==========================================================================
+   SIDE PANEL
+   ========================================================================== */
+
+table {
+  margin: 0;
+  td {
+    padding: 0;
+  }
+}
+
+.x-panel {
+   -webkit-backface-visibility: hidden;
+   -webkit-perspective: 1000;
+   
+   -moz-transform-style: preserve-3d;
+   
+  .x-grid-view {
+    width: 250px !important;
+    margin-left: -5px;
+  }
+
+  .x-grid-body {
+    background: $tree-cell-bg-odd;
+    border: 1px solid darken($grey, 10%);
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/**
+ *   LAYOUT CELLS
+ */
+.x-grid-cell-inner  {
+  margin-left: -15px;
+}
+
+.x-grid-row {
+  .x-grid-cell {
+      @include cell;
+  }
+  &:nth-child(even) .x-grid-cell{
+    background: darken($tree-cell-bg-even, 5%);
+  }
+  &:nth-child(odd) .x-grid-cell {
+    background: darken($tree-cell-bg-odd, 5%);
+  }
+  .x-grid-cell.intro,
+  .x-grid-cell.bigPicture,
+  .x-grid-cell.documentation,
+  .x-grid-cell.writingCode,
+  .x-grid-cell.runningCode,
+  .x-grid-cell.debugging,
+  .x-grid-cell.howItWorks {
+     @include tree-open;
+  }
+
+  .x-grid-cell.objectInstantiation,
+  .x-grid-cell.buildingBlocks,
+  .x-grid-cell.panels,
+  .x-grid-cell.layouts,
+  .x-grid-cell.classSystem,
+  .x-grid-cell.debugging,
+  .x-grid-cell.windows,
+  .x-grid-cell.usefulClassesIntro {
+     @include tree-open;
+  }
+
+  .x-grid-cell.objectInstantiation,
+  .x-grid-cell.buildingBlocks,
+  .x-grid-cell.panels,
+  .x-grid-cell.layouts,
+  .x-grid-cell.classSystem,
+  .x-grid-cell.debugging,
+  .x-grid-cell.windows,
+  .x-grid-cell.usefulClassesIntro {
+    @include tree-open;
+  }
+
+  .x-grid-cell.mvc {
+     @include tree-open;
+  }
+
+  .x-grid-cell.data,
+  .x-grid-cell.http {
+     @include tree-open;
+  }
+
+  .x-grid-cell.templates,
+  .x-grid-cell.grids,
+  .x-grid-cell.trees,
+  .x-grid-cell.forms,
+  .x-grid-cell.charts {
+     @include tree-open;
+  }
+  
+  .x-grid-cell.theming {
+     @include tree-open;
+  }
+  
+  .x-grid-cell.usefulClasses,
+  .x-grid-cell.customComponents,
+  .x-grid-cell.inDepth,
+  .x-grid-cell.deployment,
+  .x-grid-cell.accessability {
+     @include tree-open;
+  }
+  
+  .x-grid-cell.appendix,
+  .x-grid-cell.javascript,
+  .x-grid-cell.gettingHelp,
+  .x-grid-cell.products,
+  .x-grid-cell.architectWalkthroughs {
+       @include tree-open;
+  }
+  
+  .lab {
+    @include lab;
+  }
+}
+
+.x-grid-row.x-grid-tree-node-leaf .x-grid-cell {
+  font-weight: normal;
+}
+
+.x-grid-row-selected {
+  .x-tree-icon-leaf {
+    color: $tree-cell-color-selected; 
+  }
+
+  .lab {
+    @include lab-hover;
+  }
+  
+  .x-grid-cell,
+  .x-grid-rowwrap-div{
+    background-image: -webkit-linear-gradient(top, $green, darken($green, 10%)) !important;
+    background-image: -moz-linear-gradient(top, $green, darken($green, 10%))!important;
+    background-image: linear-gradient(top, $green, darken($green, 10%))!important;
+    background-color: $green;     
+    color: $tree-cell-color-selected; 
+  }  
+}
+
+.x-grid-row-selected.x-grid-tree-node-expanded .x-grid-cell-first {
+  background-image: -webkit-linear-gradient(top, #309AC8, #0977B4) !important;
+  background-image: -moz-linear-gradient(top, #309AC8, #0977B4) !important;
+  background-image: linear-gradient(top, #309AC8, #0977B4) !important;
+  color: $tree-cell-color-selected; 
+}
+
+/**
+ *   STRUCTURE INDENTING OF IMAGES
+ */
+
+.x-grid-view .x-panel-header-text-default,
+.x-tree-expander,
+.x-grid-view .x-panel-header-default img {
+  visibility: hidden !important;
+}
+
+.x-tree-elbow, .x-tree-elbow-end, .x-tree-elbow-plus, .x-tree-elbow-end-plus, .x-tree-elbow-empty, .x-tree-elbow-line {
+  visibility: hidden;
+}
+
+/* ==========================================================================
+   ICONS
+   ========================================================================== */
+
+.x-tree-icon-leaf {
+  @include icon-slide;
+}
+
+.x-tree-icon-parent {
+  @include icon-course;
+}
+
+.x-grid-tree-node-expanded .x-tree-icon{
+  @include icon-course-open-notselected;
+}
+
+.x-grid-row-selected {
+  .x-tree-icon-parent {
+    @include icon-course-selected;
+  }
+  .x-tree-icon-leaf {
+    @include icon-slide-selected;
+  }
+}
+
+.x-grid-row-selected.x-grid-tree-node-expanded .x-tree-icon-parent {
+  @include icon-course-open;
+}

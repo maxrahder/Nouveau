@@ -3,8 +3,8 @@ Ext.define('Engine.controller.Edit', {
 
 	requires: ['Engine.view.EditToolbar'],
 
-    views: ['Tree'],
-    stores: ['Topics'],
+	views: ['Tree'],
+	stores: ['Topics'],
 
 	refs: [{
 		ref: 'editToolbar',
@@ -12,6 +12,12 @@ Ext.define('Engine.controller.Edit', {
 	}, {
 		ref: 'tree',
 		selector: 'training_tree'
+    }, {
+        ref: 'nodeText',
+        selector: '#nodeText'
+    }, {
+        ref: 'nodeDuration',
+        selector: '#nodeDuration'
 	}],
 
 	init: function() {
@@ -52,6 +58,12 @@ Ext.define('Engine.controller.Edit', {
 
 		this.control({
 
+			'training_tree': {
+				select: this.nodeSelectHandler
+			},
+			'viewport training_edittoolbar #link': {
+				click: this.linkHandler
+			},
 			'training_contentbody': {
 				save: this.saveContentHandler
 			},
@@ -83,6 +95,11 @@ Ext.define('Engine.controller.Edit', {
 
 	},
 
+	nodeSelectHandler: function(selectionModel, record) {
+		this.getNodeText().setValue(record.get('text'));
+		this.getNodeDuration().setValue(record.get('duration'));
+	},
+
 	getRecord: function() {
 		return this.getTree().getSelection();
 	},
@@ -104,6 +121,12 @@ Ext.define('Engine.controller.Edit', {
 
 	moveHandler: function(store, oldParent, newParent) {
 		this.bufferedSaveTopic(newParent);
+	},
+
+	linkHandler: function(button, event) {
+		var url = location.origin + '/' + location.pathname + '?page=' + this.getEscapedBreadcrumb();
+		Engine.view.LinkWindow.setPosition(button.x, button.y + button.getHeight());
+		Engine.view.LinkWindow.show(url);
 	},
 
 	beforeRemoveHandler: function(store, record, isMove) {

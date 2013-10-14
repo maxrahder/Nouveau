@@ -20,12 +20,6 @@ Ext.define('Engine.controller.Tree', {
         ref: 'contentBody',
         selector: 'training_contentbody'
     }, {
-        ref: 'nodeText',
-        selector: '#nodeText'
-    }, {
-        ref: 'nodeDuration',
-        selector: '#nodeDuration'
-    }, {
         ref: 'tree',
         selector: 'training_tree'
     }],
@@ -45,9 +39,6 @@ Ext.define('Engine.controller.Tree', {
         };
 
         this.control({
-            'viewport training_edittoolbar #link': {
-                click: this.linkHandler
-            },
             'training_tree': {
                 select: this.nodeSelected,
                 collapse: this.treeCollapsedHandler,
@@ -62,12 +53,6 @@ Ext.define('Engine.controller.Tree', {
 
     getEscapedBreadcrumb: function() {
         return escape(this.getContent().getBreadcrumb(this.getRecord()));
-    },
-
-    linkHandler: function(button, event) {
-        var url = location.origin + '/' + location.pathname + '?page=' + this.getEscapedBreadcrumb();
-        Engine.view.LinkWindow.setPosition(button.x, button.y + button.getHeight());
-        Engine.view.LinkWindow.show(url);
     },
 
     onLaunch: function(application) {
@@ -227,8 +212,6 @@ Ext.define('Engine.controller.Tree', {
         this.saveDeeplinkPath();
 
         var me = this;
-        this.getNodeText().setValue(record.get('text'));
-        this.getNodeDuration().setValue(record.get('duration'));
 
         if (this.getRecord().isSlide()) {
             var callback = function(content) {
