@@ -16,7 +16,7 @@
  */
 Ext.define('Engine.model.Topic', {
     extend: 'Ext.data.Model',
-
+        
     statics: {
         persistableFields: ['text', 'leaf', 'fileId', 'html', 'children', 'duration']
     },
