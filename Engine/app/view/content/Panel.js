@@ -32,6 +32,7 @@ Ext.define('Engine.view.content.Panel', {
     initComponent: function() {
         this.dockedItems = [{
             xtype: 'toolbar',
+            cls: 'breadcrumbs',
             dock: 'top',
             items: [{
                     xtype: 'tbtext',
@@ -39,12 +40,12 @@ Ext.define('Engine.view.content.Panel', {
                 },
                 '->', {
                     cls: 'font-size',
-                    iconCls: 'font-less',
+                    glyph:'45@Nouveau',
                     tooltip: 'Decrease Font Size',
                     handler: Ext.Function.bind(this.changeSize, this, [-10])
                 }, {
                     cls: 'font-size',
-                    iconCls: 'font-more',
+                    glyph:'43@Nouveau',
                     tooltip: 'Increase Font Size',
                     handler: Ext.Function.bind(this.changeSize, this, [10])
                 }
@@ -55,12 +56,18 @@ Ext.define('Engine.view.content.Panel', {
     },
 
     changeSize: function(val) {
-        var rule = Ext.util.CSS.getRule('#content', true);
+        var rule = Ext.util.CSS.getRule('div.slide .body', true);
         var size = parseInt(rule.style.getPropertyValue('font-size'));
+        var lh = parseInt(rule.style.getPropertyValue('line-height'));
+        var w = parseInt(rule.style.getPropertyValue('max-width'));
+
         if (!this.fontSize) {
             this.fontSize = size;
         }
-        Ext.util.CSS.updateRule('#content', 'fontSize', size + val + '%');
+
+        if(size+val >= 20) Ext.util.CSS.updateRule('div.slide .body', 'fontSize', size + val + 'px');
+        if(lh+(val*1.5) >= 30) Ext.util.CSS.updateRule('div.slide .body', 'lineHeight', lh + (val*1.5) + 'px');
+        if(w+(val*6) >= 720) Ext.util.CSS.updateRule('div.slide .body', 'maxWidth', w + (val*6) + 'px');
     },
 
     updateActiveItem: function(record, config) {
@@ -91,7 +98,7 @@ Ext.define('Engine.view.content.Panel', {
     },
     getBreadcrumb: function(record) {
         // <div class="crumb">topic > subtopic > ... > title </div>
-        var breadcrumbDelimiter = '>';
+        var breadcrumbDelimiter = ' > ';
         var s = '';
         Ext.Array.forEach(record.getTopicArray(), function(topic) {
             s += topic + breadcrumbDelimiter;
