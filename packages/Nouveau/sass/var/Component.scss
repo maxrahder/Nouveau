@@ -1,0 +1,14 @@
+//sencha vars
+//$base-color: #516f83 !default;
+//$base-color: #314e64 !default;
+$base-color: #004067 !default;
+$font-size: 11px !default;
+
+//custom vars
+$slidebg: radial-gradient(ellipse at center, #fff 12%,#efefef 100%) !default;
+$text-color: #000 !default;
+$border-color: $text-color !default;
+$link-color: $base-color !default;
+$link-color-hover: lighten($link-color, 20%) !default;
+$code-color: $base-color !default;
+$slide-font-size: 20px !default;

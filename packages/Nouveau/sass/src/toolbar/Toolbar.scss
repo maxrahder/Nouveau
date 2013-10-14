@@ -1,0 +1,21 @@
+.breadcrumbs {
+	background: none;
+
+	.x-toolbar-item {
+		color: #fff;
+	}
+
+	.font-size {
+		background: $base-color;
+		border: 1px solid darken($base-color, 10%);
+
+		span {
+			color: #fff;
+			font-size: 12px;
+		}
+	}
+	.font-size.x-over {
+		background: lighten($base-color, 10%);
+	}
+
+}

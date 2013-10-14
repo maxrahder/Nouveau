@@ -1,0 +1,19 @@
+/*
+ * tree requires the following settings:
+ * useArrows: true,
+ * rowLines: true,
+ * icon: 'resources/images/accept.png' in treestore
+ */
+
+//mixins
+
+//tree styles
+
+//grid styles
+.x-grid-row:nth-child(even) .x-grid-cell {
+	background: darken($cellbgcolor, 5%);
+}
+
+.x-grid-row-selected:nth-child(even) .x-grid-cell {
+	background: $selectedbgcolor;
+}

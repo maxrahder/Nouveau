@@ -1,0 +1,34 @@
+/* ==========================================================================
+Lab specific
+========================================================================== */
+div.lab {
+	.body {
+
+		@include font-line(16px, 1);
+		max-width: 16px*42;
+
+		h1 {
+			@include font-line(16px, 1.2);
+		}
+
+		h2 {
+		    @include font-line(16px, 1.1);
+		}
+
+		h3 {
+		    @include font-line(16px, 1);
+		}
+
+		h4 {
+		    @include font-line(16px, 0.9);
+		}
+
+		h5 {
+			@include font-line(16px, 0.8);
+		}
+
+		h6 {
+		    @include font-line(16px, 0.75);
+		}
+	}
+}

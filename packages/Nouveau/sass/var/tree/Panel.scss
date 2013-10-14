@@ -1,0 +1,19 @@
+$cellbgcolor: #fafafa !default;
+$cellcolor: #080808 !default;
+$selectedbgcolor: invert($cellbgcolor) !default;
+$selectedcolor: $cellbgcolor !default;
+
+//panel vars
+$font-family: helvetica , arial , verdana , sans-serif;
+
+//tree vars
+$tree-cell-inner-padding: 10px;
+
+//grid vars
+$grid-row-cell-background-color: $cellbgcolor;
+$grid-row-cell-over-background-color: darken($cellbgcolor, 12%);
+$grid-row-cell-selected-background-color: $selectedbgcolor;
+
+$grid-row-cell-color: $cellcolor;
+$grid-row-cell-over-color: darken($cellcolor, 10%);
+$grid-row-cell-selected-color: $selectedcolor;

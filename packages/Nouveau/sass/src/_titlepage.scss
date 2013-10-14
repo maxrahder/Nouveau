@@ -1,0 +1,55 @@
+/* ==========================================================================
+* First Slide!
+========================================================================== */
+
+.topic {
+  background: $base-color;  
+  background: -moz-radial-gradient(center, ellipse cover, #0071b5 0%, #043555 80%);
+  background: -webkit-radial-gradient(center, ellipse cover, #0071b5 0%, #043555 80%);
+  background: -o-radial-gradient(center, ellipse cover, #0071b5 0%, #043555 80%);
+  background: -ms-radial-gradient(center, ellipse cover, #0071b5 0%, #043555 80%);
+  background: radial-gradient(ellipse at center, #0071b5 0%,#043555 80%);
+  
+  height: 100%;
+  text-align: center;
+  width: 100%;
+
+  .head {
+    background: url('../resources/logo2.png') no-repeat 50% 20%;
+    color: #fff;
+    font-family: 'Gill Sans', 'GillSansGuilt', helvetica , arial , verdana , sans-serif;
+    text-shadow: #000 2px 1px 5px;
+    position: absolute;
+    top: 10%;
+    height: 200px;
+    width: 100%;
+    
+    h1 {
+      font-size: 65px;
+      font-weight: 300;
+      margin: 180px 0 0 0;
+    } 
+
+    h2 {
+      font-size: 25px;
+      font-weight: 300;
+      margin: 5px;
+    }
+
+    h3 {
+      font-size: 45px;
+      font-weight: 300;
+      margin: 5px;
+    }
+  }
+}  
+
+.footer {
+  bottom: 2%;
+  color: #fff;
+  font-size: 10px;
+  padding: 0 40px;
+  position: absolute;
+  text-align: center;
+  width: 100%;   
+}

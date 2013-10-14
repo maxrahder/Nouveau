@@ -1,0 +1,296 @@
+  @mixin expander-title {
+	background: none;
+	width: 0; 
+	height: 0; 
+	border-top: 0.5em solid transparent;
+	border-bottom: 0.5em solid transparent;
+	border-left: 0.7em solid darken($base-color, 20%);
+	display: inline-block;
+	margin-right: 0.8em; 
+}
+
+@mixin expander-title-expanded {
+	border-left: 0.5em solid transparent;
+	border-right: 0.5em solid transparent;
+	border-top: 0.7em solid darken($base-color, 20%);
+	border-bottom: 0;
+}
+
+@import "compass/css3/transition";
+@import "compass/css3/opacity";
+
+ /* ==========================================================================
+  * Lab and Content Slides
+ ========================================================================== */
+
+div.lab,
+div.slide {
+	
+	background: #f2f2f2;
+	background: -moz-radial-gradient(center, ellipse cover, #fff 0%, #efefef 100%);
+	background: -webkit-radial-gradient(center, ellipse cover, #fff 0%, #efefef 100%);
+	background: -o-radial-gradient(center, ellipse cover, #fff 0%, #efefef 100%);
+	background: -ms-radial-gradient(center, ellipse cover, #fff 0%, #efefef 100%);
+	background: $slidebg;
+	min-height: 100%;
+	font-family: 'Gill Sans', 'GillSansGuilt', helvetica , arial , verdana , sans-serif;
+	
+	.head {
+		background: url(../resources/logo.png) no-repeat  98% 10px;
+		background-size: 100px;
+		padding: 20px 20px 0 20px;
+		text-shadow: #fff 2px 1px 5px;
+		
+		h1 {
+			font-size: 13px;
+			font-family: helvetica , arial , verdana , sans-serif;
+			line-height: 16px;
+			margin: 0 0 8px 0;
+			text-transform: uppercase;
+		}
+		h3 {
+			font-size: 18px;
+			font-family: helvetica , arial , verdana , sans-serif;
+			line-height: 22px;
+			margin: -5px 0 0;
+		}
+		h2 {
+			color: $base-color;
+			font-size: 32px;
+			line-height: 38px;
+			margin: 15px 0 20px 0;
+		}
+	}
+
+	.body {
+		@include font-line($slide-font-size, 1);
+		font-weight: 300;
+		//max-width: 660px + ($slide-font-size*6);
+		padding: 0 20px 20px 20px;
+		text-shadow: #fff 2px 1px 5px;
+
+
+		/* ==========================================================================
+		   Typography
+		   ========================================================================== */
+		h1 {
+			@include font-line($slide-font-size, 1.2);
+		}
+
+		h2 {
+		    @include font-line($slide-font-size, 1.1);
+		}
+
+		h3 {
+		    @include font-line($slide-font-size, 1);
+		}
+
+		h4 {
+		    @include font-line($slide-font-size, 0.9);
+		}
+
+		h5 {
+			@include font-line($slide-font-size, 0.8);
+		}
+
+		h6 {
+		    @include font-line($slide-font-size, 0.75);
+		}
+
+		p {
+		  margin-bottom: 0.8em;
+		  margin-top: 0.8em;
+		}
+
+		em, i {
+			font-style: italic;
+		}
+
+		b, strong {
+			font-weight: bold;
+		}
+
+		a {
+		  color: $link-color;
+		  &:hover {
+		    color: $link-color-hover;
+		  }
+		  &:visited {
+		    color: $link-color;
+		  }
+		}
+
+		abbr[title] {
+		    border-bottom: 1px dotted;
+		}
+
+		blockquote {
+		    margin: 1em 40px;
+		}
+
+		dfn {
+		    font-style: italic;
+		}
+
+		code,
+		var,
+		pre,
+		samp {
+			color: $code-color;
+			white-space: normal;
+		}
+
+
+		kbd,
+		tt {
+			color: $code-color;
+		}
+
+
+		blockquote, q {
+		  color: lighten($text-color, 30%);
+		  font-style: italic;
+		  quotes: "\201C" "\201D";
+		  margin: 1em 1em 0 1em;
+		  
+		  &:before {
+		    content: open-quote; 
+		    font-weight: bold;
+		  }
+		  
+		  &:after {
+		    content: close-quote; 
+		    font-weight: bold;
+		  }
+		}
+
+		cite {
+		  text-transform: uppercase;
+		  font-size: 60%;
+		  margin: 0 1em 1em 2.1em;
+		}
+
+		small, .small {
+		    font-size: 80%;
+		    line-height: 100%;
+		}
+
+		.big {
+		  line-height: 120%;
+		  font-size: 120%;
+		}
+
+		hr {
+		  margin: 1em, 0;
+		  border: none;
+		  border-bottom: 1px solid $border-color;
+		  background: none;
+		  display: block;
+		  height: 1px;
+		}
+
+		sub,
+		sup {
+		    font-size: 75%;
+		    line-height: 0;
+		    position: relative;
+		    vertical-align: baseline;
+		}
+
+		sup {
+		    top: -0.5em;
+		}
+
+		sub {
+		    bottom: -0.25em;
+		}
+
+		/* ==========================================================================
+		 Expanders
+		 ========================================================================== */
+		 /* Expander */
+
+		.expander {			 
+			p { margin: 0; }
+
+			.training-expandingcontent-expander{
+				@include expander-title;
+			}
+	
+			.training-expandingcontent-expander.expand {
+				@include expander-title-expanded;
+			}
+
+			.training-expandingcontent-title {
+				font-size: 1em !important;
+				margin: 5px 0 5px 5px;
+
+				pre, code, var, tt, kbd {
+			  		font-weight: bold;
+				}
+			}
+
+			.training-expandingcontent-content {
+			    height: 0;
+			    @include opacity(0);
+			    overflow: hidden;
+			    padding: 0;
+
+			    @include transition-property(opacity, padding);
+			    @include transition-duration(1s, 0.5s);
+
+				ul, ol {
+					margin: 0;
+					padding: 0 0 0 60px;
+				}
+			}
+
+			.expand {
+			    height: auto;
+			    @include opacity(1);
+			    padding: 0 0 25px 0;
+			}
+		}
+
+		/* ==========================================================================
+		 Tables
+		 ========================================================================== */
+
+		table {
+		    border-collapse: collapse;
+		    border-spacing: 0;
+		    margin: 2em 0;
+		    width: 100%;
+
+		    td {
+		      padding: 0 0.2em;
+		      vertical-align: top;
+		    }
+		    
+		    pre {
+		      margin: 5px 0;
+		    }
+		}
+
+		.table thead th {
+		  background: darken($base-color, 10%);
+		  border: 1px solid $border-color;
+		  color: darken($text-color, 20%);
+		  font-weight: bold;
+		  text-align: center;
+		  padding: 0.5em;
+		}
+
+		.table tr {
+		  td {
+		    border: 1px solid $border-color;
+		    background: #fff;
+		    padding: 5px;
+		  }
+		  &:nth-child(odd) td {
+		    background: darken(#fff, 5%) !important;
+		  }
+		} 
+
+	}
+}
