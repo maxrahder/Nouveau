@@ -55,3 +55,8 @@ Docs.model.Setting
         type: window['localStorage'] ? 'localstorage' : 'memory',
         type: 'localstorage',
 
+(7) Copy this to the application's index.html, after other javascript files have been loaded.
+    <link rel="stylesheet" type="text/css" href="overrides/Overrides.js">
+    <link type="text/css" rel="stylesheet" href="../jsduck/template/resources/codemirror/codemirror.css" />
+    <link type="text/css" rel="stylesheet" href="../jsduck/template/resources/prettify/prettify.css" />
+

@@ -2,8 +2,8 @@ Ext.define('Engine.overrides.InlinePreview', {
 	override: 'Docs.view.examples.InlinePreview',
 
 	// Nouveau Addition
-	iFrameUrlExtJs: '../Shared/LivePreviewSupport/touch/eg-iframe.html',
-	iFrameUrlTouch: '../Shared/LivePreviewSupport/extjs/eg-iframe.html',
+	iFrameUrlExtJs: '../Shared/LivePreviewSupport/extjs/eg-iframe.html',
+	iFrameUrlTouch: '../Shared/LivePreviewSupport/touch/eg-iframe.html',
 
 	getHtml: function() {
 		var me = this;

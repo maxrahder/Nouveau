@@ -3,7 +3,9 @@ Ext.define('Engine.Application', {
 	extend: 'Ext.app.Application',
 
 	requires: [
+
 		'Docs.view.examples.InlineWrap',
+
 		'Engine.view.Viewport',
 		'Engine.Global',
 		'Engine.util.Time',
