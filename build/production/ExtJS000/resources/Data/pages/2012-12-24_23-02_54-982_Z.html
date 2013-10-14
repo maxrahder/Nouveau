@@ -1,0 +1,11 @@
+<ul>
+<li>Ext JS methods often have <code>callback</code> parameters.</li>
+<li>These parameters take functions that will be called when the initial method is finished.</li>
+</ul>
+<pre>
+> var c = Ext.define('AClass', {}, 
+           function(){console.log(this.$className + ' defined');}
+           )
+  AClass defined
+  undefined // the result of the 'var  c ...' statement
+</pre>

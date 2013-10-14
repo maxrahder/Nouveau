@@ -1,0 +1,25 @@
+
+<ul>
+    <li>You can give functions new properties, just like you can give any object a new property.</li>
+</ul>
+<pre>
+> function abc() { return 123; }
+  undefined
+> var abc.bigName = "ABC";
+  undefined
+> abc.bigName // returns "ABC"
+  "ABC"
+</pre>
+
+<ul>
+    <li>The <u>dev</u> version of ExtJS adds a <code>displayName</code> property to function objects for methods in <u>components</u>. Use <code>Ext.getDisplayName(<i>function</i>)</code> to access it.</li>
+</ul>
+<pre>
+> var b = Ext.create( 'Ext.Button' );
+  undefined
+> Ext.getDisplayName( b.addListener )
+  "Ext.AbstractComponent#addListener"
+</pre>
+<ul>
+    <li>In the case above, there is an <code>addListener</code> method defined in <code>Ext.AbstractComponent</code>. So <code>Ext.getDisplayName(b.addListener)</code> returns the displayName of the addListener method/function/object found in prototype property of the AbstractComponent class. (see later, Prototypes)</li>
+</ul>

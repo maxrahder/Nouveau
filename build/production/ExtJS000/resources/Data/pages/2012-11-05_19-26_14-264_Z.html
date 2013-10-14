@@ -1,0 +1,17 @@
+<pre class="runnable">
+var o = { first : 'Groucho', last: 'Marx', born : '1890/10/02'};
+//iterate through key value pairs
+Ext.Object.each(o, function(key, value, object){
+    console.log(key + ' = ' + value);
+});
+console.log('');
+
+//get keys
+console.log(Ext.Object.getKey(o, 'Marx'));
+console.log(Ext.Object.getKeys(o));
+
+//get values
+console.log(o.first); // Ext.Object.getValue() isn't needed
+console.log(Ext.Object.getValues(o));
+</pre>
+

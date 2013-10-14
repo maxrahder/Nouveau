@@ -1,0 +1,33 @@
+<p>This is an example of creating custom variables to identify descriptors that the framework would be otherwise unaware of</p>
+
+<pre>
+Ext.define('MyApp.view.FeedbackForm', {
+    extend: 'MyApp.view.portal.Portlet',
+ alias: 'widget.feedbackform',
+ 
+ lblFirstName: 'First Name',
+ lblLastName: 'Last Name',
+	
+ initComponent: function(){
+
+  Ext.apply(this, {
+    /* various settings */
+    
+    items: [{
+      xtype: 'form',
+      defaultType: 'textfield',
+	   items: [
+	    {
+	     name:'firstname',
+	     fieldLabel: this.lblFirstName,
+	    },	
+	    {	
+	     name: 'lastname',
+	     fieldLabel: this.lblLastName,
+	    }
+	   ]
+    }]
+ });
+}
+  });
+</pre>

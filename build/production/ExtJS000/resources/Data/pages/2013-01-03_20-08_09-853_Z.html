@@ -1,0 +1,15 @@
+<p>
+Component selectors are also available in convenience methods on <code>Ext.Component</code>
+and <code>Ext.container.Container</code>. Use <code>down()</code> to find the first component under a container, and <code>up()</code> to find the first container above
+a component.
+</p>
+<p>For example, a typical coding idiom for a form panel save button is:</p>
+<div class="readonly"><pre class="runnable">
+onSaveClick : function(button){
+    button.up('myform').submit();
+}</pre></div>
+<p>Or combine method calls to go to a parent container, and search down from there.
+<div class="readonly"><pre class="runnable">
+onClick : function(button){
+    button.up('myform').down('toolbar #someButton').disable();
+}</pre></div>

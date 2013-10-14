@@ -1,0 +1,30 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.Hidden" target="api"><code>Ext.form.field.Hidden</code></a></p>
+
+Used for storing hidden values in forms that need to be passed in the form submit.
+
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    renderTo : Ext.getBody(),
+    title: 'My Form',
+    items: [{
+        xtype: 'textfield',
+        fieldLabel: 'Text Field',
+        name: 'text_field',
+        value: 'value from text field'
+    }, {
+        xtype: 'hiddenfield',
+        name: 'hidden_field_1',
+        value: 'value from hidden field'
+    }],
+ buttons: [{
+        text: 'Submit',
+        handler: function() {
+            this.up('form').getForm().submit({
+                params: {
+                    hidden_field_2: 'value from submit call'
+                }
+            });
+        }
+    }]
+});
+</pre>

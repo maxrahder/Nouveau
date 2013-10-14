@@ -1,0 +1,26 @@
+<p>You can define validation rules on text fields by specifying the following properties:</p>
+
+<div type="expander" caption="allowBlank">
+<p>Specify false to validate that the length of the entered value is greater than zero.</p>
+</div>
+
+<div type="expander" caption="maxLength/minLength" >
+<p>Sets the maximum (or minimum) length of input data.</p>
+</div>
+
+<div type="expander" caption="regex">
+<p>A JavaScript RegExp object to be tested against the field value during validation. 
+</br><i>Note that this validation rule will not produce a visible error unless the regexText property is also configured.</i></p>
+</div>
+
+<div type="expander" caption="validator" >
+<p>A custom validation function to be called during field validation. Return true if the value is valid. Otherwise return false.</p>
+</div>
+
+<div type="expander" caption="validateOnChange">
+<p>Specifies whether this field should be validated immediately whenever a change in its value is detected. <b>Defaults to true.</b> If the validation results in a change in the field's validity, a validitychange event will be fired. If false, feedback will not be immediate. The form will still be validated before submitting if the clientValidation option to Ext.form.Basic-doAction is enabled, or if the field or form are validated manually.</p>
+</div>
+
+<div type="expander" caption="vtype" >
+<p>A validation type name.  Built-in validations include alpha, alphanum, email, and url. You can extend Ext.form.VTypes to define custom validators. One source of custom vtypes is the Sencha forum.</p>
+</div>

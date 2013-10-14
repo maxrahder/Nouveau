@@ -1,0 +1,27 @@
+<p>
+The feed can contain the entire hierarchy of data, in which
+case the associated stores are automatically filled.
+</p>
+<p>
+If the <code>name</code> is found in the feed, under the 
+record being read as an array of associated records, then 
+that data is used to populate the association.
+</p>
+<pre>
+[{
+    "id": 1,
+    "name": "Bread Barn",
+    "phone": "8436-365-256"
+    "orders": [ {
+            "id": 1,
+            "date": "2010-08-13"
+        }, {
+            "id": 2,
+            "date": "2010-07-14"
+        }, {
+            "id": 3,
+            "date": "2010-01-22"
+        }],
+    }, 
+...]
+</pre>

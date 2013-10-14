@@ -1,0 +1,10 @@
+<h3>Ext.Array.indeOf(array, item, [from])</h3>
+<p>Get the index of the provided item in the given array, a supplement for the missing arrayPrototype.indexOf in Internet Explorer.</p>
+<pre class="runnable">
+var a = [ 1, 2, 3, 'hi', {a: 17} ];
+alert(Ext.Array.indexOf(a, 1)); // alerts 0
+alert(Ext.Array.indexOf(a, 99)); // alerts -1
+alert(Ext.Array.indexOf(a, 'hi')); // alerts 3
+alert(Ext.Array.indexOf(a, {a: 17})); // alerts -1
+alert(Ext.Array.indexOf(a, 3, 2)); //alerts 2
+</pre>

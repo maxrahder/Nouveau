@@ -1,0 +1,107 @@
+<ol>
+<li>Have the data view show data
+<p>We will now put images for each video in the lower panel.</p>
+
+<p>In the Project Inspector, choose neptunesView, and in the Design canvas flyout gear set <code>store</code>
+to <code>Tunes</code>.
+</p>
+<p>Data views render data using a <i>template</i>, which is a tokenized HTML snippet. 
+In the Property Inspector panel double-click on <code>itemTpl</code> under tunesView. 
+</p>
+<p>This opens the code window on the Canvas. Copy and paste the following snippet into the code window, replacing the default <code>Data View Item {string}</code> that's there. Note that the snippet below contains a token for <code>{title}</code> and <code>{artist}</code>. Those values from the store's records will be shown.
+</p>
+<pre>
+&lt;figure&gt;
+    &lt;img src="{image}" /&gt;
+    &lt;figcaption&gt;{title}&lt;br/&gt;{artist}&lt;/figcaption&gt;
+&lt;/figure&gt;
+</pre>
+</li>
+
+<li>Save and preview the application
+<p>On the Architect main toolbar, press [Save] and then refresh your browser. 
+You should see the NepTunes Grid populated and video thumbnails on the NepTunes Music Videos. 
+Try sorting by Artist in the grid and watch the view update.
+</p>
+</li>
+
+<li>Improve the thumbnail item layout
+<p>The video thumbnails in the view are shown as a single column. These would look better 
+with a little styling.</p>
+<p>In the Project Inspector, select the [+] button and select Resource | CSS Resource</p>
+<p>In the Project Inspector, select the new resource (under Application | Resources)
+and in the Config panel set <code>url</code> to <code>resources/style.css</code></p>
+<p>Choose the Code View to see the new style sheet. It defines a <i>video</i> CSS class
+which is floating, with a specific height and width. </p>
+<p>In the Project Inspector, choose neptunesView and in the Config panel
+type Cls in the filter.</p>
+<p>Set <code>itemCls</code> to <code>video</code>.</p>
+<p>Set the <code>overItemCls</code> to <code>overvideo</code>.</p>
+<p>In the Config for neptunesView, in Filter type <strong>track</strong>, then set <code>trackOver</code> checkbox to checked.</p>
+</li>
+
+<li>Save and preview the application
+<p>On the Architect main toolbar, press [Save] and then refresh your browser. 
+Note that the images are now in rows, and the effect you get when 
+you hover the mouse pointer over an image.
+</li>
+
+<li>Create the preview window
+<p>On the Toolbox select a Views | Window and drag it onto Views in the Project Inspector. It should be at the same indentation level as MyViewport.</p>
+
+<p>In the Project Inspector, select the new Window, 
+and in the Config panel set its <code>userClassName</code> to <code>PreviewWindow</code>.</p>
+<p>In the Config panel filter type <code>resizable: false</code> to prevent window resizing.</p>
+<p>In the Config panel use Quickset in the Filter to set <code>height: 352</code> and <code> width: 640</code>.</p>
+<p>In the Config panel, set the <code>modal</code> checkbox to checked.</b>
+<p>In the Config panel, find the <code>tpl</code> property, and press the <code>(+)</code> icon to the right to create a template for the window.</p>
+<p>In the Property Inspector, <code>double-click on tpl</code> under PreviewWindow to open the Code editor in the Canvas.</p>
+<p>Copy and paste the following as the template. Note that the template has a <code>{preview}</code> token, which corresponds to a field in the model.</p>
+<pre>&lt;video autoplay preload="auto"&gt;
+  &lt;source src="{preview}" type="video/mp4"&gt;
+&lt;/video&gt;</pre>
+</li>
+
+<li>Create the controller
+<p>Press the [+] at the top right of the Project Inspector and choose Controller.</p>
+<p>In Project Inspector select the new controller and in the Config panel 
+set <code>userClassName</code> to <code>NepTunesController</code>.</p>
+</li>
+
+<li>Add control logic
+<p>In the Project Controller, select neptunesView.</p>
+
+<p>In the Config panel, find the <code>EventBindings</code> item, 
+and click on the <code>(+)</code> to the right.</p>
+
+<p>Select the <code>itemdblclick</code> event.</p>
+<p>To move the event listener to the controller, 
+right-click on <code>itemdblclick onNepTunesViewItemDblClick</code>,
+select <code>Convert To Action > NepTunesController</code>.</p>
+
+<p>In the Project Inspector, double-click on NepTunesController to see the code generated.</p>
+
+<p>In the Project Inspector, double-click on <code>itemdblclick onNepTunesViewItemDblClick</code> method
+now under the NepTunesController, and copy and paste in the following code:</p>
+
+<pre>var window = 
+    Ext.create('NepTunes.view.PreviewWindow', 
+                   {title: record.get('title') +
+                    ', provided courtesy of iTunes'
+                   }
+              );
+window.update(record.data);
+window.show();</pre>
+</p>
+</li>
+
+<li>Save and preview your application
+<p>On the Architect main toolbar, press [Save] and then refresh your browser. You should see your <b>completed</b> application. 
+It has a two panels labeled NepTunes Music Videos and NepTunes Grid. 
+The NepTunes Grid shows a grid. 
+The NepTunes Music Videos view shows video thumbnails. 
+Double-clicking on an item in the Videos view brings up a window showing a video preview.
+</p>
+</li>
+
+</ol>

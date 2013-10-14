@@ -1,0 +1,16 @@
+<p>
+For plotting by category, a given data set may need to be rotated.
+</p>
+<p>For example, the following dataset with months, cities and temperatures:</p>
+<pre class="sample">
+[ { city : 'Paris' , June : 21, July : 24, Aug : 24, Sept : 21 },
+  { city : 'London', June : 21, July : 23, Aug : 23, Sept : 20 } ]
+</pre>
+<p>would need to be rotated like this:</p>
+<pre class="sample">
+[ { month : 'June', Paris : 21, London : 21 }, 
+  { month : 'July', Paris : 24, London : 23 }, 
+  { month : 'Aug' , Paris : 24, London : 23 }, 
+  { month : 'Sept', Paris : 21, London : 20 } ]
+</pre>
+<p>This way, you can have the weather degrees on the left axis as Numeric, the month on the bottom axis as a Category. - Paris and London can be 2 chart lines.</p>

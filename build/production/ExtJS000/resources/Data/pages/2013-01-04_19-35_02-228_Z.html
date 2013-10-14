@@ -1,0 +1,18 @@
+<p>
+The <code>alternateClassName</code> class descriptor allows you to assign an alternate name to a class. The Ext JS library uses this to support legacy names. For example, 
+<code>Ext.panel.Panel</code> has the alternate name <code>Ext.Panel</code>.
+</p>
+<pre class="runnable">
+Ext.define('Person', {
+    alternateClassName : ['Human', 'UprightBiped'],
+    config : {
+        name : 'Irwin'
+    },
+    speak : function(){
+        alert('Hello, my name is ' + this.getName());
+    }
+});
+Ext.create('Person').speak();
+Ext.create('Human').speak();
+Ext.create('UprightBiped').speak();
+</pre>

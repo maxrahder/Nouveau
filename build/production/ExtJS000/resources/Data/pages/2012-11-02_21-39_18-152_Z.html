@@ -1,0 +1,22 @@
+<h3>
+Ext.Function.createSequence(originalFn, newFn, [scope]):Function
+</h3>
+<p>
+Create a combined function call sequence of the original function + the passed function. The resulting function returns the results of the original function. The passed function is called with the parameters of the original function.
+</p>
+<pre class="runnable">
+var sayJohn    = function(){ alert('John'); };
+var sayPaul    = function(){ alert('Paul'); };
+var sayGeorge  = function(){ alert('George'); };
+var sayRingo   = function(){ alert('Ringo'); };
+
+var theBeatles = Ext.Function.createSequence(
+    sayJohn, 
+    Ext.Function.createSequence(
+        sayPaul, 
+        Ext.Function.createSequence(
+            sayGeorge, 
+            sayRingo)
+    )
+);
+theBeatles();</pre>

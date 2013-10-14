@@ -1,0 +1,89 @@
+<h1>Introduction</h1>
+<img src="resources/images/_YelpExtplorer/DetailPanelUserSketch.png" height="60%" align="left"/>
+<p>In this lab, you'll use a template to put business information in
+	the detail panel. </p>
+<div style="clear: both"/>
+<ol>
+
+	<li>Plan what you'll be doing
+		<p>Currently, the detail panel doesn't have any items. You need to
+			set the panel's "tpl" property. Then add code to update the template as businesses are selected.</p>
+
+	</li>
+
+	<li>Add the template
+	
+		<p>Edit "view/detail/Detail.js" and do a few things:</p>
+		<ul>
+			<li>Give the panel a padding of 4</li>
+			<li>Set <code>autoScroll:true</code></li>
+			<li>Remove the <code>html</code> property</li>
+			<li>Give the edit button an itemId of "edit"</li>
+		</ul>
+		<p>Panels are components, and all components have a <code>tpl</code>. We'll use 
+		that to lay out the HTML for showing business information.</p>
+
+		<p>The <code>tpl</code> property can be set to a few things: A template
+			object, a string (used internally to create a template object) or an
+			array of strings (which are concatenated together to create the
+			template). Using an array means you can make the template more
+			readable.</p>
+		<p>Use this array:</p> <pre>tpl: [
+    '&lt;div style="margin:.75ex;padding:.75ex"&gt;',
+    '&lt;p style="font-size:large;"><span style="background-color: yellow">{name}</span>&lt;/p&gt;',
+    '&lt;img src="resources/images/stars_{stars}.png"/&gt;&lt;br/&gt;',
+    '&lt;img src="<span style="background-color: yellow">{photo_url}</span>"/&gt;&lt;br/&gt;&lt;br/&gt;',
+    'Reviews: <span style="background-color: yellow">{review_count}</span>&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;',
+    '<span style="background-color: yellow">{full_address}</span>&lt;br/&gt;&lt;br/&gt;',
+    '&lt;a href="<span style="background-color: yellow">{url}</span>" target="_blank">Full review at Yelp.com&lt;/a&gt;',
+    '&lt;/div&gt;'
+]</pre>
+		<p>Note that the template contains references to fields in
+			"YelpExtplorer.model.Business".</p>
+
+		<p>Remember to save and refresh now and then to make sure you
+			haven't introduced a syntax error.</p>
+	</li>
+
+	<li>Add code to update the template
+		<p>In a minute, you'll add code to the controller that detects the
+			user selecting a marker. It will run a method in
+			"YelpExtplorer.view.detail.Detail", passing in the selected record.</p>
+		<p>In theory, we could have the controller update the template
+			directly, but we'll encapsulate that in the detail class,
+			via a new method.</p>
+			
+		<p>Add a new method to "YelpExtplorer.view.detail.Detail" using this code:<pre>setRecord: function(record) {
+    this.record = record;
+    var button = this.down('#edit');
+    if (record) {
+        this.update(record.getData());
+        button.enable();
+    } else {
+        this.update('&nbsp');
+        button.disable();
+    }
+}</pre>
+
+	</li>
+
+	<li>Create a new controller that handles selecting businesses
+		<p>Use Sencha Cmd to create a controller named "Business".</p>
+		<p>Your controller needs three things:</p>
+		<ul>
+			<li>A "refs" array with an entry for the detail panel</li>
+			<li>An <code>init()</code> method that listens to the map's
+				"select" event and runs "this.onBusinessSelect".
+			</li>
+			<li>An <code>onBusinessSelect(component, record)</code> method.
+			</li>
+		</ul>
+		<p>The "onBusinessSelect" method should have one line that uses
+			the "ref" you just created to the get the detail panel, and run
+			<code>setRecord()</code> on it, passing the selected record. (You coded
+			<code>setRecord()</code> in the previous step of this lab.).</p>
+</li>
+
+<li>That's it!<p>Save and refresh, then select a school and when the map markers show up, select a marker.
+You should see the detail panel reflect the selected item. <i>C'est formidable!</i></p></li>
+</ol>

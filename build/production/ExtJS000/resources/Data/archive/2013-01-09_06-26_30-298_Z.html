@@ -1,0 +1,27 @@
+<p>Now we can make all the records appear in the list panel on the left. To do this, we will use a full template.
+<ol>
+<li><p>In the <b>Project Inspector</b>, delete the <b>itemTpl</b> by right-clicking on it, and from the menu that appears, select <b>Delete</b>.
+<li><p>Ensure that <b>MyView</b> is selected in the Project Inspector.
+<li><p>In the <b>Config panel</b>, find the <b>tpl</b> property, and click on the <b>(+) on the right</b>.
+<li><p>In the <b>Project Inspector</b>, select <b>tpl</b>.
+<li><p>Select the <b>[Code]</b> button above the Design Canvas/Code View panel (in the upper right corner) so that you can edit the code. Templates are an example of code that can be edited directly in Architect.</p></li>
+<li><p>In <b>Code View</b>, paste in the following code:
+<pre>
+&lt;<b>tpl</b> for="."&gt;
+    &lt;<b>figure</b> style="display:inline-block;
+            margin:5px; width:100px; height:180px;
+            vertical-align:top"&gt;
+        &lt;img src="{<b>image</b>}" width="100"&gt;
+        &lt;figcaption>{<b>artist</b>}&lt;/figcaption&gt;
+    &lt;<b>/figure</b>&gt;
+&lt;<b>/tpl</b>&gt;
+</pre>
+<li><p>In the <b>Project Inspector</b>, select <b>MyView</b>
+<li><p>In the <b>Config panel</b> give this <b>view</b> the following property values:
+<ul>
+<li><p>store: <b>ITunesStore</b></p></li>
+<li><p>itemSelector: <b>figure</b></p></li>
+</ul>
+</ol>
+<p><small><b>Note:</b> The item selector identifies which tag in the template marks a separate item. In this case, it is the <b>figure</b> tag.</i></b></small></p>
+<h2>Save, Publish and Preview the Application</h2>

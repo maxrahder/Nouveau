@@ -1,0 +1,188 @@
+<div type="expander" caption="Variables used to create a visual theme for a Button">
+
+<p><strong>@param {string} $ui
+  </strong><br />
+  <em>The name of the UI being created. Can not included spaces or special punctuation
+(used in CSS class names). </em></p>
+<p><strong>@param {number} [$border-radius=0px]
+  </strong><br />
+<em>The border-radius of the button </em></p>
+<p><strong>@param {number} [$border-width=0px]</strong><br />
+<em>The border-width of the button</em></p>
+<p><strong>@param {color} $border-color</strong><br />
+  <em>The border-color of the button</em></p>
+<p><strong>@param {color} $border-color-over</strong><br />
+<em>The border-color of the button when the cursor is over the button</em></p>
+<p><strong>@param {color} $border-color-focus</strong><br />
+<em>The border-color of the button when focused</em></p>
+<p><strong>@param {color} $border-color-pressed</strong><br />
+<em>The border-color of the button when pressed</em></p>
+<p><strong>@param {color} $border-color-disabled</strong><br />
+<em>The border-color of the button when disabled</em></p>
+<p><strong>@param {number} $padding</strong><br />
+<em>The amount of padding inside the border of the button on all sides</em></p>
+<p><strong>@param {number} $text-padding</strong><br />
+<em>The amount of horizontal space to add to the left and right of the button text</em></p>
+<p><strong>@param {color} $background-color</strong><br />
+<em>The background-color of the button</em></p>
+<p><strong>@param {color} $background-color-over</strong><br />
+<em>The background-color of the button when the cursor is over the button</em></p>
+<p><strong>@param {color} $background-color-focus</strong><br />
+<em>The background-color of the button when focused</em></p>
+<p><strong>@param {color} $background-color-pressed</strong><br />
+<em>The background-color of the button when pressed</em></p>
+<p><strong>@param {color} $background-color-disabled</strong><br />
+<em>The background-color of the button when disabled</em></p>
+<p><strong>@param {string/list} $background-gradient</strong><br />
+  <em>The background-gradient for the button.&nbsp; Can be either the name of a predefined gradient<br />
+or a list of color stops. Used as the `$type` parameter for {@link Global_CSS#background-gradient}.</em></p>
+<p><strong>@param {string} $background-gradient-over</strong><br />
+  <em>The background-gradient to use when the cursor is over the button. Can be either the<br />
+  name of a predefined gradient or a list of color stops. Used as the `$type` parameter<br />
+for {@link Global_CSS#background-gradient}.</em></p>
+<p><strong>@param {string} $background-gradient-focus</strong><br />
+  <em>The background-gradient to use when the the button is focused. Can be either the name<br />
+  of a predefined gradient or a list of color stops. Used as the `$type` parameter for<br />
+{@link Global_CSS#background-gradient}.</em></p>
+<p><strong>@param {string} $background-gradient-pressed</strong><br />
+  <em>The background-gradient to use when the the button is pressed. Can be either the name<br />
+  of a predefined gradient or a list of color stops. Used as the `$type` parameter for<br />
+{@link Global_CSS#background-gradient}.</em></p>
+<p><strong>@param {string} $background-gradient-disabled</strong><br />
+  <em>The background-gradient to use when the the button is disabled. Can be either the name<br />
+  of a predefined gradient or a list of color stops. Used as the `$type` parameter for<br />
+{@link Global_CSS#background-gradient}.</em></p>
+<p><em><strong></strong></em><strong>@param {color} $color</strong><br />
+<em>The text color of the button</em></p>
+<p><strong>@param {color} $color-over</strong><br />
+<em>The text color of the button when the cursor is over the button</em></p>
+<p><strong>@param {color} $color-focus</strong><br />
+<em>The text color of the button when the button is focused</em></p>
+<p><strong>@param {color} $color-pressed</strong><br />
+<em>The text color of the button when the button is pressed</em></p>
+<p><strong>@param {color} $color-disabled</strong><br />
+<em>The text color of the button when the button is disabled</em></p>
+<p><strong>@param {number} $font-size</strong><br />
+<em>The font-size of the button</em></p>
+<p><strong>@param {number} $font-size-over</strong><br />
+<em>The font-size of the button when the cursor is over the button</em></p>
+<p><strong>@param {number} $font-size-focus</strong><br />
+<em>The font-size of the button when the button is focused</em></p>
+<p><strong>@param {number} $font-size-pressed</strong><br />
+<em>The font-size of the button when the button is pressed</em></p>
+<p><strong>@param {number} $font-size-disabled</strong><br />
+<em>The font-size of the button when the button is disabled</em></p>
+<p><strong>@param {string} $font-weight</strong><br />
+<em>The font-weight of the button</em></p>
+<p><strong>@param {string} $font-weight-over</strong><br />
+<em>The font-weight of the button when the cursor is over the button</em></p>
+<p><strong>@param {string} $font-weight-focus</strong><br />
+<em>The font-weight of the button when the button is focused</em></p>
+<p><strong>@param {string} $font-weight-pressed</strong><br />
+<em>The font-weight of the button when the button is pressed</em></p>
+<p><strong>@param {string} $font-weight-disabled</strong><br />
+<em>The font-weight of the button when the button is disabled</em></p>
+<p><strong>@param {string} $font-family</strong><br />
+<em>The font-family of the button</em></p>
+<p><strong>@param {string} $font-family-over</strong><br />
+<em>The font-family of the button when the cursor is over the button</em></p>
+<p><strong>@param {string} $font-family-focus</strong><br />
+<em>The font-family of the button when the button is focused</em></p>
+<p><strong>@param {string} $font-family-pressed</strong><br />
+<em>The font-family of the button when the button is pressed</em></p>
+<p><strong>@param {string} $font-family-disabled</strong><br />
+<em>The font-family of the button when the button is disabled</em></p>
+<p><strong>@param {number} $icon-size</strong><br />
+<em>The size of the button icon</em></p>
+<p><strong>@param {color} $glyph-color</strong><br />
+<em>The color of the button's {@link #glyph} icon</em></p>
+<p><strong>@param {number} [$glyph-opacity=1]</strong><br />
+<em>The opacity of the button's {@link #glyph} icon</em></p>
+<p><strong>@param {number} $arrow-width</strong><br />
+<em>The width of the button's {@link #cfg-menu} arrow</em></p>
+<p><strong>@param {number} $arrow-height</strong><br />
+<em>The height of the button's {@link #cfg-menu} arrow</em></p>
+<p><strong>@param {number} $split-width</strong><br />
+<em>The width of a {@link Ext.button.Split Split Button}'s arrow</em></p>
+<p><strong>@param {number} $split-height</strong><br />
+<em>The height of a {@link Ext.button.Split Split Button}'s arrow</em></p>
+<p><strong>@param {boolean} [$include-ui-menu-arrows=$button-include-ui-menu-arrows]</strong><br />
+  <em>True to include the UI name in the file name of the {@link #cfg-menu}<br />
+arrow icon. Set this to false to share the same arrow bewteen multiple UIs.</em></p>
+<p><strong>@param {boolean} [$include-ui-split-arrows=$button-include-ui-split-arrows]</strong><br />
+  <em>True to include the UI name in the file name of the {@link Ext.button.Split Split Button}'s<br />
+arrow icon. Set this to false to share the same arrow bewteen multiple UIs.</em></p>
+<p><strong>@param {boolean} [$include-split-noline-arrows=false]</strong><br />
+  <em>True to add a &quot;-noline&quot; suffix to the file name of the {@link Ext.button.Split Split Button}'s <br />
+  arrow icon.&nbsp; Used for hiding the split line when toolbar buttons are in their default<br />
+state.</em></p>
+<p><em><strong></strong></em><strong>@param {boolean} [$include-split-over-arrows=$button-include-split-over-arrows]</strong><br />
+  <em>True to use a separate icon for {@link Ext.button.Split Split Button}s when the cursor<br />
+is over the button.&nbsp; The over icon file name will have a &quot;-o&quot; suffix</em></p>
+<p><strong>@param {number} [$opacity-disabled=1]</strong><br />
+<em>The opacity of the button when it is disabled</em></p>
+<p><strong>@param {number} [$inner-opacity-disabled=1]</strong><br />
+<em>The opacity of the button's text and icon elements when when the button is disabled</em></p>
+<p><strong>@member Ext.button.Button</strong><br />
+</div>
+
+<div type="expander" caption="Actual ui code for the Button">
+
+<pre style="margin-bottom: 0; margin-top: 16px">
+<p>@mixin extjs-button-ui
+   $ui,
+   $border-radius: 0px,
+   $border-width: 0px,
+   $border-color: null,
+      $border-color-over: null,
+      $border-color-focus: null,
+      $border-color-pressed: null,
+      $border-color-disabled: null,
+    $padding: null,
+      $text-padding: null,
+    $background-color: null,
+      $background-color-over: null,
+      $background-color-focus: null,
+      $background-color-pressed: null,
+      $background-color-disabled: null,
+    $background-gradient: null,
+      $background-gradient-over: null,
+      $background-gradient-focus: null,
+      $background-gradient-pressed: null,
+      $background-gradient-disabled: null,
+    $color: null,
+      $color-over: null,
+      $color-focus: null,
+      $color-pressed: null,
+      $color-disabled: null,
+    $font-size: null,
+      $font-size-over: null,
+      $font-size-focus: null,
+      $font-size-pressed: null,
+      $font-size-disabled: null,
+    $font-weight: null,
+      $font-weight-over: null,
+      $font-weight-focus: null,
+      $font-weight-pressed: null,
+      $font-weight-disabled: null,
+    $font-family: null,
+      $font-family-over: null,
+      $font-family-focus: null,
+      $font-family-pressed: null,
+      $font-family-disabled: null,
+    $icon-size: null,
+      $glyph-color: null,
+      $glyph-opacity: 1,
+      $arrow-width: null,
+      $arrow-height: null,
+      $split-width: null,
+      $split-height: null,
+      $include-ui-menu-arrows: $button-include-ui-menu-arrows,
+      $include-ui-split-arrows: $button-include-ui-split-arrows,
+      $include-split-noline-arrows: false,
+      $include-split-over-arrows: $button-include-split-over-arrows,
+      $opacity-disabled: 1,
+      $inner-opacity-disabled: 1
+    ) 
+</p></pre>
+</div>

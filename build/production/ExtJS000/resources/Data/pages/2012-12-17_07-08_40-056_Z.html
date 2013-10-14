@@ -1,0 +1,20 @@
+
+<ul>
+    <li>Functions can become values of variables and properties, just like any
+        other value such as a string or a number.</li>
+    <li>Parentheses, (), following a function act as an operator that calls whatever
+        function immediately precedes it.</ul>
+<pre>
+> var x = function() { return 123 }; 
+  undefined
+> x // outputs the contents of x
+  function () { return 123; }
+> x() // outputs the result of calling the function in x
+  123
+> var y = x; // passing a function as a value
+  undefined
+> y // outputs the contents of y
+  function () { return 123; }
+> y === x
+  true
+</pre>

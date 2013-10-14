@@ -1,0 +1,113 @@
+<h1>Introduction</h1>
+
+<p>
+In this lab, you will use Sencha Architect to build an application that shows iTunes music
+video titles in a grid, thumbnails in a data view, and lets the user play the preview video
+in a popup window. <br>Try out <a href="http://localhost/SenchaTraining/ExtJS251/LabSolutions/Architect/Tunes/app.html?_dc=1363011818069" target="lab">http://localhost/SenchaTraining/ExtJS251/LabSolutions/Architect/Tunes/app.html</a>.
+ 
+</p>
+
+<a href="http://localhost/SenchaTraining/ExtJS251/LabSolutions/Architect/Tunes/app.html?_dc=1363011818069" target="lab">
+    <img src="resources/images/_architect/TunesFinal.png">
+</a>
+
+<p>
+The lab lets you use some of the Ext JS features mentioned in the Overview topic.
+Since we haven't really covered coding in Ext JS very much, we will use Sencha Architect,
+which will let us quickly create the application without having to get into a lot of
+programming details.
+</p>
+<p>
+This is an <b>instructor-led</b> lab. In each step the instructor will explain the goal
+of the step, then work the step in front 
+of the class. After answering any questions, the class will then work the step.
+</p>
+<p>Please do not work ahead. Save your work frequently.
+</p>
+<p>
+</p>
+
+<ol>
+<li>Application overview
+<!--
+<p>
+The instructor will use the whiteboard to sketch out the application's view, model and store,
+and the role of the controller.
+</p>
+-->
+<p>
+The data looks like <a href="http://localhost/SenchaTraining/ExtJS251/Labs/Architect/Tunes/data/feed.json" target="_blank">this</a>. The feed is an array of objects, each of which represents a music
+video. The model will define a field for each music video proprety &mdash; the model describes
+a record. The store is a collection of the records in the feed. The data view and grid are
+bound to the store.
+</p>
+</li>
+<li>Initial setup
+<p>Open Sencha Architect.</p>
+<p>On the initial welcome page, under Create New Project, select the latest version of Ext JS.</p>
+
+<p>After Sencha Architect opens, click the [Save] button on the Architect main toolbar at the top.</p>
+
+<p>Set the Save Path to <kbd>[webserver]/SenchaTraining/ExtJS251/Labs/Architect</kbd></p>
+<p>Set the Project Name to <code>NepTunes</code>.</p>
+<p>Click [Save].</p>
+<p>Click [Settings] on the Architect main toolbar, and select the Project tab.</p>
+
+<p>Enter the following URL prefix:<kbd> http://localhost/SenchaTraining/ExtJS251/Labs/Architect/NepTunes</kbd></p>
+</li>
+
+<li>Set the application name
+<p>In the Project Inspector list on the upper right, select the Application.</p>
+<p>In the Config panel in the lower right, set the <code>name</code> property to <code>NepTunes</code>. You can find the property quickly by typing <code>name</code> in the filter text field near the top of the Config panel. You can also 'Quick Value Set' by typing <code>name:'Tunes'</code> in the filter field itself.</p>
+</li>
+
+<li>Add a viewport
+<p>In the Toolbox on the left, select a Container | Viewport and drag it to the Canvas.</p>
+<p>In the Design View, click the flyout gear just outside the upper right corner of MyViewport and set <code>layout</code> to <code>vbox</code>.</p>
+</li>
+
+<li>Add a grid
+<p>In the Toolbox, select a Views | Grid Panel and drag it to the design view. 
+The Project Inspector should look like this:</p>
+<img src="resources/images/_neptunes/NewGridInInspector.png">
+
+<p>IN the center Design Canvas, you'll see a grid with placeholder columns and fake data for prototyping.</p>
+<p>In the Design Canvas, double-click on the title My Grid Panel and change it to NepTunes Grid.</p>
+<p>In the Project Inspector, NepTunes iTunes Grid and in the 
+Config panel's filter box, type itemId to find that property, then set the grid's <code>itemId</code> to <code>neptunesGrid</code>. Note that neptunesGrid now appears in the Project Inspector under MyViewport.</p>
+</li>
+
+<li>Save and preview the application
+<p>On the Architect main toolbar in the upper le, press [Save] then [Preview]. You should see your application. It has a panel titled NepTunes Grid with placeholder columns but no data.  We'll add the data later.</p>
+</li>
+
+<li>Add a panel and title it NepTunes Music Videos
+<p>In the Toolbox, select a Views | Panel and drag it to the Project Inspector on top of MyViewport. The Project Inspector should look like this:</p>
+<img src="resources/images/_neptunes/NewPanelInInspector.png">
+
+<p>In the Design Canvas, double-click on the title My Panel and change it to NepTunes Music Videos.</p>
+<p>In the Design View, click the flyout gear just outside the upper right corner of the panel and check <code>autoscroll</code> and from <code>Select a layout</code> choose <code>fit</code>.</p>
+
+<li>Add a data view in the NepTunes Music Videos panel
+<p>
+In the Toolbox, select a Views | View and drag it to the body of the NepTunes Music Videos panel. Alternately, you can drag it onto NepTunes Music Videos (under MyViewport) in the Project Inspector. The Project Inspector should look like this:</p>
+<img src="resources/images/_neptunes/NewDataViewInInspector.png">
+
+<p>Note that a Ext.view.View component is commonly called a data view. It will contain an image of each of the videos.</p>
+
+<p>In the Project Inspector, select the data view MyView, and in the Config panel
+set its <code>itemId</code> to <code>neptunesView</code>.</p>
+</li>
+
+<li>Save and preview the application
+<p>On the Architect main toolbar press [Save] then [Preview]. You should see your application with two panels labeled NepTunes Grid and NepTunes Music Videos.</p>
+
+<li>Set the theme to Neptune
+<p>We want to change the theme of our app from it's 'classic' light blue, to Neptune, which offers a bolder blue.</p>
+<p>At the bottom of the Project Inspector, click on the Library Resource item. Then in the Config panel, set the theme from classic to <code>neptune</code>.
+
+<li>Save and preview the application
+<p>On the Architect main toolbar press [Save] then [Preview] to see the new theme/skin. You can try out the other themes too. We will be discussing theming later in the week.</p>
+</li>
+
+</ol>

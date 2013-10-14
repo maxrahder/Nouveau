@@ -1,0 +1,46 @@
+<p>
+Card layout can have multiple children, but only one is visible at a time. The visible child takes up all the available space.
+</p>
+<p>
+<code>Ext.layout.container.Card</code> has three methods for changing the item being shown: <code>setActiveItem()</code>, <code>next()</code> and <code>prev()</code>.
+</p>
+<p>
+<code>setActiveItem()</code> takes one parameter, which can be the index of the item to be shown, a reference to the item itself or an item ID.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+
+    layout : 'card',
+
+    items : [ {
+        title : 'Ready',
+        html : 'Ready...'
+    }, {
+        title : 'Steady',
+        html : 'Steady...'
+    }, {
+        title : 'GO!',
+        html : 'GO!'
+    } ],
+    buttons : [ {
+        text : '<',
+        handler : function(b) {
+            b.up('panel').getLayout().prev();
+        }
+    }, {
+        text : '>',
+        handler : function(b) {
+            b.up('panel').getLayout().next();
+        }
+    } ],
+
+    bodyPadding : 6,
+    defaults : {
+        bodyPadding : 16
+    },
+    height : 200,
+    width : 200,
+    renderTo : Ext.getBody()
+
+});
+</pre>

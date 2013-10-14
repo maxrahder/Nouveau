@@ -1,0 +1,15 @@
+<p>
+The example on the previous slide is a little poor, because we just called the class "Mammal". 
+</p>
+<p>
+Like most OO languages, you normally use packages. Packages 
+group related classes. In addition, Ext JS has the concept of a "namespace" &mdash;
+or application name &mdash; which is the root value under-which all your packages are placed. 
+</p>
+<p>
+You should <em>always</em> use an application name and packages. 
+</p>
+<pre class="runnable">
+Ext.define('MyApp.taxonomy.Mammal', {});
+var m = Ext.create('MyApp.taxonomy.Mammal');
+alert('Instance of ' + m.$className + ' which extends ' + m.superclass.$className);</pre>

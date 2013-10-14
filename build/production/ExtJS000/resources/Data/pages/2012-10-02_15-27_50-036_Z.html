@@ -1,0 +1,40 @@
+<table style="width: 100%">
+<tr>
+<th><b>Procedural</b></th><th></th><th><b>Declarative</b></th>
+</tr>
+<tr>
+<td style="vertical-align: top; width: 48%">
+<pre class="runnable">
+var p2 = Ext.create('Ext.tab.Panel');
+p2.setTitle('Procedural');
+p2.setHeight(200);
+p2.setWidth(200);
+var tabOne = Ext.create('Ext.panel.Panel');
+tabOne.setTitle('Tab One');
+tabOne.getHeader().hide();
+var tabTwo = Ext.create('Ext.panel.Panel');
+tabTwo.setTitle('Tab Two');
+tabTwo.getHeader().hide();
+p2.add(tabOne);
+p2.add(tabTwo);
+p2.setActiveTab(0);
+p2.render(Ext.getBody());
+</pre>
+<td style="vertical-align: top; width: 10px"></td>
+<td style="vertical-align: top; width: 48%">
+<pre class="runnable">
+Ext.create('Ext.tab.Panel', {
+	title : 'Declarative',
+	renderTo : Ext.getBody(),
+	height : 200,
+	width : 200,
+	items : [ {
+		title : 'Tab One'
+	}, {
+		title : 'Tab Two'
+	} ]
+});
+</pre>
+</td>
+</tr>
+</table>

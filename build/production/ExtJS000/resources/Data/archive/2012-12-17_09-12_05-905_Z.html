@@ -1,0 +1,56 @@
+<ul>
+<li>Don't code repetitive selectors</li>
+<li>Nesting improves readability</li>
+</ul>
+<table>
+<tr>
+<td>
+<strong>SCSS</strong><br/>
+<pre>
+#myObj {
+   background-color: silver;
+   font: {
+      family: comic sans ms;
+      weight: bold;
+      size: 1em;
+   }
+
+   &:hover {
+     background-color: red;
+   }
+
+   .emphasize {
+      text-decoration: underline;
+      p {
+         margin-bottom: 20px;
+      }
+   }
+}
+</pre>
+</td>
+<td>&nbsp;&nbsp;</td>
+<td>
+<strong>Generated CSS</strong><br/>
+<pre>
+#myObj{
+   background-color: silver; 
+   font-family: comic sans ms;
+   font-weight: bold;
+   font-size: 1em;
+}
+
+#myObj:hover {
+   background-color: red;
+}
+
+#myObj .emphasize {
+   text-decoration: underline;
+}
+
+#myObj .emphasize p {
+   margin-bottom: 20px;
+}
+</pre>
+</td>
+</tr>
+<table>

@@ -1,0 +1,304 @@
+{
+  "topicId": "mvc",
+  "text": "Controllers",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "duration": 150,
+  "children": [
+    {
+      "text": "Introduction",
+      "fileId": "2013-01-25_15-41_22-049_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Review",
+      "fileId": "2013-01-25_15-44_15-540_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "The Controller",
+      "fileId": "2013-01-25_16-07_55-063_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Separation of Model, View and Control",
+      "fileId": "2013-10-09_19-08_35-196_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Review the example",
+      "fileId": "2013-01-25_16-16_49-744_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Requires",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 30,
+      "children": [
+        {
+          "text": "requires",
+          "fileId": "2013-01-03_15-14_59-064_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "requires Loads Files",
+          "fileId": "2013-01-03_15-17_00-579_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "requires",
+          "fileId": "2013-01-03_15-59_27-226_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Controllers, Views, Models and Stores",
+          "fileId": "2013-01-03_16-09_58-876_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "But Some Do More...",
+          "fileId": "2013-01-03_18-36_27-293_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Why the Difference?",
+          "fileId": "2013-01-23_13-44_18-123_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Dynamic Loading and the Ext JS libraries",
+          "fileId": "2013-01-05_15-04_37-593_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "ext, ext-all, dev and debug",
+          "fileId": "2013-01-05_15-59_36-979_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Ext.ComponentQuery",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 20,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-03_18-38_03-174_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "How Can We Handle the Click Event?",
+          "fileId": "2013-01-03_18-45_08-897_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Getting a Reference to the Button",
+          "fileId": "2013-01-03_18-47_49-276_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Using the controller",
+          "fileId": "2013-01-03_19-05_17-819_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "You Can Listen to More Than One Event",
+          "fileId": "2013-01-03_19-08_32-714_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "You Can Listen to More Than One Object",
+          "fileId": "2013-01-03_19-12_04-690_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Selector syntax",
+          "fileId": "2013-01-03_19-17_51-092_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Be Specific, But Not Too Specific",
+          "fileId": "2013-01-03_19-51_38-513_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.ComponentQuery.query()",
+          "fileId": "2013-01-03_20-00_19-253_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "up() and down()",
+          "fileId": "2013-01-03_20-08_09-853_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Other Controller Features",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 10,
+      "children": [
+        {
+          "text": "refs",
+          "fileId": "2013-01-03_19-17_21-557_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Convenience Getters",
+          "fileId": "2013-01-03_19-17_29-643_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Lab: MVC",
+      "fileId": "2012-10-11_16-17_37-106_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Firing Your Own Events",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 10,
+      "children": [
+        {
+          "text": "What versus How",
+          "fileId": "2013-01-03_20-20_39-237_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The view",
+          "fileId": "2013-01-03_20-24_27-658_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The controller",
+          "fileId": "2013-01-03_20-24_33-987_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Changes in the view are decoupled",
+          "fileId": "2013-01-16_17-24_45-124_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "You Are The Class Designer",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 10,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2013-01-05_19-21_23-071_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The Non-reusable way",
+          "fileId": "2013-01-05_19-27_46-955_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The reusable way",
+          "fileId": "2013-01-05_19-28_03-159_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "The reusable way",
+          "fileId": "2013-01-08_15-02_57-400_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Code Your Components to be Reusable",
+          "fileId": "2013-01-05_19-36_19-536_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "initComponent()",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "duration": 10,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2013-01-11_23-16_08-132_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Properties Can be Specified by the Calling Routine",
+              "fileId": "2013-01-11_23-20_40-065_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Initializations in initComponent() Overwrite Those",
+              "fileId": "2013-01-11_23-21_01-489_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "It is Common to Need initComponent() ",
+              "fileId": "2013-01-11_23-28_45-062_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Review: MVC",
+      "fileId": "2013-01-03_22-36_17-099_Z",
+      "html": "",
+      "leaf": true
+    }
+  ]
+}

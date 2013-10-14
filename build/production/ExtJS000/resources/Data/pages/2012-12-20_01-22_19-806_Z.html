@@ -1,0 +1,29 @@
+<pre class="runnable">
+var store = Ext.create('Ext.data.Store',  {
+    storeId: 'beatlesStore',
+    fields: [ 'first', 'last' ],
+    data: [ { first: 'John'   , last: 'Lennon'    },
+            { first: 'Paul'   , last: 'McCartney' },
+            { first: 'George' , last: 'Harrison'  },
+            { first: 'Ringo'  , last: 'Starr'     } ]
+});
+
+Ext.create('Ext.grid.Panel', {
+    title: 'Beatles',
+    store: Ext.data.StoreManager.lookup('beatlesStore'),
+    columns: [
+        { text: 'First Name',  dataIndex: 'first' },
+        { text: 'Last Name', dataIndex: 'last', flex: 1 }
+    ],
+    height: 200,
+    width: 400,
+    renderTo: Ext.getBody()
+});
+
+//Get a reference to a record and update this record
+var record = store.getAt(3);
+record.set({first: 'Guest', last: 'Performer'});
+
+//record.set('first', 'Pete');
+//record.set('last', 'Best');
+</pre>

@@ -1,0 +1,15 @@
+<p>
+The variable token is embedded in curly braces. It references a property
+of the passed data object. Use dot notation to get to any part of the data.
+</p>
+<pre class="runnable">
+var data = { 
+    name: 'Homer Simpson',  
+    age: 38,
+    wife : {name : 'Marge'} 
+};
+var c = Ext.create('Ext.Component', {
+    tpl : '&lt;h1&gt;{name} is married to {wife.name}&lt;/h1&gt;',
+    renderTo : Ext.getBody()
+});
+c.update(data);</pre>

@@ -1,0 +1,42 @@
+.touchExample .wrong-browser {
+    margin-top: 120px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 120%;
+    color: #666;
+}
+.tablet.landscape {
+    padding: 83px 87px;
+    background: url(../../images/tablet-l.jpg) no-repeat;
+}
+.tablet.portrait {
+    padding: 87px 80px;
+    background: url(../../images/tablet-p.jpg) no-repeat;
+}
+.phone.landscape {
+    padding: 22px 79px;
+    width: 637px;
+    height: 367px;
+    background: url(../../images/phone-l.jpg) no-repeat;
+}
+.phone.portrait {
+    padding: 78px 25px;
+    width: 368px;
+    height: 637px;
+    background: url(../../images/phone-p.jpg) no-repeat;
+}
+.miniphone.landscape {
+    padding: 79px 22px 6px 25px;
+    width: 368px;
+    height: 303px;
+    background: url(../../images/phone-small-p.jpg) no-repeat;
+}
+.miniphone.portrait {
+    padding: 22px 6px 25px 79px;
+    width: 303px;
+    height: 368px;
+    background: url(../../images/phone-small-l.jpg) no-repeat;
+}
+.example-container h1 {
+    padding: 15px 0!important;
+}

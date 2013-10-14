@@ -1,0 +1,46 @@
+<p>Ext uses CSS mixins for every component. You can find all mixins in:<br/>
+<strong><ext-folder>/resources/themes/stylesheets/ext4/default/_all.css</strong>
+</p>
+
+<p>
+When using Sencha Cmd it includes all mixins by default.
+You can disable this and add any mixins required for the project yourself:
+</p>
+
+<pre>
+$include-default: false;
+
+// Insert your custom variables here.
+$base-color: #aa0000;
+
+@import 'ext4/default/all';
+
+// You may remove any of the following modules that you
+// do not use in order to create a smaller css file.
+@include extjs-boundlist;
+@include extjs-button;
+@include extjs-btn-group;
+@include extjs-datepicker;
+@include extjs-colorpicker;
+@include extjs-menu;
+@include extjs-grid;
+@include extjs-form;
+@include extjs-form-field;
+@include extjs-form-fieldset;
+@include extjs-form-checkboxfield;
+@include extjs-form-checkboxgroup;
+@include extjs-form-triggerfield;
+@include extjs-form-htmleditor;
+@include extjs-panel;
+@include extjs-qtip;
+@include extjs-slider;
+@include extjs-progress;
+@include extjs-toolbar;
+@include extjs-window;
+@include extjs-messagebox;
+@include extjs-tabbar;
+@include extjs-tab;
+@include extjs-tree;
+@include extjs-drawcomponent;
+@include extjs-viewport;
+</pre>

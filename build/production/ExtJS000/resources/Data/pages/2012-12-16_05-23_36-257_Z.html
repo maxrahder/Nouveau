@@ -1,0 +1,47 @@
+<ul>
+    <li><p>A tree panel is a subclass of <code>Ext.panel.Table</code>. This means
+        that it can have more than one column.</li>
+</ul>
+<pre class="runnable preview">
+Ext.create('Ext.tree.Panel', {
+    fields: ['text', 'aNumber'],
+    columns: [{
+        xtype: 'treecolumn',
+        text: 'Tree Column',
+        dataIndex: 'text',
+        flex: 1
+    }, {
+        text: 'Number Column',
+        xtype: 'numbercolumn',
+        dataIndex: 'aNumber',
+        flex: 1
+    }],
+    root: {
+        text: 'Root Node',
+        expanded: true,
+        children: [{
+            text: 'Child 1',
+            expanded: true,
+            children: [{
+                text: 'Child 1.1',
+                aNumber: 1.1,
+                leaf: true
+            }, {
+                text: 'Child 1.2',
+                aNumber: 1.2,
+                leaf: true
+            }]
+        }, {
+            text: 'Child 2',
+            expanded: true,
+            children: [{
+                text: 'Child 2.1',
+                aNumber: 2.1,
+                leaf: true
+            }]
+        }]
+    },
+    title: 'Tree With Grid Columns',
+    renderTo: Ext.getBody()
+});
+</pre>

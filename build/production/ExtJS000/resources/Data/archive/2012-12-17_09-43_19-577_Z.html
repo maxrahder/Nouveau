@@ -1,0 +1,35 @@
+<ul>
+<li>Mixins allow you to define and reuse blocks of CSS properties</li>
+<li>Mixins also accept parameterized variables</li> 
+</ul>
+<table>
+<tr>
+<td colspan="2"><strong>Mixin with parameters:</strong></td>
+</tr>
+<tr>
+<td>
+<pre>
+@mixin sexy-border($color, $width){
+   border: {
+      color: $color;
+      width: $width;
+      style: dashed;
+   }
+}
+p {   
+   @include sexy-border(blue, 1in);
+} 
+</pre>
+</td>
+<td>&nbsp;&nbsp;</td>
+<td>
+<pre>
+p {
+   border-color: blue;
+   border-width: 1in;
+   border-style: dashed; 
+}
+</pre>
+</td>
+</tr>
+<table>

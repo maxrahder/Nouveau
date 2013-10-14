@@ -1,0 +1,16 @@
+<p>
+...a conspiracy where some Web sites agree to comply with the JSON-P convention. </p>
+<p>To wit:
+the browser sends a parameter, typically called <var>callback</var>. The server then processes 
+the request, and formats the response as a function call, using the callback name.
+</p>
+<p>
+For example, if send this URL to the iTunes JSONP server <br/>
+<a href="https://itunes.apple.com/us/rss/topmovies/limit=5/json?callback=howdeedo" target="lab">
+<code>https://itunes.apple.com/us/rss/topmovies/limit=5/json?<b>callback=howdeedo</b></code></a>
+<br/>
+<br/>
+iTunes responds with
+<br/><code><b>howdeedo</b>({"feed":{"author":{"name":{"label":"iTunes Store"}, "uri":{"label":"</code>
+</p>
+<p>Look at the callback parameter. Whatever you send is used in the response.</p>

@@ -1,0 +1,25 @@
+<p>
+This property allows you to specify an existing HTML element as the
+content of a component. It's usually used when combining legacy content with 
+Ext JS content. 
+</p>
+<p>
+	This config option is used to take an existing HTML element and place it in the layout element of a new component. 
+	It simply moves the specified DOM element <em>after the Component is rendered</em> to use as the content.
+</p>
+
+<div type="expander" caption="Example" class="x-hidden">
+
+<strong>index.html</strong><br/>
+<pre>&lt;div id="myContent" class="x-hidden">
+My Content, hidden from the page.
+&lt;/div>
+</pre>
+
+<strong>*.js</strong>
+<pre>
+Ext.create('Ext.Component', {
+  contentEl: 'myContent'
+});
+</pre>
+</div>

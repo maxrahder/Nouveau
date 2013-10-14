@@ -1,0 +1,29 @@
+<p>
+It's up to you how you implement localization in your code. Here's the approach used by Ext JS:
+</p>
+<div type="expander" caption="Your Class Contains Language Defaults">
+<pre>
+Ext.define('MyApp.view.NameForm',{
+    extend: 'Ext.form.Panel',
+    <span style="background-color: yellow">firstNameLabel: 'First Name',</span>
+    <span style="background-color: yellow">lastNameLabel: 'Last Name',</span>
+    initComponent: function(){
+        this.items = [{
+            name: 'name',
+            fieldLabel: <span style="background-color: yellow">this.firstNameLabel</span>
+        }, {
+            name: 'last',
+            fieldLabel: <span style="background-color: yellow">this.lastNameLabel</span>
+        }];
+        this.callParent();
+    }
+});</pre>
+</div>
+<div type="expander" caption="Your Override Class Is Loaded Last">
+<pre>
+Ext.define('MyApp.locale.fr.view.NameForm',{
+    override: 'MyApp.view.NameForm',
+    <span style="background-color: yellow">firstNameLabel: 'Prénom',</span>
+    <span style="background-color: yellow">lastNameLabel: 'Nom de Famille'</span>
+});</pre>
+</div>

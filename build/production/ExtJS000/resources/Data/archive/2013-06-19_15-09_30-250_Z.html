@@ -1,0 +1,66 @@
+<h1>Introduction</h1>
+<p>
+In this lab, you will generate a new theme for the YelpExtplorer app.</br>
+
+<h1>Objectives</h1>
+<ul class="plain">
+<li>Review requirements for theming an application</li>
+<li>Generate a new theme</li>
+<li>Inspect files of a new theme</li>
+<li>Extend from an existing theme.</li>
+<li>Modify an application to use a new theme</li>
+</ul>
+
+<h1>Generate a theme</h1>
+
+<p class="small">
+<b>Note: </b>This lab requires that Sencha Cmd and Ruby are correctly installed. (<i>See Setup Instructions in the Appendix</i>)
+</p>
+
+<ol>
+<li>Navigate in the console to the application folder (<kbd>SenchaTraining/ExtJS251/Labs/YelpExtplorer</kbd>).</li>
+<li>Generate the theme with Sencha Cmd:
+<p class="small">
+<b>Note: </b>If the YelpTheme already exist, delete it before performing this step.</i>
+</p><pre>
+sencha generate theme YelpTheme
+</pre>
+</li>
+<li>Preview the new folder structure:</p>
+<p>Browse with Windows Explorer or Finder to the <b>SenchaTraining/ExtJS251/Labs/packages/YelpTheme/</b> folder,
+notice the package folder structure.</p></li>
+
+
+<li>Extend from the <b>gray</b> theme:
+<p>Open <kbd>SenchaTraining/ExtJS251/Labs/packages/YelpTheme/package.json</kbd> and alter the file so that it will now extend from ext-theme-gray</p>
+<pre>
+    "extend": "ext-theme-gray"
+</pre>
+</li>
+
+<li>Change the YelpExtplorer's sencha.cfg file to point to a different theme:
+<p>Open the hidden file <kbd>/YelpExtplorer/.sencha/app/sencha.cfg</kbd> and switch the theme</p>
+<pre>
+app.theme=YelpTheme
+</pre>
+</li>
+<li>Build the YelpExtplorer to use the new theme:
+<p class="small">
+<b>Note: </b>If you've run a build using a different theme, clean the build directory by running the <b>sencha ant clean</b> command before performing this step. </i>
+</p><p>Run the following command from the <b>YelpExtplorer</b> folder.</p>
+<pre>
+sencha app build
+</pre>
+</li>
+</ul>
+
+<p>
+By the end of this lab, you should see a new generated
+<a href="http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer" target="_new">YelpExtplorer
+</a>YelpTheme theme which extends from the <b>gray</b> theme.
+</p>
+ 
+<p>A custom theme can extend from the <b>classic</b> Ext JS theme or from the new <b>Neptune</b> theme.</p>
+<p>If you are an advanced theme developer, you could also extend from the <b>neutral</b> or <b>base</b> theme.
+Remember that if you start there, you will be adding <strong>all of the styling</strong> and that will require effort and planning.</p>
+ 

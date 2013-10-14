@@ -1,0 +1,160 @@
+<h1>Introduction</h1>
+<p>In this lab, you will complete the edit window used to change a
+	business title or rating. There's not a lot to code, but it's a little
+	complicated, so read carefully.</p>
+<img src="resources/images/_YelpExtplorer/EditWindowUserSketch.png" />
+
+<h1>Objectives</h1>
+<ul class="plain">
+<li>Review requirements for an edit window view</li>
+<li>Use an alias to add a form panel class to a window class</li>
+<li>Use an alias to add a text field to a form panel class</li>
+<li>Add two buttons to a bottom toolbar of a form panel class</li>
+<li>Define a custom config property in a window class</li>
+<li>Add logic to a button event handler that passes a record to a custom config property in a window class</li>
+<li>Add logic to a window class that loads a record into a form panel before displaying the form</li>
+<li>Add logic to a button event handler that gets a form record and then updates the record in a store</li>
+<li>Add logic to a controller that listens for a store update event and then updates the record in several views</li>
+<li>Use an alias to add a container class to a window class</li>
+<li>Use aliases to add image and slider components to a container class</li>
+<li>Add logic to a window class that listens for a change to a slider component and then updates an image in a form panel</li>
+</ul>
+<h1>Steps</h1>
+
+<ol>
+
+	<li>Plan what you will be doing
+		<p>You already coded the edit window, but so far it just uses the
+			html property to show the window class.</p>
+		<li>Look at the user's sketch.</li>
+<p>There are three important aspects to the window:</p>
+		<ul>
+			<li>It has a text field showing the business name</li>
+			<li>It has a slider that updates the stars image as the user
+				drags from 1 to 5</li>
+			<li>It has Save and Cancel buttons</li>
+		</ul>
+	</li>
+
+	<li>Add the form
+		<p>You need a form panel in the window. It will be the the only item in the window. Therefore, set the window layout to "fit" and define an <kbd>items</kbd> array with a single item. The item will be of xtype "form". Delete the <code>html</code> property.</p>
+	</li>
+
+	<li>Add the text field to the form
+		<p>A form panel is a container, so to put items in it, use the <code>items</code> array. Define a single item, xtype "textfield". Set <code>fieldLabel</code> to "name" and <code>name</code> to "name". Set the form's <code>bodyPadding</code> to 4 so the field isn't up against the edge of the form.</p>
+		<p>Save and refresh your browser and you should see the new field.</p>
+	</li>
+
+	<li>Add the Save and Cancel buttons
+		<p>Panels have an optional <code>buttons</code> array used to specify a bottom toolbar containing buttons. Configure the form to have two buttons: Save and Cancel.</p>
+		<p>Refresh and save and you should see the buttons.</p>
+	</li>
+
+	<li>Sync the form with the specified record
+		<p>As the form is shown, it needs to sync its fields with the selected record. You will encapsulate that within the edit window (rather than coordinating the action from the controller).</p>
+
+<p>There are many ways this could be done. For your implementation, the plan is to have the calling routine pass in the record as the window is created. Recall from the lecture on the class system that the typical way of doing that is to define a config for the property, then have the calling routine pass in the value.</p>
+
+<p> Therefore, edit <kbd>view/detail/EditWindow.js</kbd> and add a config on the <code>YelpExtplorer.view.detail.EditWindow</code> class coded like this: </p> <pre>config : {
+    record : null
+}</pre>
+
+<p>Next, edit <kbd>view/detail/Detail.js</kbd> modify the Edit button handler and pass the record to the window using this code:</p> <pre>{
+    text : 'Edit',
+    itemId : 'edit',
+    handler : function(button) {
+    Ext.create('YelpExtplorer.view.detail.EditWindow', {
+            <span style="background-color: yellow;">record : button.up('yepdetail').record</span>
+        });
+    }
+}</pre>
+		<p>
+			The code is saying "Starting with the button, go up and get a record
+			to the yepdetail window and pass the record reference created in
+			<code>setRecord()</code>
+			.
+		</p>
+		<p>The question now is, how will the window being opened get to
+			that record, and how will it use it to initialize its fields?</p>
+		<p>
+			To update a form's fields with the values in a record, you use the
+			form's
+			<code>loadRecord(record)</code>
+			method. You need to run that as the window is being created. This could done by overriding <code>initComponent</code>, or in an event, such as <code>beforeshow</code>. We'll use <code>initComponent</code>. Add the following as a new method in <code>YelpExtplorer.view.detail.EditWindow</code>:</p>
+<pre>
+initComponent: function(){        
+    this.callParent(); // Fully create the window and the items in it.
+    this.down('form').loadRecord(this.getRecord());
+}
+</pre>
+		<p>
+This uses the getter provided by the class system to get the passed record, then gets the form within the window and runs
+			<code>loadRecord()</code>
+			.
+		</p>
+<p>Save and refresh. Then choose a business and press Edit. You should see the edit window with the business name set to the name of the selected business.
+	</li>
+
+
+	<li>Update the record when Save is pressed
+		<p>So far, the form fields reflect the record. Now you need code
+			that updates the record when the user presses Save.</p>
+		<p>To do that, edit <kbd>view/detail/EditWindow.js</kbd> and add a handler
+			to the Save button.</p> <pre>handler : function(button) {
+    button.up('window').down('form').getForm().updateRecord();
+    button.up('window').close();
+}</pre>
+		<p>The handler gets the parent window, then goes down to get the form panel and runs <code>getForm()</code> to get a reference to the "form submission object." The <code>updateRecord()</code> 		method takes the record passed to <code>loadRecord()</code> 			and updates its values with the form's values. </p>
+
+		<p>Add a handler on the Close button too. Have it simply close the window.</p>
+
+		<p>Save and refresh. Then in your web browser go to the grid tab, select a business, and press Edit. Then change the name and press Save. The grid should update with the new name.</p>
+	</li>
+
+	<li>Update the template when the data changes
+		<p>You probably noticed that the template itself isn't updated as the record changes. Data-aware components, like grids, automatically listen to changes in the store. But we have some components, like the detail panel, that don't do that.</p>
+		<p>One easy place to detect such changes is in the controller.</p>
+		<p> Edit <kbd>controller/Business.js</kbd> and listen to the businesses store "update" event. This is run when a record changes. Simply add this statement at the end of <code>init()</code>
+		</p> <pre>this.getBusinessesStore().on('update', this.onBusinessSelect, this);</pre>
+		<p>In order to reference the businesses store you need to add a "stores" array to the controller, and specify "Businesses".</p>
+		<p>At this point, you are editing the name, and the change is reflected through the user interface. That's nice.</p>
+	</li>
+
+	<h1>Optional</h1>
+
+	<li>Add the slider that sets the rating
+		<p>The slider is a little tricky because two components are used. An image, and a slider, arranged horizontally.</p>
+		<p>Edit <kbd>view/detail/EditWindow.js</kbd> and add a component after the text field. Set its <code>xtype</code> to "container". We need a container because it will hold the image and the slider.</p>
+		<p>Set the container's layout to "hbox" and add two items: one of xtype "image" and the other of xtype "slider", using this code:</p> <pre>{
+    xtype: 'image',
+    width: 84,
+    height: 17,
+    itemId: 'starsImage',
+    style: {
+        'margin-right': '16px'
+    }
+}, {
+    xtype: 'slider',
+    increment: 0.5,
+    decimalPrecision: 1,
+    minValue: 1,
+    maxValue: 5,
+    width: 160,
+    name: 'stars',
+    listeners: {
+        change: function(field) {
+            field.up('window').updateStars();
+        }
+    }
+}</pre>
+		<p>Note that the change listener for the slider is running <code>updateStars()</code> on the window. Implement that using this code:</p>
+		<pre>updateStars : function() {
+    var rating = this.down('field[name="stars"]').getValue();
+    this.down('#starsImage').setSrc('resources/images/stars_' + rating + '.png');
+}</pre>
+		<p>
+			You also need to run <code>updateStars()</code> as the window is created. Do that as the last statement in <code>initComponent</code>.</p>
+		<p>Save, refresh and try editing some names and ratings. As you Save, the grid, view, detail panel and other parts of the user interface will reflect the changes.</p>
+	</li>
+
+</ol>

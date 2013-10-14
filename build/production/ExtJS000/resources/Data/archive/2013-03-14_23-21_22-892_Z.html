@@ -1,0 +1,29 @@
+<div type="expander" caption="Improved Performance">
+<ul>
+<li>In Ext JS 4.1, grid rows were rendered and discarded, one page at a time</li>
+<li>In Ext JS 4.2 grids incrementally render rows during scrolling</li>
+<li>The result is less latency and more fluid scrolling</li>
+<table>
+<tr>
+<td>
+<img src="http://cdn.sencha.io/img/20121205-extjs-grid/extjs4-1.png" width="70%"/>
+</td>
+<td>
+<img src="http://cdn.sencha.io/img/20121205-extjs-grid/extjs4-2.png" width="70%"/>
+</td>
+</tr>
+</table>
+</div>
+
+<div type="expander" caption="Buffered Grids">
+<ul>
+<li>In Ext JS 4.0 Sencha introduced "infinite scroll" grids, with somewhat complicated syntax involving
+pre-fetching data, buffering and code to specify the grid's scroll-bars.</li>
+<li>In Ext JS 4.1 that was refactored, with data stores encapsulating buffering via <code>buffered: true</code></li>
+<li>In Ext JS 4.2 grid buffering is done via the <code>Ext.grid.plugin.BufferedRenderer</code> which decouples
+the grid from its backing store.</li>
+</ul>
+</div>
+
+<p>See the 
+<a href="http://www.sencha.com/blog/first-look-at-ext-js-4-2-grid/" target="_blank">First Look at Ext JS 4.2 Grid blog post</a> for more information.</p>

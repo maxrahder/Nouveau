@@ -1,0 +1,23 @@
+The field must not be empty (not "falsy").
+
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    fields : [ 'first', 'last', { name : 'dob', type : 'date', dateFormat : 'Y/m/d' } ],
+    validations: [ {
+        field: 'dob',
+        type: 'presence',
+        message: 'Date of birth is required'
+    } ]
+});
+// dob is missing
+var record = Ext.create('MyApp.model.Person', { first: 'John', last: 'Lennon' });
+
+var errors = record.validate();
+if ( !errors.isValid() ) {
+    var message = '';
+    errors.each( function (error) {
+        message += error.field + ': ' + error.message + '&lt;br&gt;'; 
+    });
+    Ext.Msg.alert('Errors', message);
+}</pre>

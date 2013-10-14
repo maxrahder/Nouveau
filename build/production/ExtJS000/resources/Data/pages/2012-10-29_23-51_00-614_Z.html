@@ -1,0 +1,10 @@
+<h3>Ext.Array.include(array, item)</h3>
+<p>Push an item into the array only if the array doesn't contain it yet.</p>
+<pre class="runnable">
+var a = [ 1, 2, 3 ];
+// Add the value, if it's not already in the array.
+Ext.Array.include(a, 4);
+alert(a); // alerts [1, 2, 3, 4]
+Ext.Array.include(a, 4);
+alert(a); // alerts [1, 2, 3, 4]
+</pre>

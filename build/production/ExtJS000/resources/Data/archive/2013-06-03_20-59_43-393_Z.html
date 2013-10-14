@@ -1,0 +1,38 @@
+
+<div type="expander" caption="Variables used to create a visual theme for a Toolbar">
+
+<p><strong>@param {String} $ui</strong><br />
+  <em>The name of the UI</em></p>
+<p><strong>@param {color} [$background-color=$toolbar-background-color]</strong><br />
+  <em>The background color of the toolbar</em></p>
+<p><strong>@param {string/list} [$background-gradient=$toolbar-background-gradient]</strong><br />
+  <em>The background gradient of the toolbar</em></p>
+<p><strong>@param {color} [$border-color=$toolbar-border-color]</strong><br />
+  <em>The border color of the toolbar</em></p>
+<p><strong>@param {number} [$border-width=$toolbar-border-width]</strong><br />
+  <em>The border-width of the toolbar</em></p>
+<p><strong>@param {string} [$scroller-cursor=$toolbar-scroller-cursor]</strong><br />
+  <em>The cursor of Toolbar scrollers</em></p>
+<p><strong>@param {string} [$scroller-cursor-disabled=$toolbar-scroller-cursor-disabled]</strong><br />
+  <em>The cursor of disabled Toolbar scrollers</em></p>
+<p><strong>@param {number} [$scroller-opacity-disabled=$toolbar-scroller-opacity-disabled]</strong><br />
+  <em>The opacity of disabled Toolbar scrollers</em></p>
+<p><strong>@param {string} [$tool-background-image=$toolbar-tool-background-image]</strong><br />
+  <em>The sprite to use for {@link Ext.panel.Tool Tools} on a Toolbar</em></p>
+<p><strong>@member Ext.toolbar.Toolbar</strong></p>
+</div>
+<div type="expander" caption="Actual ui code for the Toolbar">
+<pre style="margin-bottom: 0; margin-top: 16px">
+<p>@mixin extjs-toolbar-ui
+   $ui,
+   $background-color: $toolbar-background-color,
+      $background-gradient: $toolbar-background-gradient,
+   $border-color: $toolbar-border-color,
+      $border-width: $toolbar-border-width,
+   $scroller-cursor: $toolbar-scroller-cursor,
+      $scroller-cursor-disabled: $toolbar-scroller-cursor-disabled,
+      $scroller-opacity-disabled: $toolbar-scroller-opacity-disabled,
+   $tool-background-image: $toolbar-tool-background-image
+)</p>
+</pre>
+</div>

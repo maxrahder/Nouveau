@@ -1,0 +1,18 @@
+<pre class="runnable">
+Ext.define('Person', {
+    mixins : {observable: 'Ext.util.Observable'},
+    config : {
+        name : 'Irwin'
+    },
+    constructor : function(config) {
+        this.initConfig(config);
+        this.mixins.observable.constructor.call(this, config);
+        this.callParent(arguments);
+    },
+    updateName : function(){
+        this.fireEvent('change', this);
+    }
+});
+var a = Ext.create('Person');
+a.on('change', function(person){alert('The name has changed to ' + person.getName());});
+a.setName('Hubert');</pre>

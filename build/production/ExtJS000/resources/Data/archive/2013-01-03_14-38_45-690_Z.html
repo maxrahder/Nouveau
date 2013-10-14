@@ -1,0 +1,64 @@
+<h1>Introduction</h1>
+<p>
+For this lab, you will need a working IDE (e.g. Eclipse) with VJET Sencha Plugin installed.
+If that has not been installed, please follow the <a href="?page=Appendix > Setup and Organization > Sencha Plugin">setup instructions</a>.
+</p>
+<p>
+You can use <strong>SenchaTraining/extJS/labs/MVC/MusicLibrary/</strong> but you don't have to save any code.
+The purpose of this lab is to show you how to setup a VJET for Ext JS project.
+</p>
+
+<h1>Steps</h1>
+<ol>
+<li>
+Project setup in Eclipse with the Sencha Eclipse Plugin.
+<ol>
+<li>Open Eclipse, create new VJET project</li>
+<li>Give the project the name <strong>MusicLibrary</strong></li>
+<li>Select <strong>Create project from existing source</strong> and choose the folder <strong>Student/labs/MVC/MusicLibrary/</strong> folder.</li>
+<li>Select <strong>Use project folder as root for sources</strong></li>
+<li>Press Next</li>
+<li>Click the link: <strong>Configure inclusion and exclusion filters</strong></li>
+<li>Add the following exclusion pattern: <strong>ext/</strong><p>This will tell the plugin not to error check framework files.</p></li>
+<li>Press Finish and select the Projects tab</li>
+<li>Click <strong>Add</strong> and check <strong>ExtJSTL-version</strong></li>
+<li>Close the window and press Finish</li>
+</ol>
+</li>
+<li>
+Check if the auto complete code works.
+<ol>
+<li>Make sure <em>Project > Build Automatically</em> is enabled</li>
+<li>Open MusicLibrary/app/GridViewer.js
+<p>This file is empty. Enter: <code>Ext.def</code> and press control + space.
+You should see a popup with possible code solutions.</p>
+</li>
+<li>
+Use the arrow keys and select <code>Ext.define()</code>. Press enter.
+<p>
+Use the following classname: <strong>'MusicLibrary.view.Gridviewer'</strong>.
+</p>
+</li>
+<li>
+Within the brackets enter: <code>ex</code> and press control + space.
+<p>
+Choose the <code>extend</code> config and press enter.
+</p>
+</li>
+<li>
+Enter <code>' '</code>, and within the quotes press control + space
+<p>
+Start typing: <strong>Grid</strong>, select <code>GridPanel</code> and press enter.
+It should extend from the class <code>Ext.grid.Panel</code>.
+</p>
+</li>
+</ol>
+</li>
+</ol>
+
+<p>
+This gives you an idea how auto complete code in Eclipse with the Ext JS plugin works.
+</p>
+<p class="small">
+You can close this lab; you don't need to save the code.
+</p>

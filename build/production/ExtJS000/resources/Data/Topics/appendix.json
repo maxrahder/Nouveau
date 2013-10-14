@@ -1,0 +1,584 @@
+{
+  "topicId": "appendix",
+  "text": "Appendix",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Setup",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Required Software",
+          "fileId": "2012-12-03_14-05_24-934_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Apache Webserver",
+          "fileId": "2013-05-27_09-26_59-951_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Course Files",
+          "fileId": "2013-02-12_08-48_03-149_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Sencha Cmd",
+          "fileId": "2012-12-04_12-40_51-013_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Install Ruby",
+          "fileId": "2012-12-04_11-38_39-274_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Display hidden folders",
+          "fileId": "2013-03-18_10-32_06-974_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Setup Eclipse",
+          "fileId": "2012-12-03_15-57_24-695_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Sencha Plugin",
+          "fileId": "2012-12-04_09-00_31-061_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Starting a VJET project",
+          "fileId": "2013-02-07_19-52_58-476_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "JavaScript",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-12-17_05-54_05-406_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "History",
+          "fileId": "2012-12-17_06-49_26-121_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Important Basics",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "ExtJS Programming",
+              "fileId": "2012-12-17_07-01_58-831_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Read-eval-print loop",
+              "fileId": "2012-12-26_02-48_41-769_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Object Properties",
+              "fileId": "2012-12-20_05-25_00-296_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Functions",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Functions are values",
+              "fileId": "2012-12-17_07-08_40-056_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Methods are properties",
+              "fileId": "2012-12-22_22-33_20-567_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Functions are objects",
+              "fileId": "2012-12-20_04-48_09-111_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "displayName",
+              "fileId": "2012-12-22_22-27_09-884_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "An Ext JS class is a function is an object",
+              "fileId": "2012-12-22_04-22_38-466_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Functions as parameters",
+              "fileId": "2012-12-22_22-35_12-267_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Functions as Ext JS method parameters",
+              "fileId": "2012-12-24_23-02_54-982_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Arguments",
+              "fileId": "2012-12-20_06-21_22-425_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The 'arguments' local variable",
+              "fileId": "2012-12-20_06-28_49-217_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "'this'",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "'this' keyword",
+              "fileId": "2012-12-20_06-50_08-591_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "'this' in a constructor",
+              "fileId": "2012-12-22_23-08_59-595_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "'this' in a static method",
+              "fileId": "2012-12-22_23-11_23-824_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Scope",
+              "fileId": "2012-12-22_05-18_06-451_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "this.callParent(arguments)",
+              "fileId": "2012-12-22_05-00_47-554_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Ext objects",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Ext objects",
+              "fileId": "2012-12-26_05-17_15-201_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.ComponentManager",
+              "fileId": "2012-12-26_05-39_21-226_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Ext.StoreManager",
+              "fileId": "2012-12-26_05-44_13-563_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Prototypes",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Prototypes",
+              "fileId": "2012-12-26_05-59_39-312_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Prototypes (2)",
+              "fileId": "2012-12-27_03-30_04-326_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Prototypal chaining",
+              "fileId": "2012-12-26_06-27_24-031_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Prototypal chaining (2)",
+              "fileId": "2012-12-26_06-52_56-359_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "New Topic",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": []
+            }
+          ]
+        },
+        {
+          "text": "Ext JS gotchas",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "extend",
+              "fileId": "2013-01-22_05-29_05-108_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "initComponent",
+              "fileId": "2013-01-22_05-43_17-165_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Resources",
+          "fileId": "2012-12-22_23-22_07-946_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Getting Help",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Forums",
+          "fileId": "2012-09-18_19-20_49-029_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Premium Support",
+          "fileId": "2012-09-18_19-20_49-030_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Create a ticket",
+          "fileId": "2012-12-12_13-12_40-826_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Review",
+          "fileId": "2012-12-12_11-09_59-705_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Sencha Try",
+          "fileId": "2012-12-12_13-35_35-250_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Market",
+          "fileId": "2012-12-12_13-50_52-776_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Books",
+          "fileId": "2012-09-18_19-20_49-031_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Community Websites",
+          "fileId": "2013-02-04_11-56_20-537_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Sencha Events",
+          "fileId": "2012-12-12_13-37_35-430_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Lab",
+          "fileId": "2012-12-12_11-08_51-603_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Architect Walkthroughs",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Touch",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Lab: Views",
+              "fileId": "2013-01-09_16-51_16-399_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Lab: Models and Stores",
+              "fileId": "2013-01-09_16-52_55-895_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Lab: Templates",
+              "fileId": "2013-01-09_17-03_46-641_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Lab: Controllers",
+              "fileId": "2013-01-09_17-07_01-954_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Ext JS",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Yelp Extplorer",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Lab: Data Connection",
+                  "fileId": "2012-12-10_22-00_08-493_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Lab: Grid Panel",
+                  "fileId": "2012-12-11_11-19_19-317_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Lab: Grid Templates",
+                  "fileId": "2012-12-11_12-23_57-683_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Lab: Custom Component",
+                  "fileId": "2012-12-11_13-19_22-843_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Lab: Controller",
+                  "fileId": "2012-12-11_13-57_48-204_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "TunesMini",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Lab: Hands-on with Sencha Architect",
+                  "fileId": "2013-03-22_13-32_47-564_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "NepTunes",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2013-03-22_23-30_16-421_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The Architect Interface",
+              "fileId": "2013-03-22_23-31_05-207_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "NepTunes Lab 1: Develop the UI Views in Architect",
+              "fileId": "2013-03-22_23-34_35-329_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "NepTunes Lab 2: Add Data to the Grid",
+              "fileId": "2013-03-22_23-35_26-425_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "NepTunes Lab 3: Add DataView thumbnails, Controller, and Window for Videos",
+              "fileId": "2013-03-22_23-35_29-715_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "(Typesetting)",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Labs Template",
+          "fileId": "2013-02-15_10-31_16-635_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Styleguide",
+          "fileId": "2012-12-03_12-51_00-000_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Course Offerings",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Courses",
+              "fileId": "2013-06-11_18-35_33-859_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "ExtJS221 - Essential Ext JS & Sencha Architect Live Online Training",
+              "fileId": "2013-06-11_18-00_54-272_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "ExtJS241—Fast Track to Ext JS 4.2 Training",
+              "fileId": "2013-06-11_18-02_40-461_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "ExtJS251—Fast Track to Ext JS 4.2 Training + Sencha Architect",
+              "fileId": "2013-06-11_18-02_41-653_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Touch252—Fast Track to Cross-platform Dev (Sencha Touch & Ext JS + Architect )",
+              "fileId": "2013-06-11_18-43_41-684_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "GXT101—Java, CSS, and GXT Fundamentals",
+              "fileId": "2013-06-11_18-02_42-947_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "GXT231—Fast Track to Sencha GXT Development",
+              "fileId": "2013-06-11_18-04_13-410_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

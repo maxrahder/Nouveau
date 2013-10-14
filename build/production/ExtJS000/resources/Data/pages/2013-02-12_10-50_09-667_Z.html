@@ -1,0 +1,98 @@
+<h1>Introduction</h1>
+<h2>
+Creating the SenchaTraining folder structure with Sencha Cmd.
+</h2>
+<p>
+Before you can start with this lab, you must have a copy of the <b>course files</b> extracted in the root of your webserver (<b>htdocs</b>).
+If your setup is not complete, ask your instructor for assistance or read the <a href="?page=Appendix > Setup and Organization > Course Files" target="api">instructions</a>.
+</p>
+
+<h1>Objectives</h1>
+<ul class="plain">
+<li>Generate an Ext JS workspace</li>
+</ul>
+
+
+<h1>Steps</h1>
+<ol>
+	<li>
+		Install Sencha Cmd 3.1.2.342
+		<p>
+			In a terminal window, install Sencha Cmd 3.1.2.342 by typing the following:
+			<pre>sencha upgrade 3.1.2.342</pre>
+			Note: If you don't already have a Sencha Cmd version installed, download and install it:<br />
+			<a href="http://cdn.sencha.com/cmd/3.1.2.342/SenchaCmd-3.1.2.342-osx.app.zip">OS X</a> | 
+			<a href="http://cdn.sencha.com/cmd/3.1.2.342/SenchaCmd-3.1.2.342-windows.exe.zip">Windows</a> | 
+			<a href="http://cdn.sencha.com/cmd/3.1.2.342/SenchaCmd-3.1.2.342-linux.run.zip">Linux(32 bit)</a> | 
+			<a href="http://cdn.sencha.com/cmd/3.1.2.342/SenchaCmd-3.1.2.342-linux-x64.run.zip">Linux (64 bit)</a>
+		</p>
+	</li>
+
+	<li>
+		Verify your Sencha Cmd installation
+		<p>
+			Close any open terminal windows, then open a new terminal and type the following:
+			<pre>sencha which</pre>
+			If your Sencha Cmd version is newer than 3.1.2.342, navigate to the printed directory and run the "uninstall" script. Repeat this step until you are using version 3.1.2.342.
+		</p>
+	</li>
+
+<li>Confirm you have the following folder structure in your <b>htdocs</b> folders:
+
+<ul class="plain">
+<li>SenchaTraining
+<ul>
+<li>ExtJS251
+<ul>
+<li>ext-4.2</li>
+<li>Labs</li>
+<li>LabSolutions</li>
+<ul>
+	<li>ext</li>
+</ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</li>
+<li>
+We will start by generating a workspace.
+<p>
+Workspaces allow multiple applications to share the same Ext JS framework.
+Throughout the week you'll be working on multiple labs, and each lab
+is coded as its own application. By using a workspace, all the labs will
+share the same framework. 
+</p>
+<p>Open your console/terminal and navigate to <kbd>htdocs/SenchaTraining/ExtJS251/ext-4.2</kbd></p>
+<p>Run the following command.</p>
+<pre>
+sencha generate workspace ../Labs
+</pre>
+</li>
+
+<li>
+Confirm that the workspace was generated correctly
+<p>
+You will see 3 new folders in the Labs folder: 
+</p>
+
+<ul class="plain">
+<li>A <kbd>.sencha</kbd> hidden folder that stores the Sencha Cmd workspace configuration, </li>
+<li>a new <kbd>ext</kbd> folder which contains the framework libraries that all of your applications will use, and</li>
+<li>a <kbd>packages</kbd> folder which will contain themes, plugins and locales.</li>
+</ul>
+<p>Furthermore, all applications coded under the ExtJS251/Labs
+folder will share the <b>ext</b> install.</p>
+<p>
+You can test that it works, by opening one of the <a href="http://localhost/SenchaTraining/ExtJS251/Labs/Templates/
+" target="_blank">Labs</a> in your browser.
+</p> 
+</li>
+</ol>
+
+<h1>Conclusion</h1>
+<p>In this lab, you used Sencha Cmd to generate a new workspace. A workspace lets multiple applications share resources. You also reviewed the initial MVC file structure and verified the generated workspace with a pre-existing application.</p>
+
+

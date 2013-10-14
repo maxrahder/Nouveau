@@ -1,0 +1,28 @@
+<p>You can also test if the variable is of a certain type...</p>
+<pre class="runnable">
+out(
+ 
+Ext.isArray([]),                 // true
+
+Ext.isBoolean(false),            // true
+Ext.isBoolean('true'),           // false
+
+Ext.isFunction(function(){}),    // true
+
+Ext.isNumber(1 + 1),             // true
+Ext.isNumber(Infinity),          // false
+Ext.isNumeric(1 + 1),            // true
+Ext.isNumeric('99'),             // true
+
+Ext.isObject(12),                // false
+Ext.isObject({}),                // true
+
+Ext.isPrimitive(12),             // true
+Ext.isPrimitive(new Number(0)),  // false
+
+Ext.isString('hi'),              // true
+
+Ext.typeOf('hi')                 // 'string'
+
+);
+</pre> 

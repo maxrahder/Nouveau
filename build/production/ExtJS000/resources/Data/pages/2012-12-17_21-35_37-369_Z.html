@@ -1,0 +1,22 @@
+<pre class="runnable">
+// Global data field validations
+Ext.data.validations.badname = function(config, value) {
+    return (value != 'Hubert');
+};
+Ext.data.validations.badnameMessage = 'The name cannot be Hubert';
+
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    fields : [ 'name' ],
+    validations : [ {
+        field : 'name',
+        type : 'badname'
+    } ]
+});
+var m = Ext.create('MyApp.model.Person', {name : 'Fred'});
+alert(m.get('name') + ' is ' + (m.validate().isValid()?'':'not') + 'valid.');
+
+m.set('name', 'Hubert');
+m.validate().each( function (error) {
+    alert(error.message); 
+});

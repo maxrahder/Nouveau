@@ -1,0 +1,36 @@
+<p>This layout allows you to easily render content into an HTML table. </p>
+<ul>
+<li><b>rowspan</b> Applied to the table cell containing the item.</li>
+<li><b>colspan</b> Applied to the table cell containing the item.</li>
+<li><b>cellId</b> An id applied to the table cell containing the item.</li>
+<li><b>cellCls</b> A CSS class name added to the table cell containing the item.</li>
+</ul>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+    title: 'Table Layout',
+    width: 300,
+    height: 150,
+    layout: {
+        type: 'table',
+        // The total column count must be specified here
+        columns: 3
+    },
+    defaults: {
+        // applied to each contained panel
+        bodyStyle: 'padding: 20px'
+    },
+    items: [{
+        html: 'Cell A content',
+        rowspan: 2
+    },{
+        html: 'Cell B content',
+        colspan: 2
+    },{
+        html: 'Cell C content',
+        cellCls: 'highlight'
+    },{
+        html: 'Cell D content'
+    }],
+    renderTo: Ext.getBody()
+});
+</pre>

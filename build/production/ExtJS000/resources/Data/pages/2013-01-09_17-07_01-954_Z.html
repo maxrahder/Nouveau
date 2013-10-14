@@ -1,0 +1,34 @@
+<h1>Introduction</h1>
+<p>
+In this lab, you will use <b>Sencha Architect</b> to define a <b>Controller</b> to enable the <b>Search Field</b> for your <b>Twitter</b> search mobile application. </p>
+
+
+<h1>Steps</h1>
+
+</p>
+
+<ol>
+
+        <li><p>In the upper-right corner of the <b>Project Inspector</b>, click <b>[+]</b> and choose <b>Controller</b>.</p></li><li><p>Select <b>MyController</b> under the <b>Controllers</b> section of the <b>Project Inspector</b>.</p></li>
+	<li><p>In the <b>Config</b> filter, start to type <b>user</b>. This will filter the <b>user</b> named properties. 
+        <li><p>Select <b>userClassName</b> below and set the value to <b>TwitterSearchController</b>.</p></li>
+<li><p>In the <b>Config</b> filter, type in <b>actions</b>.</p></li>
+	<li><p>In the <b>Actions</b> property below, click <b>[+]</b> to add a <b>Controller Action</b>.</p></li>
+	<li><p>Choose a target type: <b>Ext.field.Search</b></p></li>
+	<li><p>Choose an event by name: <b>blur</b></p></li>
+	<li><p>Click the arrow to select <b>onSearchFieldBlur</b> and add the following code in the editor:</p></li>
+
+<pre>
+Ext.getStore('Tweets').load({
+    params : {
+    q : textfield.getValue()
+  }
+});
+</pre>
+
+<li><p><b>Save</b> and <b>Preview</b>.</p></li>
+	
+	
+</ol>
+
+<h1>Conclusion</h1>

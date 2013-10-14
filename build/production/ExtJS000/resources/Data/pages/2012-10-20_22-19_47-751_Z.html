@@ -1,0 +1,36 @@
+<pre class="runnable">
+Ext.create('Ext.container.Container', {
+
+	// There is one item in this container
+	items : [ {
+
+		xtype : 'container',
+		// There are two items in this container
+		items : [ {
+			xtype : 'button',
+			text : 'Beta'
+		} , {
+			xtype : 'button',
+			text : 'Alpha'
+		} ],
+
+		style: {border: 'thin solid red'},
+		height: 200,
+		width: 200,
+		padding: 12
+
+	}],
+
+	renderTo : Ext.getBody(),
+	style: {border: 'thin solid blue'},
+	padding: 12,
+	height: 300,
+	width: 300
+});</pre>
+<p>
+Take a look at 
+<a href="http://docs.sencha.com/extjs/#!/example/layout/complex.html" target="api">
+the complex layout example</a>
+ from the online documentation. Where
+are the containers, and what's nested in what?
+</p>

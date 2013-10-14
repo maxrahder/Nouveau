@@ -1,0 +1,16 @@
+<p>
+Because "-dev" gives you feedback about dependency errors as you run your code. 
+These errors should be resolved in order to ensure the component library you
+build for production is complete.
+</p>
+<p>
+The down-side is that it takes time to load components.
+</p>
+<p>
+Some developers use "ext-all" part of the time, just to make page refreshes quicker.
+It's quicker because "ext-all" includes all the components in Ext JS &mdash; those
+will already be in memory, so they won't get loaded dynamically. 
+</p>
+Then, perhaps at the end of the day, you'd switch to "ext-dev" again to make sure there
+aren't any new dependency issues.
+</p>

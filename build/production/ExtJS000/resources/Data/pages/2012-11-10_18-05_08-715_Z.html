@@ -1,0 +1,20 @@
+<p>
+Since radar charts are essentially category charts, a given data set may need to be rotated.
+</p>
+<p>For example, a dataset like this...</p>
+<pre class="sample">
+[{ref : 'A', 
+ cleanliness : 7, service : 6, food : 6, value : 4, swank : 6, charm : 4},
+{ref : 'B', 
+ cleanliness : 7, service : 6, food : 6, value : 4, swank : 6, charm : 4},
+{ref : 'C', 
+ cleanliness : 7, service : 6, food : 6, value : 4, swank : 6, charm : 4}]</pre>
+<p>would need to be rotated like this:</p>
+<pre class="sample">
+[ { x : 'cleanliness', A : 7, B : 9, C : 3 }, 
+  { x : 'service'    , A : 6, B : 8, C : 8 }, 
+  { x : 'food'       , A : 6, B : 7, C : 6 },   
+  { x : 'value'      , A : 4, B : 7, C : 6 }, 
+  { x : 'swank'      , A : 6, B : 8, C : 8 }, 
+  { x : 'charm'      , A : 4, B : 8, C : 8 } ]</pre>
+

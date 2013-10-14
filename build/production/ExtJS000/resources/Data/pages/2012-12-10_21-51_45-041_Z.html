@@ -1,0 +1,95 @@
+
+<h1>Introduction</h1>
+
+<p>In this lab you make an AJAX call, and process the response.
+
+<h1>Steps</h1>
+
+<ol>
+
+<li>Review <code>Labs/HTTP/app.js</code>
+<p>
+The code has very little in it: An <code>Ext.XTemplate</code> and an empty <code>launch()</code> function.
+</p>
+
+<li>Look at the data
+<p>
+<a href="http://localhost/SenchaTraining/ExtJS251/Labs/HTTP/data/theBeatles.json" target="lab"><code>/SenchaTraining/ExtJS251/Labs/HTTP/data/theBeatles.json</code></a> contains a JSON array with four elements, one per Beatle.
+The data also includes the URL for an image of each Beatle.
+</p>
+
+<li>Code the AJAX request
+<p>
+Write the code to make an AJAX call to request <code>theBeatles.json</code>. How do you code that? 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.Ajax" target="api">The API documentation</a> 
+explains it. For now, just specify the URL. We'll add code for processing response in a later step. 
+The URL is "data/theBeatles.json".
+</p>
+<p>
+Hint: The AJAX call, with URL, will be three lines of code.
+</p>
+</li>
+
+<li>Code, save and run
+<p>
+Once you've coded it, use your browser to visit your page. Open the debugger and verify that the HTTP call is 
+being made, and that the server is returning the contents of <code>data/theBeatles.json</code>
+</p>
+</li>
+
+<li>Receive the response
+<p>
+Review <a href="http://docs.sencha.com/extjs/#!/api/Ext.Ajax-method-request" target="api">the API documentation
+for the <code>request()</code> function</a>.
+</p>
+<p>
+Write the callback function to run when the server successfully responds. The first parameter passed to the function 
+is the server response.
+</p>
+<p>
+For now, just put a <code>console.log(response)</code> in the function. 
+</p>
+<p>Code it, save and test. Are you seeing your log message? Since you are logging the whole response object you can 
+inspect it in the debugger on the console.</p>
+</li>
+
+<li>Convert the response to an object
+<p>
+From lecture, and from inspecting the log message, you know that the response has three properties of interest:
+<code>status</code>, <code>responseXml</code> and <code>responseText.</code>
+</p>
+<p>
+In the debugger, look at the log statement again and note the contents of the <code>responseText</code> property. 
+You should see the server response, which is the string content of <code>data/theBeatles.json</code>.
+</p>
+<p>
+How do you convert a JSON <em>string</em> to an object? 
+Review <a href="http://docs.sencha.com/extjs/#!/api/Ext.JSON-method-decode" target="api">the API documentation</a>.
+Convert the response text JSON string and store it in a local variable named <code>data</code>, and show that value with
+a <code>console.log(data)</code>.
+</p>
+<p>
+Code it, save it and look for the converted response text in the console?
+</p>
+</li>
+
+<li>Render the data using the template
+<p>
+You'll recall from the first step that the template is referenced in the variable <code>t</code>. To have the
+template render use this code:
+</p>
+<pre>
+t.overwrite(Ext.getBody(), data); 
+</pre>
+<p>
+Code it, save it and run it. You should see the Beatles' pictures with their names.
+</p>
+</li>
+</ol>
+
+<h1>Conclusion</h1>
+<p>
+Use <code>Ext.Ajax.request()</code> to make HTTP requests. Use a <code>success</code> function, to
+process the response. Among other things, the response contains the HTTP status, the <code>responseText</code>
+string, and <code>responseXml</code>, when the server responds with XML data (and uses the correct MIME type).
+</p>

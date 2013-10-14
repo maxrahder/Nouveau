@@ -1,0 +1,39 @@
+<p>The following basic math operators may be applied directly on numeric data values:
+<code>+ - * /</code></p>
+
+<pre class="runnable">
+//array with data
+var data = {
+    name: 'The Simpsons',
+    family: [
+        { name: 'Homer',  age: 38, gender: 'male' },
+        { name: 'Margareth',  age: 36, gender: 'female' },
+        { name: 'Bart',    age: 10, gender: 'male' },
+        { name: 'Lisa',   age: 8, gender: 'female' },
+        { name: 'Maggie', age: 1, gender: 'female' }
+    ]
+};
+
+//template
+var tpl = new Ext.XTemplate(
+    '&lt;h2>Family: {name}&lt;/h2>&lt;br>',
+    '&lt;table class="table">',
+    '&lt;tpl for="family">',
+        '&lt;tpl if="this.isKid(age)">',
+            '&lt;tr>&lt;td colspan="2">{name} is still a kid.',
+             '&ltp>{name} is to young! {age - 18} years...&lt/p>',
+            '&lt/td>',
+        '&lt;/tpl>',
+    '&lt;/tpl>',
+    '&lt;/table>',
+    {
+        // XTemplate configuration:
+        disableFormats: true,
+        // member functions:
+        isKid: function(age){
+           return age < 18;
+        }
+    }
+);
+tpl.overwrite(Ext.getBody(), data);
+</pre>

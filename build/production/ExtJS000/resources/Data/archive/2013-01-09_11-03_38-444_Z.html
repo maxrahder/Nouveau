@@ -1,0 +1,17 @@
+<p>Validation is the process of checking content to see if it complies with your validation rules. Ext JS4 provides for immediate feedback based on a new event flow model.</p>
+
+<h1>There are three mechanisms that aid in data validation:</h1>
+
+<div type="expander" caption="change Events">
+<p>Input fields now listen to a set of modern browser events that allow us to detect changes immediately as the user makes them via any possible method, including typing, cutting/pasting, and dragging text into the field. We handle these events and roll them up together, firing the field's <b>changeevent</b> when a change in its value is observed.</p>
+</div>
+
+<div type="expander" caption="validitychange Events">
+<p>Each field validates itself when its value changes. When its validity changes from valid to invalid or vice versa, it fires a new validitychange event.</p>
+</div>
+
+<div type="expander" caption="BasicForm validitychange Events" >
+<p>When any of the validitychange events fired by the fields causes the overall validity of the enclosing form to change, the BasicForm fires a validitychange event of its own.</p>
+</div>
+
+<p><small><b>Note: </b><i> Polling has been replaced as the default behavior by the new event flow model. Some browsers (notably Opera and older versions of Safari) do not always fire events when fields are edited in certain ways such as cutting/pasting via the context menu. If you must absolutely ensure that changes triggered by the above actions also trigger validation, you can use FormPanel's pollForChanges and pollInterval configs, and/or startPolling() and stopPolling() methods to check for changes on a timer.</i></small></p>

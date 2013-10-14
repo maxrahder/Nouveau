@@ -1,0 +1,28 @@
+<h1>Web server</h1>
+<p>For this course we will make use of the built-in web server of Sencha Cmd. (Jetty 8.1.7).
+See how the <a href="?page=Overview%20%3E%20Writing%20Code%20%3E%20Sencha%20Cmd%20%3E%20Built-in%20web%20server">Sencha Cmd built-in web server</a> works.
+</p>
+
+<h2>XAMPP</h2>
+<p>When you prefer to run your own local (Apache) web server, we recommend using <a href="http://www.apachefriends.org/en/xampp.html" target="_blank">XAMPP</a>, when no other webservers are installed, XAMPP should work on the fly after starting it!</p>
+
+<h3>Troubleshooting XAMPP & IIS</h3>
+<p>
+When IIS is installed, this one needs to be stopped.<br/>
+Also kill all the SQL services, one of these is using <b>port 80</b>.
+If you can change the port to anything else; that should work too.
+</p>
+
+<h2>Tomcat</h2>
+<p>When using Apache Tomcat; copy the SenchaTraining files to the <b>webapps</b> folder.
+Make sure directory listings are enabled. By default this is disabled in Tomcat. 
+</p>
+<p>
+Open the file: <b>conf/web.xml</b> and add the following config:
+</p>
+<pre>
+&lt;init-param>
+    &lt;param-name>listings&lt;/param-name>
+    &lt;param-value>true&lt;/param-value>
+&lt;/init-param>
+</pre>

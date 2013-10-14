@@ -1,0 +1,11 @@
+<h3>Ext.Array.intersect(array1, array2, etc)</h3>
+<p>Merge multiple arrays into one with unique items that exist in all of the arrays.</p>
+<pre class="runnable">
+var a = [ 1, 2, 3 ];
+var b = [ 2, 3, 4 ];
+var c = [ 2, 3, 5 ];
+var d = [ 2, 3, 6 ];
+var b = Ext.Array.intersect(a, b, c, d);
+alert(b); // alert [2, 3] - the overlaying items
+</pre>
+<img height="30%" src="resources/images/SetIntersect.png"/>

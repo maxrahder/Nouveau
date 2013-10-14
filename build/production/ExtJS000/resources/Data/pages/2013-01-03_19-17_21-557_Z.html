@@ -1,0 +1,19 @@
+<p>
+Controllers have a <code>refs</code> property that allows you to put a name on 
+a selector. The name can then be used as a getter in your controller methods.
+</p>
+<p>For example, if you had a text field with the <code>itemId</code> mySearchField, 
+you could code this ref:
+</p>
+<div class="readonly">
+<pre class="runnable">
+refs : [ {
+    ref : 'searchField',
+    selector : 'mypanel #mySearchField'
+} ]</pre>
+</div>
+<p>
+As a result, in your controller methods you can then get a reference to the component
+via <code>this.getSearchField()</code>.
+</p>
+

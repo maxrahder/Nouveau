@@ -1,0 +1,17 @@
+<p>
+The point is, the <code>Ext.app.Application</code> <code>controllers</code> array and the
+<code>Ext.app.Controller</code> <code>models</code>, <code>stores</code> and <code>views</code> arrays, all essentially do a "<code>requires</code>" call. 
+</p>
+<pre>
+Ext.define('MyApp.controller.BeatlesController', {
+    extend : 'Ext.app.Controller',
+    <b style="background-color: yellow">views : [ 'BeatlesGrid' ]</b>,
+...</pre>
+<p>
+Is equivalent to
+<pre>
+Ext.define('MyApp.controller.BeatlesController', {
+    extend : 'Ext.app.Controller',
+    <b style="background-color: yellow">requires : [ 'MyApp.view.BeatlesGrid' ]</b>,
+...</pre>
+

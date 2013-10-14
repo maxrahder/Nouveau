@@ -1,0 +1,16 @@
+<h3>Ext.Array.sort(array, [fn])</h3>
+<p>
+Sorts the elements of an Array. By default, this method sorts the elements alphabetically and ascending.
+</p>
+<pre class="runnable">
+var a = [ 'john', 'george', 'ringo' ];
+Ext.Array.sort(a); 
+alert(a); // alerts 'george', 'john', 'ringo'
+
+var sortByLength = function(s1, s2){
+    return (s1.length - s2.length);
+}
+Ext.Array.sort(a, sortByLength); 
+alert(a); // alerts 'john', 'ringo', 'george' 
+
+</pre>

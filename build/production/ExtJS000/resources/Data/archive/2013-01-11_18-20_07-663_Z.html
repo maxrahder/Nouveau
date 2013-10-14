@@ -1,0 +1,25 @@
+<div type="expander" caption="Sencha Cmd installed">
+If not installed <a href="http://localhost/working/NouveauTraining/Application/?page=Appendix%20%3E%20Setup%20and%20Organization%20%3E%20Sencha%20Cmd">use this installer guide</a>.
+</div>
+<div type="expander" caption="Your application must have been initially generated via Sencha Cmd">
+You didn't? Here's a work around:
+<ol>
+<li>For example if your app is called "MyDemoApp" rename it to "MyDemoApp-backup"</li>
+<li>Create a new empty folder: "MyDemoApp"</li>
+<li>Generate a new app with Sencha Cmd in the same name space:
+<pre>sencha generate app MyDemoApp /path/to/MyDemoApp</pre>
+</li>
+<li>Copy over the sencha app folder</li>
+<li>Test it, if it works you can delete the backup</li>
+</div>
+<div type="expander" caption="When needed, dependent classes should be identified using either Ext.require() or the requires configuration attribute">
+ExtJS will issue warnings to the console for any undeclared dependencies.</li>
+</div>
+<div type="expander" caption="In case you are using files in folders different then the generated m-v-c-s folders, you need to add these to the Sencha paths in your Sencha config: <code>.sencha/sencha.cfg</code>. 
+<p><strong>Note:</strong> this is a hidden folder"</p>
+<b>.sencha/appsencha.cfg</b><br/>
+<pre>
+//added a path to a ux folder.
+app.classpath=${app.dir}/app/ux,${app.dir}/app.js,${app.dir}/app
+</pre>
+</div>

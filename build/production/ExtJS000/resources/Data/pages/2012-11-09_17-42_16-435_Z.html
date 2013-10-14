@@ -1,0 +1,27 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.Trigger" target="api"><code>Ext.form.field.Trigger</code></a></p>
+
+Provides a convenient wrapper for TextFields that adds a clickable trigger button (looks like a combobox by default). The trigger has no default action, so you must assign a function to implement the trigger click handler by overriding onTriggerClick. You can create a Trigger field directly, as it renders exactly like a combobox for which you can provide a custom implementation.
+
+<pre class="runnable preview">
+Ext.define('Ext.ux.CustomTrigger', {
+    extend: 'Ext.form.field.Trigger',
+    alias: 'widget.customtrigger',
+
+    // override onTriggerClick
+    onTriggerClick: function() {
+        alert('You clicked my trigger!');
+    }
+});
+
+Ext.create('Ext.form.FormPanel', {
+    title: 'Form with TriggerField',
+    bodyPadding: 5,
+    width: 350,
+    renderTo: Ext.getBody(),
+    items:[{
+        xtype: 'customtrigger',
+        fieldLabel: 'Sample Trigger',
+        emptyText: 'click the trigger'
+    }]
+});
+</pre>

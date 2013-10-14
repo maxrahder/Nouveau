@@ -1,0 +1,38 @@
+<p>In order to post your form data to an application server via an HTTP POST operation, you will need to configure a url property for the form. Form data may be transmitted to the server by calling the Ext.form.Basic.submit() method as illustrated by the following example:</p>
+ 
+<pre>
+{ 
+    xtype: 'form',
+    url: 'http://www.senchatraining.com/savedata.cfm',
+    bodyPadding: 5,
+    items: [{
+        xtype: 'textfield',
+        name: 'firstname',
+        fieldLabel: "Your Name",
+        allowBlank: false
+    }],
+    buttons: [{
+        text: 'Reset',
+        handler: function() {
+            this.up('form').getForm().reset();
+        }
+    },{
+        text: 'Save',
+        formBind: true,
+        handler: function() {
+            var form = this.up('form').getForm();
+            if (form.isValid()) {
+                form.submit({
+                    success: function(form, action) {
+                        Ext.Msg.alert('Success', action.result.msg);
+                    },
+                    failure: function(form, action) {
+                        Ext.Msg.alert('Failed', 
+                        action.failureType + 'Failure');
+                    }
+                });
+            } // if
+        } // handler
+     }]
+}
+</pre>

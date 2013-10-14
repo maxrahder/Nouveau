@@ -1,0 +1,34 @@
+<p>
+Components are inherently resizeable. To enable this feature, the programmer specifies the location 
+of grab handles: on the edges or corners of a component. Like the floating mixin, <a href="http://docs.sencha.com/extjs/#!/api/Ext.resizer.Resizer"  target="api">Ext.resizer.Resizer</a>
+is used for windows.
+</p>
+<pre class="runnable preview">
+ Ext.create('Ext.Component', {
+	renderTo: Ext.getBody(),
+	style: {'background-color': '#ffffaa'},   
+	html: 'Resize me!',
+	padding: 12, 
+	height: 50,
+	width: 200,
+
+	resizable: true,
+	// Try uncommenting this to change handles and pin them
+	// resizable: {
+	    // handles: 's e se',
+	    // pinned: true
+	// },
+
+	minWidth: 100,
+	minHeight: 25,
+	maxWidth: 300,
+	maxHeight: 100,
+
+});
+
+
+
+
+</pre>
+
+

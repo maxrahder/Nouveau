@@ -1,0 +1,12 @@
+<h3>Ext.String.format(string, values):String</h3>
+<p>
+Allows you to define a tokenized string and pass an arbitrary number of arguments to replace the tokens. Each token must be unique, and must increment in the format {0}, {1}, etc.</p>
+<pre class="runnable">
+var f = "The {0} in {1} falls {2} on {3}.";
+
+var s = Ext.String.format(f, "rain", "Spain", "mainly", "the plain");
+alert(s);
+
+s = Ext.String.format(f, "snow", "Cleveland", "partially", "Lake Erie");
+alert(s);
+</pre>

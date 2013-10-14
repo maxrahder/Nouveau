@@ -1,0 +1,30 @@
+<ul>
+  <li><code>scale</code> &mdash; 'small' | 'medium' | 'large'</li>
+</ul>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+    title : 'Panel',
+    renderTo : Ext.getBody(),
+    height : 200,
+    bodyPadding : 16,
+    defaults : {
+        margin: 8
+    },
+    items : [{
+        xtype : 'button',
+        scale : 'small',
+        text : '1',
+        glyph: '85@Pictos'
+    }, {
+        xtype : 'button',
+        scale : 'medium',
+        text : '2',
+        glyph: '85@Pictos'
+    }, {
+        xtype : 'button',
+        scale : 'large',
+        text : '3',
+        glyph: '85@Pictos'
+    }]
+});
+</pre>

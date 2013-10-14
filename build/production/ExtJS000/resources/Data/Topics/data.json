@@ -1,0 +1,764 @@
+{
+  "topicId": "data",
+  "text": "Sending and Receiving Data",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "duration": 210,
+  "children": [
+    {
+      "text": "The Data Package",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-12-17_17-19_47-386_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Models, Proxies and Stores",
+              "fileId": "2012-09-18_19-20_49-023_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Key Classes",
+              "fileId": "2012-12-17_17-31_01-941_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Review: Models, Proxies and Stores",
+              "fileId": "2012-12-17_17-35_46-960_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Sample Data Feed",
+              "fileId": "2012-10-24_21-27_46-947_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Reading The Sample Data",
+              "fileId": "2012-12-17_17-32_01-499_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Flow of Data",
+              "fileId": "2012-12-17_17-29_32-934_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Models",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction to Models",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "What is a Model?",
+                  "fileId": "2012-12-18_02-09_22-322_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Main Properties",
+                  "fileId": "2012-10-24_21-09_16-363_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Extending the Model Class",
+                  "fileId": "2012-12-17_22-22_26-444_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "idProperty",
+                  "fileId": "2012-12-18_02-03_08-521_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Create Models with Sencha Cmd",
+                  "fileId": "2012-12-18_01-33_52-714_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Fields",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "fields array",
+                  "fileId": "2012-09-18_19-20_49-024_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "field types",
+                  "fileId": "2012-10-25_00-17_33-632_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Ext.data.Field",
+                  "fileId": "2012-10-24_21-11_45-876_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "date Field",
+                  "fileId": "2012-12-18_02-14_30-052_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Ext.data.Types convert()",
+                  "fileId": "2013-09-25_16-20_17-107_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "You Can Provide the convert() Function",
+                  "fileId": "2012-09-18_19-20_49-025_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Your convert()",
+                  "fileId": "2013-01-11_20-11_14-600_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "auto and Dates",
+                  "fileId": "2013-09-25_15-46_03-830_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Custom Field Types",
+                  "fileId": "2013-09-25_19-04_26-352_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Lab: Model",
+                  "fileId": "2012-10-25_00-53_38-831_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Custom Functions",
+              "fileId": "2012-12-17_18-58_36-221_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Validations",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Validation Types",
+                  "fileId": "2012-12-17_19-14_19-731_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Validation Steps",
+                  "fileId": "2012-12-17_19-48_52-506_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Presence",
+                  "fileId": "2012-12-17_19-26_21-326_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Length",
+                  "fileId": "2012-12-17_20-00_13-620_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Exclusion",
+                  "fileId": "2012-12-17_20-01_24-387_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Inclusion",
+                  "fileId": "2012-12-17_20-37_47-323_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Format",
+                  "fileId": "2012-12-17_20-51_28-044_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Custom Validations",
+                  "fileId": "2012-12-17_21-35_37-369_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Associations",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Introduction",
+                  "fileId": "2013-01-13_17-11_43-983_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Example",
+                  "fileId": "2013-01-13_17-12_35-570_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "hasMany",
+                  "fileId": "2013-10-02_15-55_55-290_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "name",
+                  "fileId": "2013-01-13_17-21_55-619_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Syntax",
+                  "fileId": "2013-01-13_17-14_01-407_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Alternate Syntax",
+                  "fileId": "2013-01-13_17-16_47-081_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Example",
+                  "fileId": "2013-01-13_17-32_12-991_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Feeds Can Contain The Entire Hierarchy",
+                  "fileId": "2013-01-13_17-35_03-999_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "belongsTo and hasOne",
+                  "fileId": "2012-12-17_21-42_29-240_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "For Additional Information...",
+                  "fileId": "2013-01-13_17-53_07-957_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Proxies",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Client Proxies",
+              "fileId": "2012-12-19_22-18_47-985_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Server Proxies",
+              "fileId": "2012-12-20_01-24_14-835_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Four Types of Server Proxies",
+              "fileId": "2012-12-20_01-24_24-243_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Readers and Writers",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Proxy Readers and Writers",
+                  "fileId": "2012-12-20_01-24_49-156_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "UML",
+                  "fileId": "2013-05-01_12-55_29-949_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Reader Defaults",
+                  "fileId": "2013-05-01_12-29_49-720_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "JSON",
+                  "fileId": "2013-05-01_12-27_59-483_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "The root Config",
+                  "fileId": "2013-05-01_12-34_42-455_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "XML",
+                  "fileId": "2013-05-01_12-28_06-174_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Array",
+                  "fileId": "2013-05-01_12-28_10-393_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Stores",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "What is a Store",
+                  "fileId": "2012-12-18_02-23_44-954_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Creating a Store",
+                  "fileId": "2012-12-18_02-37_26-435_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "In MVC use Ext.define()",
+                  "fileId": "2013-01-19_23-51_58-472_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Defining an In-line Model",
+                  "fileId": "2013-01-19_18-50_55-705_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Operations",
+                  "fileId": "2012-12-18_02-27_09-086_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Loading",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "load()",
+                  "fileId": "2013-01-19_19-40_56-043_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "autoLoad",
+                  "fileId": "2013-01-19_19-41_02-294_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Definining in-line data",
+                  "fileId": "2012-12-18_02-44_34-947_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Selecting",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Commonly Used Store Methods",
+                  "fileId": "2012-12-18_03-35_25-522_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "getAt() Example",
+                  "fileId": "2012-12-18_14-18_10-042_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "find() Example",
+                  "fileId": "2012-12-18_14-27_55-451_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "findBy() Example",
+                  "fileId": "2012-12-18_14-28_08-451_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Sorting",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Sorting on a Single Column",
+                  "fileId": "2012-12-19_02-22_18-576_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Sorting on Multiple Columns",
+                  "fileId": "2012-12-19_02-27_06-129_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Sorting Example",
+                  "fileId": "2012-12-19_02-35_42-647_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Adding Another Sorter",
+                  "fileId": "2012-12-19_02-56_26-584_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Custom Sorter",
+                  "fileId": "2012-12-19_03-18_51-900_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Custom Sorter Example",
+                  "fileId": "2012-12-19_03-01_53-001_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Filtering",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Local Filtering",
+                  "fileId": "2012-12-19_03-51_09-339_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Remote Filtering",
+                  "fileId": "2012-12-19_03-56_08-063_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Filter Example: Contains Substring",
+                  "fileId": "2012-12-19_04-05_37-020_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Adding and removing",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Store.add()",
+                  "fileId": "2012-12-20_01-20_47-696_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Updating",
+                  "fileId": "2012-12-20_01-22_19-806_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Deleting",
+                  "fileId": "2012-12-20_01-22_26-550_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "text": "Saving",
+              "fileId": "",
+              "html": "",
+              "leaf": false,
+              "children": [
+                {
+                  "text": "Three Ways to Save Data in a Store",
+                  "fileId": "2012-12-20_01-23_09-189_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Store.autoSync: true",
+                  "fileId": "2012-12-20_01-23_24-404_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Store.sync()",
+                  "fileId": "2012-12-20_01-23_41-756_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "sync() and the api Config",
+                  "fileId": "2013-06-09_13-15_32-069_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Sync Example",
+                  "fileId": "2013-06-09_12-41_43-672_Z",
+                  "html": "",
+                  "leaf": true
+                },
+                {
+                  "text": "Model.save()",
+                  "fileId": "2012-12-20_01-23_51-348_Z",
+                  "html": "",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Lab: YelpExtplorer 4",
+      "fileId": "2013-03-04_18-01_37-948_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "HTTP Requests and Responses",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "children": [
+        {
+          "text": "Introduction",
+          "fileId": "2012-12-04_20-26_29-432_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Ext.Ajax",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-12-04_22-15_05-027_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Basic Example",
+              "fileId": "2012-12-04_22-26_29-518_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Complex Example",
+              "fileId": "2012-12-04_22-42_44-211_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The Response",
+              "fileId": "2012-12-04_23-01_11-566_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Processing the Response",
+              "fileId": "2012-12-04_23-16_59-768_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Ext.data.JsonP",
+          "fileId": "",
+          "html": "",
+          "leaf": false,
+          "children": [
+            {
+              "text": "Introduction",
+              "fileId": "2012-12-05_00-55_00-279_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "How Does It Do That?",
+              "fileId": "2012-12-05_22-16_32-124_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "It's a Conspiracy",
+              "fileId": "2012-12-05_22-30_38-689_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "The Client Code Then...",
+              "fileId": "2012-12-05_22-35_05-351_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "Check it Out",
+              "fileId": "2013-02-25_21-10_46-801_Z",
+              "html": "",
+              "leaf": true
+            },
+            {
+              "text": "JSONP uses GET, not POST",
+              "fileId": "2012-12-10_20-04_39-066_Z",
+              "html": "",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "text": "Comparison: Making a Direct HTTP Request",
+          "fileId": "2012-12-06_01-14_20-017_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Comparison: Using Model and Store",
+          "fileId": "2012-12-10_19-09_37-281_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Lab: Making an AJAX Call",
+          "fileId": "2012-12-10_21-51_45-041_Z",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Unit Summary",
+          "fileId": "2012-12-05_23-48_31-960_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Forms",
+      "fileId": "2013-01-24_01-57_59-018_Z",
+      "html": "",
+      "leaf": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<p>The following example illustrates manually validating a form prior to updating data in a model instance:</p>
+ 
+
+<pre>{
+   xtype: 'form',
+   defaults: { validateOnChange: false	},
+	items: [
+	 { 
+	  xtype: 'textfield',
+	  name: 'firstName',
+	  fieldLabel: 'First Name',
+	  allowBlank: false
+     }
+    ],
+    buttons: [
+ 	 {
+	  text: 'Save',
+	  handler: function() {
+	    var objForm = this.up('form').getForm();
+	    if (objForm.isValid()) {
+  		objModel = myStore.getAt(0);
+		objForm.updateRecord(objModel);
+		myStore.sync();
+	    }
+	   }
+	 }
+   ]
+}
+</pre>

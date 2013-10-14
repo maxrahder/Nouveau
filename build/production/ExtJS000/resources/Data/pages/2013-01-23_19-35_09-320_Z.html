@@ -1,0 +1,11 @@
+<p>
+The <code>plugins</code> config is introduced at the <code>Ext.Component</code>. 
+The only requirement for a plugin is that the plugin object have an <code>init</code>
+method that takes a reference to a component. 
+</p>
+<p>
+If you specify a plugin (or array of plugins), upon component creation, the component
+will call each plugin's <code>init</code> method, passing a reference to itself. 
+The plugin is then free to do whatever it wants: it may add DOM content, it may 
+react to component events, etc.
+</p>

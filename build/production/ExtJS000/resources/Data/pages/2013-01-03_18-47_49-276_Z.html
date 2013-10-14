@@ -1,0 +1,19 @@
+<p>
+A critical issue when adding an event handler is that you need a reference to the
+object firing the event.
+</p>
+<p>
+Doing this directly in the view is easy: you just add a
+<code>handler</code> as part of the button declaration.<sup>*</sup>
+</p>
+<pre>
+tbar : [ {
+    text : 'She loves me...',
+    itemId : 'sheLovesMe',
+    handler : function(button) {
+        Ext.Msg.alert(button.getText(), 'Yeah yeah yeah!');
+    }
+} ]</pre>
+<p>
+<small>* With other types of observable objects, you might use the <code>listeners</code> property.</small>
+</p>

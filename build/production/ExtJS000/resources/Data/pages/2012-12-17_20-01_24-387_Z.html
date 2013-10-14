@@ -1,0 +1,23 @@
+
+<p>The value must <b>not</b> be in the array of values.</p>
+
+<pre class="runnable">
+Ext.define('MyApp.taxonomy.Canine', {
+    extend : 'Ext.data.Model',
+    fields : [ 'name' ],
+    validations: [ {
+        field: 'name',
+        type: 'exclusion',
+        list: ['Fluffy', 'Snuggles' ],
+        message: 'Invalid dog name'
+    } ]
+});
+var record = Ext.create('MyApp.taxonomy.Canine', { name: 'Fluffy' } );
+var errors = record.validate();
+if ( !errors.isValid() ) {
+    var message = '';
+    errors.each( function (error) {
+        message += error.field + ': ' + error.message + ''; 
+    });
+    Ext.Msg.alert('Errors', message);
+}</pre>

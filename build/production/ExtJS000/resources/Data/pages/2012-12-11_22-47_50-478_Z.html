@@ -1,0 +1,175 @@
+<h1>Introduction</h1>
+
+<p>In this lab you will code an update methods to your class. The <code>apply</code> method will contain a business rule. You will
+	also code <code>update</code> methods that fire events as mammal properties change.</p>
+
+<p>This lab builds on the previous lab. You can either continue editing your code from part one, or you can use
+	<kbd>Labs/ClassSystemIntro/PartTwo</kbd> as a starting point.</p>
+
+<h1>Steps</h1>
+
+<ol>
+
+	<li>Review the application
+		<p>If you're using your own code from part one, then you already know what it does.</p>
+		<p>
+			If you're starting with "PartTwo", visit <a href="http://localhost/SenchaTraining/ExtJS251/Labs/ClassSystemIntro/PartTwo/" target="lab">Labs/ClassSystemIntro/PartTwo/</a>. This is the solution from the previous lab.
+		</p>
+	</li>
+
+	<li>Add an apply method to <code>Mammal</code>
+		<p>
+			Add an
+			<code>applyName</code>
+			method to
+			<code>MyApp.taxonomy.Mammal</code>
+			. Code the method to have a single parameter: 
+			<dfn>name</dfn>.
+		</p>
+		<p>As discussed in lecture, the apply method will only return a value if a business rule is passed. Our business
+			rule is that the name cannot be blank.</p>
+		<p>
+			Code the
+			<code>applyName</code>
+			method to have an
+			<code>if</code>
+			statement: If the passed
+			<dfn>name</dfn>
+			is non-blank, return the name.
+		</p>
+		<p>
+			Once you've coded it, save the file and refresh the browser. Then try it out. If you press Speak you should see the
+			name, as before. If you erase the entire name field and press Speak, you should see the previous value, because the
+			name was not successfully updated when an empty string was passed to your
+			<code>applyName(name)</code>
+			method.
+		</p>
+
+	</li>
+
+	<li>Stop and savor your work
+		<p>
+			You're subclassing, overriding methods and have event handling. Life is good.
+			<kbd>:-)</kbd>
+		</p>
+	</li>
+
+	<li>But... there's a big flaw in the application
+		<p>As you probably noticed, the application has a big flaw: as you change the mammal's name, none of the UI
+			reflects the change. In other words, if you change the name to "Hubert", and press Speak, the alert works correctly
+			because the mammal's name was actually changed. But the human panel title should also change, and so should the
+			caption on the toolbar Speak sub-item.</p>
+<p>Modify the <code>MyApp.taxonomy.Mammal</code> class: 
+</p>
+<ul class="plain">
+<li>First, have it extend <code>Ext.util.Observable</code>. By making the mammal observable we can now run the ancestor <code>fireEvent()</code> method, which we'll see below.</li>
+<li>Then add an <code>updateName()</code> function, with the following implementation.
+This one also needs a require to <code>Ext.util.Observable</code>.</li>
+</ul>
+<pre>
+updateName : function(newName, oldName){
+    this.fireEvent('change', this);
+}
+</pre>
+	</li>
+
+	<li>Update the toolbar Speak sub-items
+		<p>Now, let's add code to update the toolbar Speak sub-items. Right now, they are all stuck with the caption "J.
+			Doe" or "Fluffy" even though you update the mammal's name in human or feline panel.</p>
+		<p>
+			To do this, you need to modify the
+			<code>addMammal</code>
+			method in <code>MyApp.view.MainPanel.js</code>. Down at the bottom of the method is the code that adds the Speak toolbar button sub-item.
+			Modify it as follows:
+		</p> <pre>
+var menuItem = this.down('#speakButton').menu.add(speakSubItem);
+mammal.on('change', function(mammal){
+    menuItem.setText(mammal.getName());
+});
+		</pre>
+		<p>
+			The code used to simply add the sub-item. But the new code saves a reference to the new sub-item in a variable named
+			<dfn>menuItem</dfn>
+			, then adds an event handler to the mammal created earlier in the method. When the mammal fires the "change" event,
+			our callback method will be run. The callback &mdash; or <em>event handler</em> &mdash; updates the menu item's text
+			with the current value of the mammal (passed to the callback function).
+		</p>
+	</li>
+
+	
+
+	<li>Update the panel title too
+		<p>The mammal and feline panels have a title, and it's still stuck with the name at the time of creation. It
+			should also update as the name changes.</p>
+		<p>
+			The most logical and encapsulated place to do this is in
+			<code>MammalPanel</code>
+			.
+		</p>
+		<p>
+			In <b>Labs/ClassSystemIntro/PartTwo/app/view/MammalPanel.js</b> modify the
+			<code>initComponent</code>
+			method. Add a couple of statements.
+		</p>
+		<p>
+			First, define a local variable
+			<code>var me = this;</code>
+			We'll be coding a callback that's run when the mammal changes, and the code in the callback needs a reference to the
+			panel. Within a function the value of <code>this</code> is based on how the function is being called. But we don't know what
+			<code>this</code> will be set to in the callback. Therefore, we're defining the
+			<dfn>me</dfn>
+			variable so the code in the the callback will have a reference to the panel when the callback is run. This idiom of
+			saving a reference to an object for use in callbacks is very common.
+		</p>
+		<p>
+			Secondly, add the event handler by running
+			<code>this.getMammal().on('change', function(mammal){});</code>
+			You'll need a statement in the callback function that sets the panel title to the mammal's name. How do you set a
+			panel's title? Well, you could guess, and you'd probably guess right. Or you can look in <a
+				href="http://docs.sencha.com/extjs/#!/api/Ext.panel.Panel" target="api">API documentation.</a>
+		</p>
+		<p>Edit the code, save your changes and refresh your browser. In the running application choose human or feline,
+			add it, and change the name. As you type the panel title should change. Cool!</p>
+
+	</li>
+
+<h1>Optional</h1>
+
+
+	<li>If you get insomnia later, here's another set of enhancements you might want to try
+		<ul class="plain">
+			<li>Create <code>MyApp.taxonomy.Canine</code>
+                           <ul class="plain">
+			     <li>Dogs should have the default name "Rover"</li>
+			     <li>When dogs speak they bark</li>
+			     <li>Add a boolean "happy" property to dogs</li>
+			     <li>When happy dogs speak they bark more than usual</li>
+                           </ul>
+                        </li>
+			<li>Create <code>MyApp.view.CaninePanel</code>
+                           <ul class="plain">
+                              <li>The canine panel should have a "Happy" checkbox</code></li>
+                           </ul>
+                        </li>
+                        <li><code>MyApp.view.MainPanel</code> should be modified
+                            <ul class="plain">
+                               <li>Add <code>MyApp.taxonomy.Canine</code> and <code>MyApp.view.CaninePanel</code> to the requires array</li>
+                               <li>Create a "Canine" type association</li>
+                               <li>Add a new Canine button to the main menu</li>
+                            </ul>
+                        </li>
+		</ul>
+		<p>Code it, and test by creating a dog, clicking Speak, then making the dog happy and clicking Speak again.</p>
+	</li>
+
+
+
+</ol>
+<h1>Conclusion</h1>
+<p>
+	You are now a Ext JS OO master, having used
+	<code>config</code>
+	, methods, update, apply, and event-handling via
+	<code>Ext.util.Observable</code>
+	.
+</p>

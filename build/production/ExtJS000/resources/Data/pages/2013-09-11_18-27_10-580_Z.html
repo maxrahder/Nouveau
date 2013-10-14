@@ -1,0 +1,13 @@
+<p>
+Recall that <code>Ext.create()</code> works by saying "If the specified class is not in memory, get it."
+When you've done a build, all classes should be in memory, so dynamic loading should no longer occur.
+</p>
+<p>
+Even though the development environment is pretty good at warning you that a requires is missing, but some things may 
+not be caught. Therefore, after building you may discover that some classes were not included in the build, usually due to a 
+missing <code>requires:[]</code> entry in some class. 
+</p>
+<p>
+For example, if your code uses a model, yet you never specify the model in a controller's <code>models:[]</code>
+or a <code>requires:[]</code>, then model won't be included in the build, and you'll get a run time error.
+</p>

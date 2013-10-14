@@ -1,0 +1,13 @@
+
+<p>We can provide additional data to this template through the use of renderData, by default renderData will already contain several properties: $comp, id, ui, uiCls, baseCls, componentCls & frame.  Though we can add any additional properties we wish access to within the template.</p>
+
+<pre class="runnable">
+Ext.create('Ext.Component',{
+    renderTpl: '&lt;ul&gt;&lt;li&gt;{firstItem}&lt;/li&gt;&lt;li&gt;{secondItem}&lt;/li&gt;&lt;/ul&gt;',
+    renderData: {
+        firstItem: 'This one goes first',
+        secondItem: 'and this one second'
+    },
+    renderTo: Ext.getBody()
+});
+</pre>

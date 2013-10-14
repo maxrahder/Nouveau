@@ -1,0 +1,191 @@
+<h1>Introduction</h1>
+<p>In this lab, you will code the dataview, and sync its row
+    selection to the rest of the user interface.</p>
+
+<h1>Objectives</h1>
+<ul class="plain">
+<li>Review requirements for a data view</li>
+<li>Convert a view component to a dataview class</li>
+<li>Add a template to a dataview class to format a data record for viewing</li>
+<li>Configure a dataview class to automatically scroll data</li>
+<li>Configure a dataview class to show an empty statement when there is no data to display</li>
+<li>Add over and selected css classes to a dataview class</li>
+<li>Add an item selector to a dataview class to select the appropriate div class within a template</li>
+<li>Add a style sheet to support css classes set in a dataview class</li>
+<li>Associate a data store to a dataview class</li>
+<li>Add logic to a controller to pass a data record to a dataview after detecting a select event</li>
+<li>Add logic to a controller to pass a data record to highlight a marker on a map view after detecting a select event</li>
+<li>Configure a tab panel class to render as soon as the layout is rendered</li>
+</ul>
+
+<h1>Steps</h1>
+
+<ol>
+
+    <li>Plan what you will be doing
+        <p>Under the "View" tab you need a dataview, wired up to the
+            Businesses store. You will be adding a few properties that
+            specify CSS classes to use as the user mouses over or
+            selects items.</p>
+        <p>Then you will update the Business controller to detect a
+            select on the view. The event handler will sync the user
+            interface with the selected record.</p>
+    </li>
+
+<li>Modify <kbd>view/View.js</kbd> to show businesses data
+    
+<p>Have the yepview extend <code>Ext.view.View</code>. 
+
+<p>
+Add an initial item template and a few other properties to verify that we've wired up the viewport correctly:
+</p> 
+
+<pre>autoScroll: true,
+emptyText: 'There are no matching businesses.',
+padding: 8,
+itemTpl: '{name}'
+</pre>
+
+<p>Since we have just created our content, remove the <code>html</code> property.</p>
+
+</li>
+
+
+<li>Associate the store with the view
+        <p>
+            Edit <kbd>view/Main.js</kbd> and add
+            <code>store:'Businesses'</code>
+            to the dataview config.
+        </p>
+        
+        <p>Save and refresh and you should see the dataview
+            showing the name of each business. 
+</li>
+
+
+
+<li>Add a style sheet
+        <p>
+<p>
+Create a new file, <b>stylesheet.css</b> and
+place it at the root of the YelpExtplorer folder at the
+same level as the <kbd>index.html</kbd>. Here is the content of the
+CSS file:
+</p> 
+<pre>.yepview-business {
+    height: 134px;
+    width: 108px;
+    margin: 4px;
+    float: left;
+    border: 4px solid #dddddd;
+}
+.yepview-business img {
+    height: 100px;
+    width: 100px;
+}
+.yepview-business figure {
+    margin: 0px;
+}
+.yepview-business figcaption {
+    text-align: center;
+    font-size: 7pt;
+}
+.yepview-business.over  {
+    border: 4px solid #999999;
+    background-color: #F5F6CE;
+}
+.yepview-business.selected {
+    border: 4px solid black;
+    background-color: yellow;
+}
+</pre>
+        <p>Save the CSS file, then open <kbd>index.html</kbd> and add a link
+            to the new style sheet. 
+</p>
+</li>
+
+
+<li>Modify <kbd>view/View.js</kbd> to make full use of the stylesheet
+
+<p>
+The stylesheet defines styles to be applied to each business and styles applied
+when mousing over and selecting a business. We'll specify those CSS classes in 
+viewport configs.
+</p>
+<p>
+The <code>itemCls</code> style is applied to each item. The mouse over and selected styles are specified with <code>overItemCls</code> and <code>selectedItemCls</code>. 
+</p>
+    
+<p>Replace the <code>itemTpl</code> and add <code>itemCls</code>, <code>overItemCls</code> and <code>selectedItemCls</code>:
+</p> 
+
+<pre>itemTpl: '&lt;figure&gt;&lt;img src="{photo_url}" /&gt;&lt;figcaption&gt;{name}&lt;/figcaption&gt;&lt;/figure&gt;',
+itemCls: 'yepview-business',
+overItemCls: 'over',
+selectedItemCls: 'selected'</pre>
+
+<p>
+Save and refresh the browser. You should see the business name and image. You should
+see the <code>itemCls</code> style in effect for each business. Mouse over an item and 
+the <code>overItemCls</code> style should be applied. Select an item and the <code>selectedItemCls</code> style should be applied.</p>
+
+</li>
+
+
+<li>
+Show business details when an item is selected in the dataview
+        <p>
+            Edit the <code>init</code> method in 
+            <kbd>controller/Business.js</kbd>
+            and listen to the <code>select</code> event on the dataview. This will
+            be virtually identical to the code that listens to the map.
+        </p>
+        
+</li>
+    
+
+
+    <li>Keep the map and dataview selections in sync
+        <p>
+            Add two new items to the <code>refs</code> array: one for the dataview, and one for the map.
+            Name them "dataView" and "map". This will allow us to access
+            these components in our controller methods with
+            <code>this.getDataView()</code>
+            and
+            <code>this.getMap()</code>
+            .
+        </p>
+        <p>
+            In the
+            <code>onBusinessSelect</code>
+            method, add two new lines to select the record on the
+            dataview and in the map. The idea is that when someone
+            clicks on either the map or the dataview item, all parts of
+            the user interface will reflect the selection. The two new
+            lines look like this:
+        </p> <pre>this.getDataView().getSelectionModel().select(record);
+this.getMap().highlight(record);</pre>
+    </li>
+    <li>Wait! There's something wrong!<p>You may have noticed that if you select a school, 
+    then select the dataview, then select a map item. Then things are in sync properly.
+    You can then select another item on the map, and the dataview stays in sync.</p>
+
+    <p>But if you initially select an item on the map, then go to the dataview, you don't
+    see the item selected. This only happens the first time! What's going on?</p>
+    
+    <p>Recall from our discussion that components do not render until they need to. In this case,
+    the dataview doesn't render the template until the user clicks on the View tab. But the way
+    items are shown to be selected in a dataview is via a class being added to a DOM element
+    defined in the dataview's template. Before the dataview is rendered there <i>is no</i> DOM 
+    element. If you were to inspect the DOM you'd see this in action: the dataview elements don't 
+    exist in the DOM until you click on the View tab.</p>
+    <p>
+    To fix this, open <kbd>view/Main.js</kbd> and add one more property to the tab panel: <code>deferredRender:false</code></p>
+    <p>Save your change, and refresh the browser. Immediately select a map item, then go to the View tab. The item 
+    should be selected!</p></li>
+
+    <li>Admire your work
+        <p>Do a Tweet. Post to Facebook. Call your spouse.</p>
+    </li>
+
+</ol>

@@ -1,0 +1,72 @@
+<p>
+For theming an Ext JS 4.2 application in combination with Sencha Cmd 3.1.*, you will use Sass and Compass.
+However since the release of Sencha Cmd 3.1.* it's not required anymore to have Sass and Compass installed on your system.
+Generating Sass files will be handled by Sencha Cmd. You do need to have a working version of Ruby installed on your machine.
+To confirm that Ruby is running enter in your console the following commands:</p>
+<code>
+ruby -v
+</code>
+<p>Be sure that you have either ruby 1.8.7 or 1.9.3</p>
+<p><b>Ruby 2.x will not work!</b></p>
+
+<p>If everything is correctly installed you will be prompted with the latest version. If not, follow the instructions below.</p>
+
+<h2>Mac OSX</h2>
+<p>Ruby is already installed on Mac OSX</p>
+
+<h2>Windows</h2>
+<ul>
+<li>Open a browser to <a href="http://rubyinstaller.org">http://rubyinstaller.org</a></li>
+<li>Click the big red Download button</li>
+<li>Click the link for Ruby 1.9.* (<b>don't choose Ruby 2.x!</b>)</li>
+<li>Run the installer</li>
+<li>Accept the default license</li>
+<li>Turn on the checkbox to add Ruby to your path</li>
+<li>Turn on the checkbox to associate .rb and .rbw files</li>
+<li>Click Install</li>
+</ul>
+
+<h2>Add Ruby to your paths</h2>
+<div type="expander" caption="Solution for Mac OSX" class="x-hidden">
+<p>
+If using OSX, you can add the Ruby path by typing the following at a command prompt:<br/>
+Note that etc directory is hidden.
+</p>
+<p>
+<code>sudo vi /etc/paths</code>
+</p>
+<p>
+You will then add the path to the file using the vi editor. Typically the path resembles the following:
+</p>
+<p>
+<code>/Users/username/.gem/ruby/1.8/bin</code>
+</p>
+<p>
+The VI Editor has the following commands:
+</p>
+<table class="table">
+<thead>
+<tr>
+<th>
+Command
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>*i</td><td>Insert text before cursor, until <esc> is pressed</td></tr>
+<tr><td>:wq <ENTER></td><td>Save the modified file and quit vi</td></tr>
+<tr><td>*u <ENTER></td><td>Undo</td></tr>
+</tbody>
+</table>
+</div>
+<div type="expander" caption="Solution for Windows" class="x-hidden">
+<div class="holder" style="height: 466px;">
+<img src="resources/images/_getting_started/install-ruby-windows.png" alt="Install Ruby on Windows" />
+</div>
+<ul>
+<li>If you are using windows, you can run the installer. You should check the checkbox to make a class path to Ruby.</li>
+<li>You will need to restart Windows after completing the Ruby install process.</li>
+</div>

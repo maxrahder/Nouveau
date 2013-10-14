@@ -1,0 +1,15 @@
+<pre class="runnable">panel = Ext.create('Ext.panel.Panel', {
+
+    items: [{
+        xtype: 'button',
+        text: 'Button'
+    }],
+
+    title : 'My Panel',
+
+    height: 200, width: 300, bodyPadding: 8, renderTo : Ext.getBody()
+});
+
+// Find the first component matching the specified xtype
+var component = panel.down('button'); 
+Ext.Msg.alert('down()', 'The panel has an ' + component.$className);</pre>

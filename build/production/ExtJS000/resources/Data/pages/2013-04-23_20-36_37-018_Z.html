@@ -1,0 +1,61 @@
+<pre class="runnable preview">
+var store = Ext.create('Ext.data.Store', {
+    fields: ['text', 'last'],
+    data: [{text: 'John', last: 'Lennon'}, {text: 'Paul', last: 'McCartney'}, {text: 'George', last: 'Harrison'}, {text: 'Ringo', last: 'Starr'}]
+});
+Ext.create('Ext.form.Panel', {
+    items: [{
+        fieldLabel: 'Defaults'
+    },{
+        xtype: 'combobox',
+        fieldLabel: 'value: \'Paul\'',
+        value: 'Paul'
+    },{
+        fieldLabel: 'editable: false',
+        editable: false
+    },{
+        fieldLabel: 'typeAhead: true',
+        typeAhead: true
+    },{
+        fieldLabel: 'forceSelection: true',
+        forceSelection: true
+    },{
+        fieldLabel: 'hideTrigger: true',
+        hideTrigger: true
+    },{
+        fieldLabel: 'multiSelect: true',
+        multiSelect: true,
+        delimiter: ' | ', 
+        editable: false
+    },{
+        fieldLabel: 'displayField: \'last\'',
+        displayField: 'last'
+    },{
+        fieldLabel: 'valueField: \'last\'',
+        valueField: 'last',
+        listeners: {
+            change: function(combo){
+                combo.up('form').down('displayfield').setValue(combo.getValue());
+            }
+        }
+    },{
+        xtype: 'displayfield',
+        value: ''
+    }], 
+    defaults: {
+        margin: 8,
+        width: 300,
+        xtype: 'combobox',
+        store: store
+    },
+    fieldDefaults: {
+        labelWidth: 120,
+        labelSeparator: ''
+    },
+    layout: 'vbox',
+    renderTo: Ext.getBody()
+});
+</pre>
+
+
+

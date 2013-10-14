@@ -1,0 +1,11 @@
+<h2>A progress bar indicator</h2>
+<p><code>Ext.Msg.progress()</code> can only be closed programmatically.</p>
+<pre class="runnable">Ext.Msg.progress('Processing', 'Please wait while we process your application...');
+
+var update = function(percent){
+    Ext.Msg.updateProgress(percent, Ext.util.Format.number((percent*100), '0% complete'));
+}
+Ext.defer(update, 1000, null, [ .25]);
+Ext.defer(update, 2000, null, [ .50]);
+Ext.defer(update, 3000, null, [ .75]);
+Ext.defer(update, 4000, null, [1.00]);</pre>

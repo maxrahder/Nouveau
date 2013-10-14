@@ -1,0 +1,14 @@
+<pre class="runnable">
+Ext.Ajax.request({
+    url: '../Data/json/theBeatles.json', // This succeeds
+    //url: '/ThisDoesNotExist.json', // This fails
+    jsonData : {a : 1, b : [ {c : 'hi'} ]}, // Only works with POST
+    success: function(response) {
+        console.log(typeof response);
+        alert('It worked!');
+    },
+    failure: function(response) {
+        console.log(response);
+        alert('It failed!');
+    }
+})</pre>

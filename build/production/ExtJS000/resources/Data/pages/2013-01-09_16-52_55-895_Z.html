@@ -1,0 +1,45 @@
+<h1>Introduction</h1>
+<p>
+In this lab, you will use <b>Sencha Architect</b> to define <b>Models</b> and <b>Stores</b> for your <b>Twitter</b> search mobile application. </p>
+
+
+<h1>Steps</h1>
+
+</p>
+
+<ol>
+	<li><p>In the upper-right corner of the <b>Project Inspector</b>, click <b>[+]</b> and choose <b>Model</b>.</p></li>
+	<li><p>Select <b>MyModel</b> under <b>Models</b>.</p></li>
+	<li><p>In the <b>Config</b> filter, start to type <b>user</b>. This will filter the <b>user</b> named properties. 
+        <li><p>Select <b>userClassName</b> below and set the value to <b>Tweet</b>.</p></li>
+	<li><p>In the <b>Config</b> filter, type in <b>field</b>.</p></li>
+	<li><p>Click the <b>[+]</b> to the right of the <b>Fields</b> property and enter the following fields in a comma separated format: profile_image_url, from_user, text, created_at</p></li>
+	<li><p>In the <b>Toolbox</b> filter, type in <b>proxy</b>.</p></li>
+	<li><p>Drag the <b>JsonP Proxy</b> from the <b>Toolbox</b> and drop it onto <b>Tweet</b> in the <b>Project Inspector</b>.</p></li>
+	<li><p>Choose the <b>MyJsonPProxy</b> and configure the following properties:</p></li>
+<ul>
+	<li><p>url: <b>http://search.twitter.com/search.json</b></p></li>
+	<li><p>extraParams: <b>{'q':'sencha'}</b></p></li>
+</ul>
+	<li><p>In the <b>Config</b> filter, type in <b>reader</b>.</p></li>
+	<li><p>In the <b>reader</b> property, click the <b>[+]</b> and choose the <b>Json</b> reader.</p></li><li><p>Click the arrow to select the <b>reader</b> configs.</p></li>
+	<li><p>In the <b>Config</b> filter, type in <b>root</b>.</p></li>
+	<li><p>Select the <b>rootProperty</b> below and type in <b>results</b>.</p></li>
+	<li><p>In the upper-right corner of the <b>Project Inspector</b>, click <b>[+]</b> and choose <b>Store</b>.</p></li>
+	<li><p>Select <b>MyStore</b> under <b>Stores</b>.</p></li>
+	<li><p>In the <b>Config</b> filter, start to type <b>user</b> into the filter field. This will filter the <b>user</b> named properties. 
+        <li><p>Select <b>userClassName</b> below and set the value to <b>Tweets</b>.</p></li>
+	<li><p>In the <b>Config</b> filter, type in <b>store</b>.</p></li>
+	<li><p>Set the <b>storeId</b> config to <b>Tweets</b>.</p></li>
+	<li><p>In the <b>Config</b> filter, type in <b>model</b>.</p></li>
+	<li><p>Select <b>model</b> below, and set the value to <b>Tweet</b></p></li>
+	<li><p>In the <b>Config</b> filter, type in <b>auto</b>.</p></li>
+	<li><p>Select the checkbox to the right of the <b>autoLoad</b> property.</p></li>
+	<li><p>Click <b>Save</b>.</p></li>
+	<li><p>In the <b>Project Inspector</b>, right click <b>Tweets</b> and select <b>Load Data</b>.</p></li>
+	<li><p>In the <b>Project Inspector</b>, click the <b>eye</b> symbol to the right of <b>Tweets</b> and verify that data loaded.</p></li>
+	<li><p>Save the project.</p></li>
+	
+</ol>
+
+<h1>Conclusion</h1>

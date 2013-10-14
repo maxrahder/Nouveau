@@ -1,0 +1,27 @@
+<p>
+Tab panels are special panels that use card layout. Typically, the items are panels. 
+For each child item, the tab panel the item's <code>title</code> for the tab caption.
+The key configs are:</p>
+<ul>
+<li><code>activeTab</code> (defaults to 0)</li>
+<li><code>deferredRender</code></li>
+<li><code>removePanelHeader</code></li>
+<li><code>tabPosition</code></li>
+</ul>
+<pre class="runnable preview">
+Ext.create('Ext.tab.Panel', {
+    renderTo : Ext.getBody(),
+    height : 200,
+    width : 200,
+    //tabPosition: 'bottom',
+    //removePanelHeader: false,
+    plain : true,
+    items : [{
+        title : 'One',
+        html : 'Panel One'
+    }, {
+        title : 'Two',
+        html : 'Panel Two'
+    }]
+});
+</pre>

@@ -1,0 +1,32 @@
+<pre class="runnable preview">
+var temperatures = Ext.create('Ext.data.Store', {
+  autoLoad : true,
+  fields: ['city',{type: 'int', name: 'high'}, {type: 'int', name: 'low'}],
+  proxy: {
+    type: 'ajax',
+    url: '../Data/json/temperatures.json'
+  }
+});
+
+Ext.create('Ext.grid.Panel',{
+  store: temperatures,
+  title: 'Average Temperatures',
+  columns: [{
+    text: 'City', 
+    dataIndex: 'city'
+  }, {
+    text: 'High &deg;C',
+    align: 'center',
+    dataIndex: 'high'
+  }, {
+    text: 'High &deg;F',
+    dataIndex: 'high',
+    align: 'center',
+    renderer: function(value) {
+      var f = (9/5)*value+32; //Tf = (9/5)*Tc+32 Celsius to Fahrenheit
+      return(Ext.util.Format.number(f,'0.0'));
+    }
+  }],
+  renderTo: Ext.getBody()
+});
+</pre>

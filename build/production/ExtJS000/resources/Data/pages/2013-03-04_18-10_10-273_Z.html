@@ -1,0 +1,74 @@
+<h1>Introduction</h1>
+<p>In this lab, you will code the grid, and sync its row selection to the rest of the user interface.</p>
+
+
+<h1>Objectives</h1>
+<ul class="plain">
+<li>Review requirements for a grid view</li>
+<li>Convert a view component to a grid panel class</li>
+<li>Add default columns to a grid panel class</li>
+<li>Add a template column to a grid panel class</li>
+<li>Add a template to a grid panel template column to format a data record for viewing</li>
+<li>Configure a grid panel class to show an empty statement when there is no data to display</li>
+<li>Associate a data store to a grid panel class</li>
+<li>Add logic to a controller to pass a data record to a grid panel view after detecting a select event</li>
+</ul>
+<h1>Steps</h1>
+
+<ol>
+
+	<li>Plan what you will be doing
+		<p>Under the "Grid" tab, we need a grid wired up to the Businesses store, with four columns showing the business name, the star rating image, the number of review and the address.</p>
+
+		<p>Then, you will update the Business controller to detect a select on the grid. The event handler will sync the user interface with the  selected record.</p>
+	</li>
+
+	<li>Modify <kbd>view/Grid.js</kbd>
+		<p>Edit <kbd>view/Grid.js</kbd>. Change it from extending <code>Ext.Component</code> to 
+extending <code>Ext.grid.Panel</code>.</p>
+		<p>Add a <code>emptyText</code> property and set it to "There are no matching businesses."</p>
+		<p>Add a <code>columns</code> array with four values: one per column:</p>
+		<ul class="plain">
+			<li>A default column type with <code>text:'Name'</code>, <code>dataIndex:'name'</code>
+				and <code>width:120</code></li>
+
+			<li>A template column with <code>text:'Rating'</code>, <code>dataIndex:'stars'</code> and <code>tpl:'&lt;img
+					src="resources/images/stars_{stars}.png"/&gt;'</code></li>
+
+			<li>A default column type with <code>text:'Reviews'</code>, <code>dataIndex:'review_count'</code>,
+				<code>width:60</code> and <code>align:'right'</code></li>
+
+			<li>A default column type with <code>text:'Address'</code>, <code>dataIndex:'full_address'</code> and <code>flex:1</code></li>
+
+		</ul>
+<p>Since we have just created our content, remove the <code>html</code> property.</p>
+<p><b>Pop quiz!</b> All fields in the record can be used in a template column's template. Therefore, why does our template column specify the dataIndex? The first person to raise her or his hand and answer correctly will (possibly) win a fabulous prize!
+		</p>
+
+	</li>
+
+	<li>Pass the store to the grid
+		<p>
+			Edit <code>view/Main.js</code> and add
+			<code>store:'Businesses'</code>
+			to the grid config.
+		</p>
+		<p>Save and refresh and you should see the grid populated with the  same records shown on the map. Pretty cool!
+	</li>
+
+	<li>Update the business controller to keep record selections in sync
+		<p>You just did this for the dataview, so you are now an expert.</p>
+		<p> First, define a new ref, referring to the grid. Call it "grid". In controller methods, you will reference it via
+			<code>this.getGrid()</code>.
+		</p>
+		<p> Like the dataview and map, grid's fire a "select" event. Listen to it in the <code>init</code> method and run <code>onBusinessSelect</code>, just like you did for the other two components.</p>
+		<p> In <code>onBusinessSelect</code>, add a statement that selects the record on the grid. Grids have a selection model, just like the dataview. Therefore, the new statement will be almost identical to the statement that selects the dataview item.
+		</p>
+
+	</li>
+
+	<li>That's it!
+		<p>The application is really coming together!</p>
+	</li>
+
+</ol>

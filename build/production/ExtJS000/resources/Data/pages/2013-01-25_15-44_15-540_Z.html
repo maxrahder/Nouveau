@@ -1,0 +1,49 @@
+<p>Let's review what goes into each of those files and folders.</p>
+
+<div type="expander" caption="app.js">
+<p>
+This is the starting point for an application. <code>Ext.application()</code> automatically creates an <code>Ext.app.Application</code> instance.
+</p>
+<p>The application specifies the namespace.
+</p>
+<p>
+Typically it auto generates a viewport.
+</p>
+</div>
+
+<div type="expander" caption="app/application.js">
+<p>
+The class in application.js extends <code>Ext.app.Application</code>.
+</p>
+<p>
+It specifies the controllers used in the application.
+</p>
+</div>
+<div type="expander" caption="app/model">
+<p>
+Contains class definitions for the records used in the application. Each definition is a <code>Ext.data.Model</code> subclass. 
+</p>
+</div>
+
+<div type="expander" caption="app/store">
+<p>
+Contains class definitions for the stores used in the application. Each definition is a <code>Ext.data.Store</code> subclass. 
+</p>
+</div>
+
+<div type="expander" caption="app/view">
+<p>
+Contains class definitions for the components used in the application. Each definition is a <code>Ext.Component</code> subclass. 
+</p>
+<p>
+Note that these are the major reusable building blocks for your application. These
+will typically be container subclasses, like grids, tab panels, etc.
+</p>
+</div>
+
+<div type="expander" caption="app/controller">
+<p>
+Controllers coordinate events between stores and views. 
+</p>
+</div>
+

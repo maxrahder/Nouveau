@@ -1,0 +1,203 @@
+<pre class="runnable docked" >
+var names = new Array();
+var studentScores = [
+    {name: 'Beatrix', score: 67}, 
+    {name: 'Clive', score: 84}, 
+    {name: 'Julia', score: 95}, 
+    {name: 'Bruno', score: 42}, 
+    {name: 'Hubert', score: 87}
+];
+
+// Step 2 Create the new array, and put it in a variable named "names".
+// Step 2 Sort "names"
+
+alert('Students: ' + names); // Alerts [Beatrix, Bruno, Clive, Hubert, Julia]
+
+// Step 3: Code to compare scores
+
+alert('Students in score order: ' + names); // Alerts [Julia, Hubert, Clive, Beatrix, Bruno]
+
+var s = '';
+
+// Step 4: Code forEach to concatenate alert string 
+
+alert('Student names and scores: ' + s);
+
+//Code for optional steps
+
+</pre>
+<h1>Introduction</h1>
+<p>This lab will let you do some problem solving with <code>Ext.Array</code> methods.</p>
+<p>As with all labs, 
+<b>take your time, read each step carefully and ask questions if things aren't working out</b>. <kbd>:-)</kbd>
+</p>
+<p><strong>
+Please note: opening another slide will discard your lab changes in the editor.
+If you want to open another page, make sure you open it in another browser window/tab.</strong>
+</p>
+</p>
+<p>
+The solution of this lab can be found in the <a href="http://localhost/SenchaTraining/ExtJS251/LabSolutions/Array/" target="api">/SenchaTraining/ExtJS251/LabSolutions/Array/</a> folder.
+</p>
+
+<p>Consider the data set of student grades, shown below.</p>
+<pre class="sample">
+var studentScores = [
+    {name: 'Beatrix', score: 67}, 
+    {name: 'Clive', score: 84}, 
+    {name: 'Julia', score: 95}, 
+    {name: 'Bruno', score: 42}, 
+    {name: 'Hubert', score: 87}
+];
+</pre>
+<p>Your assignment is to:</p>
+<ul>
+<li>Show a list of students names, in alphabetical order.</li>
+<li>Show a list of students from high score to low.</li>
+<li>Optionally: Show the standard deviation of all scores.</li>
+</ul>
+<p>A lot of what we'll do could be made easier through good use of feeds, models and convert columns,  
+but to get hands-on with array functions will stick to those methods for this lab.</p>
+
+<h1>Steps</h1>
+
+<ol>
+
+<li>Have the API documentation ready
+<p>You can review class slides, or you can refer to 
+<a href="http://docs.sencha.com/extjs/#!/api/Ext.Array-method-sort" target="api">the API documentation</a>. But remember, 
+efficient programmers don't bother memorizing anything &mdash; efficient programmers have the API documentation at their fingertips.</p>
+</li>
+
+<li>Show an alphabetized list of student names
+		<p>
+Open <code>app.js</code> in your text editor. Add code to create a new array by extracting the list of names from <em>studentScores</em>, and
+sort the new array using the default collating order.
+		</p>
+  
+<p>How are you going to do that?</p>
+<p class="small">Hint: There is a <code>Ext.Array</code> function that lets you pull a value from each
+element of an array. It's as if you were reaching in with your fingers, and <em>plucking</em>
+the value from every item. <kbd>;-)</kbd></p>
+</li>
+
+<li>Show a list of names, from high score to low.
+
+<p>There's a few ways you could do this. But try it this way:</p>
+<ul>
+<li>Sort the original array in score order. You'll need a compare routine for this.</li>
+<li>Like you did before, create a new array of the names from the array.</li>
+<li>Show the new array using <code>alert()</code></li>
+</ul>
+<p>There are a couple of ways to implement the compare function. Either as a referenced
+function, or as an anonymous function.
+</p>
+<p>Using a referenced function:</p>
+<pre class="sample">
+var compareScores = function(o1, o2) {
+    // Your code goes here -- return negative, zero or positive value
+    // based on the relative value of the scores passed into o1 and o2.
+};
+Ext.Array.sort(studentScores, compareScores);
+</pre>
+<p>Using an anonymous function:</p>
+<pre class="sample">
+Ext.Array.sort(studentScores, function(o1, o2) {
+        // Your code goes here -- return negative, zero or positive value
+        // based on the relative value of the scores passed into o1 and o2.
+    };
+);
+</pre>
+<p>Try it. Are the names shown in order of their scores?</p>
+
+</li>
+
+<li>Display the names and scores together
+<p>
+Add code at step 4 to display the values in an alert:
+</p>
+<pre class="sample">
+// Use Ext.Array.forEach() to visit every item in the array, and for each item,
+// concatenate the person's name and score. Assuming the array item is in a
+// variable named "item", the concatenation code looks like:
+// s += '\n' + item.name + '=' + item.score;
+</pre>
+</p>
+</li>
+
+<h1>Optional</h1>
+
+Calculate the standard deviation
+<p>"Remind me: How is standard deviation calculated?"</p>
+<p>
+Since you probably haven't calculated a standard deviation in a week or two,
+recall that it's the square root of the variance.</p>
+<p>
+The variance is the average of the squared difference of each item.
+</p>
+<p>
+The squared difference is just the square of the difference between a value 
+and the mean.
+</p>
+<p>We'll build each of these values, piece by piece.</p>
+
+<li>Do you still feel like doing the optional steps?
+<p>Of course you do!</p>
+</li>
+
+<li>Calculate and show each student's squared difference
+
+<p>First, calculate the average (or <em>mean</em>) of all scores, and save that in a variable. (Maybe 
+there's an <code>Ext.Array</code> function that calculates the mean!) To do this, you'll need to do pluck 
+off the scores from the studentScores array, and take the mean of the new array.
+</p>
+
+<p>
+Now that you have the mean of all scores, you can calculate the squared differences. The new squared differences array 
+will end up looking like this:
+</p>
+<pre class="sample">
+[
+    {name: 'Beatrix', squaredDifference: 64}, 
+    {name: 'Clive', squaredDifference: 81}, 
+    {name: 'Julia', squaredDifference: 400}, 
+    {name: 'Bruno', squaredDifference: 1089}, 
+    {name: 'Hubert', squaredDifference: 144}
+]
+</pre>
+<p>How can you create a new array like this? If <em>only</em> there were a function that let you do some kind of transformation, or mapping
+(<em>ahem</em>) of one array to another, whereby you create these new "squaredDifference" elements.
+</p>
+<p>
+Your code will be structured like this:
+</p>
+<pre class="sample">
+var average = // Create an array of scores, find its mean.
+var squareDifferenceArray = []; 
+
+// For each element:
+// 1. Calculate the difference of the score minus the average.
+// 2. Calculate the square of that value.
+// 3. Add the squared value to the array. 
+//    Remember, to add a object to an array you code something like:
+//    squareDifferenceArray.push({name: someName, squaredDifference: someValue});
+
+// Look in your debugger's console to see what you created
+console.log(squareDifferenceArray); 
+</pre>
+
+<p>Think about it, and code it.</p>
+
+<li>Finally, show the standard deviation
+<p>The standard deviation is the square root of the sum of the squared differences. Square root
+is calculated by using the built-in JavaScript <code>Math.sqrt()</code> function.</p>
+<p>Show the standard deviation in an alert, or just using <code>console.log()</code>.
+<p>By the way, the standard deviation is 355.6. Is that what you calculated?</p>
+</li>
+
+</ol>
+
+<h1>Conclusion</h1>
+<p><code>Ext.Array</code> functions are groovy.</p>
+<br />
+<br />

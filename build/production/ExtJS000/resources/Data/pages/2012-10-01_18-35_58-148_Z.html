@@ -1,0 +1,47 @@
+<p>
+You can also create an instances of a class via an alias. This is the preferred alternative
+to using <code>Ext.create()</code>.
+</p>
+<p>All components have a special alias called an xtype. Other classes such as layouts also have aliases.</p>
+In this example, two aliases are used: <em>button</em> and <em>vbox</em>.</p>
+
+<table style="width: 100%">
+<tr>
+<td style="vertical-align: top; width: 48%;">
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+
+	items : [ 
+        Ext.create('Ext.button.Button', {
+           text: 'Button'
+        })
+     ],
+
+	layout: 'vbox',
+	title: 'My Panel',
+	height: 300,
+	width: 300,
+	bodyPadding: 8,
+	renderTo : Ext.getBody()
+});</pre>
+</td>
+<td style="vertical-align: top; width: 10px;"></td>
+<td style="vertical-align: top; width: 48%;">
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+
+	items : [ {
+		xtype: 'button',
+		text: 'Button'
+	}],
+
+	layout: 'vbox',
+	title: 'My Panel',
+	height: 300,
+	width: 300,
+	bodyPadding: 8,
+	renderTo : Ext.getBody()
+});</pre>
+</td>
+</tr>
+

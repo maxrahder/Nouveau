@@ -1,0 +1,8 @@
+
+
+[ 
+{ type : 'Polar'   , weight : 600, speed : 40 }, 
+{ type : 'Black'   , weight : 270, speed : 48 } ,
+{ type : 'Grizzly' , weight : 225, speed : 56 } 
+]
+//

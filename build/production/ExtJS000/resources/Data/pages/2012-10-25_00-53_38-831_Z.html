@@ -1,0 +1,181 @@
+<pre class="runnable docked">
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    proxy : {
+        type : 'ajax',
+        url : '/training/working/NouveauTraining/Data/json/marxBrothers.json'
+    },
+    fields : [ 'name', 'born', 'died' ]
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.model.Person',
+    autoLoad : true
+});
+
+Ext.create('Ext.grid.Panel', {
+    store : store,
+    columns : [ { text : 'Name', dataIndex : 'name' }, 
+    {
+        text : 'Born',
+        width : 140,
+        // xtype : 'datecolumn',
+        // format : 'F j, Y',
+        dataIndex : 'born'
+    }, {
+        text : 'Died',
+        width : 140,
+        // xtype : 'datecolumn',
+        // format : 'F j, Y',
+        dataIndex : 'died'
+    }, { text : 'Age', xtype : 'numbercolumn', dataIndex : 'age', format : '0' } ],
+    renderTo : Ext.getBody()
+});</pre>
+
+<h1>Introduction</h1>
+
+<p>
+	This lab has you code two date fields, and code a additional field using a
+	<code>convert</code>
+	function you provide.
+</p>
+<p>
+	<b>Caution: </b>As with all Live Preview labs, you will lose your work if you leave the page. Lab steps that cite the
+	API documentation will open those links in a new page.
+</p>
+
+
+<h1>Steps</h1>
+
+<ol>
+
+	<li>Look at the code at the top of the page.
+		<p>The code defines a model, and creates a store. It also has a grid, wired to the store.</p>
+	</li>
+
+	<li>Run it
+		<p>The code runs, but there are a couple of things wrong.</p>
+		<p>First, the date columns are just showing the date strings. That's because the model declaration isn't
+			specifying that the values are dates, and therefore, they are being stored as strings.</p>
+		<p>The other thing wrong is that the grid has an "Age" column, but there's no data. That's because the model
+			doesn't have a declaration for that at all.</p>
+	</li>
+
+	<li>Look at the data feed</li>
+	<p>
+		Take a look at <a href="../Data/json/marxBrothers.json" target="lab">the data feed</a>. Our model declaration needs to
+		match that. Furthermore, we'll be adding an additional field, "age".
+	</p>
+
+	<li>Correct the date field declarations
+		<p>Recall from lecture that a date field is coded like this example:</p> <pre>{
+    name: 'dob', 
+    type: 'date', 
+    dateFormat: 'd-m-Y H:i' 
+} </pre>
+		<p>But this doesn't quite match our data: Our fields are named "born" and "died", and they are in year/month/day
+			format.</p>
+		<p>
+			To determine the right formatting string, look at the top of <a
+				href="http://docs.sencha.com/extjs/#!/api/Ext.Date" target="api">the API documentation for <code>Ext.Date</code></a>.
+		</p>
+		<p>Code one field, then run it. You should see the grid showing date information in the column, because it now
+			contains actual Date values, and not strings.</p>
+		<p>Once one column is working, do the other column, and run it to make sure everything is ok.</p>
+	</li>
+
+	<li>Now add a new field for age
+		<p>
+			If you look in <a href="http://docs.sencha.com/extjs/#!/api/Ext.data.Field" target="api">the API documentation for fields</a>,
+			near the top, you'll see an example of
+			<code>convert</code>
+			. Like any field definition, you specify the name. In addition, you specify a convert property which has an
+			associated function, that takes two parameters. Here's the body of your convert function:
+		</p> <pre>
+var died = record.get('died');
+var born = record.get('born');
+var age = died.getFullYear() - born.getFullYear();
+var hadBirthday = ( Ext.Date.getDayOfYear(died) >= Ext.Date.getDayOfYear(born) );
+age = hadBirthday ? age : age - 1;
+return age;
+		</pre>
+		<p>If you have troubles, please ask your instructor to take a look at your code.</p>
+	</li>
+
+	<li>Modify the grid slightly to show formatted dates
+		<p>Look down in the grid declaration, and you'll see that the two date columns have
+		a couple of properties commented out. Those specify the column types, and a formatting
+		string for how the dates should be displayed. Uncomment those lines and the columns will 
+		show formatted dates.
+</ol>
+
+
+<h1>Conclusion</h1>
+<p>
+	You just modified a model to specify the formatting for date fields, and you defined a "virtual" column, which is
+the calculation of the person's age, using a custom <code>convert</code> function.
+</p>
+
+<p>If you got stuck, here's the final solution, written in (nearly) invisible ink. Highlight lines to see the code more clearly.</p>
+<pre><span style="color: white">Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    proxy : {
+        type : 'ajax',
+        url : '/training/working/NouveauTraining/Data/json/marxBrothers.json'
+    },
+    fields : [ 'name', {
+        name : 'born',
+        type : 'date',
+        dateFormat : 'Y/m/d'
+    }, {
+        name : 'died',
+        type : 'date',
+        dateFormat : 'Y/m/d'
+    }, {
+        name : 'age',
+        convert : function(value, record) {
+            var died = record.get('died');
+            var born = record.get('born');
+            var age = died.getFullYear() - born.getFullYear();
+            var hadBirthday = ( Ext.Date.getDayOfYear(died) >= Ext.Date.getDayOfYear(born) );
+            age = hadBirthday ? age : age - 1;
+            return age;
+        }
+    } ]
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.model.Person',
+    autoLoad : true
+});
+
+Ext.create('Ext.grid.Panel', {
+    store : store,
+    columns : [ {
+        text : 'Name',
+        dataIndex : 'name'
+    }, {
+        text : 'Born',
+        width : 120,
+        xtype : 'datecolumn',
+        format : 'F j, Y',
+        dataIndex : 'born'
+    }, {
+        text : 'Died',
+        width : 120,
+        xtype : 'datecolumn',
+        format : 'F j, Y',
+        dataIndex : 'died'
+    }, {
+        text : 'Age',
+        xtype : 'numbercolumn',
+        dataIndex : 'age',
+        format : '0'
+    } ],
+    renderTo : Ext.getBody()
+});</span>
+</pre>
+
+
+<br />
+<br />
+
+

@@ -1,0 +1,31 @@
+<p>
+Here's the conventional, non-reusable way of coding a viewport and its child.
+</p>
+<div class="readonly">
+<pre class="runnable">
+Ext.create('MyApp.view.Viewport', {
+    layout : 'fit',
+    items : [ {
+        xtype : 'grid',
+        store: 'People',
+        title : 'Beatles',
+        columns : [ {
+            text : 'Name',
+            dataIndex : 'first'
+        }, {
+            text : 'Last Name',
+            dataIndex : 'last'
+        }, {
+            text : 'Date Of Birth',
+            dataIndex : 'dob',
+            xtype : 'datecolumn',
+            format : 'j F, Y',
+            flex : 1
+        } ],
+        tbar : [ {
+            text : 'She loves me...',
+            itemId : 'sheLovesMe'
+        } ]
+    } ]
+});
+</pre></div>

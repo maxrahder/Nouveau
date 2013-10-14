@@ -1,0 +1,81 @@
+<h3>Internally, the 5 types are simply calling <code>Ext.Msg.show()</code> with user-supplied and hard-coded configs.</h3>
+
+<div class="readonly">
+<pre class="runnable">
+alert: function(cfg, msg, fn, scope) {
+       if (Ext.isString(cfg)) {
+           cfg = {
+               title : cfg,
+               msg : msg,
+               buttons: this.OK,
+               fn: fn,
+               scope : scope,
+               minWidth: this.minWidth
+           };
+       }
+       return this.show(cfg);
+   }
+</pre>
+<pre class="runnable">
+confirm: function(cfg, msg, fn, scope) {
+       if (Ext.isString(cfg)) {
+           cfg = {
+               title: cfg,
+               icon: this.QUESTION,
+               msg: msg,
+               buttons: this.YESNO,
+               callback: fn,
+               scope: scope
+           };
+       }
+       return this.show(cfg);
+   }
+</pre>
+<pre class="runnable">
+prompt : function(cfg, msg, fn, scope, multiline, value){
+       if (Ext.isString(cfg)) {
+           cfg = {
+               prompt: true,
+               title: cfg,
+               minWidth: this.minPromptWidth,
+               msg: msg,
+               buttons: this.OKCANCEL,
+               callback: fn,
+               scope: scope,
+               multiline: multiline,
+               value: value
+           };
+       }
+       return this.show(cfg);
+   }
+</pre>
+<pre class="runnable">
+progress : function(cfg, msg, progressText){
+       if (Ext.isString(cfg)) {
+           cfg = {
+               title: cfg,
+               msg: msg,
+               progress: true,
+               progressText: progressText
+           };
+       }
+       return this.show(cfg);
+   }
+</pre>
+<pre class="runnable">
+wait : function(cfg, title, config){
+       if (Ext.isString(cfg)) {
+           cfg = {
+               title : title,
+               msg : cfg,
+               closable: false,
+               wait: true,
+               modal: true,
+               minWidth: this.minProgressWidth,
+               waitConfig: config
+           };
+       }
+       return this.show(cfg);
+   }
+</pre>
+</div>

@@ -1,0 +1,11 @@
+<p>Use your browser's debugger to inspect the element. Ext JS creates the <code>&lt;div class="x-btn"&gt;...&lt;/div&gt;</code> <i>dynamically</i> when the button is rendered. </p>
+
+<p>Mouse over the button and see how CSS styles are added to the div. That happens
+because the component author put low-level DOM events on the div, then ran code to
+add or remove CSS classes. 
+</p>
+
+<pre class="runnable preview">Ext.create('Ext.button.Button',{
+    text : 'Button',
+    renderTo : Ext.getBody()
+});</pre>

@@ -1,0 +1,26 @@
+idProperty property in a model:
+
+<ul>
+<li>points to the &quot;primary key&quot; in the field definition
+<li>update and delete operations use this property to locate the affected row
+</ul>
+
+<div class="readonly">
+<pre class="runnable">
+Ext.define('MyApp.model.MyModel', {
+    extend : 'Ext.data.Model',
+
+    idProperty: 'id',
+
+    fields : [
+        { name: 'id' },
+        { name: 'lastname', type: 'string' }
+    ],
+
+    validations: [ ... optional validations ... ],
+
+    yourFunction: function() {
+        // Your code
+    }
+});
+</pre></div>

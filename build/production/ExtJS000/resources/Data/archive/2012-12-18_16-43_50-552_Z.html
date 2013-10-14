@@ -1,0 +1,74 @@
+<h1>Introduction</h1>
+<p>
+In this lab, you will work with SASS to customize a theme.
+</br>
+
+<h1>Objectives</h1>
+<ul class="plain">
+<li>Change the base color of a theme</li>
+<li>Add custom css styles for the application</li>
+</ul>
+
+<h1>Working with Sass</h1>
+<ol>
+<li>
+Change the base color of the theme
+<p>Open: <kbd>packages/YelpTheme/sass/etc/all.scss</kbd>. Add the following code to this file to change the base color of your theme:</p>
+<pre>$base-color: #EBEDCE;</pre>
+</li>
+<li>Take over the css styles
+<p>
+When you open <kbd>stylesheet.css</kbd> (created in YelpExtplorer Lab 6 / Templates) you will find some custom css styles:
+</p>
+<pre>
+.businesses figure {
+    margin: 0;
+}
+.businesses figcaption {
+    text-align: center;
+    font-size: 7pt;
+}
+.businesses .business {
+    height: 134px;
+    width: 108px;
+    margin: 4px;
+    float: left;
+    border: 4px solid #aaaaaa;
+}
+.businesses .business img {
+    height: 100px;
+    width: 100px;
+}
+.businesses .over {
+    border: 4px solid #555555;
+}
+.businesses .selected {
+    border: 4px solid black;
+}
+</pre>
+<p>
+Copy the styles from <kbd>stylesheet.css</kbd>.
+Since these styles are specific for your YelpExtplorer application and not for the theme in general;
+create a new folder and file in your app directory: <kbd>YelpExtplorer/sass/<b>src/view/View.scss</b></kbd>
+that uses the styles for the dataview. (<code>xtype: view</code>, that's why the file is called <b>View.scss</b>).
+</p>
+</li>
+<li>Remove the following link tag from the YelpExtplorer's <kbd>index.html</kbd> file.
+<pre>
+link rel="stylesheet" href="stylesheet.css"
+</pre>
+</li>
+<li>Build the YelpExtplorer to use the theme changes.
+<p>Run the following command from the <kbd>YelpExtplorer</kbd> folder.</p>
+<pre>
+sencha app build
+</pre>
+</li>
+<li>
+Preview the YelpExtplorer in your browser
+<p>Select University: <b>Illinois</b> and click on the view tab. 
+You should see a light yellow theme, and the view tab should show blocks.
+<a href="http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer" target="new"><kbd>http://localhost/SenchaTraining/ExtJS251/Labs/YelpExtplorer</kbd></a>.
+In case you don’t see anything, check the build output in your console. Does it give you any errors?</p>
+</li>
+</ol>

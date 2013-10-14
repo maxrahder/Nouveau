@@ -1,0 +1,40 @@
+<p>
+Vbox and hbox arrange children vertically or horizontally. 
+</p>
+<p>
+You may optionally configure how items are aligned within the container, and whether they 
+are placed at the start, center or end. 
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.panel.Panel', {
+
+    //layout : 'vbox',
+    layout : {
+        type: 'vbox',
+        align: 'center',
+        pack : 'end'
+    },
+
+    items : [ {
+        title : 'One',
+        html : 'Panel One',
+        //flex : 1
+    }, {
+        title : 'Two',
+        html : 'Panel Two',
+        //flex : 1
+    }, {
+        title : 'Three',
+        html : 'Panel Three',
+        //flex : 2
+    } ],
+
+    title : 'My Panel',
+    height : 300,
+    width : 200,
+    defaults : {margin : 4, width : 100, 
+                 bodyPadding : 4},
+    bodyPadding : 8,
+    renderTo : Ext.getBody()
+});
+<pre>

@@ -1,0 +1,12 @@
+<ul>
+<li><code>this</code> is a JavaScript keyword that has different meanings depending on the context.</li>
+<li>The default value for <code>this</code> is the global object. In a browser, <code>this</code> is <code>window</code>.</li>
+<li>Inside a method call, <code>this</code> contains the object owning the method.
+</ul>
+
+<pre>
+> var obj = { returnThis : function() { return this; } };
+  undefined
+> obj.returnThis(); // returns the Object in obj
+  Object
+</pre>

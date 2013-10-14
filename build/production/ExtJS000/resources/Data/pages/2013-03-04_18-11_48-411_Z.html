@@ -1,0 +1,187 @@
+<h1>Introduction</h1>
+<p>In this lab, you will code the category tree.</p>
+
+<h1>Objectives</h1>
+<ul class="plain">
+<li>Review requirements for a tree view</li>
+<li>Define a model class with data fields and a proxy</li>
+<li>Define a tree store class that is associated to a model and automatically loads data</li>
+<li>Convert a panel view to a tree panel class</li>
+<li>Modify a viewport to pass in a store for a tree panel view</li>
+<li>Add logic to a controller to detect a tree view category selection, filter a tree store based on the category selection, and clear a detail panel view</li>
+<li>Add logic to a controller to filter a tree store after making a different selection from a combo box</li>
+<li>Add a bottom toolbar to a tree panel view and place a toolbar text item in it</li>
+<li>Add logic to a controller that updates the toolbar text in the bottom toolbar of a tree panel view</li>
+</ul>
+<h1>Steps</h1>
+
+<ol>
+
+	<li>Plan what you will be doing
+		<p>You need to add the tree of categories to the west panel. Then, 
+			detect when the user selects a category, and apply a filter to the
+			businesses store. As the user selects categories, the map, dataview
+			and grid will reflect the filtered data.</p>
+	</li>
+
+	<li>Create the model
+		<p>As you learned during the lecture, models used with a tree store are
+			overlaid with <code>Ext.node.NodeInterface</code> fields. The data feed is
+			responsible for arranging the data hierarchically, with child nodes
+			under elements named "children" and leaf nodes identified with
+			"leaf: true".</p>
+		<p>Your model declaration only needs to define additional values
+			not defined in "NodeInterface". In our case, those fields are "alias"
+			and "text". Here is a snippet from the data feed:</p> <pre>{
+    "leaf": true,
+    "alias" : "discgolf",
+    "text" : "Disc Golf"
+}, {
+    "children" : [ {
+        "leaf": true,
+        "alias" : "freediving",
+        "text" : "Free Diving"
+    }, {
+        "leaf": true,
+        "alias" : "scuba",
+        "text" : "Scuba Diving"
+    } ],
+    "alias" : "diving",
+    "text" : "Diving"
+}, {
+    "leaf": true,
+    "alias" : "fishing",
+    "text" : "Fishing"
+}</pre>
+		<p>Recall that the business feed has a "categories" array &mdash; each business belongs to one or more categories. Your
+			code needs to detect a selection in the tree, find the corresponding
+			text value, then select businesses whose categories contain the
+			selection.</p>
+		<p>
+			Use Sencha Cmd to define a model with the name <strong>"Category"</strong> and the
+			fields <strong>"alias"</strong> and <strong>"text"</strong>.</p>
+		<p>Use this for the proxy:</p> <pre>proxy: {
+    type: 'ajax',
+    url: 'data/categories.json'
+}
+</pre>
+	</li>
+
+	<li>Create the Categories store
+		<p>
+			An
+			<code>Ext.data.TreeStore</code>
+			is a little different from a regular store because they (typically)
+			specify a root.
+		</p>
+		<p>Create file <kbd>store/Categories.js</kbd> and use this code to define
+			the class:</p> <pre>Ext.define('YelpExtplorer.store.Categories', {
+    extend : 'Ext.data.TreeStore',
+    model : 'YelpExtplorer.model.Category',
+    autoLoad : true,
+    root : {
+        text : 'All',
+        alias : '',
+        expanded : true
+    }
+});
+</pre>
+		<p>This store is used in the Filter controller, so edit
+			<kbd>controller/Filter.js</kbd> and add "Categories" to the <code>stores</code> array and
+			add a <code>models</code> array that specifies "Category".</p>
+	</li>
+
+
+	<li>Add the tree panel
+		<p>Now that the model and store are there, you can add the tree
+			panel and see the category data.</p>
+		<p>Open <kbd>view/Filter.js</kbd> and change it so it extends
+			<code>Ext.tree.Panel</code>. Then edit <kbd>view/Viewport.js</kbd> and have the tree panel's config specify <code>store:'Categories'</code>.</p>
+            
+		<p>Save your work and refresh your browser, and you should see the
+			list of categories on in the filter panel!</p>
+            
+	</li>
+
+	<li>Have the list of businesses reflect the category selection
+    
+		<p>So now you need to detect when the user selects a category,
+			then filter those records.</p>
+            
+		<p>Edit <kbd>controller/Filter.js</kbd>. We need a few things.</p>
+        
+		<p>
+			First, add a references to the categories tree panel and the detail panel. 
+			Name them <code>categories</code> and <code>detail</code>, which means you will be able to reference
+			them via <code>this.getCategories()</code> and <code>this.getDetail()</code>.</p>
+            
+		<p>
+			Then add another selector in the
+			<code>init()</code>
+			method. Select the categories tree panel, and on the "select" event,
+			run <code>this.updateCategory</code>.
+		</p>
+
+		<p><code>updateCategory()</code> is a method you will code that determines the category
+			selection, then applies a filter to the business store. Below are two methods: <code>getCategory</code> is a helper method that returns the currently selected category string.
+			<code>updateCategory</code>
+			is run as the category is selected in the tree. Initially, the code uses
+<code>console.log()</code> statements to show what was selected.
+		</p>
+		<pre>getCategory: function() {
+    var record = this.getCategories().getSelectionModel().getSelection()[0];
+    return record ? record.get('text') : 'All';
+},
+updateCategory: function() {
+    var category = this.getCategory();
+    if(category === 'All') {
+        console.log('All -- clear the filter');
+        // Clear the business store filter
+    } else {
+        console.log('Filter on ' + category);
+        // On the business store, filter by a function. The function should get
+        // the record's "categories" and return true if the array contains
+        // the value in the local variable "category" (from line 1, above). This
+        // is one line of code if you use the Ext.Array.contains method.
+    }
+    this.getDetail().setRecord(null);
+}
+</pre>
+<p>Once the <code>references</code> and <code>init()</code> logic is there, you should see the console.log statements being run as you select items in the tree. That way, you will
+know things are wired up correctly and you're detecting the user's selection. Once that works, replace the pseudo-code with the code that applies the filters.</p>
+		
+<p>Read <a href="http://docs.sencha.com/extjs/#!/api/Ext.data.Store" target="api">the API documentation on <code>Ext.data.Store</code></a> to figure out how to clear a filter, and how to filter using a function. In the filter function use <a href="http://docs.sencha.com/extjs/4.2.1/#!/api/Ext.Array-method-contains" target="api"><code>Ext.Array.contains()</code></a> to test whether the business categories array contains the category selected in the tree.
+		</p>
+		<p>Make the code changes, save and refresh. Then select various categories. You should see the map and grid update to reflect the filter!
+		Note that filters that match zero businesses show the "emptyText" value on the grid and dataview.
+		That is all <i>uber cool</i>.</p>
+	</li>
+    
+    <li>Have the view update when the user changes schools<p>One last thing we need to do is to reflect the category selection even when the school changes.</p>
+    <p>To do that, add one more statement to the end of the Filter controller's <code>init()</code> method:</p><pre>this.getBusinessesStore().on('load', this.updateCategory, this);</pre>
+</li>
+    
+
+<h1>Optional</h1>
+
+<li>Add a record count to the filter panel<p>
+It would be nice to know exactly how many businesses match a given category.</p><p>To do that, first add a new "bbar" to the filter panel. Put 
+a single "tbtext" item in it, with an initial text value of "&nbsp". Give it the itemId "itemCount".</p>
+<p>Then go back and edit "controller/Filter.js" again and add a reference to it, named "itemCountLabel". Here is a helper function
+that updates the count. Call this method from the <code>updateCategoryMethod</code> you coded in the previous lab step.</p><pre>updateCount: function() {
+    var count = this.getBusinessesStore().getCount();
+    var singular = (count === 1);
+    var s = 'There ' + (singular ? 'is ' : 'are ') + count + ' matching business' + (singular ? '.' : 'es.');
+    this.getItemCountLabel().setText(s);
+}</pre><p>Save your work and refresh. You should see the record count at the bottom of the filter panel.</p>
+</li>
+
+
+</ol>
+
+
+
+
+
+
+

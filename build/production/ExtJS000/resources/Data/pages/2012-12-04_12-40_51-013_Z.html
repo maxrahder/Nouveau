@@ -1,0 +1,54 @@
+<p>
+Sencha Cmd is used in all facets of your project from scaffolding all the way to minifying and deploying your application to production.
+</p>
+<p>
+These steps will guide you to the install process of the latest version of Sencha Cmd.
+In this class we will make use of the newest version of Sencha Cmd.
+</p>
+<ol>
+<li>In case you have Sencha SDK tools installed; remove them.</li>
+<li>Download the latest Sencha Cmd installer <a href="http://www.sencha.com/products/sencha-cmd/download">here</a></li>
+<li>Run the installer.</li>
+<li>Note the installation directory.
+<p>
+By default, the installation path is (the version number could differ)<br/>
+<b>Windows</b>: C:\Users\Me\bin\Sencha\Cmd\3.*.*.***<br/>
+<b>Mac OS X</b>: ~/bin/Sencha/Cmd/3.*.*.***<br/>
+</p>
+<li>Sencha Cmd will be installed... </li>
+<li>Open your console and type: <code>sencha</code>, it should prompt all the sencha commands & options.
+<p>
+In case you don't see anything, you will need to add <em>sencha</em> to the class path.
+See the instructions below.
+</p>
+</li>
+<li>
+Check the Sencha Cmd version
+<p>
+Type the following command in your console to check the Sencha Cmd version: <code>sencha which</code>
+<p>
+</li>
+</ol>
+
+<strong>Windows users</strong><br/>
+<i>Start > Control Panel > Performance and Maintenance > System</i><br/>
+In your system properties click on the <i>Advanced</i> tab.
+Click the <i>Environment Variables</i> button.
+Edit the <i>classpath</i> variable or create a new variable called: <i>classpath</i>
+Add the following value and save:<br/>
+<i>C:\Users\Me\bin\Sencha\Cmd\3.*.*.***</i><br/>
+Make sure you are entering the correct path and version number.
+</p>
+
+<p>
+<strong>Mac users</strong><br/>
+Make hidden files visible.
+To achieve this, type the following command in your terminal:<br/>
+<code>defaults write com.apple.finder AppleShowAllFiles TRUE</code><br/>
+<code>killall Finder</code><br/>
+(running these commands with FALSE will disable showing hidden files again)
+Now open <i>~.bash_profile</i>.<br/>
+Add the following commands and save the file:<br/>
+<code>export PATH=/Users/username/bin/Sencha/Cmd/3.*.*.***:$PATH</code><br/>
+Make sure you are entering the correct path and version number.
+</p>

@@ -1,0 +1,13 @@
+<ul>
+<li>Since you probably control your own data feeds, the <code>type:'auto'</code> may work for most of your data</li>
+<li>But you can <i>never</i> use <code>auto</code> for dates, since they are sent as strings</li>
+<li>For dates you must <i>always</i> specify <code>type:'date'</code> and you must provide a <code>dateFormat</code> that matches the
+data</li>
+</ul>
+<div type="expander" caption="If you omit or mis-spell <code>dateFormat</code>...">
+<p>
+Note that if you omit (or mis-spell) <code>dateFormat</code>, Ext JS will use the JavaScript <code>Data.parse()</code> method,
+which tries to convert the string as well as it can. <code>Date.parse()</code> is particularly bad at handling timezones. Therefore,
+you should always use <code>dateFormat</code>. See <a href="http://docs.sencha.com/extjs/4.2.1/#!/api/Ext.data.Field-cfg-dateFormat" target="api">the API documentation</a> for more information.
+</p>
+</div>

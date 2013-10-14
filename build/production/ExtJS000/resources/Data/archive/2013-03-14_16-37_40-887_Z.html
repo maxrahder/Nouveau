@@ -1,0 +1,44 @@
+<div type="expander" caption="Standard Themes">
+<ul>
+<li>Classic</li>
+<li>Gray</li>
+<li>Neptune</li>
+<li>Access</li>
+</ul>
+</div>
+
+<div type="expander" caption="Examples">
+<ul>
+<li>
+View <a href="http://docs.sencha.com/extjs/#!/example/themes/index.html" target="_blank">every Ext JS component
+with the various themes</a></li>
+<li>Also see the new <a href="http://docs.sencha.com/extjs/#!/example/build/KitchenSink/ext-theme-neptune/" target="_blank">Kitchen Sink example</a></li>
+</ul>
+</div>
+
+<div type="expander" caption="Packages">
+<p>Themes are now organized as <i>packages</i>. This allows themes to exist as self-contained folders with all of their required SASS, JavaScript and other resources.</p>
+</div>
+
+<div type="expander" caption="Theme Inheritance">
+<p>
+Themes use theme inheritance to share code and resources between each other.
+</p>
+<pre class="plain">
+ext-theme-base
+    ext-theme-neutral
+        ext-theme-neptune
+        ext-theme-classic
+            ext-theme-gray
+            ext-theme-access
+            ext-theme-classic-sandbox
+</pre>
+</div>
+
+<div type="expander" caption="Effect on Sass">
+<ul>
+<li>Themes use more variables to control their styling than in previous versions</li>
+<li>Theme variables are found in <kbd>.../packages/[theme]/sass/var</kbd></li>
+<li>Most variables are defined in <kbd>.../packages/ext-theme-neutral/sass/var</kbd></li>
+</ul>
+</div>

@@ -1,0 +1,15 @@
+<p>
+You can also listen to low-level DOM events. 
+</p>
+<p>For example, open the debugger
+console and copy-and-paste, and run this code:</p>
+<pre>
+Ext.select('p').on('click', function(event, target){
+  Ext.fly(target).fadeOut();
+});</pre>
+<p>
+This code selects all paragraphs, and for each, listens to
+the click event. If you click on a paragraph, the handler
+runs the <code>Ext.dom.Element#highlight()</code>
+method on the clicked paragraph.
+</p>

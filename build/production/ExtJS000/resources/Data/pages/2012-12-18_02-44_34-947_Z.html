@@ -1,0 +1,29 @@
+<p>
+Rather than using a proxy, you can specify in-line data using the <code>data</code> property.</p>
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    fields : [ 'first', 'last' ]
+});
+Ext.define('MyApp.store.Persons', {
+    extend : 'Ext.data.Store',
+    model: 'MyApp.model.Person',
+    data : [ 
+        { first : 'John', last : 'Lennon' }, 
+        { first : 'Paul', last : 'McCartney' }, 
+        { first : 'George', last : 'Harrison' }, 
+        { first : 'Ringo', last : 'Starr'} 
+    ]
+});
+
+var store = Ext.create('MyApp.store.Persons');
+
+Ext.create('Ext.grid.Panel', {
+    store : store,
+    columns : [ 
+       { text : 'First', dataIndex : 'first' },
+       { text : 'Last', dataIndex : 'last' }
+    ],
+    width : 200,
+    renderTo : Ext.getBody()
+});</pre>

@@ -1,0 +1,9 @@
+<p>If you have a reference to the observable, you can use either <code>on()</code> or <code>addListener()</code> &mdash; those methods are synonyms.</p>
+<pre class="runnable">
+var b = Ext.create('Ext.button.Button', {
+    text : 'Button',
+    renderTo : Ext.getBody()
+});
+b.on('click', 
+    function(button){alert(button.getText() + ' click');}
+);

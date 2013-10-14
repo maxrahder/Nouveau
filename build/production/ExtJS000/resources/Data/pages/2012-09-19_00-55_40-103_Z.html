@@ -1,0 +1,10 @@
+<p>We can listen to events</p>
+
+<pre class="runnable">
+Ext.getBody().update('&lt;p id="myParagraph"&gt;Hi there&lt;/p&gt;');
+Ext.fly('myParagraph').on('click', 
+    function(event, target){
+        Ext.fly(target).toggleCls('box');
+    }
+);
+</pre>

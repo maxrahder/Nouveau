@@ -1,0 +1,34 @@
+<p>Here's a new type of panel, that we're instantiating twice.</p>
+
+<pre class="runnable preview">
+Ext.define('MyApp.view.HappyPanel', {
+    // Show a lot of happy buttons, each sharing a click handler.
+    extend: 'Ext.panel.Panel',
+    title: ':-)',
+    width: 396,
+    autoScroll: true,
+    sayHappy: function(button) {
+        parent.Ext.Msg.alert(':-)', 'I am happy face number ' + button.count);
+    },
+    initComponent: function() {
+        this.items = [];
+        for(var i = 0; i < this.count; i++) {
+            this.items.push({
+                xtype: 'button',
+                text: ':-)',
+                count: i + 1,
+                handler: this.sayHappy
+            });
+        }
+        this.callParent();
+    }
+});
+Ext.create('MyApp.view.HappyPanel', {
+    renderTo: Ext.getBody(),
+    count: 30,
+    margin: '0 0 16px 0'
+});
+Ext.create('MyApp.view.HappyPanel', {
+    renderTo: Ext.getBody(),
+    count: 150
+});</pre>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>Sencha Examples</title>
+
+<script type="text/javascript"          src="../../extjs4-live-preview/ext-all-rtl-debug.js"></script>
+<link rel="stylesheet" type="text/css" href="../../extjs4-live-preview/resources/css/ext-all-rtl.css">
+
+<link type="text/css" rel="stylesheet" href="resources/stylesheets/css/iframe.css" />
+
+<style type="text/css">
+
+.add {
+    background: url(resources/images/add.png);
+    width: 16x;
+    height: 16px;
+}
+
+.remove {
+    background: url(resources/images/delete.png);
+    width: 16x;
+    height: 16px;
+}
+
+.info {
+    background: url(resources/images/information.png);
+    width: 16x;
+    height: 16px;
+}
+
+.up {
+    background: url(resources/images/arrow_up.png);
+    width: 16x;
+    height: 16px;
+}
+
+.movies img {
+    height : 170px;
+    width : 113px;
+    margin : 4px;
+}
+
+.movies div.movie {
+    float : left;
+    border : 4px solid #aaaaaa;
+    margin : 8px;
+}
+.movies div.over {
+    border : 4px solid #555555;
+}
+.movies div.selected {
+    border : 4px solid black;
+}
+
+
+
+
+</style>
+
+<!-- Calc UX Styles -->
+<link rel="stylesheet" href="ux/calc/resources/css/calc.css" />
+
+<!-- Calc UX -->
+<script type="text/javascript" src="ux/calc/calc.js"></script>
+
+<script type="text/javascript">
+
+    Ext.Loader.setConfig({
+        enabled : true
+    });
+    Ext.application({
+        name : 'Training'
+    });
+
+    function loadInlineExample(code, options) {
+        try {
+            document.body.innerHTML = '';
+            eval(code);
+        } catch (e) {
+            document.body.innerHTML = e;
+        }
+    }
+    function out(value) {
+        if (arguments.length > 1) {
+            for ( var i = 0; i < arguments.length; i++) {
+                out(arguments[i]);
+            }
+        } else {
+            value = ((value === null) || (value === undefined)) ? '\n' : value.toString();
+            Ext.DomHelper.insertHtml('beforeEnd', document.body, '<pre style="font-size: 18pt">' + value + '</pre>');
+        }
+    }
+    function outLn(value) {
+        out(value);
+        Ext.DomHelper.insertHtml('beforeEnd', document.body, '<br/>');
+    }
+</script>
+</head>
+<body style="padding: 6px 0 0 0;">
+</body>
+</html>

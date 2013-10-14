@@ -1,0 +1,11 @@
+<ul>
+<li>Some Ext JS methods have optional <code>scope</code> parameters.</li>
+<li>As in the case of Ext.bind(), setting the scope parameter changes the value of <code>this</code> inside the function from the normal value of <code>this</code> to the value of the scope parameter.</li>
+</ul>
+<pre>
+> var aFn = Ext.bind( function(){return this + 1}, 2 );
+  undefined
+  // 2 is the scope parameter. It becomes the value of 'this'.
+> aFn() // returns 2 + 1
+  3
+</pre>

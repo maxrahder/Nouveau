@@ -1,0 +1,43 @@
+<ul>
+    <li><p>The <code>NodeInterface</code> class also adds <code>checked</code>, <code>icon</code>,
+        and <code>iconCls</code> properties to the model of the each of the tree's
+        nodes.</li>
+</ul>
+<pre class="runnable preview">
+var aTreeStore = Ext.create('Ext.data.TreeStore', {
+    root: {
+        text: 'Root Node',
+        expanded: true,
+        children: [{
+            text: 'Child 1',
+            expanded: true,
+            children: [{
+                text: 'Child 1.1',
+                leaf: true,
+                checked: true,
+		icon: 'resources/images/accept.png'
+            }, {
+                text: 'Child 1.2',
+                leaf: true,
+                checked: false,
+		icon: 'resources/images/cancel.png'
+            }]
+        }, {
+            text: 'Child 2',
+            expanded: true,
+            children: [{
+                text: 'Child 2.1',
+                leaf: true,
+                checked: true,
+                iconCls: 'x-grid-tree-node-expanded'
+            }]
+        }]
+    }
+});
+
+Ext.create('Ext.tree.Panel', {
+    store: aTreeStore,
+    title: 'Tree With TreeStore',
+    renderTo: Ext.getBody()
+});
+</pre>

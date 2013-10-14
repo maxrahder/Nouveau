@@ -1,0 +1,8 @@
+<p>As an alternative, you can figure each mixin as a name/value pair.</p>
+<pre class="runnable">
+Ext.define('CoolPerson', {
+    extend : 'Person',
+    //mixins : ['CanSing', 'CanPlayGuitar']
+    mixins : {canSing : 'CanSing', canPlayGuitar : 'CanPlayGuitar'}
+});</pre>
+<p>In a few slides, we'll see an example of needing this syntax.</p>

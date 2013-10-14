@@ -1,0 +1,18 @@
+<p>
+If you've saved a reference to the handler, you can remove it via <code>un()</code> or its synonym <code>removeListener()</code>. This is rarely needed since you would usually disable a component to turn off its behavior. 
+</p>
+
+<pre class="runnable">
+var a = Ext.create('Ext.button.Button', { text : 'Button' });
+var b = Ext.create('Ext.button.Button', { text : 'Remove Handler' });
+
+var handler =  function(button){alert(button.getText() + ' click');};
+
+a.on('click', handler)
+b.on('click', function(button){a.un('click', handler)});
+
+Ext.create('Ext.container.Container', {
+    items : [a, b],
+    defaults : {margin : 8},
+    renderTo : Ext.getBody()
+});

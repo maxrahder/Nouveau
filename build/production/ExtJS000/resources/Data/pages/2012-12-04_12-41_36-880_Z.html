@@ -1,0 +1,43 @@
+<h1>Introduction</h1>
+<p>
+Let's start with creating your first full working MVC application. Does this sound scary?
+You don't need to be. Since you will generate this application it requires less coding skills.
+This lab requires that the latest version of <a href="?page=Appendix%20>%20Setup%20and%20Organization%20>%20Sencha%20Cmd">Sencha Cmd</a> is correctly installed.
+</p>
+<p>
+You will create the <strong>MyDemoApp</strong> in the <strong>XAMPP/htdocs/Student/labs folder</strong>.
+</p>
+
+<h1>Steps</h1>
+<ol>
+<li>Verify that Sencha Cmd is correctly installed and added to the class path.
+<p>Open your console/terminal and enter the command: <code>sencha which</code>.
+It should prompt you the Sencha Cmd version number. If the version number < 3.0.2, reinstall Sencha Cmd,
+please follow the <a href="?page=Appendix%20>%20Setup%20and%20Organization%20>%20Sencha%20Cmd">install guide</a>.
+If you are having problems, please ask your instructor to help you.</p>
+</li>
+<li>Prepare the folder structure
+<p>In the <b>htdocs/Student</b> folder, create a folder called: <strong>labs</strong> (htdocs/Student/labs).</p>
+<p>In the <b>htdocs</b> folder, make sure there is a copy of Ext JS in a folder named: <strong>extjs4</strong>.</p>
+</li>
+<li>Navigate with your console/terminal navigate to the extjs4 folder.
+</pre>
+</li>
+<li>
+Generate your app by entering the following command:
+<pre>
+sencha generate app MyDemoApp ../Student/labs/MyDemoApp
+</pre>
+<p>(You can almost generate everything with Sencha Cmd; type in your console: <code>sencha help generate</code> to see an overview of what else you can generate.)</p>
+</li>
+<li>
+Open the <strong>MyDemoApp</strong> <a href="http://localhost/Student/labs/MyDemoApp/" target="labs">http://localhost/Student/labs/MyDemoApp/</a>
+in your browser.
+<p>You should see your MyDemoApp application, with 2 columns. The center column contains a tabpanel.</p>
+</li>
+<li>
+Review the generated folder structure of the MyDemoApp in Finder/File Explorer.
+</li>
+</ol>
+
+<p>Keep the files on your localhost. You will use it later for the Eclipse Lab.</p>

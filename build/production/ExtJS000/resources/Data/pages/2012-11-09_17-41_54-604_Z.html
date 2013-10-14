@@ -1,0 +1,25 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.Date" target="api"><code>Ext.form.field.Date</code></a></p>
+
+Provides a date input field with a date picker dropdown and automatic date validation.
+Most prompts can be automatically reconfigured to use date formats appropriate for the user's locale.
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    renderTo: Ext.getBody(),
+    width: 300,
+    bodyPadding: 10,
+    title: 'Dates',
+    items: [{
+        xtype: 'datefield',
+        anchor: '100%',
+        fieldLabel: 'From',
+        name: 'from_date',
+        maxValue: new Date()  // limited to the current date or prior
+    }, {
+        xtype: 'datefield',
+        anchor: '100%',
+        fieldLabel: 'To',
+        name: 'to_date',
+        value: new Date()  // defaults to today
+    }]
+});
+</pre>

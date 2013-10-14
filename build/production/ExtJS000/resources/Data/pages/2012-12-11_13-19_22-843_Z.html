@@ -1,0 +1,84 @@
+<h1>Introduction</h1>
+<p>
+In this walkthrough, you will work with Sencha Architect 2 for Ext JS projects.</p>
+Together with your instructor, you will perform the following tasks:
+</p>
+<ul>
+<li>Working with column templates</li>
+</ul>
+
+<h1>Steps</h1>
+
+<h2>Promote the Business grid to a class</h2>
+<ol>
+<li><p>Right-click on the <b>Businesses</b> grid in the Project Inspector.</p></li>
+<li><p>Choose the <b>Promote to class</b> menu item.
+<p><small><b>
+Note:</b><i> Your view may collapse in Design view, If this occurs, you can close Architect and reopen. It has no effect on the actual document when previewed.</i></small></p>
+<p><small><i>You will see a new entry in the Project Inspector for this component, with a link from the Viewport to the separate class.</i></small></p></li>
+<li><p>Under <b>MyViewport</b>, double-click the <b>Business grid link</b> to go directly to the new grid class.</p></li>
+<li><p>In the <b>MyGridPanel</b>, configure the following properties:
+<ul>
+<li><p>userClassName: <b>Business</b>
+<li><p>userAlias: <b>bizgrid</b>
+</ul>
+</p></li>
+<li><p>Click <b>MyViewport</b>, and go to <b>Code</b> view.
+<p><small><b>
+Note:</b><i> All the grid configuration code has been replaced
+by one line: <b>xtype: 'bizgrid'</b></i></small>
+</p></li>
+</ol>
+
+<h2>Convert MyViewport to border layout</h2>
+<ol>
+<li><p>Click on <b>MyViewport</b></p></li>
+<li><p>Set layout: <b>border</b>
+<p><small><b>
+Note:</b><i> In Code view, <b>bizgrid</b> is now in <b>region: center</b>.</i></small></p></ol>
+
+<h2>Add a Custom Photo Component</h2>
+<ol>
+<li><p>In the Toolbox, drag or double-click a <b>"component"</b> (generic component) to add it to <b>MyViewport</b></p></li>
+<li><p>Set the following property to MyComponent. (the name of the just created component)
+<ul>
+<li><p>region: <b>east</b></p></li>
+</ul>
+<p><small><b>Note:</b> <i>This will also automatically insert a width property of 150 pixels.</i></small></p></li>
+</ol>
+
+<h2>Promote the new component to a class</h2>
+<ol>
+<li><p>Right-click on the <b>component</b>, choose <b>Promote to class</b></p></li>
+<li><p>Change the following settings on the new class:
+<ul>
+<li><p>userClassName: <b>BusinessDetail</b></p></li>
+<li><p>userAlias: <b>bizdetail</b></p></li>
+</ul>
+</p></li>
+</ol>
+
+<h2>Add a photo to the BusinessDetail component</h2>
+<ol>
+<li><p>Select the <b>BusinessDetail</b> component you just created</p></li>
+<li><p>Select the <b>tpl</b> property, and click on the <b>&rarr; (arrow icon)</b>.</p></li>
+<li><p>Add the following code in the editor:
+<pre>&lt;div style="margin:1ex;padding:2ex">
+&lt;b>Name:&lt;/b>&lt;br>
+{name}&lt;br>&lt;br>
+&lt;b>Address:&lt;/b>&lt;br>
+{full_address}&lt;br>&lt;br>
+&lt;b>Photo:&lt;/b>&lt;br>
+&lt;img src={photo_url}>
+&lt;/div></pre></pre>
+</p></li>
+</ol>
+
+<h2>Save and Preview the Application</h2>
+
+Not much has changed, other than the addition of the “east” region. Nothing more is visible, at this time, because the component doesn’t have any data loaded that it can display. For that to happen, we have to listen for an event on the grid, then we can fill the custom photo component. That is the subject of our next lab, <b>"Controller"</b>, we will populate the photo component with information from a selected grid row
+
+<h1>Conclusion</h1>
+<p>We just created two new classes and added another template. We will soon see the data populating into the east region. Your patience will be rewarded.</p>
+<br />
+<br />

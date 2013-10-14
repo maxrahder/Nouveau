@@ -1,0 +1,14 @@
+[
+{ month: 'January'   , ie: 26.6, ff : 42.8, chrome : 23.8, safari : 4.0, opera : 2.5 },
+{ month: 'February'  , ie: 26.5, ff : 42.4, chrome : 24.1, safari : 4.1, opera : 2.5 },
+{ month: 'March'     , ie: 25.8, ff : 42.2, chrome : 25.0, safari : 4.0, opera : 2.5 },
+{ month: 'April'     , ie: 24.3, ff : 42.9, chrome : 25.6, safari : 4.1, opera : 2.6 },
+{ month: 'May'       , ie: 24.9, ff : 42.4, chrome : 25.9, safari : 4.0, opera : 2.4 },
+{ month: 'June'      , ie: 23.2, ff : 42.2, chrome : 27.9, safari : 3.7, opera : 2.4 },
+{ month: 'July'      , ie: 22.0, ff : 42.0, chrome : 29.4, safari : 3.6, opera : 2.4 },
+{ month: 'August'    , ie: 22.4, ff : 40.6, chrome : 30.3, safari : 3.8, opera : 2.3 },
+{ month: 'September' , ie: 22.9, ff : 39.7, chrome : 30.5, safari : 4.0, opera : 2.2 },
+{ month: 'October'   , ie: 21.7, ff : 38.7, chrome : 32.3, safari : 4.2, opera : 2.4 },
+{ month: 'November'  , ie: 21.2, ff : 38.1, chrome : 33.4, safari : 4.2, opera : 2.4 },
+{ month: 'December'  , ie: 20.2, ff : 37.7, chrome : 34.6, safari : 4.2, opera : 2.5 }
+]

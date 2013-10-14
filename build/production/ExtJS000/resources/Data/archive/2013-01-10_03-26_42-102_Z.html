@@ -1,0 +1,29 @@
+<p>When we click on a record on the left, we want to see the details about that record in the form on the right. To set this up, we use a controller.
+<h3>A controller tells your application to listen for certain events on certain components, and respond to them using a given method.</h3>
+<ol>
+<li><p>At the top of the <b>Project Inspector</b>, click on the <b>[+]</b> button, and select <b>Controller</b>.
+<li><p>Select <b>MyController</b> in the Project Inspector.
+
+<li><p>In the <b>Config panel</b> give this new controller the following property value:
+<ul>
+	<li><p>userClassName: <b>ITunesController</b></p></li>
+</ul>
+<li><p>To set up the event listener,
+<ul>
+	<li><p>Click on the <b>(+)</b> to the right of <b>Actions</b>.
+	<li><p>From the menu, select <b>Controller Action</b>.
+	<li><p>For the <b>Target Type</b>, select the class of our list component, <b>Ext.view.View</b>.
+	<li><p>Choose the <b>select</b> event.
+</ul>
+<li><p>Now we write the method.
+<ul>
+	<li><p>In the <b>Project Inspector</b>, click on <b>select onDataViewSelect</b>.
+	<li><p>Select the <b>[Code]</b> button.
+	<li><p>Enter the following code in the editor:
+</ul>
+</ol>
+	<pre>
+var basicForm = Ext.ComponentQuery.query('form')[0].getForm();
+basicForm.loadRecord(record);
+</pre>
+<h2>Save, Publish and Preview the Application</h2>

@@ -1,0 +1,50 @@
+<h1>Introduction</h1>
+
+<p>This lab will let you play with <code>Ext.XTemplate</code> and <code>Ext.view.View</code>.
+You will create a little movie application that loads the most populair movies (from iTunes) in your app.
+When you hover over each item it will display a rollover style. When you click on an item it opens the movie trailer in YouTube.
+</p>
+<p>
+ <b>Note: </b> You will need the following file: <strong>Labs/Templates/app.js</strong>
+</p>
+
+<h1>Steps</h1>
+<ol>
+   <li>Make sure the data loads from the Store instead of the array.
+   <p>As you can see the the data is not dynamic, we will use a proxy on the <code>Ext.data.Model</code> to retrieve data from iTunes. Uncomment the model and store and delete the <code>data</code> array.
+You can also remove the <code>movieTpl.overwrite()</code> indicated by the comment.</p></li>
+   <li>Check the <code>Ext.window.Window</code> code.
+<p>Right now the child item has no <code>xtype</code> defined so it will be automatically configured to its default xtype: <code>panel</code>.</p>
+<p>Use the <code>xtype: dataview</code>. It should be connected to the Movies store:
+<code>Ext.data.StoreManager.lookup('Movies')</code>, and it should use the <code>movieTpl</code> template.</p>
+</li>
+<li>
+Set the <code>itemSelector</code> to <code>div.holder</code>
+<p>
+Now test your code in the browser. You should see...
+...actually you will see almost same as when you started this lab.
+Except that you will see more movies loaded from iTunes.
+</p>
+<p>The most power in this dataview is in its listeners.
+You will start coding 2 listeners. The <code>itemclick</code>, this handler opens the movie in YouTube and the <code>itemmouseenter</code>. This handler shows a nice mouse rollover.
+</p>
+</li>
+<li>Create both listeners</li>
+<li>itemclick will contain the following function:
+<pre>
+fn: function(e, target){
+   window.open('http://www.youtube.com/results?search_query=' + target.data.movie + '+trailer', '_blank');
+}</pre>
+</li>
+<li>itemmouseenter will contain the following function:
+<pre>
+fn: function(e, target, item){
+    Ext.each(Ext.query('.hover'), function(){
+       this.style.display = 'none';
+    });
+    Ext.query('.hover', item)[0].style.display = 'block';
+}
+</pre>
+</li>
+</ol>
+<p>Test your application in the browser.</p>

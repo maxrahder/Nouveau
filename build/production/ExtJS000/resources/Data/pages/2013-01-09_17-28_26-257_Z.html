@@ -1,0 +1,93 @@
+<h1>Introduction</h1>
+
+<p>This is a group project. In groups, you will plan then implement a full-featured application from start to finish.</p>
+<p>
+You will need to sharpen your pencils, get a fresh cup of coffee and have the API documentation ready.
+</p>
+<p>Before getting started, your instructor will break you up into groups of two or three. You will work as a team to
+	plan and decide on what you need to do. One person within the team will be the designated typest.</p>
+<p>The lab has major steps, and for each step we will do this:</p>
+<ul class="plain">
+	<li>The instructor will pose a question or task</li>
+	<li>Within each group you will discuss the solution</li>
+	<li>The instructor will choose a group to explain their answer or plan to the rest of the class</li>
+	<li>The instructor will document the consensus on the white board</li>
+	<li>Each group will implement the solution</li>
+</ul>
+<p>We will do this over and over as we implement each major piece of the application.</p>
+
+<p>We will work in "Labs/Weather. It's empty.</p>
+
+<h2>Requirements</h2>
+<p>You've been hired by the US meteorological service, the National Oceanic and Atmospheric Administration (NOAA), to develop a Web application
+	for displaying monthly weather data for cities around the world.</p>
+<p>
+Your user sketched out what she wants: 
+</p>
+<a href="resources/images/_group-project/Spec1.jpg" target="lab"><img src="resources/images/_group-project/Spec1.jpg" height="25%" /></a>
+<a href="resources/images/_group-project/Spec2.jpg" target="lab"><img src="resources/images/_group-project/Spec2.jpg" height="25%" /></a>
+<a href="resources/images/_group-project/Spec3.jpg" target="lab"><img src="resources/images/_group-project/Spec3.jpg" height="25%" /></a>
+<p>Note these key components:</p>
+<ul class="plain">
+	<li>There's a tab panel, with a right-docked form</li>
+	<li>The tab panel contains a grid, a data view and a chart</li>
+	<li>Changes to the data are immediately reflected throughout the application</li>
+	<li>The grid, data view and form are kept in sync as the user selects items</li>
+</ul>
+
+
+<h1>Steps</h1>
+<ol>
+
+	<li>How will the application folder end up being structured: what folders, what files?
+<p>If you use Sencha Cmd, how will you modify the application it generates to fit our requirements?</p>
+</li>
+
+	<li>Stub out the user interface<p>Initially, make each of the major containers (the grid, view, chart and form) extend <code>Ext.panel.Panel</code>. Later we'll make them subclass the more 
+specific types of panel, as needed. </p>
+<p>Each will need an xtype, and for now just use the <code>html</code> property
+to show what each will eventually contain.</li>
+
+    <li>Write the model and store<p>First, review <a href="/SenchaTraining/ExtJS251/Labs/Weather/data/parisTemperatureByMonth.json" target="lab">the data feed</a> and its URL &mdash; "data/parisTemperatureByMonth.json".</p>
+<p>
+Call the model <code>Weather.model.Month</code> and the store <code>Weather.store.Months</code>.
+</p>
+</li>
+
+    <li>Fully implement the grid</li>
+
+    <li>Fully implement the data view
+    <p>Your CSS developer already wrote the CSS and the template that uses it. All you need to do is copy and paste from the code below.
+    <pre>.month { float: left; border: thin solid ; width: 180px; height: 90px; padding: 10px; margin: 10px 5px 0 5px; border: 1px dotted #999; background: #CCCCCC; color: #555; }
+.month.over { background: #EEEEEE; }
+.month.selected { background: white; border: 2px solid black; }</pre>
+<p>Where does this CSS code need to be located.</p>
+
+<p>What dataview configs are used to reflect those CSS styles?</p>
+
+
+<p>Here's the template for use in the data view.</p>
+<pre>&lt;b&gt;{month}&lt;/b&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;High:&nbsp;&lt;/td&gt;&lt;td&gt;{high}&lt;/td&gt;&lt;tr&gt;&lt;td&gt;Low:&nbsp;&lt;/td&gt;&lt;td&gt;{low}&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Precipitation:&nbsp;&lt;/td&gt;&lt;td&gt;{precipitation}&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</pre>
+
+</li>
+
+<li>Have row selections be reflected in the data view, and selections in the data view be reflected in the grid</li>
+    
+<li>Fully implement the form
+
+<p>First code the user interface. Then add the code to have the 
+form reflect the currently-select record. When that works, add the two following features &mdash; both will take some thought and planning.</p>
+<ul class="plain">
+<li>Changes to fields are immediately reflected in the data</li>
+<li><b>Optionally</b> include a toolbar, with buttons to go to the previous and next record</li></ul>
+    
+    <li>Fully implement the chart<p>Get each series working before moving on to the next. Charting precipitation (using the right axes) is optional.</p></li>
+
+</ol>
+
+<h1>Congratulations!</h1>
+
+<p>
+You have the skills needed to code a full application! Maybe you should send your resume to NOAA?
+</p>
+

@@ -1,0 +1,20 @@
+<p>
+<code>Ext.JSON</code> is a singleton used to convert an object to a JSON string, 
+or a JSON string to an object. It's commonly used when using <code>Ext.Ajax</code>
+to send data, or 
+</p>
+
+<pre class="runnable">
+var jsonString = "{a : 1, b : [ { c : 'hi' } ] , d: function(){alert('In the function')}}";
+
+var o = Ext.JSON.decode(jsonString); // Turn it into an object
+
+console.log(o); // Show the new object
+o.d(); // Run the function
+
+o.a = '932487293'; // Update the object
+delete o.d; // Remove a property
+
+var s = Ext.JSON.encode(o); // Turn it back into a string
+alert(s);
+</pre>

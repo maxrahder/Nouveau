@@ -1,0 +1,66 @@
+<p>The <code>save()</code> method saves the grid as SVG, JPEG or PNG. It uses Sencha IO.</p>
+<p>
+To see a working example press the save button.
+</p>
+<pre class="runnable preview">
+Ext.define('MyApp.model.Sales', {
+    extend : 'Ext.data.Model',
+    fields : [ 'name', {
+        name : 'sales',
+        type : 'int'
+    } ]
+});
+store = Ext.create('Ext.data.JsonStore', {
+    proxy : {
+        type : 'ajax',
+        url : '../Data/charts/musicianSales.json'
+    },
+    autoLoad : true,
+    fields : [ 'name', 'sales' ]
+});
+
+chart = Ext.create('Ext.chart.Chart', {
+    store : store,
+    axes : [ {
+        type : 'Numeric',
+        position : 'left',
+        fields : [ 'sales' ],
+        title : 'Sales ($millions)',
+        minimum : 0
+    }, {
+        type : 'Category',
+        position : 'bottom',
+        fields : [ 'name' ],
+        title : 'Artist or Band'
+    } ],
+    series : [ {
+        type : 'column',
+        axis : 'left',
+        highlight : true,
+        xField : 'name',
+        yField : 'sales'
+    } ]
+});
+
+Ext.create('Ext.container.Container', {
+    renderTo : Ext.getBody(),
+    layout : 'fit',
+    height : 350,
+    items : [ {
+        xtype : 'panel',
+        layout : 'fit',
+        items : [ chart ],
+        tbar : [ {
+            text : 'Save',
+            handler : function(button) {
+                button.up('panel').down('chart').save({
+                    type : 'image/png'
+                });
+            }
+        } ]
+    } ]
+});
+</pre>
+
+
+

@@ -1,0 +1,19 @@
+<pre class="runnable">
+Ext.define('MyApp.model.Person', {
+    extend: 'Ext.data.Model',
+    fields: ['first', 'last'],
+    proxy: {
+        type: 'ajax',
+        url: '../Data/json/theBeatles.json'
+    }
+});
+Ext.create('Ext.data.Store', {
+    model: 'MyApp.model.Person',
+    autoLoad: true,
+    listeners: {
+        load: function(store){
+            alert(Ext.pluck(Ext.pluck(store.data.items, 'data'), 'first'));
+        }
+    }
+});
+</pre>

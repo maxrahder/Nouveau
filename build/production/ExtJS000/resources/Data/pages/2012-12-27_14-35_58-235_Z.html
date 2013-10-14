@@ -1,0 +1,38 @@
+<p>
+Anchor layout arranges items top to bottom, where each takes up a relative width and height, specified via the <code>anchor</code>
+value on each item. The size is relative to the container &mdash; resize the window to see this in action.
+</p>
+<p>The value specifies a width and (optionally) height. The values can be either an integer offset or a percentage.
+For example, an item using <code>anchor: '-50 75%'</code> will take up 50 pixels less width than the container width, and 75% less
+height than the container height.
+</p>
+<pre class="runnable preview">
+Ext.create('Ext.window.Window', {
+
+    layout : 'anchor',
+    items : [ {
+        style : {'background-color' : 'red'},
+        anchor : '90% 20%'
+    }, {
+        style : {'background-color' : 'white'},
+        height : 10,
+        anchor : '-10'
+    } , {
+        style : {'background-color' : 'blue'},
+        anchor : '90% 20%'
+    } , {
+        style : {'background-color' : 'green'},
+        anchor : '-50 40%'
+    } ],
+
+    title : 'Window',
+    defaults : {xtype : 'component'},
+    height : 300,
+    width : 300,
+    bodyPadding: 6,
+    x : 1, 
+    y : 1,
+    autoShow : true
+
+});
+</pre>

@@ -1,0 +1,11 @@
+<h3>Ext.Array.map(array, fn, scope)</h3>
+<p>Creates a new array with the results of calling a provided function on every element in this array.</p>
+<pre class="runnable">
+var a = [ 1, 2, 3 ];
+// The square of every item
+var b = Ext.Array.map(a, function(item){
+    return (item * item);
+});
+alert(b); // alerts [1, 4, 9]
+</pre>
+

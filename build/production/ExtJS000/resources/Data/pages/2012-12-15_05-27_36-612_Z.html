@@ -1,0 +1,16 @@
+<ul>
+    <li><p>The class for a tree is <code>Ext.tree.Panel</code>.</li>
+    <li><p>You may add an object to the tree panel's <code>root</code> property.</li>
+    <li><p>The value of the object's <code>text</code> property appears as node's label
+        in the tree.</li>
+</ul>
+<pre class="runnable">
+Ext.create('Ext.tree.Panel', {
+    root: {
+        text: 'Root Node',
+        leaf: true
+    },
+    title: 'Tree With Root',
+    renderTo: Ext.getBody()
+});
+</pre>

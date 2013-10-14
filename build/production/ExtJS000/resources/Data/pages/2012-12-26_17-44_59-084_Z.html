@@ -1,0 +1,112 @@
+<h1>Introduction</h1>
+
+<p>This lab lets you experiment with border layout.</p>
+
+<h1>Steps</h1>
+
+<ol>
+
+	<li>Inspect <kbd>Labs/Layouts/Border/app.js</kbd>
+		<p>
+			Use your IDE to inspect
+			<kbd>Labs/Layouts/Border/app.js</kbd>
+			. The code creates a window. Run the application using your browser. You should see a rectangular window, with the
+			title "Border".
+		</p>
+	</li>
+
+	<li>Specify the window's layout and add two children
+		<p>
+			Add a
+			<code>layout: 'border'</code>
+			property, and an
+			<code>items</code>
+			array. In the items array, specify two children using this code:
+		</p> <pre>
+items : [{
+    title : 'West'
+}, {
+    title : 'Center'
+}]</pre>
+		<p>
+			Save your changes and refresh your browser. It should <em>not</em> look very good. Why? Because we haven't specified
+			the position of the regions.
+		</p>
+	</li>
+	<li>Add <code>region</code> properties
+		<p>
+			To the child panel titled "West" add a
+			<code>region: 'west'</code>
+			property. Specify
+			<code>region: 'center'</code>
+			to the other panel.
+		</p>
+		<p>Save and refresh. Now the center panel takes up all the space. We still aren't seeing the west panel.
+	<li>Specify the heights and widths of the panels
+		<p>We aren't seeing the west panel because it needs to specify its width (or its children do).</p>
+		<p>Add a <code>width</code> of 80 to the west panel, save and refresh. You should see the west panel.</p>
+		<p>Try specifying a <code>height</code> of 10 to the west panel. And specify a <code>height</code> and <code>width</code> of 10 to the center panel. Save
+			and refresh.</p>
+		<p>Those settings are ignored. A panel on the sides takes up all the available height, so the height property is
+			ignored. Panels on the top or bottom take up all the available width, so setting width on those panels is ignored.
+			The center panel takes up all the remaining space, so both its height and width are ignored.</p>
+	</li>
+
+	<li>Add other panels
+		<p>Add north, east and south panels. Set their heights or widths, where relevant.</p>
+		<p>Save and refresh. Are you seeing all panels: north, east, south, west and center? Do they have the heights and
+			widths you expect? If not, ask the instructor to help you figure out why.</p>
+	</li>
+
+	<li>Set the north panel's relative weight
+		<p>By default, the north panel's weight makes it take up the entire width of the parent: the west and east panels
+			are under it.</p>
+		<p>Modify this priority by setting both the east and west panel <code>weight</code> to 20, and the north panel <code>weight</code> to 10.</p>
+		<p>Save and refresh. Since the west and east panels have a greater weight than the north panel, they should both
+			now extend to the top of the parent panel. The north panel should be between them.</p>
+	</li>
+
+
+	<li>Make the panels collapsible
+		<p>
+			Make the border panels collapsible via
+			<code>collapsible:true</code>
+			.
+		</p>
+		<p>This setting only affects the west, north, east and south panels. With border layout the center panel is always
+			seen; it doesn't make sense to specify collapsible for the center panel.</p>
+		<p>Save and refresh. Is each panel collapsible?</p>
+		<p>
+			Add
+			<code>collapseMode:'mini'</code>
+			to the west panel. Save and refresh: the west panel should now fully collapse, hiding its title.
+		</p>
+	</li>
+
+	<li>Use flex for the east panel
+		<p>
+			Replace the east panel's width with
+			<code>flex:0.5</code>
+		</p>
+		<p>Panels specifying widths and heights have a fixed value. Specifying flex makes the value proportional. By
+			default, the center panel is flex 1. So setting the east panel to 0.5 means it will take up half the width of the
+			center panel.</p>
+		<p>Save and refresh. Is the east panel half the width of the center panel? Resize the window &mdash; are the
+			center and east panels maintaining their relative widths?</p>
+	</li>
+	
+	
+	<h1>Optional</h1>
+
+    <li>Change weights to make west more important than east
+        <p>
+            Change the panels' weights so that the west panel takes up the full height of the parent window and
+            the north and south should take up all the remaining widths. The east takes should up the remaining 
+            space between the north and south panels.
+        </p>
+    </li>
+    
+
+
+
+</ol>

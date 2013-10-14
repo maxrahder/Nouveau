@@ -1,0 +1,33 @@
+<p>
+With some layouts, the <code>layout</code> property is all that's needed. But with others,
+you need to tag each item with additional information for use by the layout manager.
+</p>
+<p>
+For example, with border layout, each item must be tagged with its position. With column
+layout, each item must be tagged with a column width. 
+</p>
+<pre class="runnable">
+Ext.create('Ext.panel.Panel', {
+
+    layout : 'border',
+
+    items : [ {
+        title : 'Navigation',
+        region : 'west', // This tells the border layout where to put the component
+        width : 80
+    }, {
+        title : 'Status',
+        region : 'south', // This tells the border layout where to put the component
+        height : 80
+    }, {
+        title : 'Main',
+        region : 'center' // This tells the border layout where to put the component
+    } ],
+
+    title : 'My Panel',
+    defaults : {margin : 4},
+    bodyPadding : 8,
+    height : 400, width : 600,
+    renderTo : Ext.getBody()
+});
+</pre>

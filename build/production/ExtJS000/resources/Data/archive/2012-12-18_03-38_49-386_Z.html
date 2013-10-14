@@ -1,0 +1,44 @@
+<pre class="runnable">
+Ext.define('MyApp.store.Persons', {
+	extend: 'Ext.data.Store',  
+	// model: 'MyApp.model.Person',
+	fields: [ {name: 'id', type: 'int'}, 'first', 'last' ],
+	data: [
+		{ id: 1, first: 'John', last: 'Lennon' },
+		{ id: 2, first: 'Paul', last: 'McCartney' },
+		{ id: 3, first: 'George', last: 'Harrison' },
+		{ id: 4, first: 'Ringo', last: 'Starr' }
+	]
+});
+
+var outputModel = function(model) {
+	return 'id='+model.get('id')+', first='+model.get('first')+', last='+model.get('last')
+}
+
+var searchFunc = function(model, id) {
+	if ( model.get('first') === 'John' ) {
+		return true;
+	}
+	return false;
+}
+
+var st = Ext.create('MyApp.store.Persons');
+Ext.Msg.alert('getAt(1)', outputModel(st.getAt(1)), function() {
+
+// find returns an index
+var index = st.find('first', 'Geo', 0, true);
+if (index > -1) {
+	Ext.Msg.alert('find("first", "Geo", 0, true)', outputModel( st.getAt(index)), function() {
+		Ext.Msg.alert('getById(4)', outputModel(st.getById(4)), function() {
+			index = st.findBy(searchFunc);
+			Ext.Msg.alert('findBy(searchFunc() )', outputModel(st.getAt(index)) );
+		});
+	} );
+}
+else {
+	Ext.Msg.alert('msg', 'Not Found');
+}
+
+} );
+
+</pre>

@@ -1,0 +1,20 @@
+<p>
+Classes can also have methods. A method is just a named function, included in the class description.
+</p>
+<pre class="runnable">
+Ext.define('MyApp.taxonomy.Mammal', {
+    config : {
+        name : 'Anonymous'
+    },
+    constructor : function(config) {
+        this.initConfig(config);
+        this.callParent(config);
+    },
+    speak : function(){
+        alert('Ugh!');
+    }
+});
+var a = Ext.create('MyApp.taxonomy.Mammal', {
+    name : 'Creature'
+});
+a.speak(); // Alerts 'Ugh!'</pre>

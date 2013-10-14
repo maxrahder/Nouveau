@@ -1,0 +1,17 @@
+<p>
+You can create models automatically with Sencha Cmd version 3 and higher, <i>as long as the app was originally created with <code>sencha generate app</code></i>. Enter the following in a command prompt, in the app's top level directory where "index.html" sits. (Note: The "fields" value cannot contain spaces. In this example, we are also assigning a data type to the lastName field created.)
+</p>
+<pre>
+sencha generate model Person firstName,lastName:string
+</pre>
+
+<p>The <code>sencha generate</code> command generates <code>app/model/Person.js</code> with this content:</p>
+<div class="readonly">
+<pre class="runnable">
+Ext.define('MyDemoApp.model.Person', {
+    extend: 'Ext.data.Model',
+    fields: [
+        { name: 'firstName', type: 'auto' },
+        { name: 'lastName', type: 'string' }
+    ]
+});</pre></div>

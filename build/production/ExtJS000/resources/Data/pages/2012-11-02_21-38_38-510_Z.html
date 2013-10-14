@@ -1,0 +1,46 @@
+<h3>Ext.Function.createBuffered(fn, buffer, [scope], [args]):Function</h3>
+<p>
+The buffered function will call the original function after a specified time has elapsed. 
+The timer re-starts with each invocation of the buffered function.
+</p>
+<pre class="runnable">Ext.define('MyApp.view.TwitterSearchPanel', {
+    extend: 'Ext.panel.Panel',
+    doSearch: function() {
+        var me = this;
+        var searchString = this.down('#search').getValue();
+        Ext.Ajax.request({
+            url: 'php/twitter/twitterProxy.php?query=' + searchString,
+            success: function(response) {
+                me.update(Ext.JSON.decode(response.responseText).statuses);
+            }
+        });
+    },
+    initComponent: function() {
+        this.callParent();
+        this.bufferedDoSearch = Ext.Function.createBuffered(this.doSearch, 500, this);
+        this.down('#search').on('keypress', this.bufferedDoSearch);
+    },
+    tbar: ['',{
+        xtype: 'textfield',
+        fieldLabel: 'Search',
+        labelWidth: 40,
+        enableKeyEvents: true,
+        itemId: 'search'
+    }],
+    tpl: ['&lt;table&gt;&lt;',
+        'tpl for="."&gt;',
+            '&lt;tr&gt;',
+                '&lt;td&gt;&lt;img src="{user.profile_image_url}"/&gt;&lt;/td&gt;',
+                '&lt;td&gt;{text}&lt;/td&gt;',
+            '&lt;/tr&gt;',
+        '&lt;/tpl&gt;',
+        '&lt;/table&gt;'],
+    title: 'Twitter',
+    html: '&lt;p style="padding: 8px"&gt;Type a search string. With each key press the buffered function is called. When you have stopped typing for 1/2 second, the original function is called.&lt;/p&gt;',
+    autoScroll: true
+});
+Ext.create('MyApp.view.TwitterSearchPanel', {
+    height: 200,
+    width: 600,
+    renderTo: Ext.getBody()
+});</pre>

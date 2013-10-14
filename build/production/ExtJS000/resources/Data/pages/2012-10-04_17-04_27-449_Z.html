@@ -1,0 +1,45 @@
+<ul>
+<li>Populate local data stores</li>
+<li>The store can be modified, and changes sent to the server</li>
+<li>Some components can be tied to a store to show tabular or graphical information</li>
+</ul>
+
+<pre class="runnable">
+var store = Ext.create('Ext.data.Store', {
+    fields: [
+        {name: 'profile_image_url', mapping: 'user.profile_image_url'},
+        'text', 
+        { name: 'created_at', type: 'date', dateFormat: 'D M d H:i:s O Y' }
+    ],
+    autoLoad: true,
+    proxy: {
+        url: 'php/twitter/twitterProxy.php?query=extjs',
+        type: 'ajax',
+        reader: {
+            type: 'json',
+            root: 'statuses'
+        }
+    }
+});
+
+Ext.create('Ext.grid.Panel', {
+    renderTo: Ext.getBody(),
+    height: 300,
+    columns: [{
+        text: 'Avatar',
+        xtype: 'templatecolumn',
+        tpl: '&lt;img src="{profile_image_url}"/&gt;',
+        width: 80
+    }, {
+        text: 'Tweet',
+        dataIndex: 'text',
+        flex: 1
+    }, {
+        text: 'Posted',
+        xtype: 'datecolumn',
+        dataIndex: 'created_at',
+        format: 'g:i a,  F j',
+        width: 170
+    }],
+    store: store
+});</pre>

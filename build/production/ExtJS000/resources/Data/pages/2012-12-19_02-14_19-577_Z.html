@@ -1,0 +1,20 @@
+
+<p>
+To use a paging scroller you need to set <code>buffered:true</code> 
+on the store.
+</p>
+<p>
+Ext JS automatically uses a <code>bufferedrenderer</code> 
+plugin with any grid associated with a buffered store.</p>
+
+<p>
+As the user drags the scrollbar selector, the grid loads its store, 
+setting the "page" parameter to a value proportional to the position 
+of the scroller.
+</p>
+<p>
+The plugin fetches several pages for each <code>load()</code>. So 
+scrolling up or down in the grid a little will <em>not</em> result 
+in an additional page request. If you scroll past the buffered pages, 
+the store requests a new set of pages.
+</p>

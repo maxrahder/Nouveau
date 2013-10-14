@@ -1,0 +1,31 @@
+<ul>
+    <li>Each function gets a special local variable called <code>arguments</code>.</li>
+    <li>This contains an array-like object containing each of the arguments passed into the function call.</li>
+    <li>This object does have a <code>length</code> property.</li>
+</ul>
+<pre>
+> function abc() {
+    for ( var index = 0; index < arguments.length; index++ ) {
+          console.log( arguments[index] )
+    }
+    return arguments;
+ }
+  undefined
+> abc( 'A', 'B' ) // outputs A B and returns ["A", "B"]
+  A
+  B
+  ["A", "B"]
+> abc() // just returns an empty array-like object
+  []
+</pre>
+
+<ul>
+    <li>The callee property of the arguments object returns the function object
+        itself.</li>
+</ul>
+<pre>
+> function xyz() { return arguments.callee.name; }
+  undefined
+> xyz() // outputs "xyz"
+  "xyz"
+</pre>

@@ -1,0 +1,21 @@
+<p>
+The proxy's <code>api</code> config allows you to send unique URLs to the back end, so
+it can receive and differentiate between records being created, updated and destroyed.
+</p>
+<p>The <code>api</code> config may be used along with <code>url</code> &mdash; the <code>url</code>
+is the default for any missing <code>api</code> value.</p>
+<pre>
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    proxy : {
+        type : 'ajax',
+        api : {
+            read :    'backend.php?mybackendparameter=retrieve',
+            create :  'backend.php?mybackendparameter=create',
+            update :  'backend.php?mybackendparameter=update',
+            destroy : 'backend.php?mybackendparameter=delete'
+        }
+    },
+    fields : [ 'name' ]
+});
+</pre>

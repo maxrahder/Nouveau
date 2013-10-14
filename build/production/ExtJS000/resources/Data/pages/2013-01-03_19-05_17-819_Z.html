@@ -1,0 +1,22 @@
+<p>
+MVC allows you to separate control logic.<br/>
+Here, the button is selected via <code>Ext.ComponentQuery</code>
+selector syntax within the controller. This is similar to a CSS selector, but it's designed for selecting
+components rather than DOM elements.
+</p>
+<pre>
+Ext.define('MyApp.controller.BeatlesController', {
+    extend : 'Ext.app.Controller',
+    ...
+    init : function() {
+        this.control({
+            <b style="background-color: yellow">'beatlesgrid #sheLovesMe'</b> : { 
+                click : this.yeahYeahYeah 
+            }
+        });
+    },
+    yeahYeahYeah : function(button) {
+        Ext.Msg.alert(button.getText(), 'Yeah yeah yeah!');
+    }
+
+});</pre>

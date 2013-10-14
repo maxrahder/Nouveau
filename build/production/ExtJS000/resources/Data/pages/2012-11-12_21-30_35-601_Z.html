@@ -1,0 +1,70 @@
+<pre class="runnable preview">
+Ext.define('MyApp.model.Sales', {
+    extend : 'Ext.data.Model',
+    fields : [ 'month', 'high', 'low' , 'precipitation']
+});
+var store = Ext.create('Ext.data.Store', {
+    model : 'MyApp.model.Sales',
+    proxy : {
+        type : 'ajax',
+        url : '../Data/charts/parisTemperatureByMonth.json'
+    },
+    autoLoad : true
+});
+
+var chart = Ext.create('Ext.chart.Chart', {
+    store : store,
+    //legend : true,
+    legend : {position : 'left'},
+    axes : [ {
+        type : 'Numeric',
+        position : 'left',
+        title : 'Temperature (centigrade)',
+        minimum : 0,
+        maximum : 25
+    },{
+        type : 'Category',
+        position : 'bottom',
+        fields : [ 'month' ],
+        title : 'Month'
+    }, {
+        type : 'Numeric',
+        position : 'right',
+        title : 'Precipitation (mm)',
+        minimum : 10,
+        maximum : 30
+    } ],
+    series : [ {
+        type : 'line',
+        showInLegend : true,
+        axis : 'left',
+        xField : 'month',
+        yField : 'high',
+        title : 'High Temperatures' // This is shown in the legend
+    }, {
+        type : 'line',
+        showInLegend : true,
+        axis : 'left',
+        xField : 'month',
+        yField : 'low' // The legend defaults to this
+    }, {
+        type : 'column',
+        showInLegend : true,
+        axis : 'right',
+        xField : 'month',
+        yField : 'precipitation' // The legend defaults to this
+    }  ]
+});
+
+Ext.create('Ext.container.Container', {
+    renderTo : Ext.getBody(),
+    layout : 'fit',
+    height : 350,
+    items : [ {
+        xtype : 'panel',
+        layout : 'fit',
+        items : [ chart ]
+    } ]
+});
+
+</pre>

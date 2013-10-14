@@ -1,0 +1,28 @@
+<p>Here's the happy panel we looked at before. It's been modified to throw an event we just made up:
+<code>userhappy</code>.</p>
+
+<pre class="runnable">
+Ext.define('HappyPanel', {
+	extend : 'Ext.panel.Panel',
+	title : ':-)',
+	height : 96,
+	width : 396,
+	autoScroll : true,
+	fireHappy : function(button) {
+		// Let whoever's listening that the user is happy.
+		button.up('panel').fireEvent('userhappy', this, button.count);
+	},
+	initComponent : function() {
+		this.callParent();
+		for ( var i = 0; i < this.count; i++) {
+			this.add( {handler : this.fireHappy, xtype : 'button', text : ':-)', count : i+1} );
+		}
+	}
+});
+var panel = Ext.create('HappyPanel', {renderTo : Ext.getBody(), height: 300, count: 150});
+
+// Hey panel, run this method when the user is happy.
+panel.on('userhappy', function(panel, happyLevel){
+	alert('The user has reached happiness level ' + happyLevel);
+});
+</pre>

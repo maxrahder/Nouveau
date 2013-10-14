@@ -1,0 +1,20 @@
+<p>
+The <code>items</code> config array specifies the child components.
+</p>
+<pre class="runnable">
+Ext.create('Ext.container.Container', {
+
+    layout : 'vbox',	
+    items : [ {
+        xtype : 'button',
+        text : 'Button One',
+        margin : 8
+    }, {
+        xtype : 'button',
+        text : 'Button Two',
+        margin : 8
+    } ],
+
+    renderTo : Ext.getBody()
+});
+</pre>

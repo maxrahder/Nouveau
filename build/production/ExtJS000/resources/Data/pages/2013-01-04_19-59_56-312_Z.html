@@ -1,0 +1,12 @@
+<p>There is an optional third parameter used with <code>on()</code>. It it establishes the value of "this" within the event handler.</p>
+<pre class="runnable">
+var b = Ext.create('Ext.button.Button', {
+    text : 'Button',
+    renderTo : Ext.getBody()
+});
+b.on('click', 
+    function(button){
+        alert(this.getText() + ' click');
+    }, 
+    b
+);</pre>

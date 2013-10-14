@@ -1,0 +1,24 @@
+<p>
+This code won't work, although the syntax is good.
+</p>
+<pre>
+&lt;head&gt;
+&lt;link rel="stylesheet" type="text/css" href="/extjs4/resources/css/ext-all.css"&gt;
+&lt;script src="/extjs4/ext-all.js">&lt;/script&gt;
+&lt;script&gt;<b>
+    var message = ':-)';
+    Ext.Msg.alert('Alert', message);
+</b>&lt;/script&gt;
+&lt;/head&gt;
+</pre>
+
+<div type="expander" caption="Why doesn't it work?" class="x-hidden">
+<p>
+Because the <code>Ext.Msg.alert()</code> needs to render, yet the browser hasn't finished reading and 
+processing the page.
+</p>
+<p>
+So we need some way of saying "Hey Ext JS, please don't run this code until everything is ready to go."
+</p>
+</div>
+

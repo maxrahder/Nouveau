@@ -1,0 +1,25 @@
+<h1>Setting the Locale of your Application Statically</h1>
+<p>Locales are implemented as JavaScript files that are located in your /extjs4/locale folder. The filename indicates the locale, i.e. ext-lang-fr.js is the localization file for French (France). You can change the locale of your application by simply linking to one of these files as illustrated by the following code snippet:</p>
+<p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;!-- Ensure we're using UTF-8 --&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+    &lt;title&gt;Localization example&lt;/title&gt;
+    &lt;!-- Main Ext JS files --&gt;
+    &lt;link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css"&gt;
+    &lt;script type="text/javascript" src="extjs/ext-debug.js"&gt;&lt;/script&gt;
+    &lt;!-- Include the translations --&gt;
+    &lt;script type="text/javascript" src="extjs/locale/ext-lang-fr.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript" src="app.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+<body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p><small><b>Note: </b><i>You will need to refresh the entire page when switching locales. Ext JS does not support changing the locale on the fly (like updating the texts inside already rendered components).</b>.</i></b></small>
+</p>

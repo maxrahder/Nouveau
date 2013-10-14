@@ -1,0 +1,12 @@
+<h3>Ext.Array.merge(array1, array2, etc)</h3>
+<p>Merge multiple arrays into one with unique items.</p>
+<p><code>union()</code> is an alias for <code>merge()</code>.</p>
+<pre class="runnable">
+var a = [ 1, 2, 3 ];
+var b = [ 2, 3, 4 ];
+var c = [ 2, 3, 5 ];
+var d = [ 2, 3, 6 ];
+var e = Ext.Array.merge(a, b, c, d);
+alert(e); // alert [1, 2, 3, 4, 5, 6] - all items in a new array
+</pre>
+<img height="30%" src="resources/images/SetUnion.png"/>

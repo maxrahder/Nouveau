@@ -1,0 +1,17 @@
+<p>
+<code>Ext.application()</code> has built-in MVC and dynamic loading features.</p>
+<pre class="runnable">
+Ext.application({
+    name: 'MyApp',
+    requires: ['Ext.Viewport', 'Ext.button.Button'],
+    controllers: ['MyController'],
+    launch: function(){
+        Ext.create('Ext.Viewport', {
+            items: [{
+                xtype: 'button',
+                text: 'Hi There!',
+                margin: 32
+            }]
+        });
+    }
+});</pre>

@@ -1,0 +1,38 @@
+<ul>
+  <li><code>glyph</code> &mdash; a unicode decimal character code</li>
+</ul>
+<div type="expander" caption="Example syntax">
+<ul class="plain">
+  <li><code>glyph:71</code> // Uses the default font family specified via Ext.setGlyphFontFamily()</li>
+  <li><code>glyph:'71@Pictos'</code> // Uses the specified font family</li>
+  <li><code>glyph:'71@'</code> // Uses the raw unicode NOT wrapped in the default font family</li>
+</ul>
+</div>
+
+<p>These fonts are <i>vector</i> images which scale. To use <code>glyph</code> you must add the specified 
+font family to your application via <code>@font-face</code> in your CSS.</p>
+<pre class="runnable preview">
+var buttons = [];
+
+for (var i = 33; i < 127; i++) {
+    buttons.push({
+        xtype: 'button',
+        text: i,
+        scale: 'medium', // Try 'small' and 'large'
+        glyph: i + '@Pictos'  // alternate config if Ext.setGlyphFontFamily() was not set
+    });
+}
+
+Ext.create('Ext.panel.Panel', {
+    renderTo: Ext.getBody(), 
+    title: 'Sample',
+    height: 500,
+    width: 620,
+    defaults: {
+        xtype: 'button',
+        margin: 2
+    },
+    autoScroll: true,
+    items: buttons
+});
+</pre>

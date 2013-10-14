@@ -1,0 +1,7 @@
+<h3>Ext.Array.clean(array)</h3>
+<p>Filter through an array and remove empty item as defined in <code>Ext.isEmpty</code></p>
+<pre class="runnable">
+var a = [0, undefined, 1, null, '', [], ['toaster', null]];
+var b = Ext.Array.clean(a);
+console.log(b); // logs [0, 1, ['toaster', null]]</pre>
+

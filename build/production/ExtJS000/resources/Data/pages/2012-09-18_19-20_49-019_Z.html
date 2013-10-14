@@ -1,0 +1,12 @@
+<p>There's convenience syntax for defining singletons. One use of a singleton is as a
+convenient alternative to "static" properties. </p>
+<pre class="runnable">
+Ext.define('MyApp.util.Chemistry', {
+    singleton : true,
+    config : {
+        avogadroConstant: 6.02214129e23
+    }
+});
+alert(MyApp.util.Chemistry.getAvogadroConstant() + ' particles / mole' );</pre>
+There are many other use-cases
+for singletons in OO programming.

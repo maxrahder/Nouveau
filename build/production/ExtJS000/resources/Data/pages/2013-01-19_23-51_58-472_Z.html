@@ -1,0 +1,33 @@
+<p>
+Many of the examples seen this week class create an <code>Ext.data.Store</code>
+instance directly. But keep in mind that in MVC you'll usually 
+<i>define</i> a store, which is then created by the controller.
+</p>
+<pre class="runnable">
+// This would go in model/Person.js
+Ext.define('MyApp.model.Person', {
+    extend : 'Ext.data.Model',
+    proxy : { type : 'ajax', url : '../Data/json/theBeatles.json'},
+    fields : [ 'first', 'last' ]
+});
+
+// This would go in app/store/Persons.js
+Ext.define('MyApp.store.Persons', {
+    extend : 'Ext.data.Store',
+    model: 'MyApp.model.Person',
+    autoLoad: true
+});
+
+// The controller automatically creates this via stores[]
+var store = Ext.create('MyApp.store.Persons');
+
+Ext.create('Ext.grid.Panel', {
+    store : store,
+    columns : [ 
+       { text : 'First', dataIndex : 'first' },
+       { text : 'Last', dataIndex : 'last' }
+    ],
+    width : 200,
+    renderTo : Ext.getBody()
+});
+</pre>

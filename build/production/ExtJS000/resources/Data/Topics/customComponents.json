@@ -1,0 +1,51 @@
+{
+  "topicId": "customComponents",
+  "text": "Custom Components",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Extending Ext.Component",
+      "fileId": "2013-01-25_17-02_51-437_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "In MVC Everything Is a Subclass",
+      "fileId": "2012-09-18_19-20_49-021_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Which Component?",
+      "fileId": "2012-09-18_19-20_49-022_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Render Templates",
+      "fileId": "2012-11-01_21-03_38-016_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Render Data",
+      "fileId": "2012-11-01_21-25_23-537_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Child Els",
+      "fileId": "2012-11-01_21-25_29-506_Z",
+      "html": "",
+      "leaf": true
+    },
+    {
+      "text": "Advanced Example",
+      "fileId": "2012-11-01_20-04_11-327_Z",
+      "html": "",
+      "leaf": true
+    }
+  ]
+}

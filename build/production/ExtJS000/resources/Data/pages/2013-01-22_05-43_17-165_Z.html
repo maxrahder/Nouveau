@@ -1,0 +1,27 @@
+<ul>
+<li><p>In general we use initComponent() to add values to the properties of our components. Ext JS calles it after the constructor method for the class, so initial config values are available with a call to this.aProperty or this.aMethod().
+<li><p>The initComponent method <b><u>must</u></b> contain a call to this.callParent(), usually after having set its own properties first. Failure to do so will often result in a difficult to debug error message, or in an empty container, with no error message. This is especially true for containers.
+</ul>
+
+<pre class="runnable">
+Ext.define('SampleContainer', {
+    extend: 'Ext.Container',
+
+    initComponent: function() {
+	Ext.applyIf( this, {
+           layout: 'hbox',
+           items: [
+              {xtype: 'button', text: 'left'},
+              {xtype: 'button', text: 'right'}
+              ]
+           }
+        )
+        this.callParent();
+    }
+});
+
+Ext.create('SampleContainer', {
+       renderTo: Ext.getBody()
+   }
+);
+</pre>

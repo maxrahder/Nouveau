@@ -1,0 +1,52 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.Component-cfg-formBind" target="api"><code>Ext.Component config Property</code></a></p>
+
+<p> formBind is a boolean configuration value which is used to provide a "Visual Affordance" for the end user. When inside FormPanel, any component configured with formBind: true will be enabled/disabled depending on the validity state of the form. <b>Defaults to false.</b>
+</br> In the example below neither the check box nor the Save button are available until there is valid data.</p>
+
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    title: 'Simple Form',
+    bodyPadding: 5,
+    width: 350,
+
+    // Fields will be arranged vertically, stretched to full width
+    layout: 'anchor',
+    defaults: {
+        anchor: '100%'
+    },
+
+    // The fields
+    defaultType: 'textfield',
+    items: [
+  { 
+ xtype: 'textfield',
+ name: 'name',
+ fieldLabel: 'Your Name',
+ emptyText: 'We need your name here',
+ allowBlank: false,
+ minLength: 2,
+ maxLength: 20
+  },
+  {
+ xtype: 'checkbox',
+ boxLabel: 'I agree to the terms and conditions',
+ disabled: true,
+ name: 'terms',
+ inputValue: '1',
+ formBind: true
+  }
+],
+buttons: [
+{
+ text: 'Save',
+ formBind: true,
+ disabled: true,
+ handler: function() {
+	var objForm = this.up('form').getForm();
+	console.log(objForm);
+ }
+ }
+],
+    renderTo: Ext.getBody()
+})
+</pre>

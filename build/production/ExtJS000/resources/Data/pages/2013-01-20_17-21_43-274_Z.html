@@ -1,0 +1,27 @@
+<pre class="runnable preview">
+var store = Ext.create('Ext.data.Store', {
+
+    pageSize: 10,
+    buffered: true,
+
+    fields : [ 'place', 'mag' ],
+    proxy : { type : 'ajax', url : '../Data/json/pagingExample/pagingexample.php', 
+    root : 'data', 
+    reader : { type : 'json', root : 'data' } },
+    autoLoad: true
+});
+
+Ext.create('Ext.grid.Panel', {
+    title: 'Earthquakes',
+    store: store,
+
+    //plugins: 'bufferedrenderer', // This is automatic with a buffered store
+
+    columns: [
+        { text: 'Place',  dataIndex: 'place', flex: 1 },
+        { text: 'Mag', dataIndex: 'mag' }
+    ],
+    height: 200,
+    width: 400,
+    renderTo: Ext.getBody()
+});</pre>

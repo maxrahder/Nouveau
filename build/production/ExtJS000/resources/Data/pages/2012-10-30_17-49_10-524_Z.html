@@ -1,0 +1,19 @@
+<h3>Ext.String.leftPad(string, maxsize, [character]):String</h3>
+<p>Pads the left side of a string with a specified character. This is especially useful for normalizing number and date strings. </p>
+<pre class="runnable">
+var a = Ext.String.leftPad('Paul' , 10, ' ');
+var b = Ext.String.leftPad('George', 10, ' ');
+var c = Ext.String.leftPad('Ringo', 10, ' ');
+var number = Ext.String.leftPad('4', '3', '0');
+
+//      Paul
+//    George
+//     Ringo
+//04
+
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(number);
+</pre>
+

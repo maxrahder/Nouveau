@@ -1,0 +1,24 @@
+<div type="expander" caption="How: A search may be initiated in many ways">
+<p>Over time, your designers may change their minds about <em>how</em> 
+a search is initiated:
+</p>
+<ul class="plain">
+<li>Clicking a Search button.</li>
+<li>Pressing the Enter key</li>
+<li>After typing a certain number of characters</li>
+</ul>
+</div>
+<div type="expander" caption="What: The view fires a high-level event">
+<p>
+Since there are many ways of initiating the search, the page should fire 
+its own logical "search" event whenever the search is initiated &mdash;
+no matter how it was done.
+</p>
+</div>
+
+<div type="expander" caption="Controllers no longer care about <i>how</i>">
+<p>
+By doing this, the controller no longer cares <em>how</em> the search 
+was initiated by the user.
+</p>
+</div>

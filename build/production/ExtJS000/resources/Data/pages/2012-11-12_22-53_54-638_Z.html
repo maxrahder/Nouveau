@@ -1,0 +1,20 @@
+<p>
+A chart series can have a tool tip. You specify a renderer, which is run as the user mouses over a value in the series.
+Tip configuration is the same as <a href="http://docs.sencha.com/extjs/#!/api/Ext.tip.ToolTip" target="api"><code>Ext.tip.ToolTip</code></a>.
+</p>
+
+<pre class="sample">
+series : [ {
+    type : 'line',
+    axis : 'left',
+    xField : 'month',
+    yField : 'high',
+    tips: {
+        width : 100,
+        renderer: function(record) {
+            var f = ( (9 / 5) * record.get('high') ) + 32;
+            this.setTitle(Math.round(f)  + '&amp;deg; Fahrenheit');
+        }
+    }
+} ]
+</pre>

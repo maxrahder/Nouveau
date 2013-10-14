@@ -1,0 +1,10 @@
+<h3>Ext.Number.snap(value, increment, minValue, maxValue ):Number</h3>
+<p>
+Snaps the passed number between stopping points based upon a passed increment value.
+</p><p>
+The difference between <code>snap()</code> and <code>snapInRange</code> is that snapInRange uses the minValue when calculating snap points.</p>
+<pre class="runnable">
+alert(Ext.Number.snap(56, 2, 55, 65)); // alerts 56
+alert(Ext.Number.snapInRange(56, 2, 55, 65)); // alerts 57
+</pre>
+

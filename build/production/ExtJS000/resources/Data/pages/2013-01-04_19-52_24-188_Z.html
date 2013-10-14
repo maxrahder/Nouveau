@@ -1,0 +1,11 @@
+<p>Observables can be created with a <code>listeners</code> config:</p>
+<pre class="runnable">
+Ext.create('Ext.button.Button', {
+    text : 'Button',
+    listeners : {
+        click : function(button){
+            alert(button.getText() + ' click');
+        }
+    },
+    renderTo : Ext.getBody()
+});</pre>

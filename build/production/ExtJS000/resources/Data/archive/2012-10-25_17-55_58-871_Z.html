@@ -1,0 +1,62 @@
+<p>When you run submit, the server responds with JSON indicating whether the update was successful.</p>
+<pre class="runnable preview">
+Ext.create('Ext.form.Panel', {
+    title: 'Simple Form',
+    buttons: [ {
+        text: 'Submit',
+        handler: function(button){
+            button.up('form').submit({
+                url: '../Data/success.html',
+                //url: '../Data/failure.html',
+                success: function(form, action){
+                    Ext.Msg.alert('Saved', action.result.message);
+                },
+                failure: function(form, action){
+                    Ext.Msg.alert('Error', action.result.message);
+                }
+            });
+        }
+    } ],
+    items: [{
+        xtype: 'textfield',
+        fieldLabel: 'First Name',
+        name: 'first',
+        value: 'John'
+    }, {
+        xtype: 'textfield',
+        fieldLabel: 'Last Name',
+        name: 'last',
+        value: 'Lenon'
+    }, {
+        xtype: 'datefield',
+        fieldLabel: 'Date of Birth',
+        name: 'dob',
+        value: new Date(1940, 9, 9) // 1940 October 9
+    }, {
+        xtype: 'checkboxfield',
+        boxLabel: 'Married',
+        name: 'married',
+        checked: true
+    }, {
+        xtype: 'radiogroup',
+        fieldLabel: 'Sex',
+        columns: 1,
+        items: [{
+            boxLabel: 'Male',
+            name: 'sex',
+            checked: true
+        }, {
+            boxLabel: 'Female',
+            name: 'sex'
+        }]
+    }, {
+        xtype: 'htmleditor',
+        fieldLabel: 'Brief Biography',
+        name: 'bio',
+        height: 100,
+        value: 'John Winston Ono Lennon, MBE was an English musician, singer and songwriter who rose to worldwide fame as a founder member of the Beatles, the most commercially successful and critically acclaimed band in the history of popular music.'
+    }],
+    renderTo: Ext.getBody(),
+    bodyPadding: 8,
+    width: 540
+});</pre>

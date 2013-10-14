@@ -1,0 +1,15 @@
+<p>This code selects the element and changes its styling in various ways</p>
+
+<pre class="runnable">
+var el = document.createElement('p');
+el.innerHTML = 'Hi there';
+el.setAttribute('id', 'myParagraph');
+document.body.appendChild(el);
+
+var e = document.getElementById('myParagraph');
+e.style.backgroundColor = "yellow";
+e.style.height = "32px";
+e.style.padding = "6px";
+e.style.textAlign = "center";
+e.style.border = "2px solid blue";
+</pre>

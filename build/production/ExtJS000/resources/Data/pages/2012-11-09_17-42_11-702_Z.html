@@ -1,0 +1,44 @@
+<p><a href="http://docs.sencha.com/extjs/#!/api/Ext.form.field.Spinner" target="api"><code>Ext.form.field.Spinner</code></a></p>
+
+A pair of up/down spinner buttons. Not normally instantiated directly, generally subclassed and the onSpinUp and onSpinDown methods are implemented to handle when the buttons are clicked. <br>A good example of this is the Ext.form.field.Number field which uses the spinner to increment and decrement the field's value by its step config value.
+
+<pre class="runnable preview">
+Ext.define('Ext.ux.CustomSpinner', {
+    extend: 'Ext.form.field.Spinner',
+    alias: 'widget.customspinner',
+
+    // override onSpinUp (using step isn't necessary)
+    onSpinUp: function() {
+        var me = this;
+        if (!me.readOnly) {
+            var val = parseInt(me.getValue().split(' '), 10)||0; // gets rid of " Pack", defaults to zero on parse failure
+            me.setValue((val + me.step) + ' Pack');
+        }
+    },
+
+    // override onSpinDown
+    onSpinDown: function() {
+        var val, me = this;
+        if (!me.readOnly) {
+           var val = parseInt(me.getValue().split(' '), 10)||0; // gets rid of " Pack", defaults to zero on parse failure
+           if (val <= me.step) {
+               me.setValue('Dry!');
+           } else {
+               me.setValue((val - me.step) + ' Pack');
+           }
+        }
+    }
+});
+
+Ext.create('Ext.form.FormPanel', {
+    title: 'Form with SpinnerField',
+    bodyPadding: 5,
+    width: 350,
+    renderTo: Ext.getBody(),
+    items:[{
+        xtype: 'customspinner',
+        fieldLabel: 'How Much Beer?',
+        step: 6
+    }]
+});
+</pre>

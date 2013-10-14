@@ -1,0 +1,11 @@
+<h3>Ext.Array.difference(arrayA, arrayB)</h3>
+<p>Perform a set difference A-B by subtracting all items in array B from array A.</p>
+<pre class="runnable">
+var o = {a : 13};
+var a = [o, 0, 1, 'a', {b: 1}, 'x'];
+var b = [o, 1, 'a', {b: 1}, 'y'];
+// c = a - b
+var c = Ext.Array.difference(a, b);
+console.log(c); // alerts [0, {b: 1}, 'x'] - the array with differences
+</pre>
+<img height="30%" src="resources/images/SetRelativeComplement.png"/>

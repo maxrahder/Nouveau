@@ -1,0 +1,235 @@
+<h1>Introduction</h1>
+<p>
+	In this lab, you'll use
+	<code>Ext.onReady()</code>
+	to create a grid. You'll also play around with various ways of organizing your code.
+</p>
+
+<h1>Steps</h1>
+
+<ol>
+
+	<li>Inspect <kbd>Labs/onReady/index.html</kbd>
+		<p>
+			In your IDE, open <kbd>Labs/onReady/index.html</kbd>. Note the
+			<code>&lt;script&gt;</code>
+			tag containing JavaScript that defines a model and store and a grid.
+		</p>
+	</li>
+
+	<li>Run it
+		<p>In your web browser, go to the labs folder, and select the <kbd>onReady</kbd> folder. Since web servers load <kbd>index.html</kbd> by default, the code you inspected in the previous step is loaded by the browser, and its script tags run. You should see the grid, showing the data in the data store.</p>
+		<p>In your debugger, right click on the grid and choose Inspect Element. You'll see a lot of complicated DIVs.
+			That's the DOM Ext JS created to render the grid. There are also associated CSS styles that give the DOM elements
+			heights, widths, borders, background colors, and the rest of their styling.</p>
+	</li>
+
+	<li>Break it a little
+		<p>
+			For kicks, go to <kbd>index.html</kbd> and change the link tag that references the Ext JS style sheet,
+			<kbd>/SenchaTraining/ExtJS251/Labs/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css</kbd>
+			. Change the <code>href</code> and make it point to a non-existent file by putting an "X" in the middle of the name.
+		</p>
+		<p>
+			Save <kbd>index.html</kbd> and refresh your browser. In your debugger look for a 404 HTTP error &mdash; that's the browser
+			letting you know it couldn't find the style sheet. Note that the grid's information is there, but it's messed up.
+			Choose Inspect Element again. The DOM is there, <em>exactly</em> as before, but it takes both DOM and styling to
+			render a component.
+		</p>
+		<p>Go back to <kbd>index.html</kbd> and correct the reference to the CSS. Save, and refresh your browser window to make
+			sure the grid is back to normal.</p>
+	</li>
+
+	<li>Start to modularize your code
+		<p>
+			There are four things in the code: the definitions of the model, store and grid, and the
+			<code>onReady()</code>
+			that actually creates and shows the grid.
+		</p>
+		<p>
+			Start to modularize the code by moving each into its own
+			<code>&lt;script&gt;</code>
+			tag. To do this, add three new script tags above the tag containing the Ext JS code. Move the model definition into the
+			first, move the store definition into the second, the grid definition into the third, and leave the
+			<code>Ext.onReady()</code>
+			in the fourth.
+		</p>
+		<p>
+			When you are finished, <kbd>index.html</kbd> should have four script tags: one referencing <kbd>ext-all-dev.js</kbd>, one containing the
+			model definition, one with the store, and one with the
+			<code>Ext.onReady() and the grid.</code>
+		</p>
+	</li>
+
+	<li>Run it
+		<p>We've re-arranged things a little, but nothing has really changed. Everything should work.</p>
+	</li>
+
+	<li>What does the <code>Ext.onReady()</code> do?
+		<p>
+			<code>Ext.onReady()</code>
+			is used when showing components. Components render in the DOM. The callback function passed to
+			<code>onReady()</code>
+			isn't run until the DOM is ready and all required classes have been loaded.
+		</p>
+		<p>
+			Note that the scripts defining the model store and grid are now outside of the
+			<code>Ext.onReady()</code>
+			. That works because this code isn't trying to render anything, and therefore, has nothing to do with the DOM.
+			Therefore, defining those things can happen any time.
+		</p>
+		<p>
+			To illustrate this, comment out the start and end of the call to
+			<code>onReady()</code>
+			. In other words, comment out the line that reads
+			<code>Ext.onReady(function()</code>
+			and the line with the matching closing braces that reads
+			<code>});</code>
+			.
+<p>In JavaScript, <code>//</code> designates a single-line comment &mdash; everything on a line after a double-slash is ignored.</p>
+		</p>
+		<p>Save <kbd>index.html</kbd> and refresh the page. You should see a blank page. That's because the code for the grid was
+			run before the document body had been loaded by the browser.</p>
+
+		<p>Remove your comments, save and refresh. Ensure your page is showing the grid again before going to the next
+			step.</p>
+
+	</li>
+
+	<li>To further illustrate the point...
+		<p>Consider this code. Don't code anything &mdash; just read it.</p> <pre>
+&lt;script&gt;
+var store = Ext.create('MyApp.store.People');
+var grid = Ext.create('MyApp.view.PeopleGrid',{
+    title : 'Beatles',
+    store : store
+});
+<b>Ext.onReady(function() {
+    grid.render(Ext.getBody());
+});</b>
+&lt;/script&gt;</pre>
+		<p>
+			The code runs fine even though practically everything has been moved out of the
+			<code>onReady()</code>
+			. The point is that it's not until things need to be rendered that the
+			<code>onReady()</code>
+			is important.
+		</p>
+		<p>
+			On the other hand, there's no down side to putting more things in the
+			<code>onReady()</code>
+			&mdash; just code in a way that's easy to understand and maintain.
+		</p>
+	</li>
+
+	<li>Move the reference to <kbd>ext-all-dev.js</kbd></code>
+
+		<p>
+			Move the script tag for <kbd>ext-all-dev.js</kbd> below the other scripts. Save and refresh the browser. You'll get an error
+			saying something something like "Ext is undefined." That's because the other scripts have statements like
+			<code>Ext.define()</code>
+		<p>
+			Like any other programming environment, you run into problems if you reference symbols before they exist or are
+			initialized. Script execution order can be tricky using
+			<code>onReady()</code>
+			.
+		</p>
+
+	</li>
+	<li>Move the JavaScript into separate files
+		<p>
+			Rather than mixing HTML and JavaScript in the same file, it's better to separate the JavaScript into its own file,
+			and reference it using a script tag's
+			<code>src</code>
+			attribute. It's also needed to take advantage of Ext JS's class loading (which we'll talk about later).
+		</p>
+		<p>To move the code, create four new files: <kbd>model.js</kbd>, <kbd>store.js</kbd>, <kbd>grid.js</kbd> and <kbd>app.js</kbd>. Copy and paste the
+			contents of the corresponding script tags into each file, then add a <code>src</code> attribute to the tags. When you're
+			finished, there will be no JavaScript in <kbd>index.html</kbd>. The index HTML file should end up looking like this:</p> <pre>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;link rel="stylesheet" type="text/css" href="/extjs4/resources/css/ext-all.css"&gt;
+
+&lt;script src="/extjs4/ext-all-dev.js"&gt;&lt;/script&gt;
+
+&lt;script src="model.js"&gt;&lt;/script&gt;
+&lt;script src="store.js"&gt;&lt;/script&gt;
+&lt;script src="grid.js"&gt;&lt;/script&gt;
+&lt;script src="app.js"&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+		<p>Go to your browser, refresh the page and confirm that it still works.</p>
+
+	</li>
+
+	<li>This approach is limited
+		<p>You now have an <kbd>index.html</kbd> file containing script tags that load your JavaScript files in a specific order:
+			<kbd>ext-all.js</kbd> first, then the others. And those files may have dependencies of their own, further complicating the
+			load order.</p>
+		<p>This is how all Ext JS applications were coded before version 4.x. As applications get more and more complex,
+			maintaining the <kbd>index.html</kbd> file, and its load order, can become difficult.</p>
+
+		<p>
+			<b>A key feature of Ext JS since version 4.x is its ability to dynamically load classes as they are referenced.</b>
+			As a result, in Ext JS 4.x the <kbd>index.html</kbd> will typically contain two script tags: one to load the Ext JS library
+			and one to load the starting point of your application. Each piece of code will specify what classes are required to
+			run, and the Ext JS runtime environment will take care of loading things as needed.
+		</p>
+		<p>
+			Dynamic loading is built into
+			<code>Ext.application()</code>
+			and its <code>launch</code> callback function. The <code>launch</code> function is used just like the callback function passed to
+			<code>Ext.onReady()</code>
+			. In the next lecture we'll cover the syntax for
+			<code>Ext.application()</code>
+			and dynamic loading.
+		</p>
+	</li>
+
+	<li>If it's problematic, why is <code>Ext.onReady()</code> used?
+		<p>Coding modular code is very good for any non-trivial application. But it's unnecessarily complicated when you
+			just need to try something out.</p>
+		<p>Think about the code at the start of this lab. If you simply need to see how to code a grid, it's a lot easier
+			to have one file with all the JavaScript needed to create the grid and its store.</p>
+		<p>
+			When designing some aspect of your user interface, a common practice is to code a simple example in isolation in a
+			single JavaScript file, with an
+			<code>Ext.onReady().</code>
+			When the code does what you want, you then break it into modules and integrate it into your application.
+		</p>
+		<p>
+			Go to the Sencha's online documentation, and choose to the Examples tab. Almost every example is coded as a single
+			JavaScript source file, with an
+			<code>Ext.onReady()</code>
+		</p>
+	</li>
+
+	<li>On the other hand...
+		<p>
+			<code>Ext.application()</code>
+			is very easy to use, and has some additional features built-in, so you may choose to use
+			<code>Ext.application()</code>
+			for all your programming.
+		</p>
+	</li>
+
+</ol>
+
+<h1>Conclusion</h1>
+<p>In this lab you contrasted using a single JavaScript source file, versus breaking up components into their own
+	individual JavaScrpt files.</p>
+<p>
+	Using a single JavaScript file, with
+	<code>Ext.onReady()</code>
+	, is an easy way to try out a small piece of code without having to worry about the directory structure and syntax for
+	doing dynamic loading.
+</p>
+<br />
+<br />

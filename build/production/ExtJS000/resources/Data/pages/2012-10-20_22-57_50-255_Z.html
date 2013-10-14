@@ -1,0 +1,30 @@
+<p>Here are some alternatives that all do the same thing. We'll get into syntax details later in the class.</p>
+
+<pre class="runnable">
+var myEventHandler = function(b) {
+	alert('You clicked ' + b.getText());
+};
+
+var button = Ext.create('Ext.button.Button', {
+	renderTo : Ext.getBody(),
+	text : 'Groucho',
+	margin : 12
+});
+button.on('click', myEventHandler);
+button.addListener('click', function(){alert('Another listener');});
+
+Ext.create('Ext.button.Button', {
+	renderTo : Ext.getBody(),
+	text : 'Harpo',
+	margin : 12,
+	handler : myEventHandler
+});
+
+Ext.create('Ext.button.Button', {
+	renderTo : Ext.getBody(),
+	text : 'Chico',
+	margin : 12,
+	listeners : {
+		click: myEventHandler
+	}
+});</pre>

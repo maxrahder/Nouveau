@@ -1,0 +1,10 @@
+<p>
+You can use <code>Ext.ComponentQuery.query()</code> any time you need to select components.
+The method returns an array of selected components.
+</p>
+<p>This selects all buttons.</p>
+<div class="readonly"><pre class="runnable">Ext.ComponentQuery.query('button')</pre></div>
+<p>Used on the command line, <code>Ext.ComponentQuery.query()</code> is a handy way to select, manipulate and test your own components.
+<div class="readonly"><pre class="runnable"><pre>Ext.ComponentQuery.query('mytabpanel')[0].add({title : 'New Panel'})</pre></div>
+
+<pre class="runnable">alert(Ext.ComponentQuery.query('panel').length);</pre>
