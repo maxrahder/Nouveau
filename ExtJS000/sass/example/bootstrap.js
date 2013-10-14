@@ -41,6 +41,7 @@ Ext.Loader.addClassPathMappings({
   "Ext.Msg": "../../../ext/src/window/MessageBox.js",
   "Ext.rtl.EventObjectImpl": "../../../ext/src/rtl/EventObject.js",
   "Ext.ux.TreeFilter": "../../../Engine/app/ux/TreeFilter copy.js",
+  "ExtThemeNeptune": "../../../ext/packages/ext-theme-neptune/overrides",
   "TreeFilter": "../../../Engine/app/ux/TreeFilter.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
@@ -993,6 +994,22 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.window.Window": [
     "Ext.Window"
   ],
+  "ExtThemeNeptune.Component": [],
+  "ExtThemeNeptune.container.ButtonGroup": [],
+  "ExtThemeNeptune.form.field.HtmlEditor": [],
+  "ExtThemeNeptune.grid.RowEditor": [],
+  "ExtThemeNeptune.grid.column.RowNumberer": [],
+  "ExtThemeNeptune.layout.component.Dock": [],
+  "ExtThemeNeptune.menu.Menu": [],
+  "ExtThemeNeptune.menu.Separator": [],
+  "ExtThemeNeptune.panel.Panel": [],
+  "ExtThemeNeptune.panel.Table": [],
+  "ExtThemeNeptune.panel.Tool": [],
+  "ExtThemeNeptune.picker.Month": [],
+  "ExtThemeNeptune.resizer.Splitter": [],
+  "ExtThemeNeptune.tab.Tab": [],
+  "ExtThemeNeptune.toolbar.Paging": [],
+  "ExtThemeNeptune.toolbar.Toolbar": [],
   "TreeFilter": []
 });
 Ext.ClassManager.addNameAliasMappings({
@@ -2219,10 +2236,43 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.window.Window": [
     "widget.window"
   ],
+  "ExtThemeNeptune.Component": [],
+  "ExtThemeNeptune.container.ButtonGroup": [],
+  "ExtThemeNeptune.form.field.HtmlEditor": [],
+  "ExtThemeNeptune.grid.RowEditor": [],
+  "ExtThemeNeptune.grid.column.RowNumberer": [],
+  "ExtThemeNeptune.layout.component.Dock": [],
+  "ExtThemeNeptune.menu.Menu": [],
+  "ExtThemeNeptune.menu.Separator": [],
+  "ExtThemeNeptune.panel.Panel": [],
+  "ExtThemeNeptune.panel.Table": [],
+  "ExtThemeNeptune.panel.Tool": [],
+  "ExtThemeNeptune.picker.Month": [],
+  "ExtThemeNeptune.resizer.Splitter": [],
+  "ExtThemeNeptune.tab.Tab": [],
+  "ExtThemeNeptune.toolbar.Paging": [],
+  "ExtThemeNeptune.toolbar.Toolbar": [],
   "TreeFilter": [
     "plugin.treefilter"
   ]
 });
+Ext.setVersion("Nouveau", "2.0.0");
 Ext.setVersion("ext-theme-base", "4.2.1");
-Ext.setVersion("ext-theme-classic", "4.2.1");
+Ext.setVersion("ext-theme-neptune", "4.2.1");
 Ext.setVersion("ext-theme-neutral", "4.2.1");
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/Component.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/panel/Panel.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/toolbar/Toolbar.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/layout/component/Dock.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/container/ButtonGroup.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/toolbar/Paging.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/picker/Month.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/form/field/HtmlEditor.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/panel/Table.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/grid/RowEditor.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/grid/column/RowNumberer.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/resizer/Splitter.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/menu/Menu.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/menu/Separator.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/panel/Tool.js");;
+Ext.Loader.loadScript("../../../ext/packages/ext-theme-neptune/overrides/tab/Tab.js");;
