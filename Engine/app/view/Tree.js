@@ -41,6 +41,50 @@ Ext.define('Engine.view.Tree', {
         return this.down('header #pinTool');
     },
 
+    findHandler: function(previous) {
+        var text = this.down('textfield#findField').getValue();
+        if (text) {
+            this.search(text, previous);
+        }
+    },
+
+    bbar: [{
+        xtype: 'textfield',
+        fieldLabel: 'Find topic',
+        itemId: 'findField',
+        labelWidth: 56,
+        width: 150,
+        // enableKeyEvents: true,
+        // listeners: {
+        //     keydown: function(field, event) {
+        //         if (event.ctrlKey) {
+        //             var tree = field.up('training_tree');
+        //             if (event.getKey() === Ext.EventObject.F) {
+        //                 tree.findHandler(true);
+        //                 event.preventDefault();
+        //             } else if (event.getKey() === Ext.EventObject.G) {
+        //                 tree.findHandler(false);
+        //                 event.preventDefault();
+        //             }
+        //         }
+        //     }
+        // }
+    }, {
+        xtype: 'button',
+        scale: 'small',
+        text: '<',
+        handler: function(button) {
+            button.up('training_tree').findHandler(true);
+        }
+    }, {
+        xtype: 'button',
+        scale: 'small',
+        text: '>',
+        handler: function(button) {
+            button.up('training_tree').findHandler(false);
+        }
+    }],
+
     config: {
         autoCollapse: false,
         topic: ''
@@ -70,7 +114,7 @@ Ext.define('Engine.view.Tree', {
                     index = (depth == 1) ? index : (index + 1);
                     if (value.indexOf('Lab') != -1 && value.indexOf('Labs') < 0) {
                         return '<span class="lab"></span>' + Engine.view.util.TreeOutlineFormats.toNumber(index, depth) + '. ' + value;
-                    } else if(record.isLeaf()) {
+                    } else if (record.isLeaf()) {
                         return '<span class="customleaf"></span>' + Engine.view.util.TreeOutlineFormats.toNumber(index, depth) + '. ' + value;
                     } else {
                         return Engine.view.util.TreeOutlineFormats.toNumber(index, depth) + '. ' + value;

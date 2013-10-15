@@ -33,7 +33,13 @@ Ext.define('Engine.view.content.Panel', {
         dock: 'top'
     }],
 
-    updateActiveItem: function(record, config) {
+    initComponent: function() {
+        Engine.model.Node.on('change', this.onNodeChange, this);
+        this.callParent();
+    },
+
+    onNodeChange: function(node) {
+        var record = node.getRecord();
         // console.log(record.getTopicArray());
         this.record = record; // Save for save to know fileId
         var data = {
@@ -43,31 +49,49 @@ Ext.define('Engine.view.content.Panel', {
             topics: record.getTopicArray(),
             title: record.getSlideText(),
             duration: record.getDuration(),
-            body: ''
+            body: node.data.slideHtml
         };
-        Ext.apply(data, config);
         var card = null;
         if (record.isTitle()) {
             card = this.down('training_titlepage');
+            card.updateContent(node);
         } else if (record.isTopic()) {
             card = this.down('training_contenttopic');
+            card.updateContent(node);
         } else if (record.isSlide()) {
             card = this.down('training_contentbody');
+            card.updateContent(data);
+        }
+        this.getLayout().setActiveItem(card);
+    },
+
+    updateActiveItem: function(node) {
+        return;
+        var record = node.getRecord();
+        // console.log(record.getTopicArray());
+        this.record = record; // Save for save to know fileId
+        var data = {
+            type: record.isLab() ? 'lab' : (record.isSlide() ? 'slide' : 'topic'),
+            topic: record.getTopicText(),
+            subtopic: record.getSubTopicText(),
+            topics: record.getTopicArray(),
+            title: record.getSlideText(),
+            duration: record.getDuration(),
+            body: node.data.slideHtml
+        };
+        var card = null;
+        if (record.isTitle()) {
+            card = this.down('training_titlepage');
+            card.updateContent(node);
+        } else if (record.isTopic()) {
+            card = this.down('training_contenttopic');
+            card.updateContent(node);
+        } else if (record.isSlide()) {
+            card = this.down('training_contentbody');
+            card.updateContent(data);
         }
         this.updateBreadcrumb(record);
-        card.updateContent(data);
         Engine.util.Presentation.enterSlide(card.getEl().dom);
         this.getLayout().setActiveItem(card);
     },
-    updateBreadcrumb: function(record) {
-        this.down('contenttoolbar').setRecord(record);
-    },
-    getBreadcrumb: function(){
-        return this.down('contenttoolbar').getBreadcrumb();
-    },
-    showNode: function(record, bodyHtml) {
-        this.updateActiveItem(record, {
-            body: bodyHtml
-        });
-    }
 });

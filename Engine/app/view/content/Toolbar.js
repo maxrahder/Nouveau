@@ -2,14 +2,6 @@ Ext.define('Engine.view.content.Toolbar', {
     extend: 'Ext.toolbar.Toolbar',
     xtype: 'contenttoolbar',
     cls: 'breadcrumbs',
-    config: {
-        record: '',
-        breadcrumb: '',
-        node: ''
-    },
-    initComponent: function(){
-        this.callParent();
-    },
     items: [{
             xtype: 'tbtext',
             itemId: 'breadcrumb'
@@ -31,6 +23,11 @@ Ext.define('Engine.view.content.Toolbar', {
         }
     ],
 
+    initComponent: function() {
+        Engine.model.Node.on('change', this.onNodeChange, this);
+        this.callParent();
+    },
+
     changeSize: function(val) {
         var rule = Ext.util.CSS.getRule('div.slide .body', true);
         var size = parseInt(rule.style.getPropertyValue('font-size'));
@@ -45,24 +42,9 @@ Ext.define('Engine.view.content.Toolbar', {
         if (lh + (val * 1.5) >= 30) Ext.util.CSS.updateRule('div.slide .body', 'lineHeight', lh + (val * 1.5) + 'px');
         if (w + (val * 6) >= 720) Ext.util.CSS.updateRule('div.slide .body', 'maxWidth', w + (val * 6) + 'px');
     },
-
-    updateRecord: function(record, oldValue) {
-        if (!record) {
-            return;
-        }
-        // <div class="crumb">topic > subtopic > ... > title </div>
-        var breadcrumbDelimiter = ' > ';
-        var s = '';
-        Ext.Array.forEach(record.getTopicArray(), function(topic) {
-            s += topic + breadcrumbDelimiter;
-        });
-        s += record.getSlideText();
-        s = Engine.util.String.removeFromEnd(s, breadcrumbDelimiter);
-
-        this.setBreadcrumb(s);
-    },
-    updateBreadcrumb: function(string) {
-        this.down('#breadcrumb').setText(string);
+    onNodeChange: function(node){
+        var s = node?node.getBreadcrumb():'';
+        this.down('#breadcrumb').setText(s);
     }
 
 });

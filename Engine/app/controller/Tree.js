@@ -3,9 +3,11 @@ Ext.define('Engine.controller.Tree', {
 
     views: ['Tree', 'LinkWindow'],
     stores: ['Topics'],
-    models: ['Topic'],
+    models: ['Topic', 'Node'],
 
-    requires: ['Ext.state.LocalStorageProvider'],
+    requires: [
+        'Ext.state.LocalStorageProvider'
+    ],
 
     refs: [{
         ref: 'treeView',
@@ -52,7 +54,7 @@ Ext.define('Engine.controller.Tree', {
     },
 
     getEscapedBreadcrumb: function() {
-        return escape(this.getSlide().getBreadcrumb(this.getRecord()));
+        return escape(Engine.model.Node.getBreadcrumb());
     },
 
     onLaunch: function(application) {
@@ -213,51 +215,16 @@ Ext.define('Engine.controller.Tree', {
 
         var me = this;
 
-        if (this.getRecord().isSlide()) {
-            var callback = function(content) {
-                me.showContent(record, content);
-            };
-            me.getPageContent(record.get('fileId'), callback);
-        } else {
-            me.getSlide().showNode(record);
-            me.getFilePathLabel().setText('');
-        }
+        var record = this.getRecord();
+        Engine.model.Node.setRecord(record);
+
     },
 
     showContent: function(record, content) {
-        this.getSlide().showNode(record, content);
         var s = 'This content is physically located at ' + record.getFilePath();
         this.getFilePathLabel().setText(s);
     },
 
-    getPageContent: function(fileId, callback) {
-        // Runs callback passing the content from fileId, or the empty string if
-        // there is no fileId. If there is a fileId, and no page is found, it
-        // recovers by creating a new page with that name. This cleans up
-        // the file system somehow being out of sync with the topics tree.
-        // The file content is passed as the single parameter to callback.
-        var c = function() {
-            callback('Default content');
-        };
-        var me = this;
-        var response = function(response) {
-            var status = response.status;
-            if ((status >= 400) && (status <= 499)) {
-                me.addPagePrivate(fileId, c);
-            } else if ((status >= 200) && (status <= 299)) {
-                callback(response.responseText);
-            }
-        };
-        if (fileId) {
-            Ext.Ajax.request({
-                url: Engine.Global.dataContentPath + fileId + '.html',
-                success: response,
-                failure: response
-            });
-        } else {
-            callback('Default content');
-        }
-    },
     getUnreferencedFiles: function(callback) {
         // Returns an array of file names of unreferenced files.
         // This is a utility routine to detect possible garbage.
