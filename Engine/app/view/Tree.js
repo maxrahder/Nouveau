@@ -70,8 +70,11 @@ Ext.define('Engine.view.Tree', {
                     index = (depth == 1) ? index : (index + 1);
                     if (value.indexOf('Lab') != -1 && value.indexOf('Labs') < 0) {
                         return '<span class="lab"></span>' + Engine.view.util.TreeOutlineFormats.toNumber(index, depth) + '. ' + value;
+                    } else if(record.isLeaf()) {
+                        return '<span class="customleaf"></span>' + Engine.view.util.TreeOutlineFormats.toNumber(index, depth) + '. ' + value;
+                    } else {
+                        return Engine.view.util.TreeOutlineFormats.toNumber(index, depth) + '. ' + value;
                     }
-                    return Engine.view.util.TreeOutlineFormats.toNumber(index, depth) + '. ' + value;
                 }
             }
         }];

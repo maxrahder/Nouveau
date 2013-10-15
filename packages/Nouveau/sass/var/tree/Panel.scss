@@ -2,6 +2,7 @@ $cellbgcolor: #fafafa !default;
 $cellcolor: #080808 !default;
 $selectedbgcolor: invert($cellbgcolor) !default;
 $selectedcolor: $cellbgcolor !default;
+$iconcolor: lighten($cellcolor, 50%);
 
 //panel vars
 $font-family: helvetica , arial , verdana , sans-serif;

@@ -17,3 +17,35 @@
 .x-grid-row-selected:nth-child(even) .x-grid-cell {
 	background: $selectedbgcolor;
 }
+
+.x-tree-view {
+	
+	.lab:before,
+	.customleaf:before {
+		color: $iconcolor;
+		padding-right: 6px;
+		font-family: 'Nouveau';
+		speak: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;		
+	}
+
+	.lab:before {
+		content: "\4c";
+	}
+	.customleaf:before {
+		content: "\70";
+	}
+
+	.x-grid-row-selected {
+		.lab:before,
+		.customleaf:before {
+			color: #fff;
+		}
+	}
+
+	.x-grid-tree-node-expanded .customleaf,
+	.x-tree-icon-leaf {
+		display: none;
+	}
+}
