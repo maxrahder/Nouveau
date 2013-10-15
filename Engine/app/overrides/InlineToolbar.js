@@ -4,7 +4,7 @@
 Ext.define('Engine.overrides.InlineToolbar', {
     extend: 'Ext.toolbar.Toolbar',
     componentCls: 'inline-example-tb',
-    height: 30,
+    height: 35,
 
     initComponent: function() {
         this.addEvents(
@@ -20,27 +20,27 @@ Ext.define('Engine.overrides.InlineToolbar', {
         this.items = [
             {
                 glyph: '67@Nouveau',
-                padding: '0 2px 0 0',
+                padding: 2,
                 margin: '0 3px 0 0',
                 text: 'Code Editor',
                 handler: this.createEventFirerer("code")
             },
             {
                 glyph: '80@Nouveau',
-                padding: 0,
+                padding: 2,
                 margin: '0 3px 0 0',
-                text: 'Live Preview',
+                text: 'Preview',
                 handler: this.createEventFirerer("preview")
             },
-            "->",
+            /*"->",
             {
 
                 margin: '0 10px 0 0',
-                padding: '0 2px 0 0',
+                padding: 2,
                 glyph: '83@Nouveau',
                 text: 'Select Code',
                 handler: this.createEventFirerer("copy")
-            }
+            }*/
         ];
 
         this.callParent(arguments);
