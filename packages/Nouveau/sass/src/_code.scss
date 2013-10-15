@@ -11,3 +11,15 @@
     border-top: 1px solid #d1d1d1;
     border-width: 1px !important;
 }
+
+div.slide .body .CodeMirror {
+	pre {
+		white-space: inherit;
+	}
+}
+
+.CodeMirror-scroll {
+    /* fix bug in JSDuck */
+	height: auto !important;
+	overflow: hidden !important;
+}
