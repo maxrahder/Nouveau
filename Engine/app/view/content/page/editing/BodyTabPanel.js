@@ -5,7 +5,7 @@ Ext.define('Engine.view.content.editing.BodyEdit', {
 	enableFont : false,
 	enableFontSize : false,
 	enableFormat : false,
-	enableLinks : false,
+	enableLinks : true,
 	alias : 'widget.training_contentbodyedit',
 	cls : 'body',
 	updateContent: function(data){

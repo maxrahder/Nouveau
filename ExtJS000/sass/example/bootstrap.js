@@ -12,6 +12,7 @@ Ext.Loader.addClassPathMappings({
   "Engine.Init": "../../../Engine/app/Init.js",
   "Engine.controller.Edit": "../../../Engine/app/controller/Edit.js",
   "Engine.controller.Tree": "../../../Engine/app/controller/Tree.js",
+  "Engine.model.Node": "../../../Engine/app/model/Node.js",
   "Engine.model.Topic": "../../../Engine/app/model/Topic.js",
   "Engine.store.Topics": "../../../Engine/app/store/Topics.js",
   "Engine.util.DomParser": "../../../Engine/app/util/DomParser.js",
@@ -24,17 +25,14 @@ Ext.Loader.addClassPathMappings({
   "Engine.view.LinkWindow": "../../../Engine/app/view/LinkWindow.js",
   "Engine.view.Tree": "../../../Engine/app/view/Tree.js",
   "Engine.view.Viewport": "../../../Engine/app/view/Viewport.js",
-  "Engine.view.content.Base": "../../../Engine/app/view/content/Base.js",
-  "Engine.view.content.Body": "../../../Engine/app/view/content/Body.js",
-  "Engine.view.content.BodyEdit": "../../../Engine/app/view/content/BodyEdit.js",
-  "Engine.view.content.Flow": "../../../Engine/app/view/content/Flow.js",
-  "Engine.view.content.Header": "../../../Engine/app/view/content/Header.js",
-  "Engine.view.content.Lab": "../../../Engine/app/view/content/Lab.js",
   "Engine.view.content.Panel": "../../../Engine/app/view/content/Panel.js",
-  "Engine.view.content.Slide": "../../../Engine/app/view/content/Slide.js",
-  "Engine.view.content.Title": "../../../Engine/app/view/content/Title.js",
-  "Engine.view.content.Topic": "../../../Engine/app/view/content/Topic.js",
-  "Engine.view.content.TopicContent": "../../../Engine/app/view/content/TopicContent.js",
+  "Engine.view.content.Toolbar": "../../../Engine/app/view/content/Toolbar.js",
+  "Engine.view.content.editing.BodyEdit": "../../../Engine/app/view/content/page/editing/BodyEdit.js",
+  "Engine.view.content.page.Base": "../../../Engine/app/view/content/page/Base.js",
+  "Engine.view.content.page.Body": "../../../Engine/app/view/content/page/Body.js",
+  "Engine.view.content.page.ContentPanel": "../../../Engine/app/view/content/page/ContentPanel.js",
+  "Engine.view.content.page.Title": "../../../Engine/app/view/content/page/Title.js",
+  "Engine.view.content.page.Topic": "../../../Engine/app/view/content/page/Topic.js",
   "Engine.view.util.ExpandingContent": "../../../Engine/app/view/util/ExpandingContent.js",
   "Engine.view.util.TreeOutlineFormats": "../../../Engine/app/view/util/TreeOutlineFormats.js",
   "Ext": "../../../ext/src",
@@ -152,6 +150,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Engine.controller.Tree": [],
   "Engine.lecture.Mammal": [],
   "Engine.lecture.Moose": [],
+  "Engine.model.Node": [],
   "Engine.model.Topic": [],
   "Engine.store.Topics": [],
   "Engine.util.DomParser": [],
@@ -164,17 +163,14 @@ Ext.ClassManager.addNameAlternateMappings({
   "Engine.view.LinkWindow": [],
   "Engine.view.Tree": [],
   "Engine.view.Viewport": [],
-  "Engine.view.content.Base": [],
-  "Engine.view.content.Body": [],
-  "Engine.view.content.BodyEdit": [],
-  "Engine.view.content.Flow": [],
-  "Engine.view.content.Header": [],
-  "Engine.view.content.Lab": [],
   "Engine.view.content.Panel": [],
-  "Engine.view.content.Slide": [],
-  "Engine.view.content.Title": [],
-  "Engine.view.content.Topic": [],
-  "Engine.view.content.TopicContent": [],
+  "Engine.view.content.Toolbar": [],
+  "Engine.view.content.editing.BodyEdit": [],
+  "Engine.view.content.page.Base": [],
+  "Engine.view.content.page.Body": [],
+  "Engine.view.content.page.ContentPanel": [],
+  "Engine.view.content.page.Title": [],
+  "Engine.view.content.page.Topic": [],
   "Engine.view.util.ExpandingContent": [],
   "Engine.view.util.TreeOutlineFormats": [],
   "Ext.AbstractComponent": [],
@@ -1202,6 +1198,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Engine.controller.Tree": [],
   "Engine.lecture.Mammal": [],
   "Engine.lecture.Moose": [],
+  "Engine.model.Node": [],
   "Engine.model.Topic": [],
   "Engine.store.Topics": [],
   "Engine.util.DomParser": [],
@@ -1218,34 +1215,27 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.training_tree"
   ],
   "Engine.view.Viewport": [],
-  "Engine.view.content.Base": [],
-  "Engine.view.content.Body": [
-    "widget.training_contentbody"
+  "Engine.view.content.Panel": [
+    "widget.slide"
   ],
-  "Engine.view.content.BodyEdit": [
+  "Engine.view.content.Toolbar": [
+    "widget.contenttoolbar"
+  ],
+  "Engine.view.content.editing.BodyEdit": [
     "widget.training_contentbodyedit"
   ],
-  "Engine.view.content.Flow": [
-    "widget.training_flow"
+  "Engine.view.content.page.Base": [],
+  "Engine.view.content.page.Body": [
+    "widget.training_contentbody"
   ],
-  "Engine.view.content.Header": [
-    "widget.training_contentheader"
+  "Engine.view.content.page.ContentPanel": [
+    "widget.contentpanel"
   ],
-  "Engine.view.content.Lab": [],
-  "Engine.view.content.Panel": [
-    "widget.training_content"
-  ],
-  "Engine.view.content.Slide": [
-    "widget.training_topic"
-  ],
-  "Engine.view.content.Title": [
+  "Engine.view.content.page.Title": [
     "widget.training_titlepage"
   ],
-  "Engine.view.content.Topic": [
+  "Engine.view.content.page.Topic": [
     "widget.training_contenttopic"
-  ],
-  "Engine.view.content.TopicContent": [
-    "widget.topiccontent"
   ],
   "Engine.view.util.ExpandingContent": [],
   "Engine.view.util.TreeOutlineFormats": [],

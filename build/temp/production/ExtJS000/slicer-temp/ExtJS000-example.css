@@ -23124,8 +23124,8 @@ div.slide .body .expander .training-expandingcontent-expander {
   margin-right: 0.8em;
 }
 /* line 220, ../../../../../packages/Nouveau/sass/src/_content.scss */
-div.lab .body .expander .training-expandingcontent-expander.expand,
-div.slide .body .expander .training-expandingcontent-expander.expand {
+div.lab .body .expander .training-expandingcontent-expander.open,
+div.slide .body .expander .training-expandingcontent-expander.open {
   border-left: 0.5em solid transparent;
   border-right: 0.5em solid transparent;
   border-top: 0.7em solid #000101;
@@ -23170,15 +23170,15 @@ div.slide .body .expander .training-expandingcontent-content ol {
   margin: 0;
   padding: 0 0 0 60px;
 }
-/* line 248, ../../../../../packages/Nouveau/sass/src/_content.scss */
-div.lab .body .expander .expand,
-div.slide .body .expander .expand {
+/* line 247, ../../../../../packages/Nouveau/sass/src/_content.scss */
+div.lab .body .expander .training-expandingcontent-content.expand,
+div.slide .body .expander .training-expandingcontent-content.expand {
   height: auto;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   padding: 0 0 25px 0;
 }
-/* line 259, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 261, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body table,
 div.slide .body table {
   border-collapse: collapse;
@@ -23186,18 +23186,18 @@ div.slide .body table {
   margin: 2em 0;
   width: 100%;
 }
-/* line 265, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 267, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body table td,
 div.slide .body table td {
   padding: 0 0.2em;
   vertical-align: top;
 }
-/* line 270, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 272, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body table pre,
 div.slide .body table pre {
   margin: 5px 0;
 }
-/* line 275, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 277, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .table thead th,
 div.slide .body .table thead th {
   background: #002034;
@@ -23207,14 +23207,14 @@ div.slide .body .table thead th {
   text-align: center;
   padding: 0.5em;
 }
-/* line 285, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 287, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .table tr td,
 div.slide .body .table tr td {
   border: 1px solid black;
   background: #fff;
   padding: 5px;
 }
-/* line 290, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 292, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .table tr:nth-child(odd) td,
 div.slide .body .table tr:nth-child(odd) td {
   background: #f2f2f2 !important;
