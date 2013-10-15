@@ -12,7 +12,6 @@ Ext.define('Engine.overrides.InlineWrap', {
         });
     },  
     
-
     replacePre: function(options) {
         var div = document.createElement("div");
         this.pre.parentNode.replaceChild(div, this.pre);
