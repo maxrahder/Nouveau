@@ -1,3 +1,16 @@
+@mixin shadebox {
+	background-color: #fff;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-box-shadow: 1px 2px 1px #d1d1d1;
+    -moz-box-shadow: 1px 2px 1px #d1d1d1;
+    box-shadow: 3px 5px 3px #d1d1d1;
+    background-size: 95% 92% !important;
+    background-repeat: no-repeat;
+}
+
+
 @import "compass/css3/transition";
 @import "compass/css3/opacity";
 
@@ -169,6 +182,11 @@ div.slide {
 		  background: none;
 		  display: block;
 		  height: 1px;
+		}
+
+		img {
+			@include shadebox;
+			padding: 7px;
 		}
 
 		sub,

@@ -6,9 +6,25 @@ Ext.define('Engine.overrides.InlineWrap', {
         var div = document.createElement("div");
         this.pre.parentNode.insertBefore(div, this.pre);
 
+        //load a customized toolbar instead
         this.tb = Ext.create("Engine.overrides.InlineToolbar", {
             renderTo: div
         });
-    }  
+    },  
     
+
+    replacePre: function(options) {
+        var div = document.createElement("div");
+        this.pre.parentNode.replaceChild(div, this.pre);
+
+        //we need to fix the Inline example, to meets its height
+        Ext.create('Docs.view.examples.Inline', {
+            //height: 200,
+            renderTo: div,
+            value: Ext.String.htmlDecode(Ext.util.Format.stripTags(this.pre.innerHTML)),
+            options: options,
+            toolbar: this.tb
+        });
+    }
+
 });

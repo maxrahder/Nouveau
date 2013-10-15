@@ -1,0 +1,13 @@
+.inline-example-tb,
+.inline-example-cmp {
+	@include shadebox;
+    border-bottom: 1px solid #d1d1d1;
+    border-left: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+}
+
+.inline-example-tb {
+    border-bottom: 0 solid #fff;
+    border-top: 1px solid #d1d1d1;
+    border-width: 1px !important;
+}
