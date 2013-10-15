@@ -24,22 +24,22 @@ Ext.define('Engine.view.EditToolbar', {
         validateOnChange: true
     },
     '', '-', '', {
-        icon: 'resources/images/folder_add.png',
+        glyph: '110@Nouveau',
         itemId: 'addFolder',
         tooltip: 'Add a new folder as the sibling of the selected folder',
         scale: 'small'
     }, {
-        icon: 'resources/images/page_add.png',
+        glyph: '78@Nouveau',
         itemId: 'addPage',
         tooltip: 'Add a new page as the sibling of the selected page',
         scale: 'small'
     }, '', '', {
-        icon: 'resources/images/delete.png',
+        glyph: '68@Nouveau',
         itemId: 'deleteNode',
         tooltip: 'Delete the selected item',
         scale: 'small'
     }, '', '-', '', {
-        icon: 'resources/images/link.png',
+        glyph: '72@Nouveau',
         itemId: 'link',
         tooltip: 'Get the link to this page'
         // }, '', '-', '' , {
