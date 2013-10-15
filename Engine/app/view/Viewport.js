@@ -3,7 +3,9 @@ Ext.define('Engine.view.Viewport', {
 	requires: [
 		'Engine.view.content.Panel',
 		'Engine.view.EditToolbar',
-		'Ext.layout.container.Border'
+		'Ext.layout.container.Border',
+		'Ext.form.Panel',
+		'Ext.form.field.Number'
 	],
 	layout: 'fit',
 	cls: 'training',

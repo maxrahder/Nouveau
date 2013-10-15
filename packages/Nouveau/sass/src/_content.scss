@@ -187,6 +187,7 @@ div.slide {
 		img {
 			@include shadebox;
 			padding: 7px;
+			max-width: 600px;
 		}
 
 		sub,
