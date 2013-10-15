@@ -1,21 +1,3 @@
-  @mixin expander-title {
-	background: none;
-	width: 0; 
-	height: 0; 
-	border-top: 0.5em solid transparent;
-	border-bottom: 0.5em solid transparent;
-	border-left: 0.7em solid darken($base-color, 20%);
-	display: inline-block;
-	margin-right: 0.8em; 
-}
-
-@mixin expander-title-expanded {
-	border-left: 0.5em solid transparent;
-	border-right: 0.5em solid transparent;
-	border-top: 0.7em solid darken($base-color, 20%);
-	border-bottom: 0;
-}
-
 @import "compass/css3/transition";
 @import "compass/css3/opacity";
 
@@ -210,6 +192,24 @@ div.slide {
 		 ========================================================================== */
 		 /* Expander */
 
+		@mixin expander-title {
+			background: none;
+			width: 0; 
+			height: 0; 
+			border-top: 0.5em solid transparent;
+			border-bottom: 0.5em solid transparent;
+			border-left: 0.7em solid darken($base-color, 5%);
+			display: inline-block;
+			margin-right: 0.8em; 
+		}
+
+		@mixin expander-title-expanded {
+			border-left: 0.5em solid transparent;
+			border-right: 0.5em solid transparent;
+			border-top: 0.7em solid darken($base-color, 5%);
+			border-bottom: 0;
+		}
+
 		.expander {			 
 			p { margin: 0; }
 
@@ -217,8 +217,12 @@ div.slide {
 				@include expander-title;
 			}
 	
-			.training-expandingcontent-expander.expand {
-				@include expander-title-expanded;
+			.training-expandingcontent-title {
+				&.open {
+					.training-expandingcontent-expander {
+						@include expander-title-expanded;
+					}
+				}
 			}
 
 			.training-expandingcontent-title {
@@ -243,13 +247,15 @@ div.slide {
 					margin: 0;
 					padding: 0 0 0 60px;
 				}
+
+				&.expand {
+				    height: auto;
+				    @include opacity(1);
+				    padding: 0 0 25px 0;
+				}
+
 			}
 
-			.expand {
-			    height: auto;
-			    @include opacity(1);
-			    padding: 0 0 25px 0;
-			}
 		}
 
 		/* ==========================================================================

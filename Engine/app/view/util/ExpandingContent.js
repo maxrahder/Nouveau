@@ -51,6 +51,7 @@ Ext.define('Engine.view.util.ExpandingContent', {
 
 		this.titleElement.on('click', function(event, target) {
 			me.contentElement.toggleCls('expand');
+			me.titleElement.toggleCls('open');
 		});
 	}
 });
