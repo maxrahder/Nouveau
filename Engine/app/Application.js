@@ -4,7 +4,7 @@ Ext.define('Engine.Application', {
 
 	requires: [
 		'Engine.overrides.InlineWrap',
-
+		'Engine.overrides.InlinePreview',
 
 		'Engine.view.Viewport',
 		'Engine.Global',
