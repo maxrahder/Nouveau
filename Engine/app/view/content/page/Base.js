@@ -1,4 +1,4 @@
-Ext.define('Engine.view.content.Base', {
+Ext.define('Engine.view.content.page.Base', {
 	
 	getTemplate : function(type) {
 		var s = 

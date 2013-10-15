@@ -1,7 +1,14 @@
-Ext.define('Engine.view.content.Body', {
+Ext.define('Engine.view.content.page.Body', {
 	extend : 'Ext.container.Container',
-	alias : 'widget.training_contentbody',
-	requires : [ 'Docs.view.examples.InlineWrap', 'Ext.tab.Panel' , 'Engine.view.util.ExpandingContent'],
+	xtype : 'training_contentbody',
+
+	requires : [ 
+		'Docs.view.examples.InlineWrap', 
+		'Ext.tab.Panel' , 
+		'Engine.view.util.ExpandingContent',
+		'Engine.view.content.page.ContentPanel'
+	],
+	
 	cls : 'body',
 	config : {
 		editing : false

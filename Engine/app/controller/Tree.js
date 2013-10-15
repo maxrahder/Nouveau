@@ -14,8 +14,8 @@ Ext.define('Engine.controller.Tree', {
         ref: 'filePathLabel',
         selector: '#filePathLabel'
     }, {
-        ref: 'content',
-        selector: 'training_content'
+        ref: 'slide',
+        selector: 'slide'
     }, {
         ref: 'contentBody',
         selector: 'training_contentbody'
@@ -52,7 +52,7 @@ Ext.define('Engine.controller.Tree', {
     },
 
     getEscapedBreadcrumb: function() {
-        return escape(this.getContent().getBreadcrumb(this.getRecord()));
+        return escape(this.getSlide().getBreadcrumb(this.getRecord()));
     },
 
     onLaunch: function(application) {
@@ -66,7 +66,7 @@ Ext.define('Engine.controller.Tree', {
         this.getTree().splitter.getEl().on('mouseover', function(e, target) {
             this.getTree().expandIfNeeded();
         }, this);
-        this.getContent().getEl().on('mouseover', function(e, target) {
+        this.getSlide().getEl().on('mouseover', function(e, target) {
             this.getTree().collapseIfNeeded();
         }, this);
     },
@@ -219,13 +219,13 @@ Ext.define('Engine.controller.Tree', {
             };
             me.getPageContent(record.get('fileId'), callback);
         } else {
-            me.getContent().showNode(record);
+            me.getSlide().showNode(record);
             me.getFilePathLabel().setText('');
         }
     },
 
     showContent: function(record, content) {
-        this.getContent().showNode(record, content);
+        this.getSlide().showNode(record, content);
         var s = 'This content is physically located at ' + record.getFilePath();
         this.getFilePathLabel().setText(s);
     },

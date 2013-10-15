@@ -1,4 +1,4 @@
-Ext.define('Engine.view.content.BodyEdit', {
+Ext.define('Engine.view.content.editing.BodyEdit', {
 	extend : 'Ext.form.field.HtmlEditor',
 	enableAlignments : false,
 	enableColors : false,

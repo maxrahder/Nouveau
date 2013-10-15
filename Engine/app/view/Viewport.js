@@ -3,8 +3,7 @@ Ext.define('Engine.view.Viewport', {
 	requires: [
 		'Engine.view.content.Panel',
 		'Engine.view.EditToolbar',
-		'Ext.layout.container.Border',
-		'Engine.view.content.Flow'
+		'Ext.layout.container.Border'
 	],
 	layout: 'fit',
 	cls: 'training',
@@ -36,7 +35,7 @@ Ext.define('Engine.view.Viewport', {
 			region: 'west'
 
 		}, {
-			xtype: 'training_content',
+			xtype: 'slide',
 			region: 'center'
 		}]
 	}]

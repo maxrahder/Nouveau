@@ -1,7 +1,9 @@
-Ext.define('Engine.view.content.Title', {
+Ext.define('Engine.view.content.page.Title', {
 	extend : 'Ext.Component',
-	mixins : ['Engine.view.content.Base'],
+	mixins : ['Engine.view.content.page.Base'],
+
 	xtype: 'training_titlepage',
+
 	cls: 'title topic',
 
     tpl : '<div class="head"><h1>Sencha Ext JS</h1></div><div class="footer">' + Engine.Global.copyrightNotice + '</div>',

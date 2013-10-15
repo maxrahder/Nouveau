@@ -1,17 +1,16 @@
 Ext.define('Engine.view.content.Panel', {
     extend: 'Ext.panel.Panel',
-    alias: 'widget.training_content',
+    xtype: 'slide',
     requires: [
-        'Engine.view.content.Header',
-        'Engine.view.content.Body',
-        'Engine.view.content.Title',
-        'Engine.view.content.BodyEdit',
-        'Engine.view.content.Topic',
-        'Engine.view.content.Slide'
+        'Engine.view.content.Toolbar',
+        'Engine.view.content.page.Body',
+        'Engine.view.content.page.Title',
+        'Engine.view.content.page.Topic'
     ],
+
     cls: 'content',
     border: false,
-    autoScroll: true,
+    //autoScroll: true,
     config: {
         slideWidth: 1024,
         slideHeight: 768,
@@ -29,46 +28,10 @@ Ext.define('Engine.view.content.Panel', {
         xtype: 'training_titlepage'
     }],
 
-    initComponent: function() {
-        this.dockedItems = [{
-            xtype: 'toolbar',
-            cls: 'breadcrumbs',
-            dock: 'top',
-            items: [{
-                    xtype: 'tbtext',
-                    crumb: true
-                },
-                '->', {
-                    cls: 'font-size',
-                    glyph:'45@Nouveau',
-                    tooltip: 'Decrease Font Size',
-                    handler: Ext.Function.bind(this.changeSize, this, [-10])
-                }, {
-                    cls: 'font-size',
-                    glyph:'43@Nouveau',
-                    tooltip: 'Increase Font Size',
-                    handler: Ext.Function.bind(this.changeSize, this, [10])
-                }
-            ]
-        }];
-
-        this.callParent();
-    },
-
-    changeSize: function(val) {
-        var rule = Ext.util.CSS.getRule('div.slide .body', true);
-        var size = parseInt(rule.style.getPropertyValue('font-size'));
-        var lh = parseInt(rule.style.getPropertyValue('line-height'));
-        var w = parseInt(rule.style.getPropertyValue('max-width'));
-
-        if (!this.fontSize) {
-            this.fontSize = size;
-        }
-
-        if(size+val >= 20) Ext.util.CSS.updateRule('div.slide .body', 'fontSize', size + val + 'px');
-        if(lh+(val*1.5) >= 30) Ext.util.CSS.updateRule('div.slide .body', 'lineHeight', lh + (val*1.5) + 'px');
-        if(w+(val*6) >= 720) Ext.util.CSS.updateRule('div.slide .body', 'maxWidth', w + (val*6) + 'px');
-    },
+    dockedItems: [{
+        xtype: 'contenttoolbar',
+        dock: 'top'
+    }],
 
     updateActiveItem: function(record, config) {
         // console.log(record.getTopicArray());
@@ -96,20 +59,11 @@ Ext.define('Engine.view.content.Panel', {
         Engine.util.Presentation.enterSlide(card.getEl().dom);
         this.getLayout().setActiveItem(card);
     },
-    getBreadcrumb: function(record) {
-        // <div class="crumb">topic > subtopic > ... > title </div>
-        var breadcrumbDelimiter = ' > ';
-        var s = '';
-        Ext.Array.forEach(record.getTopicArray(), function(topic) {
-            s += topic + breadcrumbDelimiter;
-        });
-        s += record.getSlideText();
-        s = Engine.util.String.removeFromEnd(s, breadcrumbDelimiter);
-        return s;
-    },
-    // private
     updateBreadcrumb: function(record) {
-        this.down('toolbar *[crumb]').setText(this.getBreadcrumb(record));
+        this.down('contenttoolbar').setRecord(record);
+    },
+    getBreadcrumb: function(){
+        return this.down('contenttoolbar').getBreadcrumb();
     },
     showNode: function(record, bodyHtml) {
         this.updateActiveItem(record, {
