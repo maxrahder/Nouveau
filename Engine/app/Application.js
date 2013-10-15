@@ -3,8 +3,8 @@ Ext.define('Engine.Application', {
 	extend: 'Ext.app.Application',
 
 	requires: [
+		'Engine.overrides.InlineWrap',
 
-		'Docs.view.examples.InlineWrap',
 
 		'Engine.view.Viewport',
 		'Engine.Global',
