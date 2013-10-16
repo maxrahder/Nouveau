@@ -10,6 +10,9 @@ Ext.define('Engine.overrides.InlineEditor', {
                 mode:  "javascript",
                 indentUnit: 4,
                 value: this.value,
+                lineNumbers: true,
+                theme: 'eclipse',
+                //theme: 'monokai', //dark theme based on sublime
                 extraKeys: {
                     "Tab": "indentMore",
                     "Shift-Tab": "indentLess"
