@@ -32,15 +32,14 @@ Ext.define('Engine.overrides.InlineToolbar', {
                 text: 'Preview',
                 handler: this.createEventFirerer("preview")
             },
-            /*"->",
+            "->",
             {
 
                 margin: '0 10px 0 0',
                 padding: 2,
-                glyph: '83@Nouveau',
-                text: 'Select Code',
-                handler: this.createEventFirerer("copy")
-            }*/
+                text: 'Toggle Theme',
+                handler: this.createEventFirerer("themetoggle")
+            }
         ];
 
         this.callParent(arguments);
