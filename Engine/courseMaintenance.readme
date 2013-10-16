@@ -55,7 +55,9 @@ Docs.model.Setting
         type: window['localStorage'] ? 'localstorage' : 'memory',
         type: 'localstorage',
 
-(7) Copy this to the application's index.html, after other javascript files have been loaded.
-    <link type="text/css" rel="stylesheet" href="../jsduck/template/resources/codemirror/codemirror.css" />
-    <link type="text/css" rel="stylesheet" href="../jsduck/template/resources/prettify/prettify.css" />
+(7) Code Mirror
+    <script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/javascript/javascript.js"></script>
+    <script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/xml/xml.js"></script>
 
+    

@@ -6,6 +6,7 @@ Ext.define('Engine.Application', {
 		'Engine.overrides.InlineWrap',
 		'Engine.overrides.InlinePreview',
 		'Engine.overrides.InlineEditor',
+		'Engine.overrides.Inline',
 
 		'Engine.view.Viewport',
 		'Engine.Global',

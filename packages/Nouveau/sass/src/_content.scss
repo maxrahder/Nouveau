@@ -129,16 +129,19 @@ div.slide {
 
 		code,
 		var,
-		pre,
 		samp {
 			color: $code-color;
 			white-space: normal;
 		}
 
-
 		kbd,
 		tt {
 			color: $code-color;
+		}
+
+		pre {
+			font-size: 1.3em;
+			line-height: 1.3em;
 		}
 
 
@@ -253,7 +256,7 @@ div.slide {
 				font-size: 1em !important;
 				margin: 5px 0 5px 5px;
 
-				pre, code, var, tt, kbd {
+				code, var, tt, kbd {
 			  		font-weight: bold;
 				}
 			}
@@ -297,9 +300,6 @@ div.slide {
 		      vertical-align: top;
 		    }
 		    
-		    pre {
-		      margin: 5px 0;
-		    }
 		}
 
 		.table thead th {

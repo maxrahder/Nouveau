@@ -1,3 +1,6 @@
+/* @import "_prettify.scss"; */
+@import "_codemirror.scss";
+
 .inline-example-tb,
 .inline-example-cmp {
 	@include shadebox;
@@ -12,14 +15,11 @@
     border-width: 1px !important;
 }
 
-div.slide .body .CodeMirror {
-	pre {
-		white-space: inherit;
-	}
+pre {
+	display: none;
 }
 
-.CodeMirror-scroll {
-    /* fix bug in JSDuck */
-	height: auto !important;
-	overflow: hidden !important;
+.CodeMirror pre {
+	display: block;
 }
+

@@ -12,14 +12,17 @@
         <script src="app.js"></script>
     <!-- </x-compile> -->
 
-    <link type="text/css" rel="stylesheet" href="../jsduck/template/resources/codemirror/codemirror.css" />
-    <link type="text/css" rel="stylesheet" href="../jsduck/template/resources/prettify/prettify.css" />
+    <script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/javascript/javascript.js"></script>
+    <!--<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/xml/xml.js"></script>-->
 
-    <script type="text/javascript" src="../JsDuck/template/resources/codemirror/codemirror.js"></script>
-    <script type="text/javascript" src="../JsDuck/template/resources/codemirror/javascript.js"></script>
-    <script type="text/javascript" src="../JsDuck/template/resources/codemirror/xml.js"></script>
-    <script type="text/javascript" src="../JsDuck/template/resources/codemirror/markdown.js"></script>
-    <script type="text/javascript" src="../JsDuck/template/resources/prettify/prettify.js"></script>
+    <!--<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/addon/runmode/runmode-standalone.js"></script>-->
+   <!-- <script type="text/javascript" src="../JsDuck/template/resources/prettify/prettify.js"></script>-->
+   <script>
+       function resizeIframe(newHeight){
+        document.getElementsByTagName('iframe')[0].style.height = parseInt(newHeight,10) + 10 + 'px';
+    }
+    </script>
 
 </head>
 <body></body>
