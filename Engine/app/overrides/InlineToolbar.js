@@ -37,6 +37,7 @@ Ext.define('Engine.overrides.InlineToolbar', {
 
                 margin: '0 10px 0 0',
                 padding: 2,
+                glyph: '56@Nouveau',
                 text: 'Toggle Theme',
                 handler: this.createEventFirerer("themetoggle")
             }
