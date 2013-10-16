@@ -86,8 +86,6 @@ Ext.define('Engine.model.Topic', {
 
     },
 
-
-
     getTopic: function() {
         // The topic is the highest node with a topicId.
         // This should always be the second level nodes:

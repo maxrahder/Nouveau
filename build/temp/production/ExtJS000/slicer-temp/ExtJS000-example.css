@@ -22911,7 +22911,27 @@ div.slide .head h2 {
   line-height: 38px;
   margin: 15px 0 20px 0;
 }
-/* line 60, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 59, ../../../../../packages/Nouveau/sass/src/_content.scss */
+div.lab .head h2.lab:before, div.lab .head h2.slide:before,
+div.slide .head h2.lab:before,
+div.slide .head h2.slide:before {
+  padding-right: 6px;
+  font-family: 'Nouveau';
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+/* line 67, ../../../../../packages/Nouveau/sass/src/_content.scss */
+div.lab .head h2.lab:before,
+div.slide .head h2.lab:before {
+  content: "\4c";
+}
+/* line 70, ../../../../../packages/Nouveau/sass/src/_content.scss */
+div.lab .head h2.slide:before,
+div.slide .head h2.slide:before {
+  content: "\70";
+}
+/* line 77, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body,
 div.slide .body {
   font-size: 20px;
@@ -22930,110 +22950,114 @@ div.slide .body {
    Tables
    ========================================================================== */
 }
-/* line 71, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 88, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h1,
 div.slide .body h1 {
   font-size: 24px;
   line-height: 36px;
 }
-/* line 75, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 92, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h2,
 div.slide .body h2 {
   font-size: 22px;
   line-height: 33px;
 }
-/* line 79, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 96, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h3,
 div.slide .body h3 {
   font-size: 20px;
   line-height: 30px;
 }
-/* line 83, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 100, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h4,
 div.slide .body h4 {
   font-size: 18px;
   line-height: 27px;
 }
-/* line 87, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 104, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h5,
 div.slide .body h5 {
   font-size: 16px;
   line-height: 24px;
 }
-/* line 91, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 108, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h6,
 div.slide .body h6 {
   font-size: 15px;
   line-height: 22.5px;
 }
-/* line 95, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 112, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body p,
 div.slide .body p {
   margin-bottom: 0.8em;
   margin-top: 0.8em;
 }
-/* line 100, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 117, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body em, div.lab .body i,
 div.slide .body em,
 div.slide .body i {
   font-style: italic;
 }
-/* line 104, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 121, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body b, div.lab .body strong,
 div.slide .body b,
 div.slide .body strong {
   font-weight: bold;
 }
-/* line 108, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 125, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body a,
 div.slide .body a {
   color: #004067;
 }
-/* line 110, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 127, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body a:hover,
 div.slide .body a:hover {
   color: #007fcd;
 }
-/* line 113, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 130, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body a:visited,
 div.slide .body a:visited {
   color: #004067;
 }
-/* line 118, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 135, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body abbr[title],
 div.slide .body abbr[title] {
   border-bottom: 1px dotted;
 }
-/* line 122, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 139, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body blockquote,
 div.slide .body blockquote {
   margin: 1em 40px;
 }
-/* line 126, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 143, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body dfn,
 div.slide .body dfn {
   font-style: italic;
 }
-/* line 133, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 149, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body code,
 div.lab .body var,
-div.lab .body pre,
 div.lab .body samp,
 div.slide .body code,
 div.slide .body var,
-div.slide .body pre,
 div.slide .body samp {
   color: #004067;
   white-space: normal;
 }
-/* line 140, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 155, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body kbd,
 div.lab .body tt,
 div.slide .body kbd,
 div.slide .body tt {
   color: #004067;
 }
-/* line 145, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 159, ../../../../../packages/Nouveau/sass/src/_content.scss */
+div.lab .body pre,
+div.slide .body pre {
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
+/* line 164, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body blockquote, div.lab .body q,
 div.slide .body blockquote,
 div.slide .body q {
@@ -23042,41 +23066,41 @@ div.slide .body q {
   quotes: "\201C" "\201D";
   margin: 1em 1em 0 1em;
 }
-/* line 151, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 170, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body blockquote:before, div.lab .body q:before,
 div.slide .body blockquote:before,
 div.slide .body q:before {
   content: open-quote;
   font-weight: bold;
 }
-/* line 156, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 175, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body blockquote:after, div.lab .body q:after,
 div.slide .body blockquote:after,
 div.slide .body q:after {
   content: close-quote;
   font-weight: bold;
 }
-/* line 162, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 181, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body cite,
 div.slide .body cite {
   text-transform: uppercase;
   font-size: 60%;
   margin: 0 1em 1em 2.1em;
 }
-/* line 168, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 187, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body small, div.lab .body .small,
 div.slide .body small,
 div.slide .body .small {
   font-size: 80%;
   line-height: 100%;
 }
-/* line 173, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 192, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .big,
 div.slide .body .big {
   line-height: 120%;
   font-size: 120%;
 }
-/* line 178, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 197, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body hr,
 div.slide .body hr {
   margin: 1em, 0;
@@ -23086,7 +23110,7 @@ div.slide .body hr {
   display: block;
   height: 1px;
 }
-/* line 187, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 206, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body img,
 div.slide .body img {
   background-color: #fff;
@@ -23102,7 +23126,7 @@ div.slide .body img {
   max-width: 600px;
   border: 1px solid #d1d1d1;
 }
-/* line 195, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 214, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body sub,
 div.lab .body sup,
 div.slide .body sub,
@@ -23112,28 +23136,28 @@ div.slide .body sup {
   position: relative;
   vertical-align: baseline;
 }
-/* line 202, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 221, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body sup,
 div.slide .body sup {
   top: -0.5em;
 }
-/* line 206, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 225, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body sub,
 div.slide .body sub {
   bottom: -0.25em;
 }
-/* line 210, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 229, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body ul, div.lab .body ol,
 div.slide .body ul,
 div.slide .body ol {
   padding: 0 20px;
 }
-/* line 238, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 257, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander p,
 div.slide .body .expander p {
   margin: 0;
 }
-/* line 240, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 259, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-expander,
 div.slide .body .expander .training-expandingcontent-expander {
   background: none;
@@ -23145,7 +23169,7 @@ div.slide .body .expander .training-expandingcontent-expander {
   display: inline-block;
   margin-right: 0.8em;
 }
-/* line 246, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 265, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-title.open .training-expandingcontent-expander,
 div.slide .body .expander .training-expandingcontent-title.open .training-expandingcontent-expander {
   border-left: 0.5em solid transparent;
@@ -23153,22 +23177,21 @@ div.slide .body .expander .training-expandingcontent-title.open .training-expand
   border-top: 0.7em solid #00304e;
   border-bottom: 0;
 }
-/* line 252, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 271, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-title,
 div.slide .body .expander .training-expandingcontent-title {
   font-size: 1em !important;
   margin: 5px 0 5px 5px;
 }
-/* line 256, ../../../../../packages/Nouveau/sass/src/_content.scss */
-div.lab .body .expander .training-expandingcontent-title pre, div.lab .body .expander .training-expandingcontent-title code, div.lab .body .expander .training-expandingcontent-title var, div.lab .body .expander .training-expandingcontent-title tt, div.lab .body .expander .training-expandingcontent-title kbd,
-div.slide .body .expander .training-expandingcontent-title pre,
+/* line 275, ../../../../../packages/Nouveau/sass/src/_content.scss */
+div.lab .body .expander .training-expandingcontent-title code, div.lab .body .expander .training-expandingcontent-title var, div.lab .body .expander .training-expandingcontent-title tt, div.lab .body .expander .training-expandingcontent-title kbd,
 div.slide .body .expander .training-expandingcontent-title code,
 div.slide .body .expander .training-expandingcontent-title var,
 div.slide .body .expander .training-expandingcontent-title tt,
 div.slide .body .expander .training-expandingcontent-title kbd {
   font-weight: bold;
 }
-/* line 261, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 280, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-content,
 div.slide .body .expander .training-expandingcontent-content {
   height: 0;
@@ -23185,14 +23208,14 @@ div.slide .body .expander .training-expandingcontent-content {
   -o-transition-duration: 1s, 0.5s;
   transition-duration: 1s, 0.5s;
 }
-/* line 270, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 289, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-content ul, div.lab .body .expander .training-expandingcontent-content ol,
 div.slide .body .expander .training-expandingcontent-content ul,
 div.slide .body .expander .training-expandingcontent-content ol {
   margin: 0;
   padding: 0 0 0 60px;
 }
-/* line 275, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 294, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-content.expand,
 div.slide .body .expander .training-expandingcontent-content.expand {
   height: auto;
@@ -23200,7 +23223,7 @@ div.slide .body .expander .training-expandingcontent-content.expand {
   opacity: 1;
   padding: 0 0 25px 0;
 }
-/* line 289, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 308, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body table,
 div.slide .body table {
   border-collapse: collapse;
@@ -23208,18 +23231,13 @@ div.slide .body table {
   margin: 2em 0;
   width: 100%;
 }
-/* line 295, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 314, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body table td,
 div.slide .body table td {
   padding: 0 0.2em;
   vertical-align: top;
 }
-/* line 300, ../../../../../packages/Nouveau/sass/src/_content.scss */
-div.lab .body table pre,
-div.slide .body table pre {
-  margin: 5px 0;
-}
-/* line 305, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 321, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .table thead th,
 div.slide .body .table thead th {
   background: #002034;
@@ -23229,14 +23247,14 @@ div.slide .body .table thead th {
   text-align: center;
   padding: 0.5em;
 }
-/* line 315, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 331, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .table tr td,
 div.slide .body .table tr td {
   border: 1px solid black;
   background: #fff;
   padding: 5px;
 }
-/* line 320, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 336, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .table tr:nth-child(odd) td,
 div.slide .body .table tr:nth-child(odd) td {
   background: #f2f2f2 !important;
@@ -23338,7 +23356,472 @@ div.lab .body h6 {
   width: 100%;
 }
 
-/* line 2, ../../../../../packages/Nouveau/sass/src/_code.scss */
+/* @import "_prettify.scss"; */
+/* BASICS */
+/* line 3, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: auto;
+}
+
+/* line 8, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-scroll {
+  /* Set scrolling behaviour here */
+  overflow-y: hidden;
+  overflow-x: auto;
+  height: auto;
+}
+
+/* PADDING */
+/* line 17, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-lines {
+  padding: 4px 0;
+  /* Vertical padding around content */
+}
+
+/* line 20, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror pre {
+  padding: 0 4px;
+  /* Horizontal padding of content */
+}
+
+/* line 24, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white;
+  /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+/* line 30, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  white-space: nowrap;
+}
+
+/* line 36, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+}
+
+/* CURSOR */
+/* line 45, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid black;
+  z-index: 3;
+}
+
+/* Shown when moving in bi-directional text */
+/* line 50, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+
+/* line 53, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: #7e7;
+  z-index: 1;
+}
+
+/* Can style cursor different in overwrite (non-insert) mode */
+/* line 62, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-tab {
+  display: inline-block;
+}
+
+/* DEFAULT THEME */
+/* line 66, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-keyword {
+  color: #708;
+}
+
+/* line 67, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-atom {
+  color: #219;
+}
+
+/* line 68, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-number {
+  color: #164;
+}
+
+/* line 69, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-def {
+  color: #00f;
+}
+
+/* line 70, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-variable {
+  color: black;
+}
+
+/* line 71, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-variable-2 {
+  color: #05a;
+}
+
+/* line 72, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-variable-3 {
+  color: #085;
+}
+
+/* line 73, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-property {
+  color: black;
+}
+
+/* line 74, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-operator {
+  color: black;
+}
+
+/* line 75, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-comment {
+  color: #a50;
+}
+
+/* line 76, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-string {
+  color: #a11;
+}
+
+/* line 77, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-string-2 {
+  color: #f50;
+}
+
+/* line 78, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-meta {
+  color: #555;
+}
+
+/* line 79, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-error {
+  color: #f00;
+}
+
+/* line 80, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-qualifier {
+  color: #555;
+}
+
+/* line 81, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-builtin {
+  color: #30a;
+}
+
+/* line 82, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-bracket {
+  color: #997;
+}
+
+/* line 83, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-tag {
+  color: #170;
+}
+
+/* line 84, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-attribute {
+  color: #00c;
+}
+
+/* line 85, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-header {
+  color: blue;
+}
+
+/* line 86, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-quote {
+  color: #090;
+}
+
+/* line 87, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-hr {
+  color: #999;
+}
+
+/* line 88, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-default .cm-link {
+  color: #00c;
+}
+
+/* line 90, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-negative {
+  color: #d44;
+}
+
+/* line 91, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-positive {
+  color: #292;
+}
+
+/* line 92, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-header, .cm-strong {
+  font-weight: bold;
+}
+
+/* line 93, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-em {
+  font-style: italic;
+}
+
+/* line 94, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-link {
+  text-decoration: underline;
+}
+
+/* line 96, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-invalidchar {
+  color: #f00;
+}
+
+/* line 98, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+div.CodeMirror span.CodeMirror-matchingbracket {
+  color: #0f0;
+}
+
+/* line 99, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+  color: #f22;
+}
+
+/* line 100, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-activeline-background {
+  background: #e8f2ff;
+}
+
+/* STOP */
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+/* line 107, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror {
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  color: black;
+}
+
+/* line 115, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-scroll {
+  /* 30px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -30px;
+  margin-right: -30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  height: 100%;
+  outline: none;
+  /* Prevent dragging from highlighting the element */
+  position: relative;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 126, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-sizer {
+  position: relative;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actuall scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+/* line 133, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+}
+
+/* line 138, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-vscrollbar {
+  right: 0;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* line 143, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-hscrollbar {
+  bottom: 0;
+  left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+/* line 148, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-scrollbar-filler {
+  right: 0;
+  bottom: 0;
+}
+
+/* line 151, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-gutter-filler {
+  left: 0;
+  bottom: 0;
+}
+
+/* line 155, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-gutters {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-bottom: 30px;
+  z-index: 3;
+}
+
+/* line 160, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding-bottom: 30px;
+  margin-bottom: -32px;
+  display: inline-block;
+  /* Hack to make IE7 behave */
+  *zoom: 1;
+  *display: inline;
+}
+
+/* line 172, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+
+/* line 178, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-lines {
+  cursor: text;
+}
+
+/* line 181, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror pre {
+  /* Reset some styles that the rest of the page might have set */
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+}
+
+/* line 197, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+/* line 202, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-code pre {
+  border-right: 30px solid transparent;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+/* line 208, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-wrap .CodeMirror-code pre {
+  border-right: none;
+  width: auto;
+}
+
+/* line 212, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+/* line 218, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  overflow: auto;
+}
+
+/* line 226, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-wrap .CodeMirror-scroll {
+  overflow-x: hidden;
+}
+
+/* line 230, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* line 237, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-measure pre {
+  position: static;
+}
+
+/* line 239, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror div.CodeMirror-cursor {
+  position: absolute;
+  visibility: hidden;
+  border-right: none;
+  width: 0;
+}
+
+/* line 245, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-focused div.CodeMirror-cursor {
+  visibility: visible;
+}
+
+/* line 249, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-selected {
+  background: #d9d9d9;
+}
+
+/* line 250, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror-focused .CodeMirror-selected {
+  background: #d7d4f0;
+}
+
+/* line 252, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-searching {
+  background: #ffa;
+  background: rgba(255, 255, 0, 0.4);
+}
+
+/* IE7 hack to prevent it from returning funny offsetTops on the spans */
+/* line 258, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.CodeMirror span {
+  *vertical-align: text-bottom;
+}
+
+@media print {
+  /* Hide the cursor when printing */
+  /* line 262, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+  .CodeMirror div.CodeMirror-cursor {
+    visibility: hidden;
+  }
+}
+/* line 5, ../../../../../packages/Nouveau/sass/src/_code.scss */
 .inline-example-tb,
 .inline-example-cmp {
   background-color: #fff;
@@ -23355,19 +23838,23 @@ div.lab .body h6 {
   border-right: 1px solid #d1d1d1;
 }
 
-/* line 9, ../../../../../packages/Nouveau/sass/src/_code.scss */
+/* line 12, ../../../../../packages/Nouveau/sass/src/_code.scss */
 .inline-example-tb {
   border-bottom: 0 solid #fff;
   border-top: 1px solid #d1d1d1;
   border-width: 1px !important;
 }
 
-/*
-.inline-example-editor:first-child{
-	background: red;
-	display: none !important;
-	height: 0;
-}*/
+/* line 18, ../../../../../packages/Nouveau/sass/src/_code.scss */
+pre {
+  display: none;
+}
+
+/* line 22, ../../../../../packages/Nouveau/sass/src/_code.scss */
+.CodeMirror pre {
+  display: block;
+}
+
 /*
  * tree requires the following settings:
  * useArrows: true,

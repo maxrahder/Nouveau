@@ -186,6 +186,7 @@ Ext.define('Engine.controller.Edit', {
 		var record = this.getRecord();
 		var recordConfig = {
 			text: 'New Topic',
+			fileId: this.generateFileId(),
 			leaf: false,
 			children: []
 		};

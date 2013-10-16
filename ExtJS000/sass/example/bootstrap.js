@@ -14,6 +14,7 @@ Ext.Loader.addClassPathMappings({
   "Engine.controller.Tree": "../../../Engine/app/controller/Tree.js",
   "Engine.model.Node": "../../../Engine/app/model/Node.js",
   "Engine.model.Topic": "../../../Engine/app/model/Topic.js",
+  "Engine.overrides.Inline": "../../../Engine/app/overrides/Inline.js",
   "Engine.overrides.InlineEditor": "../../../Engine/app/overrides/InlineEditor.js",
   "Engine.overrides.InlinePreview": "../../../Engine/app/overrides/InlinePreview.js",
   "Engine.overrides.InlineToolbar": "../../../Engine/app/overrides/InlineToolbar.js",
@@ -32,7 +33,6 @@ Ext.Loader.addClassPathMappings({
   "Engine.view.content.Panel": "../../../Engine/app/view/content/Panel.js",
   "Engine.view.content.Toolbar": "../../../Engine/app/view/content/Toolbar.js",
   "Engine.view.content.editing.BodyEdit": "../../../Engine/app/view/content/page/editing/BodyEdit.js",
-  "Engine.view.content.page.Base": "../../../Engine/app/view/content/page/Base.js",
   "Engine.view.content.page.Body": "../../../Engine/app/view/content/page/Body.js",
   "Engine.view.content.page.ContentPanel": "../../../Engine/app/view/content/page/ContentPanel.js",
   "Engine.view.content.page.Title": "../../../Engine/app/view/content/page/Title.js",
@@ -156,6 +156,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Engine.lecture.Moose": [],
   "Engine.model.Node": [],
   "Engine.model.Topic": [],
+  "Engine.overrides.Inline": [],
   "Engine.overrides.InlineEditor": [],
   "Engine.overrides.InlinePreview": [],
   "Engine.overrides.InlineToolbar": [],
@@ -174,7 +175,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "Engine.view.content.Panel": [],
   "Engine.view.content.Toolbar": [],
   "Engine.view.content.editing.BodyEdit": [],
-  "Engine.view.content.page.Base": [],
   "Engine.view.content.page.Body": [],
   "Engine.view.content.page.ContentPanel": [],
   "Engine.view.content.page.Title": [],
@@ -1208,6 +1208,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Engine.lecture.Moose": [],
   "Engine.model.Node": [],
   "Engine.model.Topic": [],
+  "Engine.overrides.Inline": [],
   "Engine.overrides.InlineEditor": [],
   "Engine.overrides.InlinePreview": [],
   "Engine.overrides.InlineToolbar": [],
@@ -1236,7 +1237,6 @@ Ext.ClassManager.addNameAliasMappings({
   "Engine.view.content.editing.BodyEdit": [
     "widget.training_contentbodyedit"
   ],
-  "Engine.view.content.page.Base": [],
   "Engine.view.content.page.Body": [
     "widget.training_contentbody"
   ],

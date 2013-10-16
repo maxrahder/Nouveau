@@ -50,6 +50,19 @@
             <include name="**/*" />
           </fileset>
         </copy>
+
+        <scriptdef name="generateguid" language="javascript">
+            <attribute name="property" />
+            <![CDATA[
+            importClass( java.util.UUID );
+            project.setProperty( attributes.get( "property" ), UUID.randomUUID() );
+            ]]>
+        </scriptdef>
+
+        <generateguid property="uuid" />
+        <echo message="${uuid}" file="UUID.txt" />
+        <copy todir="${build.dir}" overwrite="true" file="UUID.txt" />
+
     </target>
 
 </project>

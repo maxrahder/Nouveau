@@ -42,8 +42,18 @@ Ext.define('Engine.view.content.Toolbar', {
         if (lh + (val * 1.5) >= 30) Ext.util.CSS.updateRule('div.slide .body', 'lineHeight', lh + (val * 1.5) + 'px');
         if (w + (val * 6) >= 720) Ext.util.CSS.updateRule('div.slide .body', 'maxWidth', w + (val * 6) + 'px');
     },
-    onNodeChange: function(node){
-        var s = node?node.getBreadcrumb():'';
+    BREADCRUMB_DELIMITER: ' &gt; ',
+    onNodeChange: function(node) {
+        var me = this;
+        var s = '';
+        Ext.Array.forEach(node.getTopicArray(), function(topic) {
+            s += topic + me.BREADCRUMB_DELIMITER;
+        });
+        var title = node.getTitle();
+        if (title) {
+            s += title;
+        }
+        s = Engine.util.String.removeFromEnd(s, me.BREADCRUMB_DELIMITER);
         this.down('#breadcrumb').setText(s);
     }
 

@@ -51,25 +51,13 @@ Ext.define('Engine.model.Node', {
 		var record = this.getRecord();
 		return record ? record.getSlideText() : '';
 	},
-	isTitle: function() {
-		return (this.getRecord() === null);
+	getTopicId: function(){
+		var record = this.getRecord();
+		return record ? record.get('topicId') : '';
 	},
-	BREADCRUMB_DELIMITER: ' &gt; ',
-	getBreadcrumb: function() {
-		// topic > subtopic > ... > title
-		var me = this;
-		var s = '';
-		Ext.Array.forEach(this.getTopicArray(), function(topic) {
-			s += topic + Engine.model.Node.BREADCRUMB_DELIMITER;
-		});
-		var title = this.getTitle();
-		if (title) {
-			s += title;
-		}
-		s = Engine.util.String.removeFromEnd(s, Engine.model.Node.BREADCRUMB_DELIMITER);
-		return s;
-	},
-
-
+	isSplash: function() {
+		var record = this.getRecord();
+		return record ? (this.getTopicId() === 'splash') : true;
+	}
 
 })

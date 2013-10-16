@@ -6,7 +6,8 @@ Ext.define('Engine.controller.Tree', {
     models: ['Topic', 'Node'],
 
     requires: [
-        'Ext.state.LocalStorageProvider'
+        'Ext.state.LocalStorageProvider',
+        'Ext.util.History'
     ],
 
     refs: [{
@@ -30,15 +31,8 @@ Ext.define('Engine.controller.Tree', {
 
         var me = this;
 
-        if (Ext.supports.LocalStorage) {
-            this.stateProvider = Ext.create('Ext.state.LocalStorageProvider');
-        }
-
-        // Kludge to get a reference to this controller in memory
-        // for debugging purposes.
-        Engine.controllers = {
-            Tree: this
-        };
+        // Debugging tip: On the console use Engine.controller.Tree 
+        // to reference this object.
 
         this.control({
             'training_tree': {
@@ -48,13 +42,22 @@ Ext.define('Engine.controller.Tree', {
             }
         });
 
+        this.getTopicsStore().on('load', this.onTopicsStoreLoad, me);
 
-        this.getTopicsStore().on('load', this.topicsStoreLoadHandler, this);
         this.getTopicsStore().load();
     },
 
-    getEscapedBreadcrumb: function() {
-        return escape(Engine.model.Node.getBreadcrumb());
+    onTopicsStoreLoad: function() {
+        var me = this;
+        Ext.util.History.init(function() {
+            Ext.util.History.on('change', me.onHistoryChange, me);
+            me.onHistoryChange(Ext.util.History.getToken());
+        });
+    },
+    onHistoryChange: function(token) {
+        if (token && (token !== Engine.model.Node.getTopicId())) {
+            this.getTree().search(token, false);
+        }
     },
 
     onLaunch: function(application) {
@@ -161,48 +164,13 @@ Ext.define('Engine.controller.Tree', {
         }
     },
 
-    topicsStoreLoadHandler: function() {
-        // If there's a deeplink path in the URL, use it. Else see if there's
-        // a path saved via the state provider and use that.
-        var path = Ext.Object.fromQueryString(location.search.substring(1)).page;
-        path = path ? path : this.getDeeplinkPath();
-        this.openPage(path);
-    },
 
-    openPage: function(path) {
-        // Opens the page from the specified path. The path must be of the form
-        // nodeTitle/nodeTitle/nodeTitle. " > " may also be used for the
-        // delimiter.
-        var startingNode = this.getTree().getRootNode();
-        path = path || '';
-
-        // regex "global" replace
-        var path = path.replace(/ > /g, '/');
-        var links = path.split('/');
-        for (var i = 0; i < links.length; i++) {
-            var pageTitle = Ext.String.trim(links[i]);
-            var child = startingNode.findChildBy(function(node) {
-                return (Ext.String.trim(node.get('text')) === pageTitle);
-            });
-            if (child) {
-                startingNode = child;
-                //this.getTree().expandNode(startingNode);
-            } else {
-                break;
-            }
-        }
-        if (startingNode.isRoot()) {
-            startingNode = startingNode.firstChild;
-        }
-        this.getTree().getSelectionModel().select(startingNode);
-    },
-
-    createTrace: function(message) {
-        // Usage : this.createTrace('In method foo')';
-        return Ext.Function.bind(this.trace, this, [message]);
-    },
     trace: function(message) {
-        console.log(message);
+        function trace(message) {
+            console.log(message);
+        }
+        // Usage : this.trace('In method foo')';
+        return Ext.Function.bind(trace, this, [message]);
     },
 
     getRecord: function() {
@@ -211,7 +179,7 @@ Ext.define('Engine.controller.Tree', {
 
     nodeSelected: function(selectionModel, record) {
 
-        this.saveDeeplinkPath();
+        Ext.util.History.add(record.get('fileId'));
 
         var me = this;
 
@@ -241,19 +209,6 @@ Ext.define('Engine.controller.Tree', {
             var result = Ext.Array.difference(files, allInTree);
             callback(result);
         });
-    },
-
-    getDeeplinkPath: function() {
-        if (this.stateProvider) {
-            return unescape(this.stateProvider.get('deeplinkpath'));
-        } else {
-            return '';
-        }
-    },
-    saveDeeplinkPath: function() {
-        if (this.stateProvider) {
-            this.stateProvider.set('deeplinkpath', this.getEscapedBreadcrumb());
-        }
     }
 
 });

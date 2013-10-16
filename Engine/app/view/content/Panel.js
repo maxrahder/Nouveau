@@ -52,13 +52,13 @@ Ext.define('Engine.view.content.Panel', {
             body: node.data.slideHtml
         };
         var card = null;
-        if (record.isTitle()) {
+        if (node.isSplash()) {
             card = this.down('training_titlepage');
             card.updateContent(node);
-        } else if (record.isTopic()) {
+        } else if (node.isTopic()) {
             card = this.down('training_contenttopic');
             card.updateContent(node);
-        } else if (record.isSlide()) {
+        } else if (node.isSlide()) {
             card = this.down('training_contentbody');
             card.updateContent(data);
         }
