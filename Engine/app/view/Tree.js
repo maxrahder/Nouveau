@@ -99,7 +99,15 @@ Ext.define('Engine.view.Tree', {
                 if (record.isRoot()) {
                     return '';
                 } else if (record.isTitle()) {
-                    return value;
+
+                    if (value.indexOf('Lab') != -1 && value.indexOf('Labs') < 0) {
+                         return '<span class="lab"></span>' + value;
+                    } else if (record.isLeaf()) {
+                        return '<span class="customleaf"></span>' + value;
+                    } else {
+                        return value;
+                    }
+
                 } else {
                     //console.log(record.data.topicId);
                     if (record.data.topicId !== "") {

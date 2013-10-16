@@ -56,8 +56,8 @@ Docs.model.Setting
         type: 'localstorage',
 
 (7) Code Mirror
-    <script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/lib/codemirror.js"></script>
-    <script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/javascript/javascript.js"></script>
-    <script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/xml/xml.js"></script>
+<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/lib/codemirror.js"></script>
+<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/javascript/javascript.js"></script>
+<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/xml/xml.js"></script>
 
     
