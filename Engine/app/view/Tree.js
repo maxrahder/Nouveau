@@ -72,14 +72,14 @@ Ext.define('Engine.view.Tree', {
     }, {
         xtype: 'button',
         scale: 'small',
-        text: '<',
+        glyph: '91@Nouveau',
         handler: function(button) {
             button.up('training_tree').findHandler(true);
         }
     }, {
         xtype: 'button',
         scale: 'small',
-        text: '>',
+        glyph: '93@Nouveau',
         handler: function(button) {
             button.up('training_tree').findHandler(false);
         }
