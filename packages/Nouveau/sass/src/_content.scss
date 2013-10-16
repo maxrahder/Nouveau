@@ -54,6 +54,23 @@ div.slide {
 			font-size: 32px;
 			line-height: 38px;
 			margin: 15px 0 20px 0;
+
+		    &.lab:before,
+		    &.slide:before {
+				padding-right: 6px;
+				font-family: 'Nouveau';
+				speak: none;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;	
+		    }
+
+			&.lab:before {
+				content: "\4c";
+			}
+			&.slide:before {
+				content: "\70";
+			}
+
 		}
 	}
 
@@ -143,7 +160,6 @@ div.slide {
 			font-size: 1.3em;
 			line-height: 1.3em;
 		}
-
 
 		blockquote, q {
 		  color: lighten($text-color, 30%);

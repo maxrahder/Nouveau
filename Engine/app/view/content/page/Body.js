@@ -16,15 +16,24 @@ Ext.define('Engine.view.content.page.Body', {
 	initComponent : function() {
 
 		this.template = Ext.create('Ext.XTemplate', 
-				'<div class="{type}">' 
-				+ '<div class="head">'
-				+ '<h1>{[values.topics[0]]}</h1>' 
-				+ '{[ values.subtopic ? "<h3>" + values.subtopic + "</h3>" : "" ]}'
-				+ '<h2>{title}</h2>' 
-				+ '</div>'
-				+ '<div class="body">{body}</div>' 
-				+ '</div>'
-				+ '<span class="branding"></span>');
+				'<div class="{type}">', 
+				'<div class="head">',
+				'<h1>{[values.topics[0]]}</h1>', 
+				'{[ values.subtopic ? "<h3>" + values.subtopic + "</h3>" : "" ]}',
+				'<tpl if="this.isLab(title)">',
+	                "<h2 class='lab'>{title}</h2>",
+	            '<tpl else>',
+	                "<h2 class='slide'>{title}</h2>",
+	            '</tpl>',
+				'</div>',
+				'<div class="body">{body}</div>',
+				'</div>',
+				'<span class="branding"></span>',
+				{
+			        isLab: function(title){
+			           return title.indexOf('Lab:') !== -1;
+			        }
+				});
 
 		var me = this;
 		var content = {
