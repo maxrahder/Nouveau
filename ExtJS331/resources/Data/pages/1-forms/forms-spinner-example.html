@@ -1,0 +1,48 @@
+<html class="x-strict x-viewport">
+<head>
+    <title>Sencha Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+
+
+<h2>Example</h2>
+<pre class="runnable preview">Ext.define('Ext.ux.CustomSpinner', {
+    extend: 'Ext.form.field.Spinner',
+    alias: 'widget.customspinner',
+
+    // override onSpinUp (using step isn't neccessary)
+    onSpinUp: function() {
+        var me = this;
+        if (!me.readOnly) {
+            var val = parseInt(me.getValue().split(' '), 10)||0; // gets rid of " Pack", defaults to zero on parse failure
+            me.setValue((val + me.step) + ' Pack');
+        }
+    },
+
+    // override onSpinDown
+    onSpinDown: function() {
+        var me = this;
+        if (!me.readOnly) {
+           var val = parseInt(me.getValue().split(' '), 10)||0; // gets rid of " Pack", defaults to zero on parse failure
+           if (val &lt;= me.step) {
+               me.setValue('Dry!');
+           } else {
+               me.setValue((val - me.step) + ' Pack');
+           }
+        }
+    }
+});
+
+Ext.create('Ext.form.FormPanel', {
+    renderTo: Ext.getBody(),
+    items:[{
+        xtype: 'customspinner',
+        fieldLabel: 'How Much Beer?',
+        step: 6
+    }]
+});</pre>
+
+<!-- END -->
+</body>
+</html>

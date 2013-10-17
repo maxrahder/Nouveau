@@ -1,0 +1,42 @@
+<html class="x-strict x-viewport">
+<head>
+    <title>Sencha Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+
+
+<h2>Example</h2>
+<pre class="runnable preview">Ext.create('Ext.form.Panel', {
+    title: 'Form Panel with anchor layout',
+    bodyPadding: 5,
+    width: 350,
+
+    layout: 'anchor',
+    defaults: {
+        anchor: '100%'
+    },
+
+    defaultType: 'textfield',
+    items: [{
+        fieldLabel: 'First Name',
+        name: 'first',
+        allowBlank: false,
+        anchor: '70%'
+    },{
+        fieldLabel: 'Last Name',
+        name: 'last',
+        allowBlank: false
+    },
+    {
+        fieldLabel: 'Age',
+        name: 'age',
+        allowBlank: false,
+        anchor: '40%'
+    }],
+    renderTo: Ext.getBody()
+});</pre>
+
+<!-- END -->
+</body>
+</html>

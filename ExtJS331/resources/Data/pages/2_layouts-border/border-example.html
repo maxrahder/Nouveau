@@ -1,0 +1,42 @@
+<html class="x-strict x-viewport">
+<head>
+    <title>Sencha Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+
+
+<h2>Example</h2>
+<pre class="runnable preview">Ext.create('Ext.panel.Panel', {
+    layout : 'border',
+    items : [ {
+        title : 'West',
+        region : 'west',
+        width : 60
+    }, {
+        title : 'East',
+        region : 'east',
+        width : 60
+    }, {
+        title : 'South',
+        region : 'south',
+        height : 60
+    }, {
+        title : 'North',
+        region : 'north',
+        height : 60
+    }, {
+        title : 'Center',
+        region : 'center'
+    } ],
+
+    title : 'Border Layout Panel',
+    defaults : {margin : 4},
+    bodyPadding : 8,
+    height : 300, width : 600,
+    renderTo : Ext.getBody()
+});</pre>
+
+<!-- END -->
+</body>
+</html>

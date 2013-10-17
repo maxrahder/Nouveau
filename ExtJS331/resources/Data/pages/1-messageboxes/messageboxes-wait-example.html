@@ -1,0 +1,23 @@
+<html class="x-strict x-viewport">
+<head>
+    <title>Sencha Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+
+
+<h2>Example</h2>
+<pre class="runnable preview">var m = Ext.Msg.wait("Please wait while we process your application...", "Processing", {
+   interval: 300, //bar will move fast!
+   duration: 3000,
+   increment: 10,
+   text: 'Updating...',
+
+   fn: function(){
+      m.hide();
+   }
+});</pre>
+
+<!-- END -->
+</body>
+</html>

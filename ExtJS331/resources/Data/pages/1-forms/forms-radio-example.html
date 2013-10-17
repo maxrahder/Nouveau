@@ -1,0 +1,49 @@
+<html class="x-strict x-viewport">
+<head>
+    <title>Sencha Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+
+
+<h2>Example</h2>
+<pre class="runnable preview">Ext.create('Ext.form.Panel', {
+    title      : 'Order Form',
+    width      : 300,
+    bodyPadding: 10,
+    renderTo   : Ext.getBody(),
+    items: [
+        {
+            xtype      : 'fieldcontainer',
+            fieldLabel : 'Size',
+            defaultType: 'radiofield',
+            defaults: {
+                flex: 1
+            },
+            layout: 'hbox',
+            items: [
+                {
+                    boxLabel  : 'M',
+                    name      : 'size',
+                    inputValue: 'm',
+                    id        : 'radio1'
+                }, {
+                    boxLabel  : 'L',
+                    name      : 'size',
+                    inputValue: 'l',
+                    id        : 'radio2'
+                }, {
+                    boxLabel  : 'XL',
+                    name      : 'size',
+                    inputValue: 'xl',
+                    id        : 'radio3'
+                }
+            ]
+        }
+
+    ]
+});</pre>
+
+<!-- END -->
+</body>
+</html>

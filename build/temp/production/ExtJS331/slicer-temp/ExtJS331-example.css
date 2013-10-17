@@ -63,6 +63,7 @@
 /* including package ext-theme-neutral */
 /* including package ext-theme-neptune */
 /* including package Nouveau */
+/* including package ExtJS331 */
 /* including package Nouveau */
 /* including package ext-theme-neptune */
 /**
@@ -5963,7 +5964,7 @@ a.x-tab {
   background-color: #f5f5f5;
   border-width: 0;
   height: 20px;
-  border-color: #004067;
+  border-color: #516f83;
 }
 /* line 72, ../../../../../ext/packages/ext-theme-neutral/sass/src/ProgressBar.scss */
 .x-content-box .x-progress-default {
@@ -5972,7 +5973,7 @@ a.x-tab {
 /* line 84, ../../../../../ext/packages/ext-theme-neutral/sass/src/ProgressBar.scss */
 .x-progress-default .x-progress-bar-default {
   background-image: none;
-  background-color: #bbccd6;
+  background-color: #d1d8de;
 }
 /* line 99, ../../../../../ext/packages/ext-theme-neutral/sass/src/ProgressBar.scss */
 .x-progress-default .x-progress-text {
@@ -6169,7 +6170,7 @@ a.x-tab {
  */
 /* line 246, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-small {
-  border-color: #003758;
+  border-color: #455f70;
 }
 
 /* line 137, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -6183,19 +6184,19 @@ a.x-tab {
   border-width: 1px;
   border-style: solid;
   background-image: none;
-  background-color: #265c7d;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3b6c8a), color-stop(50%, #265c7d), color-stop(51%, #245776), color-stop(100%, #265c7d));
-  background-image: -webkit-linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
-  background-image: -moz-linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
-  background-image: -o-linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
-  background-image: linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
+  background-color: #6b8495;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #79909f), color-stop(50%, #6b8495), color-stop(51%, #657d8d), color-stop(100%, #6b8495));
+  background-image: -webkit-linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
+  background-image: -moz-linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
+  background-image: -o-linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
+  background-image: linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-btn-default-small-mc {
   background-image: url(images/btn/btn-default-small-fbg.gif);
   background-position: 0 top;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 212, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -6361,12 +6362,12 @@ body.x-nbr .x-btn-default-small-frameInfo {
 }
 /* line 303, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-ie8m .x-btn-default-small .x-btn-glyph {
-  color: #92adbe;
+  color: #b5c1ca;
 }
 
 /* line 309, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-small-disabled {
-  border-color: #004067;
+  border-color: #516f83;
 }
 
 /* line 335, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
@@ -6497,39 +6498,39 @@ body.x-nbr .x-btn-default-small-frameInfo {
 
 /* line 492, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-small-over {
-  border-color: #004067;
+  border-color: #516f83;
   background-image: none;
-  background-color: #225472;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #386580), color-stop(50%, #225472), color-stop(51%, #204f6c), color-stop(100%, #225472));
-  background-image: -webkit-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -moz-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -o-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
+  background-color: #627989;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #718694), color-stop(50%, #627989), color-stop(51%, #5d7282), color-stop(100%, #627989));
+  background-image: -webkit-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -moz-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -o-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
 }
 
 /* line 516, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-small-focus {
-  border-color: #004067;
+  border-color: #516f83;
   background-image: none;
-  background-color: #225472;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #386580), color-stop(50%, #225472), color-stop(51%, #204f6c), color-stop(100%, #225472));
-  background-image: -webkit-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -moz-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -o-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
+  background-color: #627989;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #718694), color-stop(50%, #627989), color-stop(51%, #5d7282), color-stop(100%, #627989));
+  background-image: -webkit-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -moz-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -o-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
 }
 
 /* line 541, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-small-menu-active,
 .x-btn-default-small-pressed {
-  border-color: #004067;
+  border-color: #516f83;
   background-image: none;
-  background-color: #1c455d;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1c455d), color-stop(50%, #1a4158), color-stop(51%, #1c455d), color-stop(100%, #32576d));
-  background-image: -webkit-linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
-  background-image: -moz-linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
-  background-image: -o-linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
-  background-image: linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
+  background-color: #50636f;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #50636f), color-stop(50%, #4c5e69), color-stop(51%, #50636f), color-stop(100%, #61727d));
+  background-image: -webkit-linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
+  background-image: -moz-linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
+  background-image: -o-linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
+  background-image: linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
 }
 
 /* line 573, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
@@ -6548,7 +6549,7 @@ body.x-nbr .x-btn-default-small-frameInfo {
 }
 /* line 580, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-small-over .x-frame-mc {
-  background-color: #225472;
+  background-color: #627989;
   background-image: url(images/btn/btn-default-small-over-fbg.gif);
 }
 
@@ -6568,7 +6569,7 @@ body.x-nbr .x-btn-default-small-frameInfo {
 }
 /* line 602, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-small-focus .x-frame-mc {
-  background-color: #225472;
+  background-color: #627989;
   background-image: url(images/btn/btn-default-small-focus-fbg.gif);
 }
 
@@ -6597,7 +6598,7 @@ body.x-nbr .x-btn-default-small-frameInfo {
 /* line 625, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-small-menu-active .x-frame-mc,
 .x-btn-default-small-pressed .x-frame-mc {
-  background-color: #1c455d;
+  background-color: #50636f;
   background-image: url(images/btn/btn-default-small-pressed-fbg.gif);
 }
 
@@ -6708,7 +6709,7 @@ body.x-nbr .x-btn-default-small-frameInfo {
 /* */
 /* line 246, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-medium {
-  border-color: #003758;
+  border-color: #455f70;
 }
 
 /* line 137, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -6722,19 +6723,19 @@ body.x-nbr .x-btn-default-small-frameInfo {
   border-width: 1px;
   border-style: solid;
   background-image: none;
-  background-color: #265c7d;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3b6c8a), color-stop(50%, #265c7d), color-stop(51%, #245776), color-stop(100%, #265c7d));
-  background-image: -webkit-linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
-  background-image: -moz-linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
-  background-image: -o-linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
-  background-image: linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
+  background-color: #6b8495;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #79909f), color-stop(50%, #6b8495), color-stop(51%, #657d8d), color-stop(100%, #6b8495));
+  background-image: -webkit-linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
+  background-image: -moz-linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
+  background-image: -o-linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
+  background-image: linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-btn-default-medium-mc {
   background-image: url(images/btn/btn-default-medium-fbg.gif);
   background-position: 0 top;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 212, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -6900,12 +6901,12 @@ body.x-nbr .x-btn-default-medium-frameInfo {
 }
 /* line 303, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-ie8m .x-btn-default-medium .x-btn-glyph {
-  color: #92adbe;
+  color: #b5c1ca;
 }
 
 /* line 309, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-medium-disabled {
-  border-color: #004067;
+  border-color: #516f83;
 }
 
 /* line 335, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
@@ -7036,39 +7037,39 @@ body.x-nbr .x-btn-default-medium-frameInfo {
 
 /* line 492, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-medium-over {
-  border-color: #004067;
+  border-color: #516f83;
   background-image: none;
-  background-color: #225472;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #386580), color-stop(50%, #225472), color-stop(51%, #204f6c), color-stop(100%, #225472));
-  background-image: -webkit-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -moz-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -o-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
+  background-color: #627989;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #718694), color-stop(50%, #627989), color-stop(51%, #5d7282), color-stop(100%, #627989));
+  background-image: -webkit-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -moz-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -o-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
 }
 
 /* line 516, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-medium-focus {
-  border-color: #004067;
+  border-color: #516f83;
   background-image: none;
-  background-color: #225472;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #386580), color-stop(50%, #225472), color-stop(51%, #204f6c), color-stop(100%, #225472));
-  background-image: -webkit-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -moz-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -o-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
+  background-color: #627989;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #718694), color-stop(50%, #627989), color-stop(51%, #5d7282), color-stop(100%, #627989));
+  background-image: -webkit-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -moz-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -o-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
 }
 
 /* line 541, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-medium-menu-active,
 .x-btn-default-medium-pressed {
-  border-color: #004067;
+  border-color: #516f83;
   background-image: none;
-  background-color: #1c455d;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1c455d), color-stop(50%, #1a4158), color-stop(51%, #1c455d), color-stop(100%, #32576d));
-  background-image: -webkit-linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
-  background-image: -moz-linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
-  background-image: -o-linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
-  background-image: linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
+  background-color: #50636f;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #50636f), color-stop(50%, #4c5e69), color-stop(51%, #50636f), color-stop(100%, #61727d));
+  background-image: -webkit-linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
+  background-image: -moz-linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
+  background-image: -o-linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
+  background-image: linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
 }
 
 /* line 573, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
@@ -7087,7 +7088,7 @@ body.x-nbr .x-btn-default-medium-frameInfo {
 }
 /* line 580, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-medium-over .x-frame-mc {
-  background-color: #225472;
+  background-color: #627989;
   background-image: url(images/btn/btn-default-medium-over-fbg.gif);
 }
 
@@ -7107,7 +7108,7 @@ body.x-nbr .x-btn-default-medium-frameInfo {
 }
 /* line 602, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-medium-focus .x-frame-mc {
-  background-color: #225472;
+  background-color: #627989;
   background-image: url(images/btn/btn-default-medium-focus-fbg.gif);
 }
 
@@ -7136,7 +7137,7 @@ body.x-nbr .x-btn-default-medium-frameInfo {
 /* line 625, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-medium-menu-active .x-frame-mc,
 .x-btn-default-medium-pressed .x-frame-mc {
-  background-color: #1c455d;
+  background-color: #50636f;
   background-image: url(images/btn/btn-default-medium-pressed-fbg.gif);
 }
 
@@ -7247,7 +7248,7 @@ body.x-nbr .x-btn-default-medium-frameInfo {
 /* */
 /* line 246, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-large {
-  border-color: #003758;
+  border-color: #455f70;
 }
 
 /* line 137, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -7261,19 +7262,19 @@ body.x-nbr .x-btn-default-medium-frameInfo {
   border-width: 1px;
   border-style: solid;
   background-image: none;
-  background-color: #265c7d;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3b6c8a), color-stop(50%, #265c7d), color-stop(51%, #245776), color-stop(100%, #265c7d));
-  background-image: -webkit-linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
-  background-image: -moz-linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
-  background-image: -o-linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
-  background-image: linear-gradient(top, #3b6c8a, #265c7d 50%, #245776 51%, #265c7d);
+  background-color: #6b8495;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #79909f), color-stop(50%, #6b8495), color-stop(51%, #657d8d), color-stop(100%, #6b8495));
+  background-image: -webkit-linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
+  background-image: -moz-linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
+  background-image: -o-linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
+  background-image: linear-gradient(top, #79909f, #6b8495 50%, #657d8d 51%, #6b8495);
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-btn-default-large-mc {
   background-image: url(images/btn/btn-default-large-fbg.gif);
   background-position: 0 top;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 212, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -7439,12 +7440,12 @@ body.x-nbr .x-btn-default-large-frameInfo {
 }
 /* line 303, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-ie8m .x-btn-default-large .x-btn-glyph {
-  color: #92adbe;
+  color: #b5c1ca;
 }
 
 /* line 309, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-large-disabled {
-  border-color: #004067;
+  border-color: #516f83;
 }
 
 /* line 335, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
@@ -7575,39 +7576,39 @@ body.x-nbr .x-btn-default-large-frameInfo {
 
 /* line 492, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-large-over {
-  border-color: #004067;
+  border-color: #516f83;
   background-image: none;
-  background-color: #225472;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #386580), color-stop(50%, #225472), color-stop(51%, #204f6c), color-stop(100%, #225472));
-  background-image: -webkit-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -moz-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -o-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
+  background-color: #627989;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #718694), color-stop(50%, #627989), color-stop(51%, #5d7282), color-stop(100%, #627989));
+  background-image: -webkit-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -moz-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -o-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
 }
 
 /* line 516, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-large-focus {
-  border-color: #004067;
+  border-color: #516f83;
   background-image: none;
-  background-color: #225472;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #386580), color-stop(50%, #225472), color-stop(51%, #204f6c), color-stop(100%, #225472));
-  background-image: -webkit-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -moz-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: -o-linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
-  background-image: linear-gradient(top, #386580, #225472 50%, #204f6c 51%, #225472);
+  background-color: #627989;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #718694), color-stop(50%, #627989), color-stop(51%, #5d7282), color-stop(100%, #627989));
+  background-image: -webkit-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -moz-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: -o-linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
+  background-image: linear-gradient(top, #718694, #627989 50%, #5d7282 51%, #627989);
 }
 
 /* line 541, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-large-menu-active,
 .x-btn-default-large-pressed {
-  border-color: #004067;
+  border-color: #516f83;
   background-image: none;
-  background-color: #1c455d;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1c455d), color-stop(50%, #1a4158), color-stop(51%, #1c455d), color-stop(100%, #32576d));
-  background-image: -webkit-linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
-  background-image: -moz-linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
-  background-image: -o-linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
-  background-image: linear-gradient(top, #1c455d, #1a4158 50%, #1c455d 51%, #32576d);
+  background-color: #50636f;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #50636f), color-stop(50%, #4c5e69), color-stop(51%, #50636f), color-stop(100%, #61727d));
+  background-image: -webkit-linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
+  background-image: -moz-linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
+  background-image: -o-linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
+  background-image: linear-gradient(top, #50636f, #4c5e69 50%, #50636f 51%, #61727d);
 }
 
 /* line 573, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
@@ -7626,7 +7627,7 @@ body.x-nbr .x-btn-default-large-frameInfo {
 }
 /* line 580, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-large-over .x-frame-mc {
-  background-color: #225472;
+  background-color: #627989;
   background-image: url(images/btn/btn-default-large-over-fbg.gif);
 }
 
@@ -7646,7 +7647,7 @@ body.x-nbr .x-btn-default-large-frameInfo {
 }
 /* line 602, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-large-focus .x-frame-mc {
-  background-color: #225472;
+  background-color: #627989;
   background-image: url(images/btn/btn-default-large-focus-fbg.gif);
 }
 
@@ -7675,7 +7676,7 @@ body.x-nbr .x-btn-default-large-frameInfo {
 /* line 625, ../../../../../ext/packages/ext-theme-neutral/sass/src/button/Button.scss */
 .x-btn-default-large-menu-active .x-frame-mc,
 .x-btn-default-large-pressed .x-frame-mc {
-  background-color: #1c455d;
+  background-color: #50636f;
   background-image: url(images/btn/btn-default-large-pressed-fbg.gif);
 }
 
@@ -9535,7 +9536,7 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
 /* line 112, ../../../../../ext/packages/ext-theme-neutral/sass/src/toolbar/Toolbar.scss */
 .x-toolbar-text {
   margin: 0 6px 0 4px;
-  color: #0c334b;
+  color: #393c3f;
   line-height: 16px;
   font-family: helvetica, arial, verdana, sans-serif;
   font-size: 10px;
@@ -9559,7 +9560,7 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
 
 /* line 137, ../../../../../ext/packages/ext-theme-neutral/sass/src/toolbar/Toolbar.scss */
 .x-toolbar-footer {
-  background: #dde3e7;
+  background: #e5e8ea;
   border: 0;
   margin: 0;
   padding: 6px 0 6px 6px;
@@ -9841,7 +9842,7 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
 }
 /* line 219, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-panel-header-default .x-tool-img {
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 232, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -9899,19 +9900,19 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
 /* line 432, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-panel-header-default {
   background-image: none;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 436, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-panel-header-default-vertical {
   background-image: none;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 441, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-rtl.x-panel-header-default-vertical {
   background-image: none;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 494, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -9980,8 +9981,8 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
 }
 /* line 36, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/rotate-element.scss */
 .x-ie9m .x-panel-header-default-vertical .x-panel-header-text-container {
-  background-color: #004067;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1), progid:DXImageTransform.Microsoft.Chroma(color=#004067);
+  background-color: #516f83;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1), progid:DXImageTransform.Microsoft.Chroma(color=#516f83);
 }
 
 /* line 527, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -9997,8 +9998,8 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
 }
 /* line 36, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/rotate-element.scss */
 .x-ie9m .x-panel-header-default-vertical .x-rtl.x-panel-header-text-container {
-  background-color: #004067;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3), progid:DXImageTransform.Microsoft.Chroma(color=#004067);
+  background-color: #516f83;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3), progid:DXImageTransform.Microsoft.Chroma(color=#516f83);
 }
 
 /* line 551, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -10016,7 +10017,7 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
 }
 /* line 572, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-ie8m .x-panel-header-default .x-panel-header-glyph {
-  color: #7f9fb3;
+  color: #a8b7c1;
 }
 
 /* line 580, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -10233,7 +10234,7 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
 }
 /* line 219, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-panel-header-default-framed .x-tool-img {
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 232, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -10446,12 +10447,12 @@ body.x-nbr .x-panel-default-framed-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px 5px 0 5px;
   border-style: solid;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-default-framed-top-mc {
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -10594,18 +10595,18 @@ body.x-nbr .x-panel-header-default-framed-top-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px 5px 5px 0;
   border-style: solid;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 178, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-rtl.x-panel-header-default-framed-right {
   background-image: none;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-default-framed-right-mc {
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -10753,12 +10754,12 @@ body.x-nbr .x-panel-header-default-framed-right-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 0 5px 5px 5px;
   border-style: solid;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-default-framed-bottom-mc {
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -10901,18 +10902,18 @@ body.x-nbr .x-panel-header-default-framed-bottom-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px 0 5px 5px;
   border-style: solid;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 178, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-rtl.x-panel-header-default-framed-left {
   background-image: none;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-default-framed-left-mc {
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -11060,12 +11061,12 @@ body.x-nbr .x-panel-header-default-framed-left-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-default-framed-collapsed-top-mc {
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -11208,18 +11209,18 @@ body.x-nbr .x-panel-header-default-framed-collapsed-top-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 178, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-rtl.x-panel-header-default-framed-collapsed-right {
   background-image: none;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-default-framed-collapsed-right-mc {
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -11367,12 +11368,12 @@ body.x-nbr .x-panel-header-default-framed-collapsed-right-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-default-framed-collapsed-bottom-mc {
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -11515,18 +11516,18 @@ body.x-nbr .x-panel-header-default-framed-collapsed-bottom-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 178, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-rtl.x-panel-header-default-framed-collapsed-left {
   background-image: none;
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-default-framed-collapsed-left-mc {
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -11704,8 +11705,8 @@ body.x-nbr .x-panel-header-default-framed-collapsed-left-frameInfo {
 }
 /* line 36, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/rotate-element.scss */
 .x-ie9m .x-panel-header-default-framed-vertical .x-panel-header-text-container {
-  background-color: #004067;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1), progid:DXImageTransform.Microsoft.Chroma(color=#004067);
+  background-color: #516f83;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1), progid:DXImageTransform.Microsoft.Chroma(color=#516f83);
 }
 
 /* line 527, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -11721,8 +11722,8 @@ body.x-nbr .x-panel-header-default-framed-collapsed-left-frameInfo {
 }
 /* line 36, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/rotate-element.scss */
 .x-ie9m .x-panel-header-default-framed-vertical .x-rtl.x-panel-header-text-container {
-  background-color: #004067;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3), progid:DXImageTransform.Microsoft.Chroma(color=#004067);
+  background-color: #516f83;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3), progid:DXImageTransform.Microsoft.Chroma(color=#516f83);
 }
 
 /* line 551, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -11740,7 +11741,7 @@ body.x-nbr .x-panel-header-default-framed-collapsed-left-frameInfo {
 }
 /* line 572, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-ie8m .x-panel-header-default-framed .x-panel-header-glyph {
-  color: #7f9fb3;
+  color: #a8b7c1;
 }
 
 /* line 580, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -12119,12 +12120,12 @@ body.x-nbr .x-panel-header-default-framed-collapsed-left-frameInfo {
   padding: 2px 2px 2px 2px;
   border-width: 1px;
   border-style: solid;
-  background-color: #e8eef1;
+  background-color: #eff2f4;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-tip-default-mc {
-  background-color: #e8eef1;
+  background-color: #eff2f4;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -12257,7 +12258,7 @@ body.x-nbr .x-tip-default-frameInfo {
 /* line 109, ../../../../../ext/packages/ext-theme-neutral/sass/src/tip/Tip.scss */
 .x-tip-default .x-tool-img {
   background-image: url(images/tools/tool-sprites-dark.png);
-  background-color: #e8eef1;
+  background-color: #eff2f4;
 }
 
 /* line 124, ../../../../../ext/packages/ext-theme-neutral/sass/src/tip/Tip.scss */
@@ -12311,12 +12312,12 @@ body.x-nbr .x-tip-default-frameInfo {
   padding: 2px 2px 2px 2px;
   border-width: 1px;
   border-style: solid;
-  background-color: #e8eef1;
+  background-color: #eff2f4;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-tip-form-invalid-mc {
-  background-color: #e8eef1;
+  background-color: #eff2f4;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -12449,7 +12450,7 @@ body.x-nbr .x-tip-form-invalid-frameInfo {
 /* line 109, ../../../../../ext/packages/ext-theme-neutral/sass/src/tip/Tip.scss */
 .x-tip-form-invalid .x-tool-img {
   background-image: url(images/tools/tool-sprites-dark.png);
-  background-color: #e8eef1;
+  background-color: #eff2f4;
 }
 
 /* line 124, ../../../../../ext/packages/ext-theme-neutral/sass/src/tip/Tip.scss */
@@ -12554,7 +12555,7 @@ body.x-nbr .x-tip-form-invalid-frameInfo {
  */
 /* line 89, ../../../../../ext/packages/ext-theme-neutral/sass/src/container/ButtonGroup.scss */
 .x-btn-group-default {
-  border-color: #dde3e7;
+  border-color: #e5e8ea;
   -webkit-box-shadow: white 0 1px 0px 0 inset, white 0 -1px 0px 0 inset, white -1px 0 0px 0 inset, white 1px 0 0px 0 inset;
   -moz-box-shadow: white 0 1px 0px 0 inset, white 0 -1px 0px 0 inset, white -1px 0 0px 0 inset, white 1px 0 0px 0 inset;
   box-shadow: white 0 1px 0px 0 inset, white 0 -1px 0px 0 inset, white -1px 0 0px 0 inset, white 1px 0 0px 0 inset;
@@ -12564,7 +12565,7 @@ body.x-nbr .x-tip-form-invalid-frameInfo {
 .x-btn-group-header-default {
   padding: 4px 5px;
   line-height: 16px;
-  background: #dde3e7;
+  background: #e5e8ea;
   -moz-border-radius-topleft: 0px;
   -webkit-border-top-left-radius: 0px;
   border-top-left-radius: 0px;
@@ -12575,7 +12576,7 @@ body.x-nbr .x-tip-form-invalid-frameInfo {
 /* line 109, ../../../../../ext/packages/ext-theme-neutral/sass/src/container/ButtonGroup.scss */
 .x-btn-group-header-default .x-tool-img {
   background-image: url(images/tools/tool-sprites-dark.png);
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 120, ../../../../../ext/packages/ext-theme-neutral/sass/src/container/ButtonGroup.scss */
@@ -12878,7 +12879,7 @@ body.x-nbr .x-btn-group-default-framed-notitle-frameInfo {
 /* */
 /* line 89, ../../../../../ext/packages/ext-theme-neutral/sass/src/container/ButtonGroup.scss */
 .x-btn-group-default-framed {
-  border-color: #dde3e7;
+  border-color: #e5e8ea;
   -webkit-box-shadow: white 0 1px 0px 0 inset, white 0 -1px 0px 0 inset, white -1px 0 0px 0 inset, white 1px 0 0px 0 inset;
   -moz-box-shadow: white 0 1px 0px 0 inset, white 0 -1px 0px 0 inset, white -1px 0 0px 0 inset, white 1px 0 0px 0 inset;
   box-shadow: white 0 1px 0px 0 inset, white 0 -1px 0px 0 inset, white -1px 0 0px 0 inset, white 1px 0 0px 0 inset;
@@ -12888,7 +12889,7 @@ body.x-nbr .x-btn-group-default-framed-notitle-frameInfo {
 .x-btn-group-header-default-framed {
   padding: 4px 5px;
   line-height: 16px;
-  background: #dde3e7;
+  background: #e5e8ea;
   -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
@@ -12899,7 +12900,7 @@ body.x-nbr .x-btn-group-default-framed-notitle-frameInfo {
 /* line 109, ../../../../../ext/packages/ext-theme-neutral/sass/src/container/ButtonGroup.scss */
 .x-btn-group-header-default-framed .x-tool-img {
   background-image: url(images/tools/tool-sprites-dark.png);
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 120, ../../../../../ext/packages/ext-theme-neutral/sass/src/container/ButtonGroup.scss */
@@ -13052,7 +13053,7 @@ body.x-nbr .x-btn-group-default-framed-notitle-frameInfo {
 
 /* line 174, ../../../../../ext/packages/ext-theme-neutral/sass/src/window/Window.scss */
 .x-window-default {
-  border-color: #265c7d;
+  border-color: #6b8495;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -13203,7 +13204,7 @@ body.x-nbr .x-window-default-frameInfo {
 /* */
 /* line 195, ../../../../../ext/packages/ext-theme-neutral/sass/src/window/Window.scss */
 .x-window-body-default {
-  border-color: #265c7d;
+  border-color: #6b8495;
   border-width: 1px;
   border-style: solid;
   background: white;
@@ -13213,13 +13214,13 @@ body.x-nbr .x-window-default-frameInfo {
 /* line 206, ../../../../../ext/packages/ext-theme-neutral/sass/src/window/Window.scss */
 .x-window-header-default {
   font-size: 11px;
-  border-color: #265c7d;
+  border-color: #6b8495;
   zoom: 1;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 /* line 212, ../../../../../ext/packages/ext-theme-neutral/sass/src/window/Window.scss */
 .x-window-header-default .x-tool-img {
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 223, ../../../../../ext/packages/ext-theme-neutral/sass/src/window/Window.scss */
@@ -13235,8 +13236,8 @@ body.x-nbr .x-window-default-frameInfo {
 }
 /* line 36, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/rotate-element.scss */
 .x-ie9m .x-window-header-default-vertical .x-window-header-text-container {
-  background-color: #265c7d;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1), progid:DXImageTransform.Microsoft.Chroma(color=#265c7d);
+  background-color: #6b8495;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1), progid:DXImageTransform.Microsoft.Chroma(color=#6b8495);
 }
 
 /* line 228, ../../../../../ext/packages/ext-theme-neutral/sass/src/window/Window.scss */
@@ -13252,8 +13253,8 @@ body.x-nbr .x-window-default-frameInfo {
 }
 /* line 36, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/rotate-element.scss */
 .x-ie9m .x-window-header-default-vertical .x-rtl.x-window-header-text-container {
-  background-color: #265c7d;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3), progid:DXImageTransform.Microsoft.Chroma(color=#265c7d);
+  background-color: #6b8495;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3), progid:DXImageTransform.Microsoft.Chroma(color=#6b8495);
 }
 
 /* line 233, ../../../../../ext/packages/ext-theme-neutral/sass/src/window/Window.scss */
@@ -13284,12 +13285,12 @@ body.x-nbr .x-window-default-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px 5px 5px 5px;
   border-style: solid;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-window-header-default-top-mc {
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -13432,12 +13433,12 @@ body.x-nbr .x-window-header-default-top-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px 5px 5px 5px;
   border-style: solid;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-window-header-default-right-mc {
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -13585,12 +13586,12 @@ body.x-nbr .x-window-header-default-right-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px 5px 5px 5px;
   border-style: solid;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-window-header-default-bottom-mc {
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -13733,12 +13734,12 @@ body.x-nbr .x-window-header-default-bottom-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px 5px 5px 5px;
   border-style: solid;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-window-header-default-left-mc {
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -13879,12 +13880,12 @@ body.x-nbr .x-window-header-default-left-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-window-header-default-collapsed-top-mc {
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -14020,12 +14021,12 @@ body.x-nbr .x-window-header-default-collapsed-top-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-window-header-default-collapsed-right-mc {
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -14166,12 +14167,12 @@ body.x-nbr .x-window-header-default-collapsed-right-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-window-header-default-collapsed-bottom-mc {
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -14307,12 +14308,12 @@ body.x-nbr .x-window-header-default-collapsed-bottom-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-window-header-default-collapsed-left-mc {
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -14461,7 +14462,7 @@ body.x-nbr .x-window-header-default-collapsed-left-frameInfo {
 }
 /* line 380, ../../../../../ext/packages/ext-theme-neutral/sass/src/window/Window.scss */
 .x-ie8m .x-window-header-default .x-window-header-glyph {
-  color: #92adbe;
+  color: #b5c1ca;
 }
 
 /* line 388, ../../../../../ext/packages/ext-theme-neutral/sass/src/window/Window.scss */
@@ -14585,119 +14586,119 @@ body.x-nbr .x-window-header-default-collapsed-left-frameInfo {
 
 /* line 2, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-l {
-  border-left-color: #265c7d !important;
+  border-left-color: #6b8495 !important;
   border-left-width: 1px !important;
 }
 
 /* line 6, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-b {
-  border-bottom-color: #265c7d !important;
+  border-bottom-color: #6b8495 !important;
   border-bottom-width: 1px !important;
 }
 
 /* line 10, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-bl {
-  border-bottom-color: #265c7d !important;
+  border-bottom-color: #6b8495 !important;
   border-bottom-width: 1px !important;
-  border-left-color: #265c7d !important;
+  border-left-color: #6b8495 !important;
   border-left-width: 1px !important;
 }
 
 /* line 16, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-r {
-  border-right-color: #265c7d !important;
+  border-right-color: #6b8495 !important;
   border-right-width: 1px !important;
 }
 
 /* line 20, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-rl {
-  border-right-color: #265c7d !important;
+  border-right-color: #6b8495 !important;
   border-right-width: 1px !important;
-  border-left-color: #265c7d !important;
+  border-left-color: #6b8495 !important;
   border-left-width: 1px !important;
 }
 
 /* line 26, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-rb {
-  border-right-color: #265c7d !important;
+  border-right-color: #6b8495 !important;
   border-right-width: 1px !important;
-  border-bottom-color: #265c7d !important;
+  border-bottom-color: #6b8495 !important;
   border-bottom-width: 1px !important;
 }
 
 /* line 32, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-rbl {
-  border-right-color: #265c7d !important;
+  border-right-color: #6b8495 !important;
   border-right-width: 1px !important;
-  border-bottom-color: #265c7d !important;
+  border-bottom-color: #6b8495 !important;
   border-bottom-width: 1px !important;
-  border-left-color: #265c7d !important;
+  border-left-color: #6b8495 !important;
   border-left-width: 1px !important;
 }
 
 /* line 40, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-t {
-  border-top-color: #265c7d !important;
+  border-top-color: #6b8495 !important;
   border-top-width: 1px !important;
 }
 
 /* line 44, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-tl {
-  border-top-color: #265c7d !important;
+  border-top-color: #6b8495 !important;
   border-top-width: 1px !important;
-  border-left-color: #265c7d !important;
+  border-left-color: #6b8495 !important;
   border-left-width: 1px !important;
 }
 
 /* line 50, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-tb {
-  border-top-color: #265c7d !important;
+  border-top-color: #6b8495 !important;
   border-top-width: 1px !important;
-  border-bottom-color: #265c7d !important;
+  border-bottom-color: #6b8495 !important;
   border-bottom-width: 1px !important;
 }
 
 /* line 56, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-tbl {
-  border-top-color: #265c7d !important;
+  border-top-color: #6b8495 !important;
   border-top-width: 1px !important;
-  border-bottom-color: #265c7d !important;
+  border-bottom-color: #6b8495 !important;
   border-bottom-width: 1px !important;
-  border-left-color: #265c7d !important;
+  border-left-color: #6b8495 !important;
   border-left-width: 1px !important;
 }
 
 /* line 64, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-tr {
-  border-top-color: #265c7d !important;
+  border-top-color: #6b8495 !important;
   border-top-width: 1px !important;
-  border-right-color: #265c7d !important;
+  border-right-color: #6b8495 !important;
   border-right-width: 1px !important;
 }
 
 /* line 70, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-trl {
-  border-top-color: #265c7d !important;
+  border-top-color: #6b8495 !important;
   border-top-width: 1px !important;
-  border-right-color: #265c7d !important;
+  border-right-color: #6b8495 !important;
   border-right-width: 1px !important;
-  border-left-color: #265c7d !important;
+  border-left-color: #6b8495 !important;
   border-left-width: 1px !important;
 }
 
 /* line 78, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-trb {
-  border-top-color: #265c7d !important;
+  border-top-color: #6b8495 !important;
   border-top-width: 1px !important;
-  border-right-color: #265c7d !important;
+  border-right-color: #6b8495 !important;
   border-right-width: 1px !important;
-  border-bottom-color: #265c7d !important;
+  border-bottom-color: #6b8495 !important;
   border-bottom-width: 1px !important;
 }
 
 /* line 86, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/border-management.scss */
 .x-window-default-outer-border-trbl {
-  border-color: #265c7d !important;
+  border-color: #6b8495 !important;
   border-width: 1px !important;
 }
 
@@ -15343,14 +15344,14 @@ div.x-form-spinner-down {
 
 /* line 33, ../../../../../ext/packages/ext-theme-neutral/sass/src/view/BoundList.scss */
 .x-boundlist-selected {
-  background: #bbccd6;
-  border-color: #bbccd6;
+  background: #d1d8de;
+  border-color: #d1d8de;
 }
 
 /* line 38, ../../../../../ext/packages/ext-theme-neutral/sass/src/view/BoundList.scss */
 .x-boundlist-item-over {
-  background: #d2dde4;
-  border-color: #d2dde4;
+  background: #e0e5e9;
+  border-color: #e0e5e9;
 }
 
 /* line 43, ../../../../../ext/packages/ext-theme-neutral/sass/src/view/BoundList.scss */
@@ -15426,7 +15427,7 @@ a.x-datepicker-arrow:hover {
 }
 /* line 83, ../../../../../ext/packages/ext-theme-neutral/sass/src/picker/Date.scss */
 .x-datepicker-month .x-btn-inner {
-  color: #265c7d;
+  color: #6b8495;
 }
 /* line 88, ../../../../../ext/packages/ext-theme-neutral/sass/src/picker/Date.scss */
 .x-datepicker-month .x-btn-split-right {
@@ -15470,17 +15471,17 @@ a.x-datepicker-arrow:hover {
 /* line 138, ../../../../../ext/packages/ext-theme-neutral/sass/src/picker/Date.scss */
 a.x-datepicker-date:hover {
   color: black;
-  background-color: #e8eef1;
+  background-color: #eff2f4;
 }
 
 /* line 143, ../../../../../ext/packages/ext-theme-neutral/sass/src/picker/Date.scss */
 .x-datepicker-selected {
   border-style: solid;
-  border-color: #265c7d;
+  border-color: #6b8495;
 }
 /* line 146, ../../../../../ext/packages/ext-theme-neutral/sass/src/picker/Date.scss */
 .x-datepicker-selected .x-datepicker-date {
-  background-color: #d2dde4;
+  background-color: #e0e5e9;
   font-weight: bold;
 }
 
@@ -15572,14 +15573,14 @@ a.x-datepicker-date:hover {
 
 /* line 254, ../../../../../ext/packages/ext-theme-neutral/sass/src/picker/Date.scss */
 a.x-monthpicker-item-inner:hover {
-  background-color: #e8eef1;
+  background-color: #eff2f4;
 }
 
 /* line 258, ../../../../../ext/packages/ext-theme-neutral/sass/src/picker/Date.scss */
 .x-monthpicker-selected {
-  background-color: #d2dde4;
+  background-color: #e0e5e9;
   border-style: solid;
-  border-color: #265c7d;
+  border-color: #6b8495;
 }
 
 /* line 264, ../../../../../ext/packages/ext-theme-neutral/sass/src/picker/Date.scss */
@@ -16125,16 +16126,16 @@ a.x-color-picker-item:hover {
 .x-column-header-sort-ASC,
 .x-column-header-sort-DESC {
   background-image: none;
-  background-color: #edf1f4;
+  background-color: #f2f4f6;
 }
 
 /* line 70, ../../../../../ext/packages/ext-theme-neutral/sass/src/grid/column/Column.scss */
 .x-column-header-open {
-  background-color: #edf1f4;
+  background-color: #f2f4f6;
 }
 /* line 73, ../../../../../ext/packages/ext-theme-neutral/sass/src/grid/column/Column.scss */
 .x-column-header-open .x-column-header-trigger {
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 78, ../../../../../ext/packages/ext-theme-neutral/sass/src/grid/column/Column.scss */
@@ -16452,7 +16453,7 @@ a.x-color-picker-item:hover {
   border-top: 1px solid #e1e1e1 !important;
   border-bottom: 1px solid #e1e1e1 !important;
   padding: 5px 0 5px 0;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 /* line 48, ../../../../../ext/packages/ext-theme-neutral/sass/src/grid/plugin/RowEditing.scss */
 .x-grid-with-col-lines .x-grid-row-editor .x-form-cb {
@@ -16481,12 +16482,12 @@ a.x-color-picker-item:hover {
   padding: 5px 5px 5px 5px;
   border-width: 0 1px 1px 1px;
   border-style: solid;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-grid-row-editor-buttons-default-bottom-mc {
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -16629,12 +16630,12 @@ body.x-nbr .x-grid-row-editor-buttons-default-bottom-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 1px 1px 0 1px;
   border-style: solid;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-grid-row-editor-buttons-default-top-mc {
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -16851,7 +16852,7 @@ body.x-nbr .x-grid-row-editor-buttons-default-top-frameInfo {
 }
 /* line 16, ../../../../../ext/packages/ext-theme-neutral/sass/src/layout/container/Accordion.scss */
 .x-accordion-item .x-accordion-hd {
-  background: #dde3e7;
+  background: #e5e8ea;
   border-top-color: white;
   padding: 8px 10px;
 }
@@ -16861,7 +16862,7 @@ body.x-nbr .x-grid-row-editor-buttons-default-top-frameInfo {
 }
 /* line 26, ../../../../../ext/packages/ext-theme-neutral/sass/src/layout/container/Accordion.scss */
 .x-accordion-item .x-accordion-hd-last-collapsed {
-  border-bottom-color: #dde3e7;
+  border-bottom-color: #e5e8ea;
 }
 /* line 30, ../../../../../ext/packages/ext-theme-neutral/sass/src/layout/container/Accordion.scss */
 .x-accordion-item .x-accordion-body {
@@ -16881,7 +16882,7 @@ body.x-nbr .x-grid-row-editor-buttons-default-top-frameInfo {
 /* line 61, ../../../../../ext/packages/ext-theme-neutral/sass/src/layout/container/Accordion.scss */
 .x-accordion-hd .x-tool-img {
   background-image: url(images/tools/tool-sprites-dark.png);
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 1, ../../../../../ext/packages/ext-theme-neutral/sass/src/resizer/Splitter.scss */
@@ -16975,7 +16976,7 @@ body.x-nbr .x-grid-row-editor-buttons-default-top-frameInfo {
 
 /* line 1, ../../../../../ext/packages/ext-theme-neutral/sass/src/layout/container/Border.scss */
 .x-border-layout-ct {
-  background-color: #265c7d;
+  background-color: #6b8495;
 }
 
 /* line 7, ../../../../../ext/packages/ext-theme-neutral/sass/src/menu/Menu.scss */
@@ -17024,12 +17025,12 @@ body.x-nbr .x-grid-row-editor-buttons-default-top-frameInfo {
 /* line 57, ../../../../../ext/packages/ext-theme-neutral/sass/src/menu/Menu.scss */
 .x-menu-item-active {
   background-image: none;
-  background-color: #d2dde4;
-  border-color: #003658;
+  background-color: #e0e5e9;
+  border-color: #356c90;
 }
 /* line 75, ../../../../../ext/packages/ext-theme-neutral/sass/src/menu/Menu.scss */
 .x-nlg .x-menu-item-active {
-  background: #d2dde4 repeat-x left top;
+  background: #e0e5e9 repeat-x left top;
   background-image: url(images/menu/menu-item-active-bg.gif);
 }
 
@@ -18247,12 +18248,12 @@ a.x-rtl .x-menu-item-text {
   padding: 8px 12px 7px 12px;
   border-width: 0 0 0 0;
   border-style: solid;
-  background-color: #3b6c8a;
+  background-color: #79909f;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-tab-default-top-mc {
-  background-color: #3b6c8a;
+  background-color: #79909f;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -18395,12 +18396,12 @@ body.x-nbr .x-tab-default-top-frameInfo {
   padding: 8px 12px 7px 12px;
   border-width: 0 0 0 0;
   border-style: solid;
-  background-color: #3b6c8a;
+  background-color: #79909f;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-tab-default-bottom-mc {
-  background-color: #3b6c8a;
+  background-color: #79909f;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -18543,12 +18544,12 @@ body.x-nbr .x-tab-default-bottom-frameInfo {
   padding: 8px 12px 7px 12px;
   border-width: 0 0 0 0;
   border-style: solid;
-  background-color: #3b6c8a;
+  background-color: #79909f;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-tab-default-left-mc {
-  background-color: #3b6c8a;
+  background-color: #79909f;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -18691,12 +18692,12 @@ body.x-nbr .x-tab-default-left-frameInfo {
   padding: 8px 12px 7px 12px;
   border-width: 0 0 0 0;
   border-style: solid;
-  background-color: #3b6c8a;
+  background-color: #79909f;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-tab-default-right-mc {
-  background-color: #3b6c8a;
+  background-color: #79909f;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -18824,7 +18825,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 /* */
 /* line 307, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default {
-  border-color: #004067;
+  border-color: #516f83;
   margin: 0 1px 0 0;
   cursor: pointer;
 }
@@ -18851,7 +18852,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 }
 /* line 343, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-ie8m .x-tab-default .x-tab-glyph {
-  color: #9db5c4;
+  color: #bcc7cf;
 }
 /* line 351, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-strict .x-ie9 .x-tab-bar-vertical .x-tab-default {
@@ -18980,7 +18981,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 
 /* line 485, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-over {
-  background-color: #517c97;
+  background-color: #889caa;
 }
 /* line 509, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-over .x-tab-glyph {
@@ -18988,36 +18989,36 @@ body.x-nbr .x-tab-default-right-frameInfo {
 }
 /* line 516, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-ie8m .x-tab-default-over .x-tab-glyph {
-  color: #a8bdcb;
+  color: #c3cdd4;
 }
 
 /* line 545, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-active {
-  background-color: #a5bcc9;
+  background-color: #c2ccd3;
 }
 /* line 551, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-active .x-tab-inner {
-  color: #004067;
+  color: #516f83;
 }
 /* line 566, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-active .x-tab-glyph {
-  color: #004067;
+  color: #516f83;
 }
 /* line 573, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-ie8m .x-tab-default-active .x-tab-glyph {
-  color: #527e98;
+  color: #899dab;
 }
 
 /* line 581, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-top-active,
 .x-tab-default-left-active,
 .x-tab-default-right-active {
-  border-bottom: 0 solid #a5bcc9;
+  border-bottom: 0 solid #c2ccd3;
 }
 
 /* line 594, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-bottom-active {
-  border-top: 0 solid #a5bcc9;
+  border-top: 0 solid #c2ccd3;
 }
 
 /* line 607, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
@@ -19042,19 +19043,19 @@ body.x-nbr .x-tab-default-right-frameInfo {
 }
 /* line 658, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-ie8m .x-tab-default-disabled .x-tab-glyph {
-  color: #7598ad;
+  color: #a1b1bb;
 }
 
 /* line 667, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-top-disabled,
 .x-tab-default-left-disabled,
 .x-tab-default-right-disabled {
-  border-color: #004067 #004067 white;
+  border-color: #516f83 #516f83 white;
 }
 
 /* line 671, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-bottom-disabled {
-  border-color: white #004067 #004067 #004067;
+  border-color: white #516f83 #516f83 #516f83;
 }
 
 /* line 699, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
@@ -19096,7 +19097,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 .x-tab-default-top-over .x-frame-mc,
 .x-tab-default-left-over .x-frame-mc,
 .x-tab-default-right-over .x-frame-mc {
-  background-color: #517c97;
+  background-color: #889caa;
 }
 
 /* line 732, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
@@ -19115,7 +19116,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 }
 /* line 739, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-bottom-over .x-frame-mc {
-  background-color: #517c97;
+  background-color: #889caa;
 }
 
 /* line 756, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
@@ -19152,7 +19153,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 .x-tab-default-top-active .x-frame-mc,
 .x-tab-default-left-active .x-frame-mc,
 .x-tab-default-right-active .x-frame-mc {
-  background-color: #a5bcc9;
+  background-color: #c2ccd3;
 }
 
 /* line 778, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
@@ -19171,7 +19172,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 }
 /* line 785, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-bottom-active .x-frame-mc {
-  background-color: #a5bcc9;
+  background-color: #c2ccd3;
 }
 
 /* line 802, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
@@ -19208,7 +19209,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 .x-tab-default-top-disabled .x-frame-mc,
 .x-tab-default-left-disabled .x-frame-mc,
 .x-tab-default-right-disabled .x-frame-mc {
-  background-color: #3b6c8a;
+  background-color: #79909f;
 }
 
 /* line 824, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
@@ -19227,7 +19228,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 }
 /* line 831, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
 .x-tab-default-bottom-disabled .x-frame-mc {
-  background-color: #3b6c8a;
+  background-color: #79909f;
 }
 
 /* line 861, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Tab.scss */
@@ -19414,7 +19415,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 .x-tab-bar-strip-default {
   border-style: solid;
   border-color: white;
-  background-color: #a5bcc9;
+  background-color: #c2ccd3;
 }
 
 /* line 210, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Bar.scss */
@@ -19487,7 +19488,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 
 /* line 274, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Bar.scss */
 .x-tab-bar-default {
-  background-color: #004067;
+  background-color: #516f83;
 }
 
 /* line 323, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Bar.scss */
@@ -19495,7 +19496,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
   cursor: pointer;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  background-color: #004067;
+  background-color: #516f83;
 }
 /* line 339, ../../../../../ext/packages/ext-theme-neutral/sass/src/tab/Bar.scss */
 .x-tab-bar-default .x-box-scroller-plain .x-box-scroller {
@@ -20538,7 +20539,7 @@ body.x-nbr .x-btn-plain-toolbar-small-frameInfo {
 /* line 219, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-panel-header-light .x-tool-img {
   background-image: url(images/tools/tool-sprites-dark.png);
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 232, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -20596,19 +20597,19 @@ body.x-nbr .x-btn-plain-toolbar-small-frameInfo {
 /* line 432, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-panel-header-light {
   background-image: none;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 436, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-panel-header-light-vertical {
   background-image: none;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 441, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-rtl.x-panel-header-light-vertical {
   background-image: none;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 494, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -20677,8 +20678,8 @@ body.x-nbr .x-btn-plain-toolbar-small-frameInfo {
 }
 /* line 36, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/rotate-element.scss */
 .x-ie9m .x-panel-header-light-vertical .x-panel-header-text-container {
-  background-color: #dde3e7;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1), progid:DXImageTransform.Microsoft.Chroma(color=#dde3e7);
+  background-color: #e5e8ea;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1), progid:DXImageTransform.Microsoft.Chroma(color=#e5e8ea);
 }
 
 /* line 527, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -20694,8 +20695,8 @@ body.x-nbr .x-btn-plain-toolbar-small-frameInfo {
 }
 /* line 36, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/rotate-element.scss */
 .x-ie9m .x-panel-header-light-vertical .x-rtl.x-panel-header-text-container {
-  background-color: #dde3e7;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3), progid:DXImageTransform.Microsoft.Chroma(color=#dde3e7);
+  background-color: #e5e8ea;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3), progid:DXImageTransform.Microsoft.Chroma(color=#e5e8ea);
 }
 
 /* line 551, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -20713,7 +20714,7 @@ body.x-nbr .x-btn-plain-toolbar-small-frameInfo {
 }
 /* line 572, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-ie8m .x-panel-header-light .x-panel-header-glyph {
-  color: #eef1f3;
+  color: #f2f3f4;
 }
 
 /* line 580, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -20919,19 +20920,19 @@ body.x-nbr .x-btn-plain-toolbar-small-frameInfo {
 
 /* line 206, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-panel-light-framed {
-  border-color: #dde3e7;
+  border-color: #e5e8ea;
   padding: 0;
 }
 
 /* line 212, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-panel-header-light-framed {
   font-size: 11px;
-  border: 5px solid #dde3e7;
+  border: 5px solid #e5e8ea;
 }
 /* line 219, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-panel-header-light-framed .x-tool-img {
   background-image: url(images/tools/tool-sprites-dark.png);
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 232, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -20978,7 +20979,7 @@ body.x-nbr .x-btn-plain-toolbar-small-frameInfo {
 /* line 272, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-panel-body-light-framed {
   background: white;
-  border-color: #dde3e7;
+  border-color: #e5e8ea;
   color: black;
   font-size: 11px;
   font-size: normal;
@@ -21144,12 +21145,12 @@ body.x-nbr .x-panel-light-framed-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px 5px 0 5px;
   border-style: solid;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-light-framed-top-mc {
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -21292,18 +21293,18 @@ body.x-nbr .x-panel-header-light-framed-top-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px 5px 5px 0;
   border-style: solid;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 178, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-rtl.x-panel-header-light-framed-right {
   background-image: none;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-light-framed-right-mc {
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -21451,12 +21452,12 @@ body.x-nbr .x-panel-header-light-framed-right-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 0 5px 5px 5px;
   border-style: solid;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-light-framed-bottom-mc {
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -21599,18 +21600,18 @@ body.x-nbr .x-panel-header-light-framed-bottom-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px 0 5px 5px;
   border-style: solid;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 178, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-rtl.x-panel-header-light-framed-left {
   background-image: none;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-light-framed-left-mc {
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -21758,12 +21759,12 @@ body.x-nbr .x-panel-header-light-framed-left-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-light-framed-collapsed-top-mc {
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -21906,18 +21907,18 @@ body.x-nbr .x-panel-header-light-framed-collapsed-top-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 178, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-rtl.x-panel-header-light-framed-collapsed-right {
   background-image: none;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-light-framed-collapsed-right-mc {
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -22065,12 +22066,12 @@ body.x-nbr .x-panel-header-light-framed-collapsed-right-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-light-framed-collapsed-bottom-mc {
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -22213,18 +22214,18 @@ body.x-nbr .x-panel-header-light-framed-collapsed-bottom-frameInfo {
   padding: 5px 5px 5px 5px;
   border-width: 5px;
   border-style: solid;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 178, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-rtl.x-panel-header-light-framed-collapsed-left {
   background-image: none;
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 189, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
 .x-panel-header-light-framed-collapsed-left-mc {
-  background-color: #dde3e7;
+  background-color: #e5e8ea;
 }
 
 /* line 235, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/frame.scss */
@@ -22402,8 +22403,8 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 }
 /* line 36, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/rotate-element.scss */
 .x-ie9m .x-panel-header-light-framed-vertical .x-panel-header-text-container {
-  background-color: #dde3e7;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1), progid:DXImageTransform.Microsoft.Chroma(color=#dde3e7);
+  background-color: #e5e8ea;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1), progid:DXImageTransform.Microsoft.Chroma(color=#e5e8ea);
 }
 
 /* line 527, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -22419,8 +22420,8 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 }
 /* line 36, ../../../../../ext/packages/ext-theme-base/sass/etc/mixins/rotate-element.scss */
 .x-ie9m .x-panel-header-light-framed-vertical .x-rtl.x-panel-header-text-container {
-  background-color: #dde3e7;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3), progid:DXImageTransform.Microsoft.Chroma(color=#dde3e7);
+  background-color: #e5e8ea;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3), progid:DXImageTransform.Microsoft.Chroma(color=#e5e8ea);
 }
 
 /* line 551, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -22438,7 +22439,7 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 }
 /* line 572, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
 .x-ie8m .x-panel-header-light-framed .x-panel-header-glyph {
-  color: #eef1f3;
+  color: #f2f3f4;
 }
 
 /* line 580, ../../../../../ext/packages/ext-theme-neutral/sass/src/panel/Panel.scss */
@@ -22779,7 +22780,7 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 
 /* line 6, ../../../../../ext/packages/ext-theme-neptune/sass/src/layout/container/Accordion.scss */
 .x-accordion-item .x-accordion-hd-over {
-  background-color: #e4eaee;
+  background-color: #eceff1;
 }
 
 /* line 1, ../../../../../ext/packages/ext-theme-neptune/sass/src/resizer/Resizer.scss */
@@ -22850,8 +22851,8 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 }
 /* line 8, ../../../../../packages/Nouveau/sass/src/toolbar/Toolbar.scss */
 .breadcrumbs .font-size {
-  background: #004067;
-  border: 1px solid #002034;
+  background: #516f83;
+  border: 1px solid #3e5463;
 }
 /* line 12, ../../../../../packages/Nouveau/sass/src/toolbar/Toolbar.scss */
 .breadcrumbs .font-size span {
@@ -22860,7 +22861,7 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 }
 /* line 17, ../../../../../packages/Nouveau/sass/src/toolbar/Toolbar.scss */
 .breadcrumbs .font-size.x-over {
-  background: #00609a;
+  background: #6689a1;
 }
 
 /* ==========================================================================
@@ -22905,7 +22906,7 @@ div.slide .head h3 {
 /* line 48, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .head h2,
 div.slide .head h2 {
-  color: #004067;
+  color: #516f83;
   font-size: 32px;
   line-height: 38px;
   margin: 15px 0 20px 0;
@@ -23007,17 +23008,17 @@ div.slide .body strong {
 /* line 121, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body a,
 div.slide .body a {
-  color: #004067;
+  color: #516f83;
 }
 /* line 123, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body a:hover,
 div.slide .body a:hover {
-  color: #007fcd;
+  color: #86a2b4;
 }
 /* line 126, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body a:visited,
 div.slide .body a:visited {
-  color: #004067;
+  color: #516f83;
 }
 /* line 131, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body abbr[title],
@@ -23041,7 +23042,7 @@ div.lab .body samp,
 div.slide .body code,
 div.slide .body var,
 div.slide .body samp {
-  color: #004067;
+  color: #516f83;
   white-space: normal;
 }
 /* line 151, ../../../../../packages/Nouveau/sass/src/_content.scss */
@@ -23049,7 +23050,7 @@ div.lab .body kbd,
 div.lab .body tt,
 div.slide .body kbd,
 div.slide .body tt {
-  color: #004067;
+  color: #516f83;
 }
 /* line 155, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body pre,
@@ -23165,7 +23166,7 @@ div.slide .body .expander .training-expandingcontent-expander {
   height: 0;
   border-top: 0.5em solid transparent;
   border-bottom: 0.5em solid transparent;
-  border-left: 0.7em solid #00304e;
+  border-left: 0.7em solid #476273;
   display: inline-block;
   margin-right: 0.8em;
 }
@@ -23174,7 +23175,7 @@ div.lab .body .expander .training-expandingcontent-title.open .training-expandin
 div.slide .body .expander .training-expandingcontent-title.open .training-expandingcontent-expander {
   border-left: 0.5em solid transparent;
   border-right: 0.5em solid transparent;
-  border-top: 0.7em solid #00304e;
+  border-top: 0.7em solid #476273;
   border-bottom: 0;
 }
 /* line 267, ../../../../../packages/Nouveau/sass/src/_content.scss */
@@ -23240,7 +23241,7 @@ div.slide .body table td {
 /* line 317, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .table thead th,
 div.slide .body .table thead th {
-  background: #002034;
+  background: #3e5463;
   border: 1px solid black;
   color: black;
   font-weight: bold;
@@ -23305,7 +23306,7 @@ div.lab .body h6 {
 ========================================================================== */
 /* line 5, ../../../../../packages/Nouveau/sass/src/_titlepage.scss */
 .topic {
-  background: #004067;
+  background: #516f83;
   background: -moz-radial-gradient(center, ellipse cover, #0071b5 0%, #043555 80%);
   background: -webkit-radial-gradient(center, ellipse cover, #0071b5 0%, #043555 80%);
   background: -o-radial-gradient(center, ellipse cover, #0071b5 0%, #043555 80%);

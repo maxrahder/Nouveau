@@ -1,0 +1,36 @@
+<html class="x-strict x-viewport">
+<head>
+    <title>Sencha Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+
+
+<h2>Example</h2>
+<pre class="runnable preview">Ext.create('Ext.Panel', {
+    width: 500,
+    height: 300,
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+    renderTo: document.body,
+    defaults: {
+        style: 'background: blue',
+        margin: 5
+    },
+    items: [{
+        xtype: 'container',
+        flex: 2
+    },{
+        xtype: 'container',
+        flex: 1
+    },{
+        xtype: 'container',
+        flex: 1
+    }]
+});</pre>
+
+<!-- END -->
+</body>
+</html>

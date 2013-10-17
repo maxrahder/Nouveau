@@ -695,6 +695,8 @@ $include-treefilter: true;
 @import '../../../../../ext/packages/ext-theme-neptune/sass/etc/all';
 /* including package Nouveau */
 @import '../../../../../packages/Nouveau/sass/etc/all';
+/* including package ExtJS331 */
+@import '../../../../../ExtJS331/sass/var/view/Viewport';
 /* including package Nouveau */
 @import '../../../../../packages/Nouveau/sass/var/Component';
 @import '../../../../../packages/Nouveau/sass/var/panel/Panel';

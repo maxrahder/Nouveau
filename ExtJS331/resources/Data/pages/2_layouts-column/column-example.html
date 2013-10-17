@@ -1,0 +1,40 @@
+<html class="x-strict x-viewport">
+<head>
+    <title>Sencha Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+
+
+<h2>Example</h2>
+<pre class="runnable preview">Ext.create('Ext.form.Panel', {
+    title: 'Column Layout',
+    bodyPadding: 8,
+    labelWidth: 80,
+    width: 550,
+    layout:'column',
+    defaults:{
+        xtype: 'textfield',
+        padding: 3,
+        columnWidth: 0.33,   //change this to 0.33
+    },
+    items: [{
+        fieldLabel: 'First Name',
+    },{
+        fieldLabel: 'Middle Name',
+    },{
+        fieldLabel: 'Last Name',
+    },{
+        fieldLabel: 'Nick Name',
+    }, {
+        fieldLabel: 'Age'
+    },
+    {
+        fieldLabel: 'Phone'
+    }],
+    renderTo: Ext.getBody()
+});</pre>
+
+<!-- END -->
+</body>
+</html>

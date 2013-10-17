@@ -1,0 +1,41 @@
+<html class="x-strict x-viewport">
+<head>
+    <title>Sencha Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<h3>Collapsible childeren</h3>
+<p>Adjacent panels resize properly when child panels are collapsed. Furthermore, you can specify <code>collapseMode : <em>mini</em></code> to have the panel fully collapse and hide its header.</p>
+<pre class="runnable preview">Ext.create('Ext.panel.Panel', {
+
+    layout : 'border',
+
+    items : [ {
+        title : 'North',
+        region : 'north',
+
+        collapsible : true,
+
+        height : 80
+    }, {
+        title : 'South (collapseMode : \'mini\')',
+        region : 'south',
+
+        collapsible : true,
+        collapseMode : 'mini',
+
+        height : 80
+    }, {
+        title : 'Center',
+        region : 'center'
+    } ],
+
+    title : 'Border Layout Panel',
+    bodyPadding : 8,
+    height : 340, width : 400,
+    renderTo : Ext.getBody()
+});</pre>
+
+<!-- END -->
+</body>
+</html>

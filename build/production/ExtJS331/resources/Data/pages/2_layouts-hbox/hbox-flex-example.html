@@ -1,0 +1,43 @@
+<html class="x-strict x-viewport">
+<head>
+    <title>Sencha Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+
+
+<h2>Example</h2>
+<p>This example first deducts 100px from the total 100%.
+Then it calculates the flexes.</p>
+<pre class="runnable preview">Ext.create('Ext.panel.Panel', {
+
+    layout : {
+        type: 'hbox',
+        align: 'middle',
+        pack : 'end'
+    },
+
+    defaults: {
+        style: 'background: blue',
+        margin: 5,
+        xtype: 'container',
+    },
+    items : [ {
+        html : 'Panel Left',
+        flex: 1
+    }, {
+        html : 'Panel Two',
+        width: 100
+    }, {
+        html : 'Panel Three',
+        flex: 3
+    } ],
+
+    height : 300,
+    width : 500,
+    renderTo : Ext.getBody()
+});</pre>
+
+<!-- END -->
+</body>
+</html>

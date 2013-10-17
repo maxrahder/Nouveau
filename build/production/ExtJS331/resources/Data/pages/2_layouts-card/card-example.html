@@ -1,0 +1,45 @@
+<html class="x-strict x-viewport">
+<head>
+    <title>Sencha Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+
+
+<h2>Example</h2>
+<pre class="runnable preview">Ext.create('Ext.panel.Panel', {
+
+    layout : 'card',
+
+    items : [ {
+        style: 'background: red'
+    }, {
+        style: 'background: green'
+    }, {
+        style: 'background: blue'
+    } ],
+    buttons : [ {
+        text : '&lt;',
+        handler : function(b) {
+            b.up('panel').getLayout().prev();
+        }
+    }, {
+        text : '&gt;',
+        handler : function(b) {
+            b.up('panel').getLayout().next();
+        }
+    } ],
+
+    bodyPadding : 5,
+    defaults : {
+        xtype: 'component'
+    },
+    height : 200,
+    width : 200,
+    renderTo : Ext.getBody()
+
+});</pre>
+
+<!-- END -->
+</body>
+</html>

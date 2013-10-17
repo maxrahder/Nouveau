@@ -1,0 +1,45 @@
+<html class="x-strict x-viewport">
+<head>
+    <title>Sencha Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<h3>Resizing Children</h3>
+<p>Child panels may be resized by tagging them with <code>split : true</code>.</p>
+<p>When using the split option, the layout will automatically insert a <code>Ext.resizer.Splitter</code> into the appropriate place. This will modify the underlying items collection in the container.</p>
+<pre class="runnable preview">Ext.create('Ext.panel.Panel', {
+
+    layout : 'border',
+
+    items : [ {
+        title : 'West (resizable)',
+        region : 'west',
+        split : true,
+        width : 100
+    }, {
+        title : 'East',
+        region : 'east',
+        width : 60
+    }, {
+        title : 'South (resizable)',
+        region : 'south',
+        split : true,
+        height : 60
+    }, {
+        title : 'North',
+        region : 'north',
+        height : 60
+    }, {
+        title : 'Center',
+        region : 'center'
+    } ],
+
+    title : 'Border Layout Panel',
+    bodyPadding : 8,
+    height : 340, width : 600,
+    renderTo : Ext.getBody()
+});</pre>
+
+<!-- END -->
+</body>
+</html>
