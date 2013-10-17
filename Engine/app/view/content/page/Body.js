@@ -1,9 +1,8 @@
 Ext.define('Engine.view.content.page.Body', {
 	extend: 'Ext.container.Container',
 	xtype: 'training_contentbody',
-
 	requires: [
-		'Docs.view.examples.InlineWrap',
+		//'Docs.view.examples.InlineWrap',
 		'Ext.tab.Panel',
 		'Engine.view.util.ExpandingContent',
 		'Engine.view.content.page.LivePreviewComponent',

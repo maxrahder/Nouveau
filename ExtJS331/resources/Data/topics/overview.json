@@ -1,0 +1,120 @@
+{
+  "topicId": "overview",
+  "text": "Overview",
+  "fileId": "",
+  "html": "",
+  "leaf": false,
+  "children": [
+    {
+      "text": "Course Introduction",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 45,
+      "children": [
+        {
+          "text": "Test",
+          "fileId": "2013-10-17_08-20_22-841_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "Introduction to Ext",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 45,
+      "children": [
+        {
+          "text": "Containers",
+          "fileId": "1-containers",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Panels",
+          "fileId": "1-panels",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Images",
+          "fileId": "1-images",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Buttons",
+          "fileId": "1-buttons",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Split Buttons",
+          "fileId": "1-splitbuttons",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Toolbars",
+          "fileId": "1-toolbars",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Tabpanels",
+          "fileId": "1-tabpanels",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Windows",
+          "fileId": "1-windows",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Messageboxes",
+          "fileId": "1-messageboxes",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Grids",
+          "fileId": "1-grids",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Trees",
+          "fileId": "1-trees",
+          "html": "",
+          "leaf": true
+        },
+        {
+          "text": "Forms",
+          "fileId": "1-forms",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    },
+    {
+      "text": "The Layout System",
+      "fileId": "",
+      "html": "",
+      "leaf": false,
+      "duration": 45,
+      "children": [
+        {
+          "text": "Test",
+          "fileId": "2013-10-17_08-20_22-841_Z",
+          "html": "",
+          "leaf": true
+        }
+      ]
+    }
+  ]
+}

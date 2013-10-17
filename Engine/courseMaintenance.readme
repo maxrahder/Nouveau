@@ -12,28 +12,30 @@ Use your browser and enter the course root folder and enter edit mode
 To add a new course you need to do five things:
 
 (1) Use sencha Cmd to generate an application named for the course. 
-Example:
+Navigate to the Nouveau/ext folder and generate an app.
+(Note the course code: (ExtJS251 = ExtJS + course nr (2) + nr of days (5) + suffix (1))
 
 sencha generate app ExtJS999 ../ExtJS999
 
-
 (2) Delete the entire app folder
-
 
 (3) Modify app.js following this example:
 
 Ext.Loader.setPath('Engine', '../Engine/app');
 Ext.require('Engine.Application');
+Ext.Loader.setConfig({
+  disableCaching: true // true is the default
+});
 Ext.application({
-    name: 'Ext999',
+    name: 'ExtJS999',
     extend: 'Engine.Application'
 });
 
-(4) Modify .sencha/app/sencha.cfg to include Engine in its classpath.
+(4) Modify ExtJS999/.sencha/app/sencha.cfg to include Engine in its classpath.
 Use this:
 
 # The path(s) to application javascript sources (comma separated)
-app.classpath=${app.dir}/app,${app.dir}/app.js,${workspace.dir}/Engine/app
+app.classpath=${app.dir}/app,${app.dir}/app.js,${workspace.dir}/Engine/app,${workspace.dir}/jsduck/template/app
 
 (5) Modify build.xml to include a new target -- this copies the new course's Data and Engine's Shared folders to the "sencha app build" version of the course. 
     <target name="-after-build">
@@ -51,16 +53,41 @@ app.classpath=${app.dir}/app,${app.dir}/app.js,${workspace.dir}/Engine/app
 </project>
 
 
-(6) Note on JsDuck
+(6) Modify ExtJS999/app.json to assign the Nouveau theme.
+Add:
+
+"theme" : "Nouveau",
+
+
+(7) Add the scripts for Code Mirror to the index.html
+
+<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/lib/codemirror.js"></script>
+<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/javascript/javascript.js"></script>
+
+(optional)
+<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/xml/xml.js"></script>
+
+
+(8) Note on JsDuck
 The build process cannot resolve certain code. So some things need to be edited manually, and repeatedly as we get new copies of JsDuck:
 Docs.model.Setting
         type: window['localStorage'] ? 'localstorage' : 'memory',
         type: 'localstorage',
-        
 
-(7) Code Mirror
-<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/lib/codemirror.js"></script>
-<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/javascript/javascript.js"></script>
-<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/xml/xml.js"></script>
+TODO @Max, please explain this step
+Can we override it?
 
-    
+
+   
+(9) TODO copy Data folder to resources.
+It requires:
+-  resources/Data/pages/
+(copy from other project and modify)
+-  resources/Topics/
+(create yourself?)
+-  resources/Topics/_treestore.php
+(copy from other project and modify)
+
+
+(10) Build your app
+sencha app build    
