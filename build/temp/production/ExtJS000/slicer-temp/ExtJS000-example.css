@@ -22866,19 +22866,18 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 /* ==========================================================================
  * Lab and Content Slides
 ========================================================================== */
-/* line 22, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 23, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab,
 div.slide {
-  background: #f2f2f2;
-  background: -moz-radial-gradient(center, ellipse cover, white 0%, #efefef 100%);
-  background: -webkit-radial-gradient(center, ellipse cover, white 0%, #efefef 100%);
-  background: -o-radial-gradient(center, ellipse cover, white 0%, #efefef 100%);
-  background: -ms-radial-gradient(center, ellipse cover, white 0%, #efefef 100%);
-  background: radial-gradient(ellipse at center, #ffffff 12%, #efefef 100%);
+  background-image: -webkit-gradient(radial, 55% 65%, 0, 55% 65%, 100, color-stop(10%, #ffffff), color-stop(100%, #fcfcfc));
+  background-image: -webkit-radial-gradient(55% 65%, #ffffff 10%, #fcfcfc 100%);
+  background-image: -moz-radial-gradient(55% 65%, #ffffff 10%, #fcfcfc 100%);
+  background-image: -o-radial-gradient(55% 65%, #ffffff 10%, #fcfcfc 100%);
+  background-image: radial-gradient(55% 65%, #ffffff 10%, #fcfcfc 100%);
   min-height: 100%;
   font-family: 'Gill Sans', 'GillSansGuilt', helvetica , arial , verdana , sans-serif;
 }
-/* line 33, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 29, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .head,
 div.slide .head {
   background: url(../resources/logo.png) no-repeat 98% 10px;
@@ -22886,7 +22885,7 @@ div.slide .head {
   padding: 20px 20px 0 20px;
   text-shadow: #fff 2px 1px 5px;
 }
-/* line 39, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 35, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .head h1,
 div.slide .head h1 {
   font-size: 13px;
@@ -22895,7 +22894,7 @@ div.slide .head h1 {
   margin: 0 0 8px 0;
   text-transform: uppercase;
 }
-/* line 46, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 42, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .head h3,
 div.slide .head h3 {
   font-size: 18px;
@@ -22903,7 +22902,7 @@ div.slide .head h3 {
   line-height: 22px;
   margin: -5px 0 0;
 }
-/* line 52, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 48, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .head h2,
 div.slide .head h2 {
   color: #004067;
@@ -22911,7 +22910,7 @@ div.slide .head h2 {
   line-height: 38px;
   margin: 15px 0 20px 0;
 }
-/* line 59, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 55, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .head h2.lab:before, div.lab .head h2.slide:before,
 div.slide .head h2.lab:before,
 div.slide .head h2.slide:before {
@@ -22921,22 +22920,23 @@ div.slide .head h2.slide:before {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }
-/* line 67, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 63, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .head h2.lab:before,
 div.slide .head h2.lab:before {
   content: "\4c";
 }
-/* line 70, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 66, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .head h2.slide:before,
 div.slide .head h2.slide:before {
   content: "\70";
 }
-/* line 77, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 73, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body,
 div.slide .body {
   font-size: 20px;
   line-height: 30px;
   font-weight: 300;
+  max-width: 840px;
   padding: 0 20px 20px 20px;
   text-shadow: #fff 2px 1px 5px;
   /* ==========================================================================
@@ -22950,91 +22950,91 @@ div.slide .body {
    Tables
    ========================================================================== */
 }
-/* line 88, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 84, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h1,
 div.slide .body h1 {
   font-size: 24px;
   line-height: 36px;
 }
-/* line 92, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 88, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h2,
 div.slide .body h2 {
   font-size: 22px;
   line-height: 33px;
 }
-/* line 96, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 92, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h3,
 div.slide .body h3 {
   font-size: 20px;
   line-height: 30px;
 }
-/* line 100, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 96, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h4,
 div.slide .body h4 {
   font-size: 18px;
   line-height: 27px;
 }
-/* line 104, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 100, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h5,
 div.slide .body h5 {
   font-size: 16px;
   line-height: 24px;
 }
-/* line 108, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 104, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body h6,
 div.slide .body h6 {
   font-size: 15px;
   line-height: 22.5px;
 }
-/* line 112, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 108, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body p,
 div.slide .body p {
   margin-bottom: 0.8em;
   margin-top: 0.8em;
 }
-/* line 117, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 113, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body em, div.lab .body i,
 div.slide .body em,
 div.slide .body i {
   font-style: italic;
 }
-/* line 121, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 117, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body b, div.lab .body strong,
 div.slide .body b,
 div.slide .body strong {
   font-weight: bold;
 }
-/* line 125, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 121, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body a,
 div.slide .body a {
   color: #004067;
 }
-/* line 127, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 123, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body a:hover,
 div.slide .body a:hover {
   color: #007fcd;
 }
-/* line 130, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 126, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body a:visited,
 div.slide .body a:visited {
   color: #004067;
 }
-/* line 135, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 131, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body abbr[title],
 div.slide .body abbr[title] {
   border-bottom: 1px dotted;
 }
-/* line 139, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 135, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body blockquote,
 div.slide .body blockquote {
   margin: 1em 40px;
 }
-/* line 143, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 139, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body dfn,
 div.slide .body dfn {
   font-style: italic;
 }
-/* line 149, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 145, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body code,
 div.lab .body var,
 div.lab .body samp,
@@ -23044,20 +23044,20 @@ div.slide .body samp {
   color: #004067;
   white-space: normal;
 }
-/* line 155, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 151, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body kbd,
 div.lab .body tt,
 div.slide .body kbd,
 div.slide .body tt {
   color: #004067;
 }
-/* line 159, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 155, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body pre,
 div.slide .body pre {
   font-size: 1.3em;
   line-height: 1.3em;
 }
-/* line 164, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 160, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body blockquote, div.lab .body q,
 div.slide .body blockquote,
 div.slide .body q {
@@ -23066,41 +23066,41 @@ div.slide .body q {
   quotes: "\201C" "\201D";
   margin: 1em 1em 0 1em;
 }
-/* line 170, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 166, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body blockquote:before, div.lab .body q:before,
 div.slide .body blockquote:before,
 div.slide .body q:before {
   content: open-quote;
   font-weight: bold;
 }
-/* line 175, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 171, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body blockquote:after, div.lab .body q:after,
 div.slide .body blockquote:after,
 div.slide .body q:after {
   content: close-quote;
   font-weight: bold;
 }
-/* line 181, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 177, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body cite,
 div.slide .body cite {
   text-transform: uppercase;
   font-size: 60%;
   margin: 0 1em 1em 2.1em;
 }
-/* line 187, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 183, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body small, div.lab .body .small,
 div.slide .body small,
 div.slide .body .small {
   font-size: 80%;
   line-height: 100%;
 }
-/* line 192, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 188, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .big,
 div.slide .body .big {
   line-height: 120%;
   font-size: 120%;
 }
-/* line 197, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 193, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body hr,
 div.slide .body hr {
   margin: 1em, 0;
@@ -23110,9 +23110,9 @@ div.slide .body hr {
   display: block;
   height: 1px;
 }
-/* line 206, ../../../../../packages/Nouveau/sass/src/_content.scss */
-div.lab .body img,
-div.slide .body img {
+/* line 202, ../../../../../packages/Nouveau/sass/src/_content.scss */
+div.lab .body img.border,
+div.slide .body img.border {
   background-color: #fff;
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -23126,7 +23126,7 @@ div.slide .body img {
   max-width: 600px;
   border: 1px solid #d1d1d1;
 }
-/* line 214, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 210, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body sub,
 div.lab .body sup,
 div.slide .body sub,
@@ -23136,28 +23136,28 @@ div.slide .body sup {
   position: relative;
   vertical-align: baseline;
 }
-/* line 221, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 217, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body sup,
 div.slide .body sup {
   top: -0.5em;
 }
-/* line 225, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 221, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body sub,
 div.slide .body sub {
   bottom: -0.25em;
 }
-/* line 229, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 225, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body ul, div.lab .body ol,
 div.slide .body ul,
 div.slide .body ol {
   padding: 0 20px;
 }
-/* line 257, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 253, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander p,
 div.slide .body .expander p {
   margin: 0;
 }
-/* line 259, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 255, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-expander,
 div.slide .body .expander .training-expandingcontent-expander {
   background: none;
@@ -23169,7 +23169,7 @@ div.slide .body .expander .training-expandingcontent-expander {
   display: inline-block;
   margin-right: 0.8em;
 }
-/* line 265, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 261, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-title.open .training-expandingcontent-expander,
 div.slide .body .expander .training-expandingcontent-title.open .training-expandingcontent-expander {
   border-left: 0.5em solid transparent;
@@ -23177,13 +23177,13 @@ div.slide .body .expander .training-expandingcontent-title.open .training-expand
   border-top: 0.7em solid #00304e;
   border-bottom: 0;
 }
-/* line 271, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 267, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-title,
 div.slide .body .expander .training-expandingcontent-title {
   font-size: 1em !important;
   margin: 5px 0 5px 5px;
 }
-/* line 275, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 271, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-title code, div.lab .body .expander .training-expandingcontent-title var, div.lab .body .expander .training-expandingcontent-title tt, div.lab .body .expander .training-expandingcontent-title kbd,
 div.slide .body .expander .training-expandingcontent-title code,
 div.slide .body .expander .training-expandingcontent-title var,
@@ -23191,7 +23191,7 @@ div.slide .body .expander .training-expandingcontent-title tt,
 div.slide .body .expander .training-expandingcontent-title kbd {
   font-weight: bold;
 }
-/* line 280, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 276, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-content,
 div.slide .body .expander .training-expandingcontent-content {
   height: 0;
@@ -23208,14 +23208,14 @@ div.slide .body .expander .training-expandingcontent-content {
   -o-transition-duration: 1s, 0.5s;
   transition-duration: 1s, 0.5s;
 }
-/* line 289, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 285, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-content ul, div.lab .body .expander .training-expandingcontent-content ol,
 div.slide .body .expander .training-expandingcontent-content ul,
 div.slide .body .expander .training-expandingcontent-content ol {
   margin: 0;
   padding: 0 0 0 60px;
 }
-/* line 294, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 290, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .expander .training-expandingcontent-content.expand,
 div.slide .body .expander .training-expandingcontent-content.expand {
   height: auto;
@@ -23223,7 +23223,7 @@ div.slide .body .expander .training-expandingcontent-content.expand {
   opacity: 1;
   padding: 0 0 25px 0;
 }
-/* line 308, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 304, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body table,
 div.slide .body table {
   border-collapse: collapse;
@@ -23231,13 +23231,13 @@ div.slide .body table {
   margin: 2em 0;
   width: 100%;
 }
-/* line 314, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 310, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body table td,
 div.slide .body table td {
   padding: 0 0.2em;
   vertical-align: top;
 }
-/* line 321, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 317, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .table thead th,
 div.slide .body .table thead th {
   background: #002034;
@@ -23247,14 +23247,14 @@ div.slide .body .table thead th {
   text-align: center;
   padding: 0.5em;
 }
-/* line 331, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 327, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .table tr td,
 div.slide .body .table tr td {
   border: 1px solid black;
   background: #fff;
   padding: 5px;
 }
-/* line 336, ../../../../../packages/Nouveau/sass/src/_content.scss */
+/* line 332, ../../../../../packages/Nouveau/sass/src/_content.scss */
 div.lab .body .table tr:nth-child(odd) td,
 div.slide .body .table tr:nth-child(odd) td {
   background: #f2f2f2 !important;
@@ -23581,17 +23581,241 @@ div.lab .body h6 {
   color: #f00;
 }
 
-/* line 98, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* Based on Sublime Text's Monokai theme */
+/* line 100, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai {
+  text-shadow: none;
+}
+
+/* line 101, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai.CodeMirror {
+  background: #272822;
+  color: #f8f8f2;
+}
+
+/* line 102, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai div.CodeMirror-selected {
+  background: #49483E !important;
+}
+
+/* line 103, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai .CodeMirror-gutters {
+  background: #272822;
+  border-right: 0px;
+}
+
+/* line 104, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai .CodeMirror-linenumber {
+  color: #d0d0d0;
+}
+
+/* line 105, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai .CodeMirror-cursor {
+  border-left: 1px solid #f8f8f0 !important;
+}
+
+/* line 107, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-comment {
+  color: #75715e;
+}
+
+/* line 108, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-atom {
+  color: #ae81ff;
+}
+
+/* line 109, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-number {
+  color: #ae81ff;
+}
+
+/* line 111, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-property, .cm-s-monokai span.cm-attribute {
+  color: #a6e22e;
+}
+
+/* line 112, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-keyword {
+  color: #f92672;
+}
+
+/* line 113, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-string {
+  color: #e6db74;
+}
+
+/* line 115, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-variable {
+  color: #a6e22e;
+}
+
+/* line 116, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-variable-2 {
+  color: #9effff;
+}
+
+/* line 117, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-def {
+  color: #fd971f;
+}
+
+/* line 118, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-error {
+  background: #f92672;
+  color: #f8f8f0;
+}
+
+/* line 119, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-bracket {
+  color: #f8f8f2;
+}
+
+/* line 120, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-tag {
+  color: #f92672;
+}
+
+/* line 121, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai span.cm-link {
+  color: #ae81ff;
+}
+
+/* line 123, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai .CodeMirror-activeline-background {
+  background: #373831 !important;
+}
+
+/* line 124, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-monokai .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
+
+/* Based on Eclipse Theme */
+/* line 130, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-meta {
+  color: #FF1717;
+}
+
+/* line 131, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-keyword {
+  line-height: 1em;
+  font-weight: bold;
+  color: #7F0055;
+}
+
+/* line 132, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-atom {
+  color: #219;
+}
+
+/* line 133, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-number {
+  color: #164;
+}
+
+/* line 134, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-def {
+  color: #00f;
+}
+
+/* line 135, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-variable {
+  color: black;
+}
+
+/* line 136, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-variable-2 {
+  color: #0000C0;
+}
+
+/* line 137, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-variable-3 {
+  color: #0000C0;
+}
+
+/* line 138, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-property {
+  color: black;
+}
+
+/* line 139, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-operator {
+  color: black;
+}
+
+/* line 140, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-comment {
+  color: #3F7F5F;
+}
+
+/* line 141, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-string {
+  color: #2A00FF;
+}
+
+/* line 142, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-string-2 {
+  color: #f50;
+}
+
+/* line 143, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-error {
+  color: #f00;
+}
+
+/* line 144, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-qualifier {
+  color: #555;
+}
+
+/* line 145, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-builtin {
+  color: #30a;
+}
+
+/* line 146, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-bracket {
+  color: #cc7;
+}
+
+/* line 147, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-tag {
+  color: #170;
+}
+
+/* line 148, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-attribute {
+  color: #00c;
+}
+
+/* line 149, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse span.cm-link {
+  color: #219;
+}
+
+/* line 151, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse .CodeMirror-activeline-background {
+  background: #e8f2ff !important;
+}
+
+/* line 152, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+.cm-s-eclipse .CodeMirror-matchingbracket {
+  outline: 1px solid grey;
+  color: black !important;
+}
+
+/* line 155, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 div.CodeMirror span.CodeMirror-matchingbracket {
   color: #0f0;
 }
 
-/* line 99, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 156, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 div.CodeMirror span.CodeMirror-nonmatchingbracket {
   color: #f22;
 }
 
-/* line 100, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 157, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-activeline-background {
   background: #e8f2ff;
 }
@@ -23599,7 +23823,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 /* STOP */
 /* The rest of this file contains styles related to the mechanics of
    the editor. You probably shouldn't touch them. */
-/* line 107, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 164, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror {
   line-height: 1;
   position: relative;
@@ -23608,7 +23832,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   color: black;
 }
 
-/* line 115, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 172, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-scroll {
   /* 30px is the magic margin used to hide the element's real scrollbars */
   /* See overflow: hidden in .CodeMirror */
@@ -23624,7 +23848,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   box-sizing: content-box;
 }
 
-/* line 126, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 183, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-sizer {
   position: relative;
 }
@@ -23632,14 +23856,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 /* The fake, visible scrollbars. Used to force redraw during scrolling
    before actuall scrolling happens, thus preventing shaking and
    flickering artifacts. */
-/* line 133, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 190, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
   position: absolute;
   z-index: 6;
   display: none;
 }
 
-/* line 138, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 195, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-vscrollbar {
   right: 0;
   top: 0;
@@ -23647,7 +23871,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow-y: scroll;
 }
 
-/* line 143, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 200, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-hscrollbar {
   bottom: 0;
   left: 0;
@@ -23655,19 +23879,19 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow-x: scroll;
 }
 
-/* line 148, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 205, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-scrollbar-filler {
   right: 0;
   bottom: 0;
 }
 
-/* line 151, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 208, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-gutter-filler {
   left: 0;
   bottom: 0;
 }
 
-/* line 155, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 212, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-gutters {
   position: absolute;
   left: 0;
@@ -23676,7 +23900,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   z-index: 3;
 }
 
-/* line 160, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 217, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-gutter {
   white-space: normal;
   height: 100%;
@@ -23690,19 +23914,19 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   *display: inline;
 }
 
-/* line 172, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 229, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-gutter-elt {
   position: absolute;
   cursor: default;
   z-index: 4;
 }
 
-/* line 178, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 235, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-lines {
   cursor: text;
 }
 
-/* line 181, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 238, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror pre {
   /* Reset some styles that the rest of the page might have set */
   -moz-border-radius: 0;
@@ -23722,14 +23946,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow: visible;
 }
 
-/* line 197, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 254, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-wrap pre {
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: normal;
 }
 
-/* line 202, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 259, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-code pre {
   border-right: 30px solid transparent;
   width: -webkit-fit-content;
@@ -23737,13 +23961,13 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   width: fit-content;
 }
 
-/* line 208, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 265, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-wrap .CodeMirror-code pre {
   border-right: none;
   width: auto;
 }
 
-/* line 212, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 269, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-linebackground {
   position: absolute;
   left: 0;
@@ -23753,19 +23977,19 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   z-index: 0;
 }
 
-/* line 218, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 275, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-linewidget {
   position: relative;
   z-index: 2;
   overflow: auto;
 }
 
-/* line 226, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 283, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-wrap .CodeMirror-scroll {
   overflow-x: hidden;
 }
 
-/* line 230, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 287, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-measure {
   position: absolute;
   width: 100%;
@@ -23774,12 +23998,12 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   visibility: hidden;
 }
 
-/* line 237, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 294, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-measure pre {
   position: static;
 }
 
-/* line 239, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 296, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror div.CodeMirror-cursor {
   position: absolute;
   visibility: hidden;
@@ -23787,36 +24011,36 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   width: 0;
 }
 
-/* line 245, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 302, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-focused div.CodeMirror-cursor {
   visibility: visible;
 }
 
-/* line 249, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 306, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-selected {
   background: #d9d9d9;
 }
 
-/* line 250, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 307, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror-focused .CodeMirror-selected {
   background: #d7d4f0;
 }
 
-/* line 252, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 309, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .cm-searching {
   background: #ffa;
   background: rgba(255, 255, 0, 0.4);
 }
 
 /* IE7 hack to prevent it from returning funny offsetTops on the spans */
-/* line 258, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+/* line 315, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
 .CodeMirror span {
   *vertical-align: text-bottom;
 }
 
 @media print {
   /* Hide the cursor when printing */
-  /* line 262, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
+  /* line 319, ../../../../../packages/Nouveau/sass/src/_codemirror.scss */
   .CodeMirror div.CodeMirror-cursor {
     visibility: hidden;
   }

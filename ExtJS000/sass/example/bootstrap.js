@@ -35,6 +35,8 @@ Ext.Loader.addClassPathMappings({
   "Engine.view.content.editing.BodyEdit": "../../../Engine/app/view/content/page/editing/BodyEdit.js",
   "Engine.view.content.page.Body": "../../../Engine/app/view/content/page/Body.js",
   "Engine.view.content.page.ContentPanel": "../../../Engine/app/view/content/page/ContentPanel.js",
+  "Engine.view.content.page.LivePreviewComponent": "../../../Engine/app/view/content/page/LivePreviewComponent.js",
+  "Engine.view.content.page.LivePreviewWindow": "../../../Engine/app/view/content/page/LivePreviewWindow.js",
   "Engine.view.content.page.Title": "../../../Engine/app/view/content/page/Title.js",
   "Engine.view.content.page.Topic": "../../../Engine/app/view/content/page/Topic.js",
   "Engine.view.util.ExpandingContent": "../../../Engine/app/view/util/ExpandingContent.js",
@@ -177,6 +179,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Engine.view.content.editing.BodyEdit": [],
   "Engine.view.content.page.Body": [],
   "Engine.view.content.page.ContentPanel": [],
+  "Engine.view.content.page.LivePreviewComponent": [],
+  "Engine.view.content.page.LivePreviewWindow": [],
   "Engine.view.content.page.Title": [],
   "Engine.view.content.page.Topic": [],
   "Engine.view.util.ExpandingContent": [],
@@ -1243,6 +1247,10 @@ Ext.ClassManager.addNameAliasMappings({
   "Engine.view.content.page.ContentPanel": [
     "widget.contentpanel"
   ],
+  "Engine.view.content.page.LivePreviewComponent": [
+    "widget.livepreviewcomponent"
+  ],
+  "Engine.view.content.page.LivePreviewWindow": [],
   "Engine.view.content.page.Title": [
     "widget.training_titlepage"
   ],

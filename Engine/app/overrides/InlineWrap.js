@@ -1,6 +1,7 @@
 Ext.define('Engine.overrides.InlineWrap', {
 	override: 'Docs.view.examples.InlineWrap',
 	requires: ['Engine.overrides.InlineToolbar'],
+    cls: 'wrap',
 
     /**
      * Wraps pre into initial inline example.
@@ -16,6 +17,7 @@ Ext.define('Engine.overrides.InlineWrap', {
 
     initToolbar: function() {
         var div = document.createElement("div");
+        div.className = "toolbar-wrapper";
         this.pre.parentNode.insertBefore(div, this.pre);
 
         //load a customized toolbar instead
@@ -26,6 +28,7 @@ Ext.define('Engine.overrides.InlineWrap', {
     
     replacePre: function(options) {
         var div = document.createElement("div");
+        div.className = "code-wrapper";
         this.pre.parentNode.replaceChild(div, this.pre);
 
         //we need to fix the Inline example, to meets its height

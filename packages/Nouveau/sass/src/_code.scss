@@ -23,3 +23,40 @@ pre {
 	display: block;
 }
 
+.code-window {
+	height: 100%;
+
+	.x-window-body {
+		padding-bottom: 30px;
+		height: 100%;
+
+		.toolbar-wrapper {
+			height: '35px';
+			div {
+				height: auto;
+			}
+		}
+		.code-wrapper {
+			height: 100%;
+			width: 100%;
+
+			.inline-example-editor {
+				padding-bottom: 5px;
+			}
+
+			.x-resizable {
+				height: auto;
+				width: auto;
+			}
+
+			.inline-example-editor,
+			.inline-example-cmp  .x-panel-body,
+			.inline-example-cmp {
+				height: 100% !important;
+				width: 100% !important;
+				border: none;
+				box-shadow: none;
+			}
+		}
+	}
+}

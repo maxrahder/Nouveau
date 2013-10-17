@@ -158,6 +158,9 @@ Ext.define('Engine.view.content.page.Body', {
 						layout: 'fit',
 						height: 300,
 						width: 500,
+						cls: 'code-window',
+						glyph: '76@Nouveau',
+						title: 'Lab editor',
 						contentEl: preDocked
 					});
 					Ext.create('Engine.view.content.page.LivePreviewComponent', {
