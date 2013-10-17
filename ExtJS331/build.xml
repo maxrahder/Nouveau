@@ -45,8 +45,8 @@
             <include name="**/*" />
           </fileset>
         </copy>
-        <copy todir="${build.dir}/Data" overwrite="false">
-          <fileset dir="${app.dir}/Data">
+        <copy todir="${build.dir}/../jsduck" overwrite="false">
+          <fileset dir="${workspace.dir}/jsduck">
             <include name="**/*" />
           </fileset>
         </copy>

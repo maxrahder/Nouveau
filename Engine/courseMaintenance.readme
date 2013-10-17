@@ -48,8 +48,8 @@ app.sass.namespace=Engine
             <include name="**/*" />
           </fileset>
         </copy>
-        <copy todir="${build.dir}/Data" overwrite="false">
-          <fileset dir="${app.dir}/Data">
+        <copy todir="${build.dir}/../jsduck" overwrite="false">
+          <fileset dir="${workspace.dir}/jsduck">
             <include name="**/*" />
           </fileset>
         </copy>
@@ -71,19 +71,8 @@ Add:
 (optional)
 <script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/xml/xml.js"></script>
 
-
-(8) Note on JsDuck
-The build process cannot resolve certain code. So some things need to be edited manually, and repeatedly as we get new copies of JsDuck:
-Docs.model.Setting
-        type: window['localStorage'] ? 'localstorage' : 'memory',
-        type: 'localstorage',
-
-TODO @Max, please explain this step
-Can we override it?
-
-
    
-(9) TODO copy Data folder to resources.
+(8) TODO copy Data folder to resources.
 It requires:
 -  resources/Data/pages/
 (copy from other project and modify)
@@ -93,5 +82,16 @@ It requires:
 (copy from other project and modify)
 
 
-(10) Build your app
+(9) Build your app
 sencha app build    
+
+
+
+-------
+
+(10) If we update JSDuck, take this step:
+
+The build process cannot resolve certain code. So some things need to be edited manually, and repeatedly as we get new copies of JsDuck:
+Docs.model.Setting
+        type: window['localStorage'] ? 'localstorage' : 'memory',
+        type: 'localstorage',
