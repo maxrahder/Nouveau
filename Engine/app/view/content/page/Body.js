@@ -163,6 +163,7 @@ Ext.define('Engine.view.content.page.Body', {
 						title: 'Lab editor',
 						contentEl: preDocked
 					});
+					
 					Ext.create('Engine.view.content.page.LivePreviewComponent', {
 						pre: preDocked
 					});

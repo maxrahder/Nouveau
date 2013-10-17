@@ -1,15 +1,19 @@
-TO MAINTAIN A COURSE
+Nouveau Courses
+----------------
 
-Use your browser and enter the course root folder and enter edit mode, or simply 
-edit source html files and re-visit the page in your browser.
+=== TO MAINTAIN A COURSE
 
+Use your browser and enter the course root folder and enter edit mode
+(i.e. http://localhost/Nouveau/ExtJS000/?edit=true#2012-09-18_19-20_49-001_Z)
+, or simply edit source html files and re-visit the page in your browser.
 
-TO ADD A NEW COURSE
+=== TO ADD A NEW COURSE
 
 To add a new course you need to do five things:
 
 (1) Use sencha Cmd to generate an application named for the course. 
 Example:
+
 sencha generate app ExtJS999 ../ExtJS999
 
 
@@ -25,13 +29,11 @@ Ext.application({
     extend: 'Engine.Application'
 });
 
-
 (4) Modify .sencha/app/sencha.cfg to include Engine in its classpath.
 Use this:
 
 # The path(s) to application javascript sources (comma separated)
 app.classpath=${app.dir}/app,${app.dir}/app.js,${workspace.dir}/Engine/app
-
 
 (5) Modify build.xml to include a new target -- this copies the new course's Data and Engine's Shared folders to the "sencha app build" version of the course. 
     <target name="-after-build">
@@ -54,6 +56,7 @@ The build process cannot resolve certain code. So some things need to be edited 
 Docs.model.Setting
         type: window['localStorage'] ? 'localstorage' : 'memory',
         type: 'localstorage',
+        
 
 (7) Code Mirror
 <script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/lib/codemirror.js"></script>
