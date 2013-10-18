@@ -30,7 +30,7 @@ Ext.define('Engine.store.Topics', {
         var s = JSON.stringify(h, null, "\t");
 
         Ext.Ajax.request({
-            url: 'php/saveTopics.php',
+            url: '../Shared/backend/saveTopics.php',
             method: 'post',
             params: {
                 content: s
@@ -62,7 +62,7 @@ Ext.define('Engine.store.Topics', {
         var s = JSON.stringify(h, null, 2);
 
         Ext.Ajax.request({
-            url: 'php/saveTopic.php',
+            url: '../Shared/backend/saveTopic.php',
             method: 'post',
             params: {
                 content: s,

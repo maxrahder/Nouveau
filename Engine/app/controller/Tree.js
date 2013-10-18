@@ -7,7 +7,8 @@ Ext.define('Engine.controller.Tree', {
 
     requires: [
         'Ext.state.LocalStorageProvider',
-        'Ext.util.History'
+        'Ext.util.History',
+        'Engine.util.Sync'
     ],
 
     refs: [{
@@ -185,6 +186,10 @@ Ext.define('Engine.controller.Tree', {
 
         var record = this.getRecord();
         Engine.model.Node.setRecord(record);
+
+        if (Engine.instructor){
+            Engine.util.Sync.setPage(record.get('fileId'));
+        }
 
     },
 

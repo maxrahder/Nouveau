@@ -17,7 +17,8 @@ Ext.define('Engine.view.Viewport', {
 		style: 'background-color: #aaa',
 		border: false,
 		dockedItems: [{
-			xtype: 'edittoolbar'
+			xtype: 'edittoolbar',
+			store: 'Topcs'
 		}],
 		items: [{
 			xtype: 'training_tree',

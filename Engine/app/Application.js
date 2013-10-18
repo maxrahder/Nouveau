@@ -8,6 +8,8 @@ Ext.define('Engine.Application', {
 		'Engine.overrides.InlineEditor',
 		'Engine.overrides.Inline',
 
+		'Engine.util.Version',
+
 		'Engine.view.Viewport',
 		'Engine.Global',
 		'Engine.util.Time',

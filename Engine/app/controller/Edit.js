@@ -96,7 +96,6 @@ Ext.define('Engine.controller.Edit', {
 	},
 
 	nodeSelectHandler: function(selectionModel, record) {
-		this.getNodeText().setValue(record.get('text'));
 		this.getNodeDuration().setValue(record.get('duration'));
 	},
 
@@ -234,7 +233,7 @@ Ext.define('Engine.controller.Edit', {
 		// Insert a new page, and fire off Ajax to
 		// add the new empty source page.
 		Ext.Ajax.request({
-			url: 'php/savePage.php',
+			url: '../Shared/backend/savePage.php',
 			method: 'post',
 			params: {
 				fileId: fileId,
@@ -269,7 +268,7 @@ Ext.define('Engine.controller.Edit', {
 							params: {
 								fileId: fileId
 							},
-							url: 'php/deleteFile.php',
+							url: '../Shared/backend/deleteFile.php',
 							success: function(response) {},
 							failure: function(response) {
 								Ext.Msg.alert('Error deleting ' + fileId, response.responseText);
@@ -296,10 +295,12 @@ Ext.define('Engine.controller.Edit', {
 
 	toolbarNodeTextChange: function(field) {
 
-		var record = this.getRecord();
+		var record = this.getRecord();		
 		if (record) {
-			// if (record && (record.get('text') != fieldGetValue())) {
-			record.set('text', field.getValue());
+			var value = field.getValue();
+			if (value !== record.get('text')){
+				record.set('text');
+			}
 		}
 	},
 

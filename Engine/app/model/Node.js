@@ -49,7 +49,7 @@ Ext.define('Engine.model.Node', {
 	},
 	getTitle: function() {
 		var record = this.getRecord();
-		return record ? record.getSlideText() : '';
+		return record ? record.get('text') : '';
 	},
 	getTopicId: function(){
 		var record = this.getRecord();
