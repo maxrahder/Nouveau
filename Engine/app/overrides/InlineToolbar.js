@@ -6,7 +6,10 @@ Ext.define('Engine.overrides.InlineToolbar', {
     componentCls: 'inline-example-tb',
     height: 35,
 
+    settings: {},
+
     initComponent: function() {
+
         this.addEvents(
             /**
              * @event
@@ -17,21 +20,27 @@ Ext.define('Engine.overrides.InlineToolbar', {
             "buttonclick"
         );
 
-        this.items = [
-            {
+        var items = [];
+
+        items.push({
                 glyph: '67@Nouveau',
                 padding: 2,
                 margin: '0 3px 0 0',
                 text: 'Code Editor',
                 handler: this.createEventFirerer("code")
-            },
-            {
+            });
+
+        if(!this.settings.readonly){
+            items.push({
                 glyph: '80@Nouveau',
                 padding: 2,
                 margin: '0 3px 0 0',
                 text: 'Preview',
                 handler: this.createEventFirerer("preview")
-            },
+            });
+        }
+            
+        items.push(
             "->",
             {
 
@@ -41,8 +50,9 @@ Ext.define('Engine.overrides.InlineToolbar', {
                 text: 'Toggle Theme',
                 handler: this.createEventFirerer("themetoggle")
             }
-        ];
+        );
 
+        this.items = items;
         this.callParent(arguments);
     },
 

@@ -12,7 +12,7 @@ Ext.define('Engine.overrides.InlineWrap', {
 
         var options = this.parseOptions(pre.className);
 
-        this.initToolbar();
+        this.initToolbar(options);
 
         //Lee: always load CodeMirror, therefore comment these lines
         //if (options.preview) {
@@ -37,20 +37,15 @@ Ext.define('Engine.overrides.InlineWrap', {
             else if (cls === "landscape" || cls === "portrait") {
                 options.orientation = cls;
             }
-            else if(cls === "css") {
-                options.mode = "css";
+            else if(cls === "css" || cls === "html" || cls === "sass" || cls === "xml") {
+                options.mode = cls;
+                options.readonly = true;
             }
-            else if(cls === "html") {
-                options.mode = "html";
+            else if(cls === "readonly"){
+                options.readonly = true;
             }
-            else if(cls === "sass") {
-                options.mode = "sass";
-            }
-            else if(cls === "xml") {
-                options.mode = "xml";
-            }
-            else if(cls === "javascript") {
-                options.mode = "javascript";
+            else if(cls === "javascript"){
+                options.mode = cls;
             }
             else {
                 options[cls] = true;
@@ -59,14 +54,16 @@ Ext.define('Engine.overrides.InlineWrap', {
         return options;
     },
 
-    initToolbar: function() {
+    initToolbar: function(options) {
         var div = document.createElement("div");
         div.className = "toolbar-wrapper";
         this.pre.parentNode.insertBefore(div, this.pre);
+        var opt = options;
 
         //load a customized toolbar instead
         this.tb = Ext.create("Engine.overrides.InlineToolbar", {
-            renderTo: div
+            renderTo: div,
+            settings: opt //Lee: pass in options
         });
     },  
     
