@@ -3,6 +3,10 @@ Ext.define('Engine.view.content.Toolbar', {
     xtype: 'contenttoolbar',
     cls: 'breadcrumbs',
     items: [{
+            cls: 'font-size',
+            glyph: '82@Nouveau',
+            itemId: 'syncWithInstructor'
+        },'',{
             xtype: 'tbtext',
             itemId: 'breadcrumb'
         },
