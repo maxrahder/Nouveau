@@ -11,8 +11,52 @@ Ext.define('Engine.overrides.InlineWrap', {
         this.pre = pre;
 
         var options = this.parseOptions(pre.className);
+
         this.initToolbar();
-        this.replacePre(options);
+
+        //Lee: always load CodeMirror, therefore comment these lines
+        //if (options.preview) {
+            this.replacePre(options);
+        // } else {
+        //     this.tb.on("buttonclick", function(name) {
+                // switch to code or preview depending on which button clicked.
+        //        options.preview = (name === "preview");
+        //        this.replacePre(options);
+        //    }, this, {single: true});
+        //}
+    },
+
+
+    // Parses options from HTML class attribute
+    parseOptions: function(text) {
+        var options = {};
+        Ext.Array.forEach(text.split(/ +/), function(cls) {
+            if (cls === "phone" || cls === "miniphone" || cls === "tablet") {
+                options.device = cls;
+            }
+            else if (cls === "landscape" || cls === "portrait") {
+                options.orientation = cls;
+            }
+            else if(cls === "css") {
+                options.mode = "css";
+            }
+            else if(cls === "html") {
+                options.mode = "html";
+            }
+            else if(cls === "sass") {
+                options.mode = "sass";
+            }
+            else if(cls === "xml") {
+                options.mode = "xml";
+            }
+            else if(cls === "javascript") {
+                options.mode = "javascript";
+            }
+            else {
+                options[cls] = true;
+            }
+        });
+        return options;
     },
 
     initToolbar: function() {

@@ -65,12 +65,12 @@ Add:
 
 (7) Add the scripts for Code Mirror to the index.html
 
-<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/lib/codemirror.js"></script>
-<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/javascript/javascript.js"></script>
-
-(optional)
-<script type="text/javascript" src="../packages/Nouveau/src/CodeMirror/mode/xml/xml.js"></script>
-
+    <script type="text/javascript" src="../Shared/CodeMirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="../Shared/CodeMirror/mode/javascript/javascript.js"></script>
+    (optional)
+    <script type="text/javascript" src="../Shared/CodeMirror/mode/sass/sass.js"></script>
+    <script type="text/javascript" src="../Shared/CodeMirror/mode/css/css.js"></script>
+    <script type="text/javascript" src="../Shared/CodeMirror/mode/xml/xml.js"></script>
    
 (8) TODO copy Data folder to resources.
 It requires:

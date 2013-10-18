@@ -4,12 +4,31 @@ Ext.define('Engine.overrides.InlineEditor', {
     * it adds an additional outerCt element above it that contains information of the overall code height, margins etc. */
     layout: 'fit',
 
+
+    initComponent: function() {
+        this.callParent(arguments);
+        this.addEvents(
+            /**
+             * @event
+             * Fired after CodeMirror initialized.
+             */
+            "init",
+            /**
+             * @event
+             * Fired when CodeMirror onChange is called.
+             */
+            "change"
+        );
+        this.on("afterlayout", this.initCodeMirror, this);
+    },
+
     initCodeMirror: function(cmp) {
+        var me = this;
         if (!this.codemirror) {
-            this.codemirror = CodeMirror(this.body, {
-                mode:  "javascript",
+            this.codemirror = CodeMirror(me.body, {
+                mode:  me.mode,
                 indentUnit: 4,
-                value: this.value,
+                value: me.value,
                 lineNumbers: true,
                 theme: Engine.Global.theme,
                 extraKeys: {

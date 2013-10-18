@@ -7,6 +7,11 @@ Ext.define('Engine.overrides.Inline', {
     // Make too long examples scrollable
     maxCodeHeight: 500,
 
+    initComponent: function() {
+        this.callParent(arguments);
+        this.editor.mode = this.options.mode;
+    },
+
     initToolbarEvents: function() {
         this.toolbar.on("buttonclick", function(name) {
             if (name === "code") {
